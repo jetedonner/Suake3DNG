@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "FadeViewAfterDeathNG.init(game:):FadeViewAfterDeathNG.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "game.scnView.overlaySKScene">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HUDOverlayScene.update(_:):HUDOverlayScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.entity">
+            </PersistentString>
+            <PersistentString
+               value = "self.hudEntity.healthBarGoodyComponent.isHidden">
+            </PersistentString>
+            <PersistentString
+               value = "healthBar.value.node.isHidden">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static NSColor.multiplyColor(_:by:):NSColor.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SuakePlayerNodeComponent.init(game:node:suakePart:):SuakePlayerNodeComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "node.cloneNode.boundingBox">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactHelper.physicsWorld(_:didBegin:):ContactHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(contact.nodeA.entity as! MachinegunPickupEntity).mgPickupComponent.node.position">
+            </PersistentString>
+            <PersistentString
+               value = "contact.nodeB.physicsBody">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GamePaused.loadScene():GamePaused.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.lblPressAnyKey">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MenuSkScene.mouseMovedHandler(with:):MenuSkScene.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MachinegunPickupEntity.init(game:id:):MachinegunPickupEntity.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.mgPickupComponent.node.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MatchResult.__allocating_init(game:):MatchResult.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableView!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameViewControllerMacOS.keyDown(_:event:):GameViewControllerMacOS.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.gameController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DroidComponent.nextMove(newDir:):DroidComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.playerEntity.dir">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GamePaused.runAnimation():GamePaused.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.lblPressAnyKey">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DistanceManager.getDistanceBetween(node1:node2:):DistanceManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.entityDistancesNG[node1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MatchResults.init(game:mr:):MatchResults.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CameraHelper.toggleFPV(newFPV:):CameraHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.cameraNodeFP">
+            </PersistentString>
+            <PersistentString
+               value = "self.cameraNode.position">
+            </PersistentString>
+            <PersistentString
+               value = "self.cameraNodeFP.name">
+            </PersistentString>
+            <PersistentString
+               value = "self.game.scnView.pointOfView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeBaseSCNNode.animationFromSceneNamed(scene:):SuakeBaseSCNNode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scene.rootNode.enumerateChildNodes">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakePlayerNodeComponent.didAddToEntity():SuakePlayerNodeComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.node.boundingBox">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MatchResult.didMove(to:):MatchResult.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollViewTableView.superview!">
+            </PersistentString>
+            <PersistentString
+               value = "gameTableView.frame.size">
+            </PersistentString>
+            <PersistentString
+               value = "gameTableView.frame">
+            </PersistentString>
+            <PersistentString
+               value = "self.game.gameWindowSize">
+            </PersistentString>
+            <PersistentString
+               value = "self.scene">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PanCameraHelper.checkAimedAtAll(overrideCheckIsAimed:):PanCameraHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "results.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeBaseSCNNode.loadSceneContent(sceneName:scale:):SuakeBaseSCNNode.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "childNode1.animationKeys">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MatchOver.showMatchOver(lost:):MatchOver.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.game.scnView.isPlaying">
+            </PersistentString>
+            <PersistentString
+               value = "self.game.scene.isPaused">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeStateMachine.returnToOldState(saveOldState:):SuakeStateMachine.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.stateStack">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeCameraComponent.setFollowCameraPos(newPos:):SuakeCameraComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.cameraNode.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WeaponPickupEntityManager.addWeaponPickupEntity(weaponPickupEntity:):WeaponPickupEntityManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "weaponPickupComponent.node.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeMoveComponent.appendTurn(turn:):SuakeMoveComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.game.scnView.isPlaying">
+            </PersistentString>
+            <PersistentString
+               value = "self.game.scene.isPaused">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PressAnyKeyHandler.handleAnyKeyPress(pressedKey:):PressAnyKeyHandler.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.game.overlayManager.matchOver.isLoaded">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeBaseNodeEntity.reposMapNodeInit():SuakeBaseNodeEntity.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserDefaultsHelper.init(game:):UserDefaultsHelper.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BaseWeaponPickupEntity.initSetupPos(addToScene:):BaseWeaponPickupEntity.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeCameraComponent.init(game:cameraType:):SuakeCameraComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "game.cameraHelper">
+            </PersistentString>
+            <PersistentString
+               value = "self.cameraNode.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserDefaultsHelper.resetUserDefaults2Game():UserDefaultsHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.game.levelManager.currentLevel.levelConfigEnv.lightIntensity">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakePlayerComponent.stopAnimationTMP():SuakePlayerComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.suakeStraight2StraightComponent.node.animation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeCameraComponent.moveFollowCamera(turnDir:duration:beamed:firstMoveOpp:daDir:):SuakeCameraComponent.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GameBoard.getRandomFreePos(diff:):GameBoardExt.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.getGameBoardField(pos: newPos)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameBoard.setGameBoardField(x:z:suakeField:overrideOrig:):GameBoard.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.gameBoardFields[arrPosX][arrPosZ].fieldType">
+            </PersistentString>
+            <PersistentString
+               value = "self.printAllGamerBoardFields()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CameraHelper.toggleFPV():CameraHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fpv">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameRoomTableView.tableView(_:viewFor:row:):MatchResult.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: &quot;TEST&quot;), owner: nil)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PanCameraHelper.checkNodeInsideFrustum(node:):PanCameraHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "node.presentation">
+            </PersistentString>
+            <PersistentString
+               value = "self.game.scnView.pointOfView">
+            </PersistentString>
+            <PersistentString
+               value = "self.game.scnView.pointOfView!.presentation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameViewControllerMacOS.mouseDown(in:with:):GameViewControllerMacOS.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "event.locationInWindow.y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeMoveComponent.checkNextMoveNG(pos:):SuakeMoveComponent.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HUDOverlayScene.init(game:):HUDOverlayScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "game.scnView.window?.frame.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CrosshairEntity.addToHUD(hud:):CrosshairEntity.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.nodeContainer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SoundManager.playBulletHitSound(weaponType:node:):SoundManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.muteSound">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HUDHealthBarOnScreenComponent.getHealthPercent():HUDHealthBarOnScreenComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.game.playerEntityManager.ownPlayerEntity">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MedKitEntity.pos.setter:MedKitEntity.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pos">
+            </PersistentString>
+            <PersistentString
+               value = "self.game.overlayManager.hud.overlayScene!.map.medKitNodes">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeKeyboardHandler.keyPressedEvent(event:):SuakeKeyboardHandler.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.game.stateMachine.currentState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhysicsHelper.updateGameTime(time:):PhysicsHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.gameStartTime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeMoveComponent.nextMove(deltaTime:):SuakeMoveComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.turnQueue.count">
+            </PersistentString>
+            <PersistentString
+               value = "self.currentTurnDir">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseWeaponPickupEntity.pos.setter:BaseWeaponPickupEntity.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scnNodeComponents[i].node.position.y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SuakeAchievements.checkAchievement(achievementID:):SuakeAchievements.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.allAchievements">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhysicsHelper.renderer(_:updateAtTime:):PhysicsHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.game.playerEntityManager.ownPlayerEntity">
+            </PersistentString>
+            <PersistentString
+               value = "self.lastUpdateTime">
+            </PersistentString>
+            <PersistentString
+               value = "self.game.playerEntityManager.ownPlayerEntity.moveComponent.turnQueue">
+            </PersistentString>
+            <PersistentString
+               value = "self.deltaTime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseGameController.init(scnView:):BaseGameController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.scnView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MapOverlay.drawMap():MapOverlay.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.centerPoint">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RespawnPointComponent.initSetupPos():RespawnPointComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.entity">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DroidComponent.changeDroidState(state:):DroidComponentExt.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.flashLight.childNode(withName: &quot;flInner&quot;, recursively: true)!.light">
+            </PersistentString>
+            <PersistentString
+               value = "self.flashLight.light">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OverlayManager.setOverlaySKScene(overlay:):OverlayManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.game.scnView.overlaySKScene">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BaseWeaponComponent.shoot(at:):BaseWeaponComponent.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.ammoCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

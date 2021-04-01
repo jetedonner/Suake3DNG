@@ -1,0 +1,30 @@
+//
+//  SuakeStateGameLoading.swift
+//  Suake3D
+//
+//  Created by Kim David Hauser on 21.07.20.
+//  Copyright © 2020 Kim David Hauser. All rights reserved.
+//
+
+import Foundation
+import SceneKit
+import GameplayKit
+
+class SuakeStateGameLoading:SuakeBaseState{
+    
+    init(game: GameController) {
+        super.init(game: game, stateDesc: GameStates.gameLoadingState)
+    }
+    
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return stateClass == SuakeStateReadyToPlay.self
+    }
+    
+    override func didEnter(from previousState: GKState?) {
+//        if(previousState is SuakeStatePlaying || previousState is SuakeStateMatchOver /*|| previousState is SuakeStateTutorialCompleted*/){
+            self.game.overlayManager.showOverlay4GameState(type: .loading)
+            self.game.overlayManager.gameLoading.initProgressLoop()
+            self.game.loadGameScence()
+//        }
+    }
+}
