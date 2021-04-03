@@ -8,12 +8,19 @@
 import Foundation
 import GameKit
 
+protocol GameCenterHelperNGDelegate: class {
+    func didChangeAuthStatus(isAuthenticated: Bool)
+    func presentGameCenterAuth(viewController: NSViewController?)
+    func presentMatchmaking(viewController: NSViewController?)
+    func presentGame(match: GKMatch)
+}
+
 class GameCenterHelperNG: SuakeGameClass, GKLocalPlayerListener{
-    
-//    static var helper:GameCenterHelperNG!
     
     let achievements:SuakeAchievements
     var viewController: NSViewController?
+    
+    weak var delegate: GameCenterHelperNGDelegate?
     
     override init(game: GameController) {
         self.achievements = SuakeAchievements(game: game)

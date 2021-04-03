@@ -102,7 +102,12 @@ class SuakeKeyboardHandler: KeyboardHandler {
 //                (self.game.scnView as! GameViewMacOS).viewController.present(myViewController, animated: true, completion: nil)
 //                self.game.locationEntityManager.addLocationToScene(pos: SCNVector3(-5, 0, 5))
             }else if(pressedKey == .KEY_O){
-                GameCenterHelper.helper.showAchivementsView()
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                    GameCenterHelper.helper.showAchivementsView()
+                }else{
+                    GameCenterHelper.helper.presentMatchmaker()
+//                    self.game.gameCenterHelper.pre
+                }
             }else if(pressedKey == .KEY_P){
 //                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
 //                    self.game.weaponPickups.isHidden = !self.game.weaponPickups.isHidden

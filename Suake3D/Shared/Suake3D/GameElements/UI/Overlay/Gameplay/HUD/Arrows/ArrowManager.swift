@@ -10,7 +10,7 @@ import Foundation
 import GameplayKit
 import SpriteKit
 import SceneKit
-
+import NetTestFW
 
 public enum ArrowsShowState:Int{
     case NONE = 0, DIR = 1, ALL = 2

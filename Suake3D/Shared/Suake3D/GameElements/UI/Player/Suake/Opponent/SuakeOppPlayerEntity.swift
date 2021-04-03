@@ -11,6 +11,7 @@ import SceneKit
 import GameplayKit
 import SpriteKit
 import GameKit
+import NetTestFW
 
 class SuakeOppPlayerEntity: SuakePlayerEntity {
         

@@ -8,6 +8,7 @@
 
 import Foundation
 import SceneKit
+import NetTestFW
 
 enum SuakePosition : String {
     case OnTheSpot = "On the spot"
@@ -116,22 +117,22 @@ extension SuakeDir {
     }
 }
 
-enum TurnDir : String, Codable{
-    case Stop = "Stop"
-    case None = "None"
-    case Straight = "Straight"
-    case Left = "Left"
-    case Right = "Right"
-    case One80 = "180"
-    case Portatiom = "Portatiom"
-}
+//enum TurnDir : String, Codable{
+//    case Stop = "Stop"
+//    case None = "None"
+//    case Straight = "Straight"
+//    case Left = "Left"
+//    case Right = "Right"
+//    case One80 = "180"
+//    case Portatiom = "Portatiom"
+//}
 
-extension TurnDir {
-    func encode() -> Data? {
-        return try? JSONEncoder().encode(self)
-    }
-    
-    static func decode(data: Data) -> TurnDir? {
-        return try? JSONDecoder().decode(TurnDir.self, from: data)
-    }
-}
+//extension TurnDir {
+//    func encode() -> Data? {
+//        return try? JSONEncoder().encode(self)
+//    }
+//    
+//    static func decode(data: Data) -> TurnDir? {
+//        return try? JSONDecoder().decode(TurnDir.self, from: data)
+//    }
+//}

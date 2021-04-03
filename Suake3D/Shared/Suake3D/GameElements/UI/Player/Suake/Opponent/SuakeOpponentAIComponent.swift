@@ -9,6 +9,7 @@ import Foundation
 import SceneKit
 import SpriteKit
 import GameplayKit
+import NetTestFW
 
 class SuakeOpponentAIComponent: SuakeBaseComponent {
     
@@ -90,7 +91,7 @@ class SuakeOpponentAIComponent: SuakeBaseComponent {
             self.playerEntity.turnQueue.removeAll()
             for turn in turnDirs{
                 self.playerEntity.turnQueue.append(turn)
-                self.game.showDbgMsg(dbgMsg: "Opp-Move turnDir: " + turn.rawValue, dbgLevel: .InfoOnlyConsole)
+                self.game.showDbgMsg(dbgMsg: "Opp-Move turnDir: " + String(reflecting: turn), dbgLevel: .InfoOnlyConsole)
             }
         }
     }

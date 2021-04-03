@@ -16,6 +16,7 @@ enum OverlayType: Int {
     case loading
     case cheatsheet
     case ready2Play
+    case gameCenter
     case playing
     case testOpp
     case testDroid

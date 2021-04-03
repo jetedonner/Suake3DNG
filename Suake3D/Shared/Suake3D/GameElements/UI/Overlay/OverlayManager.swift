@@ -16,10 +16,10 @@ class OverlayManager: SuakeGameClass {
     let hud:HUDOverlayEntity
     let paused:GamePaused
     let matchOver:MatchOver
-//    let matchResult:MatchResult
-//    let matchResults:MatchResults
     let matchResults:MatchResultsSkScene
     let mainMenu:MenuSkScene
+    
+    let gameCenterOverlay:GameCenterOverlay
     
     var allOverlays:[SuakeBaseOverlay]!
     var currentOverlay:SuakeBaseOverlay!
@@ -29,13 +29,14 @@ class OverlayManager: SuakeGameClass {
         self.hud = HUDOverlayEntity(game: game)
         self.paused = GamePaused(game: game)
         self.matchOver = MatchOver(game: game)
-//        self.matchResult = MatchResult(game: game)
         self.matchResults = MatchResultsSkScene(game: game)
         self.mainMenu = MenuSkScene(game: game)
         
+        self.gameCenterOverlay = GameCenterOverlay(game: game)
+        
         super.init(game: game)
         
-        self.allOverlays = [self.hud.overlayScene, self.paused, self.matchOver, self.matchResults, self.mainMenu]
+        self.allOverlays = [self.hud.overlayScene, self.paused, self.matchOver, self.matchResults, self.mainMenu, self.gameCenterOverlay]
     }
     
     func overlay4GameState(type:OverlayType)->SuakeBaseOverlay?{
@@ -51,6 +52,9 @@ class OverlayManager: SuakeGameClass {
             return self.setupDeveloper
         }*/else if(type == .ready2Play){
             return self.hud.overlayScene
+        }else if(type == .gameCenter){
+                return self.gameCenterOverlay
+                
         }/*else if(type == .tutorialMode){
             return self.tutorialOverlay
         }else if(type == .tutorialStepCompleted){

@@ -7,17 +7,27 @@
 
 import Foundation
 import GameKit
+import NetTestFW
 
 protocol GameCenterHelperDelegate: class {
     func didChangeAuthStatus(isAuthenticated: Bool)
     func presentGameCenterAuth(viewController: NSViewController?)
     func presentMatchmaking(viewController: NSViewController?)
     func presentGame(match: GKMatch)
+    
+    // func startGame
+    // - func initLevel
+    // - func initMatch
+    
+    // func turnDirChanged
+    
+    // func endGame
 }
 
 extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
+        print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) ")
         viewController.dismiss(true)
         self.match = match
         delegate?.presentGame(match: match)
@@ -33,6 +43,7 @@ extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
     
     
     func player(_ player: GKPlayer, didAccept invite: GKInvite) {
+        
         let mmc:GKMatchmakerViewController = GKMatchmakerViewController(invite: invite)!
         mmc.matchmakerDelegate = self
         self.viewController?.presentAsSheet(mmc)
@@ -42,21 +53,18 @@ extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
     }
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer]){
-        var tmp = -1
-        tmp /= -1
+        print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer])")
     }
     
     func matchmakerViewControllerWasCancelled(_ viewController: GKMatchmakerViewController) {
+        print(SuakeMsgs.gameConterMsg + "matchmakerViewControllerWasCancelled()")
         viewController.dismiss(true)
     }
 
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error) {
-        print("Matchmaker vc did fail with error: \(error.localizedDescription).")
+        print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error)")
+        print("> Matchmaker vc did fail with error: \(error.localizedDescription).")
     }
-    
-//    override init(game: GameController) {
-//        super.init(game: game)
-//    }
     
     func presentMatchmaker(withInvite invite: GKInvite? = nil) {
         guard GKLocalPlayer.local.isAuthenticated,
@@ -100,7 +108,6 @@ extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
         }
     }
 }
-
 
 class SuakeNetworkData: Codable {
     var playerId:Int = 0

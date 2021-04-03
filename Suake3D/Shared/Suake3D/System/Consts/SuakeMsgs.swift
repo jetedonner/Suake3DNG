@@ -15,4 +15,6 @@ class SuakeMsgs{
     static let gameQuitApp:String = "Game: Quitting Suake3D"
     static let pointAddString:String = "+%d Points"
     
+    static let gameConterMsg:String = "GameCenter: "
+    
 }

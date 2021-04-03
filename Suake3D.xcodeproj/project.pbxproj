@@ -158,6 +158,10 @@
 		55C0370E25FA87EE00F419B8 /* GameViewControllerMacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0370B25FA87EE00F419B8 /* GameViewControllerMacOS.swift */; };
 		55C0370F25FA87EE00F419B8 /* GameViewControllerWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0370C25FA87EE00F419B8 /* GameViewControllerWindowDelegate.swift */; };
 		55C0371425FA884200F419B8 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0371325FA884200F419B8 /* GameController.swift */; };
+		55C122102618E94A001E8E3F /* NetTestFW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C1220F2618E94A001E8E3F /* NetTestFW.framework */; };
+		55C122112618E94A001E8E3F /* NetTestFW.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C1220F2618E94A001E8E3F /* NetTestFW.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55C1221E2618F4CC001E8E3F /* GameCenterOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1221D2618F4CC001E8E3F /* GameCenterOverlay.swift */; };
+		55C122222618F7F7001E8E3F /* GameCenterSkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */; };
 		55C96BEF2613ACFB00BACA73 /* BaseNetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C96BEE2613ACFB00BACA73 /* BaseNetworkData.swift */; };
 		55C96BF42613AD5800BACA73 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C96BF32613AD5800BACA73 /* NetworkHelper.swift */; };
 		55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941225FAC20100728B83 /* SuakeVars.swift */; };
@@ -241,6 +245,20 @@
 			remoteInfo = Suake3D;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55563DB026179F1500E89323 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				55C122112618E94A001E8E3F /* NetTestFW.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		55001F59260C80FB0015B293 /* DroidEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroidEntity.swift; sourceTree = "<group>"; };
@@ -401,6 +419,9 @@
 		55C0370B25FA87EE00F419B8 /* GameViewControllerMacOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewControllerMacOS.swift; sourceTree = "<group>"; };
 		55C0370C25FA87EE00F419B8 /* GameViewControllerWindowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewControllerWindowDelegate.swift; sourceTree = "<group>"; };
 		55C0371325FA884200F419B8 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		55C1220F2618E94A001E8E3F /* NetTestFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetTestFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C1221D2618F4CC001E8E3F /* GameCenterOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterOverlay.swift; sourceTree = "<group>"; };
+		55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterSkScene.swift; sourceTree = "<group>"; };
 		55C96BEE2613ACFB00BACA73 /* BaseNetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkData.swift; sourceTree = "<group>"; };
 		55C96BF32613AD5800BACA73 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		55D8941225FAC20100728B83 /* SuakeVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeVars.swift; sourceTree = "<group>"; };
@@ -474,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55E8DCFF25FD604A0056A0A9 /* GameKit.framework in Frameworks */,
+				55C122102618E94A001E8E3F /* NetTestFW.framework in Frameworks */,
 				5501836F260164BC00F28C54 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -929,6 +951,14 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		55C1221C2618F4AA001E8E3F /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				55C1221D2618F4CC001E8E3F /* GameCenterOverlay.swift */,
+			);
+			path = GameCenter;
+			sourceTree = "<group>";
+		};
 		55C96BEB2613AC5700BACA73 /* Level */ = {
 			isa = PBXGroup;
 			children = (
@@ -1193,11 +1223,13 @@
 		55DB997125FC52CB000023AF /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
+				55C1221C2618F4AA001E8E3F /* GameCenter */,
 				55018349260152FC00F28C54 /* Menu */,
 				55DB997225FC5306000023AF /* Base */,
 				55760E4525FD371400C10784 /* Gameplay */,
 				55DB998125FC57DC000023AF /* FadeViewAfterDeath.swift */,
 				55001F91260CE3E80015B293 /* GameLoadingSkScene.swift */,
+				55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */,
 				55760E6025FD3F4B00C10784 /* OverlayManager.swift */,
 			);
 			path = Overlay;
@@ -1216,6 +1248,7 @@
 		55E8DCFD25FD604A0056A0A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55C1220F2618E94A001E8E3F /* NetTestFW.framework */,
 				5501836E260164BC00F28C54 /* NetworkExtension.framework */,
 				55E8DCFE25FD604A0056A0A9 /* GameKit.framework */,
 			);
@@ -1350,6 +1383,7 @@
 				55C036C025FA80C400F419B8 /* Sources */,
 				55C036C125FA80C400F419B8 /* Frameworks */,
 				55C036C225FA80C400F419B8 /* Resources */,
+				55563DB026179F1500E89323 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1562,6 +1596,7 @@
 				55070492261129D300464F97 /* MatchResultsSkScene.swift in Sources */,
 				5501842C2602CBE600F28C54 /* PanCameraHelper.swift in Sources */,
 				55D894A325FAD3FA00728B83 /* FloorHelper.swift in Sources */,
+				55C1221E2618F4CC001E8E3F /* GameCenterOverlay.swift in Sources */,
 				55E8DD0925FD60BE0056A0A9 /* SuakeGameCenterViewController.swift in Sources */,
 				55D8949925FAD06100728B83 /* LevelManager.swift in Sources */,
 				55D894CE25FADC8E00728B83 /* SuakeBaseNodeEntityWithHealth.swift in Sources */,
@@ -1661,6 +1696,7 @@
 				556CB96A26000359005B7747 /* RotationAnimHelper.swift in Sources */,
 				559B2BD3260E4186005E669C /* SuakeNodeGroupBase.swift in Sources */,
 				550183E92601DF6E00F28C54 /* FloorType.swift in Sources */,
+				55C122222618F7F7001E8E3F /* GameCenterSkScene.swift in Sources */,
 				5513C891260D1C9000633B40 /* DroidStateAttacking.swift in Sources */,
 				553221B02616459C00529E8D /* SkyboxType.swift in Sources */,
 				5501844E2603EB8B00F28C54 /* SuakeSpriteNode.swift in Sources */,
@@ -1783,6 +1819,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				"SYSTEM_FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/dave/Library/Developer/Xcode/DerivedData/NetTestFW-edgukpkfmlptkxeouvdwslpmqumh/Build/Products/Debug";
 			};
 			name = Debug;
 		};

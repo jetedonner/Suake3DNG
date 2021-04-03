@@ -10,6 +10,7 @@ import SceneKit
 //import QuartzCore
 import GameplayKit
 //import MyLibrary
+import NetTestFW
 
 class GameController:BaseGameController{
     
@@ -54,10 +55,13 @@ class GameController:BaseGameController{
     override init(scnView: SCNView) {
         super.init(scnView: scnView)
         
+//        var tmp:NetTestFWClass = NetTestFWClass()
+//        NetTestFWClass.sayHello()
+        var nh:NetTestFW.NetworkHelper = NetTestFW.NetworkHelper()
         self.usrDefHlpr = UserDefaultsHelper(game: self)
 //        DbgVars.loadSharedUserDefaults()
-        //(scnView as! GameViewMacOS).viewController?.registerGameCenterHelper()
-        self.gameCenterHelper = GameCenterHelperNG(game: self)
+        (scnView as! GameViewMacOS).viewController?.registerGameCenterHelper()
+//        self.gameCenterHelper = GameCenterHelperNG(game: self)
 ////        MyLibraryTestClass.sayHello()
 //
         self.stateMachine = SuakeStateMachine(game: self)
