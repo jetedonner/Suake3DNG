@@ -19,7 +19,7 @@ class OverlayManager: SuakeGameClass {
     let matchResults:MatchResultsSkScene
     let mainMenu:MenuSkScene
     
-    let gameCenterOverlay:GameCenterOverlay
+    let gameCenterOverlay:GameCenterSkScene
     
     var allOverlays:[SuakeBaseOverlay]!
     var currentOverlay:SuakeBaseOverlay!
@@ -32,7 +32,7 @@ class OverlayManager: SuakeGameClass {
         self.matchResults = MatchResultsSkScene(game: game)
         self.mainMenu = MenuSkScene(game: game)
         
-        self.gameCenterOverlay = GameCenterOverlay(game: game)
+        self.gameCenterOverlay = GameCenterSkScene(game: game)
         
         super.init(game: game)
         
@@ -77,6 +77,7 @@ class OverlayManager: SuakeGameClass {
     func loadScenes(){
         self.paused.loadScene()
         self.matchOver.loadScene()
+        self.gameCenterOverlay.loadScene()
 //        self.gameLoading.loadScene()
 //        self.matchResult.lo
         self.mainMenu.loadScene()
@@ -94,7 +95,7 @@ class OverlayManager: SuakeGameClass {
     func setOverlaySKScene(overlay:SuakeBaseOverlay){
         self.currentOverlay = overlay
         self.game.scnView.overlaySKScene = overlay.sceneNode
-        overlay.sceneNode.isPaused = false
+//        overlay.sceneNode.isPaused = false
         overlay.showOverlayScene()
 //        overlay.isPaused = false
     }

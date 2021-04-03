@@ -104,6 +104,9 @@ class SuakeKeyboardHandler: KeyboardHandler {
             }else if(pressedKey == .KEY_O){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
                     GameCenterHelper.helper.showAchivementsView()
+                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.option)){
+//                    GameCenterHelper.helper.showAchivementsView()
+                    self.game.overlayManager.showOverlay4GameState(type: .gameCenter)
                 }else{
                     GameCenterHelper.helper.presentMatchmaker()
 //                    self.game.gameCenterHelper.pre
