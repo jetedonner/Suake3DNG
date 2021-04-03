@@ -158,9 +158,7 @@ class MenuSkScene:SuakeBaseOverlay, GameCenterHelperDelegate {
         self.game.matchHelper.match = match
         self.game.matchHelper.match.delegate = self.game.matchHelper
         self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
-        var tmp = -1
-        tmp /= -1
-        
+        self.game.overlayManager.showOverlay4GameState(type: .gameCenter)
     }
     
     func didChangeAuthStatus(isAuthenticated: Bool){

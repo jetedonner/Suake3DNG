@@ -108,6 +108,7 @@ class SuakeKeyboardHandler: KeyboardHandler {
 //                    GameCenterHelper.helper.showAchivementsView()
                     self.game.overlayManager.showOverlay4GameState(type: .gameCenter)
                 }else{
+                    GameCenterHelper.helper.delegate = self.game.overlayManager.mainMenu
                     GameCenterHelper.helper.presentMatchmaker()
 //                    self.game.gameCenterHelper.pre
                 }

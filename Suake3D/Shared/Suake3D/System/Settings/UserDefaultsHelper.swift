@@ -75,7 +75,7 @@ class UserDefaultsHelper:SuakeGameClass{
         self.devMode = self.defaults.bool(forKey: "DevMode")
         self.soundEffects = self.defaults.bool(forKey: "SoundEffects")
         self.loadWeaponPickups = self.defaults.bool(forKey: "LoadWeaponPickups")
-        self.loadOpp = self.defaults.bool(forKey: "LoadOpp")
+        self.loadOpp = true //self.defaults.bool(forKey: "LoadOpp")
         self.testOppAI = self.defaults.bool(forKey: "TestOppAI")
         self.loadDroids = self.defaults.bool(forKey: "LoadDroids")
         self.droidCount = self.defaults.integer(forKey: "DroidsCount")

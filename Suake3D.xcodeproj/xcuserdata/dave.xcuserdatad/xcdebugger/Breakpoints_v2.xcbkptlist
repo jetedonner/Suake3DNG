@@ -2808,7 +2808,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C2C5799E-7F18-4C08-818B-93A7BA96740C"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/Apple/GameCenter/Multiplayer/MatchmakerHelper.swift"
@@ -2824,7 +2824,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A02DC410-21F0-474E-A9E4-B68CB0305BBE"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/Apple/GameCenter/Multiplayer/MatchmakerHelper.swift"
@@ -2834,45 +2834,13 @@
             endingLineNumber = "66"
             landmarkName = "matchmakerViewController(_:didFailWithError:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A02DC410-21F0-474E-A9E4-B68CB0305BBE - cee482847bbe2ec3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "default argument 0 of Suake3D.GameCenterHelper.presentMatchmaker(withInvite: Swift.Optional&lt;__C.GKInvite&gt;) -&gt; ()"
-                  moduleName = "Suake3D"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Data/dev/XCode/Suake3DNG/Suake3D/Suake3D/Shared/Suake3D/Apple/GameCenter/Multiplayer/MatchmakerHelper.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "A02DC410-21F0-474E-A9E4-B68CB0305BBE - 99dcc7dd86ea0a81"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Suake3D.GameCenterHelper.presentMatchmaker(withInvite: Swift.Optional&lt;__C.GKInvite&gt;) -&gt; ()"
-                  moduleName = "Suake3D"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Data/dev/XCode/Suake3DNG/Suake3D/Suake3D/Shared/Suake3D/Apple/GameCenter/Multiplayer/MatchmakerHelper.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "599E4681-D288-4E64-A578-AF474DF9F2B1"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/Apple/GameCenter/Multiplayer/MatchmakerHelper.swift"
@@ -2881,22 +2849,6 @@
             startingLineNumber = "56"
             endingLineNumber = "56"
             landmarkName = "matchmakerViewController(_:didFindHostedPlayers:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FEC5E04C-6966-423D-B121-BF18F7CF625F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Menu/MenuSkScene.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "presentGame(match:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3038,8 +2990,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Menu/MenuSkScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "presentMatchmaking(viewController:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3054,8 +3006,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Menu/MenuSkScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "presentGameCenterAuth(viewController:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3070,8 +3022,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Menu/MenuSkScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "didChangeAuthStatus(isAuthenticated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3080,7 +3032,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9A3850E7-4DA2-46C9-A266-BC9B5C3ABD32"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/Apple/GameCenter/Multiplayer/MatchmakerHelper.swift"
@@ -3096,7 +3048,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "99EF3EA9-75CB-454B-B699-9393B2A8D1EB"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/Apple/GameCenter/Multiplayer/MatchmakerHelper.swift"
