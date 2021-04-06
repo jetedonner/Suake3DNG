@@ -130,10 +130,6 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     
     func loadNetworkMatch(levelConfigNet:LoadLevelNetworkData){
         self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
-//        self.levelManager.currentLevel.levelConfigEnv.levelSize = levelConfig.levelConfig.levelEnv.levelSize
-//        self.levelManager.currentLevel.levelConfigEnv.skyBoxHelper.setSkybox(type: levelConfig.levelConfig.levelEnv.skyBoxType)
-//        self.levelManager.currentLevel.levelConfigEnv.duration = levelConfig.levelConfig.levelEnv.matchDuration
-//        self.levelManager.currentLevel.levelConfigEnv.floorHelper.setFloor(type: levelConfig.levelConfig.levelEnv.floorType)
     }
     
     func loadGameScence(initialLoad:Bool = true){

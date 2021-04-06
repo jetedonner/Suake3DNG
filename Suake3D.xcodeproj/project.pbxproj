@@ -55,7 +55,6 @@
 		550184532603F3CF00F28C54 /* PosHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550184522603F3CF00F28C54 /* PosHelper.swift */; };
 		550184592604140100F28C54 /* MapOverlayZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550184582604140100F28C54 /* MapOverlayZoom.swift */; };
 		5501845E2604159300F28C54 /* MouseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501845D2604159300F28C54 /* MouseHelper.swift */; };
-		5501846926051B7400F28C54 /* LightTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501846826051B7400F28C54 /* LightTypes.swift */; };
 		5501847226052D2D00F28C54 /* ArrowCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501847026052D2D00F28C54 /* ArrowCtrl.swift */; };
 		5501847326052D2D00F28C54 /* ArrowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501847126052D2D00F28C54 /* ArrowManager.swift */; };
 		5501847826052E2400F28C54 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501847726052E2400F28C54 /* Double.swift */; };
@@ -158,6 +157,7 @@
 		55C12258261CF1A9001E8E3F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12257261CF1A9001E8E3F /* Date.swift */; };
 		55C1225C261CF2CE001E8E3F /* MatchMakerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1225B261CF2CE001E8E3F /* MatchMakerHelper.swift */; };
 		55C12261261CF7F0001E8E3F /* MultiplayerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12260261CF7F0001E8E3F /* MultiplayerLevel.swift */; };
+		55C12267261CFCB6001E8E3F /* LightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12266261CFCB6001E8E3F /* LightManager.swift */; };
 		55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941225FAC20100728B83 /* SuakeVars.swift */; };
 		55D8941A25FAC2E600728B83 /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941925FAC2E600728B83 /* PhysicsHelper.swift */; };
 		55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8945025FAC8CD00728B83 /* CameraHelper.swift */; };
@@ -166,7 +166,6 @@
 		55D8946025FACAED00728B83 /* GameControllerLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8945F25FACAED00728B83 /* GameControllerLog.swift */; };
 		55D8946625FACB3000728B83 /* DebugHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8946525FACB3000728B83 /* DebugHelper.swift */; };
 		55D8947825FACCBC00728B83 /* LevelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8947525FACCBC00728B83 /* LevelType.swift */; };
-		55D8947925FACCBC00728B83 /* LevelDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8947625FACCBC00728B83 /* LevelDifficulty.swift */; };
 		55D8947E25FACCD600728B83 /* SuakeBaseLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8947D25FACCD600728B83 /* SuakeBaseLevel.swift */; };
 		55D8948325FACCEF00728B83 /* LevelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8948225FACCEF00728B83 /* LevelConfiguration.swift */; };
 		55D8948A25FACD7100728B83 /* DebugLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8948925FACD7100728B83 /* DebugLevel.swift */; };
@@ -298,7 +297,6 @@
 		550184522603F3CF00F28C54 /* PosHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosHelper.swift; sourceTree = "<group>"; };
 		550184582604140100F28C54 /* MapOverlayZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverlayZoom.swift; sourceTree = "<group>"; };
 		5501845D2604159300F28C54 /* MouseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseHelper.swift; sourceTree = "<group>"; };
-		5501846826051B7400F28C54 /* LightTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTypes.swift; sourceTree = "<group>"; };
 		5501847026052D2D00F28C54 /* ArrowCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowCtrl.swift; sourceTree = "<group>"; };
 		5501847126052D2D00F28C54 /* ArrowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowManager.swift; sourceTree = "<group>"; };
 		5501847726052E2400F28C54 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -407,6 +405,7 @@
 		55C12257261CF1A9001E8E3F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		55C1225B261CF2CE001E8E3F /* MatchMakerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakerHelper.swift; sourceTree = "<group>"; };
 		55C12260261CF7F0001E8E3F /* MultiplayerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerLevel.swift; sourceTree = "<group>"; };
+		55C12266261CFCB6001E8E3F /* LightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightManager.swift; sourceTree = "<group>"; };
 		55D8941225FAC20100728B83 /* SuakeVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeVars.swift; sourceTree = "<group>"; };
 		55D8941925FAC2E600728B83 /* PhysicsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 		55D8945025FAC8CD00728B83 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
@@ -415,7 +414,6 @@
 		55D8945F25FACAED00728B83 /* GameControllerLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControllerLog.swift; sourceTree = "<group>"; };
 		55D8946525FACB3000728B83 /* DebugHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugHelper.swift; sourceTree = "<group>"; };
 		55D8947525FACCBC00728B83 /* LevelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelType.swift; path = Suake3D/Shared/Suake3D/GameElements/GameStructure/Level/Base/Enum/LevelType.swift; sourceTree = SOURCE_ROOT; };
-		55D8947625FACCBC00728B83 /* LevelDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelDifficulty.swift; path = Suake3D/Shared/Suake3D/GameElements/GameStructure/Level/Base/Enum/LevelDifficulty.swift; sourceTree = SOURCE_ROOT; };
 		55D8947D25FACCD600728B83 /* SuakeBaseLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuakeBaseLevel.swift; path = Suake3D/Shared/Suake3D/GameElements/GameStructure/Level2/Base/SuakeBaseLevel.swift; sourceTree = SOURCE_ROOT; };
 		55D8948225FACCEF00728B83 /* LevelConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelConfiguration.swift; sourceTree = "<group>"; };
 		55D8948925FACD7100728B83 /* DebugLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLevel.swift; sourceTree = "<group>"; };
@@ -572,8 +570,6 @@
 		550183D92601DF0B00F28C54 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				5501846826051B7400F28C54 /* LightTypes.swift */,
-				55D8947625FACCBC00728B83 /* LevelDifficulty.swift */,
 				550183ED2601DF8300F28C54 /* LevelGoal.swift */,
 				550183F22601DFAC00F28C54 /* LevelID.swift */,
 				55D8947525FACCBC00728B83 /* LevelType.swift */,
@@ -1006,6 +1002,7 @@
 				55D8948E25FACE4100728B83 /* LevelConfigurationEnvironment.swift */,
 				55D8949325FACF3800728B83 /* SkyBoxHelper.swift */,
 				55D894A225FAD3FA00728B83 /* FloorHelper.swift */,
+				55C12266261CFCB6001E8E3F /* LightManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1475,7 +1472,6 @@
 				55DB992B25FC0BD2000023AF /* SuakeBaseComponent.swift in Sources */,
 				55001F5F260C813D0015B293 /* DroidComponent.swift in Sources */,
 				556CB91525FE8618005B7747 /* SuakeDirTurnDirHelper.swift in Sources */,
-				5501846926051B7400F28C54 /* LightTypes.swift in Sources */,
 				5501844D2603EB8B00F28C54 /* SuakeSpriteNodeMultiTextures.swift in Sources */,
 				5513C89B260D244B00633B40 /* DroidState.swift in Sources */,
 				55DB997825FC5318000023AF /* SuakeBaseOverlay.swift in Sources */,
@@ -1510,7 +1506,6 @@
 				5501838326016F1300F28C54 /* BaseWeaponComponent.swift in Sources */,
 				55C1225C261CF2CE001E8E3F /* MatchMakerHelper.swift in Sources */,
 				556CB94E25FFF001005B7747 /* GameBoardExt.swift in Sources */,
-				55D8947925FACCBC00728B83 /* LevelDifficulty.swift in Sources */,
 				5501847226052D2D00F28C54 /* ArrowCtrl.swift in Sources */,
 				556CB92A25FFD603005B7747 /* RespawnPointComponent.swift in Sources */,
 				556CA65C260D3CF900F78263 /* SuakeBaseExplodingPlayerEntity.swift in Sources */,
@@ -1560,6 +1555,7 @@
 				550184022602A54600F28C54 /* CrosshairEntity.swift in Sources */,
 				5513C871260D169600633B40 /* DroidStateMachine.swift in Sources */,
 				5501841D2602A65D00F28C54 /* NSBezierPath.swift in Sources */,
+				55C12267261CFCB6001E8E3F /* LightManager.swift in Sources */,
 				55070491261129D300464F97 /* MatchResultView.swift in Sources */,
 				55DB993825FC0EAF000023AF /* SuakePlayerManager.swift in Sources */,
 				55D894DA25FADCC800728B83 /* SuakeFields.swift in Sources */,
