@@ -19,6 +19,7 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
         print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) ")
         
+        viewController.dismiss(true)
         self.delegate?.startMatch(match: match)
         self.sendDataNG(match: match)
     }
