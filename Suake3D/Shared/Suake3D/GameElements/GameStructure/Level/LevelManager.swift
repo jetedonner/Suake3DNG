@@ -9,6 +9,7 @@
 import Foundation
 import GameplayKit
 import SceneKit
+import NetTestFW
 
 class LevelManager: SuakeGameClass {
     
@@ -78,6 +79,16 @@ class LevelManager: SuakeGameClass {
         if(initialLoad){
             self.wallManager.loadWall(initialLoad: initialLoad)
         }
+    }
+    
+    func loadNetworkMatch(levelConfigNet:LoadLevelNetworkData){
+        let multiplayerLevel:MultiplayerLevel = MultiplayerLevel(game: self.game, levelConfigNet: levelConfigNet)
+        self.currentLevel = multiplayerLevel
+        self.loadLevel()
+//        self.levelConfigEnv.levelSize = levelConfig.levelConfig.levelEnv.levelSize
+//        self.levelConfigEnv.skyBoxHelper.setSkybox(type: levelConfig.levelConfig.levelEnv.skyBoxType)
+//        self.levelConfigEnv.duration = levelConfig.levelConfig.levelEnv.matchDuration
+//        self.levelConfigEnv.floorHelper.setFloor(type: levelConfig.levelConfig.levelEnv.floorType)
     }
 //
 //    func loadRandomLevelEnvironment(){

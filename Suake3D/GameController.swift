@@ -38,7 +38,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var gameCenterHelper:GameCenterHelper!
     
 //    var networkHelper:NetworkHelper!
-    var networkHelper:NetTestFW.NetworkHelper!
+//    var networkHelper:NetTestFW.NetworkHelper!
 //    var settings:SuakeSettings!
 ////    var wormHoleHelper:WormHoleHelper!
     ///
@@ -50,15 +50,9 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     
     override init(scnView: SCNView) {
         super.init(scnView: scnView)
-        
-//        var nh:NetTestFW.NetworkHelper = NetTestFW.NetworkHelper()
+
         self.usrDefHlpr = UserDefaultsHelper(game: self)
-//        DbgVars.loadSharedUserDefaults()
         self.gameCenterHelper = GameCenterHelper(game: self)
-//        self.gameCenterHelper.viewController = (scnView as! GameViewMacOS).viewController
-//        (scnView as! GameViewMacOS).viewController?.registerGameCenterHelper()
-        
-////        MyLibraryTestClass.sayHello()
 //
         self.stateMachine = SuakeStateMachine(game: self)
         self.keyboardHandler = SuakeKeyboardHandler(game: self)
@@ -66,7 +60,6 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.panCameraHelper = PanCameraHelper(game: self)
         self.dbgHelper = DebugHelper(game: self)
         self.soundManager = SoundManager(game: self)
-//        self.audioManager = AudioManager(game: self)
 //
         self.locationEntityManager = LocationEntityManager(game: self)
 //
@@ -82,7 +75,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
 //        self.matchHelper = SuakeMatchHelper(game: self)
         
 //        self.networkHelper = NetworkHelper(game: self)
-        self.networkHelper = NetTestFW.NetworkHelper()
+//        self.networkHelper = NetTestFW.NetworkHelper()
         
         self.usrDefHlpr.resetUserDefaults2Game()
 //
@@ -135,8 +128,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
 //        self.tryEncDec()
     }
     
-    func loadNetworkMatch(levelConfig:LoadLevelNetworkData){
-        self.levelManager.currentLevel.loadNetworkMatch(levelConfig: levelConfig)
+    func loadNetworkMatch(levelConfigNet:LoadLevelNetworkData){
+        self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
 //        self.levelManager.currentLevel.levelConfigEnv.levelSize = levelConfig.levelConfig.levelEnv.levelSize
 //        self.levelManager.currentLevel.levelConfigEnv.skyBoxHelper.setSkybox(type: levelConfig.levelConfig.levelEnv.skyBoxType)
 //        self.levelManager.currentLevel.levelConfigEnv.duration = levelConfig.levelConfig.levelEnv.matchDuration

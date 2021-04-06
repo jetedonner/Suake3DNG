@@ -31,7 +31,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         print(newObj.msgType)
         if(newObj.msgType == .initLevelMsg){
             self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 10, msg: "Loading level for match ...")
-            self.game.loadNetworkMatch(levelConfig: newObj as! LoadLevelNetworkData)
+            self.game.loadNetworkMatch(levelConfigNet: newObj as! LoadLevelNetworkData)
         }
     }
     
@@ -44,4 +44,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         print(newObj.msgType)
     }
     
+    func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
+        print(SuakeMsgs.gameConterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
+    }
 }

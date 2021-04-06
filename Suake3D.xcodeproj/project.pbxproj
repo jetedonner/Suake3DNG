@@ -157,6 +157,7 @@
 		55C12254261CEA21001E8E3F /* GameCenterHelperExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12253261CEA21001E8E3F /* GameCenterHelperExt.swift */; };
 		55C12258261CF1A9001E8E3F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12257261CF1A9001E8E3F /* Date.swift */; };
 		55C1225C261CF2CE001E8E3F /* MatchMakerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1225B261CF2CE001E8E3F /* MatchMakerHelper.swift */; };
+		55C12261261CF7F0001E8E3F /* MultiplayerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12260261CF7F0001E8E3F /* MultiplayerLevel.swift */; };
 		55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941225FAC20100728B83 /* SuakeVars.swift */; };
 		55D8941A25FAC2E600728B83 /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941925FAC2E600728B83 /* PhysicsHelper.swift */; };
 		55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8945025FAC8CD00728B83 /* CameraHelper.swift */; };
@@ -405,6 +406,7 @@
 		55C12253261CEA21001E8E3F /* GameCenterHelperExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterHelperExt.swift; sourceTree = "<group>"; };
 		55C12257261CF1A9001E8E3F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		55C1225B261CF2CE001E8E3F /* MatchMakerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakerHelper.swift; sourceTree = "<group>"; };
+		55C12260261CF7F0001E8E3F /* MultiplayerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerLevel.swift; sourceTree = "<group>"; };
 		55D8941225FAC20100728B83 /* SuakeVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeVars.swift; sourceTree = "<group>"; };
 		55D8941925FAC2E600728B83 /* PhysicsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 		55D8945025FAC8CD00728B83 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
@@ -904,6 +906,14 @@
 			path = GameCenter;
 			sourceTree = "<group>";
 		};
+		55C1225F261CF7DC001E8E3F /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				55C12260261CF7F0001E8E3F /* MultiplayerLevel.swift */,
+			);
+			path = Multiplayer;
+			sourceTree = "<group>";
+		};
 		55C96BEB2613AC5700BACA73 /* Level */ = {
 			isa = PBXGroup;
 			children = (
@@ -977,6 +987,7 @@
 		55D8947225FACC9B00728B83 /* Level */ = {
 			isa = PBXGroup;
 			children = (
+				55C1225F261CF7DC001E8E3F /* Multiplayer */,
 				55D8949825FAD06100728B83 /* LevelManager.swift */,
 				55D8947325FACCA400728B83 /* Base */,
 				55D8948725FACD4300728B83 /* Debug */,
@@ -1592,6 +1603,7 @@
 				55DB995925FC4989000023AF /* SuakeStatePlaying.swift in Sources */,
 				556CB95F25FFFFA8005B7747 /* GoodyEntity.swift in Sources */,
 				5501838926016FB400F28C54 /* MachinegunComponent.swift in Sources */,
+				55C12261261CF7F0001E8E3F /* MultiplayerLevel.swift in Sources */,
 				55760E4F25FD391F00C10784 /* HUDOverlayEntity.swift in Sources */,
 				550183FB26029EFD00F28C54 /* SuakeStateRespawn.swift in Sources */,
 				559B2BD4260E4186005E669C /* SuakeNodeGroupItemBase.swift in Sources */,
