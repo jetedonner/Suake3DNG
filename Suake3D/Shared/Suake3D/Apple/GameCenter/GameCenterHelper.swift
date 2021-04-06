@@ -8,6 +8,23 @@
 import Foundation
 import GameKit
 
+protocol GameCenterHelperDelegate: class {
+    
+//    func didChangeAuthStatus(isAuthenticated: Bool)
+    func startMatch(match: GKMatch)
+//    func presentGameCenterAuth(viewController: NSViewController?)
+//    func presentMatchmaking(viewController: NSViewController?)
+//    func presentGame(match: GKMatch)
+    
+    // func startGame
+    // - func initLevel
+    // - func initMatch
+    
+    // func turnDirChanged
+    
+    // func endGame
+}
+
 class GameCenterHelper: SuakeGameClass {
     
 //    static let helper = GameCenterHelper()
@@ -18,10 +35,17 @@ class GameCenterHelper: SuakeGameClass {
     var currentVC: GKMatchmakerViewController?
     
     var viewController: NSViewController?
+    var delegate:GameCenterHelperDelegate?
+    
+    var matchMakerHelper:MatchMakerHelper?
     
     override init(game:GameController) {
         super.init(game: game)
+        
         self.viewController = (self.game.scnView as! GameViewMacOS).viewController
+        self.delegate = game
+        self.matchMakerHelper = MatchMakerHelper(game: game)
+        
         if(SuakeVars.useGameCenter){
             self.authenticate()
         }

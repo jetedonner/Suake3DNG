@@ -11,8 +11,9 @@ import SceneKit
 import GameplayKit
 //import MyLibrary
 import NetTestFW
+import GameKit
 
-class GameController:BaseGameController{
+class GameController:BaseGameController, GameCenterHelperDelegate{
     
     var isLoading:Bool = false
     
@@ -41,6 +42,11 @@ class GameController:BaseGameController{
 //    var settings:SuakeSettings!
 ////    var wormHoleHelper:WormHoleHelper!
     ///
+    
+    func startMatch(match: GKMatch) {
+        match.delegate = self.gameCenterHelper.matchMakerHelper
+    }
+    
     override init(scnView: SCNView) {
         super.init(scnView: scnView)
         

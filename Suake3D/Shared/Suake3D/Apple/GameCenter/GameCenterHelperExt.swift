@@ -7,6 +7,7 @@
 
 import Foundation
 import GameKit
+import NetTestFW
 
 extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDelegate {
     
@@ -18,9 +19,8 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
         print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) ")
         
-//        delegate?.presentGame(match: match)
-        viewController.dismiss(true)
-//        self.sendDataNG(match: match)
+        self.delegate?.startMatch(match: match)
+        self.sendDataNG(match: match)
     }
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer]){
@@ -55,6 +55,20 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
       self.viewController?.presentAsSheet(vc!)
     }
     
+    private func sendDataNG(match:GKMatch) {
+//        guard let match = match else { return }
+        
+        do {
+            guard let dataLoadLevel = NetTestFW.NetworkHelper.encodeAndSend(netData: NetTestFW.LoadLevelNetworkData(id: 1)) else {
+                return
+            }
+            print(dataLoadLevel.prettyPrintedJSONString!)
+//            guard let data = gameModel.encode() else { return }
+            try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+        } catch {
+            print("Send data failed")
+        }
+    }
 //    func presentMatchmaker(withInvite invite: GKInvite? = nil) {
 //        guard GKLocalPlayer.local.isAuthenticated,
 //              let vc = createMatchmaker(withInvite: invite) else {
