@@ -49,6 +49,7 @@ class LevelManager: SuakeGameClass {
     func loadLevel(initialLoad:Bool = true){
         self.gameBoard.initGameBoard()
         self.currentLevel.loadLevel()
+        self.lightManager.setAmbientLight(intensity: self.currentLevel.levelConfigEnv.lightIntensity)
         if(initialLoad){
             self.wallManager.loadWall(initialLoad: initialLoad)
         }
@@ -58,6 +59,7 @@ class LevelManager: SuakeGameClass {
         let multiplayerLevel:MultiplayerLevel = MultiplayerLevel(game: self.game, levelConfigNet: levelConfigNet)
         self.currentLevel = multiplayerLevel
         self.loadLevel(initialLoad: true)
+        
     }
 }
 
