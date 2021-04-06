@@ -44,7 +44,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     ///
     
     func startMatch(match: GKMatch) {
-        match.delegate = self.gameCenterHelper.matchMakerHelper
+        self.gameCenterHelper.matchMakerHelper?.setMatch(match: match)
+//        match.delegate = self.gameCenterHelper.matchMakerHelper
     }
     
     override init(scnView: SCNView) {
