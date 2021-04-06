@@ -59,6 +59,7 @@ class SuakeMatchHelper:SuakeGameClass, GKMatchDelegate{
         if(self.match != match){
             return
         }
+        print(data.prettyPrintedJSONString)
         let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
         print(newObj)
     }
@@ -67,6 +68,7 @@ class SuakeMatchHelper:SuakeGameClass, GKMatchDelegate{
         if(self.match != match){
             return
         }
+        print(data.prettyPrintedJSONString)
         let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
         print(newObj)
     }

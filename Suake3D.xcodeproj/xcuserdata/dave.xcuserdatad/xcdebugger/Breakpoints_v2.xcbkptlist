@@ -466,6 +466,38 @@
             endingLineNumber = "181"
             landmarkName = "fetchLeaderboard(finished:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "668B88A4-F9EF-49BA-A60C-D380EFC5258B - 35a15d0770d7455b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Suake3D.GameCenterHelper.(fetchLeaderboard in _59B4D4765AE05C584A3846E17285E2C2)(finished: () -&gt; ()) -&gt; ()"
+                  moduleName = "Suake3D"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/dev/XCode/Suake3DNG/Suake3D/Suake3D/Shared/Suake3D/Apple/GameCenter/GameCenterHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "668B88A4-F9EF-49BA-A60C-D380EFC5258B - b6b53d5373d3ba78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.GKLeaderboard&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Suake3D.GameCenterHelper.(fetchLeaderboard in _59B4D4765AE05C584A3846E17285E2C2)(finished: () -&gt; ()) -&gt; ()"
+                  moduleName = "Suake3D"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Data/dev/XCode/Suake3DNG/Suake3D/Suake3D/Shared/Suake3D/Apple/GameCenter/GameCenterHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3032,7 +3064,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B70D51ED-2DFD-43C7-A0E8-E469A68AB373"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/Apple/GameCenter/Multiplayer/MatchmakerHelper.swift"
