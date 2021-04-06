@@ -15,9 +15,11 @@ class MultiplayerLevel: SuakeBaseLevel{
         
         let levelConfigEnv:LevelConfigurationEnvironment = LevelConfigurationEnvironment(game: game)
         levelConfigEnv.levelSize = levelConfigNet.levelConfig.levelEnv.levelSize
-        levelConfigEnv.skyBoxHelper.setSkybox(type: levelConfigNet.levelConfig.levelEnv.skyBoxType)
+        levelConfigEnv.skyBoxHelper.skyboxType = levelConfigNet.levelConfig.levelEnv.skyBoxType
+//        levelConfigEnv.skyBoxHelper.setSkybox(type: levelConfigNet.levelConfig.levelEnv.skyBoxType)
         levelConfigEnv.duration = levelConfigNet.levelConfig.levelEnv.matchDuration
-        levelConfigEnv.floorHelper.setFloor(type: levelConfigNet.levelConfig.levelEnv.floorType)
+        levelConfigEnv.floorHelper.floorType = levelConfigNet.levelConfig.levelEnv.floorType
+//        levelConfigEnv.floorHelper.setFloor(type: levelConfigNet.levelConfig.levelEnv.floorType)
         super.init(game: game, levelConfig: levelConfig, levelConfigEnv: levelConfigEnv)
     }
 }

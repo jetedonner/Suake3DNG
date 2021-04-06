@@ -84,7 +84,7 @@ class LevelManager: SuakeGameClass {
     func loadNetworkMatch(levelConfigNet:LoadLevelNetworkData){
         let multiplayerLevel:MultiplayerLevel = MultiplayerLevel(game: self.game, levelConfigNet: levelConfigNet)
         self.currentLevel = multiplayerLevel
-        self.loadLevel()
+        self.loadLevel(initialLoad: true)
 //        self.levelConfigEnv.levelSize = levelConfig.levelConfig.levelEnv.levelSize
 //        self.levelConfigEnv.skyBoxHelper.setSkybox(type: levelConfig.levelConfig.levelEnv.skyBoxType)
 //        self.levelConfigEnv.duration = levelConfig.levelConfig.levelEnv.matchDuration

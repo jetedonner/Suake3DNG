@@ -11,7 +11,7 @@ import NetTestFW
 
 class SkyBoxHelper: SuakeGameClass {
     
-    let skyboxType:SkyboxType
+    var skyboxType:SkyboxType
     
     init(game: GameController, skyboxType:SkyboxType) {
         self.skyboxType = skyboxType

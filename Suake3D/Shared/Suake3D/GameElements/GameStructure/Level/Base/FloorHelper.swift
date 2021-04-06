@@ -11,7 +11,7 @@ import NetTestFW
 
 class FloorHelper: SuakeGameClass {
     
-    let floorType:FloorType
+    var floorType:FloorType
     
     init(game: GameController, floorType:FloorType) {
         self.floorType = floorType
