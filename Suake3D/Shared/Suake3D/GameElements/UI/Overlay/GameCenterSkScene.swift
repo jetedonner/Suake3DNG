@@ -159,6 +159,11 @@ class GameCenterSkScene : SuakeBaseOverlay {
         self.completitionHandler = block
     }
     
+    override func showOverlayScene(){
+        super.showOverlayScene()
+        self.initProgressLoop()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -23,12 +23,13 @@ class SuakeKeyboardHandler: KeyboardHandler {
         super.keyPressedEvent(event: event)
         
         if(self.game.matchHelper.match != nil){
-            var gameData = GameData()
-            var gameDataExt = GameDataExt()
-            gameDataExt.typeValue = 123
-            gameData.ext = gameDataExt.encode()
-            gameData.keyPress = Int(event.keyCode)
-            self.game.matchHelper.sendGameData(gameData: gameData)
+            
+//            var gameData = GameData()
+//            var gameDataExt = GameDataExt()
+//            gameDataExt.typeValue = 123
+//            gameData.ext = gameDataExt.encode()
+//            gameData.keyPress = Int(event.keyCode)
+//            self.game.matchHelper.sendGameData(gameData: gameData)
             return
         }
         

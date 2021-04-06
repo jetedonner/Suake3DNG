@@ -28,11 +28,16 @@ extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
         print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) ")
-        viewController.dismiss(true)
+        
         self.match = match
         delegate?.presentGame(match: match)
+        viewController.dismiss(true)
         self.sendDataNG()
 //        self.sendData()
+    }
+    
+    func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
+        print(SuakeMsgs.gameConterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
     }
     
     func match(theMatch: GKMatch!, didReceiveData data: NSData!, fromPlayer playerID: String!) {

@@ -186,6 +186,8 @@ class MenuSkScene:SuakeBaseOverlay, GameCenterHelperDelegate {
                 self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
             }else if(node == self.lblMultiPlayer){
                 
+                GameCenterHelper.helper.delegate = self
+                GameCenterHelper.helper.presentMatchmaker()
 //                GameCenterHelper.helper.delegate = self
 //                GameCenterHelper.helper.presentMatchmaker()
 //                self.game.gameCenterHelper.delegate = self
