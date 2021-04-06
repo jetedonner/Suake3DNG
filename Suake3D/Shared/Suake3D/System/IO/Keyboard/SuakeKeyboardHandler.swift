@@ -22,17 +22,17 @@ class SuakeKeyboardHandler: KeyboardHandler {
     override func keyPressedEvent(event: NSEvent) {
         super.keyPressedEvent(event: event)
         
-        if(self.game.matchHelper.match != nil){
-            if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-//            var gameData = GameData()
-//            var gameDataExt = GameDataExt()
-//            gameDataExt.typeValue = 123
-//            gameData.ext = gameDataExt.encode()
-//            gameData.keyPress = Int(event.keyCode)
-//            self.game.matchHelper.sendGameData(gameData: gameData)
-                return
-            }
-        }
+//        if(self.game.matchHelper.match != nil){
+//            if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+////            var gameData = GameData()
+////            var gameDataExt = GameDataExt()
+////            gameDataExt.typeValue = 123
+////            gameData.ext = gameDataExt.encode()
+////            gameData.keyPress = Int(event.keyCode)
+////            self.game.matchHelper.sendGameData(gameData: gameData)
+//                return
+//            }
+//        }
         
         if let pressedKey = KeyboardDirection(rawValue: event.keyCode) {
             
@@ -105,13 +105,14 @@ class SuakeKeyboardHandler: KeyboardHandler {
 //                self.game.locationEntityManager.addLocationToScene(pos: SCNVector3(-5, 0, 5))
             }else if(pressedKey == .KEY_O){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-                    GameCenterHelper.helper.showAchivementsView()
+//                    GameCenterHelper.helper.showAchivementsView()
                 }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.option)){
 //                    GameCenterHelper.helper.showAchivementsView()
                     self.game.overlayManager.showOverlay4GameState(type: .gameCenter)
                 }else{
-                    GameCenterHelper.helper.delegate = self.game.overlayManager.mainMenu
-                    GameCenterHelper.helper.presentMatchmaker()
+                    self.game.gameCenterHelper.presentMatchmaker()
+//                    GameCenterHelper.helper.delegate = self.game.overlayManager.mainMenu
+//                    GameCenterHelper.helper.presentMatchmaker()
 //                    self.game.gameCenterHelper.pre
                 }
             }else if(pressedKey == .KEY_P){

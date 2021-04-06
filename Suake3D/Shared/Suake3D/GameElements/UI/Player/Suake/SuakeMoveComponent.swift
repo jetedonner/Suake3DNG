@@ -169,7 +169,7 @@ class SuakeMoveComponent: SuakeBaseComponent {
         }else{
             if(nextMoveResult.contains(.goody)){
                 print("GOODY HIT by OWN")
-                GameCenterHelper.achievements.add2GoodiesAchivement()
+//                GameCenterHelper.achievements.add2GoodiesAchivement()
                 self.game.playerEntityManager.goodyEntity.goodyHit(playerEntity: self.playerEntity)
             }else if(nextMoveResult.contains(.mgPickup)){
                 print("MGPICKUP HIT by OWN")

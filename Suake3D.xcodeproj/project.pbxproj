@@ -12,8 +12,6 @@
 		55001F6C260CB4F70015B293 /* PlayerExplodingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55001F6B260CB4F70015B293 /* PlayerExplodingComponent.swift */; };
 		55001F71260CB53D0015B293 /* ExplodingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55001F70260CB53D0015B293 /* ExplodingComponent.swift */; };
 		55001F76260CB5930015B293 /* DroidExplodingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55001F75260CB5930015B293 /* DroidExplodingComponent.swift */; };
-		55001F7B260CCD520015B293 /* SuakeMatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55001F7A260CCD520015B293 /* SuakeMatchHelper.swift */; };
-		55001F80260CDADA0015B293 /* GCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55001F7F260CDADA0015B293 /* GCHelper.swift */; };
 		55001F85260CDEB60015B293 /* SuakeBaseMultiAnimatedSCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55001F84260CDEB60015B293 /* SuakeBaseMultiAnimatedSCNNode.swift */; };
 		55001F8D260CE2FC0015B293 /* GridGraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55001F8C260CE2FC0015B293 /* GridGraphManager.swift */; };
 		55001F92260CE3E80015B293 /* GameLoadingSkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55001F91260CE3E80015B293 /* GameLoadingSkScene.swift */; };
@@ -27,7 +25,6 @@
 		5501834D2601531300F28C54 /* MenuCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501834B2601531300F28C54 /* MenuCursor.swift */; };
 		55018352260154A000F28C54 /* SuakeStateMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55018351260154A000F28C54 /* SuakeStateMainMenu.swift */; };
 		5501836026015B7C00F28C54 /* MouseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501835F26015B7C00F28C54 /* MouseProtocol.swift */; };
-		550183662601624C00F28C54 /* MatchmakerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550183652601624C00F28C54 /* MatchmakerHelper.swift */; };
 		5501836F260164BC00F28C54 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5501836E260164BC00F28C54 /* NetworkExtension.framework */; };
 		5501837626016E7900F28C54 /* WeaponArsenalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501837526016E7900F28C54 /* WeaponArsenalManager.swift */; };
 		5501837E26016EFE00F28C54 /* WeaponType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501837D26016EFE00F28C54 /* WeaponType.swift */; };
@@ -72,7 +69,6 @@
 		55070491261129D300464F97 /* MatchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507048E261129D300464F97 /* MatchResultView.swift */; };
 		55070492261129D300464F97 /* MatchResultsSkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507048F261129D300464F97 /* MatchResultsSkScene.swift */; };
 		550704A9261229B600464F97 /* IconResources-Credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 550704A8261229B600464F97 /* IconResources-Credits.txt */; };
-		550704AF26122A7A00464F97 /* SuakeAchievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550704AE26122A7A00464F97 /* SuakeAchievement.swift */; };
 		5513C871260D169600633B40 /* DroidStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C870260D169600633B40 /* DroidStateMachine.swift */; };
 		5513C876260D170B00633B40 /* DroidStatePatroling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C875260D170B00633B40 /* DroidStatePatroling.swift */; };
 		5513C87B260D17CF00633B40 /* DroidStateChasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C87A260D17CF00633B40 /* DroidStateChasing.swift */; };
@@ -122,8 +118,6 @@
 		556CB95F25FFFFA8005B7747 /* GoodyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CB95E25FFFFA8005B7747 /* GoodyEntity.swift */; };
 		556CB96425FFFFFA005B7747 /* GoodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CB96325FFFFFA005B7747 /* GoodyComponent.swift */; };
 		556CB96A26000359005B7747 /* RotationAnimHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CB96926000359005B7747 /* RotationAnimHelper.swift */; };
-		5571947B2612302A00D4550B /* GameCenterHelperNG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571947A2612302A00D4550B /* GameCenterHelperNG.swift */; };
-		557194832612331900D4550B /* SuakeAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557194822612331900D4550B /* SuakeAchievements.swift */; };
 		55760E3225FD2C0400C10784 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55760E3125FD2C0400C10784 /* SoundManager.swift */; };
 		55760E3725FD2C3800C10784 /* SoundType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55760E3625FD2C3800C10784 /* SoundType.swift */; };
 		55760E3C25FD2C7C00C10784 /* GSAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55760E3B25FD2C7C00C10784 /* GSAudio.swift */; };
@@ -159,6 +153,8 @@
 		55C122112618E94A001E8E3F /* NetTestFW.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C1220F2618E94A001E8E3F /* NetTestFW.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55C1221E2618F4CC001E8E3F /* GameCenterOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1221D2618F4CC001E8E3F /* GameCenterOverlay.swift */; };
 		55C122222618F7F7001E8E3F /* GameCenterSkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */; };
+		55C12250261CE9A1001E8E3F /* GameCenterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1224F261CE9A1001E8E3F /* GameCenterHelper.swift */; };
+		55C12254261CEA21001E8E3F /* GameCenterHelperExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12253261CEA21001E8E3F /* GameCenterHelperExt.swift */; };
 		55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941225FAC20100728B83 /* SuakeVars.swift */; };
 		55D8941A25FAC2E600728B83 /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941925FAC2E600728B83 /* PhysicsHelper.swift */; };
 		55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8945025FAC8CD00728B83 /* CameraHelper.swift */; };
@@ -212,9 +208,6 @@
 		55DB998225FC57DC000023AF /* FadeViewAfterDeath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB998125FC57DC000023AF /* FadeViewAfterDeath.swift */; };
 		55DB998725FC5AC1000023AF /* SuakeStateDied.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB998625FC5AC1000023AF /* SuakeStateDied.swift */; };
 		55E8DCFF25FD604A0056A0A9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E8DCFE25FD604A0056A0A9 /* GameKit.framework */; };
-		55E8DD0725FD60BE0056A0A9 /* GameCenterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E8DD0425FD60BE0056A0A9 /* GameCenterHelper.swift */; };
-		55E8DD0825FD60BE0056A0A9 /* Suake3DAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E8DD0525FD60BE0056A0A9 /* Suake3DAchievements.swift */; };
-		55E8DD0925FD60BE0056A0A9 /* SuakeGameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E8DD0625FD60BE0056A0A9 /* SuakeGameCenterViewController.swift */; };
 		55EC890925FA9A990040E676 /* WallFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890725FA9A990040E676 /* WallFactory.swift */; };
 		55EC890A25FA9A990040E676 /* WallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890825FA9A990040E676 /* WallManager.swift */; };
 		55EC891025FA9B150040E676 /* SuakeGameClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890F25FA9B150040E676 /* SuakeGameClass.swift */; };
@@ -259,8 +252,6 @@
 		55001F6B260CB4F70015B293 /* PlayerExplodingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerExplodingComponent.swift; sourceTree = "<group>"; };
 		55001F70260CB53D0015B293 /* ExplodingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplodingComponent.swift; sourceTree = "<group>"; };
 		55001F75260CB5930015B293 /* DroidExplodingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroidExplodingComponent.swift; sourceTree = "<group>"; };
-		55001F7A260CCD520015B293 /* SuakeMatchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeMatchHelper.swift; sourceTree = "<group>"; };
-		55001F7F260CDADA0015B293 /* GCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCHelper.swift; sourceTree = "<group>"; };
 		55001F84260CDEB60015B293 /* SuakeBaseMultiAnimatedSCNNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeBaseMultiAnimatedSCNNode.swift; sourceTree = "<group>"; };
 		55001F8C260CE2FC0015B293 /* GridGraphManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridGraphManager.swift; sourceTree = "<group>"; };
 		55001F91260CE3E80015B293 /* GameLoadingSkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLoadingSkScene.swift; sourceTree = "<group>"; };
@@ -274,7 +265,6 @@
 		5501834B2601531300F28C54 /* MenuCursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCursor.swift; sourceTree = "<group>"; };
 		55018351260154A000F28C54 /* SuakeStateMainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeStateMainMenu.swift; sourceTree = "<group>"; };
 		5501835F26015B7C00F28C54 /* MouseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseProtocol.swift; sourceTree = "<group>"; };
-		550183652601624C00F28C54 /* MatchmakerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchmakerHelper.swift; sourceTree = "<group>"; };
 		5501836E260164BC00F28C54 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		5501837526016E7900F28C54 /* WeaponArsenalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponArsenalManager.swift; sourceTree = "<group>"; };
 		5501837D26016EFE00F28C54 /* WeaponType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponType.swift; sourceTree = "<group>"; };
@@ -319,7 +309,6 @@
 		5507048E261129D300464F97 /* MatchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchResultView.swift; sourceTree = "<group>"; };
 		5507048F261129D300464F97 /* MatchResultsSkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchResultsSkScene.swift; sourceTree = "<group>"; };
 		550704A8261229B600464F97 /* IconResources-Credits.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "IconResources-Credits.txt"; sourceTree = "<group>"; };
-		550704AE26122A7A00464F97 /* SuakeAchievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeAchievement.swift; sourceTree = "<group>"; };
 		5513C870260D169600633B40 /* DroidStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroidStateMachine.swift; sourceTree = "<group>"; };
 		5513C875260D170B00633B40 /* DroidStatePatroling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroidStatePatroling.swift; sourceTree = "<group>"; };
 		5513C87A260D17CF00633B40 /* DroidStateChasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroidStateChasing.swift; sourceTree = "<group>"; };
@@ -369,8 +358,6 @@
 		556CB95E25FFFFA8005B7747 /* GoodyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodyEntity.swift; sourceTree = "<group>"; };
 		556CB96325FFFFFA005B7747 /* GoodyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodyComponent.swift; sourceTree = "<group>"; };
 		556CB96926000359005B7747 /* RotationAnimHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationAnimHelper.swift; sourceTree = "<group>"; };
-		5571947A2612302A00D4550B /* GameCenterHelperNG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterHelperNG.swift; sourceTree = "<group>"; };
-		557194822612331900D4550B /* SuakeAchievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeAchievements.swift; sourceTree = "<group>"; };
 		55760E3125FD2C0400C10784 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		55760E3625FD2C3800C10784 /* SoundType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundType.swift; sourceTree = "<group>"; };
 		55760E3B25FD2C7C00C10784 /* GSAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSAudio.swift; sourceTree = "<group>"; };
@@ -412,6 +399,8 @@
 		55C1220F2618E94A001E8E3F /* NetTestFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetTestFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C1221D2618F4CC001E8E3F /* GameCenterOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterOverlay.swift; sourceTree = "<group>"; };
 		55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterSkScene.swift; sourceTree = "<group>"; };
+		55C1224F261CE9A1001E8E3F /* GameCenterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterHelper.swift; sourceTree = "<group>"; };
+		55C12253261CEA21001E8E3F /* GameCenterHelperExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterHelperExt.swift; sourceTree = "<group>"; };
 		55D8941225FAC20100728B83 /* SuakeVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeVars.swift; sourceTree = "<group>"; };
 		55D8941925FAC2E600728B83 /* PhysicsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 		55D8945025FAC8CD00728B83 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
@@ -465,9 +454,6 @@
 		55DB998125FC57DC000023AF /* FadeViewAfterDeath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeViewAfterDeath.swift; sourceTree = "<group>"; };
 		55DB998625FC5AC1000023AF /* SuakeStateDied.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeStateDied.swift; sourceTree = "<group>"; };
 		55E8DCFE25FD604A0056A0A9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		55E8DD0425FD60BE0056A0A9 /* GameCenterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterHelper.swift; sourceTree = "<group>"; };
-		55E8DD0525FD60BE0056A0A9 /* Suake3DAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suake3DAchievements.swift; sourceTree = "<group>"; };
-		55E8DD0625FD60BE0056A0A9 /* SuakeGameCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeGameCenterViewController.swift; sourceTree = "<group>"; };
 		55EC890725FA9A990040E676 /* WallFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallFactory.swift; sourceTree = "<group>"; };
 		55EC890825FA9A990040E676 /* WallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallManager.swift; sourceTree = "<group>"; };
 		55EC890F25FA9B150040E676 /* SuakeGameClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeGameClass.swift; sourceTree = "<group>"; };
@@ -531,16 +517,6 @@
 				5501835F26015B7C00F28C54 /* MouseProtocol.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		55018364260161EB00F28C54 /* Multiplayer */ = {
-			isa = PBXGroup;
-			children = (
-				550183652601624C00F28C54 /* MatchmakerHelper.swift */,
-				55001F7A260CCD520015B293 /* SuakeMatchHelper.swift */,
-				55001F7F260CDADA0015B293 /* GCHelper.swift */,
-			);
-			path = Multiplayer;
 			sourceTree = "<group>";
 		};
 		5501837326016E2400F28C54 /* Weapons */ = {
@@ -647,15 +623,6 @@
 				5507047B2611160A00464F97 /* SuakeMapUpdateDelegate.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		550704AD26122A6500464F97 /* Achievements */ = {
-			isa = PBXGroup;
-			children = (
-				550704AE26122A7A00464F97 /* SuakeAchievement.swift */,
-				557194822612331900D4550B /* SuakeAchievements.swift */,
-			);
-			path = Achievements;
 			sourceTree = "<group>";
 		};
 		5513C86F260D166800633B40 /* States */ = {
@@ -783,15 +750,6 @@
 				556CB96926000359005B7747 /* RotationAnimHelper.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		557194792612301C00D4550B /* GameCenter */ = {
-			isa = PBXGroup;
-			children = (
-				55E8DD0525FD60BE0056A0A9 /* Suake3DAchievements.swift */,
-				5571947A2612302A00D4550B /* GameCenterHelperNG.swift */,
-			);
-			path = GameCenter;
 			sourceTree = "<group>";
 		};
 		55760E3025FD2B3C00C10784 /* Audio */ = {
@@ -1237,11 +1195,8 @@
 		55E8DD0325FD60AC0056A0A9 /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
-				557194792612301C00D4550B /* GameCenter */,
-				550704AD26122A6500464F97 /* Achievements */,
-				55018364260161EB00F28C54 /* Multiplayer */,
-				55E8DD0425FD60BE0056A0A9 /* GameCenterHelper.swift */,
-				55E8DD0625FD60BE0056A0A9 /* SuakeGameCenterViewController.swift */,
+				55C1224F261CE9A1001E8E3F /* GameCenterHelper.swift */,
+				55C12253261CEA21001E8E3F /* GameCenterHelperExt.swift */,
 			);
 			path = GameCenter;
 			sourceTree = "<group>";
@@ -1502,7 +1457,6 @@
 				5501839626016FF500F28C54 /* BulletBase.swift in Sources */,
 				55DB992B25FC0BD2000023AF /* SuakeBaseComponent.swift in Sources */,
 				55001F5F260C813D0015B293 /* DroidComponent.swift in Sources */,
-				55001F7B260CCD520015B293 /* SuakeMatchHelper.swift in Sources */,
 				556CB91525FE8618005B7747 /* SuakeDirTurnDirHelper.swift in Sources */,
 				5501846926051B7400F28C54 /* LightTypes.swift in Sources */,
 				5501844D2603EB8B00F28C54 /* SuakeSpriteNodeMultiTextures.swift in Sources */,
@@ -1523,7 +1477,6 @@
 				55DB995E25FC4998000023AF /* GameStates.swift in Sources */,
 				5501843A2603E0CF00F28C54 /* MapOverlay.swift in Sources */,
 				552417FE260A8391002C90FC /* MachinegunPickupComponent.swift in Sources */,
-				55E8DD0825FD60BE0056A0A9 /* Suake3DAchievements.swift in Sources */,
 				550183B92601893B00F28C54 /* SetupDeveloperViewController.swift in Sources */,
 				55DB997D25FC542F000023AF /* NextMoveResult.swift in Sources */,
 				5501851B26091A0F00F28C54 /* SuakeFiles.swift in Sources */,
@@ -1544,7 +1497,6 @@
 				556CB92A25FFD603005B7747 /* RespawnPointComponent.swift in Sources */,
 				556CA65C260D3CF900F78263 /* SuakeBaseExplodingPlayerEntity.swift in Sources */,
 				5501839126016FD700F28C54 /* MachinegunBullet.swift in Sources */,
-				557194832612331900D4550B /* SuakeAchievements.swift in Sources */,
 				55001F6C260CB4F70015B293 /* PlayerExplodingComponent.swift in Sources */,
 				55EC891D25FA9D4D0040E676 /* CollisionCategory.swift in Sources */,
 				55001F5A260C80FB0015B293 /* DroidEntity.swift in Sources */,
@@ -1553,7 +1505,6 @@
 				55A2B8F72600188300E25F7F /* String.swift in Sources */,
 				55DB996325FC49B2000023AF /* SuakeStateReadyToPlay.swift in Sources */,
 				55DB994E25FC491C000023AF /* SuakeBaseState.swift in Sources */,
-				550704AF26122A7A00464F97 /* SuakeAchievement.swift in Sources */,
 				55DB997625FC5318000023AF /* LoadableNib.swift in Sources */,
 				55DB996D25FC4AB5000023AF /* SuakeStateMachine.swift in Sources */,
 				551F3D36260BDC91006D9F65 /* SuakeStats.swift in Sources */,
@@ -1574,7 +1525,6 @@
 				5501842C2602CBE600F28C54 /* PanCameraHelper.swift in Sources */,
 				55D894A325FAD3FA00728B83 /* FloorHelper.swift in Sources */,
 				55C1221E2618F4CC001E8E3F /* GameCenterOverlay.swift in Sources */,
-				55E8DD0925FD60BE0056A0A9 /* SuakeGameCenterViewController.swift in Sources */,
 				55D8949925FAD06100728B83 /* LevelManager.swift in Sources */,
 				55D894CE25FADC8E00728B83 /* SuakeBaseNodeEntityWithHealth.swift in Sources */,
 				5501845E2604159300F28C54 /* MouseHelper.swift in Sources */,
@@ -1601,7 +1551,6 @@
 				559B2BDF260E434A005E669C /* MedKitRisingParticlesComponent.swift in Sources */,
 				55001F76260CB5930015B293 /* DroidExplodingComponent.swift in Sources */,
 				55EC891025FA9B150040E676 /* SuakeGameClass.swift in Sources */,
-				55E8DD0725FD60BE0056A0A9 /* GameCenterHelper.swift in Sources */,
 				552417EC260A7E57002C90FC /* BaseWeaponPickupComponent.swift in Sources */,
 				55EC891725FA9D2D0040E676 /* NSImage.swift in Sources */,
 				55A2B8EA26000D4100E25F7F /* SuakeStateMatchOver.swift in Sources */,
@@ -1612,6 +1561,7 @@
 				551F3D50260BF279006D9F65 /* GridGraphHelper.swift in Sources */,
 				55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */,
 				55C0370F25FA87EE00F419B8 /* GameViewControllerWindowDelegate.swift in Sources */,
+				55C12254261CEA21001E8E3F /* GameCenterHelperExt.swift in Sources */,
 				551F3D4B260BF22A006D9F65 /* SuakeGridGraphNode.swift in Sources */,
 				550183C026018F0200F28C54 /* UserDefaultsHelper.swift in Sources */,
 				55DB992625FC0B9E000023AF /* SuakePlayerComponent.swift in Sources */,
@@ -1652,6 +1602,7 @@
 				55D894AB25FAD64C00728B83 /* KeyboardDirection.swift in Sources */,
 				5501834D2601531300F28C54 /* MenuCursor.swift in Sources */,
 				551F3D46260BF15D006D9F65 /* SuakeOpponentAIComponent.swift in Sources */,
+				55C12250261CE9A1001E8E3F /* GameCenterHelper.swift in Sources */,
 				5501836026015B7C00F28C54 /* MouseProtocol.swift in Sources */,
 				556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */,
 				55D8948F25FACE4100728B83 /* LevelConfigurationEnvironment.swift in Sources */,
@@ -1678,14 +1629,11 @@
 				550184312603D87B00F28C54 /* HUDHealthBarOnScreenComponent.swift in Sources */,
 				5513C8A0260D246F00633B40 /* DroidComponentExt.swift in Sources */,
 				556CB92F25FFD771005B7747 /* EntityManager.swift in Sources */,
-				5571947B2612302A00D4550B /* GameCenterHelperNG.swift in Sources */,
 				55760E3C25FD2C7C00C10784 /* GSAudio.swift in Sources */,
 				5501837E26016EFE00F28C54 /* WeaponType.swift in Sources */,
 				55760E3725FD2C3800C10784 /* SoundType.swift in Sources */,
-				55001F80260CDADA0015B293 /* GCHelper.swift in Sources */,
 				55DB993325FC0CFF000023AF /* ResVars.swift in Sources */,
 				551F3D41260BF056006D9F65 /* SuakeMoveComponentOppExt.swift in Sources */,
-				550183662601624C00F28C54 /* MatchmakerHelper.swift in Sources */,
 				55D894D425FADCA200728B83 /* SuakeBaseEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

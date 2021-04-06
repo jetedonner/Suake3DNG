@@ -463,41 +463,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "fetchLeaderboard(finished:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "668B88A4-F9EF-49BA-A60C-D380EFC5258B - 35a15d0770d7455b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Suake3D.GameCenterHelper.(fetchLeaderboard in _59B4D4765AE05C584A3846E17285E2C2)(finished: () -&gt; ()) -&gt; ()"
-                  moduleName = "Suake3D"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Data/dev/XCode/Suake3DNG/Suake3D/Suake3D/Shared/Suake3D/Apple/GameCenter/GameCenterHelper.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "181"
-                  endingLineNumber = "181"
-                  offsetFromSymbolStart = "168">
-               </Location>
-               <Location
-                  uuid = "668B88A4-F9EF-49BA-A60C-D380EFC5258B - b6b53d5373d3ba78"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.GKLeaderboard&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Suake3D.GameCenterHelper.(fetchLeaderboard in _59B4D4765AE05C584A3846E17285E2C2)(finished: () -&gt; ()) -&gt; ()"
-                  moduleName = "Suake3D"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Data/dev/XCode/Suake3DNG/Suake3D/Suake3D/Shared/Suake3D/Apple/GameCenter/GameCenterHelper.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "185"
-                  endingLineNumber = "185"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
+            endingLineNumber = "181">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -511,9 +477,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "GameCenterHelper"
-            landmarkType = "3">
+            endingLineNumber = "111">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -527,9 +491,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "loadScores(finished:)"
-            landmarkType = "7">
+            endingLineNumber = "129">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -543,9 +505,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "loadScores(finished:)"
-            landmarkType = "7">
+            endingLineNumber = "128">
             <Locations>
                <Location
                   uuid = "CA64FC7A-9D4F-4038-9F19-94084979C2A5 - e7c7f2ba9492945a"
@@ -591,9 +551,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "fetchLeaderboard(finished:)"
-            landmarkType = "7">
+            endingLineNumber = "179">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -607,9 +565,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "updateScore(with:)"
-            landmarkType = "7">
+            endingLineNumber = "159">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2014,8 +1970,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "init(scnView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2030,8 +1986,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "init(scnView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2046,8 +2002,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "init(scnView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2062,8 +2018,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "init(scnView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2078,8 +2034,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "GameController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2670,8 +2626,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "GameController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2975,16 +2931,14 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "presentMatchmaker()"
-            landmarkType = "7">
+            endingLineNumber = "235">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "90EE53B2-58A4-4B8A-8E77-B43A0BE88F34"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Menu/MenuSkScene.swift"
@@ -2992,15 +2946,15 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "174"
             endingLineNumber = "174"
-            landmarkName = "presentMatchmaking(viewController:)"
-            landmarkType = "7">
+            landmarkName = "MenuSkScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F75E7357-9D1A-4C14-90D6-4B915F8F57B9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Menu/MenuSkScene.swift"
@@ -3008,15 +2962,15 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
             endingLineNumber = "169"
-            landmarkName = "presentGameCenterAuth(viewController:)"
-            landmarkType = "7">
+            landmarkName = "MenuSkScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "27DF5E81-D7AA-4B8B-ACA1-368CE405E2FA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Menu/MenuSkScene.swift"
@@ -3024,8 +2978,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
             endingLineNumber = "164"
-            landmarkName = "didChangeAuthStatus(isAuthenticated:)"
-            landmarkType = "7">
+            landmarkName = "MenuSkScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3598,8 +3552,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "init(scnView:)"
             landmarkType = "7">
          </BreakpointContent>

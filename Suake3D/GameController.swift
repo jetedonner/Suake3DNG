@@ -33,8 +33,8 @@ class GameController:BaseGameController{
     var overlayManager:OverlayManager!
     
     var gridGraphManager:GridGraphManager!
-    var matchHelper:SuakeMatchHelper!
-    var gameCenterHelper:GameCenterHelperNG!
+//    var matchHelper:SuakeMatchHelper!
+    var gameCenterHelper:GameCenterHelper!
     
 //    var networkHelper:NetworkHelper!
     var networkHelper:NetTestFW.NetworkHelper!
@@ -47,8 +47,10 @@ class GameController:BaseGameController{
 //        var nh:NetTestFW.NetworkHelper = NetTestFW.NetworkHelper()
         self.usrDefHlpr = UserDefaultsHelper(game: self)
 //        DbgVars.loadSharedUserDefaults()
-        (scnView as! GameViewMacOS).viewController?.registerGameCenterHelper()
-//        self.gameCenterHelper = GameCenterHelperNG(game: self)
+        self.gameCenterHelper = GameCenterHelper(game: self)
+//        self.gameCenterHelper.viewController = (scnView as! GameViewMacOS).viewController
+//        (scnView as! GameViewMacOS).viewController?.registerGameCenterHelper()
+        
 ////        MyLibraryTestClass.sayHello()
 //
         self.stateMachine = SuakeStateMachine(game: self)
@@ -70,7 +72,7 @@ class GameController:BaseGameController{
         self.overlayManager = OverlayManager(game: self)
         
         self.gridGraphManager = GridGraphManager(game: self)
-        self.matchHelper = SuakeMatchHelper(game: self)
+//        self.matchHelper = SuakeMatchHelper(game: self)
         
 //        self.networkHelper = NetworkHelper(game: self)
         self.networkHelper = NetTestFW.NetworkHelper()
@@ -127,10 +129,11 @@ class GameController:BaseGameController{
     }
     
     func loadNetworkMatch(levelConfig:LoadLevelNetworkData){
-        self.levelManager.currentLevel.levelConfigEnv.levelSize = levelConfig.levelConfig.levelEnv.levelSize
-        self.levelManager.currentLevel.levelConfigEnv.skyBoxHelper.setSkybox(type: levelConfig.levelConfig.levelEnv.skyBoxType)
-        self.levelManager.currentLevel.levelConfigEnv.duration = levelConfig.levelConfig.levelEnv.matchDuration
-        self.levelManager.currentLevel.levelConfigEnv.floorHelper.setFloor(type: levelConfig.levelConfig.levelEnv.floorType)
+        self.levelManager.currentLevel.loadNetworkMatch(levelConfig: levelConfig)
+//        self.levelManager.currentLevel.levelConfigEnv.levelSize = levelConfig.levelConfig.levelEnv.levelSize
+//        self.levelManager.currentLevel.levelConfigEnv.skyBoxHelper.setSkybox(type: levelConfig.levelConfig.levelEnv.skyBoxType)
+//        self.levelManager.currentLevel.levelConfigEnv.duration = levelConfig.levelConfig.levelEnv.matchDuration
+//        self.levelManager.currentLevel.levelConfigEnv.floorHelper.setFloor(type: levelConfig.levelConfig.levelEnv.floorType)
     }
     
     func loadGameScence(initialLoad:Bool = true){

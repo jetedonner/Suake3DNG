@@ -24,7 +24,7 @@ class SuakeStateMatchOver: SuakeBaseState {
 //            self.game.playerEntityManager.getPlayerEntity(ofType: SuakeOwnPlayerEntity.self, id: 0)?.isPaused = true
 //            self.game.cameraHelper.toggleFPV(newFPV: false)
             if(self.game.levelManager.currentLevel == self.game.levelManager.dbgLevel){
-                _ = self.game.gameCenterHelper.checkAchievement(achievementID: SuakeAchievementTypes.tutorial00_01)
+//                _ = self.game.gameCenterHelper.checkAchievement(achievementID: SuakeAchievementTypes.tutorial00_01)
             }
             self.game.overlayManager.showOverlay4GameState(type: .matchOver)
             

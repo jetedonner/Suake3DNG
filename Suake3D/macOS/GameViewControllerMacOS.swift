@@ -121,7 +121,7 @@ class GameViewControllerMacOS: NSViewController, KeyboardAndMouseEventsDelegate,
     }
     
     func registerGameCenterHelper(){
-        GameCenterHelper.helper.viewController = self
+//        GameCenterHelper.helper.viewController = self
     }
 //
     func restartGameController(){

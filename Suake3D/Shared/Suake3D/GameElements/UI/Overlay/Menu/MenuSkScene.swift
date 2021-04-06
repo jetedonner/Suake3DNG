@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 import GameKit
 
-class MenuSkScene:SuakeBaseOverlay, GameCenterHelperDelegate {
+class MenuSkScene:SuakeBaseOverlay/*, GameCenterHelperDelegate*/ {
     
     var selMenuItem:SKNode!
     var menuCursor:MenuCursor!
@@ -154,26 +154,26 @@ class MenuSkScene:SuakeBaseOverlay, GameCenterHelperDelegate {
         }
     }
     
-    func presentGame(match: GKMatch) {
-        self.game.matchHelper.setMatch(match: match)
-        self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
-        self.game.overlayManager.showOverlay4GameState(type: .gameCenter)
-    }
-    
-    func didChangeAuthStatus(isAuthenticated: Bool){
-        var tmp = -1
-        tmp /= -1
-    }
-    
-    func presentGameCenterAuth(viewController: NSViewController?){
-        var tmp = -1
-        tmp /= -1
-    }
-    
-    func presentMatchmaking(viewController: NSViewController?){
-        var tmp = -1
-        tmp /= -1
-    }
+//    func presentGame(match: GKMatch) {
+//        self.game.matchHelper.setMatch(match: match)
+//        self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
+//        self.game.overlayManager.showOverlay4GameState(type: .gameCenter)
+//    }
+//    
+//    func didChangeAuthStatus(isAuthenticated: Bool){
+//        var tmp = -1
+//        tmp /= -1
+//    }
+//    
+//    func presentGameCenterAuth(viewController: NSViewController?){
+//        var tmp = -1
+//        tmp /= -1
+//    }
+//    
+//    func presentMatchmaking(viewController: NSViewController?){
+//        var tmp = -1
+//        tmp /= -1
+//    }
 //    func presentGame(match: GKMatch)
     
     var gameState:SuakeBaseState!
@@ -186,8 +186,8 @@ class MenuSkScene:SuakeBaseOverlay, GameCenterHelperDelegate {
                 self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
             }else if(node == self.lblMultiPlayer){
                 
-                GameCenterHelper.helper.delegate = self
-                GameCenterHelper.helper.presentMatchmaker()
+//                GameCenterHelper.helper.delegate = self
+//                GameCenterHelper.helper.presentMatchmaker()
 //                GameCenterHelper.helper.delegate = self
 //                GameCenterHelper.helper.presentMatchmaker()
 //                self.game.gameCenterHelper.delegate = self
