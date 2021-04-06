@@ -7,6 +7,7 @@
 
 import Foundation
 import SceneKit
+import NetTestFW
 
 class SkyBoxHelper: SuakeGameClass {
     
