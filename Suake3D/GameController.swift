@@ -36,15 +36,15 @@ class GameController:BaseGameController{
     var matchHelper:SuakeMatchHelper!
     var gameCenterHelper:GameCenterHelperNG!
     
-    var networkHelper:NetworkHelper!
-    
+//    var networkHelper:NetworkHelper!
+    var networkHelper:NetTestFW.NetworkHelper!
 //    var settings:SuakeSettings!
 ////    var wormHoleHelper:WormHoleHelper!
     ///
     override init(scnView: SCNView) {
         super.init(scnView: scnView)
         
-        var nh:NetTestFW.NetworkHelper = NetTestFW.NetworkHelper()
+//        var nh:NetTestFW.NetworkHelper = NetTestFW.NetworkHelper()
         self.usrDefHlpr = UserDefaultsHelper(game: self)
 //        DbgVars.loadSharedUserDefaults()
         (scnView as! GameViewMacOS).viewController?.registerGameCenterHelper()
@@ -72,7 +72,8 @@ class GameController:BaseGameController{
         self.gridGraphManager = GridGraphManager(game: self)
         self.matchHelper = SuakeMatchHelper(game: self)
         
-        self.networkHelper = NetworkHelper(game: self)
+//        self.networkHelper = NetworkHelper(game: self)
+        self.networkHelper = NetTestFW.NetworkHelper()
         
         self.usrDefHlpr.resetUserDefaults2Game()
 //

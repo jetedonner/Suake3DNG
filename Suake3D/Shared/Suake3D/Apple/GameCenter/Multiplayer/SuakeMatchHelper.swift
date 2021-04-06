@@ -8,6 +8,7 @@
 import Foundation
 import SceneKit
 import GameKit
+import NetTestFW
 
 struct GameData: Codable {
 //    var players: [Player] = []
@@ -59,18 +60,18 @@ class SuakeMatchHelper:SuakeGameClass, GKMatchDelegate{
         if(self.match != match){
             return
         }
-        print(data.prettyPrintedJSONString)
-        let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
-        print(newObj)
+        print(data.prettyPrintedJSONString!)
+        let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data) //self.game.networkHelper.receiveAndDecoder(data: data)
+        print(newObj.msgType)
     }
         
     func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
         if(self.match != match){
             return
         }
-        print(data.prettyPrintedJSONString)
-        let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
-        print(newObj)
+        print(data.prettyPrintedJSONString!)
+        let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data) //let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
+        print(newObj.msgType)
     }
     
     func sendGameData(gameData:GameData) {

@@ -162,8 +162,6 @@
 		55C122112618E94A001E8E3F /* NetTestFW.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C1220F2618E94A001E8E3F /* NetTestFW.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55C1221E2618F4CC001E8E3F /* GameCenterOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1221D2618F4CC001E8E3F /* GameCenterOverlay.swift */; };
 		55C122222618F7F7001E8E3F /* GameCenterSkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */; };
-		55C96BEF2613ACFB00BACA73 /* BaseNetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C96BEE2613ACFB00BACA73 /* BaseNetworkData.swift */; };
-		55C96BF42613AD5800BACA73 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C96BF32613AD5800BACA73 /* NetworkHelper.swift */; };
 		55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941225FAC20100728B83 /* SuakeVars.swift */; };
 		55D8941A25FAC2E600728B83 /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941925FAC2E600728B83 /* PhysicsHelper.swift */; };
 		55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8945025FAC8CD00728B83 /* CameraHelper.swift */; };
@@ -422,8 +420,6 @@
 		55C1220F2618E94A001E8E3F /* NetTestFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetTestFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C1221D2618F4CC001E8E3F /* GameCenterOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterOverlay.swift; sourceTree = "<group>"; };
 		55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterSkScene.swift; sourceTree = "<group>"; };
-		55C96BEE2613ACFB00BACA73 /* BaseNetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkData.swift; sourceTree = "<group>"; };
-		55C96BF32613AD5800BACA73 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		55D8941225FAC20100728B83 /* SuakeVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeVars.swift; sourceTree = "<group>"; };
 		55D8941925FAC2E600728B83 /* PhysicsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 		55D8945025FAC8CD00728B83 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
@@ -979,8 +975,6 @@
 		55C96BED2613AC9700BACA73 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				55C96BEE2613ACFB00BACA73 /* BaseNetworkData.swift */,
-				55C96BF32613AD5800BACA73 /* NetworkHelper.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1660,7 +1654,6 @@
 				5501838926016FB400F28C54 /* MachinegunComponent.swift in Sources */,
 				55760E4F25FD391F00C10784 /* HUDOverlayEntity.swift in Sources */,
 				550183FB26029EFD00F28C54 /* SuakeStateRespawn.swift in Sources */,
-				55C96BEF2613ACFB00BACA73 /* BaseNetworkData.swift in Sources */,
 				559B2BD4260E4186005E669C /* SuakeNodeGroupItemBase.swift in Sources */,
 				550183EE2601DF8300F28C54 /* LevelGoal.swift in Sources */,
 				55D8945B25FACAAD00728B83 /* SuakeMsgs.swift in Sources */,
@@ -1713,7 +1706,6 @@
 				55DB993325FC0CFF000023AF /* ResVars.swift in Sources */,
 				551F3D41260BF056006D9F65 /* SuakeMoveComponentOppExt.swift in Sources */,
 				550183662601624C00F28C54 /* MatchmakerHelper.swift in Sources */,
-				55C96BF42613AD5800BACA73 /* NetworkHelper.swift in Sources */,
 				55D894D425FADCA200728B83 /* SuakeBaseEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
