@@ -113,7 +113,7 @@ extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
         guard let match = match else { return }
         
         do {
-            guard let dataLoadLevel = NetTestFW.LoadLevelNetworkData(id: 1).encode() else {
+            guard let dataLoadLevel = NetTestFW.NetworkHelper.encodeAndSend(netData: NetTestFW.LoadLevelNetworkData(id: 1)) else {
                 return
             }
 //            guard let data = gameModel.encode() else { return }
