@@ -56,26 +56,49 @@ class SuakeMatchHelper:SuakeGameClass, GKMatchDelegate{
         self.match.delegate = self
     }
     
+    
     func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {
         if(self.match != match){
             return
         }
         print(data.prettyPrintedJSONString!)
-        let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data) //self.game.networkHelper.receiveAndDecoder(data: data)
+        let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data)
         print(newObj.msgType)
         if(newObj.msgType == .initLevelMsg){
             self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 10, msg: "Loading level for match ...")
+            self.game.loadNetworkMatch(levelConfig: newObj as! LoadLevelNetworkData)
         }
     }
-        
+    
     func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
         if(self.match != match){
             return
         }
         print(data.prettyPrintedJSONString!)
-        let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data) //let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
+        let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data)
         print(newObj.msgType)
     }
+    
+//    func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {
+//        if(self.match != match){
+//            return
+//        }
+//        print(data.prettyPrintedJSONString!)
+//        let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data) //self.game.networkHelper.receiveAndDecoder(data: data)
+//        print(newObj.msgType)
+//        if(newObj.msgType == .initLevelMsg){
+//            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 10, msg: "Loading level for match ...")
+//        }
+//    }
+//
+//    func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
+//        if(self.match != match){
+//            return
+//        }
+//        print(data.prettyPrintedJSONString!)
+//        let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data) //let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
+//        print(newObj.msgType)
+//    }
     
     func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
         print(SuakeMsgs.gameConterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")

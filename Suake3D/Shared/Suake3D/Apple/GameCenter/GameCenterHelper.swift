@@ -38,7 +38,7 @@ class GameCenterHelper: NSObject {
     private var leaderboard: GKLeaderboard?
     
     var gameModel:GameModel = GameModel()
-    var match: GKMatch?
+//    var match: GKMatch?
 //    private var achivements10HeadshotsID = "grp.ch.kimhauser.swift.suake3d.achievements.10headshots"
 //    private var achivements10Headshots:GKAchievement?
 //    private var achivements20GoodiesID = "grp.ch.kimhauser.swift.suake3d.achievements.20goodies"
@@ -322,6 +322,7 @@ extension GameCenterHelper: GKGameCenterControllerDelegate {
 //}
 
 extension GameCenterHelper: GKLocalPlayerListener {
+    
   func player(_ player: GKPlayer, wantsToQuitMatch match: GKTurnBasedMatch) {
     let activeOthers = match.others.filter { other in
       return other.status == .active

@@ -23,14 +23,15 @@ class SuakeKeyboardHandler: KeyboardHandler {
         super.keyPressedEvent(event: event)
         
         if(self.game.matchHelper.match != nil){
-            
+            if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
 //            var gameData = GameData()
 //            var gameDataExt = GameDataExt()
 //            gameDataExt.typeValue = 123
 //            gameData.ext = gameDataExt.encode()
 //            gameData.keyPress = Int(event.keyCode)
 //            self.game.matchHelper.sendGameData(gameData: gameData)
-            return
+                return
+            }
         }
         
         if let pressedKey = KeyboardDirection(rawValue: event.keyCode) {

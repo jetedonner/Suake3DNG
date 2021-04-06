@@ -126,6 +126,10 @@ class GameController:BaseGameController{
 //        self.tryEncDec()
     }
     
+    func loadNetworkMatch(levelConfig:LoadLevelNetworkData){
+        self.levelManager.currentLevel.levelConfigEnv.floorHelper.setFloor(type: levelConfig.levelConfig.levelEnv.floorType)
+    }
+    
     func loadGameScence(initialLoad:Bool = true){
         DispatchQueue.main.async {
             self.isLoading = true

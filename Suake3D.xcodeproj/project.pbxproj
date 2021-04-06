@@ -40,7 +40,6 @@
 		550183BA2601893B00F28C54 /* SetupDeveloperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550183B82601893B00F28C54 /* SetupDeveloperViewController.xib */; };
 		550183C026018F0200F28C54 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550183BF26018F0200F28C54 /* UserDefaultsHelper.swift */; };
 		550183E42601DF4900F28C54 /* LevelSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550183E32601DF4900F28C54 /* LevelSize.swift */; };
-		550183E92601DF6E00F28C54 /* FloorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550183E82601DF6E00F28C54 /* FloorType.swift */; };
 		550183EE2601DF8300F28C54 /* LevelGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550183ED2601DF8300F28C54 /* LevelGoal.swift */; };
 		550183F32601DFAC00F28C54 /* LevelID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550183F22601DFAC00F28C54 /* LevelID.swift */; };
 		550183FB26029EFD00F28C54 /* SuakeStateRespawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550183FA26029EFD00F28C54 /* SuakeStateRespawn.swift */; };
@@ -292,7 +291,6 @@
 		550183B82601893B00F28C54 /* SetupDeveloperViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupDeveloperViewController.xib; sourceTree = "<group>"; };
 		550183BF26018F0200F28C54 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		550183E32601DF4900F28C54 /* LevelSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSize.swift; sourceTree = "<group>"; };
-		550183E82601DF6E00F28C54 /* FloorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorType.swift; sourceTree = "<group>"; };
 		550183ED2601DF8300F28C54 /* LevelGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGoal.swift; sourceTree = "<group>"; };
 		550183F22601DFAC00F28C54 /* LevelID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelID.swift; sourceTree = "<group>"; };
 		550183FA26029EFD00F28C54 /* SuakeStateRespawn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeStateRespawn.swift; sourceTree = "<group>"; };
@@ -603,7 +601,6 @@
 				5501846826051B7400F28C54 /* LightTypes.swift */,
 				55D8947625FACCBC00728B83 /* LevelDifficulty.swift */,
 				550183E32601DF4900F28C54 /* LevelSize.swift */,
-				550183E82601DF6E00F28C54 /* FloorType.swift */,
 				553221AB2616459B00529E8D /* SkyboxType.swift */,
 				550183ED2601DF8300F28C54 /* LevelGoal.swift */,
 				550183F22601DFAC00F28C54 /* LevelID.swift */,
@@ -1688,7 +1685,6 @@
 				55DB996825FC4A18000023AF /* SuakeStatePaused.swift in Sources */,
 				556CB96A26000359005B7747 /* RotationAnimHelper.swift in Sources */,
 				559B2BD3260E4186005E669C /* SuakeNodeGroupBase.swift in Sources */,
-				550183E92601DF6E00F28C54 /* FloorType.swift in Sources */,
 				55C122222618F7F7001E8E3F /* GameCenterSkScene.swift in Sources */,
 				5513C891260D1C9000633B40 /* DroidStateAttacking.swift in Sources */,
 				553221B02616459C00529E8D /* SkyboxType.swift in Sources */,

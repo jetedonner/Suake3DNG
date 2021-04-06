@@ -36,7 +36,7 @@ public protocol GCHelperDelegate: class {
 }
 
 /// A GCHelper instance represents a wrapper around a GameKit match.
-public class GCHelper: NSObject, GKMatchmakerViewControllerDelegate, GKGameCenterControllerDelegate, GKMatchDelegate, GKLocalPlayerListener {
+public class GCHelper: NSObject, GKMatchmakerViewControllerDelegate, GKGameCenterControllerDelegate, /*GKMatchDelegate,*/ GKLocalPlayerListener {
     
     /// An array of retrieved achievements. `loadAllAchievements(completion:)` must be called in advance.
     public var achievements = [String: GKAchievement]()
@@ -271,13 +271,13 @@ public class GCHelper: NSObject, GKMatchmakerViewControllerDelegate, GKGameCente
     }
     
     public func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind theMatch: GKMatch) {
-        presentingViewController.dismiss(nil)//.dismiss(animated: true, completion: nil)
-        match = theMatch
-        match.delegate = self
-        if !matchStarted && match.expectedPlayerCount == 0 {
-            print("Ready to start match!")
-            self.lookupPlayers()
-        }
+//        presentingViewController.dismiss(nil)//.dismiss(animated: true, completion: nil)
+//        match = theMatch
+//        match.delegate = self
+//        if !matchStarted && match.expectedPlayerCount == 0 {
+//            print("Ready to start match!")
+//            self.lookupPlayers()
+//        }
     }
     
     // MARK: GKMatchDelegate

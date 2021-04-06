@@ -24,28 +24,28 @@ protocol GameCenterHelperDelegate: class {
     // func endGame
 }
 
-extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
+extension GameCenterHelper:GKMatchmakerViewControllerDelegate/*, GKMatchDelegate*/ {
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
         print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) ")
         
-        self.match = match
+//        self.match = match
         delegate?.presentGame(match: match)
         viewController.dismiss(true)
-        self.sendDataNG()
+        self.sendDataNG(match: match)
 //        self.sendData()
     }
     
-    func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
-        print(SuakeMsgs.gameConterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
-    }
-    
-    func match(theMatch: GKMatch!, didReceiveData data: NSData!, fromPlayer playerID: String!) {
-        if (match != theMatch) {
-            return
-        }
-//        delegate.match(theMatch, didReceiveData: data, fromPlayer: playerID)
-    }
+//    func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
+//        print(SuakeMsgs.gameConterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
+//    }
+//
+//    func match(theMatch: GKMatch!, didReceiveData data: NSData!, fromPlayer playerID: String!) {
+//        if (match != theMatch) {
+//            return
+//        }
+////        delegate.match(theMatch, didReceiveData: data, fromPlayer: playerID)
+//    }
     
     
     func player(_ player: GKPlayer, didAccept invite: GKInvite) {
@@ -114,8 +114,8 @@ extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
 //        }
 //    }
     
-    private func sendDataNG() {
-        guard let match = match else { return }
+    private func sendDataNG(match:GKMatch) {
+//        guard let match = match else { return }
         
         do {
             guard let dataLoadLevel = NetTestFW.NetworkHelper.encodeAndSend(netData: NetTestFW.LoadLevelNetworkData(id: 1)) else {
