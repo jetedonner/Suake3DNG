@@ -31,7 +31,8 @@ extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
         viewController.dismiss(true)
         self.match = match
         delegate?.presentGame(match: match)
-        self.sendData()
+        self.sendDataNG()
+//        self.sendData()
     }
     
     func match(theMatch: GKMatch!, didReceiveData data: NSData!, fromPlayer playerID: String!) {
@@ -107,6 +108,20 @@ extension GameCenterHelper:GKMatchmakerViewControllerDelegate, GKMatchDelegate {
             print("Send data failed")
         }
     }
+    
+    private func sendDataNG() {
+        guard let match = match else { return }
+        
+        do {
+            guard let dataLoadLevel = NetTestFW.LoadLevelNetworkData(id: 1).encode() else {
+                return
+            }
+//            guard let data = gameModel.encode() else { return }
+            try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+        } catch {
+            print("Send data failed")
+        }
+    }
 }
 
 class SuakeNetworkData: Codable {
@@ -147,6 +162,8 @@ extension PlayerMoveData {
 struct GameModel: Codable {
 //    var players: [Player] = []
     var time: Int = 60
+    
+    var msgType:MsgType = .initLevelMsg
 }
 
 extension GameModel {

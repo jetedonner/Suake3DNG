@@ -153,7 +153,6 @@ class GameCenterSkScene : SuakeBaseOverlay {
     
     var completitionHandler:(() -> Void)? = nil
     func setProgress(curPrecent:Int, msg:String, completitionHandler block: (() -> Void)? = nil){
-//        return
         self.newProgressPercent = curPrecent
         self.newProgressMsg = msg
         self.hasNewProgress = true

@@ -155,8 +155,7 @@ class MenuSkScene:SuakeBaseOverlay, GameCenterHelperDelegate {
     }
     
     func presentGame(match: GKMatch) {
-        self.game.matchHelper.match = match
-        self.game.matchHelper.match.delegate = self.game.matchHelper
+        self.game.matchHelper.setMatch(match: match)
         self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
         self.game.overlayManager.showOverlay4GameState(type: .gameCenter)
     }

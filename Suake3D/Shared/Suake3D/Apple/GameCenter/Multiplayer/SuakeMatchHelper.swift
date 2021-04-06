@@ -49,12 +49,26 @@ class SuakeMatchHelper:SuakeGameClass, GKMatchDelegate{
     override init(game: GameController) {
         super.init(game: game)
     }
+    
+    func setMatch(match:GKMatch){
+        self.match = match
+        self.match.delegate = self
+    }
+    
+    func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {
+        if(self.match != match){
+            return
+        }
+        let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
+        print(newObj)
+    }
         
     func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
         if(self.match != match){
             return
         }
-        
+        let newObj = self.game.networkHelper.receiveAndDecoder(data: data)
+        print(newObj)
     }
     
     func sendGameData(gameData:GameData) {

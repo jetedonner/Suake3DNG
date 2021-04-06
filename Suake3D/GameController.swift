@@ -23,10 +23,8 @@ class GameController:BaseGameController{
     var panCameraHelper:PanCameraHelper!
     var dbgHelper:DebugHelper!
     var soundManager:SoundManager!
-//    var audioManager:AudioManager!
-//
+
     var locationEntityManager: LocationEntityManager!
-//    var playerEntityManager: PlayerEntityManager!
     var playerEntityManager:SuakePlayerManager!
     
     var levelManager:LevelManager!
@@ -42,21 +40,10 @@ class GameController:BaseGameController{
     
 //    var settings:SuakeSettings!
 ////    var wormHoleHelper:WormHoleHelper!
-//
-//    var rulesystemManager:RuleSytemManager!
-//    let userDefaults:SuakeUserDefaults = SuakeUserDefaults()
-//
-//    var medKits:MedKitEntityGroup!
-//    var weaponPickups:WeaponPickupEntityManager!
-//    var gridGraphManager:GridGraphManager!
-    
-//    var testLib:MyLibrary = MyLibrary()
-    
+    ///
     override init(scnView: SCNView) {
         super.init(scnView: scnView)
         
-//        var tmp:NetTestFWClass = NetTestFWClass()
-//        NetTestFWClass.sayHello()
         var nh:NetTestFW.NetworkHelper = NetTestFW.NetworkHelper()
         self.usrDefHlpr = UserDefaultsHelper(game: self)
 //        DbgVars.loadSharedUserDefaults()
