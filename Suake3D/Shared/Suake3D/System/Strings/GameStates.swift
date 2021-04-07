@@ -10,6 +10,7 @@ import Foundation
 
 
 class GameStates{
+    static let gameLoadingMultiState:String = "Game loading multiplayer state"
     static let gameLoadingState:String = "Game loading state"
     static let readyToPlayState:String = "Ready to play"
     static let playingState:String = "Playing"

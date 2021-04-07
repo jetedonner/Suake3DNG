@@ -17,7 +17,7 @@ class SuakeStatePaused: SuakeBaseState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return (stateClass == SuakeStatePlaying.self /*|| stateClass == SuakeStateMainMenu.self*/)
+        return (stateClass == SuakeStatePlaying.self || stateClass == SuakeStateGameLoadingMulti.self /*|| stateClass == SuakeStateMainMenu.self*/)
     }
     
     override func willExit(to nextState: GKState) {

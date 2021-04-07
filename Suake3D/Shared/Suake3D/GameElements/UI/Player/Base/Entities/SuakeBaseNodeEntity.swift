@@ -9,6 +9,7 @@
 import Foundation
 import SceneKit
 import GameplayKit
+import NetTestFW
 
 class SuakeBaseNodeEntity: SuakeBaseEntity {
     

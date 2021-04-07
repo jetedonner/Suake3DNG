@@ -158,6 +158,7 @@
 		55C1225C261CF2CE001E8E3F /* MatchMakerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1225B261CF2CE001E8E3F /* MatchMakerHelper.swift */; };
 		55C12261261CF7F0001E8E3F /* MultiplayerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12260261CF7F0001E8E3F /* MultiplayerLevel.swift */; };
 		55C12267261CFCB6001E8E3F /* LightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C12266261CFCB6001E8E3F /* LightManager.swift */; };
+		55C1226B261E162C001E8E3F /* SuakeStateGameLoadingMulti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1226A261E162C001E8E3F /* SuakeStateGameLoadingMulti.swift */; };
 		55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941225FAC20100728B83 /* SuakeVars.swift */; };
 		55D8941A25FAC2E600728B83 /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941925FAC2E600728B83 /* PhysicsHelper.swift */; };
 		55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8945025FAC8CD00728B83 /* CameraHelper.swift */; };
@@ -406,6 +407,7 @@
 		55C1225B261CF2CE001E8E3F /* MatchMakerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakerHelper.swift; sourceTree = "<group>"; };
 		55C12260261CF7F0001E8E3F /* MultiplayerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerLevel.swift; sourceTree = "<group>"; };
 		55C12266261CFCB6001E8E3F /* LightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightManager.swift; sourceTree = "<group>"; };
+		55C1226A261E162C001E8E3F /* SuakeStateGameLoadingMulti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeStateGameLoadingMulti.swift; sourceTree = "<group>"; };
 		55D8941225FAC20100728B83 /* SuakeVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeVars.swift; sourceTree = "<group>"; };
 		55D8941925FAC2E600728B83 /* PhysicsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 		55D8945025FAC8CD00728B83 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
@@ -1156,6 +1158,7 @@
 				55DB996225FC49B2000023AF /* SuakeStateReadyToPlay.swift */,
 				55DB995825FC4989000023AF /* SuakeStatePlaying.swift */,
 				55DB995225FC4940000023AF /* SuakeStateGameLoading.swift */,
+				55C1226A261E162C001E8E3F /* SuakeStateGameLoadingMulti.swift */,
 				55DB994D25FC491C000023AF /* SuakeBaseState.swift */,
 				5513C895260D1D5100633B40 /* SuakeBaseDroidState.swift */,
 			);
@@ -1641,6 +1644,7 @@
 				5513C891260D1C9000633B40 /* DroidStateAttacking.swift in Sources */,
 				5501844E2603EB8B00F28C54 /* SuakeSpriteNode.swift in Sources */,
 				55D894D525FADCA200728B83 /* SuakeBaseNodeEntity.swift in Sources */,
+				55C1226B261E162C001E8E3F /* SuakeStateGameLoadingMulti.swift in Sources */,
 				55D894B825FAD7B800728B83 /* SuakeTypes.swift in Sources */,
 				550184312603D87B00F28C54 /* HUDHealthBarOnScreenComponent.swift in Sources */,
 				5513C8A0260D246F00633B40 /* DroidComponentExt.swift in Sources */,

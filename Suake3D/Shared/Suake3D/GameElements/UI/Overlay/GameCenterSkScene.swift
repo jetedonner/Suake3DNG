@@ -14,6 +14,9 @@ class GameCenterSkScene : SuakeBaseOverlay {
     let lblColor:SKColor = SKColor.white
     var lblPrecent:SKLabelNode = SKLabelNode(text: "0%")
     var lblDesc:SKLabelNode!
+    var btnCancel:SKLabelNode!
+    var lblCancel:SKLabelNode!
+    
     var baseBar:SKSpriteNode!
     var progress:SKSpriteNode!
     
@@ -98,6 +101,8 @@ class GameCenterSkScene : SuakeBaseOverlay {
         baseBar = self.sceneNode.childNode(withName: "prgProgress") as? SKSpriteNode
         progressSteps = baseBar.frame.width / 100
         lblDesc = self.sceneNode.childNode(withName: "lblDesc") as? SKLabelNode
+        btnCancel = self.sceneNode.childNode(withName: "btnCancel") as? SKLabelNode
+        lblCancel = self.sceneNode.childNode(withName: "lblCancel") as? SKLabelNode
         
         progress = SKSpriteNode(color: NSColor.red, size: CGSize(width: CGFloat(0.0), height: CGFloat(baseBar.frame.height)))
         progress.position = CGPoint(x: baseBar.frame.minX, y: baseBar.frame.minY)
@@ -162,6 +167,35 @@ class GameCenterSkScene : SuakeBaseOverlay {
     override func showOverlayScene(){
         super.showOverlayScene()
         self.initProgressLoop()
+    }
+    
+    override func mouseDownHandler(in view: NSView, with event: NSEvent) -> Bool {
+//        if(self.game.stateMachine.currentState is SuakeStateMainMenu){
+            let location = event.location(in: self.sceneNode)
+            let node = self.sceneNode.atPoint(location)
+        if(node == self.btnCancel || node == self.lblCancel){
+//                self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
+                self.game.stateMachine.returnToOldState(saveOldState: false)
+            }/*else if(node == self.lblMultiPlayer){
+                
+                GameCenterHelper.helper.delegate = self
+                GameCenterHelper.helper.presentMatchmaker()
+//                GameCenterHelper.helper.delegate = self
+//                GameCenterHelper.helper.presentMatchmaker()
+//                self.game.gameCenterHelper.delegate = self
+                
+            }else if(node == self.lblContinueGame){
+                self.game.stateMachine.returnToOldState(saveOldState: false)
+            }else if(node == self.lblSettings){
+                //_ = self.game.stateMachine.enter(stateClass: SuakeStateDeveloperSetup.self, saveOldState: false)
+//                _ = self.game.stateMachine.enter(stateClass: SuakeStateMainSetup.self, saveOldState: true)
+            }else if(node == self.lblExit){
+                self.game.showDbgMsg(dbgMsg: SuakeMsgs.gameQuitApp)
+                self.game.quitSuake3D()
+            }*/
+            return true
+//        }
+        return true
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -8,6 +8,7 @@
 
 import Foundation
 import SceneKit
+import NetTestFW
 
 class KeyboardHandler:SuakeGameClass{
     

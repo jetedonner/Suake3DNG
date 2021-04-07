@@ -13,7 +13,9 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
     
     func player(_ player: GKPlayer, didAccept invite: GKInvite) {
         print("player(_ player: GKPlayer, didAccept invite: GKInvite)")
-        
+        let mmc:GKMatchmakerViewController = GKMatchmakerViewController(invite: invite)!
+        mmc.matchmakerDelegate = self
+        self.viewController?.presentAsSheet(mmc)
     }
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {

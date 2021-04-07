@@ -17,11 +17,11 @@ class SuakeStateReadyToPlay: SuakeBaseState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return (stateClass == SuakeStateMatchOver.self || stateClass == SuakeStateReadyToPlay.self || stateClass == SuakeStatePlaying.self || stateClass == SuakeStatePaused.self || stateClass == SuakeStateMainMenu.self /*|| stateClass == SuakeStateTutorial.self || stateClass == SuakeStateCheatSheet.self*/)
+        return (stateClass == SuakeStateMatchOver.self || stateClass == SuakeStateReadyToPlay.self || stateClass == SuakeStatePlaying.self || stateClass == SuakeStatePaused.self || stateClass == SuakeStateMainMenu.self || stateClass == SuakeStateGameLoadingMulti.self /*|| stateClass == SuakeStateTutorial.self || stateClass == SuakeStateCheatSheet.self*/)
     }
     
     override func didEnter(from previousState: GKState?) {
-        if(previousState is SuakeStateReadyToPlay || previousState is SuakeStatePlaying || previousState is SuakeStateMainMenu || previousState is SuakeStateMatchOver /*|| previousState is SuakeStateTutorialCompleted*/){
+        if(previousState is SuakeStateReadyToPlay || previousState is SuakeStatePlaying || previousState is SuakeStateMainMenu || previousState is SuakeStateGameLoadingMulti || previousState is SuakeStateMatchOver /*|| previousState is SuakeStateTutorialCompleted*/){
             
             if(previousState is SuakeStateMatchOver){
                 self.game.levelManager.loadLevel(initialLoad: false)

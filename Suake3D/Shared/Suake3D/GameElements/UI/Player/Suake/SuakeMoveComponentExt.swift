@@ -8,6 +8,7 @@
 import Foundation
 import SceneKit
 import GameplayKit
+import NetTestFW
 
 extension SuakeMoveComponent{
     func nextPos(dir:SuakeDir, suakePart:SuakePart)->SCNVector3{

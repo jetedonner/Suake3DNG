@@ -98,24 +98,24 @@ class PositionHelper {
 //
 //}
 
-enum SuakeDir : String, Codable {
-    case NONE = "Node"
-    case DOWN = "Down"
-    case RIGHT = "Right"
-    case UP = "Up"
-    case LEFT = "Left"
-    case PORTATIOM = "Portatiom"
-}
-
-extension SuakeDir {
-    func encode() -> Data? {
-        return try? JSONEncoder().encode(self)
-    }
-    
-    static func decode(data: Data) -> SuakeDir? {
-        return try? JSONDecoder().decode(SuakeDir.self, from: data)
-    }
-}
+//enum SuakeDir : String, Codable {
+//    case NONE = "Node"
+//    case DOWN = "Down"
+//    case RIGHT = "Right"
+//    case UP = "Up"
+//    case LEFT = "Left"
+//    case PORTATIOM = "Portatiom"
+//}
+//
+//extension SuakeDir {
+//    func encode() -> Data? {
+//        return try? JSONEncoder().encode(self)
+//    }
+//    
+//    static func decode(data: Data) -> SuakeDir? {
+//        return try? JSONDecoder().decode(SuakeDir.self, from: data)
+//    }
+//}
 
 //enum TurnDir : String, Codable{
 //    case Stop = "Stop"

@@ -10,7 +10,11 @@ import NetTestFW
 
 class MultiplayerLevel: SuakeBaseLevel{
     
+    let levelConfigNet:LoadLevelNetworkData
+    
     init(game: GameController, levelConfigNet:LoadLevelNetworkData) {
+        self.levelConfigNet = levelConfigNet
+        
         let levelConfig:LevelConfiguration = LevelConfiguration(game: game)
         
         let levelConfigEnv:LevelConfigurationEnvironment = LevelConfigurationEnvironment(game: game)
@@ -22,5 +26,14 @@ class MultiplayerLevel: SuakeBaseLevel{
         levelConfigEnv.lightIntensity = levelConfigNet.levelConfig.levelEnv.lightIntensity
         
         super.init(game: game, levelConfig: levelConfig, levelConfigEnv: levelConfigEnv)
+    }
+    
+    override func loadLevel(){
+        super.loadLevel()
+        self.game.playerEntityManager.ownPlayerEntity.pos = self.levelConfigNet.levelConfig.levelSetup.playerPos[0]
+        self.game.playerEntityManager.ownPlayerEntity.dir = self.levelConfigNet.levelConfig.levelSetup.playerDir[0]
+        
+        self.game.playerEntityManager.oppPlayerEntity.pos = self.levelConfigNet.levelConfig.levelSetup.playerPos[1]
+        self.game.playerEntityManager.oppPlayerEntity.dir = self.levelConfigNet.levelConfig.levelSetup.playerDir[0]
     }
 }

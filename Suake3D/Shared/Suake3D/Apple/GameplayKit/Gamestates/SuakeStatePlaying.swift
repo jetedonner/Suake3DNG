@@ -21,7 +21,7 @@ class SuakeStatePlaying: SuakeBaseState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return (stateClass == SuakeStateReadyToPlay.self || stateClass == SuakeStatePaused.self || stateClass == SuakeStateMatchOver.self || stateClass == SuakeStateMainMenu.self /*|| stateClass == SuakeStateMatchOver.self || stateClass == SuakeStateTutorial.self || stateClass == SuakeStateTutorialCompleted.self || stateClass == SuakeStateCheatSheet.self*/ || stateClass == SuakeStateGameLoading.self || stateClass == SuakeStateDied.self)
+        return (stateClass == SuakeStateReadyToPlay.self || stateClass == SuakeStatePaused.self || stateClass == SuakeStateMatchOver.self || stateClass == SuakeStateMainMenu.self /*|| stateClass == SuakeStateMatchOver.self || stateClass == SuakeStateTutorial.self || stateClass == SuakeStateTutorialCompleted.self || stateClass == SuakeStateCheatSheet.self*/ || stateClass == SuakeStateGameLoading.self || stateClass == SuakeStateDied.self || stateClass == SuakeStateGameLoadingMulti.self)
     }
     
     override func didEnter(from previousState: GKState?) {

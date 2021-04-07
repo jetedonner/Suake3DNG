@@ -101,7 +101,8 @@ class OverlayManager: SuakeGameClass {
     }
     
     func mouseDownHandler(in view: NSView, with event: NSEvent) -> Bool {
-        if(self.game.stateMachine.currentState is SuakeStateMainMenu /*||
+        if(self.game.stateMachine.currentState is SuakeStateMainMenu ||
+            self.game.stateMachine.currentState is SuakeStateGameLoadingMulti /*||
             self.game.stateMachine.currentState is SuakeStateMainSetup ||
             self.game.stateMachine.currentState is SuakeStateTutorial ||
             self.game.stateMachine.currentState is SuakeStateTutorialCompleted*/){
