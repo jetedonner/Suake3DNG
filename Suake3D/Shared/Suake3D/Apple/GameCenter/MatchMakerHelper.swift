@@ -12,6 +12,7 @@ import NetTestFW
 class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     
     var match:GKMatch!
+    var voiceChat:GKVoiceChat!
     
     override init(game: GameController) {
         super.init(game: game)
@@ -20,6 +21,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     func setMatch(match:GKMatch){
         self.match = match
         self.match.delegate = self
+        self.voiceChat = self.match.voiceChat(withName: "Suake3DChat")
+        self.voiceChat.start()
     }
     
     func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {
