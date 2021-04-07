@@ -69,8 +69,11 @@ class HUDOverlayScene: SuakeBaseOverlay {
     }
     
     func loadInitialValues(){
-        self.lblSuakePosition.text = "0 : 0"
-        self.lblGoodyPosition.text = "-3 : 3"
+        self.setPositionTxt(pos: self.game.playerEntityManager.ownPlayerEntity.pos)
+//        self.lblSuakePosition.text = // "0 : 0"
+//        self.lblGoodyPosition.text = "-3 : 3"
+        self.setGoodyPositionTxt(pos: self.game.playerEntityManager.goodyEntity.pos)
+        
         self.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.duration.rawValue)
         self.lblScore.text = "0000"
     }

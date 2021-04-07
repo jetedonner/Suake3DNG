@@ -32,8 +32,16 @@ class MultiplayerLevel: SuakeBaseLevel{
         super.loadLevel()
         self.game.playerEntityManager.ownPlayerEntity.pos = self.levelConfigNet.levelConfig.levelSetup.playerPos[0]
         self.game.playerEntityManager.ownPlayerEntity.dir = self.levelConfigNet.levelConfig.levelSetup.playerDir[0]
+        self.game.playerEntityManager.ownPlayerEntity.dirOld = self.game.playerEntityManager.ownPlayerEntity.dir
+        
+        SuakeDirTurnDirHelper.initNodeRotation(node: self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.mainNode, dir: self.game.playerEntityManager.ownPlayerEntity.dir)
         
         self.game.playerEntityManager.oppPlayerEntity.pos = self.levelConfigNet.levelConfig.levelSetup.playerPos[1]
-        self.game.playerEntityManager.oppPlayerEntity.dir = self.levelConfigNet.levelConfig.levelSetup.playerDir[0]
+        self.game.playerEntityManager.oppPlayerEntity.dir = self.levelConfigNet.levelConfig.levelSetup.playerDir[1]
+        self.game.playerEntityManager.oppPlayerEntity.dirOld = self.game.playerEntityManager.oppPlayerEntity.dir
+        
+        SuakeDirTurnDirHelper.initNodeRotation(node: self.game.playerEntityManager.oppPlayerEntity.suakePlayerComponent.mainNode, dir: self.game.playerEntityManager.oppPlayerEntity.dir)
+        
+        self.game.overlayManager.hud.overlayScene.loadInitialValues()
     }
 }
