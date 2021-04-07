@@ -22,13 +22,14 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
         print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) ")
         
         viewController.dismiss(true)
-        if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
-            match.chooseBestHostingPlayer(completionHandler: {player in
-                print("PlayerName: \(player?.displayName), PlayerID: \(player?.gamePlayerID)")
-//                self.delegate?.startMatch(match: match)
-//                self.sendDataNG(match: match)
-            })
-        }
+        self.delegate?.startMatch(match: match)
+//        if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
+//            match.chooseBestHostingPlayer(completionHandler: {player in
+//                print("PlayerName: \(player?.displayName), PlayerID: \(player?.gamePlayerID)")
+////                self.delegate?.startMatch(match: match)
+////                self.sendDataNG(match: match)
+//            })
+//        }
 //        self.delegate?.startMatch(match: match)
 //        self.sendDataNG(match: match)
     }
