@@ -45,7 +45,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     
     func startMatch(match: GKMatch) {
         self.gameCenterHelper.matchMakerHelper?.setMatch(match: match)
-        self.stateMachine.enter(SuakeStateGameLoadingMulti.self)
+        
 //        self.overlayManager.showOverlay4GameState(type: .gameCenter)
 //        match.delegate = self.gameCenterHelper.matchMakerHelper
     }
