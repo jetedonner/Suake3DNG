@@ -31,6 +31,12 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
         for player in match.players{
             print("Player: \(player.gamePlayerID)")
         }
+        
+        match.chooseBestHostingPlayer(completionHandler: {player in
+            print("PlayerName: \(player?.displayName), PlayerID: \(player?.gamePlayerID)")
+//                self.delegate?.startMatch(match: match)
+//                self.sendDataNG(match: match)
+        })
 //        if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
 //            match.chooseBestHostingPlayer(completionHandler: {player in
 //                print("PlayerName: \(player?.displayName), PlayerID: \(player?.gamePlayerID)")
