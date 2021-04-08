@@ -49,16 +49,16 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     
     func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
         print(SuakeMsgs.gameConterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
-        if(state == .connected){
-            if(match.expectedPlayerCount == 0){
-                if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
-                    match.chooseBestHostingPlayer(completionHandler: {player in
-                        print("PlayerName: \(player?.displayName), PlayerID: \(player?.gamePlayerID)")
-        //                self.delegate?.startMatch(match: match)
-        //                self.sendDataNG(match: match)
-                    })
-                }
-            }
-        }
+//        if(state == .connected){
+//            if(match.expectedPlayerCount == 0){
+//                if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
+//                    match.chooseBestHostingPlayer(completionHandler: {player in
+//                        print("PlayerName: \(player?.displayName), PlayerID: \(player?.gamePlayerID)")
+//        //                self.delegate?.startMatch(match: match)
+//        //                self.sendDataNG(match: match)
+//                    })
+//                }
+//            }
+//        }
     }
 }

@@ -28,15 +28,17 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
             print("Current player count: \(match.players.count)")
         }
 
-        print("Local-Player: Team: \(GKLocalPlayer.local.teamPlayerID), Player: \(GKLocalPlayer.local.gamePlayerID)")
+        print("Local-Player: PlayerId: \(GKLocalPlayer.local.playerID), PlayerName: \(GKLocalPlayer.local.displayName), Team: \(GKLocalPlayer.local.teamPlayerID), GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
+        
         for player in match.players{
-            print("Player: \(player.teamPlayerID)")
+            print(" PlayerId: \(player.playerID), PlayerName: \(GKLocalPlayer.local.displayName), Team: \(player.teamPlayerID), GamePlayerID: \(player.gamePlayerID)")
         }
         
-        match.chooseBestHostingPlayer(completionHandler: {player in
-            print("PlayerName: \(player?.displayName), PlayerID: \(player?.teamPlayerID)")
-//                self.delegate?.startMatch(match: match)
-//                self.sendDataNG(match: match)
+        match.chooseBestHostingPlayer(completionHandler: { player in
+            
+            print("BEST HOSTING PLAYER => PlayerId: \(player?.playerID), PlayerName: \(player?.displayName), Team: \(player?.teamPlayerID), GamePlayerID: \(player?.gamePlayerID)")
+
+//            self.sendDataNG(match: match)
         })
 //        if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
 //            match.chooseBestHostingPlayer(completionHandler: {player in
@@ -76,7 +78,7 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
       request.inviteMessage = "Would you like to play Suake3D?"
       let vc = GKMatchmakerViewController(matchRequest: request)
       vc?.matchmakerDelegate = self
-      
+    
 //      currentMatchmakerVC2 = vc
       self.viewController?.presentAsSheet(vc!)
     }
