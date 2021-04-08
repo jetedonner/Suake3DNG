@@ -28,10 +28,10 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
             print("Current player count: \(match.players.count)")
         }
 
-        print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerID)\n-  PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n-  GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
+        print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerID)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n- GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
         
         for player in match.players{
-            print("Match-Player:\n- PlayerId: \(player.playerID)\n-  PlayerName: \(GKLocalPlayer.local.displayName)\n-  Team: \(player.teamPlayerID)\n-  GamePlayerID: \(player.gamePlayerID)")
+            print("Match-Player:\n- PlayerId: \(player.playerID)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(player.teamPlayerID)\n- GamePlayerID: \(player.gamePlayerID)")
         }
         
         match.chooseBestHostingPlayer(completionHandler: { player in
