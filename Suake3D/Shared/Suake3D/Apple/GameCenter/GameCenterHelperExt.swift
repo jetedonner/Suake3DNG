@@ -28,15 +28,15 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
             print("Current player count: \(match.players.count)")
         }
 
-        print("Local-Player: PlayerId: \(GKLocalPlayer.local.playerID), PlayerName: \(GKLocalPlayer.local.displayName), Team: \(GKLocalPlayer.local.teamPlayerID), GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
+        print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerID)\n-  PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n-  GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
         
         for player in match.players{
-            print(" PlayerId: \(player.playerID), PlayerName: \(GKLocalPlayer.local.displayName), Team: \(player.teamPlayerID), GamePlayerID: \(player.gamePlayerID)")
+            print("Match-Player:\n- PlayerId: \(player.playerID)\n-  PlayerName: \(GKLocalPlayer.local.displayName)\n-  Team: \(player.teamPlayerID)\n-  GamePlayerID: \(player.gamePlayerID)")
         }
         
         match.chooseBestHostingPlayer(completionHandler: { player in
             
-            print("BEST HOSTING PLAYER => PlayerId: \(player?.playerID), PlayerName: \(player?.displayName), Team: \(player?.teamPlayerID), GamePlayerID: \(player?.gamePlayerID)")
+            print("BEST HOSTING PLAYER =>\n- PlayerId: \(player?.playerID)\n- PlayerName: \(player?.displayName)\n- Team: \(player?.teamPlayerID)\n- GamePlayerID: \(player?.gamePlayerID)")
 
 //            self.sendDataNG(match: match)
         })
