@@ -771,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				55760E4625FD373000C10784 /* HUD */,
+				55DB998125FC57DC000023AF /* FadeViewAfterDeath.swift */,
 				55A2B8FC2601444300E25F7F /* GamePaused.swift */,
 			);
 			path = Gameplay;
@@ -899,6 +900,7 @@
 		55C1221C2618F4AA001E8E3F /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
+				55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */,
 				55C1221D2618F4CC001E8E3F /* GameCenterOverlay.swift */,
 			);
 			path = GameCenter;
@@ -1180,9 +1182,7 @@
 				55018349260152FC00F28C54 /* Menu */,
 				55DB997225FC5306000023AF /* Base */,
 				55760E4525FD371400C10784 /* Gameplay */,
-				55DB998125FC57DC000023AF /* FadeViewAfterDeath.swift */,
 				55001F91260CE3E80015B293 /* GameLoadingSkScene.swift */,
-				55C122212618F7F7001E8E3F /* GameCenterSkScene.swift */,
 				55760E6025FD3F4B00C10784 /* OverlayManager.swift */,
 			);
 			path = Overlay;

@@ -46,7 +46,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     func startMatch(match: GKMatch) {
         self.gameCenterHelper.matchMakerHelper?.setMatch(match: match)
         
-//        self.overlayManager.showOverlay4GameState(type: .gameCenter)
+        self.overlayManager.showOverlay4GameState(type: .gameCenter)
+        self.overlayManager.gameCenterOverlay.setProgress(curPrecent: 10, msg: "Determining best server host ...")
 //        match.delegate = self.gameCenterHelper.matchMakerHelper
     }
     

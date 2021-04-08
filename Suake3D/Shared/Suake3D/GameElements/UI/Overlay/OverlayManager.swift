@@ -85,7 +85,7 @@ class OverlayManager: SuakeGameClass {
     
     func showOverlay4GameState(type:OverlayType){
         self.setOverlaySKScene(overlay: self.overlay4GameState(type: type)!)
-        if(type == .loading || type == .matchOver || type == .matchResult || type == .menu || type == .tutorialMode || type == .tutorialStepCompleted || type == .paused || type == .menuSetupMain || type == .menuSetupDeveloper  || type == .cheatsheet){
+        if(type == .loading || type == .matchOver || type == .matchResult || type == .menu || type == .tutorialMode || type == .tutorialStepCompleted || type == .paused || type == .menuSetupMain || type == .menuSetupDeveloper || type == .cheatsheet || type == .gameCenter){
             self.game.cameraHelper.blurVision(blurOn: .BlurOn)
         }else{
             self.game.cameraHelper.blurVision(blurOn: .BlurOff)

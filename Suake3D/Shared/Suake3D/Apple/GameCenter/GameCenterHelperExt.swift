@@ -38,7 +38,8 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
             
             print("BEST HOSTING PLAYER =>\n- PlayerId: \(player?.playerID)\n- PlayerName: \(player?.displayName)\n- Team: \(player?.teamPlayerID)\n- GamePlayerID: \(player?.gamePlayerID)")
 
-//            self.sendDataNG(match: match)
+            self.sendDataNG(match: match, msgTyp: .setupClientServerMsg)
+            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
         })
 //        if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
 //            match.chooseBestHostingPlayer(completionHandler: {player in
@@ -83,16 +84,25 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
       self.viewController?.presentAsSheet(vc!)
     }
     
-    private func sendDataNG(match:GKMatch) {
+    private func sendDataNG(match:GKMatch, msgTyp:MsgType) {
 //        guard let match = match else { return }
         
         do {
-            guard let dataLoadLevel = NetTestFW.NetworkHelper.encodeAndSend(netData: NetTestFW.LoadLevelNetworkData(id: 1)) else {
-                return
+            if(msgTyp == .setupClientServerMsg){
+                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: SetupClientServerNetworkData(id: 1)) else {
+                    return
+                }
+                print(dataLoadLevel.prettyPrintedJSONString!)
+    //            guard let data = gameModel.encode() else { return }
+                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+            }else if(msgTyp == .initLevelMsg){
+                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: LoadLevelNetworkData(id: 2)) else {
+                    return
+                }
+                print(dataLoadLevel.prettyPrintedJSONString!)
+    //            guard let data = gameModel.encode() else { return }
+                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
             }
-            print(dataLoadLevel.prettyPrintedJSONString!)
-//            guard let data = gameModel.encode() else { return }
-            try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
         } catch {
             print("Send data failed")
         }

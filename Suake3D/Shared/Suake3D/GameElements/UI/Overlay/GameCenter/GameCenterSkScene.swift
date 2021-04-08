@@ -93,11 +93,7 @@ class GameCenterSkScene : SuakeBaseOverlay {
             }
             self.sceneNode.isPaused = false
         }
-        
-//    convenience init(game:GameController){
-//        self.init(fileNamed: "art.scnassets/overlays/gameplay/GameLoading")!
-//        self.game = game
-        
+
         baseBar = self.sceneNode.childNode(withName: "prgProgress") as? SKSpriteNode
         progressSteps = baseBar.frame.width / 100
         lblDesc = self.sceneNode.childNode(withName: "lblDesc") as? SKLabelNode
