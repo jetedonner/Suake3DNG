@@ -31,6 +31,8 @@ class GameCenterHelper: SuakeGameClass {
     
     let minPlayers:Int = 2
     let maxPlayers:Int = 2
+    var players:[GKPlayer] = [GKPlayer]()
+    
     let inviteMessage:String = "Hey there join me for a Suake3D fight!"
     var currentVC: GKMatchmakerViewController?
     
@@ -38,6 +40,8 @@ class GameCenterHelper: SuakeGameClass {
     var delegate:GameCenterHelperDelegate?
     
     var matchMakerHelper:MatchMakerHelper?
+    
+    
     
     override init(game:GameController) {
         super.init(game: game)
@@ -56,6 +60,7 @@ class GameCenterHelper: SuakeGameClass {
           NotificationCenter.default.post(name: Notification.Name.authenticationChanged, object: GKLocalPlayer.local.isAuthenticated)
 
           if GKLocalPlayer.local.isAuthenticated {
+            
 //            print("Authenticated to Game Center!")
             GKLocalPlayer.local.register(self)
             GKAccessPoint.shared.parentWindow = self.viewController?.view.window

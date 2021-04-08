@@ -29,27 +29,20 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
         }
 
         print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerID)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n- GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
+        self.players.append(GKLocalPlayer.local)
         
         for player in match.players{
-            print("Match-Player:\n- PlayerId: \(player.playerID)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(player.teamPlayerID)\n- GamePlayerID: \(player.gamePlayerID)")
+            print("Match-Player:\n- PlayerId: \(player.playerID)\n- PlayerName: \(player.displayName)\n- Team: \(player.teamPlayerID)\n- GamePlayerID: \(player.gamePlayerID)")
+            self.players.append(player)
         }
         
         match.chooseBestHostingPlayer(completionHandler: { player in
             
             print("BEST HOSTING PLAYER =>\n- PlayerId: \(player?.playerID)\n- PlayerName: \(player?.displayName)\n- Team: \(player?.teamPlayerID)\n- GamePlayerID: \(player?.gamePlayerID)")
 
-            self.sendDataNG(match: match, msgTyp: .setupClientServerMsg)
+            self.sendDataNG(match: match, msgTyp: .setupClientServerMsg, data: self.players)
             self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
         })
-//        if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
-//            match.chooseBestHostingPlayer(completionHandler: {player in
-//                print("PlayerName: \(player?.displayName), PlayerID: \(player?.gamePlayerID)")
-////                self.delegate?.startMatch(match: match)
-////                self.sendDataNG(match: match)
-//            })
-//        }
-//        self.delegate?.startMatch(match: match)
-//        self.sendDataNG(match: match)
     }
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer]){
@@ -79,63 +72,29 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
       request.inviteMessage = "Would you like to play Suake3D?"
       let vc = GKMatchmakerViewController(matchRequest: request)
       vc?.matchmakerDelegate = self
-    
-//      currentMatchmakerVC2 = vc
       self.viewController?.presentAsSheet(vc!)
     }
     
-    private func sendDataNG(match:GKMatch, msgTyp:MsgType) {
-//        guard let match = match else { return }
-        
+    private func sendDataNG(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {
         do {
             if(msgTyp == .setupClientServerMsg){
-                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: SetupClientServerNetworkData(id: 1)) else {
+                let netData:SetupClientServerNetworkData = SetupClientServerNetworkData(id: 1)
+                netData.addHost(playerId: (data as! [String])[0], hostType: .server)
+                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: netData) else {
                     return
                 }
                 print(dataLoadLevel.prettyPrintedJSONString!)
-    //            guard let data = gameModel.encode() else { return }
                 try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+                
             }else if(msgTyp == .initLevelMsg){
                 guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: LoadLevelNetworkData(id: 2)) else {
                     return
                 }
                 print(dataLoadLevel.prettyPrintedJSONString!)
-    //            guard let data = gameModel.encode() else { return }
                 try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
             }
         } catch {
             print("Send data failed")
         }
     }
-//    func presentMatchmaker(withInvite invite: GKInvite? = nil) {
-//        guard GKLocalPlayer.local.isAuthenticated,
-//              let vc = createMatchmaker(withInvite: invite) else {
-//            return
-//        }
-//        
-//        currentVC = vc
-//        vc.matchmakerDelegate = self
-////        delegate?.presentMatchmaking(viewController: vc)
-//    }
-//    
-//    private func createMatchmaker(withInvite invite: GKInvite? = nil) -> GKMatchmakerViewController? {
-//        
-//        //If there is an invite, create the matchmaker vc with it
-//        if let invite = invite {
-//            return GKMatchmakerViewController(invite: invite)
-//        }
-//        
-//        return GKMatchmakerViewController(matchRequest: createRequest())
-//    }
-//    
-//    private func createRequest() -> GKMatchRequest {
-//        let request = GKMatchRequest()
-//        request.defaultNumberOfPlayers = self.minPlayers
-//        request.minPlayers = self.minPlayers
-//        request.maxPlayers = self.maxPlayers
-//        request.inviteMessage = self.inviteMessage
-//        
-//        return request
-//    }
-    
 }
