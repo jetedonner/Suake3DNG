@@ -30,6 +30,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     
     func sendData(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {
         do {
+            print("SENDING Suake3D-MSG: Type: \(msgTyp)")
             if(msgTyp == .setupClientServerMsg){
                 let netData:SetupClientServerNetworkData = SetupClientServerNetworkData(id: 1)
                 netData.addHost(playerId: self.dbgServerPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
@@ -53,12 +54,14 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     }
     
     func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {
+        print("RECEIVING Suake3D-MSG ...")
         if(self.match != match){
+            print("self.match != match")
             return
         }
         print(data.prettyPrintedJSONString!)
         let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data)
-        print(newObj.msgType)
+        print("Suake3D-MSG: Type: \(newObj.msgType)")
         if(newObj.msgType == .setupClientServerMsg){
 //            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
             self.game.loadNetworkMatch2(setupNet: newObj as! SetupClientServerNetworkData)

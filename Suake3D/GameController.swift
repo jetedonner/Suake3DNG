@@ -136,20 +136,12 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
     }
     
-    func loadNetworkMatch2(setupNet:SetupClientServerNetworkData){
-        
+    func loadNetworkMatch2(setupNet:SetupClientServerNetworkData){  
         var clientServerData:[String:HostType] = setupNet.clientServerData
         
         for (key, value) in clientServerData{
             print("key: " + key + ", value: " + value.rawValue.description)
         }
-        
-//        for (key: String, value:HostType) in setupNet.clientServerData{
-////            print("key: \(key), value: \(value)")
-//            var tmp = -1
-//            tmp /= -1
-//        }
-//        self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
     }
     
     func loadGameScence(initialLoad:Bool = true){
