@@ -941,8 +941,8 @@
 		55D8941725FAC2CD00728B83 /* Apple */ = {
 			isa = PBXGroup;
 			children = (
-				55E8DD0325FD60AC0056A0A9 /* GameCenter */,
 				55DB994B25FC4889000023AF /* GameplayKit */,
+				55E8DD0325FD60AC0056A0A9 /* GameCenter */,
 				55D8941825FAC2D800728B83 /* SceneKit */,
 			);
 			path = Apple;

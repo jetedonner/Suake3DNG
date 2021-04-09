@@ -28,6 +28,7 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
             print("Current player count: \(match.players.count)")
         }
 
+        
         print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerID)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n- GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
         self.players.append(GKLocalPlayer.local)
         
@@ -36,13 +37,22 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
             self.players.append(player)
         }
         
-        match.chooseBestHostingPlayer(completionHandler: { player in
-            
-            print("BEST HOSTING PLAYER =>\n- PlayerId: \(player?.playerID)\n- PlayerName: \(player?.displayName)\n- Team: \(player?.teamPlayerID)\n- GamePlayerID: \(player?.gamePlayerID)")
-
-            self.sendDataNG(match: match, msgTyp: .setupClientServerMsg, data: self.players)
-            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
-        })
+        if(GKLocalPlayer.local.playerID == self.matchMakerHelper!.dbgServerPlayerId){
+            self.matchMakerHelper!.sendData(match: match, msgTyp: .setupClientServerMsg, data: self.players)
+        }
+        
+// ====  CHOOSE BEST HOSTING PLAYER ====
+// ##
+// ##     match.chooseBestHostingPlayer(completionHandler: { player in
+//            print("BEST HOSTING PLAYER =>\n- PlayerId: \(player?.playerID)\n- PlayerName: \(player?.displayName)\n- Team: \(player?.teamPlayerID)\n- GamePlayerID: \(player?.gamePlayerID)")
+//
+        
+//            DispatchQueue.main.async {
+//                self.game.overlayManager.gameCenterOverlay.stopProgressInfinite()
+//                self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
+//            }
+//
+//        })
     }
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer]){
@@ -75,26 +85,27 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
       self.viewController?.presentAsSheet(vc!)
     }
     
-    private func sendDataNG(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {
-        do {
-            if(msgTyp == .setupClientServerMsg){
-                let netData:SetupClientServerNetworkData = SetupClientServerNetworkData(id: 1)
-                netData.addHost(playerId: (data as! [String])[0], hostType: .server)
-                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: netData) else {
-                    return
-                }
-                print(dataLoadLevel.prettyPrintedJSONString!)
-                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
-                
-            }else if(msgTyp == .initLevelMsg){
-                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: LoadLevelNetworkData(id: 2)) else {
-                    return
-                }
-                print(dataLoadLevel.prettyPrintedJSONString!)
-                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
-            }
-        } catch {
-            print("Send data failed")
-        }
-    }
+//    private func sendDataNG(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {
+//        do {
+//            if(msgTyp == .setupClientServerMsg){
+//                let netData:SetupClientServerNetworkData = SetupClientServerNetworkData(id: 1)
+//                netData.addHost(playerId: self.dbgServerPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
+//                netData.addHost(playerId: self.dbgClientPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
+//                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: netData) else {
+//                    return
+//                }
+//                print(dataLoadLevel.prettyPrintedJSONString!)
+//                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+//                
+//            }else if(msgTyp == .initLevelMsg){
+//                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: LoadLevelNetworkData(id: 2)) else {
+//                    return
+//                }
+//                print(dataLoadLevel.prettyPrintedJSONString!)
+//                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+//            }
+//        } catch {
+//            print("Send data failed")
+//        }
+//    }
 }

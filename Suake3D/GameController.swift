@@ -47,7 +47,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.gameCenterHelper.matchMakerHelper?.setMatch(match: match)
         
         self.overlayManager.showOverlay4GameState(type: .gameCenter)
-        self.overlayManager.gameCenterOverlay.setProgress(curPrecent: 10, msg: "Determining best server host ...")
+        //self.overlayManager.gameCenterOverlay.setProgress(curPrecent: 10, msg: "Determining best server host ...")
+        self.overlayManager.gameCenterOverlay.startProgressInfinite(msg: "Determining best server host ...")
 //        match.delegate = self.gameCenterHelper.matchMakerHelper
     }
     
@@ -136,11 +137,18 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     }
     
     func loadNetworkMatch2(setupNet:SetupClientServerNetworkData){
-        for (key: String, value:HostType) in setupNet.clientServerData{
-//            print("key: \(key), value: \(value)")
-            var tmp = -1
-            tmp /= -1
+        
+        var clientServerData:[String:HostType] = setupNet.clientServerData
+        
+        for (key, value) in clientServerData{
+            print("key: " + key + ", value: " + value.rawValue.description)
         }
+        
+//        for (key: String, value:HostType) in setupNet.clientServerData{
+////            print("key: \(key), value: \(value)")
+//            var tmp = -1
+//            tmp /= -1
+//        }
 //        self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
     }
     

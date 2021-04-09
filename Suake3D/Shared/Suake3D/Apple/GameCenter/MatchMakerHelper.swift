@@ -11,6 +11,9 @@ import NetTestFW
 
 class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     
+    let dbgServerPlayerId:String = "G:1918667927"
+    let dbgClientPlayerId:String = "G:1400932886"
+    
     var match:GKMatch!
 //    var voiceChat:GKVoiceChat!
     
@@ -23,6 +26,30 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         self.match.delegate = self
 //        self.voiceChat = self.match.voiceChat(withName: "Suake3DChat")
 //        self.voiceChat.start()
+    }
+    
+    func sendData(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {
+        do {
+            if(msgTyp == .setupClientServerMsg){
+                let netData:SetupClientServerNetworkData = SetupClientServerNetworkData(id: 1)
+                netData.addHost(playerId: self.dbgServerPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
+                netData.addHost(playerId: self.dbgClientPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
+                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: netData) else {
+                    return
+                }
+                print(dataLoadLevel.prettyPrintedJSONString!)
+                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+                
+            }else if(msgTyp == .initLevelMsg){
+                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: LoadLevelNetworkData(id: 2)) else {
+                    return
+                }
+                print(dataLoadLevel.prettyPrintedJSONString!)
+                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+            }
+        } catch {
+            print("Send data failed")
+        }
     }
     
     func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {

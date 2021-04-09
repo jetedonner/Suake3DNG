@@ -160,6 +160,49 @@ class GameCenterSkScene : SuakeBaseOverlay {
         self.completitionHandler = block
     }
     
+    
+    var progressInfiniteRunning:Bool = false
+    
+    func startProgressInfinite(msg:String){
+        self.progressInfiniteRunning = true
+        self.lblPrecent.isHidden = true
+        self.setProgressInfinite(progress: 0, msg: msg)
+    }
+    
+    func stopProgressInfinite(){
+        self.progressInfiniteRunning = false
+        self.lblPrecent.isHidden = false
+        self.sceneNode.removeAllActions()
+        self.initProgressLoop()
+    }
+    
+    func setProgressInfinite(progress:Int, msg:String){
+        let percent:Int = progress + 1
+        self.sceneNode.run(SKAction.sequence([SKAction.run {
+            if(self.progressInfiniteRunning){
+                self.setProgress(curPrecent: percent, msg: msg)
+            }
+        }, SKAction.wait(forDuration: TimeInterval(1 / 10)), SKAction.run {
+            if(self.progressInfiniteRunning){
+                self.setProgressInfinite(progress: (percent < 100 ? percent : 0), msg: msg)
+            }
+        }]))
+    }
+    
+    
+    func progressTrip(from:Int, to:Int, stepMilliSec:Int, parentCnt:Int? = nil){
+        var cnt:Int = 0
+        if(parentCnt != nil){
+            cnt = parentCnt!
+        }
+        self.sceneNode.run(SKAction.sequence([SKAction.run {
+            self.setProgress(curPrecent: (to - cnt) + from, msg: self.newProgressMsg)
+            cnt += 1
+        }, SKAction.wait(forDuration: TimeInterval(stepMilliSec / 100)), SKAction.run {
+            self.progressTrip(from: from, to: to, stepMilliSec: stepMilliSec, parentCnt: cnt)
+        }]))
+    }
+    
     override func showOverlayScene(){
         super.showOverlayScene()
         self.initProgressLoop()
