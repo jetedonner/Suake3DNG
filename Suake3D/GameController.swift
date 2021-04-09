@@ -136,11 +136,9 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
     }
     
-    func loadNetworkMatch2(setupNet:SetupClientServerNetworkData){  
-        var clientServerData:[String:HostType] = setupNet.clientServerData
-        
-        for (key, value) in clientServerData{
-            print("key: " + key + ", value: " + value.rawValue.description)
+    func loadNetworkMatch2(setupNet:SetupClientServerNetworkData){
+        for host in setupNet.clientServerData {
+            print("playerId: " + host.playerId + ", playerType: \(host.playerType), playerNum: \(host.playerNum)")
         }
     }
     

@@ -61,7 +61,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         }
         print(data.prettyPrintedJSONString!)
         let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data)
-        print("Suake3D-MSG: Type: \(newObj.msgType)")
+        print("Suake3D-MSG: Type: \(newObj.msgType  )")
         if(newObj.msgType == .setupClientServerMsg){
 //            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
             self.game.loadNetworkMatch2(setupNet: newObj as! SetupClientServerNetworkData)
