@@ -19,7 +19,7 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
     }
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
-        print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) ")
+        print(SuakeMsgs.gameCenterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) ")
         
         viewController.dismiss(true)
         self.delegate?.startMatch(match: match)
@@ -39,6 +39,7 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
         
         if(GKLocalPlayer.local.playerID == self.matchMakerHelper!.dbgServerPlayerId){
             self.matchMakerHelper!.sendData(match: match, msgTyp: .setupClientServerMsg, data: self.players)
+            self.matchMakerHelper!.sendData(match: match, msgTyp: .initLevelMsg)
         }
         
 // ====  CHOOSE BEST HOSTING PLAYER ====
@@ -56,16 +57,16 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
     }
     
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer]){
-        print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer])")
+        print(SuakeMsgs.gameCenterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFindHostedPlayers players: [GKPlayer])")
     }
     
     func matchmakerViewControllerWasCancelled(_ viewController: GKMatchmakerViewController) {
-        print(SuakeMsgs.gameConterMsg + "matchmakerViewControllerWasCancelled()")
+        print(SuakeMsgs.gameCenterMsg + "matchmakerViewControllerWasCancelled()")
         viewController.dismiss(true)
     }
 
     func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error) {
-        print(SuakeMsgs.gameConterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error)")
+        print(SuakeMsgs.gameCenterMsg + "matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error)")
         print("> Matchmaker vc did fail with error: \(error.localizedDescription).")
     }
     

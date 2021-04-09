@@ -17,6 +17,11 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     var match:GKMatch!
 //    var voiceChat:GKVoiceChat!
     
+    var setupClientServerData:SetupClientServerNetworkData!
+    
+    var msgSentCounter:Int = 0
+    var msgRecvCounter:Int = 0
+    
     override init(game: GameController) {
         super.init(game: game)
     }
@@ -32,29 +37,31 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         do {
             print("SENDING Suake3D-MSG: Type: \(msgTyp)")
             if(msgTyp == .setupClientServerMsg){
-                let netData:SetupClientServerNetworkData = SetupClientServerNetworkData(id: 1)
-                netData.addHost(playerId: self.dbgServerPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
-                netData.addHost(playerId: self.dbgClientPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
-                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: netData) else {
+                self.setupClientServerData = SetupClientServerNetworkData(id: self.msgSentCounter)
+                self.setupClientServerData.addHost(playerId: self.dbgServerPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
+                self.setupClientServerData.addHost(playerId: self.dbgClientPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
+                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: self.setupClientServerData) else {
                     return
                 }
                 print(dataLoadLevel.prettyPrintedJSONString!)
                 try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
                 
             }else if(msgTyp == .initLevelMsg){
-                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: LoadLevelNetworkData(id: 2)) else {
+                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: LoadLevelNetworkData(id: self.msgSentCounter)) else {
                     return
                 }
                 print(dataLoadLevel.prettyPrintedJSONString!)
                 try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
             }
+            self.msgSentCounter += 1
         } catch {
             print("Send data failed")
         }
     }
     
     func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {
-        print("RECEIVING Suake3D-MSG ...")
+        print("RECEIVING Suake3D-MSG (No: \(self.msgRecvCounter)) ...")
+        self.msgRecvCounter += 1
         if(self.match != match){
             print("self.match != match")
             return
@@ -81,7 +88,16 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     }
     
     func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
-        print(SuakeMsgs.gameConterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
+        print(SuakeMsgs.gameCenterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
+        if(state == .disconnected){
+            for i in 0..<self.setupClientServerData.clientServerData.count{
+                if( self.setupClientServerData.clientServerData[i].playerId == player.playerID){
+                    print(SuakeMsgs.gameCenterMsg + "DISCONNETING: PlayerID: \(player.playerID)")
+                    self.setupClientServerData.clientServerData.remove(at: i)
+                    break
+                }
+            }
+        }
 //        if(state == .connected){
 //            if(match.expectedPlayerCount == 0){
 //                if(match.players[0].gamePlayerID == GKLocalPlayer.local.gamePlayerID){
