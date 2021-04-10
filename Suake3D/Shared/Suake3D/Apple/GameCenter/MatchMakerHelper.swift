@@ -113,6 +113,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.game.loadNetworkMatch2(setupNet: self.setupClientServerData)
         }else if(newObj.msgType == .ready4MatchMsg){
             print("CLIENT's ready 4 Match .... ")
+            self.sendStartMatchMsg()
         }else if(newObj.msgType == .startMatchMsg){
             self.game.loadNetworkMatch3(startMatch: newObj as! StartMatchNetworkData)
         }else if(newObj.msgType == .initLevelMsg){
