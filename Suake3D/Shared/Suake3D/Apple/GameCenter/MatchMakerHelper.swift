@@ -95,7 +95,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         if(newObj.msgType == .setupClientServerMsg){
 //            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
             self.dbgServerGKPlayer = player
-            self.game.loadNetworkMatch2(setupNet: newObj as! SetupClientServerNetworkData)
+            self.setupClientServerData = newObj as? SetupClientServerNetworkData
+            self.game.loadNetworkMatch2(setupNet: self.setupClientServerData)
         }else if(newObj.msgType == .ready4MatchMsg){
             print("CLIENT's ready 4 Match .... ")
         }else if(newObj.msgType == .initLevelMsg){
