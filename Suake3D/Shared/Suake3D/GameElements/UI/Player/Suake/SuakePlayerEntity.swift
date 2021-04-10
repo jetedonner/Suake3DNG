@@ -28,6 +28,11 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         }
     }
     
+    override func setup(pos: SCNVector3, dir:SuakeDir){
+        super.setup(pos: pos, dir: dir)
+        SuakeDirTurnDirHelper.initNodeRotation(node: self.suakePlayerComponent.mainNode, dir: dir)
+    }
+    
     override init(game: GameController, playerType: SuakePlayerType = .OwnSuake, id: Int = 0) {
         self.suakePlayerComponent = SuakePlayerComponent(game: game, playerType: playerType)
         self.moveComponent = SuakeMoveComponent(game: game)

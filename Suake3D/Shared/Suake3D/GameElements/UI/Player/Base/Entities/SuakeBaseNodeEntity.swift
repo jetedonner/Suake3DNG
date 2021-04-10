@@ -92,6 +92,12 @@ class SuakeBaseNodeEntity: SuakeBaseEntity {
        }
     }
     
+    func setup(pos: SCNVector3, dir:SuakeDir){
+        self.pos = pos
+        self.dir = dir
+        self.dirOld = dir
+    }
+    
     var position:SCNVector3{
         get{ return SCNVector3(self._pos.x * SuakeVars.fieldSize, 0 /*self._pos.y * SuakeVars.fieldSize*/, self._pos.z * SuakeVars.fieldSize) }
     }

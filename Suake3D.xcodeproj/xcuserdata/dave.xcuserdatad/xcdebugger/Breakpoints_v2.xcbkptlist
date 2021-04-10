@@ -3520,8 +3520,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakePlayerEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "hitByBullet(bullet:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3712,8 +3712,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakePlayerEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "autoAimAndShootOwnAt(entity:aimDur:)"
             landmarkType = "7">
          </BreakpointContent>

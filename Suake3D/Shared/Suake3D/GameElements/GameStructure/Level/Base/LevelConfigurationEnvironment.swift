@@ -14,21 +14,24 @@ import NetTestFW
 
 class LevelConfigurationEnvironment: SuakeGameClass {
     
-    var duration:MatchDuration!
     let skyBoxHelper:SkyBoxHelper
     let floorHelper:FloorHelper
     
     var levelSize:LevelSize
+    var duration:MatchDuration!
     var levelDifficulty:LevelDifficulty
     var lightIntensity:LightIntensity
 
-    init(game: GameController, skyboxType:SkyboxType = .RandomSkyBox, floorType:FloorType = .RandomFloor, levelSize:LevelSize = .Small, duration:MatchDuration = .Minutes_2, lightIntensity:LightIntensity = .normal) {
+    init(game: GameController, skyboxType:SkyboxType = .RandomSkyBox, floorType:FloorType = .RandomFloor, levelSize:LevelSize = .Small, duration:MatchDuration = .Minutes_2, lightIntensity:LightIntensity = .normal, levelDifficulty:LevelDifficulty = .Easy) {
+        
         self.skyBoxHelper = SkyBoxHelper(game: game, skyboxType: skyboxType)
         self.floorHelper = FloorHelper(game: game, floorType: floorType)
+       
         self.levelSize = levelSize
         self.duration = duration
-        self.levelDifficulty = .Medium
+        self.levelDifficulty = levelDifficulty
         self.lightIntensity = lightIntensity
+        
         super.init(game: game)
     }
     
