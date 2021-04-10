@@ -29,10 +29,6 @@ class GameCenterHelper: SuakeGameClass {
     
 //    static let helper = GameCenterHelper()
     
-    let minPlayers:Int = 2
-    let maxPlayers:Int = 2
-    var players:[GKPlayer] = [GKPlayer]()
-    
     let inviteMessage:String = "Hey there join me for a Suake3D fight!"
     var currentVC: GKMatchmakerViewController?
     

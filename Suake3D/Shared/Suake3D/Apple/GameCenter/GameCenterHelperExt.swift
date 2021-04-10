@@ -27,18 +27,17 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
         while match.expectedPlayerCount != 0 {
             print("Current player count: \(match.players.count)")
         }
-
         
         print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerID)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n- GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
-        self.players.append(GKLocalPlayer.local)
+        self.matchMakerHelper!.players.append(GKLocalPlayer.local)
         
         for player in match.players{
             print("Match-Player:\n- PlayerId: \(player.playerID)\n- PlayerName: \(player.displayName)\n- Team: \(player.teamPlayerID)\n- GamePlayerID: \(player.gamePlayerID)")
-            self.players.append(player)
+            self.matchMakerHelper!.players.append(player)
         }
         
         if(GKLocalPlayer.local.playerID == self.matchMakerHelper!.dbgServerPlayerId){
-            self.matchMakerHelper!.sendData(match: match, msgTyp: .setupClientServerMsg, data: self.players)
+            self.matchMakerHelper!.sendData(match: match, msgTyp: .setupClientServerMsg, data: self.matchMakerHelper!.players)
             self.matchMakerHelper!.sendData(match: match, msgTyp: .initLevelMsg)
         }
         
@@ -71,42 +70,18 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
     }
     
     func presentMatchmaker() {
-      guard GKLocalPlayer.local.isAuthenticated else {
-        return
-      }
-      
-      let request = GKMatchRequest()
-      
-      request.minPlayers = 2
-      request.maxPlayers = 2
-      request.defaultNumberOfPlayers = 2
-      request.inviteMessage = "Would you like to play Suake3D?"
-      let vc = GKMatchmakerViewController(matchRequest: request)
-      vc?.matchmakerDelegate = self
-      self.viewController?.presentAsSheet(vc!)
+        guard GKLocalPlayer.local.isAuthenticated else {
+            return
+        }
+        self.matchMakerHelper?.dbgClientGKPlayers.removeAll()
+        let request = GKMatchRequest()
+
+        request.minPlayers = self.matchMakerHelper!.minPlayers
+        request.maxPlayers = self.matchMakerHelper!.maxPlayers
+        request.defaultNumberOfPlayers = self.matchMakerHelper!.minPlayers
+        request.inviteMessage = "Would you like to play Suake3D?"
+        let vc = GKMatchmakerViewController(matchRequest: request)
+        vc?.matchmakerDelegate = self
+        self.viewController?.presentAsSheet(vc!)
     }
-    
-//    private func sendDataNG(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {
-//        do {
-//            if(msgTyp == .setupClientServerMsg){
-//                let netData:SetupClientServerNetworkData = SetupClientServerNetworkData(id: 1)
-//                netData.addHost(playerId: self.dbgServerPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
-//                netData.addHost(playerId: self.dbgClientPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
-//                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: netData) else {
-//                    return
-//                }
-//                print(dataLoadLevel.prettyPrintedJSONString!)
-//                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
-//                
-//            }else if(msgTyp == .initLevelMsg){
-//                guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: LoadLevelNetworkData(id: 2)) else {
-//                    return
-//                }
-//                print(dataLoadLevel.prettyPrintedJSONString!)
-//                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
-//            }
-//        } catch {
-//            print("Send data failed")
-//        }
-//    }
 }

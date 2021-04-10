@@ -13,7 +13,14 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     
     let dbgServerPlayerId:String = "G:1918667927"
     let dbgClientPlayerId:String = "G:1400932886"
+    
+    
     var dbgServerGKPlayer:GKPlayer!
+    var dbgClientGKPlayers:[GKPlayer] = [GKPlayer]()
+    
+    let minPlayers:Int = 2
+    let maxPlayers:Int = 2
+    var players:[GKPlayer] = [GKPlayer]()
     
     var match:GKMatch!
 //    var voiceChat:GKVoiceChat!

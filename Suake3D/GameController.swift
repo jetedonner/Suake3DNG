@@ -48,7 +48,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         
         self.overlayManager.showOverlay4GameState(type: .gameCenter)
         //self.overlayManager.gameCenterOverlay.setProgress(curPrecent: 10, msg: "Determining best server host ...")
-        self.overlayManager.gameCenterOverlay.startProgressInfinite(msg: "Determining best server host ...")
+//        self.overlayManager.gameCenterOverlay.startProgressInfinite(msg: "Determining best server host ...")
 //        match.delegate = self.gameCenterHelper.matchMakerHelper
     }
     
