@@ -155,6 +155,10 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         }
     }
     
+    func loadNetworkMatch3(startMatch:StartMatchNetworkData){
+        self.stateMachine.enter(SuakeStatePlaying.self)
+    }
+    
     func loadGameScence(initialLoad:Bool = true){
         DispatchQueue.main.async {
             self.isLoading = true

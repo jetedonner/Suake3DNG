@@ -23,7 +23,7 @@ extension MatchMakerHelper{
     func sendStartMatchMsg(){
         for host in self.setupClientServerData.clientServerData{
             if(host.playerId == GKLocalPlayer.local.playerID){
-                self.sendData(match: self.match, msgTyp: .ready4MatchMsg)
+                self.sendData(match: self.match, msgTyp: .startMatchMsg)
                 break
             }
         }

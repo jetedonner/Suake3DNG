@@ -68,6 +68,16 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 }
                 try match.send(dataReady4Match, to: [self.dbgServerGKPlayer], dataMode: .reliable)
 //                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+            }else if(msgTyp == .startMatchMsg){
+                let sendData = StartMatchNetworkData(id: self.msgSentCounter)
+                guard let dataStartMatch = NetworkHelper.encodeAndSend(netData: sendData) else {
+                    return
+                }
+                if(NetworkHelper.dbgMode){
+                    print(dataStartMatch.prettyPrintedJSONString!)
+                }
+                try match.sendData(toAllPlayers: dataStartMatch, with: .reliable)
+                self.game.loadNetworkMatch3(startMatch: sendData)
             }else if(msgTyp == .initLevelMsg){
                 let sendData = LoadLevelNetworkData(id: self.msgSentCounter)
                 guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: sendData) else {
@@ -103,6 +113,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.game.loadNetworkMatch2(setupNet: self.setupClientServerData)
         }else if(newObj.msgType == .ready4MatchMsg){
             print("CLIENT's ready 4 Match .... ")
+        }else if(newObj.msgType == .startMatchMsg){
+            self.game.loadNetworkMatch3(startMatch: newObj as! StartMatchNetworkData)
         }else if(newObj.msgType == .initLevelMsg){
             self.game.loadNetworkMatch(levelConfigNet: newObj as! LoadLevelNetworkData)
         }
