@@ -132,13 +132,25 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
 //        self.tryEncDec()
     }
     
+    var levelLoaded:Bool = false
+    var serverLoaded:Bool = false
+    
     func loadNetworkMatch(levelConfigNet:LoadLevelNetworkData){
         self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
+        self.levelLoaded = true
+        
+        if(self.levelLoaded && self.serverLoaded){
+            self.gameCenterHelper.matchMakerHelper?.sendReady4MatchMsg()
+        }
     }
     
     func loadNetworkMatch2(setupNet:SetupClientServerNetworkData){
         for host in setupNet.clientServerData {
             print("playerId: " + host.playerId + ", playerType: \(host.playerType), playerNum: \(host.playerNum)")
+        }
+        self.serverLoaded = true
+        if(self.levelLoaded && self.serverLoaded){
+            self.gameCenterHelper.matchMakerHelper?.sendReady4MatchMsg()
         }
     }
     

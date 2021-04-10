@@ -110,6 +110,9 @@ class SuakeKeyboardHandler: KeyboardHandler {
 //                    GameCenterHelper.helper.showAchivementsView()
                     self.game.overlayManager.showOverlay4GameState(type: .gameCenter)
                 }else{
+                    self.game.levelLoaded = false
+                    self.game.serverLoaded = false
+                    
                     self.game.gameCenterHelper.presentMatchmaker()
 //                    GameCenterHelper.helper.delegate = self.game.overlayManager.mainMenu
 //                    GameCenterHelper.helper.presentMatchmaker()

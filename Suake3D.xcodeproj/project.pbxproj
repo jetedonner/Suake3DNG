@@ -211,6 +211,7 @@
 		55DB998225FC57DC000023AF /* FadeViewAfterDeath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB998125FC57DC000023AF /* FadeViewAfterDeath.swift */; };
 		55DB998725FC5AC1000023AF /* SuakeStateDied.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB998625FC5AC1000023AF /* SuakeStateDied.swift */; };
 		55E8DCFF25FD604A0056A0A9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E8DCFE25FD604A0056A0A9 /* GameKit.framework */; };
+		55EA0D1B262231F900F412F9 /* MatchMakerHelperExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EA0D1A262231F900F412F9 /* MatchMakerHelperExt.swift */; };
 		55EC890925FA9A990040E676 /* WallFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890725FA9A990040E676 /* WallFactory.swift */; };
 		55EC890A25FA9A990040E676 /* WallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890825FA9A990040E676 /* WallManager.swift */; };
 		55EC891025FA9B150040E676 /* SuakeGameClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890F25FA9B150040E676 /* SuakeGameClass.swift */; };
@@ -460,6 +461,7 @@
 		55DB998125FC57DC000023AF /* FadeViewAfterDeath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeViewAfterDeath.swift; sourceTree = "<group>"; };
 		55DB998625FC5AC1000023AF /* SuakeStateDied.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeStateDied.swift; sourceTree = "<group>"; };
 		55E8DCFE25FD604A0056A0A9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		55EA0D1A262231F900F412F9 /* MatchMakerHelperExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakerHelperExt.swift; sourceTree = "<group>"; };
 		55EC890725FA9A990040E676 /* WallFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallFactory.swift; sourceTree = "<group>"; };
 		55EC890825FA9A990040E676 /* WallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallManager.swift; sourceTree = "<group>"; };
 		55EC890F25FA9B150040E676 /* SuakeGameClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeGameClass.swift; sourceTree = "<group>"; };
@@ -1214,6 +1216,7 @@
 				55C1224F261CE9A1001E8E3F /* GameCenterHelper.swift */,
 				55C12253261CEA21001E8E3F /* GameCenterHelperExt.swift */,
 				55C1225B261CF2CE001E8E3F /* MatchMakerHelper.swift */,
+				55EA0D1A262231F900F412F9 /* MatchMakerHelperExt.swift */,
 			);
 			path = GameCenter;
 			sourceTree = "<group>";
@@ -1500,6 +1503,7 @@
 				55D894E125FADDAA00728B83 /* SuakePlayerEntity.swift in Sources */,
 				55001F85260CDEB60015B293 /* SuakeBaseMultiAnimatedSCNNode.swift in Sources */,
 				55DB995325FC4940000023AF /* SuakeStateGameLoading.swift in Sources */,
+				55EA0D1B262231F900F412F9 /* MatchMakerHelperExt.swift in Sources */,
 				5513C8A5260D279F00633B40 /* DroidAttackComponent.swift in Sources */,
 				55D894B325FAD65C00728B83 /* SuakeKeyboardHandler.swift in Sources */,
 				55D8949425FACF3800728B83 /* SkyBoxHelper.swift in Sources */,
