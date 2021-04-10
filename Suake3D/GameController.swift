@@ -136,10 +136,11 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var serverLoaded:Bool = false
     
     func loadNetworkMatch(levelConfigNet:LoadLevelNetworkData){
+        self.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
         self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
         self.levelLoaded = true
         
-        if(self.levelLoaded && self.serverLoaded){
+        if(self.levelLoaded && self.serverLoaded && self.gameCenterHelper.matchMakerHelper?.ownPlayerNetObj.playerType == .client){
             self.gameCenterHelper.matchMakerHelper?.sendReady4MatchMsg()
         }
     }
@@ -149,7 +150,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             print("playerId: " + host.playerId + ", playerType: \(host.playerType), playerNum: \(host.playerNum)")
         }
         self.serverLoaded = true
-        if(self.levelLoaded && self.serverLoaded){
+        if(self.levelLoaded && self.serverLoaded && self.gameCenterHelper.matchMakerHelper?.ownPlayerNetObj.playerType == .client){
             self.gameCenterHelper.matchMakerHelper?.sendReady4MatchMsg()
         }
     }

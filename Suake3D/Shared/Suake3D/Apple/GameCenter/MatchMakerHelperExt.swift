@@ -18,6 +18,14 @@ extension MatchMakerHelper{
                 break
             }
         }
-        
+    }
+    
+    func sendStartMatchMsg(){
+        for host in self.setupClientServerData.clientServerData{
+            if(host.playerId == GKLocalPlayer.local.playerID){
+                self.sendData(match: self.match, msgTyp: .ready4MatchMsg)
+                break
+            }
+        }
     }
 }

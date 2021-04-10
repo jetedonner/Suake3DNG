@@ -18,6 +18,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     var dbgServerGKPlayer:GKPlayer!
     var dbgClientGKPlayers:[GKPlayer] = [GKPlayer]()
     
+    var ownPlayerNetObj:SuakePlayerObjNet!
+    
     let minPlayers:Int = 2
     let maxPlayers:Int = 2
     var players:[GKPlayer] = [GKPlayer]()
@@ -47,6 +49,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             if(msgTyp == .setupClientServerMsg){
                 self.setupClientServerData = SetupClientServerNetworkData(id: self.msgSentCounter)
                 self.setupClientServerData.addHost(playerId: self.dbgServerPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
+                self.ownPlayerNetObj = self.setupClientServerData.clientServerData.first
                 self.setupClientServerData.addHost(playerId: self.dbgClientPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
                 guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: self.setupClientServerData) else {
                     return
@@ -96,11 +99,11 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
 //            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
             self.dbgServerGKPlayer = player
             self.setupClientServerData = newObj as? SetupClientServerNetworkData
+            self.ownPlayerNetObj = self.setupClientServerData.clientServerData.last
             self.game.loadNetworkMatch2(setupNet: self.setupClientServerData)
         }else if(newObj.msgType == .ready4MatchMsg){
             print("CLIENT's ready 4 Match .... ")
         }else if(newObj.msgType == .initLevelMsg){
-            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
             self.game.loadNetworkMatch(levelConfigNet: newObj as! LoadLevelNetworkData)
         }
     }
