@@ -15,6 +15,7 @@ class UserDefaultsHelper:SuakeGameClass{
     let defaults = UserDefaults.standard
     
     var devMode:Bool = true
+    var dbgMultiplayerMode:Bool = true
     var soundEffects:Bool = true
     var matchDuration:MatchDuration = .Minute_1
     var levelSize:LevelSize = .Small

@@ -28,7 +28,7 @@ extension DroidComponent{
                 self.flashLightInner.addAnimation(self.flashLightRotationAnimation, forKey: nil)
             }else{
                 self.game.overlayManager.hud.overlayScene.map.droidNodes[self.id].setTexture(id: 2)
-                let constraint = SCNLookAtConstraint(target: self.playerEntity.targetEntity.suakePlayerComponent.mainNode)
+                let constraint = SCNLookAtConstraint(target: self.playerEntity.targetEntity.playerComponent.mainNode)
                 constraint.isGimbalLockEnabled = false
                 SCNTransaction.begin()
                 SCNTransaction.animationDuration = 0.45

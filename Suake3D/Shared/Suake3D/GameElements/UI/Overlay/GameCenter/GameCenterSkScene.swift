@@ -210,8 +210,8 @@ class GameCenterSkScene : SuakeBaseOverlay {
     
     override func mouseDownHandler(in view: NSView, with event: NSEvent) -> Bool {
 //        if(self.game.stateMachine.currentState is SuakeStateMainMenu){
-            let location = event.location(in: self.sceneNode)
-            let node = self.sceneNode.atPoint(location)
+        let location = event.location(in: self.sceneNode)
+        let node = self.sceneNode.atPoint(location)
         if(node == self.btnCancel || node == self.lblCancel){
 //                self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
                 self.game.stateMachine.returnToOldState(saveOldState: false)
@@ -232,7 +232,7 @@ class GameCenterSkScene : SuakeBaseOverlay {
                 self.game.showDbgMsg(dbgMsg: SuakeMsgs.gameQuitApp)
                 self.game.quitSuake3D()
             }*/
-            return true
+//            return true
 //        }
         return true
     }

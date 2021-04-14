@@ -43,7 +43,9 @@ extension MapOverlay{
             self.suakeOppNode = self.rotateNode(node: self.suakeOppNode, dir: oppPlayerEntity.dir)
         }
         
+        
         self.goodyNode = self.drawNodeIcon(iconFile: "GoodyIcon37x37.png", pos: self.game.playerEntityManager.goodyEntity.pos)
+        self.game.playerEntityManager.goodyEntity.mapNode = self.goodyNode
         
         if(self.game.levelManager.currentLevel.levelConfig.loadDroids){
             for droid in self.game.playerEntityManager.droidsNotDead{

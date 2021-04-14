@@ -12,10 +12,13 @@ import SceneKit
 
 class MedKitEntityGroup: SuakeNodeGroupBase {
     
-    var medKitCount:Int = 5
+    let medKitCount:Int
+    var medKitPos:[SCNVector3]!
 //    var itemEntityManager:ItemEntityManager!
     
-    init(game: GameController) {
+    init(game: GameController, itemCount:Int = 3, medKitPos:[SCNVector3]? = nil) {
+        self.medKitCount = itemCount
+        self.medKitPos = medKitPos
         super.init(game: game, locationType: .MedKit)
         self.groupName = "MedKitGroup"
         self.groupItems = [MedKitEntity]()
@@ -27,6 +30,9 @@ class MedKitEntityGroup: SuakeNodeGroupBase {
 //        self.itemEntityManager.addMedKitEntities(numberOfMedKits: self.medKitCount)
         for i in 0..<medKitCount{
             self.groupItems.append(MedKitEntity(game: self.game, id: i))
+            if(self.medKitPos != nil){
+                self.groupItems[i].pos = self.medKitPos[i]
+            }
         }
         //self.groupItems.append(self.itemEntityManager.getItemEntity(itemType: .MedKit, id: 0)!)
     }

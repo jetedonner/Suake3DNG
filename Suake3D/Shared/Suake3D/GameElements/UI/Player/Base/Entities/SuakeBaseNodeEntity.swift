@@ -96,6 +96,7 @@ class SuakeBaseNodeEntity: SuakeBaseEntity {
         self.pos = pos
         self.dir = dir
         self.dirOld = dir
+        self.game.levelManager.gameBoard.setGameBoardField(pos: pos, suakeField: self.suakeField)
     }
     
     var position:SCNVector3{

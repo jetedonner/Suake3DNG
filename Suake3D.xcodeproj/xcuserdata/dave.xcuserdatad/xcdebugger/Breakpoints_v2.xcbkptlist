@@ -1410,8 +1410,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/Settings/UserDefaultsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "init(game:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1522,8 +1522,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/Settings/UserDefaultsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "loadValuesFromUserDefaults()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1650,8 +1650,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1666,8 +1666,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2018,8 +2018,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "GameController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2146,8 +2146,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Map/MapOverlayExt.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "movePlayerNodes(delta:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2482,8 +2482,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "reposHealthBar(healthBar:entity:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2498,8 +2498,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "reposHealthBar(healthBar:entity:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2514,8 +2514,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "reposHealthBar(healthBar:entity:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2610,8 +2610,8 @@
             filePath = "Suake3D/GameController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "GameController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2818,8 +2818,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "showOverlayScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2834,8 +2834,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "showOverlayScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2850,8 +2850,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "showOverlayScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3056,8 +3056,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3072,8 +3072,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3088,8 +3088,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3513,22 +3513,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EE606658-D7A1-4724-B4B6-8F99AC268779"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakePlayerEntity.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "hitByBullet(bullet:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8F0BCA79-1EF6-4F82-95BE-243252AA21D0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -3712,8 +3696,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakePlayerEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "autoAimAndShootOwnAt(entity:aimDur:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3728,8 +3712,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Map/MapOverlayExt.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "reposNodeInit(playerType:id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3744,8 +3728,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Map/MapOverlayExt.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "movePlayerNodes(delta:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3760,8 +3744,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Map/MapOverlayExt.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "MapOverlay"
             landmarkType = "21">
          </BreakpointContent>

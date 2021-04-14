@@ -77,8 +77,10 @@ class MedKitEntity: SuakeNodeGroupItemBase {
         self.particlesComponent.node.isHidden = true
     }
     
-    func add2Scene(){
-        self.medKitComponent.initSetupPos()
+    func add2Scene(initPos:Bool = true){
+        if(initPos){
+            self.medKitComponent.initSetupPos()
+        }
         self.setParticlePos(newPos: self.pos)
         self.medKitComponent.addToScene()
     }

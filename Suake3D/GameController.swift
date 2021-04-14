@@ -191,6 +191,15 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             self.scnView.isPlaying = true
             
             self.stateMachine.enter(SuakeStateReadyToPlay.self)
+            if(self.usrDefHlpr.dbgMultiplayerMode){
+                let sendData = LoadLevelNetworkData(id: 689)
+                self.loadNetworkMatch(levelConfigNet: sendData)
+                self.cameraHelper.toggleFPVOpp(newFPV: false)
+                self.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "You are Player 1", duration: 3.0, completionHandler: {
+                    
+//                    self.stateMachine.enter(SuakeStatePlaying.self)
+                })
+            }
         }
     }
     

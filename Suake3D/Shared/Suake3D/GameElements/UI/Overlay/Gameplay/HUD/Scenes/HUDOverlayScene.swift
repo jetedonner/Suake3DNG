@@ -76,6 +76,7 @@ class HUDOverlayScene: SuakeBaseOverlay {
         
         self.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.duration.rawValue)
         self.lblScore.text = "0000"
+        self.map.updateMap(byPassCheck: true)
     }
     
     override func showOverlayScene() {

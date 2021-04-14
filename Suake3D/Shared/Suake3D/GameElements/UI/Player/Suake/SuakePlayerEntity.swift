@@ -13,7 +13,7 @@ import NetTestFW
 
 class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
 
-    let suakePlayerComponent:SuakePlayerComponent
+    let playerComponent:SuakePlayerComponent
     let moveComponent:SuakeMoveComponent
     let cameraComponent:SuakeCameraComponent
     let respawnComponent:SuakeRespawnComponent
@@ -24,25 +24,27 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
 //            self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: .empty)
             super.pos = newValue
 //            self.game.levelManager.gameBoard.setGameBoardField(pos: newValue, suakeField: .own_suake)
-            self.suakePlayerComponent.mainNode.position = SCNVector3(super.pos.x * SuakeVars.fieldSize, 0, super.pos.z * SuakeVars.fieldSize)
+            self.playerComponent.mainNode.position = SCNVector3(super.pos.x * SuakeVars.fieldSize, 0, super.pos.z * SuakeVars.fieldSize)
         }
     }
     
     override func setup(pos: SCNVector3, dir:SuakeDir){
         super.setup(pos: pos, dir: dir)
-        SuakeDirTurnDirHelper.initNodeRotation(node: self.suakePlayerComponent.mainNode, dir: dir)
+        SuakeDirTurnDirHelper.initNodeRotation(node: self.playerComponent.mainNode, dir: dir)
+        self.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
+        self.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, moveDifference: 0.0)
     }
     
     override init(game: GameController, playerType: SuakePlayerType = .OwnSuake, id: Int = 0) {
-        self.suakePlayerComponent = SuakePlayerComponent(game: game, playerType: playerType)
+        self.playerComponent = SuakePlayerComponent(game: game, playerType: playerType)
         self.moveComponent = SuakeMoveComponent(game: game)
-        self.cameraComponent = SuakeCameraComponent(game: game, cameraType: .Own3rdPerson)
+        self.cameraComponent = SuakeCameraComponent(game: game, playerType: playerType)
         self.respawnComponent = SuakeRespawnComponent(game: game)
 
         super.init(game: game, playerType: playerType, id: id)
         
         self.killScore = SuakeVars.suakePlayerKillScore
-        self.addComponent(self.suakePlayerComponent)
+        self.addComponent(self.playerComponent)
         self.addComponent(self.moveComponent)
         self.addComponent(self.cameraComponent)
         self.addComponent(self.respawnComponent)
@@ -56,7 +58,7 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         self.game.showDbgMsg(dbgMsg: "Suake (opp) hit by bullet > damage: " + bullet.damage.description, dbgLevel: .Verbose)
         
         if(self.healthComponent.decHealth(decVal: bullet.damage)){
-            self.game.physicsHelper.qeueNode2Remove(node: self.suakePlayerComponent.mainNode)
+            self.game.physicsHelper.qeueNode2Remove(node: self.playerComponent.mainNode)
             self.explodingComponent.explode()
             self.game.overlayManager.hud.healthBars[self]?.node.removeFromParent()
             
@@ -64,7 +66,7 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
             
             bullet.weapon.weaponArsenalManager.playerEntity.statsComponent.addNewStats(statsType: .opponetKilled, score: self.killScore)
             
-            self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: String(format: SuakeMsgs.pointAddString, self.killScore), pos: self.suakePlayerComponent.mainNode.position)
+            self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: String(format: SuakeMsgs.pointAddString, self.killScore), pos: self.playerComponent.mainNode.position)
             
         }else{
             self.game.overlayManager.hud.healthBars[self]?.drawHealthBar()
@@ -79,11 +81,8 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         super.rotateMapNodeInit(duration: self.game.physicsHelper.deltaTime, dir: self.dir)
     }
     
-//    static var initOppShootGoodyAggr:CGFloat = 0.5
     let shootingBlur:Int = 1
     func autoAimAndShootOwnAt(entity:SuakeBasePlayerEntity, aimDur:TimeInterval = 0.15){
-        
-        //self.game.playerEntityManager.getOppPlayerEntity()!.weapons.setCurrentWeaponType(weaponType: .mg, playAudio: false)
         
         var tmpPos:SCNVector3 = entity.position
         let rndDifMin = (1.1 - 0.5 /*DbgVars.initOppShootGoodyAggr*/)
@@ -106,7 +105,7 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
 //        }
 //        self.game.playerEntityManager.ownPlayerEntity.isPaused = false
 //        self.game.playerEntityManager.ownPlayerEntity.currentSuakeComponent.node.isPaused = false
-            self.suakePlayerComponent.mainNode.runAction(SCNAction.wait(duration: waitTime), completionHandler: {
+            self.playerComponent.mainNode.runAction(SCNAction.wait(duration: waitTime), completionHandler: {
                 self.shoot(at: tmpPos) // (entity as! GoodyEntity).goodyComponent.node.position)
             })
         }
@@ -152,7 +151,7 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
     }
     
     func setupPlayerEntity(){
-        self.suakePlayerComponent.add2Scene()
+        self.playerComponent.add2Scene()
     }
     
     required init?(coder: NSCoder) {

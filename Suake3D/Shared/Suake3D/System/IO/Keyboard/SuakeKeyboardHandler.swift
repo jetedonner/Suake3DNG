@@ -149,17 +149,17 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }
             }else if(pressedKey == .KEY_X){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-                    self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.startAnimationTMP()
+                    self.game.playerEntityManager.ownPlayerEntity.playerComponent.startAnimationTMP()
                 }else{
-                    self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.stopAnimationTMP()
+                    self.game.playerEntityManager.ownPlayerEntity.playerComponent.stopAnimationTMP()
                 }
             }else if(pressedKey == .KEY_Y){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-                    self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.currentSuakeComponent = self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.allSuakeComponents[0]
+                    self.game.playerEntityManager.ownPlayerEntity.playerComponent.currentSuakeComponent = self.game.playerEntityManager.ownPlayerEntity.playerComponent.allSuakeComponents[0]
                 }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.option)){
-                    self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.currentSuakeComponent = self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.allSuakeComponents[1]
+                    self.game.playerEntityManager.ownPlayerEntity.playerComponent.currentSuakeComponent = self.game.playerEntityManager.ownPlayerEntity.playerComponent.allSuakeComponents[1]
                 }else{
-                    self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.currentSuakeComponent = self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.allSuakeComponents[2]
+                    self.game.playerEntityManager.ownPlayerEntity.playerComponent.currentSuakeComponent = self.game.playerEntityManager.ownPlayerEntity.playerComponent.allSuakeComponents[2]
                 }
             }else if(pressedKey == .KEY_Z){
                 (self.game.scnView as! GameViewMacOS).viewController?.restartGameController() //initGameController(reload: true)

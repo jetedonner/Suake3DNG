@@ -13,8 +13,18 @@ class SuakePlayerManager: SuakeGameClass {
     
     var ownPlayerEntity:SuakeOwnPlayerEntity!
     var oppPlayerEntity:SuakeOppPlayerEntity!
+    
     var goodyEntity:GoodyEntity!
     var droidEntities:[DroidEntity] = [DroidEntity]()
+    
+    var _userPlayerSuake:SuakePlayerEntity!
+    var userPlayerSuake:SuakePlayerEntity{
+        get{ return self._userPlayerSuake }
+        set{
+            self._userPlayerSuake = newValue
+//            self.userPlayerSuake.cameraComponent
+        }
+    }
     
     var droidsNotDead:[DroidEntity]{
         get{
@@ -36,6 +46,9 @@ class SuakePlayerManager: SuakeGameClass {
         if(self.game.levelManager.currentLevel.levelConfig.loadOppSuake){
             self.oppPlayerEntity = SuakeOppPlayerEntity(game: self.game)
         }
+        
+        self.userPlayerSuake = self.ownPlayerEntity
+        
         self.goodyEntity = GoodyEntity(game: self.game)
         self.goodyEntity.goodyComponent.initSetupPos()
         

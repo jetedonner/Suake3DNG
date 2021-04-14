@@ -29,8 +29,13 @@ class MultiplayerLevel: SuakeBaseLevel{
         
         self.game.playerEntityManager.oppPlayerEntity.setup(pos: self.levelConfigNet.levelConfig.levelSetup.playerPos[1], dir: self.levelConfigNet.levelConfig.levelSetup.playerDir[1])
         
-//        self.game.locationEntityManager.entities[.MedKit].
-//        self.levelConfigNet.levelConfig.levelSetup.medKitPos
+        self.game.playerEntityManager.goodyEntity.setup(pos: self.levelConfigNet.levelConfig.levelSetup.goodyPos, dir: .UP)
+        
+        self.game.levelManager.currentLevel.weaponPickUps.getNewWeaponPickupEntity(weaponType: .mg).pos = self.levelConfigNet.levelConfig.levelSetup.mgPickupPos
+        //MedKit
+        self.game.locationEntityManager.removeLocationGroupsFromScene()
+        self.game.locationEntityManager.initLocations(medKitPos: self.levelConfigNet.levelConfig.levelSetup.medKitPos)
+        self.game.locationEntityManager.addLocationGroupsToScene(initPos: false)
         
         self.game.overlayManager.hud.overlayScene.loadInitialValues()
     }

@@ -48,9 +48,9 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             print("SENDING Suake3D-MSG: Type: \(msgTyp)")
             if(msgTyp == .setupClientServerMsg){
                 self.setupClientServerData = SetupClientServerNetworkData(id: self.msgSentCounter)
-                self.setupClientServerData.addHost(playerId: self.dbgServerPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
+                self.setupClientServerData.addHost(playerId: self.dbgServerPlayerId, playerName: "DaVe inc." /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
                 self.ownPlayerNetObj = self.setupClientServerData.clientServerData.first
-                self.setupClientServerData.addHost(playerId: self.dbgClientPlayerId /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
+                self.setupClientServerData.addHost(playerId: self.dbgClientPlayerId, playerName: "JeTeDonner" /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
                 guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: self.setupClientServerData) else {
                     return
                 }
@@ -134,8 +134,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         print(SuakeMsgs.gameCenterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
         if(state == .disconnected){
             for i in 0..<self.setupClientServerData.clientServerData.count{
-                if( self.setupClientServerData.clientServerData[i].playerId == player.playerID){
-                    print(SuakeMsgs.gameCenterMsg + "DISCONNETING: PlayerID: \(player.playerID)")
+                if( self.setupClientServerData.clientServerData[i].playerId == player.playerIDNG){
+                    print(SuakeMsgs.gameCenterMsg + "DISCONNETING: PlayerID: \(player.playerIDNG)")
                     self.setupClientServerData.clientServerData.remove(at: i)
                     break
                 }

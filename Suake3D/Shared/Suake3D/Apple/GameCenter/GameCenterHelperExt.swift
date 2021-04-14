@@ -28,15 +28,15 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
             print("Current player count: \(match.players.count)")
         }
         
-        print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerID)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n- GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
+        print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerIDNG)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n- GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
         self.matchMakerHelper!.players.append(GKLocalPlayer.local)
         
         for player in match.players{
-            print("Match-Player:\n- PlayerId: \(player.playerID)\n- PlayerName: \(player.displayName)\n- Team: \(player.teamPlayerID)\n- GamePlayerID: \(player.gamePlayerID)")
+            print("Match-Player:\n- PlayerId: \(player.playerIDNG)\n- PlayerName: \(player.displayName)\n- Team: \(player.teamPlayerID)\n- GamePlayerID: \(player.gamePlayerID)")
             self.matchMakerHelper!.players.append(player)
         }
         
-        if(GKLocalPlayer.local.playerID == self.matchMakerHelper!.dbgServerPlayerId){
+        if(GKLocalPlayer.local.playerIDNG == self.matchMakerHelper!.dbgServerPlayerId){
             self.matchMakerHelper!.sendData(match: match, msgTyp: .setupClientServerMsg, data: self.matchMakerHelper!.players)
             self.matchMakerHelper!.sendData(match: match, msgTyp: .initLevelMsg)
         }

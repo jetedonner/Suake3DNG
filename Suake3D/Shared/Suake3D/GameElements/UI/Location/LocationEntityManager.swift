@@ -15,11 +15,11 @@ class LocationEntityManager: EntityManager {
         super.init(game: game)
     }
     
-    func initLocations(){
+    func initLocations(medKitPos:[SCNVector3]? = nil){
         let respawnTestEntity:RespawnPointEntity = RespawnPointEntity(game: self.game, id: 0)
         self.add(locationType: .RespawnPoint, entity: respawnTestEntity)
         
-        let medKitEntityGroup:MedKitEntityGroup = MedKitEntityGroup(game: self.game)
+        let medKitEntityGroup:MedKitEntityGroup = MedKitEntityGroup(game: self.game, medKitPos: medKitPos)
         
         self.add(locationType: .MedKit, entityGroup: medKitEntityGroup)
     }
@@ -34,15 +34,28 @@ class LocationEntityManager: EntityManager {
         }
     }
     
-    func addLocationGroupsToScene(){
+    func addLocationGroupsToScene(initPos:Bool = true){
         for (key, value) in self.entityGroups{
             if(key == .MedKit){
                 for ent in value.enumerated(){
                     for medKitEntity in (ent.element as! MedKitEntityGroup).groupItems{
-                        (medKitEntity as! MedKitEntity).add2Scene()
+                        (medKitEntity as! MedKitEntity).add2Scene(initPos: initPos)
                     }
                 }
             }
         }
+    }
+    
+    func removeLocationGroupsFromScene(){
+        for (key, value) in self.entityGroups{
+            if(key == .MedKit){
+                for ent in value.enumerated(){
+                    for medKitEntity in (ent.element as! MedKitEntityGroup).groupItems{
+                        (medKitEntity as! MedKitEntity).medKitComponent.node.removeFromParentNode()
+                    }
+                }
+            }
+        }
+        self.entityGroups.removeValue(forKey: .MedKit)
     }
 }

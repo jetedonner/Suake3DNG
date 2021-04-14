@@ -95,7 +95,7 @@ class SuakeMoveComponent: SuakeBaseComponent {
         self.turnQueue.removeAll()
         self.currentTurnDir = .Straight
         self.inBetweenMove = false
-        SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.suakePlayerComponent.mainNode, dir: self.playerEntity.dir)
+        SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.playerComponent.mainNode, dir: self.playerEntity.dir)
     }
     
     func nextMove(deltaTime seconds: TimeInterval = 1.0){
@@ -132,9 +132,9 @@ class SuakeMoveComponent: SuakeBaseComponent {
     }
     
     func setAndShowSuakePlayerNodeComponent(newSuakePlayerNodeComponent:SuakePlayerNodeComponent){
-        self.playerEntity.suakePlayerComponent.currentSuakeComponent.isHidden = true
-        self.playerEntity.suakePlayerComponent.currentSuakeComponent.isStopped = true
-        self.playerEntity.suakePlayerComponent.currentSuakeComponent = newSuakePlayerNodeComponent
+        self.playerEntity.playerComponent.currentSuakeComponent.isHidden = true
+        self.playerEntity.playerComponent.currentSuakeComponent.isStopped = true
+        self.playerEntity.playerComponent.currentSuakeComponent = newSuakePlayerNodeComponent
         newSuakePlayerNodeComponent.isHidden = false
         newSuakePlayerNodeComponent.isStopped = false
     }
@@ -147,7 +147,7 @@ class SuakeMoveComponent: SuakeBaseComponent {
     
     func nextMove(newTurnDir:TurnDir = .Straight, deltaTime seconds: TimeInterval = 1.0){
         var newPos:SCNVector3 = self.playerEntity.pos
-        let nextSuakePlayerNodeComponent:SuakePlayerNodeComponent = self.playerEntity.suakePlayerComponent.getNextSuakePlayerNodeComponent(turnDir: newTurnDir)
+        let nextSuakePlayerNodeComponent:SuakePlayerNodeComponent = self.playerEntity.playerComponent.getNextSuakePlayerNodeComponent(turnDir: newTurnDir)
         let nextDir:SuakeDir = SuakeDirTurnDirHelper.getSuakeDirFromTurnDir(oldSuakeDir: self.playerEntity.dir, turnDir: newTurnDir)
         
         if(seconds >= 1.0){
@@ -181,7 +181,7 @@ class SuakeMoveComponent: SuakeBaseComponent {
             if(self.playerEntity.dir != nextDir){
                 self.game.overlayManager.hud.overlayScene.arrows.rotateArrows(duration: 1.0, turnDir: (newTurnDir == .Left ? .Right : .Left))
             }
-            self.playerEntity.suakePlayerComponent.currentSuakeComponent.movePlayerNodeComponent(newTurnDir: newTurnDir, newDir: nextDir, deltaTime: seconds)
+            self.playerEntity.playerComponent.currentSuakeComponent.movePlayerNodeComponent(newTurnDir: newTurnDir, newDir: nextDir, deltaTime: seconds)
             
             self.playerEntity.dir = nextDir
             

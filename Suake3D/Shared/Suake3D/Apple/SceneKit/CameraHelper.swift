@@ -276,6 +276,6 @@ class CameraHelper: SuakeGameClass {
             }
 //        }
         SCNTransaction.commit()
-        self.game.showDbgMsg(dbgMsg: "Switched to camera: " + cameraView.rawValue)
+        self.game.showDbgMsg(dbgMsg: "Switched to camera: \(cameraView)")
     }
 }

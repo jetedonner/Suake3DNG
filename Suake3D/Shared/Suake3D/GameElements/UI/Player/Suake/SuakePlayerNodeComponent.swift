@@ -119,7 +119,7 @@ class SuakePlayerNodeComponent: SuakeBaseSCNNodeComponent {
         }
         if(self.suakePart == .leftToStraight || self.suakePart == .rightToStraight){
             
-            SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.suakePlayerComponent.mainNode, dir: self.playerEntity.dir)
+            SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.playerComponent.mainNode, dir: self.playerEntity.dir)
         }
         
         self.node.animation?.stop()

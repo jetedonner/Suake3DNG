@@ -14,29 +14,30 @@ class SuakeCameraComponent: SuakeBaseComponent {
     
     var cameraNode:SCNNode!
     var cameraNodeFP:SCNNode!
-    let cameraType:CameraView
     
-    init(game: GameController, cameraType:CameraView){
-        self.cameraNode = game.cameraHelper.cameraNode
-        self.cameraType = cameraType
-        if(cameraType == .Own3rdPerson){
+//    let cameraType:CameraView
+    let cameraViewType:CameraViewType
+    var playerType:SuakePlayerType!
+    
+    init(game: GameController, playerType:SuakePlayerType){
+        
+        self.playerType = playerType
+//        self.cameraType = (playerType == .OwnSuake ? .Own3rdPerson : .Opp3rdPerson)
+        self.cameraViewType = (playerType == .OwnSuake ? .ThirdPerson : .FirstPerson)
+        
+        if(self.playerType == .OwnSuake){
             self.cameraNode = game.cameraHelper.cameraNode
             self.cameraNodeFP = game.cameraHelper.cameraNodeFP
-        }else if(cameraType == .Own1stPerson){
-            self.cameraNode = game.cameraHelper.cameraNode
-            self.cameraNodeFP = game.cameraHelper.cameraNodeFP
-        }/*else if(cameraType == .Opp3rdPerson){
+        }else{
             self.cameraNode = game.cameraHelper.cameraNodeOpp
-        }else if(cameraType == .Opp1stPerson){
-            self.cameraNode = game.cameraHelper.cameraNodeFPOpp
-        }*/
+            self.cameraNodeFP = game.cameraHelper.cameraNodeFPOpp
+        }
         super.init(game: game)
     }
     
-    func moveFollowCamera(turnDir:TurnDir = .Straight, duration:TimeInterval = 1.0){
+    func moveFollowCamera(turnDir:TurnDir = .Straight, duration:TimeInterval = 1.0, moveDifference:CGFloat = SuakeVars.fieldSize){
         
-        let moveDifference:CGFloat = SuakeVars.fieldSize
-        
+//        let moveDifference:CGFloat = SuakeVars.fieldSize
         SCNTransaction.begin()
         SCNTransaction.animationDuration = duration
         SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
@@ -60,54 +61,49 @@ class SuakeCameraComponent: SuakeBaseComponent {
             SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         }
         
-        if let ownEntity = self.entity{
-            let ownPlayerEntity = (ownEntity as! SuakePlayerEntity)
-            let testDir:SuakeDir = ownPlayerEntity.dir
-            if(testDir == .UP){
+        if let playerEntity = self.entity{
+            let suakePlayerEntity = (playerEntity as! SuakePlayerEntity)
+            let suakeDir:SuakeDir = suakePlayerEntity.dir
+            if(suakeDir == .UP){
+                cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 1.0, 0.0, -1.0, 0.0)
                 if(turnDir == .Left){
-                    cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 1.0, 0.0, -1.0, 0.0)
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x - moveDifference, 45, ownPlayerEntity.position.z - SuakeVars.cameraDist))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x - moveDifference, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist))
                 }else if(turnDir == .Right){
-                    cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 1.0, 0.0, -1.0, 0.0)
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x + moveDifference, 45, ownPlayerEntity.position.z - SuakeVars.cameraDist))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x + moveDifference, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist))
                 }else{
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x, 45, ownPlayerEntity.position.z - SuakeVars.cameraDist + moveDifference))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist + moveDifference))
                 }
-            }else if(testDir == .DOWN){
+            }else if(suakeDir == .DOWN){
+                cameraNode.transform = SCNMatrix4MakeRotation(0.0, 0.0, -1.0, 0.0)
                 if(turnDir == .Left){
-                    cameraNode.transform = SCNMatrix4MakeRotation(0.0, 0.0, -1.0, 0.0)
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x + moveDifference, 45, ownPlayerEntity.position.z + SuakeVars.cameraDist))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x + moveDifference, 45, suakePlayerEntity.position.z + SuakeVars.cameraDist))
                 }else if(turnDir == .Right){
-                    cameraNode.transform = SCNMatrix4MakeRotation(0.0, 0.0, -1.0, 0.0)
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x - moveDifference, 45, ownPlayerEntity.position.z + SuakeVars.cameraDist))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x - moveDifference, 45, suakePlayerEntity.position.z + SuakeVars.cameraDist))
                 }else{
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x, 45, ownPlayerEntity.position.z + SuakeVars.cameraDist - moveDifference))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x, 45, suakePlayerEntity.position.z + SuakeVars.cameraDist - moveDifference))
                 }
-            }else if(testDir == .LEFT){
+            }else if(suakeDir == .LEFT){
+                cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 0.5, 0.0, -1.0, 0.0)
                 if(turnDir == .Left){
-                    cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 0.5, 0.0, -1.0, 0.0)
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x - SuakeVars.cameraDist, 45, ownPlayerEntity.position.z + moveDifference))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x - SuakeVars.cameraDist, 45, suakePlayerEntity.position.z + moveDifference))
                 }else if(turnDir == .Right){
-                    cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 0.5, 0.0, -1.0, 0.0)
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x - SuakeVars.cameraDist, 45, ownPlayerEntity.position.z - moveDifference))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x - SuakeVars.cameraDist, 45, suakePlayerEntity.position.z - moveDifference))
                 }else{
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x - SuakeVars.cameraDist + moveDifference, 45, ownPlayerEntity.position.z))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x - SuakeVars.cameraDist + moveDifference, 45, suakePlayerEntity.position.z))
                 }
-            }else if(testDir == .RIGHT){
+            }else if(suakeDir == .RIGHT){
+                cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * -0.5, 0.0, -1.0, 0.0)
                 if(turnDir == .Left){
-                    cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * -0.5, 0.0, -1.0, 0.0)
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x + SuakeVars.cameraDist, 45, ownPlayerEntity.position.z - moveDifference))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x + SuakeVars.cameraDist, 45, suakePlayerEntity.position.z - moveDifference))
                 }else if(turnDir == .Right){
-                    cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * -0.5, 0.0, -1.0, 0.0)
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x + SuakeVars.cameraDist, 45, ownPlayerEntity.position.z + moveDifference))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x + SuakeVars.cameraDist, 45, suakePlayerEntity.position.z + moveDifference))
                 }else{
-                    setFollowCameraPos(newPos: SCNVector3(ownPlayerEntity.position.x + SuakeVars.cameraDist - moveDifference, 45, ownPlayerEntity.position.z))
+                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x + SuakeVars.cameraDist - moveDifference, 45, suakePlayerEntity.position.z))
                 }
             }
         }
         SCNTransaction.commit()
     }
-    
     
     func setFollowCameraPos(newPos:SCNVector3){
         self.cameraNode.position = newPos
@@ -123,17 +119,13 @@ class SuakeCameraComponent: SuakeBaseComponent {
         }
     }
     
-    var currRotation:CGFloat = 0.0
-    var currFullRotations:Int = 0
-    
-    func moveRotateFPCamera(duration:TimeInterval = 1.0, turnDir:TurnDir = .Straight, beamed:Bool = false){
+    func moveRotateFPCamera(duration:TimeInterval = 1.0, turnDir:TurnDir = .Straight, beamed:Bool = false, moveDifference:CGFloat = SuakeVars.fieldSize){
         
-        if let ownEntity = self.entity{
-            let ownPlayerEntity = (ownEntity as! SuakePlayerEntity)
+        if let playerEntity = self.entity{
+            let suakePlayerEntity = (playerEntity as! SuakePlayerEntity)
             
-            let rotationMultiplyer:CGFloat = 0.0
             var yReset:CGFloat = 0.0
-            switch ownPlayerEntity.dir {
+            switch suakePlayerEntity.dir {
             case .UP:
                 yReset = CGFloat.pi
             case .LEFT:
@@ -145,10 +137,7 @@ class SuakeCameraComponent: SuakeBaseComponent {
             default:
                 yReset = 0.0
             }
-            let rotateBy:CGFloat = CGFloat.pi * rotationMultiplyer
-            self.currRotation += rotateBy
             
-            self.currFullRotations = Int(self.currRotation / CGFloat.pi)
             self.cameraNodeFP.runAction(SCNAction.rotateTo(x: 0, y: yReset, z: 0, duration: duration, usesShortestUnitArc: true), completionHandler: {
                 
             })
@@ -156,56 +145,56 @@ class SuakeCameraComponent: SuakeBaseComponent {
             SCNTransaction.animationDuration = duration
             SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
             
-            if(ownPlayerEntity.dirOld == .UP){
+            if(suakePlayerEntity.dirOld == .UP){
                 if(turnDir == .Left){
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z + SuakeVars.fieldSize
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x + SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + moveDifference
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + SuakeVars.cameraFPAhead
                 }else if(turnDir == .Right){
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z + SuakeVars.fieldSize
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x - SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + moveDifference
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - SuakeVars.cameraFPAhead
                 }else{
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z + (beamed ? 0 : SuakeVars.fieldSize) + SuakeVars.cameraFPAhead
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + (beamed ? 0 : moveDifference) + SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x
                 }
-            }else if(ownPlayerEntity.dirOld == .DOWN){
+            }else if(suakePlayerEntity.dirOld == .DOWN){
                 if(turnDir == .Left){
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z - SuakeVars.fieldSize
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x - SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - moveDifference
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - SuakeVars.cameraFPAhead
                 }else if(turnDir == .Right){
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z - SuakeVars.fieldSize
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x + SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - moveDifference
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + SuakeVars.cameraFPAhead
                 }else{
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z - SuakeVars.fieldSize - SuakeVars.cameraFPAhead
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - moveDifference - SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x
                 }
-            }else if(ownPlayerEntity.dirOld == .LEFT){
+            }else if(suakePlayerEntity.dirOld == .LEFT){
                 if(turnDir == .Left){
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x + SuakeVars.fieldSize
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z - SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + moveDifference
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - SuakeVars.cameraFPAhead
                 }else if(turnDir == .Right){
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x + SuakeVars.fieldSize
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z + SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + moveDifference
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + SuakeVars.cameraFPAhead
                 }else{
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x + SuakeVars.fieldSize + SuakeVars.cameraFPAhead
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + moveDifference + SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z
                 }
-            }else if(ownPlayerEntity.dirOld == .RIGHT){
+            }else if(suakePlayerEntity.dirOld == .RIGHT){
                 if(turnDir == .Left){
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x - SuakeVars.fieldSize
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z + SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - moveDifference
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + SuakeVars.cameraFPAhead
                 }else if(turnDir == .Right){
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x - SuakeVars.fieldSize
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z - SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - moveDifference
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - SuakeVars.cameraFPAhead
                 }else{
-                    self.cameraNodeFP.position.x = ownPlayerEntity.position.x - SuakeVars.fieldSize - SuakeVars.cameraFPAhead
-                    self.cameraNodeFP.position.z = ownPlayerEntity.position.z
+                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - moveDifference - SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z
                 }
             }
             self.cameraNodeFP.position.y = 8
             SCNTransaction.commit()
-            if(self.cameraType == .Own1stPerson){
-                print("MoveRotateFPCamera (2) pos: \(self.cameraNodeFP.position)")
-            }
+//            if(self.cameraViewType == .FirstPerson){
+//                print("MoveRotateFPCamera (2) pos: \(self.cameraNodeFP.position)")
+//            }
         }
     }
     

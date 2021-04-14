@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum EnemyNames:String{
+enum EnemyNames: String{
     case DeathKnight    = "Death Knight"
     case Enforcer       = "Enforcer"
     case Fiend          = "Fiend"

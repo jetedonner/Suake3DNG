@@ -8,11 +8,18 @@
 
 import Foundation
 
-enum CameraView: String {
+enum CameraView: Int {
     case Own3rdPerson
     case Own1stPerson
     case Opp3rdPerson
     case Opp1stPerson
+    case FreeCamera
+    case Undefined
+}
+
+enum CameraViewType: Int {
+    case ThirdPerson
+    case FirstPerson
     case FreeCamera
     case Undefined
 }

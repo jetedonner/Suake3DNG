@@ -24,24 +24,24 @@ class SuakeRespawnComponent: SuakeBaseComponent {
     
     func respawnSuake(completion: @escaping () -> Void){
         
-        self.playerEntity.suakePlayerComponent.currentSuakeComponent.node.opacity = 0.0
-        self.playerEntity.suakePlayerComponent.currentSuakeComponent.isStopped = true
+        self.playerEntity.playerComponent.currentSuakeComponent.node.opacity = 0.0
+        self.playerEntity.playerComponent.currentSuakeComponent.isStopped = true
         
         let newPos:SCNVector3 = self.game.levelManager.gameBoard.getRandomFreePos(diff: 2)
         self.game.locationEntityManager.addLocationToScene(pos: newPos)
         self.playerEntity.pos = SCNVector3(newPos.x, 0, newPos.z - 1)
         self.game.overlayManager.hud.overlayScene!.map.reposNode(playerNode: self.game.overlayManager.hud.overlayScene!.map.suakeOwnNode, pos: newPos)
-        self.playerEntity.suakePlayerComponent.currentSuakeComponent.node.runAction(SCNAction.fadeIn(duration: 3.0), completionHandler: {
+        self.playerEntity.playerComponent.currentSuakeComponent.node.runAction(SCNAction.fadeIn(duration: 3.0), completionHandler: {
             self.game.stateMachine.enter(SuakeStatePlaying.self)
             self.playerEntity.healthComponent.died = false
-            self.playerEntity.suakePlayerComponent.currentSuakeComponent.isStopped = false
+            self.playerEntity.playerComponent.currentSuakeComponent.isStopped = false
             self.playerEntity.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0)
 //            self.playerEntity.moveComponent.nextMove()
         })
         self.playerEntity.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0)
         var duration:TimeInterval = 3.0
-        self.playerEntity.suakePlayerComponent.currentSuakeComponent.node.isPaused = false
-        self.playerEntity.suakePlayerComponent.currentSuakeComponent.node.runAction(SCNAction.repeat(SCNAction.sequence([SCNAction.run({_ in
+        self.playerEntity.playerComponent.currentSuakeComponent.node.isPaused = false
+        self.playerEntity.playerComponent.currentSuakeComponent.node.runAction(SCNAction.repeat(SCNAction.sequence([SCNAction.run({_ in
 //            if(duration == 3.0){
 //                self.game.overlayManager.hud.showMsg(msg: "Respawn in \( duration.format(using: [.second])!) seconds")
 //            }else{
