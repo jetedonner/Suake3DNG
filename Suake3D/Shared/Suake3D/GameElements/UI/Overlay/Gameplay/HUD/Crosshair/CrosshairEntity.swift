@@ -11,8 +11,31 @@ import GameplayKit
 
 class CrosshairEntity: SuakeBaseEntity {
     
+    var inited:Bool = false
+    
+    @discardableResult
+    func initCrosshairs()->Bool{
+        if(!self.inited){
+            self.inited = true
+            for csComponent in self.allCrosshairComponents{
+                if(!csComponent.inited){
+                    csComponent.drawAndGetCrosshair()
+                }
+            }
+//            if(!self.mgCrosshairComponent.inited){
+//                _ = self.mgCrosshairComponent.drawAndGetCrosshair()
+//            }
+//            if(!self.rpgCrosshairComponent.inited){
+//                _ = self.rpgCrosshairComponent.drawAndGetCrosshair()
+//            }
+            return true
+        }
+        return false
+    }
+    
     let nodeContainer:SKNode = SKNode()
     let mgCrosshairComponent:MachinegunCrosshairComponent
+    let rpgCrosshairComponent:RPGCrosshairComponent
     
     var allCrosshairComponents:[BaseCrosshairComponent]!
     
@@ -50,17 +73,24 @@ class CrosshairEntity: SuakeBaseEntity {
         set (newValue) {
 //            currentWeaponTypeDataQueue.async(flags: .barrier) {
                 self._currentWeaponType = newValue
-//            }
+            for weaponCrosshairComponent in self.allCrosshairComponents{
+                if(weaponCrosshairComponent.weaponType == newValue){
+                    self.currentCrosshairComponent = weaponCrosshairComponent
+                    break
+                }
+            }
+            
         }
     }
     
     override init(game: GameController, id: Int = 0) {
         self.mgCrosshairComponent = MachinegunCrosshairComponent(game: game)
+        self.rpgCrosshairComponent = RPGCrosshairComponent(game: game)
         
         self.reloadIndicatorComponent = ReloadIndicatorComponent(game: game)
         super.init(game: game, id: id)
         
-        self.allCrosshairComponents = [self.mgCrosshairComponent]
+        self.allCrosshairComponents = [self.mgCrosshairComponent, self.rpgCrosshairComponent]
         self.currentCrosshairComponent = self.allCrosshairComponents.first!
     }
     

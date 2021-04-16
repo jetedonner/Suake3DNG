@@ -14,6 +14,7 @@ import SceneKit
 class HUDWeaponComponentOLD: BaseExtHUDComponent {
     
     let imgMG:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/mg.png")
+    let imgRPG:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/rpg.png")
 //    let mgImgFile:String            = "art.scnassets/overlays/gameplay/images/mg.png"
 //    let textMg:SKTexture
 //    let shotgunImgFile:String       = "art.scnassets/overlays/gameplay/images/shotgun.png"
@@ -49,7 +50,8 @@ class HUDWeaponComponentOLD: BaseExtHUDComponent {
 //        self.reloadComponent = ReloadIndicatorComponent(game: game, onHud: true)
         
         super.init(game: game)
-        self.imgWeapon = self.imgMG// SKSpriteNode(imageNamed: self.mgImgFile)
+        self.imgWeapon = SKSpriteNode(texture: self.imgMG.texture)// self.imgMG// SKSpriteNode(imageNamed: self.mgImgFile)
+//        self.imgWeapon.texture = self.imgMG.texture
         self.imgWeapon.alpha = 1.0
         self.imgWeapon.setScale(0.2) //.frame.size.width = 300// = CGSize(width: 300, height: 100)
         self.imgWeapon.position.y -= self.imgWeapon.frame.height / 2
@@ -74,10 +76,9 @@ class HUDWeaponComponentOLD: BaseExtHUDComponent {
 //            var newTexture:SKTexture!
             switch weaponType {
             case .mg:
-                self.imgWeapon = self.imgMG
-//                self.imgWeapon.texture = self.textMg // SKTexture(imageNamed: self.mgImgFile)
-//                newTexture = self.textMg
-                break
+                self.imgWeapon.texture = self.imgMG.texture
+            case .rpg:
+                self.imgWeapon.texture = self.imgRPG.texture
 //            case .shotgun:
 //                self.imgWeapon.texture = self.textShotgun // SKTexture(imageNamed: self.shotgunImgFile)
 //                newTexture = self.textShotgun

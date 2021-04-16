@@ -75,6 +75,12 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }else{
                     self.game.playerEntityManager.ownPlayerEntity.weapons.setCurrentWeaponType(weaponType: .mg)
                 }
+            }else if(pressedKey == .KEY_3){
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                    self.game.playerEntityManager.ownPlayerEntity.weapons.getWeapon(weaponType: .rpg)?.addAmmo(ammoCount2Add: SuakeVars.INITIAL_RPG_AMMORELOADCOUNT)
+                }else{
+                    self.game.playerEntityManager.ownPlayerEntity.weapons.setCurrentWeaponType(weaponType: .rpg)
+                }
             }else if(pressedKey == .KEY_C){
                 self.game.overlayManager.hud.overlayScene.crosshairEntity.mgCrosshairComponent.animateCrosshair()
             }else if(pressedKey == .KEY_E){

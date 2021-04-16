@@ -12,6 +12,7 @@ import SceneKit
 
 class BaseCrosshairComponent: BaseExtHUDComponent {
     
+    var inited:Bool = false
     var weaponType:WeaponType = .none
     
     var innerDist:CGFloat = 19.0
@@ -66,7 +67,11 @@ class BaseCrosshairComponent: BaseExtHUDComponent {
         
     }
     
+    @discardableResult
     func drawAndGetCrosshair()->SKSpriteNode{
+        if(!self.inited){
+            self.inited = true
+        }
         return self.nodeContainer
     }
 

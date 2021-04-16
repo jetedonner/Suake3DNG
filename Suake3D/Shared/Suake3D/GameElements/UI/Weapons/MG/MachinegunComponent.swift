@@ -14,7 +14,7 @@ class MachinegunComponent: BaseWeaponComponent {
     
     init(game:GameController, weaponArsenalManager:WeaponArsenalManager) {
         super.init(game: game, weaponType: .mg, weaponArsenalManager: weaponArsenalManager)
-        self.cadence = 0.25
+        self.cadence = SuakeVars.INITIAL_MACHINEGUN_CADENCE
         self.clipSize = SuakeVars.INITIAL_MACHINEGUN_CLIPSIZE
         self.ammoCount = SuakeVars.INITIAL_MACHINEGUN_AMMOCOUNT
     }

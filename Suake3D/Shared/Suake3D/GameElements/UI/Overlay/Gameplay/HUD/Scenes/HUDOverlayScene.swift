@@ -87,10 +87,17 @@ class HUDOverlayScene: SuakeBaseOverlay {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        if(!self.crosshairEntity.mgCrosshairComponent.inited){
-            _ = self.crosshairEntity.mgCrosshairComponent.drawAndGetCrosshairNG()
+        if(self.crosshairEntity.initCrosshairs()){
             self.crosshairEntity.addToHUD(hud: self)
         }
+//        if(!self.crosshairEntity.mgCrosshairComponent.inited){
+//            _ = self.crosshairEntity.mgCrosshairComponent.drawAndGetCrosshairNG()
+//            self.crosshairEntity.addToHUD(hud: self)
+//        }
+//        if(!self.crosshairEntity.mgCrosshairComponent.inited){
+//            _ = self.crosshairEntity.mgCrosshairComponent.drawAndGetCrosshairNG()
+//            self.crosshairEntity.addToHUD(hud: self)
+//        }
         
         if(self.game.stateMachine.currentState is SuakeStatePlaying){
             if(self.game.physicsHelper.deltaTime >= 1.0){

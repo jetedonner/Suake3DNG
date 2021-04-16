@@ -7,9 +7,9 @@
 
 import Foundation
 
-
 class SuakeFiles {
     
-    static let hudMgImageFile:String = "art.scnassets/overlays/gameplay/images/mg.png"
-    
+    static let hudMGImageFile:String = "art.scnassets/overlays/gameplay/images/mg.png"
+    static let hudRPGImageFile:String = "art.scnassets/overlays/gameplay/images/rpg.png"
+
 }

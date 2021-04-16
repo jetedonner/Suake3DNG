@@ -12,7 +12,7 @@ import SceneKit
 
 class MachinegunCrosshairComponent: BaseCrosshairComponent {
 
-    var inited:Bool = false
+//    var inited:Bool = false
     let nodeCrosshairStrokes:SKShapeNode = SKShapeNode()
     
     var strokeNodes:[SKShapeNode] = [SKShapeNode]()
@@ -87,8 +87,8 @@ class MachinegunCrosshairComponent: BaseCrosshairComponent {
     }
     
     @discardableResult
-    func drawAndGetCrosshairNG()->SKSpriteNode{
-        self.inited = true
+    override func drawAndGetCrosshair()->SKSpriteNode{
+//        self.inited = true
         self.drawStrokePaths()
         self.createArc()
         return super.drawAndGetCrosshair()

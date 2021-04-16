@@ -37,8 +37,6 @@ class GameCenterHelper: SuakeGameClass {
     
     var matchMakerHelper:MatchMakerHelper?
     
-    
-    
     override init(game:GameController) {
         super.init(game: game)
         

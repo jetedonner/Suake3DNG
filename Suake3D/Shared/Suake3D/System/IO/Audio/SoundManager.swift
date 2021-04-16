@@ -106,6 +106,9 @@ class SoundManager: SuakeGameClass {
             case SoundType.bottleRocket:
                 fileName = "weapons/bottleRocket"
                 break
+            case SoundType.rpg:
+                fileName = "weapons/bottleRocket"
+                break
             case SoundType.pain_25:
                 fileName = "pain25_1"
                 break

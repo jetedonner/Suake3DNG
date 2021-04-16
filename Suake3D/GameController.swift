@@ -151,12 +151,13 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         }
         self.serverLoaded = true
         if(self.levelLoaded && self.serverLoaded && self.gameCenterHelper.matchMakerHelper?.ownPlayerNetObj.playerType == .client){
+            self.playerEntityManager.userPlayerSuake = self.playerEntityManager.oppPlayerEntity
             self.gameCenterHelper.matchMakerHelper?.sendReady4MatchMsg()
         }
     }
     
     func loadNetworkMatch3(startMatch:StartMatchNetworkData){
-        self.stateMachine.enter(SuakeStatePlaying.self)
+//        self.stateMachine.enter(SuakeStatePlaying.self)
     }
     
     func loadGameScence(initialLoad:Bool = true){
@@ -191,15 +192,15 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             self.scnView.isPlaying = true
             
             self.stateMachine.enter(SuakeStateReadyToPlay.self)
-            if(self.usrDefHlpr.dbgMultiplayerMode){
-                let sendData = LoadLevelNetworkData(id: 689)
-                self.loadNetworkMatch(levelConfigNet: sendData)
-                self.cameraHelper.toggleFPVOpp(newFPV: false)
-                self.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "You are Player 1", duration: 3.0, completionHandler: {
-                    
-//                    self.stateMachine.enter(SuakeStatePlaying.self)
-                })
-            }
+//            if(self.usrDefHlpr.dbgMultiplayerMode){
+//                let sendData = LoadLevelNetworkData(id: 689)
+//                self.loadNetworkMatch(levelConfigNet: sendData)
+//                self.cameraHelper.toggleFPVOpp(newFPV: false)
+//                self.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "You are Player 1", duration: 3.0, completionHandler: {
+//
+////                    self.stateMachine.enter(SuakeStatePlaying.self)
+//                })
+//            }
         }
     }
     

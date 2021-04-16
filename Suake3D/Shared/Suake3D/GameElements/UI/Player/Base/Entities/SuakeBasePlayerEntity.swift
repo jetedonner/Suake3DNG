@@ -13,18 +13,21 @@ import GameplayKit
 class SuakeBasePlayerEntity: SuakeBaseNodeEntityWithHealth {
     
     let playerType:SuakePlayerType
-//    let healthComponent:SuakeHealthComponent
     var statsComponent:SuakeStatsComponent!
+    
+    var _weapons:WeaponArsenalManager!
+    var weapons:WeaponArsenalManager{
+        get{ return self._weapons }
+        set{ self._weapons = newValue }
+    }
     
     init(game:GameController, playerType:SuakePlayerType = .OwnSuake, id:Int = 0){
         self.playerType = playerType
-//        self.healthComponent = SuakeHealthComponent(game: game)
         
         super.init(game: game, id: id)
         
         self.statsComponent = SuakeStatsComponent(game: game, playerEntity: self)
         
-//        self.addComponent(self.healthComponent)
         self.addComponent(self.statsComponent)
     }
     
@@ -44,11 +47,7 @@ class SuakeBasePlayerEntity: SuakeBaseNodeEntityWithHealth {
 //       }
 //    }
 
-    var _weapons:WeaponArsenalManager!
-    var weapons:WeaponArsenalManager{
-        get{ return self._weapons }
-        set{ self._weapons = newValue }
-    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

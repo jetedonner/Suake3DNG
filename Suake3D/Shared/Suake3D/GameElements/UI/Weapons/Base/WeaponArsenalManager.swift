@@ -29,6 +29,8 @@ class WeaponArsenalManager: SuakeGameClass {
         set{
             self._currentWeapon = newValue
             self.game.overlayManager.hud.weaponComponent.setAmmoCount(ammoCount: newValue.ammoCount, clipSize: newValue.clipSize)
+            self.game.overlayManager.hud.weaponComponent.setCurrentWeaponType(weaponType: newValue.weaponType)
+            self.game.overlayManager.hud.overlayScene.crosshairEntity.setCurrentWeaponType(weaponType: newValue.weaponType)
         }
     }
     
@@ -44,6 +46,10 @@ class WeaponArsenalManager: SuakeGameClass {
 //        }
         if(weaponTypes.contains(.mg)){
             self.allWeapons.append(MachinegunComponent(game: self.game, weaponArsenalManager: self))
+        }
+        
+        if(weaponTypes.contains(.rpg)){
+            self.allWeapons.append(RPGComponent(game: self.game, weaponArsenalManager: self))
         }
 //        if(weaponTypes.contains(.shotgun)){
 //            self.allWeapons.append(ShotgunComponent(game: self.game, weaponArsenalManager: self))
@@ -78,7 +84,8 @@ class WeaponArsenalManager: SuakeGameClass {
 //            self.currentWeaponType = weaponType
             self.currentWeapon = self.getWeapon(weaponType: weaponType)!
 //            self.game.overlayManager.hud.hudEntity.weaponComponent.setCurrentWeaponType(weaponType: weaponType)
-            self.game.overlayManager.hud.overlayScene.crosshairEntity.setCurrentWeaponType(weaponType: weaponType)
+//            self.game.overlayManager.hud.weaponComponent.setCurrentWeaponType(weaponType: weaponType)
+//            self.game.overlayManager.hud.overlayScene.crosshairEntity.setCurrentWeaponType(weaponType: weaponType)
 //            self.game.overlayManager.hud.overrideCheckIsAimedClass = true
 //            self.game.cameraHelper.panCameraHelper.isAimedAt = false
 //            _ = self.game.cameraHelper.panCameraHelper.checkAimedAtAll()

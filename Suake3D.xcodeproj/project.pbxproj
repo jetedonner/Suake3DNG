@@ -128,6 +128,8 @@
 		55760E6125FD3F4B00C10784 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55760E6025FD3F4B00C10784 /* OverlayManager.swift */; };
 		55760E6925FD469F00C10784 /* textures.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 55760E6825FD469F00C10784 /* textures.atlas */; };
 		5592703E262766C900A04C76 /* GKPlayerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592703D262766C900A04C76 /* GKPlayerExt.swift */; };
+		55927049262A13F400A04C76 /* RPGComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55927048262A13F400A04C76 /* RPGComponent.swift */; };
+		5592704D262A159E00A04C76 /* RPGRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592704C262A159E00A04C76 /* RPGRocket.swift */; };
 		559B2BD3260E4186005E669C /* SuakeNodeGroupBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B2BD1260E4186005E669C /* SuakeNodeGroupBase.swift */; };
 		559B2BD4260E4186005E669C /* SuakeNodeGroupItemBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B2BD2260E4186005E669C /* SuakeNodeGroupItemBase.swift */; };
 		559B2BDC260E434A005E669C /* MedKitComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B2BD8260E434A005E669C /* MedKitComponent.swift */; };
@@ -138,6 +140,7 @@
 		55A2B8F226000FB600E25F7F /* RisingParticlesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2B8F126000FB600E25F7F /* RisingParticlesComponent.swift */; };
 		55A2B8F72600188300E25F7F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2B8F62600188300E25F7F /* String.swift */; };
 		55A2B8FD2601444300E25F7F /* GamePaused.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2B8FC2601444300E25F7F /* GamePaused.swift */; };
+		55AE7FD1262A1A9400A58F4B /* RPGCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */; };
 		55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C036C725FA80C400F419B8 /* AppDelegate.swift */; };
 		55C036CC25FA80C400F419B8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CB25FA80C400F419B8 /* art.scnassets */; };
 		55C036CE25FA80C500F419B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CD25FA80C500F419B8 /* Assets.xcassets */; };
@@ -372,6 +375,8 @@
 		55760E6025FD3F4B00C10784 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
 		55760E6825FD469F00C10784 /* textures.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = textures.atlas; sourceTree = "<group>"; };
 		5592703D262766C900A04C76 /* GKPlayerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GKPlayerExt.swift; sourceTree = "<group>"; };
+		55927048262A13F400A04C76 /* RPGComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPGComponent.swift; sourceTree = "<group>"; };
+		5592704C262A159E00A04C76 /* RPGRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPGRocket.swift; sourceTree = "<group>"; };
 		559B2BD1260E4186005E669C /* SuakeNodeGroupBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeNodeGroupBase.swift; sourceTree = "<group>"; };
 		559B2BD2260E4186005E669C /* SuakeNodeGroupItemBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeNodeGroupItemBase.swift; sourceTree = "<group>"; };
 		559B2BD8260E434A005E669C /* MedKitComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedKitComponent.swift; sourceTree = "<group>"; };
@@ -382,6 +387,7 @@
 		55A2B8F126000FB600E25F7F /* RisingParticlesComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RisingParticlesComponent.swift; sourceTree = "<group>"; };
 		55A2B8F62600188300E25F7F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		55A2B8FC2601444300E25F7F /* GamePaused.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePaused.swift; sourceTree = "<group>"; };
+		55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPGCrosshairComponent.swift; sourceTree = "<group>"; };
 		55C036C425FA80C400F419B8 /* Suake3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suake3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C036C725FA80C400F419B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C036CB25FA80C400F419B8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -532,6 +538,7 @@
 			children = (
 				556CA64E260D29E800F78263 /* Laser */,
 				5501838726016FA200F28C54 /* MG */,
+				55927047262A13C100A04C76 /* RPG */,
 				5501837426016E2C00F28C54 /* Base */,
 			);
 			path = Weapons;
@@ -586,6 +593,7 @@
 			children = (
 				550184062602A5CB00F28C54 /* BaseCrosshairComponent.swift */,
 				550184072602A5CB00F28C54 /* MachinegunCrosshairComponent.swift */,
+				55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */,
 				550184012602A54600F28C54 /* CrosshairEntity.swift */,
 			);
 			path = Crosshair;
@@ -825,6 +833,15 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		55927047262A13C100A04C76 /* RPG */ = {
+			isa = PBXGroup;
+			children = (
+				55927048262A13F400A04C76 /* RPGComponent.swift */,
+				5592704C262A159E00A04C76 /* RPGRocket.swift */,
+			);
+			path = RPG;
+			sourceTree = "<group>";
+		};
 		55C036BB25FA80C400F419B8 = {
 			isa = PBXGroup;
 			children = (
@@ -1053,7 +1070,6 @@
 			isa = PBXGroup;
 			children = (
 				55001F58260C80BC0015B293 /* Droid */,
-				5501837326016E2400F28C54 /* Weapons */,
 				55D894BE25FAD9A700728B83 /* Base */,
 				556CB95A25FFFF61005B7747 /* Goody */,
 				55D894BD25FAD99800728B83 /* Suake */,
@@ -1265,6 +1281,7 @@
 				556CB9682600034E005B7747 /* Helper */,
 				556CB91E25FFD5AE005B7747 /* Location */,
 				55D894BC25FAD99000728B83 /* Player */,
+				5501837326016E2400F28C54 /* Weapons */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1480,6 +1497,7 @@
 				55DB997725FC5318000023AF /* OverlayType.swift in Sources */,
 				5507047C2611160A00464F97 /* SuakeMapUpdateDelegate.swift in Sources */,
 				556CB90825FE8385005B7747 /* SuakeMoveComponentExt.swift in Sources */,
+				5592704D262A159E00A04C76 /* RPGRocket.swift in Sources */,
 				559B2BDD260E434A005E669C /* MedKitEntityGroup.swift in Sources */,
 				550184472603EB5500F28C54 /* MapOverlayExt.swift in Sources */,
 				5501839626016FF500F28C54 /* BulletBase.swift in Sources */,
@@ -1500,6 +1518,7 @@
 				552417E126091EB9002C90FC /* HUDWeaponLblComponent.swift in Sources */,
 				556CB95325FFF0EB005B7747 /* Int.swift in Sources */,
 				55D8945625FACA3000728B83 /* CameraView.swift in Sources */,
+				55927049262A13F400A04C76 /* RPGComponent.swift in Sources */,
 				5513C87B260D17CF00633B40 /* DroidStateChasing.swift in Sources */,
 				55DB995E25FC4998000023AF /* GameStates.swift in Sources */,
 				5501843A2603E0CF00F28C54 /* MapOverlay.swift in Sources */,
@@ -1622,6 +1641,7 @@
 				55D8945B25FACAAD00728B83 /* SuakeMsgs.swift in Sources */,
 				55D8947825FACCBC00728B83 /* LevelType.swift in Sources */,
 				55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */,
+				55AE7FD1262A1A9400A58F4B /* RPGCrosshairComponent.swift in Sources */,
 				55760E3225FD2C0400C10784 /* SoundManager.swift in Sources */,
 				55760E5425FD398300C10784 /* BaseHUDComponent.swift in Sources */,
 				55DB994225FC2A12000023AF /* SuakeMoveComponent.swift in Sources */,

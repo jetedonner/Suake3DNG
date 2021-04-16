@@ -78,18 +78,28 @@ class SuakeVars{
     static let NUKE_DAMAGE:CGFloat = 100.0
     
     static let INITIAL_GRENADE_AMMOCOUNT:Int = 3
-    static let INITIAL_MACHINEGUN_AMMOCOUNT:Int = 30
-    static let INITIAL_MACHINEGUN_AMMORELOADCOUNT:Int = 30
+    
+    
     static let INITIAL_SHOTGUN_AMMOCOUNT:Int = 25
-    static let INITIAL_RPG_AMMOCOUNT:Int = 30
+    
     static let INITIAL_RAILGUN_AMMOCOUNT:Int = 30
     static let INITIAL_SNIPERRIFLE_AMMOCOUNT:Int = 20
     static let INITIAL_NUKE_AMMOCOUNT:Int = 3
     
     static let INITIAL_GRENADE_CLIPSIZE:Int = 1
-    static let INITIAL_MACHINEGUN_CLIPSIZE:Int = 30
+    
     static let INITIAL_SHOTGUN_CLIPSIZE:Int = 5
+    
+    static let INITIAL_MACHINEGUN_AMMOCOUNT:Int = 30
+    static let INITIAL_MACHINEGUN_CLIPSIZE:Int = 30
+    static let INITIAL_MACHINEGUN_AMMORELOADCOUNT:Int = 30
+    static let INITIAL_MACHINEGUN_CADENCE:TimeInterval = 0.25
+    
+    static let INITIAL_RPG_AMMOCOUNT:Int = 30
     static let INITIAL_RPG_CLIPSIZE:Int = 3
+    static let INITIAL_RPG_AMMORELOADCOUNT:Int = 30
+    static let INITIAL_RPG_CADENCE:TimeInterval = 0.75
+    
     static let INITIAL_RAILGUN_CLIPSIZE:Int = 6
     static let INITIAL_SNIPERRIFLE_CLIPSIZE:Int = 5
     static let INITIAL_NUKE_CLIPSIZE:Int = 1

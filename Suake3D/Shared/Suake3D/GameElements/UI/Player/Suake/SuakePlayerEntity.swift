@@ -50,7 +50,7 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         self.addComponent(self.respawnComponent)
         
         self.weapons = WeaponArsenalManager(game: game, playerEntity: self)
-        self.weapons.initWeaponArsenal(with: WeaponType.init(weaponTypes: [.mg]))
+        self.weapons.initWeaponArsenal(with: WeaponType.init(weaponTypes: [.mg, .rpg]))
     }
     
     func hitByBullet(bullet:BulletBase){
