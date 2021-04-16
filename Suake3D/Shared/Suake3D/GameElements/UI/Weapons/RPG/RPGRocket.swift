@@ -13,6 +13,8 @@ class RPGRocket: BulletBase {
     
     var rescale:CGFloat = 5.0
     let shotParticleNode = SCNNode()
+    let shotParticleNode2 = SCNNode()
+    let shotParticleNodeWhite = SCNNode()
     var isExploded:Bool = false
     
     init(game: GameController, weapon:RPGComponent) {
@@ -37,6 +39,34 @@ class RPGRocket: BulletBase {
         self.shotParticleNode.name = "shotParticle"
         //self.shotParticleNode.position.z -= self.boundingBox.max.z
         self.addChildNode(shotParticleNode)
+        
+        let shotParticleSystem2 = SCNParticleSystem(named: "ShotBurstRings", inDirectory: SuakeVars.DIR_PARTICLES)
+        let shotParticleSystemWhite = SCNParticleSystem(named: "ShotBurstWhite", inDirectory: SuakeVars.DIR_PARTICLES)
+        
+        shotParticleNode2.addParticleSystem(shotParticleSystem2!)
+        shotParticleNode2.position = self.position
+        shotParticleNode2.name = "sniperShotParticle2"
+//        shotParticleNode2.position.z -= self.boundingBox.max.z
+        
+        let sizeAnimation:CAKeyframeAnimation = CAKeyframeAnimation()
+        sizeAnimation.values = [1.0, 2.0, 3.5, 5.0]
+        
+        let opacityAnimation:CAKeyframeAnimation = CAKeyframeAnimation()
+        opacityAnimation.values = [1.0, 0.7, 0.3, 0.0]
+        
+        let sizeController = SCNParticlePropertyController(animation: sizeAnimation)
+        let opatityController = SCNParticlePropertyController(animation: opacityAnimation)
+        
+        shotParticleSystem?.propertyControllers = [SCNParticleSystem.ParticleProperty.size: sizeController, SCNParticleSystem.ParticleProperty.opacity: opatityController]
+//        self.name = "shotNode"
+        self.addChildNode(shotParticleNode2)
+        
+        shotParticleNodeWhite.addParticleSystem(shotParticleSystemWhite!)
+        shotParticleNodeWhite.position = self.position
+        shotParticleNodeWhite.name = "shotParticleWhite"
+//        shotParticleNodeWhite.position.z -= self.boundingBox.max.z
+        self.addChildNode(shotParticleNodeWhite)
+        
         
         let box = SCNBox(width: 2.0, height: 2.0, length: 2.0, chamferRadius: 0)
 //        let box = SCNBox(width: (self.boundingBox.max.x), height: (self.boundingBox.max.y), length: (self.boundingBox.max.z), chamferRadius: 0)
