@@ -22,12 +22,6 @@ class CrosshairEntity: SuakeBaseEntity {
                     csComponent.drawAndGetCrosshair()
                 }
             }
-//            if(!self.mgCrosshairComponent.inited){
-//                _ = self.mgCrosshairComponent.drawAndGetCrosshair()
-//            }
-//            if(!self.rpgCrosshairComponent.inited){
-//                _ = self.rpgCrosshairComponent.drawAndGetCrosshair()
-//            }
             return true
         }
         return false

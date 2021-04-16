@@ -33,7 +33,7 @@ class PanCameraHelper: SuakeGameClass {
     }
     
     override init(game: GameController) {
-        super.init(game: game)
+        super.qinit(game: game)
     }
     
     func panCamera(_ direction: SIMD2<Float>) {
@@ -127,20 +127,18 @@ class PanCameraHelper: SuakeGameClass {
     
     func getHitTestCatBitMask()->CollisionCategory{
         var hitTestCat:CollisionCategory = CollisionCategory()
-        //var hitTestCategoryBitMask:Int = 0
-//        if(DbgVars.startLoad_MediPacks){
-//            for i in 0..<self.game.medKits.itemEntityManager.medKitEntities.count{
-//                if(self.checkNodeInsideFrustum(node: (self.game.medKits.itemEntityManager.getItemEntity(itemType: .MedKit, id: i)?.medKitComponent.node)!)){
-//                    hitTestCategoryBitMask = hitTestCategoryBitMask | CollisionCategory.medKit.rawValue
-//                    break
-//                }
-//            }
-//        }
+        
+        hitTestCat.insert(.medKit)
+        
         if(DbgVars.startLoad_Goody){
             if(self.checkNodeInsideFrustum(node: self.game.playerEntityManager.goodyEntity.goodyComponent.node)){
                 hitTestCat.insert(.goody)
-                //CollisionCategory.init(categories: [.goody])
-                //hitTestCategoryBitMask = hitTestCategoryBitMask | CollisionCategory.goody.rawValue
+            }
+        }
+        
+        if(self.game.levelManager.currentLevel.levelConfig.loadOppSuake){
+            if(self.checkNodeInsideFrustum(node: self.game.playerEntityManager.oppPlayerEntity.playerComponent.mainNode)){
+                hitTestCat.insert(.suakeOpp)
             }
         }
 //
@@ -149,11 +147,7 @@ class PanCameraHelper: SuakeGameClass {
 //                hitTestCategoryBitMask = hitTestCategoryBitMask | CollisionCategory.droid.rawValue
 //            }
 //        }
-//        if(DbgVars.startLoad_Opponent){
-//            if(self.checkNodeInsideFrustum(node: (self.game.playerEntityManager.getOppPlayerEntity()?.currentSuakeComponent.node)!)){
-//                hitTestCategoryBitMask = hitTestCategoryBitMask | CollisionCategory.suakeOpp.rawValue
-//            }
-//        }
+
         return hitTestCat
     }
     

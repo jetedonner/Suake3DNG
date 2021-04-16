@@ -1618,10 +1618,10 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Crosshair/CrosshairEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "init(game:id:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1634,10 +1634,10 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Crosshair/CrosshairEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "init(coder:)"
-            landmarkType = "9">
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "addToHUD(hud:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2530,26 +2530,10 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PanCameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "checkNodeInsideFrustum(node:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9B27B486-B9BE-45B8-A523-DA729429A2B0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PanCameraHelper.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "getHitTestCatBitMask()"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2562,8 +2546,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PanCameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "getHitTestCatBitMask()"
             landmarkType = "7">
          </BreakpointContent>
