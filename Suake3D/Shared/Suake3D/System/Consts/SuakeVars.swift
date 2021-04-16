@@ -117,4 +117,11 @@ class SuakeVars{
     static let DIR_PARTICLES:String = SuakeVars.DIR_ART + "particles/"
     static let DIR_MONOWAV:String = SuakeVars.DIR_ART + "sound/mono/"
     static let DIR_OVERLAYICO:String = SuakeVars.DIR_ART + "overlays/icons/"
+    
+    
+    static let PARTICLES_RPG_BURST:String = "ShotBurst"
+    
+    static let PARTICLES_EXPLOSION_BASIC:String = "ExplosionBasic"
+    static let PARTICLES_EXPLOSION_RAILGUN:String = "ExplosionRailgun"
+    
 }

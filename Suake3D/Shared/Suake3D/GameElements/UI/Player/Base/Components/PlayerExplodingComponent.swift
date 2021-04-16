@@ -17,7 +17,7 @@ class PlayerExplodingComponent: ExplodingComponent {
     }
     
     override func explode(){
-        let particleEmitter:SCNParticleSystem = SCNParticleSystem(named: "ExplosionDroid", inDirectory: SuakeVars.DIR_PARTICLES)!
+        let particleEmitter:SCNParticleSystem = SCNParticleSystem(named: SuakeVars.PARTICLES_EXPLOSION_BASIC, inDirectory: SuakeVars.DIR_PARTICLES)!
         let particleEmitter2:SCNParticleSystem = self.addExplosionParticles2()
         let particleEmitter3:SCNParticleSystem = self.addExplosionParticles3()
         
