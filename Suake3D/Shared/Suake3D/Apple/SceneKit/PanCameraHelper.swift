@@ -33,7 +33,7 @@ class PanCameraHelper: SuakeGameClass {
     }
     
     override init(game: GameController) {
-        super.qinit(game: game)
+        super.init(game: game)
     }
     
     func panCamera(_ direction: SIMD2<Float>) {
