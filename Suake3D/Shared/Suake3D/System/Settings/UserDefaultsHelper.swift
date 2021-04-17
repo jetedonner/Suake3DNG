@@ -15,7 +15,17 @@ class UserDefaultsHelper:SuakeGameClass{
     let defaults = UserDefaults.standard
     
     var devMode:Bool = true
-    var dbgMultiplayerMode:Bool = true
+    var showDbgLog:Bool = true
+    
+    var dbgLogColor:NSColor = .white
+    
+    /// MULTIPLAYER
+    var dbgMultiplayer:Bool = true
+    var multiHumanPlayer2Control:String = "NONE"
+    
+    
+    
+//    var dbgMultiplayerMode:Bool = true
     var soundEffects:Bool = true
     var matchDuration:MatchDuration = .Minute_1
     var levelSize:LevelSize = .Small
@@ -52,6 +62,11 @@ class UserDefaultsHelper:SuakeGameClass{
         self.defaults.register(defaults: [
             "DevMode": true,
             "SoundEffects": true,
+            "ShowDbgLog": false,
+            "DbgMultiplayer": false,
+            "MultiHumanPlayer2Control": "Player 1",
+//            "DbgLogColor": NSKeyedArchiver.archivedData(withRootObject: NSColor.suake3DRed),
+            
             "MatchDuration": MatchDuration.Minute_1.rawValue,
             "GameboardSize": LevelSize.Small.rawValue,
             "Difficulty": LevelDifficulty.Medium.rawValue,
@@ -75,6 +90,11 @@ class UserDefaultsHelper:SuakeGameClass{
     
     func loadValuesFromUserDefaults(){
         self.devMode = self.defaults.bool(forKey: "DevMode")
+        self.showDbgLog = self.defaults.bool(forKey: "ShowDbgLog")
+        self.dbgMultiplayer = self.defaults.bool(forKey: "DbgMultiplayer")
+        self.multiHumanPlayer2Control = self.defaults.string(forKey: "MultiHumanPlayer2Control")!
+        
+        
         self.soundEffects = self.defaults.bool(forKey: "SoundEffects")
         self.loadWeaponPickups = self.defaults.bool(forKey: "LoadWeaponPickups")
         self.loadOpp = true //self.defaults.bool(forKey: "LoadOpp")
@@ -114,6 +134,8 @@ class UserDefaultsHelper:SuakeGameClass{
         self.game.levelManager.lightManager.setAmbientLight(intensity: self.lightIntensity)
         self.game.soundManager.muteSound = !self.soundEffects
         self.game.overlayManager.hud.overlayScene!.arrows.showArrows = (self.showArrows ? .DIR : .NONE)
+        self.game.overlayManager.hud.dbgLogComponent.showDbgLog = self.showDbgLog
+//        ShowDbgLog
         self.game.soundManager.volume = self.volume
         GSAudio.sharedInstance.volume = self.volume
     }

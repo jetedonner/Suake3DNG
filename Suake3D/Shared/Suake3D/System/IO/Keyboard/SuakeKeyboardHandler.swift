@@ -100,9 +100,15 @@ class SuakeKeyboardHandler: KeyboardHandler {
             }else if(pressedKey == .KEY_G){
 //                self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: "+ 200 Points")
             }else if(pressedKey == .KEY_L){
+                if(self.game.stateMachine.currentState!.isKind(of: SuakeStatePlaying.self)){
+                    self.game.stateMachine.statePaused.showPauseOverlay = false
+                    self.game.stateMachine.enter(SuakeStatePaused.self)
+                }
                 let vc2:SetupDeveloperViewController = SetupDeveloperViewController()
                 vc2.game = self.game
+                
                 (self.game.scnView as! GameViewMacOS).viewController!.presentAsSheet(vc2)
+//                vc2.view.window?.styleMask = .borderless
 //                let vc:SetupDeveloperViewController = SetupDeveloperViewController(
 //                )
 //                (self.game.scnView as! GameViewMacOS).viewController!.presentAsSheet(vc)// .present(vc, animated: true, completion: nil)
@@ -131,6 +137,7 @@ class SuakeKeyboardHandler: KeyboardHandler {
 //                    self.game.locationEntityManager.rndPortalPos()
 //                }else{
                     if(self.game.stateMachine.currentState!.isKind(of: SuakeStatePlaying.self)){
+                        self.game.stateMachine.statePaused.showPauseOverlay = true
                         self.game.stateMachine.enter(SuakeStatePaused.self)
                     }else if(self.game.stateMachine.currentState!.isKind(of: SuakeStatePaused.self)){
                         self.game.stateMachine.returnToOldState()

@@ -192,16 +192,24 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             self.scnView.isPlaying = true
             
             self.stateMachine.enter(SuakeStateReadyToPlay.self)
-//            if(self.usrDefHlpr.dbgMultiplayerMode){
-//                let sendData = LoadLevelNetworkData(id: 689)
-//                self.loadNetworkMatch(levelConfigNet: sendData)
-//                self.cameraHelper.toggleFPVOpp(newFPV: false)
-//                self.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "You are Player 1", duration: 3.0, completionHandler: {
-//
-////                    self.stateMachine.enter(SuakeStatePlaying.self)
-//                })
-//            }
+            if(self.usrDefHlpr.dbgMultiplayer){
+                self.dbgMultiplayer()
+            }
         }
+    }
+    
+    
+    func dbgMultiplayer(){
+        let player2Control:String = self.usrDefHlpr.multiHumanPlayer2Control
+        let sendData = LoadLevelNetworkData(id: 689)
+        self.loadNetworkMatch(levelConfigNet: sendData)
+        if(player2Control == "Player 2"){
+            self.cameraHelper.toggleFPVOpp(newFPV: false)
+        }
+        self.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "You are \(player2Control)", duration: 3.0, completionHandler: {
+
+//                    self.stateMachine.enter(SuakeStatePlaying.self)
+        })
     }
     
 //    func tryEncDec() {

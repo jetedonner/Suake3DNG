@@ -12,6 +12,12 @@ import GameplayKit
 
 class SuakeStatePaused: SuakeBaseState {
     
+    var _showPauseOverlay:Bool = true
+    var showPauseOverlay:Bool{
+        get{ return self._showPauseOverlay }
+        set{ self._showPauseOverlay = newValue }
+    }
+    
     init(game: GameController) {
         super.init(game: game, stateDesc: GameStates.pausedState)
     }
@@ -29,7 +35,9 @@ class SuakeStatePaused: SuakeBaseState {
         if(previousState is SuakeStatePlaying || previousState is SuakeStateReadyToPlay){
             self.game.physicsHelper.togglePause(time: self.game.physicsHelper.lastUpdateTime)
 //            self.game.playerEntityManager.isPaused = true
-            self.game.overlayManager.showOverlay4GameState(type: .paused)
+            if(self.showPauseOverlay){
+                self.game.overlayManager.showOverlay4GameState(type: .paused)
+            }
 //            self.game.overlayManager.paused.runAnimation()
 //            self.game.scnView.overlaySKScene = self.game.overlayManager.paused.sceneNode
             

@@ -141,6 +141,7 @@
 		55A2B8F72600188300E25F7F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2B8F62600188300E25F7F /* String.swift */; };
 		55A2B8FD2601444300E25F7F /* GamePaused.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2B8FC2601444300E25F7F /* GamePaused.swift */; };
 		55AE7FD1262A1A9400A58F4B /* RPGCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */; };
+		55AE7FDA262B592B00A58F4B /* HUDDbgLogComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE7FD9262B592B00A58F4B /* HUDDbgLogComponent.swift */; };
 		55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C036C725FA80C400F419B8 /* AppDelegate.swift */; };
 		55C036CC25FA80C400F419B8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CB25FA80C400F419B8 /* art.scnassets */; };
 		55C036CE25FA80C500F419B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CD25FA80C500F419B8 /* Assets.xcassets */; };
@@ -388,6 +389,7 @@
 		55A2B8F62600188300E25F7F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		55A2B8FC2601444300E25F7F /* GamePaused.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePaused.swift; sourceTree = "<group>"; };
 		55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPGCrosshairComponent.swift; sourceTree = "<group>"; };
+		55AE7FD9262B592B00A58F4B /* HUDDbgLogComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDDbgLogComponent.swift; sourceTree = "<group>"; };
 		55C036C425FA80C400F419B8 /* Suake3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suake3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C036C725FA80C400F419B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C036CB25FA80C400F419B8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -536,10 +538,11 @@
 		5501837326016E2400F28C54 /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
+				5501837426016E2C00F28C54 /* Base */,
 				556CA64E260D29E800F78263 /* Laser */,
 				5501838726016FA200F28C54 /* MG */,
 				55927047262A13C100A04C76 /* RPG */,
-				5501837426016E2C00F28C54 /* Base */,
+				55AE7FD6262A3B0700A58F4B /* Railgun */,
 			);
 			path = Weapons;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 		55760E4D25FD390600C10784 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				55AE7FD9262B592B00A58F4B /* HUDDbgLogComponent.swift */,
 				550184302603D87B00F28C54 /* HUDHealthBarOnScreenComponent.swift */,
 				550184212602A6E200F28C54 /* ReloadIndicatorComponent.swift */,
 				5501840E2602A5F200F28C54 /* BaseExtHUDComponent.swift */,
@@ -840,6 +844,13 @@
 				5592704C262A159E00A04C76 /* RPGRocket.swift */,
 			);
 			path = RPG;
+			sourceTree = "<group>";
+		};
+		55AE7FD6262A3B0700A58F4B /* Railgun */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Railgun;
 			sourceTree = "<group>";
 		};
 		55C036BB25FA80C400F419B8 = {
@@ -1626,6 +1637,7 @@
 				55DB998725FC5AC1000023AF /* SuakeStateDied.swift in Sources */,
 				556CB96425FFFFFA005B7747 /* GoodyComponent.swift in Sources */,
 				5513C885260D1A0500633B40 /* CGFloat.swift in Sources */,
+				55AE7FDA262B592B00A58F4B /* HUDDbgLogComponent.swift in Sources */,
 				55DB991925FC0ABB000023AF /* SuakeBaseSCNNode.swift in Sources */,
 				550184082602A5CB00F28C54 /* BaseCrosshairComponent.swift in Sources */,
 				559B2BDE260E434A005E669C /* MedKitEntity.swift in Sources */,

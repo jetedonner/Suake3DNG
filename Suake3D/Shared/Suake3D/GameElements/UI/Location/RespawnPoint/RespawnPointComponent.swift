@@ -16,7 +16,7 @@ class RespawnPointComponent: SuakeBaseLocationComponent {
     var particlesClone:SCNNode!
     
     init(game: GameController, id: Int = 0) {
-        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/particles/respawnPoint.scn"), locationType: .RespawnPoint, id: id)
+        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/particles/RespawnPoint.scn"), locationType: .RespawnPoint, id: id)
         self.node.name = "RespawnPoint: " + self.id.description
         self.planeNode = self.node.childNode(withName: "plane", recursively: true)
         self.particles = self.node.childNode(withName: "particles", recursively: true)

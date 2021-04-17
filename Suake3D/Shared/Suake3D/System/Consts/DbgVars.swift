@@ -9,6 +9,9 @@ import Foundation
 
 class DbgVars{
     
+    
+    static var dbgLogHidden:Bool = false //true
+    
     static var startLoad_Goody:Bool = true //true
     
     // WEAPONS

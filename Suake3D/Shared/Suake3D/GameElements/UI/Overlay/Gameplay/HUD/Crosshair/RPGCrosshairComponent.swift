@@ -54,11 +54,8 @@ class RPGCrosshairComponent: BaseCrosshairComponent {
         }
     }
     
-//    var inited:Bool = false
-    
     @discardableResult
     override func drawAndGetCrosshair()->SKSpriteNode{
-//        inited = true
         self.createArcs()
         self.createCircle()
         return super.drawAndGetCrosshair()

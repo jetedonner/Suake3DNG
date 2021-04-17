@@ -12,7 +12,6 @@ import SceneKit
 
 class MachinegunCrosshairComponent: BaseCrosshairComponent {
 
-//    var inited:Bool = false
     let nodeCrosshairStrokes:SKShapeNode = SKShapeNode()
     
     var strokeNodes:[SKShapeNode] = [SKShapeNode]()
@@ -88,7 +87,6 @@ class MachinegunCrosshairComponent: BaseCrosshairComponent {
     
     @discardableResult
     override func drawAndGetCrosshair()->SKSpriteNode{
-//        self.inited = true
         self.drawStrokePaths()
         self.createArc()
         return super.drawAndGetCrosshair()
@@ -121,9 +119,6 @@ class MachinegunCrosshairComponent: BaseCrosshairComponent {
         }
         // DOWN 2
         self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y - innerDist), to: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y - outerDist))))
-
-        // UP 3
-//        self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y + innerDist), to: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y + outerDist))))
         
         self.nodeContainer.addChild(self.nodeCrosshairShapes)
     }

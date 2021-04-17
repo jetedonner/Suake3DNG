@@ -84,6 +84,7 @@ class SetupDeveloperViewController: NSViewController {
         self.game.overlayManager.hud.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.duration.rawValue)
 //        self.game.overlayManager.hud.overlayScene!.map.updateMap(byPassCheck: true)
         self.dismiss(true)
+        self.game.stateMachine.returnToOldState()
     }
     
 //    init(game:GameController) {

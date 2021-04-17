@@ -96,11 +96,11 @@ class SuakeVars{
     static let INITIAL_MACHINEGUN_CADENCE:TimeInterval = 0.25
     
     static let INITIAL_RPG_AMMOCOUNT:Int = 30
-    static let INITIAL_RPG_CLIPSIZE:Int = 3
+    static let INITIAL_RPG_CLIPSIZE:Int = 5
     static let INITIAL_RPG_AMMORELOADCOUNT:Int = 30
     static let INITIAL_RPG_CADENCE:TimeInterval = 0.75
     
-    static let INITIAL_RAILGUN_CLIPSIZE:Int = 6
+    static let INITIAL_RAILGUN_CLIPSIZE:Int = 3
     static let INITIAL_SNIPERRIFLE_CLIPSIZE:Int = 5
     static let INITIAL_NUKE_CLIPSIZE:Int = 1
     

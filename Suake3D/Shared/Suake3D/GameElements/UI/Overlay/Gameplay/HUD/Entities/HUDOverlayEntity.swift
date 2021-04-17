@@ -16,6 +16,7 @@ class HUDOverlayEntity: SuakeBaseEntity {
     let msgComponent:HUDMsgComponent
     var healthBars:[SuakeBasePlayerEntity:HUDHealthBarOnScreenComponent] = [:]
     
+    var dbgLogComponent:HUDDbgLogComponent!
     var msgOnHudComponent:HUDMsgOnScreenComponent!
     
     var weaponComponent:HUDWeaponComponentOLD!
@@ -24,6 +25,7 @@ class HUDOverlayEntity: SuakeBaseEntity {
     init(game: GameController) {
         
         self.msgComponent = HUDMsgComponent(game: game)
+        self.dbgLogComponent = HUDDbgLogComponent(game: game)
         
         self.msgOnHudComponent = HUDMsgOnScreenComponent(game: game)
         
@@ -35,6 +37,7 @@ class HUDOverlayEntity: SuakeBaseEntity {
 //        self.hudWeaponEntity = HUDWeaponEntity(game: game, hudEntity: self)
         
         self.addComponent(self.msgComponent)
+        self.addComponent(self.dbgLogComponent)
         self.addComponent(self.msgOnHudComponent)
     }
     
@@ -68,6 +71,12 @@ class HUDOverlayEntity: SuakeBaseEntity {
         self.msgComponent.showMsg(msg: msg)
     }
     
+    func logDbgMsg(msg:String){
+//        self.overlayScene.sceneNode.isPaused = false
+//        self.dbgLogComponent.isHidden = false
+        self.dbgLogComponent.logDbgMsg(msg: msg)
+    }
+    
     func setupOverlay(){
         self.healthBars[self.game.playerEntityManager.ownPlayerEntity] = HUDHealthBarOnScreenComponent(game: game, playerType: .OwnSuake)
         
@@ -79,21 +88,15 @@ class HUDOverlayEntity: SuakeBaseEntity {
             self.healthBars[self.game.playerEntityManager.droidEntities[0]] = HUDHealthBarOnScreenComponent(game: game, playerType: .Droid, id: 0)
         }
         self.msgComponent.setupMsg(hud: self.overlayScene)
+        self.dbgLogComponent.setupDbgLog(hud: self.overlayScene)
         
         for healthBar in self.healthBars{
             self.addComponent(healthBar.value)
             healthBar.value.setupHealthBar(hud: self.overlayScene)
         }
         
-//        self.healthBarOwnComponent.initUpdateHealthBar(health: 100.0)
-//        self.healthBarOwnComponent.setupHealthBar(hud: self.overlayScene)
-//        self.healthBarGoodyComponent.setupHealthBar(hud: self.overlayScene)
-//        self.healthBarDroidComponent.setupHealthBar(hud: self.overlayScene)
-        
         self.overlayScene.sceneNode.addChild(self.weaponComponent.node)
         self.msgOnHudComponent.setupMsg(hud: self.overlayScene)
-//      self.healthBarGoodyComponent.setupHealthBar(hud: self.overlayScene)  self.overlayScene.sceneNode.addChild(self.hudWeaponEntity.hudWeaponImgComponent.nodeContainer)
-//        self.overlayScene.arrows.setupArrows(hud: self.overlayScene)
     }
     
     required init?(coder: NSCoder) {
