@@ -47,7 +47,7 @@ extension MapOverlay{
         self.goodyNode = self.drawNodeIcon(iconFile: "GoodyIcon37x37.png", pos: self.game.playerEntityManager.goodyEntity.pos)
         self.game.playerEntityManager.goodyEntity.mapNode = self.goodyNode
         
-        if(self.game.levelManager.currentLevel.levelConfig.loadDroids){
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadDroids){
             for droid in self.game.playerEntityManager.droidsNotDead{
                 let daDroid:SuakeSpriteNodeMultiTextures = drawNodeIconNGMulti(iconFiles: ["Droid_48x48_green.png", "Droid_48x48_orange.png", "Droid_48x48_red.png"], pos: droid.pos)
                 daDroid.id = droid.id

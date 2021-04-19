@@ -17,7 +17,7 @@ class SuakeGameStateHelper: SuakeGameClass {
     }
     
     func startMatch() {
-        self.startMatch(withCountdown: self.game.levelManager.currentLevel.levelConfig.showCountdown)
+        self.startMatch(withCountdown: self.game.levelManager.currentLevel.levelConfig.levelSetup.showCountdown)
     }
     
     func startMatch(withCountdown:Bool = false) {

@@ -136,7 +136,7 @@ class PanCameraHelper: SuakeGameClass {
             }
         }
         
-        if(self.game.levelManager.currentLevel.levelConfig.loadOppSuake){
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadAISuake){
             if(self.checkNodeInsideFrustum(node: self.game.playerEntityManager.oppPlayerEntity.playerComponent.mainNode)){
                 hitTestCat.insert(.suakeOpp)
             }

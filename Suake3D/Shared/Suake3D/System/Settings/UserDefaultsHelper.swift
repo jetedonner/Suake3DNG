@@ -117,18 +117,18 @@ class UserDefaultsHelper:SuakeGameClass{
     }
 
     func resetUserDefaults2Game(){
-        self.game.levelManager.currentLevel.levelConfigEnv.duration = self.matchDuration
+        self.game.levelManager.currentLevel.levelConfigEnv.matchDuration = self.matchDuration
         self.game.levelManager.currentLevel.levelConfigEnv.levelSize = self.levelSize
         self.game.levelManager.currentLevel.levelConfigEnv.levelDifficulty = self.difficulty
-        self.game.levelManager.currentLevel.levelConfig.loadWeaponPickups = self.loadWeaponPickups
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.loadWeaponPickups = self.loadWeaponPickups
         
-        self.game.levelManager.currentLevel.levelConfig.loadOppSuake = self.loadOpp
-        self.game.levelManager.currentLevel.levelConfig.testOppSuakeAI = self.testOppAI
-        self.game.levelManager.currentLevel.levelConfig.loadDroids = self.loadDroids
-        self.game.levelManager.currentLevel.levelConfig.droidsAttackOwn = self.droidsAttackOwn
-        self.game.levelManager.currentLevel.levelConfig.droidsAttackOpp = self.droidsAttackOpp
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.loadAISuake = self.loadOpp
+//        self.game.levelManager.currentLevel.levelConfig.testOppSuakeAI = self.testOppAI
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.loadDroids = self.loadDroids
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.droidsAttackOwn = self.droidsAttackOwn
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.droidsAttackOpp = self.droidsAttackOpp
         
-        self.game.levelManager.currentLevel.levelConfig.showCountdown = self.showCountdown
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.showCountdown = self.showCountdown
         
         self.game.levelManager.currentLevel.levelConfigEnv.lightIntensity = self.lightIntensity
         self.game.levelManager.lightManager.setAmbientLight(intensity: self.lightIntensity)

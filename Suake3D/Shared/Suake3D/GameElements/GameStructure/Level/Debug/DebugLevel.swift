@@ -9,13 +9,14 @@
 import Foundation
 import SceneKit
 import GameplayKit
+import NetTestFW
 
 class DebugLevel: SuakeBaseLevel {
     
     init(game: GameController) {
         
-        let levelConfig:LevelConfiguration = LevelConfiguration(game: game)
-        let levelConfigEnv:LevelConfigurationEnvironment = LevelConfigurationEnvironment(game: game, levelSize: .ExtraSmall, duration: .Minutes_2)
+        let levelConfig:LevelConfiguration = LevelConfiguration()
+        let levelConfigEnv:LevelEnvironment = LevelEnvironment(levelSize: .Small, floorType: .Debug, skyBoxType: .RedGalaxy, matchDuration: .Minute_1, levelDifficulty: .Easy, lightIntensity: .normal)
         
         super.init(game: game, levelConfig: levelConfig, levelConfigEnv: levelConfigEnv)
     }

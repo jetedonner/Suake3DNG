@@ -43,7 +43,7 @@ class SuakePlayerManager: SuakeGameClass {
     
     func initPlayers(){
         self.ownPlayerEntity = SuakeOwnPlayerEntity(game: self.game)
-        if(self.game.levelManager.currentLevel.levelConfig.loadOppSuake){
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadAISuake){
             self.oppPlayerEntity = SuakeOppPlayerEntity(game: self.game)
         }
         
@@ -61,7 +61,7 @@ class SuakePlayerManager: SuakeGameClass {
     
     func addPlayersToScene(){
         self.ownPlayerEntity.setupPlayerEntity()
-        if(self.game.levelManager.currentLevel.levelConfig.loadOppSuake){
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadAISuake){
             self.oppPlayerEntity.setupPlayerEntity()
         }
         self.goodyEntity.add2Scene()
@@ -73,7 +73,7 @@ class SuakePlayerManager: SuakeGameClass {
     
     func resetPlayerEntities(){
         self.ownPlayerEntity.resetPlayerEntity()
-        if(self.game.levelManager.currentLevel.levelConfig.loadOppSuake){
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadAISuake){
             self.oppPlayerEntity.resetPlayerEntity()
         }
         self.goodyEntity.resetPlayerEntity()

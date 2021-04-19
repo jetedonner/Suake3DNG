@@ -172,9 +172,7 @@
 		55D8946625FACB3000728B83 /* DebugHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8946525FACB3000728B83 /* DebugHelper.swift */; };
 		55D8947825FACCBC00728B83 /* LevelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8947525FACCBC00728B83 /* LevelType.swift */; };
 		55D8947E25FACCD600728B83 /* SuakeBaseLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8947D25FACCD600728B83 /* SuakeBaseLevel.swift */; };
-		55D8948325FACCEF00728B83 /* LevelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8948225FACCEF00728B83 /* LevelConfiguration.swift */; };
 		55D8948A25FACD7100728B83 /* DebugLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8948925FACD7100728B83 /* DebugLevel.swift */; };
-		55D8948F25FACE4100728B83 /* LevelConfigurationEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8948E25FACE4100728B83 /* LevelConfigurationEnvironment.swift */; };
 		55D8949425FACF3800728B83 /* SkyBoxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8949325FACF3800728B83 /* SkyBoxHelper.swift */; };
 		55D8949925FAD06100728B83 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8949825FAD06100728B83 /* LevelManager.swift */; };
 		55D894A325FAD3FA00728B83 /* FloorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D894A225FAD3FA00728B83 /* FloorHelper.swift */; };
@@ -426,9 +424,7 @@
 		55D8946525FACB3000728B83 /* DebugHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugHelper.swift; sourceTree = "<group>"; };
 		55D8947525FACCBC00728B83 /* LevelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelType.swift; path = Suake3D/Shared/Suake3D/GameElements/GameStructure/Level/Base/Enum/LevelType.swift; sourceTree = SOURCE_ROOT; };
 		55D8947D25FACCD600728B83 /* SuakeBaseLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuakeBaseLevel.swift; path = Suake3D/Shared/Suake3D/GameElements/GameStructure/Level2/Base/SuakeBaseLevel.swift; sourceTree = SOURCE_ROOT; };
-		55D8948225FACCEF00728B83 /* LevelConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelConfiguration.swift; sourceTree = "<group>"; };
 		55D8948925FACD7100728B83 /* DebugLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLevel.swift; sourceTree = "<group>"; };
-		55D8948E25FACE4100728B83 /* LevelConfigurationEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelConfigurationEnvironment.swift; sourceTree = "<group>"; };
 		55D8949325FACF3800728B83 /* SkyBoxHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyBoxHelper.swift; sourceTree = "<group>"; };
 		55D8949825FAD06100728B83 /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		55D894A225FAD3FA00728B83 /* FloorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorHelper.swift; sourceTree = "<group>"; };
@@ -1030,8 +1026,6 @@
 			children = (
 				550183D92601DF0B00F28C54 /* Enum */,
 				55D8947D25FACCD600728B83 /* SuakeBaseLevel.swift */,
-				55D8948225FACCEF00728B83 /* LevelConfiguration.swift */,
-				55D8948E25FACE4100728B83 /* LevelConfigurationEnvironment.swift */,
 				55D8949325FACF3800728B83 /* SkyBoxHelper.swift */,
 				55D894A225FAD3FA00728B83 /* FloorHelper.swift */,
 				55C12266261CFCB6001E8E3F /* LightManager.swift */,
@@ -1546,7 +1540,6 @@
 				55D894B325FAD65C00728B83 /* SuakeKeyboardHandler.swift in Sources */,
 				55D8949425FACF3800728B83 /* SkyBoxHelper.swift in Sources */,
 				551F3D58260C7515006D9F65 /* SuakeOppPlayerEntity.swift in Sources */,
-				55D8948325FACCEF00728B83 /* LevelConfiguration.swift in Sources */,
 				55A2B8FD2601444300E25F7F /* GamePaused.swift in Sources */,
 				5501838326016F1300F28C54 /* BaseWeaponComponent.swift in Sources */,
 				55C1225C261CF2CE001E8E3F /* MatchMakerHelper.swift in Sources */,
@@ -1668,7 +1661,6 @@
 				55C12250261CE9A1001E8E3F /* GameCenterHelper.swift in Sources */,
 				5501836026015B7C00F28C54 /* MouseProtocol.swift in Sources */,
 				556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */,
-				55D8948F25FACE4100728B83 /* LevelConfigurationEnvironment.swift in Sources */,
 				55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */,
 				550184422603E1E100F28C54 /* SuakeColors.swift in Sources */,
 				556CB90D25FE8427005B7747 /* SuakeHealthComponent.swift in Sources */,

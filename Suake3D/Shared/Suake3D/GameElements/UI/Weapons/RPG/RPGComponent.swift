@@ -21,7 +21,6 @@ class RPGComponent: BaseWeaponComponent {
     override func fireShot(at:SCNVector3? = nil){
         super.fireShot(at: at)
         let shot:RPGRocket = RPGRocket(game: self.game, weapon: self)
-//        let shot:MachinegunBullet = MachinegunBullet(game: self.game, weapon: self)
         shot.position = self.getShotStartPosition()
         shot.rotation = self.getShotStartRotation()
         let velocity:SCNVector3 = self.getShotStartVelocity(bulletNode: shot, target: at)

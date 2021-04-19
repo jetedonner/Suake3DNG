@@ -89,6 +89,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 sendData.players.humanPlayers[self.dbgServerPlayerId] = self.dbgServerPlayerName
                 sendData.players.humanPlayers[self.dbgClientPlayerId] = self.dbgClientPlayerName
                 
+                sendData.levelConfig.levelPlayers.droidPlayerCount = self.game.usrDefHlpr.droidCount
+                
                 guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: sendData) else {
                     return
                 }

@@ -132,7 +132,7 @@ class PhysicsHelper: SuakeGameClass, SCNSceneRendererDelegate {
 //            let timeElapsed:TimeInterval = time - self.gameStartTime
 //            self.game.overlayManager.hud.setTime(time: timeElapsed)
 //        }else{
-        var updateDeltaTime:TimeInterval = self.game.levelManager.currentLevel.levelConfigEnv.duration.rawValue // self.game.levelManager.currentLevel.duration.rawValue
+        var updateDeltaTime:TimeInterval = self.game.levelManager.currentLevel.levelConfigEnv.matchDuration.rawValue // self.game.levelManager.currentLevel.duration.rawValue
             if(time > 0.0 && self.gameStartTime > 0.0){
                 updateDeltaTime = updateDeltaTime - (time - self.gameStartTime)
             }

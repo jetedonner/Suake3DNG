@@ -14,10 +14,10 @@ import NetTestFW
 class SuakeBaseLevel: SuakeGameClass {
     
     let levelConfig:LevelConfiguration
-    let levelConfigEnv:LevelConfigurationEnvironment
+    var levelConfigEnv:LevelEnvironment
     let weaponPickUps:WeaponPickupEntityManager
     
-    init(game: GameController, levelConfig:LevelConfiguration, levelConfigEnv:LevelConfigurationEnvironment) {
+    init(game: GameController, levelConfig:LevelConfiguration, levelConfigEnv:LevelEnvironment) {
         
         self.levelConfig = levelConfig
         self.levelConfigEnv = levelConfigEnv
@@ -34,9 +34,10 @@ class SuakeBaseLevel: SuakeGameClass {
 //    }
     
     func loadLevel(){
-        self.levelConfigEnv.loadLevelEnvironment()
+        //TODO LOAD ENVIRONMENT
+//        self.levelConfigEnv.loadLevelEnvironment()
         self.weaponPickUps.removeWeaponPickupEntities(weaponType: .mg)
-        if(self.levelConfig.loadWeaponPickups){
+        if(self.levelConfig.levelSetup.loadWeaponPickups){
             self.weaponPickUps.addWeaponPickupEntities(weaponType: .mg, numberOfWeaponPickups: 1)
         }
     }

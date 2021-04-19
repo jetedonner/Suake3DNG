@@ -92,6 +92,13 @@ class SuakeBaseNodeEntity: SuakeBaseEntity {
        }
     }
     
+    func setup(posDir: SuakePosDir){
+        self.pos = posDir.pos
+        self.dir = posDir.dir
+        self.dirOld = posDir.dir
+        self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: self.suakeField)
+    }
+    
     func setup(pos: SCNVector3, dir:SuakeDir){
         self.pos = pos
         self.dir = dir

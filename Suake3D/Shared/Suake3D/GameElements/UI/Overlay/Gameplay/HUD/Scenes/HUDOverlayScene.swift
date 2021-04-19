@@ -52,7 +52,7 @@ class HUDOverlayScene: SuakeBaseOverlay {
         self.lblGoodyPosition.position = CGPoint(x: frm.width / 2, y: (frm.height - self.lblSuakePosition.frame.height - self.lblSuakePosition.frame.height - 20))
         self.scene?.addChild(self.lblGoodyPosition)
         
-        self.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.duration.rawValue)
+        self.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.matchDuration.rawValue)
         self.lblGameTimer.position = CGPoint(x: self.lblGameTimer.frame.width, y: (frm.height - self.lblGameTimer.frame.height - 20))
         self.scene?.addChild(self.lblGameTimer)
         
@@ -70,13 +70,12 @@ class HUDOverlayScene: SuakeBaseOverlay {
     
     func loadInitialValues(){
         self.setPositionTxt(pos: self.game.playerEntityManager.ownPlayerEntity.pos)
-//        self.lblSuakePosition.text = // "0 : 0"
-//        self.lblGoodyPosition.text = "-3 : 3"
         self.setGoodyPositionTxt(pos: self.game.playerEntityManager.goodyEntity.pos)
+        self.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.matchDuration.rawValue)
+        self.setScore(score: 0)
         
-        self.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.duration.rawValue)
-        self.lblScore.text = "0000"
         self.map.updateMap(byPassCheck: true)
+        self.map.zoomMap(zoomOn: false)
     }
     
     override func showOverlayScene() {

@@ -19,23 +19,8 @@ import Cocoa
 
 class SetupDeveloperViewController: NSViewController {
     
-
     var game:GameController!
-
-//    enum LevelSize:String {
-//        case ExtraSmall =   "10,10"
-//        case Small =        "20,20"
-//        case Medium =       "30,30"
-//        case Big =          "40,40"
-//        case VeryBig =      "50,50"
-//        case Huge =         "70,70"
-//
-//        func getNSSize()->NSSize{
-//            NSSize.convertFromStringLiteral(value: self.rawValue)
-//        }
-//    }
     
-//    var tmp:LightIntensity = .
     @objc dynamic var optionsForLightIntensity = [Option(name: "NoLight", identifier: "id-1"),
                                            Option(name: "Low", identifier: "id-2"),
                                            Option(name: "Medium", identifier: "id-3"),
@@ -71,7 +56,7 @@ class SetupDeveloperViewController: NSViewController {
         self.game.usrDefHlpr.loadValuesFromUserDefaults()
         self.game.usrDefHlpr.resetUserDefaults2Game()
         self.game.levelManager.loadLevel(initialLoad: true)
-        self.game.overlayManager.hud.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.duration.rawValue)
+        self.game.overlayManager.hud.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.matchDuration.rawValue)
         self.game.overlayManager.hud.overlayScene!.map.updateMap(byPassCheck: true)
         self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
         self.dismiss(true)
@@ -80,21 +65,10 @@ class SetupDeveloperViewController: NSViewController {
     @IBAction func closeAndSave(_ sender: Any) {
         self.game.usrDefHlpr.loadValuesFromUserDefaults()
         self.game.usrDefHlpr.resetUserDefaults2Game()
-//        self.game.levelManager.loadLevel(initialLoad: true)
-        self.game.overlayManager.hud.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.duration.rawValue)
-//        self.game.overlayManager.hud.overlayScene!.map.updateMap(byPassCheck: true)
+        self.game.overlayManager.hud.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.matchDuration.rawValue)
         self.dismiss(true)
         self.game.stateMachine.returnToOldState()
     }
-    
-//    init(game:GameController) {
-//        self.init()
-//        self.game = game
-//    }
-    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
