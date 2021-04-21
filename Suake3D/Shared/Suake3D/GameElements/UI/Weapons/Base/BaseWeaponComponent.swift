@@ -121,7 +121,7 @@ class BaseWeaponComponent: GKComponent {
     }
     
     func getShotStartPosition()->SCNVector3 {
-        let result:SCNVector3 = self.game.cameraHelper.cameraNodeFP.position
+        let result:SCNVector3 = (self.weaponArsenalManager.playerEntity as! SuakePlayerEntity).cameraComponent.cameraNodeFP.position// self.game.cameraHelper.cameraNodeFP.position
         return result
     }
     

@@ -101,6 +101,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 self.game.loadNetworkMatch(levelConfigNet: sendData)
             }else if(msgTyp == .shootWeaponMsg){
                 let shootData:ShootWeaponNetworkData = ShootWeaponNetworkData(id: self.msgSentCounter)
+                shootData.origin = self.game.playerEntityManager.oppPlayerEntity.cameraComponent.cameraNodeFP.position
                 guard let dataShootWeapon = NetworkHelper.encodeAndSend(netData: shootData) else {
                     return
                 }
