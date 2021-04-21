@@ -22,21 +22,25 @@ class SuakeKeyboardHandler: KeyboardHandler {
     override func keyPressedEvent(event: NSEvent) {
         super.keyPressedEvent(event: event)
         
-        if(self.game.gameCenterHelper.matchMakerHelper!.match != nil){
-            if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-                self.game.gameCenterHelper.matchMakerHelper!.sendData(match: self.game.gameCenterHelper.matchMakerHelper!.match, msgTyp: .shootWeaponMsg)
-////            var gameData = GameData()
-////            var gameDataExt = GameDataExt()
-////            gameDataExt.typeValue = 123
-////            gameData.ext = gameDataExt.encode()
-////            gameData.keyPress = Int(event.keyCode)
-////            self.game.matchHelper.sendGameData(gameData: gameData)
-                
-                return
-            }
-        }
+        
         
         if let pressedKey = KeyboardDirection(rawValue: event.keyCode) {
+            
+            if(self.game.gameCenterHelper.matchMakerHelper!.match != nil){
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                    if(pressedKey == .KEY_SPACE){
+                        self.game.gameCenterHelper.matchMakerHelper!.sendData(match: self.game.gameCenterHelper.matchMakerHelper!.match, msgTyp: .shootWeaponMsg)
+        ////            var gameData = GameData()
+        ////            var gameDataExt = GameDataExt()
+        ////            gameDataExt.typeValue = 123
+        ////            gameData.ext = gameDataExt.encode()
+        ////            gameData.keyPress = Int(event.keyCode)
+        ////            self.game.matchHelper.sendGameData(gameData: gameData)
+                        
+                        return
+                    }
+                }
+            }
             
             if(pressAnyKeyHandler.handleAnyKeyPress(pressedKey: pressedKey)){
                 return

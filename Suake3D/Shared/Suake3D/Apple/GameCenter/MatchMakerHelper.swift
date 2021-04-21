@@ -108,7 +108,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 if(NetworkHelper.dbgMode){
                     print(dataShootWeapon.prettyPrintedJSONString!)
                 }
-                try match.sendData(toAllPlayers: dataShootWeapon, with: .reliable)
+                try match.sendData(toAllPlayers: dataShootWeapon, with: .unreliable)
                 self.game.shootWeaponNetworkMatch(shootData: shootData)
             }
             self.msgSentCounter += 1
