@@ -28,12 +28,19 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         }
     }
     
-    override func setup(pos: SCNVector3, dir:SuakeDir){
-        super.setup(pos: pos, dir: dir)
-        SuakeDirTurnDirHelper.initNodeRotation(node: self.playerComponent.mainNode, dir: dir)
+    override func setup(posDir: SuakePosDir) {
+        super.setup(posDir: posDir)
+        SuakeDirTurnDirHelper.initNodeRotation(node: self.playerComponent.mainNode, dir: posDir.dir)
         self.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
         self.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, moveDifference: 0.0)
     }
+    
+//    override func setup(pos: SCNVector3, dir:SuakeDir){
+//        super.setup(pos: pos, dir: dir)
+//        SuakeDirTurnDirHelper.initNodeRotation(node: self.playerComponent.mainNode, dir: dir)
+//        self.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
+//        self.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, moveDifference: 0.0)
+//    }
     
     override init(game: GameController, playerType: SuakePlayerType = .OwnSuake, id: Int = 0) {
         self.playerComponent = SuakePlayerComponent(game: game, playerType: playerType)

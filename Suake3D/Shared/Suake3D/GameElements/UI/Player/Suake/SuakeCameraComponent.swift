@@ -35,6 +35,86 @@ class SuakeCameraComponent: SuakeBaseComponent {
         super.init(game: game)
     }
     
+    
+    
+    func getMoveRotateFollowCamera(turnDir:TurnDir = .Straight, duration:TimeInterval = 1.0, moveDifference:CGFloat = SuakeVars.fieldSize)->(SCNVector3, SCNMatrix4){
+        
+//        let moveDifference:CGFloat = SuakeVars.fieldSize
+        
+        var moveRet:SCNVector3!
+        var transformRet:SCNMatrix4!
+        
+//        SCNTransaction.begin()
+//        SCNTransaction.animationDuration = duration
+//        SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        
+//        SCNTransaction.completionBlock = {
+//            let gameBoardSize =  self.game.levelManager.currentLevel.levelConfigEnv.levelSize.getNSSize()
+//            if(self.cameraNode.position.z >= ((gameBoardSize.height * SuakeVars.fieldSize) / 2) ||
+//                self.cameraNode.position.z < ((gameBoardSize.height * SuakeVars.fieldSize) / -2) ||
+//                self.cameraNode.position.x >= ((gameBoardSize.width * SuakeVars.fieldSize) / 2) ||
+//                self.cameraNode.position.x < ((gameBoardSize.width * SuakeVars.fieldSize) / -2)){
+//            }else{
+//                self.game.levelManager.wallManager.wallFactory.wallGrp.runAction(SCNAction.fadeIn(duration: 0.1))
+//                self.game.levelManager.wallManager.wallFactory.wallGrpUpper.runAction(SCNAction.fadeIn(duration: 0.1))
+//                self.game.levelManager.wallManager.wallFactory.wallGrpLower.runAction(SCNAction.fadeIn(duration: 0.1))
+//                self.game.levelManager.wallManager.wallFactory.wallGrpLeft.runAction(SCNAction.fadeIn(duration: 0.1))
+//                self.game.levelManager.wallManager.wallFactory.wallGrpRight.runAction(SCNAction.fadeIn(duration: 0.1))
+//            }
+//        }
+        
+//        if(turnDir != .Straight){
+//            SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//        }
+        
+        if let playerEntity = self.entity{
+            let suakePlayerEntity = (playerEntity as! SuakePlayerEntity)
+            let suakeDir:SuakeDir = suakePlayerEntity.dir
+            if(suakeDir == .UP){
+//                cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 1.0, 0.0, -1.0, 0.0)
+                transformRet = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 1.0, 0.0, -1.0, 0.0)
+                if(turnDir == .Left){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - moveDifference, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist)
+                }else if(turnDir == .Right){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + moveDifference, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist)
+                }else{
+                    moveRet = SCNVector3(suakePlayerEntity.position.x, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist + moveDifference)
+                }
+            }else if(suakeDir == .DOWN){
+                transformRet  = SCNMatrix4MakeRotation(0.0, 0.0, -1.0, 0.0)
+                if(turnDir == .Left){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + moveDifference, 45, suakePlayerEntity.position.z + SuakeVars.cameraDist)
+                }else if(turnDir == .Right){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - moveDifference, 45, suakePlayerEntity.position.z + SuakeVars.cameraDist)
+                }else{
+                    moveRet = SCNVector3(suakePlayerEntity.position.x, 45, suakePlayerEntity.position.z + SuakeVars.cameraDist - moveDifference)
+                }
+            }else if(suakeDir == .LEFT){
+                transformRet = SCNMatrix4MakeRotation(CGFloat(Double.pi) * 0.5, 0.0, -1.0, 0.0)
+                if(turnDir == .Left){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - SuakeVars.cameraDist, 45, suakePlayerEntity.position.z + moveDifference)
+                }else if(turnDir == .Right){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - SuakeVars.cameraDist, 45, suakePlayerEntity.position.z - moveDifference)
+                }else{
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - SuakeVars.cameraDist + moveDifference, 45, suakePlayerEntity.position.z)
+                }
+            }else if(suakeDir == .RIGHT){
+                transformRet = SCNMatrix4MakeRotation(CGFloat(Double.pi) * -0.5, 0.0, -1.0, 0.0)
+                if(turnDir == .Left){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + SuakeVars.cameraDist, 45, suakePlayerEntity.position.z - moveDifference)
+                }else if(turnDir == .Right){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + SuakeVars.cameraDist, 45, suakePlayerEntity.position.z + moveDifference)
+                }else{
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + SuakeVars.cameraDist - moveDifference, 45, suakePlayerEntity.position.z)
+                }
+            }
+        }
+        return (moveRet, transformRet)
+//        SCNTransaction.commit()
+    }
+    
+    
+    
     func moveFollowCamera(turnDir:TurnDir = .Straight, duration:TimeInterval = 1.0, moveDifference:CGFloat = SuakeVars.fieldSize){
         
 //        let moveDifference:CGFloat = SuakeVars.fieldSize
@@ -117,6 +197,101 @@ class SuakeCameraComponent: SuakeBaseComponent {
         }else if(self.cameraNode.position.x < ((gameBoardSize.width * SuakeVars.fieldSize) / -2)){
             self.game.levelManager.wallManager.wallFactory.wallGrpRight.runAction(SCNAction.fadeOut(duration: 0.15))
         }
+    }
+    
+    func getMoveRotateFPCamera(duration:TimeInterval = 1.0, turnDir:TurnDir = .Straight, beamed:Bool = false, moveDifference:CGFloat = SuakeVars.fieldSize)->(SCNVector3, CGFloat){
+        
+        var moveRet:SCNVector3!
+        var rotateRet:CGFloat!
+        
+        if let playerEntity = self.entity{
+            let suakePlayerEntity = (playerEntity as! SuakePlayerEntity)
+            
+            var yReset:CGFloat = 0.0
+            switch suakePlayerEntity.dir {
+            case .UP:
+                yReset = CGFloat.pi
+            case .LEFT:
+                yReset = CGFloat.pi / -2
+            case .RIGHT:
+                yReset = CGFloat.pi / 2
+            case .DOWN:
+                yReset = 0
+            default:
+                yReset = 0.0
+            }
+            
+            rotateRet = yReset
+//            self.cameraNodeFP.runAction(SCNAction.rotateTo(x: 0, y: yReset, z: 0, duration: duration, usesShortestUnitArc: true), completionHandler: {
+//
+//            })
+//            SCNTransaction.begin()
+//            SCNTransaction.animationDuration = duration
+//            SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+            
+            if(suakePlayerEntity.dirOld == .UP){
+                if(turnDir == .Left){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + SuakeVars.cameraFPAhead, 0, suakePlayerEntity.position.z + moveDifference)
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + moveDifference
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + SuakeVars.cameraFPAhead
+                }else if(turnDir == .Right){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - SuakeVars.cameraFPAhead, 0, suakePlayerEntity.position.z + moveDifference)
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + moveDifference
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - SuakeVars.cameraFPAhead
+                }else{
+                    moveRet = SCNVector3(suakePlayerEntity.position.x, 0, suakePlayerEntity.position.z + (beamed ? 0 : moveDifference) + SuakeVars.cameraFPAhead)
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + (beamed ? 0 : moveDifference) + SuakeVars.cameraFPAhead
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x
+                }
+            }else if(suakePlayerEntity.dirOld == .DOWN){
+                if(turnDir == .Left){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - SuakeVars.cameraFPAhead, 0, suakePlayerEntity.position.z - moveDifference)
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - moveDifference
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - SuakeVars.cameraFPAhead
+                }else if(turnDir == .Right){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + SuakeVars.cameraFPAhead, 0, suakePlayerEntity.position.z - moveDifference)
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - moveDifference
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + SuakeVars.cameraFPAhead
+                }else{
+                    moveRet = SCNVector3(suakePlayerEntity.position.x, 0, suakePlayerEntity.position.z - moveDifference - SuakeVars.cameraFPAhead)
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - moveDifference - SuakeVars.cameraFPAhead
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x
+                }
+            }else if(suakePlayerEntity.dirOld == .LEFT){
+                if(turnDir == .Left){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + moveDifference, 0, suakePlayerEntity.position.z - SuakeVars.cameraFPAhead)
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + moveDifference
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - SuakeVars.cameraFPAhead
+                }else if(turnDir == .Right){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + moveDifference, 0, suakePlayerEntity.position.z + SuakeVars.cameraFPAhead)
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + moveDifference
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + SuakeVars.cameraFPAhead
+                }else{
+                    moveRet = SCNVector3(suakePlayerEntity.position.x + moveDifference + SuakeVars.cameraFPAhead, 0, suakePlayerEntity.position.z)
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x + moveDifference + SuakeVars.cameraFPAhead
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z
+                }
+                
+                //////////////////////////
+            }else if(suakePlayerEntity.dirOld == .RIGHT){
+                if(turnDir == .Left){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - moveDifference, 0, suakePlayerEntity.position.z + SuakeVars.cameraFPAhead)
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - moveDifference
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + SuakeVars.cameraFPAhead
+                }else if(turnDir == .Right){
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - moveDifference, 0, suakePlayerEntity.position.z - SuakeVars.cameraFPAhead)
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - moveDifference
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z - SuakeVars.cameraFPAhead
+                }else{
+                    moveRet = SCNVector3(suakePlayerEntity.position.x - moveDifference - SuakeVars.cameraFPAhead, 0, suakePlayerEntity.position.z)
+//                    self.cameraNodeFP.position.x = suakePlayerEntity.position.x - moveDifference - SuakeVars.cameraFPAhead
+//                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z
+                }
+            }
+//            self.cameraNodeFP.position.y = 8
+//            SCNTransaction.commit()
+        }
+        return (moveRet, rotateRet)
     }
     
     func moveRotateFPCamera(duration:TimeInterval = 1.0, turnDir:TurnDir = .Straight, beamed:Bool = false, moveDifference:CGFloat = SuakeVars.fieldSize){

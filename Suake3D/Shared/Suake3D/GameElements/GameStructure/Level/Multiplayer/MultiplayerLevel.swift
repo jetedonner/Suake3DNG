@@ -33,7 +33,7 @@ class MultiplayerLevel: SuakeBaseLevel{
         
 //        self.game.playerEntityManager.oppPlayerEntity.setup(pos: self.levelConfigNet.levelConfig.levelSetup.playerPos[1], dir: self.levelConfigNet.levelConfig.levelSetup.playerDir[1])
         
-        self.game.playerEntityManager.goodyEntity.setup(pos: self.levelConfigNet.levelConfig.levelSetup.goodyPos, dir: .UP)
+        self.game.playerEntityManager.goodyEntity.setup(pos: self.levelConfigNet.levelConfig.levelSetup.goodyPos)
         
         
         for droid in self.game.playerEntityManager.droidsNotDead{

@@ -93,7 +93,6 @@ class CameraHelper: SuakeGameClass {
     }
     
     func allowCameraControl(allow:AllowCameraControl = .Undefined){
-        
         if(allow == .Undefined){
             self.game.scnView.allowsCameraControl = !self.game.scnView.allowsCameraControl
         }else{
@@ -178,7 +177,7 @@ class CameraHelper: SuakeGameClass {
             self.game.scnView.pointOfView?.transform = self.cameraNodeFP.transform
             SCNTransaction.completionBlock = {
                 self.game.scnView.pointOfView = self.cameraNodeFP
-                self.cameraNode.transform = oldTransform
+                self.cameraNode.transform = self.game.playerEntityManager.ownPlayerEntity.cameraComponent.getMoveRotateFollowCamera().1//    oldTransform
                 self.animatingFPV = false
                 self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
                 self.fpv = newFPV
@@ -192,7 +191,8 @@ class CameraHelper: SuakeGameClass {
             self.game.scnView.pointOfView?.transform = self.cameraNode.transform
             SCNTransaction.completionBlock = {
                 self.game.scnView.pointOfView = self.cameraNode
-                self.cameraNodeFP.transform = oldTransform
+                self.cameraNodeFP.position =
+                    self.game.playerEntityManager.ownPlayerEntity.cameraComponent.getMoveRotateFPCamera().0// oldTransform
                 self.animatingFPV = false
                 self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = false
             }
