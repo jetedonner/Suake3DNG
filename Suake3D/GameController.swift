@@ -158,6 +158,11 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     
     func loadNetworkMatch3(startMatch:StartMatchNetworkData){
 //        self.stateMachine.enter(SuakeStatePlaying.self)
+        self.overlayManager.showOverlay4GameState(type: .ready2Play)
+    }
+    
+    func shootWeaponNetworkMatch(shootData:ShootWeaponNetworkData){
+        self.playerEntityManager.oppPlayerEntity.shoot()
     }
     
     func loadGameScence(initialLoad:Bool = true){

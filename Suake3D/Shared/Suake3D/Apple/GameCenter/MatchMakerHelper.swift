@@ -99,6 +99,16 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 }
                 try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
                 self.game.loadNetworkMatch(levelConfigNet: sendData)
+            }else if(msgTyp == .shootWeaponMsg){
+                let shootData:ShootWeaponNetworkData = ShootWeaponNetworkData(id: self.msgSentCounter)
+                guard let dataShootWeapon = NetworkHelper.encodeAndSend(netData: shootData) else {
+                    return
+                }
+                if(NetworkHelper.dbgMode){
+                    print(dataShootWeapon.prettyPrintedJSONString!)
+                }
+                try match.sendData(toAllPlayers: dataShootWeapon, with: .reliable)
+                self.game.shootWeaponNetworkMatch(shootData: shootData)
             }
             self.msgSentCounter += 1
         } catch {
@@ -129,6 +139,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.sendStartMatchMsg()
         }else if(newObj.msgType == .startMatchMsg){
             self.game.loadNetworkMatch3(startMatch: newObj as! StartMatchNetworkData)
+        }else if(newObj.msgType == .shootWeaponMsg){
+            self.game.shootWeaponNetworkMatch(shootData: newObj as! ShootWeaponNetworkData)
         }
     }
     

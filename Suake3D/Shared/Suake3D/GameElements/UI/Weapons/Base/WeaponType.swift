@@ -11,7 +11,7 @@ import GameplayKit
 import SceneKit
 
 
-struct WeaponType: OptionSet, Hashable {
+struct WeaponType: OptionSet, Hashable, Codable {
     var rawValue: Int
     
     static let none =                       WeaponType(rawValue: 1 << 0)  //            1
