@@ -17,6 +17,7 @@ class SuakeStateMachine:GKStateMachine{
     let stateGameLoadingMulti:SuakeStateGameLoadingMulti
     let stateReadyToPlay:SuakeStateReadyToPlay
     let statePlaying:SuakeStatePlaying
+    let stateMultiPlaying:SuakeStateMultiplayerPlaying
     let statePaused:SuakeStatePaused
     let stateDied:SuakeStateDied
     let stateRespawn:SuakeStateRespawn
@@ -38,6 +39,7 @@ class SuakeStateMachine:GKStateMachine{
         self.stateGameLoadingMulti = SuakeStateGameLoadingMulti(game: game)
         self.stateReadyToPlay = SuakeStateReadyToPlay(game: game)
         self.statePlaying = SuakeStatePlaying(game: game)
+        self.stateMultiPlaying = SuakeStateMultiplayerPlaying(game: game)
         self.statePaused = SuakeStatePaused(game: game)
         self.stateDied = SuakeStateDied(game: game)
         self.stateRespawn = SuakeStateRespawn(game: game)
@@ -46,7 +48,7 @@ class SuakeStateMachine:GKStateMachine{
         
         self.stateHelper = SuakeGameStateHelper(game: game)
         
-        super.init(states: [self.stateGameLoading, self.stateGameLoadingMulti, self.stateReadyToPlay, self.statePlaying, self.statePaused, self.stateDied, self.stateRespawn, self.stateMatchOver, self.stateMainMenu])
+        super.init(states: [self.stateGameLoading, self.stateGameLoadingMulti, self.stateReadyToPlay, self.statePlaying, self.stateMultiPlaying, self.statePaused, self.stateDied, self.stateRespawn, self.stateMatchOver, self.stateMainMenu])
     }
     
     @discardableResult
