@@ -34,22 +34,12 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var overlayManager:OverlayManager!
     
     var gridGraphManager:GridGraphManager!
-//    var matchHelper:SuakeMatchHelper!
     var gameCenterHelper:GameCenterHelper!
     
-//    var networkHelper:NetworkHelper!
-//    var networkHelper:NetTestFW.NetworkHelper!
-//    var settings:SuakeSettings!
-////    var wormHoleHelper:WormHoleHelper!
-    ///
-    
     func startMatch(match: GKMatch) {
-        self.gameCenterHelper.matchMakerHelper?.setMatch(match: match)
-        
-        self.overlayManager.showOverlay4GameState(type: .gameCenter)
-        //self.overlayManager.gameCenterOverlay.setProgress(curPrecent: 10, msg: "Determining best server host ...")
-//        self.overlayManager.gameCenterOverlay.startProgressInfinite(msg: "Determining best server host ...")
-//        match.delegate = self.gameCenterHelper.matchMakerHelper
+        self.gameCenterHelper.matchMakerHelper.setMatch(match: match)
+//        self.overlayManager.showOverlay4GameState(type: .gameCenter)
+        self.stateMachine.enter(stateClass: SuakeStateGameLoadingMulti.self)
     }
     
     override init(scnView: SCNView) {
@@ -57,17 +47,16 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
 
         self.usrDefHlpr = UserDefaultsHelper(game: self)
         self.gameCenterHelper = GameCenterHelper(game: self)
-//
+        
         self.stateMachine = SuakeStateMachine(game: self)
         self.keyboardHandler = SuakeKeyboardHandler(game: self)
         self.cameraHelper = CameraHelper(game: self)
         self.panCameraHelper = PanCameraHelper(game: self)
         self.dbgHelper = DebugHelper(game: self)
         self.soundManager = SoundManager(game: self)
-//
+        
         self.locationEntityManager = LocationEntityManager(game: self)
-//
-//        self.playerEntityManager = PlayerEntityManager(game: self)
+        
         self.playerEntityManager = SuakePlayerManager(game: self)
         self.levelManager = LevelManager(game: self)
         self.physicsHelper = PhysicsHelper(game: self)
@@ -76,10 +65,6 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.overlayManager = OverlayManager(game: self)
         
         self.gridGraphManager = GridGraphManager(game: self)
-//        self.matchHelper = SuakeMatchHelper(game: self)
-        
-//        self.networkHelper = NetworkHelper(game: self)
-//        self.networkHelper = NetTestFW.NetworkHelper()
         
         self.usrDefHlpr.resetUserDefaults2Game()
 //
@@ -140,8 +125,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.levelManager.loadNetworkMatch(levelConfigNet: levelConfigNet)
         self.levelLoaded = true
         
-        if(self.levelLoaded && self.serverLoaded && self.gameCenterHelper.matchMakerHelper?.ownPlayerNetObj.playerType == .client){
-            self.gameCenterHelper.matchMakerHelper?.sendReady4MatchMsg()
+        if(self.levelLoaded && self.serverLoaded && self.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerType == .client){
+            self.gameCenterHelper.matchMakerHelper.sendReady4MatchMsg()
         }
     }
     
@@ -150,9 +135,9 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             print("playerId: " + host.playerId + ", playerType: \(host.playerType), playerNum: \(host.playerNum)")
         }
         self.serverLoaded = true
-        if(self.levelLoaded && self.serverLoaded && self.gameCenterHelper.matchMakerHelper?.ownPlayerNetObj.playerType == .client){
+        if(self.levelLoaded && self.serverLoaded && self.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerType == .client){
             self.playerEntityManager.userPlayerSuake = self.playerEntityManager.oppPlayerEntity
-            self.gameCenterHelper.matchMakerHelper?.sendReady4MatchMsg()
+            self.gameCenterHelper.matchMakerHelper.sendReady4MatchMsg()
         }
     }
     

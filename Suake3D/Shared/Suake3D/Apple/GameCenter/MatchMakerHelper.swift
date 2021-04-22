@@ -33,6 +33,12 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     var msgSentCounter:Int = 0
     var msgRecvCounter:Int = 0
     
+    var _isMultiplayerGameRunning:Bool = false
+    var isMultiplayerGameRunning:Bool{
+        get{ return self._isMultiplayerGameRunning }
+        set{ self._isMultiplayerGameRunning = newValue }
+    }
+    
     override init(game: GameController) {
         super.init(game: game)
     }
@@ -40,8 +46,21 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     func setMatch(match:GKMatch){
         self.match = match
         self.match.delegate = self
+        self.isMultiplayerGameRunning = true
 //        self.voiceChat = self.match.voiceChat(withName: "Suake3DChat")
 //        self.voiceChat.start()
+    }
+    
+//    self.game.gameCenterHelper.matchMakerHelper.sendData(msgTyp: .turnMsg, data: <#T##Any?#>)
+    
+    func sendTurnMsg(turnDir:TurnDir) {
+        let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir)
+//        self.sendData(match: self.match, msgTyp: msgTyp, data: data)
+    }
+    
+    
+    func sendData(msgTyp:MsgType, data:Any? = nil) {
+        self.sendData(match: self.match, msgTyp: msgTyp, data: data)
     }
     
     func sendData(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {

@@ -29,16 +29,16 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
         }
         
         print("Local-Player:\n- PlayerId: \(GKLocalPlayer.local.playerIDNG)\n- PlayerName: \(GKLocalPlayer.local.displayName)\n- Team: \(GKLocalPlayer.local.teamPlayerID)\n- GamePlayerID: \(GKLocalPlayer.local.gamePlayerID)")
-        self.matchMakerHelper!.players.append(GKLocalPlayer.local)
+        self.matchMakerHelper.players.append(GKLocalPlayer.local)
         
         for player in match.players{
             print("Match-Player:\n- PlayerId: \(player.playerIDNG)\n- PlayerName: \(player.displayName)\n- Team: \(player.teamPlayerID)\n- GamePlayerID: \(player.gamePlayerID)")
-            self.matchMakerHelper!.players.append(player)
+            self.matchMakerHelper.players.append(player)
         }
         
-        if(GKLocalPlayer.local.playerIDNG == self.matchMakerHelper!.dbgServerPlayerId){
-            self.matchMakerHelper!.sendData(match: match, msgTyp: .setupClientServerMsg, data: self.matchMakerHelper!.players)
-            self.matchMakerHelper!.sendData(match: match, msgTyp: .initLevelMsg)
+        if(GKLocalPlayer.local.playerIDNG == self.matchMakerHelper.dbgServerPlayerId){
+            self.matchMakerHelper.sendData(match: match, msgTyp: .setupClientServerMsg, data: self.matchMakerHelper.players)
+            self.matchMakerHelper.sendData(match: match, msgTyp: .initLevelMsg)
         }
         
 // ====  CHOOSE BEST HOSTING PLAYER ====
@@ -73,12 +73,12 @@ extension GameCenterHelper: GKLocalPlayerListener, GKMatchmakerViewControllerDel
         guard GKLocalPlayer.local.isAuthenticated else {
             return
         }
-        self.matchMakerHelper?.dbgClientGKPlayers.removeAll()
+        self.matchMakerHelper.dbgClientGKPlayers.removeAll()
         let request = GKMatchRequest()
 
-        request.minPlayers = self.matchMakerHelper!.minPlayers
-        request.maxPlayers = self.matchMakerHelper!.maxPlayers
-        request.defaultNumberOfPlayers = self.matchMakerHelper!.minPlayers
+        request.minPlayers = self.matchMakerHelper.minPlayers
+        request.maxPlayers = self.matchMakerHelper.maxPlayers
+        request.defaultNumberOfPlayers = self.matchMakerHelper.minPlayers
         request.inviteMessage = "Would you like to play Suake3D?"
         let vc = GKMatchmakerViewController(matchRequest: request)
         vc?.matchmakerDelegate = self

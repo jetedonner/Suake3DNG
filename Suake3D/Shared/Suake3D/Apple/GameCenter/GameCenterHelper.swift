@@ -27,22 +27,33 @@ protocol GameCenterHelperDelegate: class {
 
 class GameCenterHelper: SuakeGameClass {
     
-//    static let helper = GameCenterHelper()
-    
     let inviteMessage:String = "Hey there join me for a Suake3D fight!"
     var currentVC: GKMatchmakerViewController?
     
     var viewController: NSViewController?
     var delegate:GameCenterHelperDelegate?
     
-    var matchMakerHelper:MatchMakerHelper?
+    let matchMakerHelper:MatchMakerHelper
+    
+//    var _isMultiplayerGameRunning:Bool = false
+//    var isMultiplayerGameRunning:Bool{
+//        get{ return self._isMultiplayerGameRunning }
+//        set{ self._isMultiplayerGameRunning = newValue }
+//    }
+    
+    var isMultiplayerGameRunning:Bool{
+        get{ return self.matchMakerHelper.isMultiplayerGameRunning }
+        set{ self.matchMakerHelper.isMultiplayerGameRunning = newValue }
+    }
     
     override init(game:GameController) {
+        self.matchMakerHelper = MatchMakerHelper(game: game)
+        
         super.init(game: game)
         
         self.viewController = (self.game.scnView as! GameViewMacOS).viewController
         self.delegate = game
-        self.matchMakerHelper = MatchMakerHelper(game: game)
+        
         
         if(SuakeVars.useGameCenter){
             self.authenticate()
