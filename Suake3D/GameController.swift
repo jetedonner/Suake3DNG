@@ -7,9 +7,7 @@
 //
 
 import SceneKit
-//import QuartzCore
 import GameplayKit
-//import MyLibrary
 import NetTestFW
 import GameKit
 
@@ -32,13 +30,12 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var physicsHelper:PhysicsHelper!
     var contactHelper:ContactHelper!
     var overlayManager:OverlayManager!
-    
+
     var gridGraphManager:GridGraphManager!
     var gameCenterHelper:GameCenterHelper!
     
     func startMatch(match: GKMatch) {
         self.gameCenterHelper.matchMakerHelper.setMatch(match: match)
-//        self.overlayManager.showOverlay4GameState(type: .gameCenter)
         self.stateMachine.enter(stateClass: SuakeStateGameLoadingMulti.self)
     }
     
@@ -67,54 +64,15 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.gridGraphManager = GridGraphManager(game: self)
         
         self.usrDefHlpr.resetUserDefaults2Game()
-//
-//        self.weaponPickups = WeaponPickupEntityManager(game: self)
-//
-////        self.wormHoleHelper = WormHoleHelper(game: self)
-//
-//        self.rulesystemManager = RuleSytemManager(game: self)
-//        self.gridGraphManager = GridGraphManager(game: self)
-//        self.settings = SuakeSettings()
-//
+        
         self.scnView.delegate = self.physicsHelper
         self.scnView.autoenablesDefaultLighting = true
-//        self.loadGameScence()
-//        self.scnView.cameraControlConfiguration.rotationSensitivity *= self.cameraControlSensitivityFactor
-//        self.scnView.cameraControlConfiguration.panSensitivity *= self.cameraControlSensitivityFactor
-//        self.scnView.cameraControlConfiguration.truckSensitivity *= self.cameraControlSensitivityFactor
 
-        //self.scnView.cameraControlConfiguration.rotationSensitivity
         scnView.scene?.physicsWorld.contactDelegate = self.contactHelper
-//        scnView.scene?.physicsWorld.timeStep = 1 / 360
-//        //scnView.scene?.physicsWorld.speed = 2.0
-//
-//        let testRess:SCNScene = SCNScene(named: "art.scnassets/nodes/weapons/mg/MachinegunBulllet.scn")!
-//        self.scnView.prepare([testRess], completionHandler: { success in
-//            //print("Prepare of ressources completed successfully! (" + success.description + ")")
-//        })
-//
-//        (scnView as! GameViewMacOS).chMove = self.cameraHelper.panCameraHelper
-//
-//        self.scnView.prepare([SCNScene(named: "art.scnassets/nodes/medKit/medKit.scn")], completionHandler: {variable in
-//            var tmp = -1
-//            tmp /= -1
-//
-//        })
+
         self.overlayManager.gameLoading.loadScene()
         self.stateMachine.enter(SuakeStateGameLoading.self)
         
-        
-//        let testObj:PlayerMoveData = PlayerMoveData()
-//        testObj.playerId = 123
-//        testObj.nextPos = SIMD3<Float>(1, 2, 3)
-//        testObj.nextDir = .RIGHT
-//        testObj.nextTurnDir = .Right
-//
-//        let enc:Data = testObj.encode()!
-//
-//        let retDec:PlayerMoveData = PlayerMoveData.decode(data: enc)! as! PlayerMoveData
-//        let retDec2 = retDec
-//        self.tryEncDec()
     }
     
     var levelLoaded:Bool = false
@@ -143,7 +101,6 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     
     func loadNetworkMatch3(startMatch:StartMatchNetworkData){
         self.stateMachine.enter(SuakeStateMultiplayerPlaying.self)
-//        self.overlayManager.showOverlay4GameState(type: .ready2Play)
     }
     
     func shootWeaponNetworkMatch(shootData:ShootWeaponNetworkData){
@@ -188,7 +145,6 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         }
     }
     
-    
     func dbgMultiplayer(){
         let player2Control:String = self.usrDefHlpr.multiHumanPlayer2Control
         let sendData = LoadLevelNetworkData(id: 689)
@@ -198,50 +154,6 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         }
         self.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "You are \(player2Control)", duration: 3.0, completionHandler: {
 
-//                    self.stateMachine.enter(SuakeStatePlaying.self)
         })
     }
-    
-//    func tryEncDec() {
-//        let testObj:TestPlayerMoveData = TestPlayerMoveData()
-//        testObj.playerId = 123
-//        testObj.playerId2 = 456
-//        testObj.nextPos = SIMD3<Float>(1, 2, 3)
-//        testObj.nextDir = .RIGHT
-//        testObj.nextTurnDir = .Right
-//
-//        let enc:Data = testObj.encode()!
-//
-//        print("\(enc)")
-//
-//        let retDec:TestPlayerMoveData = TestPlayerMoveData.decode(data: enc)!
-//        print("\(retDec)")
-//        let retDec2 = retDec
-//    }
 }
-
-//class TestSuakeNetworkData: Codable {
-//    
-//}
-//
-//class TestPlayerMoveData: Codable {
-//    var playerId:Int = 0
-//    var playerId2:Int = 0
-////    var players: [Player] = []
-////    var time: Int = 60
-////    var playerId:Int = 0
-//    var nextPos:SIMD3<Float> = SIMD3<Float>(0, 0, 0)
-//    var nextTurnDir:TurnDir = .Straight
-//    var nextDir:SuakeDir = .UP
-//}
-//
-//extension TestPlayerMoveData {
-//    func encode() -> Data? {
-//        var retData:Data = try! JSONEncoder().encode(self)
-//        return retData
-//    }
-//    
-//    static func decode(data: Data) -> TestPlayerMoveData? {
-//        return try? JSONDecoder().decode(TestPlayerMoveData.self, from: data)
-//    }
-//}
