@@ -14,7 +14,7 @@ import SceneKit
 class HUDDbgLogComponent: BaseHUDComponent {
     
     var logLines:Int = 0
-    let maxLogLines:Int = 28
+    let maxLogLines:Int = 22
     var lblDbgLog:SKLabelNode = SKLabelNode(fontNamed: "DpQuake")
     
     public var showDbgLog:Bool{
@@ -34,10 +34,17 @@ class HUDDbgLogComponent: BaseHUDComponent {
     
     func setupDbgLog(hud:HUDOverlayScene){
         self.lblDbgLog.fontSize = 12.0
-        self.lblDbgLog.text = "---- DEBUG LOG ----"
+//        self.lblDbgLog.text = "---- DEBUG LOG ----"
 //        self.lblDbgLog.isHidden = DbgVars.dbgLogHidden
         self.lblDbgLog.position = CGPoint(x: 20, y: self.game.gameWindowSize.height - 90)
+        
+//        self.lblDbgLog.frame = CGRect(origin: CGPoint(x: 20, y: self.game.gameWindowSize.height - 90), size: CGSize(width: self.game.gameWindowSize.width - 40, height: self.game.gameWindowSize.height - 200))
+        
         self.lblDbgLog.horizontalAlignmentMode = .left
+        self.lblDbgLog.verticalAlignmentMode = .top
+        self.lblDbgLog.lineBreakMode = .byTruncatingTail
+        self.lblDbgLog.numberOfLines = 0
+//        self.lblDbgLog frame.size.height = self.game.gameWindowSize.height - 100
 //        self.lblDbgLog.removeFromParent()
         hud.addChild(self.lblDbgLog)
     }
@@ -70,6 +77,14 @@ class HUDDbgLogComponent: BaseHUDComponent {
             
             //self.lblDbgLog.text = txtLog + self.logLines.description + ": " + msg + "\n"
             self.logLines += 1
+        })
+    }
+    
+    func clearDbgLog(){
+        self.lblDbgLog.run(SKAction.run {
+            self.lblDbgLog.attributedText = NSAttributedString(string: "", attributes: nil)
+            self.logLines = 0
+            self.logDbgMsg(msg: "Debug-Log cleared!")
         })
     }
     

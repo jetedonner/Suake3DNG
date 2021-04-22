@@ -56,7 +56,9 @@ extension MapOverlay{
             }
         }
         
-        self.medKitNodes = self.drawNodeGroupIcons(texture: iconMediKit, group: (self.game.locationEntityManager.entityGroups[.MedKit]?.first)!)
+        if(self.game.locationEntityManager.entityGroups[.MedKit]!.count > 0){
+            self.medKitNodes = self.drawNodeGroupIcons(texture: iconMediKit, group: (self.game.locationEntityManager.entityGroups[.MedKit]?.first)!)
+        }
 
     }
     

@@ -70,6 +70,10 @@ class SetupDeveloperViewController: NSViewController {
         self.game.stateMachine.returnToOldState()
     }
     
+    @IBAction func closeDevView(_ sender: Any) {
+        self.dismiss(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

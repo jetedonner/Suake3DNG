@@ -52,9 +52,9 @@ class DebugHelper: SuakeGameClass {
     func showDbgMsg(msg:String, dbgLevel:DbgLevel = .Info){
         if(dbgLevel.rawValue <= self.currentDbgLevel.rawValue){
             print(msg)
-//            if(!self.game.overlayManager.hud.hudEntity.dbgLogComponent.isHidden && dbgLevel.contains(.Hud)){
-//                self.game.overlayManager.hud.hudEntity.dbgLogComponent.logDbgMsg(msg: msg)
-//            }
+            if(!self.game.overlayManager.hud.dbgLogComponent.isHidden && dbgLevel.contains(.Hud)){
+                self.game.overlayManager.hud.dbgLogComponent.logDbgMsg(msg: msg)
+            }
         }
     }
 }

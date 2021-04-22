@@ -11,7 +11,7 @@ import SceneKit
 import GameplayKit
 import NetTestFW
 
-class SuakeOwnPlayerEntity: SuakePlayerEntity {
+class SuakeMultiplayerPlayerEntity: SuakePlayerEntity {
         
     var fadeHelper:FadeViewAfterDeath!
     

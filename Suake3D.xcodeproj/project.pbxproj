@@ -68,6 +68,8 @@
 		55070491261129D300464F97 /* MatchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507048E261129D300464F97 /* MatchResultView.swift */; };
 		55070492261129D300464F97 /* MatchResultsSkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507048F261129D300464F97 /* MatchResultsSkScene.swift */; };
 		550704A9261229B600464F97 /* IconResources-Credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 550704A8261229B600464F97 /* IconResources-Credits.txt */; };
+		5508DC8D2631E1AF00A20444 /* SuakeStateMultiplayerPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508DC8C2631E1AF00A20444 /* SuakeStateMultiplayerPlaying.swift */; };
+		5508DC912631E39400A20444 /* SuakeMultiplayerPlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508DC902631E39400A20444 /* SuakeMultiplayerPlayerEntity.swift */; };
 		5513C871260D169600633B40 /* DroidStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C870260D169600633B40 /* DroidStateMachine.swift */; };
 		5513C876260D170B00633B40 /* DroidStatePatroling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C875260D170B00633B40 /* DroidStatePatroling.swift */; };
 		5513C87B260D17CF00633B40 /* DroidStateChasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C87A260D17CF00633B40 /* DroidStateChasing.swift */; };
@@ -314,6 +316,8 @@
 		5507048E261129D300464F97 /* MatchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchResultView.swift; sourceTree = "<group>"; };
 		5507048F261129D300464F97 /* MatchResultsSkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchResultsSkScene.swift; sourceTree = "<group>"; };
 		550704A8261229B600464F97 /* IconResources-Credits.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "IconResources-Credits.txt"; sourceTree = "<group>"; };
+		5508DC8C2631E1AF00A20444 /* SuakeStateMultiplayerPlaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeStateMultiplayerPlaying.swift; sourceTree = "<group>"; };
+		5508DC902631E39400A20444 /* SuakeMultiplayerPlayerEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeMultiplayerPlayerEntity.swift; sourceTree = "<group>"; };
 		5513C870260D169600633B40 /* DroidStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroidStateMachine.swift; sourceTree = "<group>"; };
 		5513C875260D170B00633B40 /* DroidStatePatroling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroidStatePatroling.swift; sourceTree = "<group>"; };
 		5513C87A260D17CF00633B40 /* DroidStateChasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroidStateChasing.swift; sourceTree = "<group>"; };
@@ -1091,6 +1095,7 @@
 				55DB997C25FC542F000023AF /* NextMoveResult.swift */,
 				55DB994125FC2A12000023AF /* SuakeMoveComponent.swift */,
 				55D894E025FADDAA00728B83 /* SuakeOwnPlayerEntity.swift */,
+				5508DC902631E39400A20444 /* SuakeMultiplayerPlayerEntity.swift */,
 				55D894DF25FADDA900728B83 /* SuakePlayerEntity.swift */,
 				55DB991D25FC0B41000023AF /* SuakePlayerNodeComponent.swift */,
 				55DB992525FC0B9E000023AF /* SuakePlayerComponent.swift */,
@@ -1181,6 +1186,7 @@
 				550183FA26029EFD00F28C54 /* SuakeStateRespawn.swift */,
 				55DB996225FC49B2000023AF /* SuakeStateReadyToPlay.swift */,
 				55DB995825FC4989000023AF /* SuakeStatePlaying.swift */,
+				5508DC8C2631E1AF00A20444 /* SuakeStateMultiplayerPlaying.swift */,
 				55DB995225FC4940000023AF /* SuakeStateGameLoading.swift */,
 				55C1226A261E162C001E8E3F /* SuakeStateGameLoadingMulti.swift */,
 				55DB994D25FC491C000023AF /* SuakeBaseState.swift */,
@@ -1497,6 +1503,7 @@
 			files = (
 				55D894C325FADA9700728B83 /* SuakeBasePlayerEntity.swift in Sources */,
 				55D8941A25FAC2E600728B83 /* PhysicsHelper.swift in Sources */,
+				5508DC8D2631E1AF00A20444 /* SuakeStateMultiplayerPlaying.swift in Sources */,
 				556CB92525FFD5BE005B7747 /* LocationType.swift in Sources */,
 				55EC890925FA9A990040E676 /* WallFactory.swift in Sources */,
 				55DB997725FC5318000023AF /* OverlayType.swift in Sources */,
@@ -1508,6 +1515,7 @@
 				5501839626016FF500F28C54 /* BulletBase.swift in Sources */,
 				55DB992B25FC0BD2000023AF /* SuakeBaseComponent.swift in Sources */,
 				55001F5F260C813D0015B293 /* DroidComponent.swift in Sources */,
+				5508DC912631E39400A20444 /* SuakeMultiplayerPlayerEntity.swift in Sources */,
 				556CB91525FE8618005B7747 /* SuakeDirTurnDirHelper.swift in Sources */,
 				5501844D2603EB8B00F28C54 /* SuakeSpriteNodeMultiTextures.swift in Sources */,
 				5513C89B260D244B00633B40 /* DroidState.swift in Sources */,

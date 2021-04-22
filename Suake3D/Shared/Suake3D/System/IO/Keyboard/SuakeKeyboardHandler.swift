@@ -106,14 +106,22 @@ class SuakeKeyboardHandler: KeyboardHandler {
             }else if(pressedKey == .KEY_G){
 //                self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: "+ 200 Points")
             }else if(pressedKey == .KEY_L){
-                if(self.game.stateMachine.currentState!.isKind(of: SuakeStatePlaying.self)){
-                    self.game.stateMachine.statePaused.showPauseOverlay = false
-                    self.game.stateMachine.enter(SuakeStatePaused.self)
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                    self.game.overlayManager.hud.dbgLogComponent.showDbgLog = !self.game.overlayManager.hud.dbgLogComponent.showDbgLog
+                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.option)){
+                    self.game.overlayManager.hud.dbgLogComponent.logDbgMsg(msg: "Test log message")
+                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.control)){
+                    self.game.overlayManager.hud.dbgLogComponent.clearDbgLog()
+                }else{
+                    if(self.game.stateMachine.currentState!.isKind(of: SuakeStatePlaying.self)){
+                        self.game.stateMachine.statePaused.showPauseOverlay = false
+                        self.game.stateMachine.enter(SuakeStatePaused.self)
+                    }
+                    let vc2:SetupDeveloperViewController = SetupDeveloperViewController()
+                    vc2.game = self.game
+                    
+                    (self.game.scnView as! GameViewMacOS).viewController!.presentAsSheet(vc2)
                 }
-                let vc2:SetupDeveloperViewController = SetupDeveloperViewController()
-                vc2.game = self.game
-                
-                (self.game.scnView as! GameViewMacOS).viewController!.presentAsSheet(vc2)
 //                vc2.view.window?.styleMask = .borderless
 //                let vc:SetupDeveloperViewController = SetupDeveloperViewController(
 //                )

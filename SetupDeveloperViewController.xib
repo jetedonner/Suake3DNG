@@ -724,6 +724,20 @@
                         <action selector="closeSaveAndReload:" target="-2" id="zIk-g1-kSM"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcn-Pc-TDq">
+                    <rect key="frame" x="950" y="56" width="69" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yCO-1n-O45">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="closeDevView:" target="-2" id="opH-Bc-MRj"/>
+                    </connections>
+                </button>
             </subviews>
             <backgroundFilters>
                 <ciFilter name="CIGaussianBlur">

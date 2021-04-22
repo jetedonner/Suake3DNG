@@ -11,6 +11,9 @@ import GameplayKit
 
 class SuakePlayerManager: SuakeGameClass {
     
+    
+    var multiHumanPlayers:[SuakeMultiplayerPlayerEntity] = [SuakeMultiplayerPlayerEntity]()
+    
     var ownPlayerEntity:SuakeOwnPlayerEntity!
     var oppPlayerEntity:SuakeOppPlayerEntity!
     

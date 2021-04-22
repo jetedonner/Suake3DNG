@@ -14,6 +14,7 @@ class GameStates{
     static let gameLoadingState:String = "Game loading state"
     static let readyToPlayState:String = "Ready to play"
     static let playingState:String = "Playing"
+    static let multiplayerPlayingState:String = "Multiplayer playing"
     static let tutorialState:String = "Tutorial"
     static let tutorialCompletedState:String = "Tutorial completed"
     static let pausedState:String = "Paused"
