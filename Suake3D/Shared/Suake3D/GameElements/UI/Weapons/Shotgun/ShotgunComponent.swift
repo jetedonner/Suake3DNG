@@ -14,11 +14,12 @@ class ShotgunComponent: BaseWeaponComponent {
     
     init(game:GameController, weaponArsenalManager:WeaponArsenalManager) {
         super.init(game: game, weaponType: .shotgun, weaponArsenalManager: weaponArsenalManager)
-        self.cadence = 0.75
+//        self.cadence = 0.75
 
         //Tmp
         self.clipSize = SuakeVars.INITIAL_SHOTGUN_CLIPSIZE
         self.ammoCount = SuakeVars.INITIAL_SHOTGUN_AMMOCOUNT
+        self.cadence = SuakeVars.INITIAL_SHOTGUN_CADENCE
     }
     var shot:ShotgunPelletGrp!
     

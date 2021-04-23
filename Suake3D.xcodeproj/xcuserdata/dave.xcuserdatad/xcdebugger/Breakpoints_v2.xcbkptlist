@@ -1394,8 +1394,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/IO/Keyboard/SuakeKeyboardHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "keyPressedEvent(event:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1618,8 +1618,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Crosshair/CrosshairEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "setCurrentWeaponType(weaponType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1634,8 +1634,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Crosshair/CrosshairEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "addToHUD(hud:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1682,8 +1682,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/IO/Keyboard/SuakeKeyboardHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "keyPressedEvent(event:)"
             landmarkType = "7">
          </BreakpointContent>

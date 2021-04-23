@@ -97,6 +97,9 @@ class BaseWeaponComponent: GKComponent {
                         self.reloading = true
                         self.game.overlayManager.hud.overlayScene.crosshairEntity.reloadIndicatorComponent.startReloadBar(duration: SuakeVars.reloadClipTimeout)
                         self.game.soundManager.playSound(soundType: .weaponreload)
+                        self.game.soundManager.playSound(soundType: self.shotSoundType)
+//                        self.game.soundManager.playSoundPositional(soundType: .weaponreload, node: (self.weaponArsenalManager.playerEntity as! SuakePlayerEntity).playerComponent.currentSuakeComponent.node)
+//                        GSAudio.sharedInstance.playSound("AudioFileName")
                         DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + SuakeVars.reloadClipTimeout, execute: {
                             self.reloading = false
                             self.game.overlayManager.hud.weaponComponent.setAmmoCount(ammoCount: self.ammoCount, clipSize: self.clipSize)

@@ -39,10 +39,10 @@ class BaseGameController:NSObject{
         
         scnView.scene = scene
 
-//        scnView.audioEnvironmentNode.distanceAttenuationParameters.maximumDistance = 2
-//        scnView.audioEnvironmentNode.distanceAttenuationParameters.referenceDistance = 0.1
-//        scnView.audioEnvironmentNode.renderingAlgorithm = .sphericalHead
-//        scnView.audioEnvironmentNode.reverbBlend = 0.5
+        scnView.audioEnvironmentNode.distanceAttenuationParameters.maximumDistance = 2
+        scnView.audioEnvironmentNode.distanceAttenuationParameters.referenceDistance = 0.1
+        scnView.audioEnvironmentNode.renderingAlgorithm = .sphericalHead
+        scnView.audioEnvironmentNode.reverbBlend = 0.5
         
         scnView.allowsCameraControl = true
         scnView.showsStatistics = true

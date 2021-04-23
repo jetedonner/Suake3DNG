@@ -21,7 +21,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var cameraHelper:CameraHelper!
     var panCameraHelper:PanCameraHelper!
     var dbgHelper:DebugHelper!
-    var soundManager:SoundManager!
+    var soundManager:SoundManagerPositional!
 
     var locationEntityManager: LocationEntityManager!
     var playerEntityManager:SuakePlayerManager!
@@ -50,7 +50,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.cameraHelper = CameraHelper(game: self)
         self.panCameraHelper = PanCameraHelper(game: self)
         self.dbgHelper = DebugHelper(game: self)
-        self.soundManager = SoundManager(game: self)
+        self.soundManager = SoundManagerPositional(game: self)
         
         self.locationEntityManager = LocationEntityManager(game: self)
         

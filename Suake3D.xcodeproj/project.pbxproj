@@ -103,6 +103,16 @@
 		554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */; };
 		554233DE2632168600EB55F9 /* ShotgunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233DD2632168600EB55F9 /* ShotgunComponent.swift */; };
 		554233E22632B7D500EB55F9 /* ShotgunCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233E12632B7D500EB55F9 /* ShotgunCrosshairComponent.swift */; };
+		554233EB2632BDF500EB55F9 /* RailgunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233E82632BDF500EB55F9 /* RailgunComponent.swift */; };
+		554233EC2632BDF500EB55F9 /* RailgunExplodingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233E92632BDF500EB55F9 /* RailgunExplodingComponent.swift */; };
+		554233ED2632BDF500EB55F9 /* RailgunBeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233EA2632BDF500EB55F9 /* RailgunBeam.swift */; };
+		554233F12632BF8800EB55F9 /* HelixVertexArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233F02632BF8800EB55F9 /* HelixVertexArray.swift */; };
+		554233F52632BFB100EB55F9 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233F42632BFB100EB55F9 /* AnimationHelper.swift */; };
+		554233FB2632BFE300EB55F9 /* VertexArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233F92632BFE300EB55F9 /* VertexArray.swift */; };
+		554233FC2632BFE300EB55F9 /* Float3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233FA2632BFE300EB55F9 /* Float3.swift */; };
+		554234002632C02600EB55F9 /* VertexDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233FF2632C02600EB55F9 /* VertexDirections.swift */; };
+		554234042632C08E00EB55F9 /* RailgunCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */; };
+		5542340A2632C3E200EB55F9 /* SoundManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234092632C3E200EB55F9 /* SoundManagerExt.swift */; };
 		556CA651260D29F600F78263 /* LasergunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA64F260D29F600F78263 /* LasergunComponent.swift */; };
 		556CA652260D29F600F78263 /* LaserBeamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA650260D29F600F78263 /* LaserBeamNode.swift */; };
 		556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA656260D38BE00F78263 /* EnemyNames.swift */; };
@@ -355,6 +365,16 @@
 		554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunPelletGrp.swift; sourceTree = "<group>"; };
 		554233DD2632168600EB55F9 /* ShotgunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunComponent.swift; sourceTree = "<group>"; };
 		554233E12632B7D500EB55F9 /* ShotgunCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunCrosshairComponent.swift; sourceTree = "<group>"; };
+		554233E82632BDF500EB55F9 /* RailgunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunComponent.swift; sourceTree = "<group>"; };
+		554233E92632BDF500EB55F9 /* RailgunExplodingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunExplodingComponent.swift; sourceTree = "<group>"; };
+		554233EA2632BDF500EB55F9 /* RailgunBeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunBeam.swift; sourceTree = "<group>"; };
+		554233F02632BF8800EB55F9 /* HelixVertexArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelixVertexArray.swift; sourceTree = "<group>"; };
+		554233F42632BFB100EB55F9 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		554233F92632BFE300EB55F9 /* VertexArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexArray.swift; sourceTree = "<group>"; };
+		554233FA2632BFE300EB55F9 /* Float3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float3.swift; sourceTree = "<group>"; };
+		554233FF2632C02600EB55F9 /* VertexDirections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexDirections.swift; sourceTree = "<group>"; };
+		554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunCrosshairComponent.swift; sourceTree = "<group>"; };
+		554234092632C3E200EB55F9 /* SoundManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManagerExt.swift; sourceTree = "<group>"; };
 		556CA64F260D29F600F78263 /* LasergunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LasergunComponent.swift; sourceTree = "<group>"; };
 		556CA650260D29F600F78263 /* LaserBeamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeamNode.swift; sourceTree = "<group>"; };
 		556CA656260D38BE00F78263 /* EnemyNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyNames.swift; sourceTree = "<group>"; };
@@ -607,6 +627,7 @@
 				550184072602A5CB00F28C54 /* MachinegunCrosshairComponent.swift */,
 				554233E12632B7D500EB55F9 /* ShotgunCrosshairComponent.swift */,
 				55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */,
+				554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */,
 				550184012602A54600F28C54 /* CrosshairEntity.swift */,
 			);
 			path = Crosshair;
@@ -720,6 +741,15 @@
 			path = Shotgun;
 			sourceTree = "<group>";
 		};
+		554233F82632BFD700EB55F9 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				554233FA2632BFE300EB55F9 /* Float3.swift */,
+				554233F92632BFE300EB55F9 /* VertexArray.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		556CA64E260D29E800F78263 /* Laser */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +825,7 @@
 				55760E3B25FD2C7C00C10784 /* GSAudio.swift */,
 				55760E3625FD2C3800C10784 /* SoundType.swift */,
 				55760E3125FD2C0400C10784 /* SoundManager.swift */,
+				554234092632C3E200EB55F9 /* SoundManagerExt.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -869,6 +900,10 @@
 		55AE7FD6262A3B0700A58F4B /* Railgun */ = {
 			isa = PBXGroup;
 			children = (
+				554233F02632BF8800EB55F9 /* HelixVertexArray.swift */,
+				554233EA2632BDF500EB55F9 /* RailgunBeam.swift */,
+				554233E82632BDF500EB55F9 /* RailgunComponent.swift */,
+				554233E92632BDF500EB55F9 /* RailgunExplodingComponent.swift */,
 			);
 			path = Railgun;
 			sourceTree = "<group>";
@@ -1020,6 +1055,7 @@
 		55D8946425FACB2500728B83 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				554233F42632BFB100EB55F9 /* AnimationHelper.swift */,
 				55D8946525FACB3000728B83 /* DebugHelper.swift */,
 				551F3D3A260BEA7A006D9F65 /* SuakeGameStateHelper.swift */,
 			);
@@ -1337,6 +1373,7 @@
 		55EC891425FA9D120040E676 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				554233F82632BFD700EB55F9 /* Structs */,
 				550183BE26018EF100F28C54 /* Settings */,
 				5501835E26015B6E00F28C54 /* Protocols */,
 				55DB995725FC4971000023AF /* Strings */,
@@ -1363,6 +1400,7 @@
 		55EC891B25FA9D430040E676 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				554233FF2632C02600EB55F9 /* VertexDirections.swift */,
 				55D894B725FAD7B800728B83 /* SuakeTypes.swift */,
 				55D8945525FACA3000728B83 /* CameraView.swift */,
 				55EC891C25FA9D4D0040E676 /* CollisionCategory.swift */,
@@ -1544,6 +1582,7 @@
 				55A2B8F226000FB600E25F7F /* RisingParticlesComponent.swift in Sources */,
 				55DB991E25FC0B41000023AF /* SuakePlayerNodeComponent.swift in Sources */,
 				55018352260154A000F28C54 /* SuakeStateMainMenu.swift in Sources */,
+				554233F52632BFB100EB55F9 /* AnimationHelper.swift in Sources */,
 				5501837626016E7900F28C54 /* WeaponArsenalManager.swift in Sources */,
 				551F3D3B260BEA7A006D9F65 /* SuakeGameStateHelper.swift in Sources */,
 				55C0370E25FA87EE00F419B8 /* GameViewControllerMacOS.swift in Sources */,
@@ -1553,9 +1592,12 @@
 				55D8945625FACA3000728B83 /* CameraView.swift in Sources */,
 				55927049262A13F400A04C76 /* RPGComponent.swift in Sources */,
 				5513C87B260D17CF00633B40 /* DroidStateChasing.swift in Sources */,
+				5542340A2632C3E200EB55F9 /* SoundManagerExt.swift in Sources */,
 				55DB995E25FC4998000023AF /* GameStates.swift in Sources */,
 				5501843A2603E0CF00F28C54 /* MapOverlay.swift in Sources */,
+				554233EB2632BDF500EB55F9 /* RailgunComponent.swift in Sources */,
 				552417FE260A8391002C90FC /* MachinegunPickupComponent.swift in Sources */,
+				554234002632C02600EB55F9 /* VertexDirections.swift in Sources */,
 				550183B92601893B00F28C54 /* SetupDeveloperViewController.swift in Sources */,
 				55DB997D25FC542F000023AF /* NextMoveResult.swift in Sources */,
 				554233E22632B7D500EB55F9 /* ShotgunCrosshairComponent.swift in Sources */,
@@ -1584,6 +1626,7 @@
 				55D894E225FADDAA00728B83 /* SuakeOwnPlayerEntity.swift in Sources */,
 				55A2B8F72600188300E25F7F /* String.swift in Sources */,
 				55DB996325FC49B2000023AF /* SuakeStateReadyToPlay.swift in Sources */,
+				554233F12632BF8800EB55F9 /* HelixVertexArray.swift in Sources */,
 				55DB994E25FC491C000023AF /* SuakeBaseState.swift in Sources */,
 				55DB997625FC5318000023AF /* LoadableNib.swift in Sources */,
 				55DB996D25FC4AB5000023AF /* SuakeStateMachine.swift in Sources */,
@@ -1634,6 +1677,7 @@
 				559B2BDF260E434A005E669C /* MedKitRisingParticlesComponent.swift in Sources */,
 				55001F76260CB5930015B293 /* DroidExplodingComponent.swift in Sources */,
 				55EC891025FA9B150040E676 /* SuakeGameClass.swift in Sources */,
+				554234042632C08E00EB55F9 /* RailgunCrosshairComponent.swift in Sources */,
 				552417EC260A7E57002C90FC /* BaseWeaponPickupComponent.swift in Sources */,
 				55EC891725FA9D2D0040E676 /* NSImage.swift in Sources */,
 				55A2B8EA26000D4100E25F7F /* SuakeStateMatchOver.swift in Sources */,
@@ -1666,9 +1710,12 @@
 				550184082602A5CB00F28C54 /* BaseCrosshairComponent.swift in Sources */,
 				559B2BDE260E434A005E669C /* MedKitEntity.swift in Sources */,
 				55EC890A25FA9A990040E676 /* WallManager.swift in Sources */,
+				554233ED2632BDF500EB55F9 /* RailgunBeam.swift in Sources */,
 				55DB995925FC4989000023AF /* SuakeStatePlaying.swift in Sources */,
 				556CB95F25FFFFA8005B7747 /* GoodyEntity.swift in Sources */,
 				5501838926016FB400F28C54 /* MachinegunComponent.swift in Sources */,
+				554233EC2632BDF500EB55F9 /* RailgunExplodingComponent.swift in Sources */,
+				554233FB2632BFE300EB55F9 /* VertexArray.swift in Sources */,
 				55C12261261CF7F0001E8E3F /* MultiplayerLevel.swift in Sources */,
 				55760E4F25FD391F00C10784 /* HUDOverlayEntity.swift in Sources */,
 				550183FB26029EFD00F28C54 /* SuakeStateRespawn.swift in Sources */,
@@ -1679,6 +1726,7 @@
 				55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */,
 				55AE7FD1262A1A9400A58F4B /* RPGCrosshairComponent.swift in Sources */,
 				55760E3225FD2C0400C10784 /* SoundManager.swift in Sources */,
+				554233FC2632BFE300EB55F9 /* Float3.swift in Sources */,
 				55760E5425FD398300C10784 /* BaseHUDComponent.swift in Sources */,
 				55DB994225FC2A12000023AF /* SuakeMoveComponent.swift in Sources */,
 				55001F71260CB53D0015B293 /* ExplodingComponent.swift in Sources */,
