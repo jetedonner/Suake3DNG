@@ -90,6 +90,9 @@ class MedKitEntity: SuakeNodeGroupItemBase {
     }
     
     func medKitCollected(playerEntity:SuakeBasePlayerEntity, withBullet:Bool = false){
+        if(self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj != nil && self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerId == self.game.gameCenterHelper.matchMakerHelper.dbgClientPlayerId){
+            return
+        }
         playerEntity.healthComponent.addHealth(addVal: self.healthScore)
         playerEntity.statsComponent.addNewStats(statsType: .medKitCollectd, score: self.catchScore)
         self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: String(format: SuakeMsgs.pointAddString, self.catchScore), pos: self.medKitComponent.node.position)
@@ -99,6 +102,25 @@ class MedKitEntity: SuakeNodeGroupItemBase {
             self.setParticlePos(newPos: newPos)
         })
         self.pos = newPos
+        if(self.game.gameCenterHelper.isMultiplayerGameRunning){
+            self.game.gameCenterHelper.matchMakerHelper.sendPickedUpMsg(itemType: .medKit, value: CGFloat(self.catchScore), newPos: newPos)
+        }
+    }
+    
+    func reposMedKitAfterCatch(newPos:SCNVector3){
+        self.showParticles(completion: {
+            self.setParticlePos(newPos: newPos)
+        })
+        self.pos = newPos
+//        self.goodyComponent.initPosRandom(newPos: newPos)
+//        self.healthComponent.resetHealth()
+//        self.healthComponent.died = false
+//
+//        self.particlesComponent.node.isHidden = false
+//        self.particlesComponent.node.opacity = 1.0
+//        self.particlesComponent.node.runAction(SCNAction.sequence([SCNAction.wait(duration: 0.3), SCNAction.fadeOut(duration: 0.7)]), completionHandler: {
+//            self.particlesComponent.node.position = self.goodyComponent.node.position
+//        })
     }
     
     func setParticlePos(newPos:SCNVector3){

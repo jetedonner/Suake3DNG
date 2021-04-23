@@ -182,13 +182,13 @@ class SuakeMoveComponent: SuakeBaseComponent {
             }
         }else{
             if(nextMoveResult.contains(.goody)){
-                print("GOODY HIT by OWN")
+                self.game.showDbgMsg(dbgMsg: "GOODY HIT by OWN")
 //                GameCenterHelper.achievements.add2GoodiesAchivement()
                 self.game.playerEntityManager.goodyEntity.goodyHit(playerEntity: self.playerEntity)
             }else if(nextMoveResult.contains(.mgPickup)){
-                print("MGPICKUP HIT by OWN")
-            }else if(nextMoveResult.contains(.mgPickup)){
-                print("MEDKIT HIT by OWN")
+                self.game.showDbgMsg(dbgMsg: "MGPICKUP HIT by OWN")
+            }else if(nextMoveResult.contains(.medkit)){
+                self.game.showDbgMsg(dbgMsg: "MEDKIT HIT by OWN")
             }
             self.setAndShowSuakePlayerNodeComponent(newSuakePlayerNodeComponent: nextSuakePlayerNodeComponent)
             self.moveNode(newPos: newPos, seconds: seconds)
