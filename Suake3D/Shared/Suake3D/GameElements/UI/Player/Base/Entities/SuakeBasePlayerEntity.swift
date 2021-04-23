@@ -26,6 +26,8 @@ class SuakeBasePlayerEntity: SuakeBaseNodeEntityWithHealth {
         
         super.init(game: game, id: id)
         
+        self.setFieldType(playerType: playerType)
+        
         self.statsComponent = SuakeStatsComponent(game: game, playerEntity: self)
         
         self.addComponent(self.statsComponent)
