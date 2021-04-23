@@ -58,6 +58,7 @@ class PhysicsHelper: SuakeGameClass, SCNSceneRendererDelegate {
                         ownSuakeEntity.moveComponent.inBetweenMove = false
                         if(ownSuakeEntity.moveComponent.posAfterNetSend != nil){
                             ownSuakeEntity.pos = ownSuakeEntity.moveComponent.posAfterNetSend!
+                            ownSuakeEntity.moveComponent.posAfterNetSend = nil
                         }
                         ownSuakeEntity.update(deltaTime: self.deltaTime)
                     }
@@ -77,6 +78,7 @@ class PhysicsHelper: SuakeGameClass, SCNSceneRendererDelegate {
                         if let ownSuakeEntity = self.game.playerEntityManager.ownPlayerEntity {
                             if(ownSuakeEntity.moveComponent.posAfterNetSend != nil){
                                 ownSuakeEntity.pos = ownSuakeEntity.moveComponent.posAfterNetSend!
+                                ownSuakeEntity.moveComponent.posAfterNetSend = nil
                             }
                             ownSuakeEntity.update(deltaTime: deltaTime)
                         }
