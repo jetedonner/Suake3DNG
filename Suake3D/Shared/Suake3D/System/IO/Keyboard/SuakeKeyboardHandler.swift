@@ -59,7 +59,7 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 default:
                     break
                 }
-                self.game.gameCenterHelper.matchMakerHelper.sendTurnMsg(turnDir: turnDir)
+                self.game.gameCenterHelper.matchMakerHelper.sendTurnMsg(turnDir: turnDir, position: self.game.playerEntityManager.ownPlayerEntity.pos)
                 return
             }
             

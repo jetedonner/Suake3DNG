@@ -126,8 +126,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "renderer(_:updateAtTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -610,8 +610,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "renderer(_:updateAtTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -674,8 +674,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "renderer(_:updateAtTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -722,8 +722,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "renderer(_:updateAtTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -834,8 +834,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "startTimer(time:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -962,8 +962,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "updateGameTime(time:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -994,8 +994,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "nextMove(deltaTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1004,6 +1004,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "98265FF6-CE2E-4920-9727-5B6DC49EF522"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "nextMove(deltaTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F05A13B-974A-466D-AC1A-BAF85E764512"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1019,22 +1035,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F05A13B-974A-466D-AC1A-BAF85E764512"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "nextMove(deltaTime:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "013730A3-613A-42F5-9C52-F9CC97467F81"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1042,8 +1042,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "nextMove(deltaTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2594,8 +2594,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "nextMove(newTurnDir:deltaTime:)"
             landmarkType = "7">
          </BreakpointContent>

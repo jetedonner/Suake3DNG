@@ -56,6 +56,7 @@ class PhysicsHelper: SuakeGameClass, SCNSceneRendererDelegate {
                 }else{
                     self.game.playerEntityManager.ownPlayerEntity.moveComponent.inBetweenMove = false
                     if let ownSuakeEntity = self.game.playerEntityManager.ownPlayerEntity {
+                        ownSuakeEntity.pos = ownSuakeEntity.moveComponent.posAfterNetSend
                         ownSuakeEntity.update(deltaTime: self.deltaTime)
                     }
                     
@@ -73,6 +74,7 @@ class PhysicsHelper: SuakeGameClass, SCNSceneRendererDelegate {
                     if(self.game.playerEntityManager.ownPlayerEntity != nil && self.game.playerEntityManager.ownPlayerEntity.moveComponent.turnQueue.count > 0 &&
                         self.deltaTime <= 0.64 &&
                         !self.game.playerEntityManager.ownPlayerEntity.moveComponent.inBetweenMove){
+                        self.game.playerEntityManager.ownPlayerEntity.pos = self.game.playerEntityManager.ownPlayerEntity.moveComponent.posAfterNetSend
                         self.game.playerEntityManager.ownPlayerEntity.update(deltaTime: deltaTime)
 //                        self.game.overlayManager.hud.overlayScene!.map.rotatePlayerNodes(delta: deltaTime)
                     }

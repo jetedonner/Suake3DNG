@@ -51,9 +51,9 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
 //        self.voiceChat.start()
     }
     
-    func sendTurnMsg(turnDir:TurnDir) {
+    func sendTurnMsg(turnDir:TurnDir, position:SCNVector3) {
         do{
-            let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, playerId: self.dbgServerPlayerId)
+            let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, position: position, playerId: self.dbgServerPlayerId)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: turnMsg) else {
                 return
             }

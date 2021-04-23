@@ -104,10 +104,11 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     }
     
     func shootWeaponNetworkMatch(shootData:ShootWeaponNetworkData){
-        self.playerEntityManager.oppPlayerEntity.shoot()
+        self.playerEntityManager.ownPlayerEntity.shoot()
     }
     
     func turnDirNetworkMatch(turnData:TurnNetworkData){
+        self.playerEntityManager.ownPlayerEntity.moveComponent.posAfterNetSend = turnData.position
         self.playerEntityManager.ownPlayerEntity.appendTurn(turnDir: turnData.turnDir)
     }
     
