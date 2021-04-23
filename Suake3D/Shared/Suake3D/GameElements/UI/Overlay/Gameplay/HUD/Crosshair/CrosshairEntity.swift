@@ -29,6 +29,7 @@ class CrosshairEntity: SuakeBaseEntity {
     
     let nodeContainer:SKNode = SKNode()
     let mgCrosshairComponent:MachinegunCrosshairComponent
+    let shotgunCrosshairComponent:ShotgunCrosshairComponent
     let rpgCrosshairComponent:RPGCrosshairComponent
     
     var allCrosshairComponents:[BaseCrosshairComponent]!
@@ -79,12 +80,13 @@ class CrosshairEntity: SuakeBaseEntity {
     
     override init(game: GameController, id: Int = 0) {
         self.mgCrosshairComponent = MachinegunCrosshairComponent(game: game)
+        self.shotgunCrosshairComponent = ShotgunCrosshairComponent(game: game)
         self.rpgCrosshairComponent = RPGCrosshairComponent(game: game)
         
         self.reloadIndicatorComponent = ReloadIndicatorComponent(game: game)
         super.init(game: game, id: id)
         
-        self.allCrosshairComponents = [self.mgCrosshairComponent, self.rpgCrosshairComponent]
+        self.allCrosshairComponents = [self.mgCrosshairComponent, self.shotgunCrosshairComponent, self.rpgCrosshairComponent]
         self.currentCrosshairComponent = self.allCrosshairComponents.first!
     }
     

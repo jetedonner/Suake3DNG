@@ -14,6 +14,7 @@ import SceneKit
 class HUDWeaponComponentOLD: BaseExtHUDComponent {
     
     let imgMG:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/mg.png")
+    let imgShotgun:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/shotgun.png")
     let imgRPG:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/rpg.png")
 //    let mgImgFile:String            = "art.scnassets/overlays/gameplay/images/mg.png"
 //    let textMg:SKTexture
@@ -77,6 +78,8 @@ class HUDWeaponComponentOLD: BaseExtHUDComponent {
             switch weaponType {
             case .mg:
                 self.imgWeapon.texture = self.imgMG.texture
+            case .shotgun:
+                self.imgWeapon.texture = self.imgShotgun.texture
             case .rpg:
                 self.imgWeapon.texture = self.imgRPG.texture
 //            case .shotgun:

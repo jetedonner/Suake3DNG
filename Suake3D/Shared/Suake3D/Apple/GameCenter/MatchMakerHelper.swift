@@ -51,13 +51,20 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
 //        self.voiceChat.start()
     }
     
-//    self.game.gameCenterHelper.matchMakerHelper.sendData(msgTyp: .turnMsg, data: <#T##Any?#>)
-    
     func sendTurnMsg(turnDir:TurnDir) {
-        let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir)
-//        self.sendData(match: self.match, msgTyp: msgTyp, data: data)
+        do{
+            let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, playerId: self.dbgServerPlayerId)
+            guard let dataObj = NetworkHelper.encodeAndSend(netData: turnMsg) else {
+                return
+            }
+            if(NetworkHelper.dbgMode){
+                print(dataObj.prettyPrintedJSONString!)
+            }
+            try match.sendData(toAllPlayers: dataObj, with: .reliable)
+        } catch {
+            print("Send data failed")
+        }
     }
-    
     
     func sendData(msgTyp:MsgType, data:Any? = nil) {
         self.sendData(match: self.match, msgTyp: msgTyp, data: data)
@@ -68,9 +75,9 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             print("SENDING Suake3D-MSG: Type: \(msgTyp)")
             if(msgTyp == .setupClientServerMsg){
                 self.setupClientServerData = SetupClientServerNetworkData(id: self.msgSentCounter)
-                self.setupClientServerData.addHost(playerId: self.dbgServerPlayerId, playerName: "DaVe inc." /*(data as! [GKPlayer])[0].playerID*/, hostType: .server)
+                self.setupClientServerData.addHost(playerId: self.dbgServerPlayerId, playerName: "DaVe inc.", hostType: .server)
                 self.ownPlayerNetObj = self.setupClientServerData.clientServerData.first
-                self.setupClientServerData.addHost(playerId: self.dbgClientPlayerId, playerName: "JeTeDonner" /*(data as! [GKPlayer])[0].playerID*/, hostType: .client)
+                self.setupClientServerData.addHost(playerId: self.dbgClientPlayerId, playerName: "JeTeDonner", hostType: .client)
                 guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: self.setupClientServerData) else {
                     return
                 }
@@ -87,7 +94,6 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                     print(dataReady4Match.prettyPrintedJSONString!)
                 }
                 try match.send(dataReady4Match, to: [self.dbgServerGKPlayer], dataMode: .reliable)
-//                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
             }else if(msgTyp == .startMatchMsg){
                 let sendData = StartMatchNetworkData(id: self.msgSentCounter)
                 guard let dataStartMatch = NetworkHelper.encodeAndSend(netData: sendData) else {

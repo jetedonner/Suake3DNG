@@ -23,13 +23,39 @@ class SuakeKeyboardHandler: KeyboardHandler {
     override func keyPressedEvent(event: NSEvent) {
         super.keyPressedEvent(event: event)
         
-        
-        
         if let pressedKey = KeyboardDirection(rawValue: event.keyCode) {
             
             if(self.game.gameCenterHelper.isMultiplayerGameRunning){
-//                TurnNetworkData(id: <#T##Int#>)
-//                self.game.gameCenterHelper.matchMakerHelper.sendData(msgTyp: .turnMsg, data: <#T##Any?#>)
+                var turnDir:TurnDir = .Straight
+                switch pressedKey {
+                case .KEY_W:
+                    turnDir = .Straight
+                    break
+                case .KEY_A:
+                    turnDir = .Left
+                    break
+                case .KEY_S:
+                    turnDir = .Stop
+                    break
+                case .KEY_D:
+                    turnDir = .Right
+                    break
+                case .KEY_LEFT:
+                    turnDir = .Left
+                    break
+                case .KEY_RIGHT:
+                    turnDir = .Right
+                    break
+                case .KEY_UP:
+                    turnDir = .Straight
+                    break
+                case .KEY_DOWN:
+                    turnDir = .Stop
+                    break
+                default:
+                    break
+                }
+                self.game.gameCenterHelper.matchMakerHelper.sendTurnMsg(turnDir: turnDir)
             }
             
 //            if(self.game.gameCenterHelper.matchMakerHelper.match != nil){
@@ -86,6 +112,12 @@ class SuakeKeyboardHandler: KeyboardHandler {
                     self.game.playerEntityManager.ownPlayerEntity.weapons.getWeapon(weaponType: .mg)?.addAmmo(ammoCount2Add: SuakeVars.INITIAL_MACHINEGUN_AMMORELOADCOUNT)
                 }else{
                     self.game.playerEntityManager.ownPlayerEntity.weapons.setCurrentWeaponType(weaponType: .mg)
+                }
+            }else if(pressedKey == .KEY_2){
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                    self.game.playerEntityManager.ownPlayerEntity.weapons.getWeapon(weaponType: .shotgun)?.addAmmo(ammoCount2Add: SuakeVars.INITIAL_SHOTGUN_AMMORELOADCOUNT)
+                }else{
+                    self.game.playerEntityManager.ownPlayerEntity.weapons.setCurrentWeaponType(weaponType: .shotgun)
                 }
             }else if(pressedKey == .KEY_3){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){

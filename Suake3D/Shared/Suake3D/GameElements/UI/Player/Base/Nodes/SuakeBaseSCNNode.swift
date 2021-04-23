@@ -28,7 +28,9 @@ class SuakeBaseSCNNode: SCNNode {
         self.game = game
         super.init()
         self.name = name
-        self.loadSceneContent(sceneName: sceneName, scale: scale)
+        if(sceneName != ""){
+            self.loadSceneContent(sceneName: sceneName, scale: scale)
+        }
     }
     
     func loadSceneContent(sceneName:String, scale:SCNVector3 = SCNVector3(1.0, 1.0, 1.0)){

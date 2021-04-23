@@ -99,6 +99,10 @@
 		552417FD260A8391002C90FC /* MachinegunPickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552417FB260A8391002C90FC /* MachinegunPickupEntity.swift */; };
 		552417FE260A8391002C90FC /* MachinegunPickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552417FC260A8391002C90FC /* MachinegunPickupComponent.swift */; };
 		55241803260A85E5002C90FC /* GKEntityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241802260A85E5002C90FC /* GKEntityExtension.swift */; };
+		554233D6263215FE00EB55F9 /* ShotgunPellet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233D5263215FE00EB55F9 /* ShotgunPellet.swift */; };
+		554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */; };
+		554233DE2632168600EB55F9 /* ShotgunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233DD2632168600EB55F9 /* ShotgunComponent.swift */; };
+		554233E22632B7D500EB55F9 /* ShotgunCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233E12632B7D500EB55F9 /* ShotgunCrosshairComponent.swift */; };
 		556CA651260D29F600F78263 /* LasergunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA64F260D29F600F78263 /* LasergunComponent.swift */; };
 		556CA652260D29F600F78263 /* LaserBeamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA650260D29F600F78263 /* LaserBeamNode.swift */; };
 		556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA656260D38BE00F78263 /* EnemyNames.swift */; };
@@ -347,6 +351,10 @@
 		552417FB260A8391002C90FC /* MachinegunPickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachinegunPickupEntity.swift; sourceTree = "<group>"; };
 		552417FC260A8391002C90FC /* MachinegunPickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachinegunPickupComponent.swift; sourceTree = "<group>"; };
 		55241802260A85E5002C90FC /* GKEntityExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GKEntityExtension.swift; sourceTree = "<group>"; };
+		554233D5263215FE00EB55F9 /* ShotgunPellet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunPellet.swift; sourceTree = "<group>"; };
+		554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunPelletGrp.swift; sourceTree = "<group>"; };
+		554233DD2632168600EB55F9 /* ShotgunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunComponent.swift; sourceTree = "<group>"; };
+		554233E12632B7D500EB55F9 /* ShotgunCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunCrosshairComponent.swift; sourceTree = "<group>"; };
 		556CA64F260D29F600F78263 /* LasergunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LasergunComponent.swift; sourceTree = "<group>"; };
 		556CA650260D29F600F78263 /* LaserBeamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeamNode.swift; sourceTree = "<group>"; };
 		556CA656260D38BE00F78263 /* EnemyNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyNames.swift; sourceTree = "<group>"; };
@@ -541,6 +549,7 @@
 				5501837426016E2C00F28C54 /* Base */,
 				556CA64E260D29E800F78263 /* Laser */,
 				5501838726016FA200F28C54 /* MG */,
+				554233D4263214EC00EB55F9 /* Shotgun */,
 				55927047262A13C100A04C76 /* RPG */,
 				55AE7FD6262A3B0700A58F4B /* Railgun */,
 			);
@@ -596,6 +605,7 @@
 			children = (
 				550184062602A5CB00F28C54 /* BaseCrosshairComponent.swift */,
 				550184072602A5CB00F28C54 /* MachinegunCrosshairComponent.swift */,
+				554233E12632B7D500EB55F9 /* ShotgunCrosshairComponent.swift */,
 				55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */,
 				550184012602A54600F28C54 /* CrosshairEntity.swift */,
 			);
@@ -698,6 +708,16 @@
 				55EC891625FA9D2D0040E676 /* NSImage.swift */,
 			);
 			path = SceneKit;
+			sourceTree = "<group>";
+		};
+		554233D4263214EC00EB55F9 /* Shotgun */ = {
+			isa = PBXGroup;
+			children = (
+				554233DD2632168600EB55F9 /* ShotgunComponent.swift */,
+				554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */,
+				554233D5263215FE00EB55F9 /* ShotgunPellet.swift */,
+			);
+			path = Shotgun;
 			sourceTree = "<group>";
 		};
 		556CA64E260D29E800F78263 /* Laser */ = {
@@ -1538,6 +1558,7 @@
 				552417FE260A8391002C90FC /* MachinegunPickupComponent.swift in Sources */,
 				550183B92601893B00F28C54 /* SetupDeveloperViewController.swift in Sources */,
 				55DB997D25FC542F000023AF /* NextMoveResult.swift in Sources */,
+				554233E22632B7D500EB55F9 /* ShotgunCrosshairComponent.swift in Sources */,
 				5501851B26091A0F00F28C54 /* SuakeFiles.swift in Sources */,
 				5501847326052D2D00F28C54 /* ArrowManager.swift in Sources */,
 				55D894E125FADDAA00728B83 /* SuakePlayerEntity.swift in Sources */,
@@ -1581,6 +1602,7 @@
 				55760E4125FD333A00C10784 /* SuakeRespawnComponent.swift in Sources */,
 				556CB92025FFD5B8005B7747 /* SuakeBaseLocationComponent.swift in Sources */,
 				55070492261129D300464F97 /* MatchResultsSkScene.swift in Sources */,
+				554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */,
 				5501842C2602CBE600F28C54 /* PanCameraHelper.swift in Sources */,
 				5592703E262766C900A04C76 /* GKPlayerExt.swift in Sources */,
 				55D894A325FAD3FA00728B83 /* FloorHelper.swift in Sources */,
@@ -1620,6 +1642,7 @@
 				5501847826052E2400F28C54 /* Double.swift in Sources */,
 				5513C88C260D1A2400633B40 /* SCNVector3.swift in Sources */,
 				551F3D50260BF279006D9F65 /* GridGraphHelper.swift in Sources */,
+				554233D6263215FE00EB55F9 /* ShotgunPellet.swift in Sources */,
 				55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */,
 				55C12254261CEA21001E8E3F /* GameCenterHelperExt.swift in Sources */,
 				551F3D4B260BF22A006D9F65 /* SuakeGridGraphNode.swift in Sources */,
@@ -1694,6 +1717,7 @@
 				5513C8A0260D246F00633B40 /* DroidComponentExt.swift in Sources */,
 				556CB92F25FFD771005B7747 /* EntityManager.swift in Sources */,
 				55760E3C25FD2C7C00C10784 /* GSAudio.swift in Sources */,
+				554233DE2632168600EB55F9 /* ShotgunComponent.swift in Sources */,
 				5501837E26016EFE00F28C54 /* WeaponType.swift in Sources */,
 				55760E3725FD2C3800C10784 /* SoundType.swift in Sources */,
 				55DB993325FC0CFF000023AF /* ResVars.swift in Sources */,

@@ -35,6 +35,7 @@ class HUDWeaponImgComponent: BaseExtHUDComponent {
     
     func loadImageFiles(){
         self.weaponsImages[.mg] = SKSpriteNode(imageNamed: SuakeFiles.hudMGImageFile)
+        self.weaponsImages[.shotgun] = SKSpriteNode(imageNamed: SuakeFiles.hudShotgunImageFile)
         self.weaponsImages[.rpg] = SKSpriteNode(imageNamed: SuakeFiles.hudRPGImageFile)
     }
     

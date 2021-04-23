@@ -48,6 +48,10 @@ class WeaponArsenalManager: SuakeGameClass {
             self.allWeapons.append(MachinegunComponent(game: self.game, weaponArsenalManager: self))
         }
         
+        if(weaponTypes.contains(.shotgun)){
+            self.allWeapons.append(ShotgunComponent(game: self.game, weaponArsenalManager: self))
+        }
+        
         if(weaponTypes.contains(.rpg)){
             self.allWeapons.append(RPGComponent(game: self.game, weaponArsenalManager: self))
         }
@@ -70,7 +74,7 @@ class WeaponArsenalManager: SuakeGameClass {
 //        }
         if(self.allWeapons.count > 0){
 //            self.currentWeapon = self.allWeapons.first!
-            self.setCurrentWeaponType(weaponType: self.allWeapons.first!.weaponType)
+            self.setCurrentWeaponType(weaponType: self.allWeapons.first!.weaponType, playAudio: false)
 //            self.game.overlayManager.hud.hudEntity.crosshairEntity.setCurrentWeaponType(weaponType: self.currentWeapon.weaponType)
         }
     }
@@ -90,9 +94,9 @@ class WeaponArsenalManager: SuakeGameClass {
 //            self.game.cameraHelper.panCameraHelper.isAimedAt = false
 //            _ = self.game.cameraHelper.panCameraHelper.checkAimedAtAll()
             //self.game.overlayManager.hud.checkAndAnimateCrosshairAimedAt(overrideCheckIsAimed: true)
-//            if(playAudio){
-//                self.game.audioManager.playSound(soundType: .wp_change)
-//            }
+            if(playAudio){
+                self.game.soundManager.playSound(soundType: .wp_change)
+            }
         }
     }
     
