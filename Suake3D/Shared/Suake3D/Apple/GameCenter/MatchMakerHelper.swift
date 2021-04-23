@@ -146,7 +146,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             }else if(msgTyp == .initLevelMsg){
                 let sendData:LoadLevelNetworkData = LoadLevelNetworkData(id: self.msgSentCounter)
                 
-                sendData.levelConfig.levelEnv = LevelEnvironment(levelSize: self.game.usrDefHlpr.levelSize, floorType: .Debug, skyBoxType: .RedGalaxy, matchDuration: self.game.usrDefHlpr.matchDuration, levelDifficulty: self.game.usrDefHlpr.difficulty, lightIntensity: self.game.usrDefHlpr.lightIntensity) //.matchDuration = self.game.usrDefHlpr.matchDuration
+                sendData.levelConfig.levelEnv = LevelEnvironment(levelSize: self.game.usrDefHlpr.levelSize, floorType: .Debug, skyBoxType: .RedGalaxy, matchDuration: self.game.usrDefHlpr.matchDuration, levelDifficulty: self.game.usrDefHlpr.difficulty, lightIntensity: self.game.usrDefHlpr.lightIntensity)  //.matchDuration = self.game.usrDefHlpr.matchDuration
 //                sendData.levelConfig.levelEnv.levelSize = self.game.usrDefHlpr.levelSize
                 
                 sendData.addHost(playerId: self.dbgServerPlayerId, playerName: "DaVe inc.", hostType: .server)
