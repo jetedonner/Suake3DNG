@@ -190,6 +190,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         }else if(newObj.msgType == .startMatchMsg){
             self.game.loadNetworkMatch3(startMatch: newObj as! StartMatchNetworkData)
         }else if(newObj.msgType == .pickedUpMsg){
+            self.game.showDbgMsg(dbgMsg: "Goody PICKED-UP .... ")
             self.game.pickedUpNetworkMatch(pickedUpData: newObj as! PickedUpNetworkData)
         }else if(newObj.msgType == .turnMsg){
             self.game.turnDirNetworkMatch(turnData: newObj as! TurnNetworkData)
