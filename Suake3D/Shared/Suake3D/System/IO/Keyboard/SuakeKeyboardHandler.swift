@@ -14,9 +14,11 @@ import NetTestFW
 class SuakeKeyboardHandler: KeyboardHandler {
     
     let pressAnyKeyHandler:PressAnyKeyHandler
+    let multiplayerKeyHandler:MultiplayerKeyHandler
     
     override init(game: GameController) {
         self.pressAnyKeyHandler = PressAnyKeyHandler(game: game)
+        self.multiplayerKeyHandler = MultiplayerKeyHandler(game: game)
         super.init(game: game)
     }
     
@@ -25,61 +27,11 @@ class SuakeKeyboardHandler: KeyboardHandler {
         
         if let pressedKey = KeyboardDirection(rawValue: event.keyCode) {
             
-            if(self.game.gameCenterHelper.isMultiplayerGameRunning){
-                if(pressedKey == .KEY_SPACE){
-                    self.game.gameCenterHelper.matchMakerHelper.sendData(msgTyp: .shootWeaponMsg)
-                    return
-                }
-                var turnDir:TurnDir = .Straight
-                switch pressedKey {
-                case .KEY_W:
-                    turnDir = .Straight
-                    break
-                case .KEY_A:
-                    turnDir = .Left
-                    break
-                case .KEY_S:
-                    turnDir = .Stop
-                    break
-                case .KEY_D:
-                    turnDir = .Right
-                    break
-                case .KEY_LEFT:
-                    turnDir = .Left
-                    break
-                case .KEY_RIGHT:
-                    turnDir = .Right
-                    break
-                case .KEY_UP:
-                    turnDir = .Straight
-                    break
-                case .KEY_DOWN:
-                    turnDir = .Stop
-                    break
-                default:
-                    break
-                }
-                self.game.gameCenterHelper.matchMakerHelper.sendTurnMsg(turnDir: turnDir, position: self.game.playerEntityManager.ownPlayerEntity.pos)
+            if(self.multiplayerKeyHandler.handleKeyPress(pressedKey: pressedKey)){
                 return
             }
             
-//            if(self.game.gameCenterHelper.matchMakerHelper.match != nil){
-//                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-//                    if(pressedKey == .KEY_SPACE){
-//                        self.game.gameCenterHelper.matchMakerHelper.sendData(match: self.game.gameCenterHelper.matchMakerHelper!.match, msgTyp: .shootWeaponMsg)
-//        ////            var gameData = GameData()
-//        ////            var gameDataExt = GameDataExt()
-//        ////            gameDataExt.typeValue = 123
-//        ////            gameData.ext = gameDataExt.encode()
-//        ////            gameData.keyPress = Int(event.keyCode)
-//        ////            self.game.matchHelper.sendGameData(gameData: gameData)
-//
-//                        return
-//                    }
-//                }
-//            }
-            
-            if(pressAnyKeyHandler.handleAnyKeyPress(pressedKey: pressedKey)){
+            if(self.pressAnyKeyHandler.handleAnyKeyPress(pressedKey: pressedKey)){
                 return
             }
             

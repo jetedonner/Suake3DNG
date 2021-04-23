@@ -112,6 +112,7 @@
 		554234002632C02600EB55F9 /* VertexDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233FF2632C02600EB55F9 /* VertexDirections.swift */; };
 		554234042632C08E00EB55F9 /* RailgunCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */; };
 		5542340A2632C3E200EB55F9 /* SoundManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234092632C3E200EB55F9 /* SoundManagerExt.swift */; };
+		5542341E2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */; };
 		556CA651260D29F600F78263 /* LasergunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA64F260D29F600F78263 /* LasergunComponent.swift */; };
 		556CA652260D29F600F78263 /* LaserBeamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA650260D29F600F78263 /* LaserBeamNode.swift */; };
 		556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA656260D38BE00F78263 /* EnemyNames.swift */; };
@@ -373,6 +374,7 @@
 		554233FF2632C02600EB55F9 /* VertexDirections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexDirections.swift; sourceTree = "<group>"; };
 		554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunCrosshairComponent.swift; sourceTree = "<group>"; };
 		554234092632C3E200EB55F9 /* SoundManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManagerExt.swift; sourceTree = "<group>"; };
+		5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerKeyHandler.swift; sourceTree = "<group>"; };
 		556CA64F260D29F600F78263 /* LasergunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LasergunComponent.swift; sourceTree = "<group>"; };
 		556CA650260D29F600F78263 /* LaserBeamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeamNode.swift; sourceTree = "<group>"; };
 		556CA656260D38BE00F78263 /* EnemyNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyNames.swift; sourceTree = "<group>"; };
@@ -1121,6 +1123,7 @@
 			isa = PBXGroup;
 			children = (
 				55D894B025FAD65B00728B83 /* PressAnyKeyHandler.swift */,
+				5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */,
 				55D894B125FAD65C00728B83 /* SuakeKeyboardHandler.swift */,
 				55D894A925FAD64C00728B83 /* KeyboardDirection.swift */,
 				55D894AA25FAD64C00728B83 /* KeyboardHandler.swift */,
@@ -1749,6 +1752,7 @@
 				5501839B2601782600F28C54 /* ContactHelper.swift in Sources */,
 				5513C896260D1D5100633B40 /* SuakeBaseDroidState.swift in Sources */,
 				55D8947E25FACCD600728B83 /* SuakeBaseLevel.swift in Sources */,
+				5542341E2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift in Sources */,
 				55DB996825FC4A18000023AF /* SuakeStatePaused.swift in Sources */,
 				556CB96A26000359005B7747 /* RotationAnimHelper.swift in Sources */,
 				559B2BD3260E4186005E669C /* SuakeNodeGroupBase.swift in Sources */,
