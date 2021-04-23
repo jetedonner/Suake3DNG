@@ -43,7 +43,10 @@ class GoodyEntity: SuakeBasePlayerEntity {
             
             self.particlesComponent.node.position = self.goodyComponent.node.position
             
-            self.goodyComponent.initPosRandom()
+            let newPos:SCNVector3 = self.goodyComponent.initPosRandom()
+            if(self.game.gameCenterHelper.isMultiplayerGameRunning){
+                self.game.gameCenterHelper.matchMakerHelper.sendPickedUpMsg(itemType: .goody, value: CGFloat(self.killScore), newPos: newPos)
+            }
             self.healthComponent.resetHealth()
             self.healthComponent.died = false
             
@@ -55,6 +58,18 @@ class GoodyEntity: SuakeBasePlayerEntity {
         }
         self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.goodyEntity]?.drawHealthBar()
 //        self.game.overlayManager.hud.healthBarGoodyComponent.drawHealthBar()
+    }
+    
+    func reposGoodyAfterCatch(newPos:SCNVector3){
+        self.goodyComponent.initPosRandom(newPos: newPos)
+        self.healthComponent.resetHealth()
+        self.healthComponent.died = false
+        
+        self.particlesComponent.node.isHidden = false
+        self.particlesComponent.node.opacity = 1.0
+        self.particlesComponent.node.runAction(SCNAction.sequence([SCNAction.wait(duration: 0.3), SCNAction.fadeOut(duration: 0.7)]), completionHandler: {
+            self.particlesComponent.node.position = self.goodyComponent.node.position
+        })
     }
     
     func add2Scene(){

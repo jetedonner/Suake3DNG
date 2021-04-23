@@ -9,6 +9,7 @@
 import Foundation
 import GameplayKit
 import SceneKit
+import NetTestFW
 
 
 struct WeaponType: OptionSet, Hashable, Codable {

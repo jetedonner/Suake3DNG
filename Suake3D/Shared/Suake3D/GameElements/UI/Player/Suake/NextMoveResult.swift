@@ -8,6 +8,7 @@
 
 import Foundation
 import SceneKit
+import NetTestFW
 
 struct NextMoveResult: OptionSet {
     var rawValue: Int

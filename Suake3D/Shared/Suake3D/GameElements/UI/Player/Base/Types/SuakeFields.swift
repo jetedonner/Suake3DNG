@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NetTestFW
 
 public class SuakeField {
     var fieldType:SuakeFieldType = .empty
@@ -26,8 +27,8 @@ public class SuakeField {
     }
 }
 
-public enum SuakeFieldType:String {
-    case empty, wall, goody, volcano, lavapit, own_suake, opp_suake, droid,
-    weapon, machinegun, grenade, shotgun, nuke, rocketlauncher,
-    railgun, sniperrifle, portal, portalIn, portalOut, fire, medKit, captureFlag, rock
-}
+//public enum SuakeFieldType:String {
+//    case empty, wall, goody, volcano, lavapit, own_suake, opp_suake, droid,
+//    weapon, machinegun, grenade, shotgun, nuke, rocketlauncher,
+//    railgun, sniperrifle, portal, portalIn, portalOut, fire, medKit, captureFlag, rock
+//}

@@ -103,6 +103,14 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.stateMachine.enter(SuakeStateMultiplayerPlaying.self)
     }
     
+    func pickedUpNetworkMatch(pickedUpData:PickedUpNetworkData){
+//        self.playerEntityManager.ownPlayerEntity.shoot()
+        if(pickedUpData.itemType == .goody){
+//            self.playerEntityManager.goodyEntity.pos = pickedUpData.newPos
+            self.playerEntityManager.goodyEntity.reposGoodyAfterCatch(newPos: pickedUpData.newPos)
+        }
+    }
+    
     func shootWeaponNetworkMatch(shootData:ShootWeaponNetworkData){
         self.playerEntityManager.ownPlayerEntity.shoot()
     }

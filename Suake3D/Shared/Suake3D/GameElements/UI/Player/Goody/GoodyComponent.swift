@@ -8,6 +8,7 @@
 import Foundation
 import SceneKit
 import GameplayKit
+import NetTestFW
 
 class GoodyComponent: SuakeBaseSCNNodeComponent {
     
@@ -48,16 +49,23 @@ class GoodyComponent: SuakeBaseSCNNodeComponent {
         self.game.levelManager.gameBoard.setGameBoardField(pos: pos, suakeField: .goody)
     }
     
-    func initPosRandom(){
+//    func getPosRandom()->SCNVector3{
+//        let pos:SCNVector3 = self.game.levelManager.gameBoard.getRandomFreePos()
+//        return pos
+//    }
+    
+    @discardableResult
+    func initPosRandom(newPos:SCNVector3? = nil)->SCNVector3{
         self.game.levelManager.gameBoard.setGameBoardField(pos: (self.entity as! SuakeBaseNodeEntity).pos, suakeField: .empty)
         self.game.levelManager.gameBoard.removeGameBoardFieldItem(pos: self.goodyEntity.pos, suakeFieldItem: self.goodyEntity)
-        let pos:SCNVector3 = self.game.levelManager.gameBoard.getRandomFreePos()
+        let pos:SCNVector3 = newPos ?? self.game.levelManager.gameBoard.getRandomFreePos()
         (self.entity as! SuakeBaseNodeEntity).pos = pos
         self.node.position = SCNVector3(pos.x * SuakeVars.fieldSize, 0, pos.z * SuakeVars.fieldSize)
         self.game.overlayManager.hud.setGoodyPositionTxt(pos: pos)
         self.game.levelManager.gameBoard.setGameBoardField(pos: pos, suakeField: .goody)
         self.game.levelManager.gameBoard.setGameBoardFieldItem(pos: pos, suakeFieldItem: self.goodyEntity)
         self.game.overlayManager.hud.overlayScene!.map.reposNode(playerNode: self.game.overlayManager.hud.overlayScene!.map.goodyNode, pos: pos)
+        return pos
     }
     
     func add2Scene(){

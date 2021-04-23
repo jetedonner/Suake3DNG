@@ -882,8 +882,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/GameStructure/Level/Game/GameBoardExt.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "getRandomFreePos(diff:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -898,8 +898,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/GameStructure/Level/Game/GameBoardExt.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "getRandomFreePos(diff:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -914,8 +914,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/GameStructure/Level/Game/GameBoard.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "setGameBoardField(x:z:suakeField:overrideOrig:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -930,8 +930,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/GameStructure/Level/Game/GameBoard.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "initGameBoard()"
             landmarkType = "7">
          </BreakpointContent>
@@ -946,8 +946,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Goody/GoodyComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "initSetupPos(addToScene:)"
             landmarkType = "7">
          </BreakpointContent>

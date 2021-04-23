@@ -69,6 +69,25 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         }
     }
     
+    func sendPickedUpMsg(itemType:SuakeFieldType, value:CGFloat, newPos:SCNVector3) {
+        do{
+            let pickedUpMsg:PickedUpNetworkData = PickedUpNetworkData(id: self.msgSentCounter, itemType: itemType, value: value, newPos: newPos)
+//            let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, position: position, playerId: self.dbgServerPlayerId)
+            guard let dataObj = NetworkHelper.encodeAndSend(netData: pickedUpMsg) else {
+                return
+            }
+            if(NetworkHelper.dbgMode){
+                print(dataObj.prettyPrintedJSONString!)
+            }
+            try match.sendData(toAllPlayers: dataObj, with: .reliable)
+//            self.game.turnDirNetworkMatch(turnData: pickedUpMsg)
+            self.msgSentCounter += 1
+//            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
+        } catch {
+            print("Send data failed")
+        }
+    }
+    
     func sendData(msgTyp:MsgType, data:Any? = nil) {
         self.sendData(match: self.match, msgTyp: msgTyp, data: data)
     }
@@ -170,6 +189,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.sendStartMatchMsg()
         }else if(newObj.msgType == .startMatchMsg){
             self.game.loadNetworkMatch3(startMatch: newObj as! StartMatchNetworkData)
+        }else if(newObj.msgType == .pickedUpMsg){
+            self.game.pickedUpNetworkMatch(pickedUpData: newObj as! PickedUpNetworkData)
         }else if(newObj.msgType == .turnMsg){
             self.game.turnDirNetworkMatch(turnData: newObj as! TurnNetworkData)
         }else if(newObj.msgType == .shootWeaponMsg){
