@@ -31,7 +31,7 @@ class SuakeMoveComponent: SuakeBaseComponent {
         set{ self._turnQueue = newValue }
     }
     
-    var posAfterNetSend:SCNVector3 = SCNVector3(0, 0, 0)
+    var posAfterNetSend:SCNVector3? = nil //SCNVector3(0, 0, 0)
     
     func appendTurn(turnDir:TurnDir){
         self.turnQueue.append(turnDir)

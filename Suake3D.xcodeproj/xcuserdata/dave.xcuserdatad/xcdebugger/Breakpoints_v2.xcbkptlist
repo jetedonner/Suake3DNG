@@ -126,8 +126,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "renderer(_:updateAtTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -610,8 +610,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "renderer(_:updateAtTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -706,8 +706,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "renderer(_:updateAtTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -834,8 +834,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "startTimer(time:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -962,8 +962,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PhysicsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "updateGameTime(time:)"
             landmarkType = "7">
          </BreakpointContent>
