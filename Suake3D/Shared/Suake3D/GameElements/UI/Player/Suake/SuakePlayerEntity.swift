@@ -65,11 +65,12 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         self.game.showDbgMsg(dbgMsg: "Suake (opp) hit by bullet > damage: " + bullet.damage.description, dbgLevel: .Verbose)
         
         if(self.healthComponent.decHealth(decVal: bullet.damage)){
-            self.game.physicsHelper.qeueNode2Remove(node: self.playerComponent.mainNode)
-            self.explodingComponent.explode()
-            self.game.overlayManager.hud.healthBars[self]?.node.removeFromParent()
-            
-            self.statsComponent.add2StatsValue(suakeStatsType: .deaths)
+            self.playerDied()
+//            self.game.physicsHelper.qeueNode2Remove(node: self.playerComponent.mainNode)
+//            self.explodingComponent.explode()
+//            self.game.overlayManager.hud.healthBars[self]?.node.removeFromParent()
+//
+//            self.statsComponent.add2StatsValue(suakeStatsType: .deaths)
             
             bullet.weapon.weaponArsenalManager.playerEntity.statsComponent.addNewStats(statsType: .opponetKilled, score: self.killScore)
             
@@ -78,6 +79,19 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         }else{
             self.game.overlayManager.hud.healthBars[self]?.drawHealthBar()
         }
+    }
+    
+    override func playerDied(){
+        super.playerDied()
+        self.game.physicsHelper.qeueNode2Remove(node: self.playerComponent.mainNode)
+        self.explodingComponent.explode()
+        self.game.overlayManager.hud.healthBars[self]?.node.removeFromParent()
+        
+        self.statsComponent.add2StatsValue(suakeStatsType: .deaths)
+        
+//        bullet.weapon.weaponArsenalManager.playerEntity.statsComponent.addNewStats(statsType: .opponetKilled, score: self.killScore)
+        
+//        self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: String(format: SuakeMsgs.pointAddString, self.killScore), pos: self.playerComponent.mainNode.position)
     }
     
     override func reposMapNodeInit(duration:TimeInterval = 0.0, pos:SCNVector3? = nil){

@@ -166,7 +166,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         }else if(newObj.msgType == .startMatchMsg){
             self.game.loadNetworkMatch3(startMatch: newObj as! StartMatchNetworkData)
         }else if(newObj.msgType == .turnMsg){
-            
+            self.game.turnDirNetworkMatch(turnData: newObj as! TurnNetworkData)
         }else if(newObj.msgType == .shootWeaponMsg){
             self.game.shootWeaponNetworkMatch(shootData: newObj as! ShootWeaponNetworkData)
         }
@@ -186,6 +186,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         if(state == .disconnected){
             for i in 0..<self.setupClientServerData.clientServerData.count{
                 if( self.setupClientServerData.clientServerData[i].playerId == player.playerIDNG){
+                    self.game.overlayManager.hud.showMsg(msg: "Player \(i) disconnected!")
+                    self.game.playerEntityManager.oppPlayerEntity.playerDied()
                     print(SuakeMsgs.gameCenterMsg + "DISCONNETING: PlayerID: \(player.playerIDNG)")
                     self.setupClientServerData.clientServerData.remove(at: i)
                     break
