@@ -18,7 +18,7 @@ class MultiplayerKeyHandler:SuakeGameClass{
     }
     
     func handleKeyPress(pressedKey:KeyboardDirection)->Bool{
-        if(!self.game.gameCenterHelper.isMultiplayerGameRunning){
+        if(!self.game.gameCenterHelper.isMultiplayerGameRunning || self.game.stateMachine.currentState is SuakeStateMatchOver){
             return false
         }else{
             if(pressedKey == .KEY_SPACE){

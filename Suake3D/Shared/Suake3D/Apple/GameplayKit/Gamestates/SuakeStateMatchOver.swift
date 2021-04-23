@@ -20,7 +20,7 @@ class SuakeStateMatchOver: SuakeBaseState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        if(previousState is SuakeStatePlaying || previousState is SuakeStateReadyToPlay){
+        if(previousState is SuakeStatePlaying || previousState is SuakeStateMultiplayerPlaying || previousState is SuakeStateReadyToPlay){
 //            self.game.playerEntityManager.getPlayerEntity(ofType: SuakeOwnPlayerEntity.self, id: 0)?.isPaused = true
 //            self.game.cameraHelper.toggleFPV(newFPV: false)
             if(self.game.levelManager.currentLevel == self.game.levelManager.dbgLevel){
