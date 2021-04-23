@@ -165,6 +165,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.sendStartMatchMsg()
         }else if(newObj.msgType == .startMatchMsg){
             self.game.loadNetworkMatch3(startMatch: newObj as! StartMatchNetworkData)
+        }else if(newObj.msgType == .turnMsg){
+            
         }else if(newObj.msgType == .shootWeaponMsg){
             self.game.shootWeaponNetworkMatch(shootData: newObj as! ShootWeaponNetworkData)
         }

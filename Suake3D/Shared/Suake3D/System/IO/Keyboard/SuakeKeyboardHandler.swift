@@ -56,6 +56,7 @@ class SuakeKeyboardHandler: KeyboardHandler {
                     break
                 }
                 self.game.gameCenterHelper.matchMakerHelper.sendTurnMsg(turnDir: turnDir)
+                return
             }
             
 //            if(self.game.gameCenterHelper.matchMakerHelper.match != nil){

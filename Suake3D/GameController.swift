@@ -107,6 +107,10 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.playerEntityManager.oppPlayerEntity.shoot()
     }
     
+    func turnDirNetworkMatch(turnData:TurnNetworkData){
+        self.playerEntityManager.ownPlayerEntity.appendTurn(turnDir: turnData.turnDir)
+    }
+    
     func loadGameScence(initialLoad:Bool = true){
         DispatchQueue.main.async {
             self.isLoading = true

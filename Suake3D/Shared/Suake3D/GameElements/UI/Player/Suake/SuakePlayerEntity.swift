@@ -157,6 +157,10 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         self.moveComponent.appendTurn(turn: turn)
     }
     
+    func appendTurn(turnDir:TurnDir){
+        self.moveComponent.appendTurn(turnDir: turnDir)
+    }
+    
     func setupPlayerEntity(){
         self.playerComponent.add2Scene()
     }

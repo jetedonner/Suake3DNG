@@ -26,13 +26,13 @@ class SuakeStateMultiplayerPlaying: SuakeBaseState {
     
     override func didEnter(from previousState: GKState?) {
         if(previousState is SuakeStateGameLoadingMulti){
-//            self.game.soundManager.playSoundQuake(soundType: .play)
-//            self.game.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "PLAY!")
-//            self.game.playerEntityManager.isPaused = false
-////            self.game.physicsHelper.firstMove = true
-//            self.game.physicsHelper.lastUpdateTime = nil // self.game.physicsHelper.currentTime
-//            self.game.playerEntityManager.ownPlayerEntity.moveComponent.nextMove(deltaTime: 0.0)
-//            self.game.overlayManager.hud.overlayScene!.map.movePlayerNodes()
+            self.game.soundManager.playSoundQuake(soundType: .play)
+            self.game.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "PLAY!")
+            self.game.playerEntityManager.isPaused = false
+//            self.game.physicsHelper.firstMove = true
+            self.game.physicsHelper.lastUpdateTime = nil // self.game.physicsHelper.currentTime
+            self.game.playerEntityManager.ownPlayerEntity.moveComponent.nextMove(deltaTime: 0.0)
+            self.game.overlayManager.hud.overlayScene!.map.movePlayerNodes()
             self.game.overlayManager.showOverlay4GameState(type: .playing)
         }
 //        if(previousState is SuakeStateReadyToPlay || previousState is SuakeStateDied){

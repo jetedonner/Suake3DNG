@@ -31,38 +31,50 @@ class SuakeMoveComponent: SuakeBaseComponent {
         set{ self._turnQueue = newValue }
     }
     
+    func appendTurn(turnDir:TurnDir){
+        self.turnQueue.append(turnDir)
+    }
+    
     func appendTurn(turn:KeyboardDirection){
         switch turn {
         case .KEY_W:
-            self.turnQueue.append(.Straight)
+            self.appendTurn(turnDir: .Straight)
+//            self.turnQueue.append(.Straight)
 //            print("Appended \(String(describing: self.turnQueue.last?.rawValue)) turn")
             break
         case .KEY_A:
-            self.turnQueue.append(.Left)
+            self.appendTurn(turnDir: .Left)
+//            self.turnQueue.append(.Left)
 //            print("Appended \(String(describing: self.turnQueue.last?.rawValue)) turn")
             break
         case .KEY_S:
-            self.turnQueue.append(.Stop)
+            self.appendTurn(turnDir: .Stop)
+//            self.turnQueue.append(.Stop)
 //            print("Appended \(String(describing: self.turnQueue.last?.rawValue)) turn")
             break
         case .KEY_D:
-            self.turnQueue.append(.Right)
+            self.appendTurn(turnDir: .Right)
+//            self.turnQueue.append(.Right)
 //            print("Appended \(String(describing: self.turnQueue.last?.rawValue)) turn")
             break
         case .KEY_LEFT:
-            self.turnQueue.append(.Left)
+            self.appendTurn(turnDir: .Left)
+//            self.turnQueue.append(.Left)
 //            print("Appended \(String(describing: self.turnQueue.last?.rawValue)) turn")
             break
         case .KEY_RIGHT:
-            self.turnQueue.append(.Right)
+            self.appendTurn(turnDir: .Right)
+//            self.turnQueue.append(.Right)
 //            print("Appended \(String(describing: self.turnQueue.last?.rawValue)) turn")
             break
         case .KEY_UP:
-            self.turnQueue.append(.Straight)
+            self.appendTurn(turnDir: .Straight)
+//            self.turnQueue.append(.Straight)
 //            print("Appended \(String(describing: self.turnQueue.last?.rawValue)) turn")
             break
         case .KEY_DOWN:
-            self.turnQueue.append(.Stop)
+            self.appendTurn(turnDir: .Stop)
+//            self.turnQueue.append(.Stop)
 //            print("Appended \(String(describing: self.turnQueue.last?.rawValue)) turn")
             break
         default:
