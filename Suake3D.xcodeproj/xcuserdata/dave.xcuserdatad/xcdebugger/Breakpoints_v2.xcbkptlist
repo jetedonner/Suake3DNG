@@ -738,8 +738,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/GameplayKit/Gamestates/SuakeStateMachine.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "returnToOldState(saveOldState:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2178,8 +2178,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/GameplayKit/Gamestates/SuakeStateMachine.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "enter(stateClass:saveOldState:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2194,8 +2194,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/GameplayKit/Gamestates/SuakeStateMachine.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "enter(stateClass:saveOldState:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2210,8 +2210,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/GameplayKit/Gamestates/SuakeStateMachine.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "enter(stateClass:saveOldState:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2466,8 +2466,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PanCameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "checkNodeInsideFrustum(node:)"
             landmarkType = "7">
          </BreakpointContent>
