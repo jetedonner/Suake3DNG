@@ -36,6 +36,9 @@ class GoodyEntity: SuakeBasePlayerEntity {
     
     func goodyHit(playerEntity:SuakeBasePlayerEntity, withBullet:Bool = false){
         if(!withBullet || self.healthComponent.died){
+            if(self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerId == self.game.gameCenterHelper.matchMakerHelper.dbgClientPlayerId){
+                return
+            }
             self.game.soundManager.playSound(soundType: .pick_goody)
             
             playerEntity.statsComponent.addNewStats(statsType: .goodyCatched, score: self.killScore)
