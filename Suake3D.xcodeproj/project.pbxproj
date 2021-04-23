@@ -113,6 +113,7 @@
 		554234042632C08E00EB55F9 /* RailgunCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */; };
 		5542340A2632C3E200EB55F9 /* SoundManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234092632C3E200EB55F9 /* SoundManagerExt.swift */; };
 		5542341E2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */; };
+		555B83882633408D002AFB2C /* SuakeBaseGridGraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B83872633408D002AFB2C /* SuakeBaseGridGraphNode.swift */; };
 		556CA651260D29F600F78263 /* LasergunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA64F260D29F600F78263 /* LasergunComponent.swift */; };
 		556CA652260D29F600F78263 /* LaserBeamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA650260D29F600F78263 /* LaserBeamNode.swift */; };
 		556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA656260D38BE00F78263 /* EnemyNames.swift */; };
@@ -375,6 +376,7 @@
 		554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunCrosshairComponent.swift; sourceTree = "<group>"; };
 		554234092632C3E200EB55F9 /* SoundManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManagerExt.swift; sourceTree = "<group>"; };
 		5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerKeyHandler.swift; sourceTree = "<group>"; };
+		555B83872633408D002AFB2C /* SuakeBaseGridGraphNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeBaseGridGraphNode.swift; sourceTree = "<group>"; };
 		556CA64F260D29F600F78263 /* LasergunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LasergunComponent.swift; sourceTree = "<group>"; };
 		556CA650260D29F600F78263 /* LaserBeamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeamNode.swift; sourceTree = "<group>"; };
 		556CA656260D38BE00F78263 /* EnemyNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyNames.swift; sourceTree = "<group>"; };
@@ -691,6 +693,7 @@
 				551F3D57260C7515006D9F65 /* SuakeOppPlayerEntity.swift */,
 				551F3D45260BF15D006D9F65 /* SuakeOpponentAIComponent.swift */,
 				551F3D4A260BF22A006D9F65 /* SuakeGridGraphNode.swift */,
+				555B83872633408D002AFB2C /* SuakeBaseGridGraphNode.swift */,
 				551F3D4F260BF279006D9F65 /* GridGraphHelper.swift */,
 				55001F8C260CE2FC0015B293 /* GridGraphManager.swift */,
 			);
@@ -1670,6 +1673,7 @@
 				55C12267261CFCB6001E8E3F /* LightManager.swift in Sources */,
 				55070491261129D300464F97 /* MatchResultView.swift in Sources */,
 				55DB993825FC0EAF000023AF /* SuakePlayerManager.swift in Sources */,
+				555B83882633408D002AFB2C /* SuakeBaseGridGraphNode.swift in Sources */,
 				55D894DA25FADCC800728B83 /* SuakeFields.swift in Sources */,
 				55DB991425FC09F9000023AF /* SuakeBaseSCNNodeComponent.swift in Sources */,
 				5513C88B260D1A2400633B40 /* SCNVector3Extensions.swift in Sources */,

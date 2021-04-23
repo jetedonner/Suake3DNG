@@ -39,6 +39,9 @@ class DroidAIComponent: SuakeBaseComponent {
     
     @discardableResult
     func followPath()->Bool{
+//        if(self.game.gameCenterHelper.isMultiplayerGameRunning && self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerId == self.game.gameCenterHelper.matchMakerHelper.dbgClientPlayerId){
+//            return true
+//        }
         if(self.newPath != nil && self.newPath.count > 0){
 //            (self.entity as! DroidEntity).droidComponent.changeDroidMode(state: .Chasing)
             let nextGridNode:GKGridGraphNode = self.newPath[0]

@@ -79,7 +79,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 print(dataObj.prettyPrintedJSONString!)
             }
             try match.sendData(toAllPlayers: dataObj, with: .reliable)
-            self.game.droidDirNetworkMatch(droidData: droidMsg)
+//            self.game.droidDirNetworkMatch(droidData: droidMsg)
             self.msgSentCounter += 1
             self.game.showDbgMsg(dbgMsg: "Sent droidDir: \(nextDir.rawValue)")
         } catch {
@@ -237,9 +237,9 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.game.hitByBulletNetworkMatch(hitByBulletData: newObj as! HitByBulletNetworkData)
         }else if(newObj.msgType == .turnMsg){
             self.game.turnDirNetworkMatch(turnData: newObj as! TurnNetworkData)
-        }else if(newObj.msgType == .droidDirMsg){
+        }/*else if(newObj.msgType == .droidDirMsg){
             self.game.droidDirNetworkMatch(droidData: newObj as! DroidDirNetworkData)
-        }else if(newObj.msgType == .shootWeaponMsg){
+        }*/else if(newObj.msgType == .shootWeaponMsg){
             self.game.shootWeaponNetworkMatch(shootData: newObj as! ShootWeaponNetworkData)
         }
     }
