@@ -78,7 +78,8 @@ class DroidComponent: SuakeBaseSCNNodeComponent {
         self.game.levelManager.gameBoard.setGameBoardField(pos: pos, suakeField: .droid)
     }
     
-    func rotateDroid(newDir:SuakeDir, duration:TimeInterval = SuakeVars.gameStepInterval){
+    @discardableResult
+    func rotateDroid(newDir:SuakeDir, duration:TimeInterval = SuakeVars.gameStepInterval)->TurnDir{
         let dir:SuakeDir = (self.entity as! DroidEntity).dir
         if(newDir != dir){
             if((dir == .UP && newDir == .RIGHT) ||
@@ -87,26 +88,37 @@ class DroidComponent: SuakeBaseSCNNodeComponent {
                 (dir == .LEFT && newDir == .UP)){
                 self.node.runAction(SCNAction.rotateBy(x: 0, y: CGFloat.pi / -2, z: 0, duration: duration))
                 (self.entity as! DroidEntity).dir = newDir
+                return .Right
             }else if((dir == .UP && newDir == .LEFT) ||
                 (dir == .LEFT && newDir == .DOWN) ||
                 (dir == .DOWN && newDir == .RIGHT) ||
                 (dir == .RIGHT && newDir == .UP)){
                 self.node.runAction(SCNAction.rotateBy(x: 0, y: CGFloat.pi / 2, z: 0, duration: duration))
                 (self.entity as! DroidEntity).dir = newDir
+                return .Left
             }else if((dir == .UP && newDir == .DOWN) ||
                 (dir == .LEFT && newDir == .RIGHT) ||
                 (dir == .DOWN && newDir == .UP) ||
                 (dir == .RIGHT && newDir == .LEFT)){
                 self.node.runAction(SCNAction.rotateBy(x: 0, y: CGFloat.pi, z: 0, duration: duration))
                 (self.entity as! DroidEntity).dir = newDir
+                return .One80
             }
         }
+        return .Straight
     }
     
+    @discardableResult
     func nextMove(newDir:SuakeDir)->Bool{
+//        var turnDir:TurnDir = .Straight
         if(newDir != self.playerEntity.dir){
+//            turnDir = self.rotateDroid(newDir: newDir)
             self.rotateDroid(newDir: newDir)
             (self.node as! SuakeBaseMultiAnimatedSCNNode).getAnimPlayer()!.stop()
+            if(self.game.gameCenterHelper.isMultiplayerGameRunning){
+                let droidEntity:DroidEntity = (self.entity as! DroidEntity)
+                self.game.gameCenterHelper.matchMakerHelper.sendDroidDirMsg(nextDir: newDir, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")//(turnDir: turnDir, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")
+            }
             return false
         }else{
             self.nextStep()

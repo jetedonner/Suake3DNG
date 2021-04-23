@@ -103,7 +103,7 @@ class MedKitEntity: SuakeNodeGroupItemBase {
         })
         self.pos = newPos
         if(self.game.gameCenterHelper.isMultiplayerGameRunning){
-            self.game.gameCenterHelper.matchMakerHelper.sendPickedUpMsg(itemType: .medKit, value: CGFloat(self.catchScore), newPos: newPos)
+            self.game.gameCenterHelper.matchMakerHelper.sendPickedUpMsg(itemType: .medKit, value: CGFloat(self.catchScore), newPos: newPos, itemId: self.id)
         }
     }
     

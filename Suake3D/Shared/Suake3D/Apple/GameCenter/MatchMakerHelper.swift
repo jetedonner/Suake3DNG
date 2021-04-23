@@ -69,9 +69,27 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         }
     }
     
-    func sendPickedUpMsg(itemType:SuakeFieldType, value:CGFloat, newPos:SCNVector3) {
+    func sendDroidDirMsg(nextDir:SuakeDir, position:SCNVector3, playerId:String? = nil) {
         do{
-            let pickedUpMsg:PickedUpNetworkData = PickedUpNetworkData(id: self.msgSentCounter, itemType: itemType, value: value, newPos: newPos)
+            let droidMsg:DroidDirNetworkData = DroidDirNetworkData(id: self.msgSentCounter, nextDir: nextDir, position: position, playerId: playerId ?? self.dbgServerPlayerId)
+            guard let dataObj = NetworkHelper.encodeAndSend(netData: droidMsg) else {
+                return
+            }
+            if(NetworkHelper.dbgMode){
+                print(dataObj.prettyPrintedJSONString!)
+            }
+            try match.sendData(toAllPlayers: dataObj, with: .reliable)
+            self.game.droidDirNetworkMatch(droidData: droidMsg)
+            self.msgSentCounter += 1
+            self.game.showDbgMsg(dbgMsg: "Sent droidDir: \(nextDir.rawValue)")
+        } catch {
+            print("Send data failed")
+        }
+    }
+    
+    func sendPickedUpMsg(itemType:SuakeFieldType, value:CGFloat, newPos:SCNVector3, itemId:Int = 0) {
+        do{
+            let pickedUpMsg:PickedUpNetworkData = PickedUpNetworkData(id: self.msgSentCounter, itemType: itemType, value: value, newPos: newPos, itemId: itemId)
 //            let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, position: position, playerId: self.dbgServerPlayerId)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: pickedUpMsg) else {
                 return
@@ -219,6 +237,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.game.hitByBulletNetworkMatch(hitByBulletData: newObj as! HitByBulletNetworkData)
         }else if(newObj.msgType == .turnMsg){
             self.game.turnDirNetworkMatch(turnData: newObj as! TurnNetworkData)
+        }else if(newObj.msgType == .droidDirMsg){
+            self.game.droidDirNetworkMatch(droidData: newObj as! DroidDirNetworkData)
         }else if(newObj.msgType == .shootWeaponMsg){
             self.game.shootWeaponNetworkMatch(shootData: newObj as! ShootWeaponNetworkData)
         }
