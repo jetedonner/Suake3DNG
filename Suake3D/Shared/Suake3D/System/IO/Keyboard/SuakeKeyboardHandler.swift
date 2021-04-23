@@ -26,6 +26,10 @@ class SuakeKeyboardHandler: KeyboardHandler {
         if let pressedKey = KeyboardDirection(rawValue: event.keyCode) {
             
             if(self.game.gameCenterHelper.isMultiplayerGameRunning){
+                if(pressedKey == .KEY_SPACE){
+                    self.game.gameCenterHelper.matchMakerHelper.sendData(msgTyp: .shootWeaponMsg)
+                    return
+                }
                 var turnDir:TurnDir = .Straight
                 switch pressedKey {
                 case .KEY_W:
