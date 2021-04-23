@@ -51,6 +51,28 @@ class SuakeStateMachine:GKStateMachine{
         super.init(states: [self.stateGameLoading, self.stateGameLoadingMulti, self.stateReadyToPlay, self.statePlaying, self.stateMultiPlaying, self.statePaused, self.stateDied, self.stateRespawn, self.stateMatchOver, self.stateMainMenu])
     }
     
+//    func isCurrentState(inStates:[SuakeBaseState.Type])->Bool{
+//        var arrStates:[SuakeBaseState.Type] = [SuakeStatePaused.self, SuakeStateDied.self]
+//        if(arrStates.contains(where: self.currentState!.classForCoder)){
+//            
+//        }
+//    }
+//        var tmpO = self.currentState!
+//        var bRet = false
+//        inStates.forEach({ state in
+//            if(state is tmpO){
+//                bRet = true
+//                return
+//            }
+//        })
+////        for stateClass in inStates{
+////            if(self.currentState stateClass){
+////                return true
+////            }
+////        }
+//        return bRet
+//    }
+    
     @discardableResult
     override func enter(_ stateClass: AnyClass) -> Bool {
         return self.enter(stateClass: stateClass, saveOldState: true)

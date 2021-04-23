@@ -51,9 +51,9 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
 //        self.voiceChat.start()
     }
     
-    func sendTurnMsg(turnDir:TurnDir, position:SCNVector3) {
+    func sendTurnMsg(turnDir:TurnDir, position:SCNVector3, playerId:String? = nil) {
         do{
-            let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, position: position, playerId: self.dbgServerPlayerId)
+            let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, position: position, playerId: playerId ?? self.dbgServerPlayerId)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: turnMsg) else {
                 return
             }
@@ -98,7 +98,6 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 print(dataObj.prettyPrintedJSONString!)
             }
             try match.sendData(toAllPlayers: dataObj, with: .reliable)
-//            self.game.turnDirNetworkMatch(turnData: pickedUpMsg)
             self.msgSentCounter += 1
 //            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
         } catch {
@@ -146,6 +145,9 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 self.game.loadNetworkMatch3(startMatch: sendData)
             }else if(msgTyp == .initLevelMsg){
                 let sendData:LoadLevelNetworkData = LoadLevelNetworkData(id: self.msgSentCounter)
+                
+                sendData.levelConfig.levelEnv = LevelEnvironment(levelSize: self.game.usrDefHlpr.levelSize, floorType: .Debug, skyBoxType: .RedGalaxy, matchDuration: self.game.usrDefHlpr.matchDuration, levelDifficulty: self.game.usrDefHlpr.difficulty, lightIntensity: self.game.usrDefHlpr.lightIntensity) //.matchDuration = self.game.usrDefHlpr.matchDuration
+//                sendData.levelConfig.levelEnv.levelSize = self.game.usrDefHlpr.levelSize
                 
                 sendData.addHost(playerId: self.dbgServerPlayerId, playerName: "DaVe inc.", hostType: .server)
                 self.ownPlayerNetObj = sendData.levelClientServer.first
@@ -236,7 +238,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         if(state == .disconnected){
             for i in 0..<self.setupClientServerData.clientServerData.count{
                 if( self.setupClientServerData.clientServerData[i].playerId == player.playerIDNG){
-                    self.game.overlayManager.hud.showMsg(msg: "Player \(i) disconnected!")
+                    self.game.overlayManager.hud.showMsg(msg: "Player \(i + 1) disconnected!")
                     self.game.playerEntityManager.oppPlayerEntity.playerDied()
                     print(SuakeMsgs.gameCenterMsg + "DISCONNETING: PlayerID: \(player.playerIDNG)")
                     self.setupClientServerData.clientServerData.remove(at: i)

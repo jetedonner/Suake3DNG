@@ -37,7 +37,7 @@ class PanCameraHelper: SuakeGameClass {
     }
     
     func panCamera(_ direction: SIMD2<Float>) {
-        if(self.game.stateMachine.currentState is SuakeStateReadyToPlay || self.game.stateMachine.currentState is SuakeStatePlaying){
+        if(self.game.stateMachine.currentState is SuakeStateReadyToPlay || self.game.stateMachine.currentState is SuakeStatePlaying  || self.game.stateMachine.currentState is SuakeStateMultiplayerPlaying){
 
             self.diffX = direction.x
             self.diffY = direction.y
@@ -141,12 +141,15 @@ class PanCameraHelper: SuakeGameClass {
                 hitTestCat.insert(.suakeOpp)
             }
         }
-//
-//        if(DbgVars.startLoad_Droids){
-//            if(self.checkNodeInsideFrustum(node: self.game.playerEntityManager.getDroidEntity().droidComponent.node)){
-//                hitTestCategoryBitMask = hitTestCategoryBitMask | CollisionCategory.droid.rawValue
-//            }
-//        }
+
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadDroids){
+            for droid in self.game.playerEntityManager.droidsNotDead{
+                if(self.checkNodeInsideFrustum(node: droid.droidComponent.node)){
+                    hitTestCat.insert(.droid)
+                    break
+                }
+            }
+        }
 
         return hitTestCat
     }

@@ -697,6 +697,39 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qnh-ng-kfi">
+                                        <rect key="frame" x="14" y="76" width="147" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="U5a-XN-9i7" id="ISE-t6-6BB">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="BuK-iD-G7e">
+                                                <items>
+                                                    <menuItem title="Item 1" state="on" id="U5a-XN-9i7"/>
+                                                    <menuItem title="Item 2" id="qtn-Su-6hn"/>
+                                                    <menuItem title="Item 3" id="cUf-De-Bcm"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <binding destination="-2" name="content" keyPath="optionsForMatchDurration" id="yCz-GR-4Ea"/>
+                                            <binding destination="-2" name="contentValues" keyPath="optionsForMatchDurration.name" previousBinding="yCz-GR-4Ea" id="vr2-up-4sZ"/>
+                                            <binding destination="Obd-p7-6Vt" name="selectedValue" keyPath="values.MatchDuration" previousBinding="vr2-up-4sZ" id="XAT-lf-Xbm">
+                                                <dictionary key="options">
+                                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </popUpButton>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-Xb-mCW">
+                                        <rect key="frame" x="163" y="81" width="89" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Round Time" id="s3g-Em-4Cw">
+                                            <font key="font" size="16" name="DpQuake"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                             </view>
                         </tabViewItem>

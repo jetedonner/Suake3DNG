@@ -665,7 +665,7 @@ class SuakeKeyboardHandler: KeyboardHandler {
     
     override func capsLockChanged(on: Bool) {
         super.capsLockChanged(on: on)
-        let checkState:Bool = (self.game.stateMachine.currentState is SuakeStatePlaying || self.game.stateMachine.currentState is SuakeStateReadyToPlay)
+        let checkState:Bool = (self.game.stateMachine.currentState is SuakeStatePlaying || self.game.stateMachine.currentState is SuakeStateMultiplayerPlaying || self.game.stateMachine.currentState is SuakeStateReadyToPlay) //self.game.stateMachine.isCurrentState(inStates: [SuakeStatePlaying.Type, SuakeStateMultiplayerPlaying.Type, SuakeStateReadyToPlay.Type]) // (self.game.stateMachine.currentState is SuakeStatePlaying || self.game.stateMachine.currentState is SuakeStateMultiplayerPlaying || self.game.stateMachine.currentState is SuakeStateReadyToPlay)
         
         guard checkState else {
             return

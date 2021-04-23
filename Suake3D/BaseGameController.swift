@@ -32,7 +32,7 @@ class BaseGameController:NSObject{
         self.scnView.window?.center()
         self.gameWindowSize = CGSize(width: frame!.size.width, height: frame!.size.height)
         
-        self.scene = SCNScene(named: "art.scnassets/scenes/gamescene.scn")!
+        self.scene = SCNScene(named: "art.scnassets/scenes/gamescene.scn")! //Landscape.scn")! //gamescene.scn")!
         self.floorNode = (self.scene.rootNode.childNode(withName: "floor", recursively: true))!
         self.floorNode.physicsBody?.categoryBitMask = CollisionCategory.floor.rawValue
         super.init()
