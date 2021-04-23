@@ -86,7 +86,8 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         self.game.physicsHelper.qeueNode2Remove(node: self.playerComponent.mainNode)
         self.explodingComponent.explode()
         self.game.overlayManager.hud.healthBars[self]?.node.removeFromParent()
-        
+//        self.game.overlayManager.hud.overlayScene.map!.suakeOppNode
+        self.mapNode?.removeFromParent()
         self.statsComponent.add2StatsValue(suakeStatsType: .deaths)
         
 //        bullet.weapon.weaponArsenalManager.playerEntity.statsComponent.addNewStats(statsType: .opponetKilled, score: self.killScore)

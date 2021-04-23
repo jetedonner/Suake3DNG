@@ -61,6 +61,9 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 print(dataObj.prettyPrintedJSONString!)
             }
             try match.sendData(toAllPlayers: dataObj, with: .reliable)
+            self.game.turnDirNetworkMatch(turnData: turnMsg)
+            self.msgSentCounter += 1
+            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
         } catch {
             print("Send data failed")
         }
@@ -135,6 +138,8 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 }
                 try match.sendData(toAllPlayers: dataShootWeapon, with: .unreliable)
                 self.game.shootWeaponNetworkMatch(shootData: shootData)
+            }else if(msgTyp == .shootWeaponMsg){
+                
             }
             self.msgSentCounter += 1
         } catch {

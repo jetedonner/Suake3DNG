@@ -32,7 +32,7 @@ class PhysicsHelper: SuakeGameClass, SCNSceneRendererDelegate {
 //            return
 //        }
 //        
-        if(!(self.game.stateMachine.currentState is SuakeStatePlaying)){
+        if(!(self.game.stateMachine.currentState is SuakeStatePlaying) && !(self.game.stateMachine.currentState is SuakeStateMultiplayerPlaying)){
             return
         }
 //        return
