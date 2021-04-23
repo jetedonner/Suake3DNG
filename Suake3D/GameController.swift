@@ -160,4 +160,11 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
 
         })
     }
+    
+    override func quitSuake3D(){
+        super.quitSuake3D()
+        if(self.gameCenterHelper.isMultiplayerGameRunning){
+            self.gameCenterHelper.matchMakerHelper.match.disconnect()
+        }
+    }
 }
