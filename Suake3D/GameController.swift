@@ -109,7 +109,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
 //            self.playerEntityManager.goodyEntity.pos = pickedUpData.newPos
             self.playerEntityManager.goodyEntity.reposGoodyAfterCatch(newPos: pickedUpData.newPos)
         }else if(pickedUpData.itemType == .medKit){
-            ((self.locationEntityManager.entityGroups[.MedKit] as? MedKitEntityGroup)?.groupItems[0] as! MedKitEntity).reposMedKitAfterCatch(newPos: pickedUpData.newPos) 
+            ((self.locationEntityManager.entityGroups[.MedKit] as? MedKitEntityGroup)?.groupItems[0] as! MedKitEntity).reposMedKitAfterCatch(newPos: pickedUpData.newPos)
+            //Kim
         }
     }
     
