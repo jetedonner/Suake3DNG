@@ -36,10 +36,17 @@ class MultiplayerLevel: SuakeBaseLevel{
         self.game.playerEntityManager.goodyEntity.setup(pos: self.levelConfigNet.levelConfig.levelSetup.goodyPos)
         
         
-        for droid in self.game.playerEntityManager.droidsNotDead{
-            droid.setup(posDir: self.levelConfigNet.levelConfig.levelSetup.droidPosDir[0])
-//            droid.setup(pos: self.levelConfigNet.levelConfig.levelSetup.droidsPos[droid.id], dir: self.levelConfigNet.levelConfig.levelSetup.droidsDir[droid.id])
+        var idx:Int = 0
+        for droidPosDir in self.levelConfigNet.levelConfig.levelSetup.droidPosDir{
+            self.game.playerEntityManager.droidEntities[idx].setup(pos: droidPosDir.pos)
+            self.game.playerEntityManager.droidEntities[idx].dir = droidPosDir.dir
+            idx += 1
         }
+        
+//        for droid in self.game.playerEntityManager.droidsNotDead{
+//            droid.setup(posDir: self.levelConfigNet.levelConfig.levelSetup.droidPosDir[0])
+////            droid.setup(pos: self.levelConfigNet.levelConfig.levelSetup.droidsPos[droid.id], dir: self.levelConfigNet.levelConfig.levelSetup.droidsDir[droid.id])
+//        }
         
         self.game.levelManager.currentLevel.weaponPickUps.getNewWeaponPickupEntity(weaponType: .mg).pos = self.levelConfigNet.levelConfig.levelSetup.mgPickupPos
         //MedKit
