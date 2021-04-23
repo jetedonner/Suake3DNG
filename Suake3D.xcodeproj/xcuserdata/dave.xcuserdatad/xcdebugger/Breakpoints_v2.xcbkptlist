@@ -1618,8 +1618,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Crosshair/CrosshairEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "setCurrentWeaponType(weaponType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1634,8 +1634,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Crosshair/CrosshairEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "addToHUD(hud:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2002,8 +2002,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/IO/Audio/SoundManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "playBulletHitSound(weaponType:node:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2018,8 +2018,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/IO/Audio/SoundManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "playBulletHitSound(weaponType:node:)"
             landmarkType = "7">
          </BreakpointContent>

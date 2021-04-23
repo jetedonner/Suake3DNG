@@ -8,6 +8,7 @@
 import Foundation
 import GameplayKit
 import SceneKit
+import NetTestFW
 
 class RPGComponent: BaseWeaponComponent {
  

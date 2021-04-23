@@ -7,6 +7,7 @@
 
 import Foundation
 import SceneKit
+import NetTestFW
 
 class GoodyEntity: SuakeBasePlayerEntity {
     
@@ -30,8 +31,25 @@ class GoodyEntity: SuakeBasePlayerEntity {
     }
     
     func goodyHit(bullet:BulletBase){
+        if(self.game.gameCenterHelper.isMultiplayerGameRunning && self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerId == self.game.gameCenterHelper.matchMakerHelper.dbgClientPlayerId){
+            return
+        }
         self.healthComponent.decHealth(decVal: bullet.damage * 1.25)
         self.goodyHit(playerEntity: bullet.weapon.weaponArsenalManager.playerEntity, withBullet: true)
+        if(self.game.gameCenterHelper.isMultiplayerGameRunning && self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerId != self.game.gameCenterHelper.matchMakerHelper.dbgClientPlayerId){
+            self.game.gameCenterHelper.matchMakerHelper.sendHitByBulletMsg(itemType: .goody, weaponType: bullet.weapon.weaponType, value: bullet.damage, pos: bullet.position)//(itemType: .goody, value: CGFloat(self.killScore), newPos: newPos)
+        }
+    }
+    
+    func goodyHitNet(hitByBulletMsg:HitByBulletNetworkData){
+//        if(self.game.gameCenterHelper.isMultiplayerGameRunning && self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerId == self.game.gameCenterHelper.matchMakerHelper.dbgClientPlayerId){
+//            return
+//        }
+        self.healthComponent.decHealth(decVal: hitByBulletMsg.value * 1.25)
+        self.goodyHit(playerEntity: self.game.playerEntityManager.ownPlayerEntity, withBullet: true)
+//        if(self.game.gameCenterHelper.isMultiplayerGameRunning && self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerId != self.game.gameCenterHelper.matchMakerHelper.dbgClientPlayerId){
+//            self.game.gameCenterHelper.matchMakerHelper.sendHitByBulletMsg(itemType: .goody, weaponType: bullet.weapon.weaponType, value: bullet.damage, pos: bullet.position)//(itemType: .goody, value: CGFloat(self.killScore), newPos: newPos)
+//        }
     }
     
     func goodyHit(playerEntity:SuakeBasePlayerEntity, withBullet:Bool = false){

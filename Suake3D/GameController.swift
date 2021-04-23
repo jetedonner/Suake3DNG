@@ -111,6 +111,14 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         }
     }
     
+    func hitByBulletNetworkMatch(hitByBulletData:HitByBulletNetworkData){
+//        self.playerEntityManager.ownPlayerEntity.shoot()
+        if(hitByBulletData.itemType == .goody){
+//            self.playerEntityManager.goodyEntity.pos = pickedUpData.newPos
+            self.playerEntityManager.goodyEntity.goodyHitNet(hitByBulletMsg: hitByBulletData)
+        }
+    }
+    
     func shootWeaponNetworkMatch(shootData:ShootWeaponNetworkData){
         self.playerEntityManager.ownPlayerEntity.shoot()
     }

@@ -27,7 +27,6 @@
 		5501836026015B7C00F28C54 /* MouseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501835F26015B7C00F28C54 /* MouseProtocol.swift */; };
 		5501836F260164BC00F28C54 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5501836E260164BC00F28C54 /* NetworkExtension.framework */; };
 		5501837626016E7900F28C54 /* WeaponArsenalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501837526016E7900F28C54 /* WeaponArsenalManager.swift */; };
-		5501837E26016EFE00F28C54 /* WeaponType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501837D26016EFE00F28C54 /* WeaponType.swift */; };
 		5501838326016F1300F28C54 /* BaseWeaponComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501838226016F1300F28C54 /* BaseWeaponComponent.swift */; };
 		5501838926016FB400F28C54 /* MachinegunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501838826016FB400F28C54 /* MachinegunComponent.swift */; };
 		5501839126016FD700F28C54 /* MachinegunBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501839026016FD700F28C54 /* MachinegunBullet.swift */; };
@@ -289,7 +288,6 @@
 		5501835F26015B7C00F28C54 /* MouseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseProtocol.swift; sourceTree = "<group>"; };
 		5501836E260164BC00F28C54 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		5501837526016E7900F28C54 /* WeaponArsenalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponArsenalManager.swift; sourceTree = "<group>"; };
-		5501837D26016EFE00F28C54 /* WeaponType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponType.swift; sourceTree = "<group>"; };
 		5501838226016F1300F28C54 /* BaseWeaponComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWeaponComponent.swift; sourceTree = "<group>"; };
 		5501838826016FB400F28C54 /* MachinegunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachinegunComponent.swift; sourceTree = "<group>"; };
 		5501839026016FD700F28C54 /* MachinegunBullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachinegunBullet.swift; sourceTree = "<group>"; };
@@ -585,7 +583,6 @@
 				552417EB260A7E57002C90FC /* BaseWeaponPickupEntity.swift */,
 				5501839526016FF500F28C54 /* BulletBase.swift */,
 				5501838226016F1300F28C54 /* BaseWeaponComponent.swift */,
-				5501837D26016EFE00F28C54 /* WeaponType.swift */,
 				5501837526016E7900F28C54 /* WeaponArsenalManager.swift */,
 			);
 			path = Base;
@@ -1766,7 +1763,6 @@
 				556CB92F25FFD771005B7747 /* EntityManager.swift in Sources */,
 				55760E3C25FD2C7C00C10784 /* GSAudio.swift in Sources */,
 				554233DE2632168600EB55F9 /* ShotgunComponent.swift in Sources */,
-				5501837E26016EFE00F28C54 /* WeaponType.swift in Sources */,
 				55760E3725FD2C3800C10784 /* SoundType.swift in Sources */,
 				55DB993325FC0CFF000023AF /* ResVars.swift in Sources */,
 				551F3D41260BF056006D9F65 /* SuakeMoveComponentOppExt.swift in Sources */,
