@@ -80,16 +80,16 @@ class BaseWeaponComponent: GKComponent {
         self.setWeaponSoundType(weapontype: weaponType)
     }
     
-    func fireShot(at:SCNVector3? = nil){
+    func fireShot(at:SCNVector3? = nil, velocity:Bool = false){
         self.game.scene.isPaused = false
         self.lastShot = CACurrentMediaTime()
         self.game.overlayManager.hud.overlayScene.crosshairEntity.reloadIndicatorComponent.startReloadBar(duration: self.cadence)
     }
     
-    func shoot(at:SCNVector3? = nil){
+    func shoot(at:SCNVector3? = nil, velocity:Bool = false){
         if(self.checkCadenceDelay() && !self.reloading){
             if(self.ammoCount > 0){
-                self.fireShot(at: at)
+                self.fireShot(at: at, velocity: velocity)
                 self.ammoCount -= 1
                 if(self.ammoCount % self.clipSize == 0){
                     self.game.overlayManager.hud.weaponComponent.setAmmoCount(ammoCount: self.ammoCount, clipSize: self.clipSize, color: .suake3DRed)
@@ -141,8 +141,13 @@ class BaseWeaponComponent: GKComponent {
         if(target != nil){
             shotStartPosition = self.getShotStartVelocity4Target(projectile: bulletNode, target: target!)
         }
-        let result:SCNVector3 = SCNVector3(x: shotStartPosition.x * bulletNode.shootingVelocity, y: shotStartPosition.y * bulletNode.shootingVelocity, z: shotStartPosition.z * bulletNode.shootingVelocity)
-        return result
+        return self.applySpeed2Velocity(velocity: shotStartPosition, bulletNode: bulletNode)
+//        let result:SCNVector3 = SCNVector3(x: shotStartPosition.x * bulletNode.shootingVelocity, y: shotStartPosition.y * bulletNode.shootingVelocity, z: shotStartPosition.z * bulletNode.shootingVelocity)
+//        return result
+    }
+    
+    func applySpeed2Velocity(velocity:SCNVector3, bulletNode:BulletBase)->SCNVector3{
+        return SCNVector3(x: velocity.x * bulletNode.shootingVelocity, y: velocity.y * bulletNode.shootingVelocity, z: velocity.z * bulletNode.shootingVelocity)
     }
     
     func getShotStartRotation()->SCNVector4{

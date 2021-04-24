@@ -19,13 +19,17 @@ class MachinegunComponent: BaseWeaponComponent {
         self.ammoCount = SuakeVars.INITIAL_MACHINEGUN_AMMOCOUNT
     }
 
-    override func fireShot(at:SCNVector3? = nil){
-        super.fireShot(at: at)
+    override func fireShot(at:SCNVector3? = nil, velocity:Bool = false){
+        super.fireShot(at: at, velocity: velocity)
         let shot:MachinegunBullet = MachinegunBullet(game: self.game, weapon: self)
         shot.position = self.getShotStartPosition()
         shot.rotation = self.getShotStartRotation()
-        let velocity:SCNVector3 = self.getShotStartVelocity(bulletNode: shot, target: at)
-        shot.physicsBody?.velocity = velocity
+        if(velocity && at != nil){
+            shot.physicsBody?.velocity = self.applySpeed2Velocity(velocity: at!, bulletNode: shot)
+        }else{
+            let velocity:SCNVector3 = self.getShotStartVelocity(bulletNode: shot, target: at)
+            shot.physicsBody?.velocity = velocity
+        }
         self.game.physicsHelper.qeueNode2Add2Scene(node: shot)
     }
     

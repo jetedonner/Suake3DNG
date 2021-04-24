@@ -118,7 +118,7 @@ class WeaponArsenalManager: SuakeGameClass {
         return nil
     }
     
-    func shoot(at:SCNVector3? = nil){
-        self.currentWeapon.shoot(at: at)
+    func shoot(at:SCNVector3? = nil, velocity:Bool = false){
+        self.currentWeapon.shoot(at: at, velocity: velocity)
     }
 }

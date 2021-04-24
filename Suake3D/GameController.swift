@@ -125,7 +125,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     func shootWeaponNetworkMatch(shootData:ShootWeaponNetworkData){
 //        shootData.playerId
         self.playerEntityManager.ownPlayerEntity.weapons.setCurrentWeaponType(weaponType: shootData.weaponType, playAudio: false)
-        self.playerEntityManager.ownPlayerEntity.shoot(at: shootData.velocity)
+        self.playerEntityManager.ownPlayerEntity.shoot(at: shootData.velocity, velocity: true)
     }
     
     func droidPathNetworkMatch(droidDirData:DroidPathNetworkData){

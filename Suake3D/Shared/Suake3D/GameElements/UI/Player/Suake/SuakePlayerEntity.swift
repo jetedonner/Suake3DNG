@@ -160,8 +160,8 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
        }
     }
     
-    func shoot(at:SCNVector3? = nil){
-        self.weapons.shoot(at: at)
+    func shoot(at:SCNVector3? = nil, velocity:Bool = false){
+        self.weapons.shoot(at: at, velocity: velocity)
     }
     
     override func update(deltaTime seconds: TimeInterval) {

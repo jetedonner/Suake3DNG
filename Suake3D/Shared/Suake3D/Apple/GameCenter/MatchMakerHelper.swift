@@ -207,6 +207,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             }else if(msgTyp == .shootWeaponMsg){
                 let shootData:ShootWeaponNetworkData = ShootWeaponNetworkData(id: self.msgSentCounter)
                 shootData.origin = self.game.playerEntityManager.oppPlayerEntity.cameraComponent.cameraNodeFP.position
+                shootData.velocity = self.game.playerEntityManager.ownPlayerEntity.cameraComponent.cameraNodeFP.worldFront
                 guard let dataShootWeapon = NetworkHelper.encodeAndSend(netData: shootData) else {
                     return
                 }
@@ -223,6 +224,22 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             print("Send data failed")
         }
     }
+    
+//    private func getShotStartVelocity4Target(projectile:SCNNode, target: SCNVector3) -> SCNVector3 {
+//        let origin = projectile.presentation.position
+//        var dir = target - origin
+//        dir.y = 0
+//        return dir.normalized()
+//    }
+//
+//    func getShotStartVelocity()->SCNVector3 {
+//        return self.game.playerEntityManager.ownPlayerEntity.cameraComponent.cameraNodeFP.worldFront //(self.weaponArsenalManager.playerEntity as! SuakePlayerEntity).cameraComponent.cameraNodeFP.worldFront // self.game.cameraHelper.cameraNodeFP.worldFront
+////        if(target != nil){
+////            shotStartPosition = self.getShotStartVelocity4Target(projectile: bulletNode, target: target!)
+////        }
+////        let result:SCNVector3 = SCNVector3(x: shotStartPosition.x * bulletNode.shootingVelocity, y: shotStartPosition.y * bulletNode.shootingVelocity, z: shotStartPosition.z * bulletNode.shootingVelocity)
+////        return result
+//    }
     
     func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {
         print("RECEIVING Suake3D-MSG (No: \(self.msgRecvCounter)) ...")

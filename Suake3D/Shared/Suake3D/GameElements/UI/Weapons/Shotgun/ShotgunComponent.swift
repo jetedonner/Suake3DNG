@@ -43,8 +43,8 @@ class ShotgunComponent: BaseWeaponComponent {
 //    }
     
     var firedShots:[ShotgunPelletGrp] = [ShotgunPelletGrp]()
-    override func fireShot(at:SCNVector3? = nil){
-        super.fireShot(at: at)
+    override func fireShot(at:SCNVector3? = nil, velocity:Bool = false){
+        super.fireShot(at: at, velocity: velocity)
         let newShot:ShotgunPelletGrp = ShotgunPelletGrp(game: self.game, weapon: self)
         //let newShot:ShotgunPelletGrp = shot.flattenedClone()
 //        newShot.game = self.game

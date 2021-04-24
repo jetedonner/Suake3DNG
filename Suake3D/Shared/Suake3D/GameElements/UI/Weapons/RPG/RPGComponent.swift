@@ -19,8 +19,8 @@ class RPGComponent: BaseWeaponComponent {
         self.ammoCount = SuakeVars.INITIAL_RPG_AMMOCOUNT
     }
     
-    override func fireShot(at:SCNVector3? = nil){
-        super.fireShot(at: at)
+    override func fireShot(at:SCNVector3? = nil, velocity:Bool = false){
+        super.fireShot(at: at, velocity: velocity)
         let shot:RPGRocket = RPGRocket(game: self.game, weapon: self)
         shot.position = self.getShotStartPosition()
         shot.rotation = self.getShotStartRotation()

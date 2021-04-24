@@ -32,8 +32,8 @@ class SniperrifleComponent: BaseWeaponComponent {
 //        self.game.physicsHelper.qeueNode2Add2Scene(node: shot)
 //    }
     
-    override func fireShot(at:SCNVector3? = nil){
-        super.fireShot(at: at)
+    override func fireShot(at:SCNVector3? = nil, velocity:Bool = false){
+        super.fireShot(at: at, velocity: velocity)
         let shot:SniperBullet = SniperBullet(game: self.game, weapon: self)
         let velocity:SCNVector3 = self.getShotStartVelocity(bulletNode: shot)
         shot.position = self.getShotStartPosition()

@@ -30,8 +30,8 @@ class RailgunComponent: BaseWeaponComponent {
 //    }
     
     
-    override func fireShot(at:SCNVector3? = nil){
-        super.fireShot(at: at)
+    override func fireShot(at:SCNVector3? = nil, velocity:Bool = false){
+        super.fireShot(at: at, velocity: velocity)
         let beam:RailgunBeam = RailgunBeam(game: self.game, weapon: self)
         beam.addRailgunShot()
         self.game.physicsHelper.qeueNode2Add2Scene(node: beam)
