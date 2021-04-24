@@ -80,7 +80,8 @@ class GameViewMacOS: SCNView {
             self.viewController?.gameController?.overlayManager.mainMenu.mouseMovedHandler(with: event)
 //            self.viewController?.gameController?.overlayManager.tutorialOverlay.mouseMovedHandler(with: event)
 
-        }else if(self.viewController?.gameController?.stateMachine.currentState is SuakeStatePlaying || self.viewController?.gameController?.stateMachine.currentState is SuakeStateReadyToPlay){
+        }else if(self.viewController?.gameController?.stateMachine.currentState is SuakeStatePlaying ||
+                    self.viewController?.gameController?.stateMachine.currentState is SuakeStateMultiplayerPlaying || self.viewController?.gameController?.stateMachine.currentState is SuakeStateReadyToPlay){
 
             if(!self.viewController!.gameController!.cameraHelper.fpv){
                 return
