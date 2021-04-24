@@ -167,6 +167,61 @@ class CameraHelper: SuakeGameClass {
         }else{
             self.animatingFPV = true
         }
+        fpv = newFPV
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
+        
+        let oldTransform:SCNMatrix4 = self.game.scnView.pointOfView!.transform
+        if(newFPV){
+//            SCNTransaction.begin()
+//            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
+//            SCNTransaction.commit()
+//            self.game.scnView.pointOfView?.runAction(SCNAction.run({_ in
+//                self.game.scnView.pointOfView = self.cameraNodeFP
+//            }))
+//            let tmp:SCNAction = SCNAction.run({_ in
+//            self.game.scnView.pointOfView = self.cameraNodeFP
+            self.game.scnView.pointOfView?.transform = self.cameraNodeFP.transform
+            MouseHelper.showMouseCursor(show: false)
+            SCNTransaction.completionBlock = {
+                self.game.scnView.pointOfView? = self.cameraNodeFP
+                self.cameraNode.transform = oldTransform
+                self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
+                self.animatingFPV = false
+            }
+//            })
+//            tmp.duration = 0.45
+//            self.game.scnView.pointOfView?.runAction(tmp)
+        }else{
+//            self.game.scnView.pointOfView = self.cameraNode
+//            let tmp2:SCNAction = SCNAction.run({_ in
+//                self.game.scnView.pointOfView = self.cameraNode
+            self.game.scnView.pointOfView?.transform = self.cameraNode.transform
+            self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = true
+            MouseHelper.showMouseCursor()
+            SCNTransaction.completionBlock = {
+                self.game.scnView.pointOfView? = self.cameraNode
+                self.cameraNodeFP.transform = oldTransform
+                self.animatingFPV = false
+            }
+//            })
+//            tmp2.duration = 0.45
+//            self.game.scnView.pointOfView?.runAction(tmp2)
+        }
+        
+        SCNTransaction.commit()
+    }
+    
+    func toggleFPVOLD(){
+        toggleFPV(newFPV: !fpv)
+    }
+    
+    func toggleFPVOLD(newFPV:Bool){
+        if(animatingFPV){
+            return
+        }else{
+            self.animatingFPV = true
+        }
         if(!newFPV){
             fpv = newFPV
         }

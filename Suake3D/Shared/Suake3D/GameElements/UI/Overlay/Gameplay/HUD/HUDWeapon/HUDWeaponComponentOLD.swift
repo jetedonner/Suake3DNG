@@ -18,6 +18,7 @@ class HUDWeaponComponentOLD: BaseExtHUDComponent {
     let imgShotgun:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/shotgun.png")
     let imgRPG:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/rpg.png")
     let imgRailgun:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/railgun.png")
+    let imgSniperrifle:SKSpriteNode = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/images/sniperrifle.png")
 //    let mgImgFile:String            = "art.scnassets/overlays/gameplay/images/mg.png"
 //    let textMg:SKTexture
 //    let shotgunImgFile:String       = "art.scnassets/overlays/gameplay/images/shotgun.png"
@@ -86,6 +87,8 @@ class HUDWeaponComponentOLD: BaseExtHUDComponent {
                 self.imgWeapon.texture = self.imgRPG.texture
             case .railgun:
                 self.imgWeapon.texture = self.imgRailgun.texture
+            case .sniperrifle:
+                self.imgWeapon.texture = self.imgSniperrifle.texture
 //            case .shotgun:
 //                self.imgWeapon.texture = self.textShotgun // SKTexture(imageNamed: self.shotgunImgFile)
 //                newTexture = self.textShotgun

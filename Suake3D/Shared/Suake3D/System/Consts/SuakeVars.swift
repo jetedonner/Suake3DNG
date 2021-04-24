@@ -83,7 +83,7 @@ class SuakeVars{
 //    static let INITIAL_SHOTGUN_AMMOCOUNT:Int = 25
     
     
-    static let INITIAL_SNIPERRIFLE_AMMOCOUNT:Int = 20
+    
     static let INITIAL_NUKE_AMMOCOUNT:Int = 3
     
     static let INITIAL_GRENADE_CLIPSIZE:Int = 1
@@ -111,7 +111,11 @@ class SuakeVars{
     static let INITIAL_RAILGUN_AMMORELOADCOUNT:Int = 30
     static let INITIAL_RAILGUN_CADENCE:TimeInterval = 1.25
     
+    static let INITIAL_SNIPERRIFLE_AMMOCOUNT:Int = 20
     static let INITIAL_SNIPERRIFLE_CLIPSIZE:Int = 5
+    static let INITIAL_SNIPERRIFLE_AMMORELOADCOUNT:Int = 20
+    static let INITIAL_SNIPERRIFLE_CADENCE:TimeInterval = 3.05
+    
     static let INITIAL_NUKE_CLIPSIZE:Int = 1
     
     static let HEALTHBAR_WIDTH:CGFloat = 200

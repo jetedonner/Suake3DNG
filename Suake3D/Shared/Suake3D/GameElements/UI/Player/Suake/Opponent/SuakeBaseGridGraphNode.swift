@@ -12,6 +12,24 @@ import NetTestFW
 
 class SuakeBaseGridGraphNode:GKGridGraphNode, Codable {
 
+    private enum CodingKeys: String, CodingKey {
+        case gridPosition
+//        case msgType
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let gridPosition = try container.decode(vector_int2.self, forKey: .gridPosition)
+        super.init(gridPosition: gridPosition)
+//        self.position = try container.decode(SCNVector3.self, forKey: .position)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.gridPosition, forKey: .gridPosition)
+        
+//        try super.encode(to: encoder)
+    }
 //    var game:GameController!
 //    var suakeField:SuakeField!
 //    

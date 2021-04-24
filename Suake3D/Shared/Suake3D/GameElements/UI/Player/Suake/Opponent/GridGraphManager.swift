@@ -52,7 +52,7 @@ class GridGraphManager:SuakeGameClass{
     func findPath(fromEntity: SuakeBasePlayerEntity, toEntity:SuakeBasePlayerEntity)->[SuakeGridGraphNode]{
         self.findPathFromTo(posFrom: fromEntity.pos, posTo: toEntity.pos)
     }
-
+    
     func findPathFromTo(posFrom:SCNVector3, posTo:SCNVector3, doNotRemoveFirst:Bool = false)->[SuakeGridGraphNode]{
         if let currentNode = gridGraph.node(atGridPosition: SIMD2<Int32>(x: Int32(posFrom.x), y: Int32(posFrom.z))){
 

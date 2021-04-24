@@ -1362,9 +1362,9 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/CameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "toggleFPV(newFPV:)"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "toggleFPVOLD(newFPV:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1394,8 +1394,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/IO/Keyboard/SuakeKeyboardHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "keyPressedEvent(event:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1618,8 +1618,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Crosshair/CrosshairEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "setCurrentWeaponType(weaponType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1634,8 +1634,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Crosshair/CrosshairEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "addToHUD(hud:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1682,8 +1682,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/IO/Keyboard/SuakeKeyboardHandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "keyPressedEvent(event:)"
             landmarkType = "7">
          </BreakpointContent>

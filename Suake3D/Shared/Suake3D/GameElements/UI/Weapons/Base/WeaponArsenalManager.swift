@@ -67,9 +67,9 @@ class WeaponArsenalManager: SuakeGameClass {
         if(weaponTypes.contains(.railgun)){
             self.allWeapons.append(RailgunComponent(game: self.game, weaponArsenalManager: self))
         }
-//        if(weaponTypes.contains(.sniperrifle)){
-//            self.allWeapons.append(SniperrifleComponent(game: self.game, weaponArsenalManager: self))
-//        }
+        if(weaponTypes.contains(.sniperrifle)){
+            self.allWeapons.append(SniperrifleComponent(game: self.game, weaponArsenalManager: self))
+        }
 //        if(weaponTypes.contains(.redeemer)){
 //            self.allWeapons.append(RedeemerComponent(game: self.game, weaponArsenalManager: self))
 //        }

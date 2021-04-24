@@ -115,10 +115,10 @@ class DroidComponent: SuakeBaseSCNNodeComponent {
 //            turnDir = self.rotateDroid(newDir: newDir)
             self.rotateDroid(newDir: newDir)
             (self.node as! SuakeBaseMultiAnimatedSCNNode).getAnimPlayer()!.stop()
-            if(self.game.gameCenterHelper.isMultiplayerGameRunning){
-                let droidEntity:DroidEntity = (self.entity as! DroidEntity)
-                self.game.gameCenterHelper.matchMakerHelper.sendDroidDirMsg(nextDir: newDir, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")//(turnDir: turnDir, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")
-            }
+//            if(self.game.gameCenterHelper.isMultiplayerGameRunning){
+//                let droidEntity:DroidEntity = (self.entity as! DroidEntity)
+//                self.game.gameCenterHelper.matchMakerHelper.sendDroidDirMsg(nextDir: newDir, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")//(turnDir: turnDir, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")
+//            }
             return false
         }else{
             self.nextStep()

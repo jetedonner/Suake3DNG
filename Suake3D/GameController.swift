@@ -126,6 +126,10 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.playerEntityManager.ownPlayerEntity.shoot()
     }
     
+    func droidPathNetworkMatch(droidDirData:DroidPathNetworkData){
+        self.playerEntityManager.droidEntities[0].droidAIComponent.newPath = droidDirData.path
+    }
+    
     func turnDirNetworkMatch(turnData:TurnNetworkData){
 //        if(turnData.playerId.starts(with: "Droid-")){
 //            var droidIdParts:[String.SubSequence] = turnData.playerId.split(separator: "-")
