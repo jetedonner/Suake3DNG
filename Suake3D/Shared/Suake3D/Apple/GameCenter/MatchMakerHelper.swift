@@ -87,7 +87,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         }
     }
     
-    func sendDroidDirMsg(path:[SuakeBaseGridGraphNode], position:SCNVector3, playerId:String? = nil) {
+    func sendDroidPathMsg(path:[SuakeBaseGridGraphNode], position:SCNVector3, playerId:String? = nil) {
         do{
             let droidMsg:DroidPathNetworkData = DroidPathNetworkData(id: self.msgSentCounter, path: path, position: position, playerId: playerId ?? self.dbgServerPlayerId)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: droidMsg) else {
@@ -255,7 +255,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.game.hitByBulletNetworkMatch(hitByBulletData: newObj as! HitByBulletNetworkData)
         }else if(newObj.msgType == .turnMsg){
             self.game.turnDirNetworkMatch(turnData: newObj as! TurnNetworkData)
-        }else if(newObj.msgType == .droidDirMsg){
+        }else if(newObj.msgType == .droidPathMsg){
             self.game.droidPathNetworkMatch(droidDirData: newObj as! DroidPathNetworkData)
         }/*else if(newObj.msgType == .droidDirMsg){
             self.game.droidDirNetworkMatch(droidData: newObj as! DroidDirNetworkData)

@@ -40,7 +40,7 @@ class DroidAIComponent: SuakeBaseComponent {
         self.newPath = self.game.gridGraphManager.findPath(fromEntity: self.playerEntity, toEntity: entity)
         if(self.game.gameCenterHelper.isMultiplayerGameRunning){
             let droidEntity:DroidEntity = (self.entity as! DroidEntity)
-            self.game.gameCenterHelper.matchMakerHelper.sendDroidDirMsg(path: self.newPath, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")//(turnDir: turnDir, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")
+            self.game.gameCenterHelper.matchMakerHelper.sendDroidPathMsg(path: self.newPath, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")//(turnDir: turnDir, position: droidEntity.pos, playerId: "Droid-\(droidEntity.id)")
         }
     }
     
