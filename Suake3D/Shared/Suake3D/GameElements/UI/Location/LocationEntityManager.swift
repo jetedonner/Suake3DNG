@@ -11,6 +11,9 @@ import GameplayKit
 
 class LocationEntityManager: EntityManager {
     
+    var portalPairs:[PortalEntityPair] = [PortalEntityPair]()
+    var portals:[PortalEntity] = [PortalEntity]()
+    
     override init(game: GameController) {
         super.init(game: game)
     }

@@ -233,6 +233,11 @@
 		55E9EA4B2633EAB6005E3256 /* SniperrifleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9EA492633EAB6005E3256 /* SniperrifleComponent.swift */; };
 		55E9EA4F2633ED09005E3256 /* SniperrifleCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9EA4E2633ED09005E3256 /* SniperrifleCrosshairComponent.swift */; };
 		55E9EA532633ED9E005E3256 /* SniperVisionDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9EA522633ED9E005E3256 /* SniperVisionDirection.swift */; };
+		55E9EA5E2634487B005E3256 /* PortalEntityPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9EA592634487B005E3256 /* PortalEntityPair.swift */; };
+		55E9EA5F2634487B005E3256 /* PortalPairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9EA5A2634487B005E3256 /* PortalPairComponent.swift */; };
+		55E9EA602634487B005E3256 /* PortalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9EA5B2634487B005E3256 /* PortalEntity.swift */; };
+		55E9EA612634487B005E3256 /* BasePortalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9EA5C2634487B005E3256 /* BasePortalComponent.swift */; };
+		55E9EA622634487B005E3256 /* PortalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9EA5D2634487B005E3256 /* PortalTypes.swift */; };
 		55EA0D1B262231F900F412F9 /* MatchMakerHelperExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EA0D1A262231F900F412F9 /* MatchMakerHelperExt.swift */; };
 		55EC890925FA9A990040E676 /* WallFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890725FA9A990040E676 /* WallFactory.swift */; };
 		55EC890A25FA9A990040E676 /* WallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890825FA9A990040E676 /* WallManager.swift */; };
@@ -505,6 +510,11 @@
 		55E9EA492633EAB6005E3256 /* SniperrifleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniperrifleComponent.swift; sourceTree = "<group>"; };
 		55E9EA4E2633ED09005E3256 /* SniperrifleCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniperrifleCrosshairComponent.swift; sourceTree = "<group>"; };
 		55E9EA522633ED9E005E3256 /* SniperVisionDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniperVisionDirection.swift; sourceTree = "<group>"; };
+		55E9EA592634487B005E3256 /* PortalEntityPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalEntityPair.swift; sourceTree = "<group>"; };
+		55E9EA5A2634487B005E3256 /* PortalPairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalPairComponent.swift; sourceTree = "<group>"; };
+		55E9EA5B2634487B005E3256 /* PortalEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalEntity.swift; sourceTree = "<group>"; };
+		55E9EA5C2634487B005E3256 /* BasePortalComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePortalComponent.swift; sourceTree = "<group>"; };
+		55E9EA5D2634487B005E3256 /* PortalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalTypes.swift; sourceTree = "<group>"; };
 		55EA0D1A262231F900F412F9 /* MatchMakerHelperExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMakerHelperExt.swift; sourceTree = "<group>"; };
 		55EC890725FA9A990040E676 /* WallFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallFactory.swift; sourceTree = "<group>"; };
 		55EC890825FA9A990040E676 /* WallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallManager.swift; sourceTree = "<group>"; };
@@ -803,6 +813,7 @@
 		556CB91E25FFD5AE005B7747 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				55E9EA58263446EE005E3256 /* Portals */,
 				556CA665260D5FA700F78263 /* Base */,
 				556CA664260D5F9600F78263 /* RespawnPoint */,
 				556CA663260D5F8D00F78263 /* MedKit */,
@@ -1082,11 +1093,11 @@
 		55D8947225FACC9B00728B83 /* Level */ = {
 			isa = PBXGroup;
 			children = (
-				55C1225F261CF7DC001E8E3F /* Multiplayer */,
 				55D8949825FAD06100728B83 /* LevelManager.swift */,
 				55D8947325FACCA400728B83 /* Base */,
 				55D8948725FACD4300728B83 /* Debug */,
 				55D8948825FACD4E00728B83 /* Game */,
+				55C1225F261CF7DC001E8E3F /* Multiplayer */,
 			);
 			path = Level;
 			sourceTree = "<group>";
@@ -1322,6 +1333,18 @@
 				55E9EA492633EAB6005E3256 /* SniperrifleComponent.swift */,
 			);
 			path = Sniperrifle;
+			sourceTree = "<group>";
+		};
+		55E9EA58263446EE005E3256 /* Portals */ = {
+			isa = PBXGroup;
+			children = (
+				55E9EA5C2634487B005E3256 /* BasePortalComponent.swift */,
+				55E9EA5B2634487B005E3256 /* PortalEntity.swift */,
+				55E9EA592634487B005E3256 /* PortalEntityPair.swift */,
+				55E9EA5A2634487B005E3256 /* PortalPairComponent.swift */,
+				55E9EA5D2634487B005E3256 /* PortalTypes.swift */,
+			);
+			path = Portals;
 			sourceTree = "<group>";
 		};
 		55EA0D202624C50000F412F9 /* Helper */ = {
@@ -1599,6 +1622,7 @@
 				5513C89B260D244B00633B40 /* DroidState.swift in Sources */,
 				55DB997825FC5318000023AF /* SuakeBaseOverlay.swift in Sources */,
 				55D8948A25FACD7100728B83 /* DebugLevel.swift in Sources */,
+				55E9EA612634487B005E3256 /* BasePortalComponent.swift in Sources */,
 				55A2B8F226000FB600E25F7F /* RisingParticlesComponent.swift in Sources */,
 				55DB991E25FC0B41000023AF /* SuakePlayerNodeComponent.swift in Sources */,
 				55018352260154A000F28C54 /* SuakeStateMainMenu.swift in Sources */,
@@ -1616,6 +1640,7 @@
 				5542340A2632C3E200EB55F9 /* SoundManagerExt.swift in Sources */,
 				55DB995E25FC4998000023AF /* GameStates.swift in Sources */,
 				5501843A2603E0CF00F28C54 /* MapOverlay.swift in Sources */,
+				55E9EA622634487B005E3256 /* PortalTypes.swift in Sources */,
 				55E9EA4B2633EAB6005E3256 /* SniperrifleComponent.swift in Sources */,
 				554233EB2632BDF500EB55F9 /* RailgunComponent.swift in Sources */,
 				552417FE260A8391002C90FC /* MachinegunPickupComponent.swift in Sources */,
@@ -1643,6 +1668,7 @@
 				5501839126016FD700F28C54 /* MachinegunBullet.swift in Sources */,
 				55001F6C260CB4F70015B293 /* PlayerExplodingComponent.swift in Sources */,
 				55EC891D25FA9D4D0040E676 /* CollisionCategory.swift in Sources */,
+				55E9EA5E2634487B005E3256 /* PortalEntityPair.swift in Sources */,
 				55001F5A260C80FB0015B293 /* DroidEntity.swift in Sources */,
 				55D894C925FADC5F00728B83 /* SuakePlayerType.swift in Sources */,
 				55D894E225FADDAA00728B83 /* SuakeOwnPlayerEntity.swift in Sources */,
@@ -1665,6 +1691,7 @@
 				5501850A260917E500F28C54 /* HUDWeaponEntity.swift in Sources */,
 				550184592604140100F28C54 /* MapOverlayZoom.swift in Sources */,
 				55760E4125FD333A00C10784 /* SuakeRespawnComponent.swift in Sources */,
+				55E9EA5F2634487B005E3256 /* PortalPairComponent.swift in Sources */,
 				556CB92025FFD5B8005B7747 /* SuakeBaseLocationComponent.swift in Sources */,
 				55070492261129D300464F97 /* MatchResultsSkScene.swift in Sources */,
 				554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */,
@@ -1733,6 +1760,7 @@
 				550184082602A5CB00F28C54 /* BaseCrosshairComponent.swift in Sources */,
 				559B2BDE260E434A005E669C /* MedKitEntity.swift in Sources */,
 				55EC890A25FA9A990040E676 /* WallManager.swift in Sources */,
+				55E9EA602634487B005E3256 /* PortalEntity.swift in Sources */,
 				554233ED2632BDF500EB55F9 /* RailgunBeam.swift in Sources */,
 				55DB995925FC4989000023AF /* SuakeStatePlaying.swift in Sources */,
 				556CB95F25FFFFA8005B7747 /* GoodyEntity.swift in Sources */,

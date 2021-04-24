@@ -74,29 +74,23 @@ class GameViewMacOS: SCNView {
 //            return
 //
 //        }
-        if(self.viewController?.gameController?.stateMachine.currentState is SuakeStateMainMenu /*||
-            self.viewController?.gameController?.stateMachine.currentState is SuakeStateTutorial*/){
-
-            self.viewController?.gameController?.overlayManager.mainMenu.mouseMovedHandler(with: event)
-//            self.viewController?.gameController?.overlayManager.tutorialOverlay.mouseMovedHandler(with: event)
-
-        }else if(self.viewController?.gameController?.stateMachine.currentState is SuakeStatePlaying ||
-                    self.viewController?.gameController?.stateMachine.currentState is SuakeStateMultiplayerPlaying || self.viewController?.gameController?.stateMachine.currentState is SuakeStateReadyToPlay){
-
-            if(!self.viewController!.gameController!.cameraHelper.fpv){
-                return
+        if let gameCtrl = self.viewController?.gameController{
+            if(gameCtrl.stateMachine.currentState is SuakeStateMainMenu){
+                gameCtrl.overlayManager.mainMenu.mouseMovedHandler(with: event)
+            }else if(gameCtrl.stateMachine.currentState is SuakeStatePlaying ||
+                        gameCtrl.stateMachine.currentState is SuakeStateMultiplayerPlaying || gameCtrl.stateMachine.currentState is SuakeStateReadyToPlay){
+                
+                if(!gameCtrl.cameraHelper.fpv && !gameCtrl.cameraHelper.fpvOpp){
+                    return
+                }
+                
+                let delta = CGGetLastMouseDelta()
+                if (delta.x == 0 && delta.y == 0){
+                    return
+                }
+    //            print("DELTA x: \(delta.x), y: \(delta.y)")
+                gameCtrl.panCameraHelper.panCamera(SIMD2<Float>(x: Float(delta.x), y: Float(delta.y)))
             }
-//            if(!(self.viewController?.gameController?.cameraHelper.fpv)! && (!(self.viewController?.gameController?.overlayManager.hud.hudEntity.csComponent.fadedIn)!)){
-//                return
-//            }
-
-            let delta = CGGetLastMouseDelta()
-            if (delta.x == 0 && delta.y == 0){
-                return
-            }
-//            print("DELTA x: \(delta.x), y: \(delta.y)")
-            self.viewController!.gameController!.panCameraHelper.panCamera(SIMD2<Float>(x: Float(delta.x), y: Float(delta.y)))
-//            chMove.panCamera(SIMD2<Float>(x: Float(delta.x), y: Float(delta.y)))
         }
         //super.mouseMoved(with: event)
     }

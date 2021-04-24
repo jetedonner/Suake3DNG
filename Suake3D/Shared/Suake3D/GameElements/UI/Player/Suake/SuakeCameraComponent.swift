@@ -365,7 +365,7 @@ class SuakeCameraComponent: SuakeBaseComponent {
                     self.cameraNodeFP.position.z = suakePlayerEntity.position.z
                 }
             }
-            self.cameraNodeFP.position.y = 8
+            self.cameraNodeFP.position.y = 12.0
             SCNTransaction.commit()
 //            if(self.cameraViewType == .FirstPerson){
 //                print("MoveRotateFPCamera (2) pos: \(self.cameraNodeFP.position)")

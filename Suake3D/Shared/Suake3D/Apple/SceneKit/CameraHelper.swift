@@ -18,6 +18,15 @@ class CameraHelper: SuakeGameClass {
     var cameraNodeOpp:SCNNode = SCNNode()
     var cameraNodeFPOpp:SCNNode = SCNNode()
     
+    var oldCameraView:CameraView = .Own3rdPerson
+    var _currentCameraView:CameraView = .Own3rdPerson
+    var currentCameraView:CameraView{
+        get{ return self._currentCameraView }
+        set{
+            self.oldCameraView = self._currentCameraView
+            self._currentCameraView = newValue
+        }
+    }
     var fpv:Bool = false
     var animatingFPV:Bool = false
     
@@ -109,53 +118,113 @@ class CameraHelper: SuakeGameClass {
         }
     }
     
+    func resetOldCameraViewPos(){
+        switch self.oldCameraView {
+        case .Own3rdPerson:
+            self.game.playerEntityManager.ownPlayerEntity.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
+        case .Own1stPerson:
+            self.game.playerEntityManager.ownPlayerEntity.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, moveDifference: 0.0)
+        case .Opp3rdPerson:
+            self.game.playerEntityManager.oppPlayerEntity.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
+        case .Opp1stPerson:
+            self.game.playerEntityManager.oppPlayerEntity.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, moveDifference: 0.0)
+        default:
+            break
+        }
+    }
+    
     var fpvOpp:Bool = false
     func toggleFPVOpp(){
         toggleFPVOpp(newFPV: !fpvOpp)
     }
-
+    
     func toggleFPVOpp(newFPV:Bool){
-        if(!self.game.usrDefHlpr.loadOpp){
-            return
-        }
         if(animatingFPV){
             return
         }else{
             self.animatingFPV = true
         }
-        if(!newFPV){
-            fpvOpp = newFPV
-        }
-        let oldTransform:SCNMatrix4 = (newFPV ? self.game.cameraHelper.cameraNodeOpp : self.game.cameraHelper.cameraNodeFPOpp).transform
+        fpvOpp = newFPV
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
+        
         if(newFPV){
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
+            self.currentCameraView = .Opp1stPerson
             self.game.scnView.pointOfView?.transform = self.cameraNodeFPOpp.transform
-            SCNTransaction.completionBlock = {
-                self.game.scnView.pointOfView = self.cameraNodeFPOpp
-                self.cameraNodeOpp.transform = oldTransform
-                self.animatingFPV = false
-//                self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
-                self.fpvOpp = newFPV
-            }
-            SCNTransaction.commit()
-            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.oppPlayerEntity]?.isHidden = true
             MouseHelper.showMouseCursor(show: false)
-        }else{
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
-            self.game.scnView.pointOfView?.transform = self.cameraNodeOpp.transform
             SCNTransaction.completionBlock = {
-                self.game.scnView.pointOfView = self.cameraNodeOpp
-                self.cameraNodeFPOpp.transform = oldTransform
+                self.game.scnView.pointOfView? = self.cameraNodeFPOpp
+                self.resetOldCameraViewPos()
+//                self.game.playerEntityManager.oppPlayerEntity.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
+                self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
+                MouseHelper.showMouseCursor(show: false)
                 self.animatingFPV = false
-                self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.oppPlayerEntity]?.isHidden = false
+                
             }
-            SCNTransaction.commit()
-//            self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = true
+            
+//            self.game.overlayManager.hud.drawHealthBar()
+        }else{
+            self.currentCameraView = .Opp3rdPerson
+            self.game.scnView.pointOfView?.transform = self.cameraNodeOpp.transform
+            self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = true
             MouseHelper.showMouseCursor()
+            SCNTransaction.completionBlock = {
+                self.game.scnView.pointOfView? = self.cameraNodeOpp
+                self.resetOldCameraViewPos()
+//                self.game.playerEntityManager.oppPlayerEntity.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, moveDifference: 0.0)
+                MouseHelper.showMouseCursor()
+                self.animatingFPV = false
+                
+            }
+            
+//            self.game.overlayManager.hud.drawHealthBar()// .healthBars[self.game.playerEntityManager.ownPlayerEntity]?.drawHealthBar()
         }
+        
+        SCNTransaction.commit()
     }
+
+//    func toggleFPVOpp(newFPV:Bool){
+//        if(!self.game.usrDefHlpr.loadOpp){
+//            return
+//        }
+//        if(animatingFPV){
+//            return
+//        }else{
+//            self.animatingFPV = true
+//        }
+//        if(!newFPV){
+//            fpvOpp = newFPV
+//        }
+//        let oldTransform:SCNMatrix4 = (newFPV ? self.game.cameraHelper.cameraNodeOpp : self.game.cameraHelper.cameraNodeFPOpp).transform
+//        if(newFPV){
+//            SCNTransaction.begin()
+//            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
+//            self.game.scnView.pointOfView?.transform = self.cameraNodeFPOpp.transform
+//            SCNTransaction.completionBlock = {
+//                self.game.scnView.pointOfView = self.cameraNodeFPOpp
+//                self.cameraNodeOpp.transform = oldTransform
+//                self.animatingFPV = false
+////                self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
+//                self.fpvOpp = newFPV
+//            }
+//            SCNTransaction.commit()
+//            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.oppPlayerEntity]?.isHidden = true
+//            MouseHelper.showMouseCursor(show: false)
+//        }else{
+//            SCNTransaction.begin()
+//            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
+//            self.game.scnView.pointOfView?.transform = self.cameraNodeOpp.transform
+//            SCNTransaction.completionBlock = {
+//                self.game.scnView.pointOfView = self.cameraNodeOpp
+//                self.cameraNodeFPOpp.transform = oldTransform
+//                self.animatingFPV = false
+//                self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.oppPlayerEntity]?.isHidden = false
+//            }
+//            SCNTransaction.commit()
+////            self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = true
+//            MouseHelper.showMouseCursor()
+//        }
+//    }
     
     func toggleFPV(){
         toggleFPV(newFPV: !fpv)
@@ -171,91 +240,82 @@ class CameraHelper: SuakeGameClass {
         SCNTransaction.begin()
         SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
         
-        let oldTransform:SCNMatrix4 = self.game.scnView.pointOfView!.transform
         if(newFPV){
-//            SCNTransaction.begin()
-//            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
-//            SCNTransaction.commit()
-//            self.game.scnView.pointOfView?.runAction(SCNAction.run({_ in
-//                self.game.scnView.pointOfView = self.cameraNodeFP
-//            }))
-//            let tmp:SCNAction = SCNAction.run({_ in
-//            self.game.scnView.pointOfView = self.cameraNodeFP
+            self.currentCameraView = .Own1stPerson
             self.game.scnView.pointOfView?.transform = self.cameraNodeFP.transform
             MouseHelper.showMouseCursor(show: false)
             SCNTransaction.completionBlock = {
                 self.game.scnView.pointOfView? = self.cameraNodeFP
-                self.cameraNode.transform = oldTransform
+                self.resetOldCameraViewPos()
+//                self.game.playerEntityManager.ownPlayerEntity.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
                 self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
                 self.animatingFPV = false
             }
-//            })
-//            tmp.duration = 0.45
-//            self.game.scnView.pointOfView?.runAction(tmp)
+//            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = true
         }else{
-//            self.game.scnView.pointOfView = self.cameraNode
-//            let tmp2:SCNAction = SCNAction.run({_ in
-//                self.game.scnView.pointOfView = self.cameraNode
+            self.currentCameraView = .Own3rdPerson
             self.game.scnView.pointOfView?.transform = self.cameraNode.transform
             self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = true
             MouseHelper.showMouseCursor()
             SCNTransaction.completionBlock = {
                 self.game.scnView.pointOfView? = self.cameraNode
-                self.cameraNodeFP.transform = oldTransform
+                self.resetOldCameraViewPos()
+//                self.game.playerEntityManager.ownPlayerEntity.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, moveDifference: 0.0)
                 self.animatingFPV = false
             }
-//            })
-//            tmp2.duration = 0.45
-//            self.game.scnView.pointOfView?.runAction(tmp2)
+//            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = false
         }
         
         SCNTransaction.commit()
     }
     
-    func toggleFPVOLD(){
-        toggleFPV(newFPV: !fpv)
-    }
-    
-    func toggleFPVOLD(newFPV:Bool){
-        if(animatingFPV){
-            return
-        }else{
-            self.animatingFPV = true
-        }
-        if(!newFPV){
-            fpv = newFPV
-        }
-        let oldTransform:SCNMatrix4 = self.game.scnView.pointOfView!.transform
-        if(newFPV){
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
-            self.game.scnView.pointOfView?.transform = self.cameraNodeFP.transform
-            SCNTransaction.completionBlock = {
-                self.game.scnView.pointOfView = self.cameraNodeFP
-                self.cameraNode.transform = self.game.playerEntityManager.ownPlayerEntity.cameraComponent.getMoveRotateFollowCamera().1//    oldTransform
-                self.animatingFPV = false
-                self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
-                self.fpv = newFPV
-            }
-            SCNTransaction.commit()
-            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = true
-            MouseHelper.showMouseCursor(show: false)
-        }else{
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
-            self.game.scnView.pointOfView?.transform = self.cameraNode.transform
-            SCNTransaction.completionBlock = {
-                self.game.scnView.pointOfView = self.cameraNode
-                self.cameraNodeFP.position =
-                    self.game.playerEntityManager.ownPlayerEntity.cameraComponent.getMoveRotateFPCamera().0// oldTransform
-                self.animatingFPV = false
-                self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = false
-            }
-            SCNTransaction.commit()
-            self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = true
-            MouseHelper.showMouseCursor()
-        }
-    }
+//    func toggleFPVOLD(){
+//        toggleFPV(newFPV: !fpv)
+//    }
+//
+//    func toggleFPVOLD(newFPV:Bool){
+//        if(animatingFPV){
+//            return
+//        }else{
+//            self.animatingFPV = true
+//        }
+//        if(!newFPV){
+//            fpv = newFPV
+//        }
+//        let oldTransform:SCNMatrix4 = self.game.scnView.pointOfView!.transform
+//        if(newFPV){
+//            SCNTransaction.begin()
+//            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
+//            self.game.scnView.pointOfView?.transform = self.cameraNodeFP.transform
+//            SCNTransaction.completionBlock = {
+//                self.game.scnView.pointOfView = self.cameraNodeFP
+//                self.cameraNode.transform = self.game.playerEntityManager.ownPlayerEntity.cameraComponent.getMoveRotateFollowCamera().1//    oldTransform
+//                self.animatingFPV = false
+//                self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
+//                self.fpv = newFPV
+//            }
+//            SCNTransaction.commit()
+//            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = true
+//            MouseHelper.showMouseCursor(show: false)
+//        }else{
+//            SCNTransaction.begin()
+//            SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
+//            self.game.scnView.pointOfView?.transform = self.cameraNode.transform
+//            SCNTransaction.completionBlock = {
+//                self.game.scnView.pointOfView = self.cameraNode
+//                self.cameraNodeFP.position =
+//                    self.game.playerEntityManager.ownPlayerEntity.cameraComponent.getMoveRotateFPCamera().0// oldTransform
+////                self.cameraNodeFP.runAction(SCNAction.rotateTo(x: 0, y: yReset, z: 0, duration: duration, usesShortestUnitArc: true), completionHandler: {
+////
+////                })
+//                self.animatingFPV = false
+//                self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = false
+//            }
+//            SCNTransaction.commit()
+//            self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = true
+//            MouseHelper.showMouseCursor()
+//        }
+//    }
     
     func blurVision(blurOn:BlurVision = .Undefined){
        if(blurOn == .Undefined){

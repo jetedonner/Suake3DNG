@@ -11,6 +11,7 @@ class DbgVars{
     
     
     static var dbgLogHidden:Bool = false //true
+    static var dbgOppAIPortal:Bool = true //true
     
     static var startLoad_Goody:Bool = true //true
     

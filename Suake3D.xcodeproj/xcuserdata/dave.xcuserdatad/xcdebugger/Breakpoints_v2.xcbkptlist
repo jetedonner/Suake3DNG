@@ -206,8 +206,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/CameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "initCameras()"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/CameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "initCameras()"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/CameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "initCameras()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1170,8 +1170,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "mouseMoved(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1186,8 +1186,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "mouseMoved(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1282,8 +1282,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "mouseDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1362,10 +1362,10 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/CameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "toggleFPVOLD(newFPV:)"
-            landmarkType = "7">
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "CameraHelper"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1842,8 +1842,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "mouseDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1858,8 +1858,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "mouseDown(with:)"
             landmarkType = "7">
          </BreakpointContent>

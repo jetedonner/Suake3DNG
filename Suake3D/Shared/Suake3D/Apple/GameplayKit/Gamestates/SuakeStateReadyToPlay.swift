@@ -74,13 +74,13 @@ class SuakeStateReadyToPlay: SuakeBaseState {
         if(previousState is SuakeStateGameLoading && DbgVars.initialFPV){
             self.game.cameraHelper.toggleFPV(newFPV: true)
             //self.game.overlayManager.hud.hudEntity.crosshairEntity.redeemerCrosshairComponent.addSublayer(hud: self.game.overlayManager.hud)
-        }else{
-            if(DbgVars.startLoad_Opponent_Dbg_AI){
+        }else{*/
+        if(self.game.usrDefHlpr.testOppAI){
                 self.game.cameraHelper.toggleFPVOpp(newFPV: false)
             }else{
                 self.game.cameraHelper.toggleFPV(newFPV: false)
             }
-        }
+        /*}
         
         if(previousState is SuakeStateGameLoading && DbgVars.showTutorialsAtStartup){
             _ = self.game.stateMachine.enter(SuakeStateTutorial.self)
