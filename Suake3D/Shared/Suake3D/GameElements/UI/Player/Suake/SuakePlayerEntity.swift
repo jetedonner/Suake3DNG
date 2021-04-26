@@ -21,9 +21,9 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
     override var pos:SCNVector3{
         get{ return super.pos }
         set{
-//            self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: .empty)
+            self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: .empty)
             super.pos = newValue
-//            self.game.levelManager.gameBoard.setGameBoardField(pos: newValue, suakeField: .own_suake)
+            self.game.levelManager.gameBoard.setGameBoardField(pos: newValue, suakeField: (self.playerType == .OwnSuake ? .own_suake : .opp_suake))
             self.playerComponent.mainNode.position = SCNVector3(super.pos.x * SuakeVars.fieldSize, 0, super.pos.z * SuakeVars.fieldSize)
         }
     }
@@ -65,7 +65,7 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         self.game.showDbgMsg(dbgMsg: "Suake (opp) hit by bullet > damage: " + bullet.damage.description, dbgLevel: .Verbose)
         
         if(self.healthComponent.decHealth(decVal: bullet.damage)){
-            self.playerDied()
+            self.playerDied(removeFromScene: true)
 //            self.game.physicsHelper.qeueNode2Remove(node: self.playerComponent.mainNode)
 //            self.explodingComponent.explode()
 //            self.game.overlayManager.hud.healthBars[self]?.node.removeFromParent()
@@ -81,18 +81,20 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         }
     }
     
+    func playerDied(removeFromScene:Bool) {
+        if removeFromScene {
+            self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: .empty)
+            self.game.physicsHelper.qeueNode2Remove(node: self.playerComponent.mainNode)
+            self.game.overlayManager.hud.healthBars[self]?.node.removeFromParent()
+            self.mapNode?.removeFromParent()
+        }
+        self.playerDied()
+    }
+    
     override func playerDied(){
-        super.playerDied()
-        self.game.physicsHelper.qeueNode2Remove(node: self.playerComponent.mainNode)
         self.explodingComponent.explode()
-        self.game.overlayManager.hud.healthBars[self]?.node.removeFromParent()
-//        self.game.overlayManager.hud.overlayScene.map!.suakeOppNode
-        self.mapNode?.removeFromParent()
         self.statsComponent.add2StatsValue(suakeStatsType: .deaths)
-        
-//        bullet.weapon.weaponArsenalManager.playerEntity.statsComponent.addNewStats(statsType: .opponetKilled, score: self.killScore)
-        
-//        self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: String(format: SuakeMsgs.pointAddString, self.killScore), pos: self.playerComponent.mainNode.position)
+        super.playerDied()
     }
     
     override func reposMapNodeInit(duration:TimeInterval = 0.0, pos:SCNVector3? = nil){

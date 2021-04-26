@@ -38,6 +38,10 @@ class SuakeBaseLevel: SuakeGameClass {
         if(self.levelConfig.levelSetup.loadWeaponPickups){
             self.weaponPickUps.addWeaponPickupEntities(weaponType: .mg, numberOfWeaponPickups: 1)
         }
+        if(self.levelConfig.levelSetup.loadWeaponPickups){
+            self.weaponPickUps.addWeaponPickupEntities(weaponType: .mg, numberOfWeaponPickups: 1)
+        }
+        
     }
     
     func loadLevelEnvironment(){

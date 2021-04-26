@@ -13,7 +13,11 @@ import GameplayKit
 class SuakeBaseNodeEntityWithHealth: SuakeBaseNodeEntity, SuakeHealthComponentDelegate {
     
     let healthComponent:SuakeHealthComponent
-    var died:Bool = false
+//    var died:Bool = false
+    var died:Bool{
+        get{ return self.healthComponent.died }
+        set{ self.healthComponent.died = newValue }
+    }
     var killScore:Int = SuakeVars.suakePlayerKillScore
     
     override init(game: GameController, id:Int = 0) {
@@ -26,7 +30,11 @@ class SuakeBaseNodeEntityWithHealth: SuakeBaseNodeEntity, SuakeHealthComponentDe
     }
     
     func playerDied(){
-        self.died = true
+//        self.died = true
+        if(!self.died){
+            self.died = true
+            self.game.stateMachine.enter(SuakeStateDied.self)
+        }
     }
     
     required init?(coder: NSCoder) {

@@ -29,7 +29,15 @@ class SuakeRespawnComponent: SuakeBaseComponent {
         
         let newPos:SCNVector3 = self.game.levelManager.gameBoard.getRandomFreePos(diff: 2)
         self.game.locationEntityManager.addLocationToScene(pos: newPos)
-        self.playerEntity.pos = SCNVector3(newPos.x, 0, newPos.z - 1)
+        if(self.playerEntity.dir == .UP){
+            self.playerEntity.pos = SCNVector3(newPos.x, 0, newPos.z - 1)
+        }else if(self.playerEntity.dir == .DOWN){
+            self.playerEntity.pos = SCNVector3(newPos.x, 0, newPos.z + 1)
+        }else if(self.playerEntity.dir == .LEFT){
+            self.playerEntity.pos = SCNVector3(newPos.x - 1, 0, newPos.z)
+        }else if(self.playerEntity.dir == .RIGHT){
+            self.playerEntity.pos = SCNVector3(newPos.x + 1, 0, newPos.z)
+        }
         self.game.overlayManager.hud.overlayScene!.map.reposNode(playerNode: self.game.overlayManager.hud.overlayScene!.map.suakeOwnNode, pos: newPos)
         self.playerEntity.playerComponent.currentSuakeComponent.node.runAction(SCNAction.fadeIn(duration: 3.0), completionHandler: {
             self.game.stateMachine.enter(SuakeStatePlaying.self)

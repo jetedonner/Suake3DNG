@@ -296,7 +296,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             for i in 0..<self.setupClientServerData.clientServerData.count{
                 if( self.setupClientServerData.clientServerData[i].playerId == player.playerIDNG){
                     self.game.overlayManager.hud.showMsg(msg: "Player \(i + 1) disconnected!")
-                    self.game.playerEntityManager.oppPlayerEntity.playerDied()
+                    self.game.playerEntityManager.oppPlayerEntity.playerDied(removeFromScene: true)
                     print(SuakeMsgs.gameCenterMsg + "DISCONNETING: PlayerID: \(player.playerIDNG)")
                     self.setupClientServerData.clientServerData.remove(at: i)
                     break

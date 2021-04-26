@@ -181,6 +181,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             self.overlayManager.hud.setupOverlay()
             self.overlayManager.hud.drawHealthBar()
             
+//            self.locationEntityManager.addLocationToScene(pos: SCNVector3(0, 0, 2))
+            
             self.overlayManager.gameLoading.setProgress(curPrecent: 100, msg: "Loading finished ...")
             self.scene.isPaused = false
             self.scnView.isPlaying = true

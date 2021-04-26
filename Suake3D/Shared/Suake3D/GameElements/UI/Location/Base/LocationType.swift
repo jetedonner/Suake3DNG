@@ -14,4 +14,5 @@ enum LocationType:String{
     case RespawnPoint = "Respawn point"
     case Portal = "Portal"
     case MedKit = "MedKit"
+    case Container = "Container"
 }

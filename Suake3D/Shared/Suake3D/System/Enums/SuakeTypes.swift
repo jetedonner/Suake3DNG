@@ -20,6 +20,11 @@ enum SuakePosition : String {
 
 class PositionHelper {
     
+    
+    static func suakePos2ScenePos(pos:SCNVector3)->SCNVector3{
+        return SCNVector3(pos.x * SuakeVars.fieldSize, 0, pos.z * SuakeVars.fieldSize)
+    }
+    
     static func getPos4DirNPosition(dir:SuakeDir = .UP, relPos:[TurnDir], curPos:SCNVector3)->[SCNVector3]{
         var vectRet:[SCNVector3] = [SCNVector3]()
         for p in relPos{

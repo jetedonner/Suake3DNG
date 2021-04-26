@@ -158,6 +158,11 @@
 		55A2B8FD2601444300E25F7F /* GamePaused.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2B8FC2601444300E25F7F /* GamePaused.swift */; };
 		55AE7FD1262A1A9400A58F4B /* RPGCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */; };
 		55AE7FDA262B592B00A58F4B /* HUDDbgLogComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE7FD9262B592B00A58F4B /* HUDDbgLogComponent.swift */; };
+		55B8603726349C9A0030D678 /* PositionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8603626349C9A0030D678 /* PositionHelper.swift */; };
+		55B860442634A52F0030D678 /* ContainerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860422634A52F0030D678 /* ContainerGroup.swift */; };
+		55B860452634A52F0030D678 /* ContainerGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860432634A52F0030D678 /* ContainerGroupItem.swift */; };
+		55B8605D2634A8BC0030D678 /* ContainerQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8605C2634A8BC0030D678 /* ContainerQuick.swift */; };
+		55B860612634AE640030D678 /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860602634AE640030D678 /* ContainerComponent.swift */; };
 		55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C036C725FA80C400F419B8 /* AppDelegate.swift */; };
 		55C036CC25FA80C400F419B8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CB25FA80C400F419B8 /* art.scnassets */; };
 		55C036CE25FA80C500F419B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CD25FA80C500F419B8 /* Assets.xcassets */; };
@@ -429,6 +434,11 @@
 		55A2B8FC2601444300E25F7F /* GamePaused.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePaused.swift; sourceTree = "<group>"; };
 		55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPGCrosshairComponent.swift; sourceTree = "<group>"; };
 		55AE7FD9262B592B00A58F4B /* HUDDbgLogComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDDbgLogComponent.swift; sourceTree = "<group>"; };
+		55B8603626349C9A0030D678 /* PositionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionHelper.swift; sourceTree = "<group>"; };
+		55B860422634A52F0030D678 /* ContainerGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroup.swift; sourceTree = "<group>"; };
+		55B860432634A52F0030D678 /* ContainerGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroupItem.swift; sourceTree = "<group>"; };
+		55B8605C2634A8BC0030D678 /* ContainerQuick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerQuick.swift; sourceTree = "<group>"; };
+		55B860602634AE640030D678 /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerComponent.swift; path = Suake3D/Shared/Suake3D/GameElements/UI/Environment/Container/ContainerComponent.swift; sourceTree = SOURCE_ROOT; };
 		55C036C425FA80C400F419B8 /* Suake3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suake3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C036C725FA80C400F419B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C036CB25FA80C400F419B8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -783,8 +793,8 @@
 			isa = PBXGroup;
 			children = (
 				559B2BD8260E434A005E669C /* MedKitComponent.swift */,
-				559B2BDA260E434A005E669C /* MedKitEntity.swift */,
 				559B2BD9260E434A005E669C /* MedKitEntityGroup.swift */,
+				559B2BDA260E434A005E669C /* MedKitEntity.swift */,
 				559B2BDB260E434A005E669C /* MedKitRisingParticlesComponent.swift */,
 			);
 			path = MedKit;
@@ -836,6 +846,7 @@
 			isa = PBXGroup;
 			children = (
 				556CB96926000359005B7747 /* RotationAnimHelper.swift */,
+				55B8603626349C9A0030D678 /* PositionHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -927,6 +938,25 @@
 				554233E92632BDF500EB55F9 /* RailgunExplodingComponent.swift */,
 			);
 			path = Railgun;
+			sourceTree = "<group>";
+		};
+		55B8603C2634A5070030D678 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				55B860412634A5270030D678 /* Container */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		55B860412634A5270030D678 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				55B860602634AE640030D678 /* ContainerComponent.swift */,
+				55B860422634A52F0030D678 /* ContainerGroup.swift */,
+				55B860432634A52F0030D678 /* ContainerGroupItem.swift */,
+				55B8605C2634A8BC0030D678 /* ContainerQuick.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		55C036BB25FA80C400F419B8 = {
@@ -1386,6 +1416,7 @@
 		55EC88FD25FA979A0040E676 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				55B8603C2634A5070030D678 /* Environment */,
 				55DB997125FC52CB000023AF /* Overlay */,
 				55C96BEB2613AC5700BACA73 /* Level */,
 				556CB9682600034E005B7747 /* Helper */,
@@ -1684,6 +1715,7 @@
 				5513C880260D19BD00633B40 /* DistanceManager.swift in Sources */,
 				55241803260A85E5002C90FC /* GKEntityExtension.swift in Sources */,
 				550183F32601DFAC00F28C54 /* LevelID.swift in Sources */,
+				55B860452634A52F0030D678 /* ContainerGroupItem.swift in Sources */,
 				55D894AC25FAD64C00728B83 /* KeyboardHandler.swift in Sources */,
 				5501847D260566A800F28C54 /* SuakeStatsComponent.swift in Sources */,
 				55C0371425FA884200F419B8 /* GameController.swift in Sources */,
@@ -1694,6 +1726,7 @@
 				55E9EA5F2634487B005E3256 /* PortalPairComponent.swift in Sources */,
 				556CB92025FFD5B8005B7747 /* SuakeBaseLocationComponent.swift in Sources */,
 				55070492261129D300464F97 /* MatchResultsSkScene.swift in Sources */,
+				55B860612634AE640030D678 /* ContainerComponent.swift in Sources */,
 				554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */,
 				5501842C2602CBE600F28C54 /* PanCameraHelper.swift in Sources */,
 				5592703E262766C900A04C76 /* GKPlayerExt.swift in Sources */,
@@ -1738,6 +1771,7 @@
 				551F3D50260BF279006D9F65 /* GridGraphHelper.swift in Sources */,
 				554233D6263215FE00EB55F9 /* ShotgunPellet.swift in Sources */,
 				55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */,
+				55B860442634A52F0030D678 /* ContainerGroup.swift in Sources */,
 				55C12254261CEA21001E8E3F /* GameCenterHelperExt.swift in Sources */,
 				551F3D4B260BF22A006D9F65 /* SuakeGridGraphNode.swift in Sources */,
 				550183C026018F0200F28C54 /* UserDefaultsHelper.swift in Sources */,
@@ -1766,9 +1800,11 @@
 				556CB95F25FFFFA8005B7747 /* GoodyEntity.swift in Sources */,
 				5501838926016FB400F28C54 /* MachinegunComponent.swift in Sources */,
 				554233EC2632BDF500EB55F9 /* RailgunExplodingComponent.swift in Sources */,
+				55B8603726349C9A0030D678 /* PositionHelper.swift in Sources */,
 				554233FB2632BFE300EB55F9 /* VertexArray.swift in Sources */,
 				55C12261261CF7F0001E8E3F /* MultiplayerLevel.swift in Sources */,
 				55760E4F25FD391F00C10784 /* HUDOverlayEntity.swift in Sources */,
+				55B8605D2634A8BC0030D678 /* ContainerQuick.swift in Sources */,
 				550183FB26029EFD00F28C54 /* SuakeStateRespawn.swift in Sources */,
 				559B2BD4260E4186005E669C /* SuakeNodeGroupItemBase.swift in Sources */,
 				550183EE2601DF8300F28C54 /* LevelGoal.swift in Sources */,

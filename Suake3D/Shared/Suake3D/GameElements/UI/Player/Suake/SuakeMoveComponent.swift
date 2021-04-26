@@ -32,6 +32,8 @@ class SuakeMoveComponent: SuakeBaseComponent {
     }
     
     var posAfterNetSend:SCNVector3? = nil //SCNVector3(0, 0, 0)
+    var overNextPos:SCNVector3!
+    var nextPos:SCNVector3!
     
     func appendTurn(turnDir:TurnDir){
         self.turnQueue.append(turnDir)
@@ -157,8 +159,6 @@ class SuakeMoveComponent: SuakeBaseComponent {
         return PosHelper.getNextPos4DirNG(daDir: daDir, suakePart: suakePart, daPos: daPos)
     }
     
-    var overNextPos:SCNVector3!
-    
     func nextMove(newTurnDir:TurnDir = .Straight, deltaTime seconds: TimeInterval = 1.0){
         var newPos:SCNVector3 = self.playerEntity.pos
         let nextSuakePlayerNodeComponent:SuakePlayerNodeComponent = self.playerEntity.playerComponent.getNextSuakePlayerNodeComponent(turnDir: newTurnDir)
@@ -168,17 +168,28 @@ class SuakeMoveComponent: SuakeBaseComponent {
             newPos = self.nextPos(dir: nextDir, suakePart: nextSuakePlayerNodeComponent.suakePart)
             
         }
+        self.nextPos = newPos
         self.overNextPos = self.getOverNextPos(daDir: self.playerEntity.dir, suakePart: .straightToStraight, daPos: newPos)
         
 //        print("Turn - Dir: \(self.playerEntity.dir), Old-Pos: \(self.playerEntity.pos), New-Pos: \(newPos), suakePart: \(nextSuakePlayerNodeComponent.suakePart.rawValue)")
         let nextMoveResult:NextMoveResult = self.checkNextMoveNG(pos: newPos)
         if(nextMoveResult.contains(.moveNotOk)){
             if(nextMoveResult.contains(.wall)){
-                if(!self.playerEntity.healthComponent.died){
-                    self.playerEntity.healthComponent.died = true
-                    self.game.stateMachine.enter(SuakeStateDied.self)
-//                    print("\(newPos): NOT OK - WALL HIT")
-                }
+                self.game.showDbgMsg(dbgMsg: "WALL HIT!!!")
+                self.playerEntity.playerDied()
+//                if(!self.playerEntity.healthComponent.died){
+//                    self.playerEntity.healthComponent.died = true
+//                    self.game.stateMachine.enter(SuakeStateDied.self)
+////                    print("\(newPos): NOT OK - WALL HIT")
+//                }
+            }else if(nextMoveResult.contains(.suakeOpp)){
+                self.game.showDbgMsg(dbgMsg: "OPPONENT HIT!!!")
+                self.playerEntity.playerDied()
+//                if(!self.playerEntity.healthComponent.died){
+//                    self.playerEntity.healthComponent.died = true
+//                    self.game.stateMachine.enter(SuakeStateDied.self)
+////                    print("\(newPos): NOT OK - WALL HIT")
+//                }
             }
         }else{
             if(nextMoveResult.contains(.goody)){
@@ -237,8 +248,8 @@ class SuakeMoveComponent: SuakeBaseComponent {
 //                break
 //            case .own_suake:
 //                nextMoveResult = NextMoveResult(moveResults: [.moveNotOk, .suakeOwn], pos: pos)
-//            case .opp_suake:
-//                nextMoveResult = NextMoveResult(moveResults: [.moveNotOk, .suakeOpp], pos: pos)
+            case .opp_suake:
+                nextMoveResult = NextMoveResult(moveResults: [.moveNotOk, .suakeOpp], pos: pos)
 //            case .droid:
 //                nextMoveResult = NextMoveResult(moveResults: [.moveNotOk, .droid], pos: pos)
 //            case .medKit:

@@ -23,6 +23,8 @@ class SuakeVars{
     
     static let showAmbientLight:Bool = true
     static let loadWeaponPickups:Bool = true
+    static let loadObstacles:Bool = true
+    
     static let loadOpp:Bool = false
     static let loadDroids:Bool = false
     static let droidsCount:Int = 1

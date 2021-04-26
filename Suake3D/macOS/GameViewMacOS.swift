@@ -35,11 +35,42 @@ class GameViewMacOS: SCNView {
         super.viewDidMoveToWindow()
         self.viewController?.initGameController()
         self.window?.acceptsMouseMovedEvents = true
+        
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(authenticationChanged(_:)),
+          name: .authenticationChanged,
+          object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(presentGame(_:)),
+          name: .presentGame,
+          object: nil
+        )
 //        let sdud:SuakeDbgUserDefaults = SuakeDbgUserDefaults()
 //        sdud.registerDbgDefaults()
 //        _ = sdud.getValueBool(key: SuakeDbgUserDefaults.DroidsLoad)
 //        _ = sharedUserDefCont.defaults.bool(forKey: SuakeDbgUserDefaults.DroidsLoad)
 //        _ = UserDefaults.standard.bool(forKey: SuakeDbgUserDefaults.DroidsLoad)
+    }
+    
+    @objc private func authenticationChanged(_ notification: Notification) {
+        let result = notification.object as? Bool ?? false
+        self.viewController?.gameController?.showDbgMsg(dbgMsg: "Game Center: authenticationChanged: \(result)")
+//        dump(notification)
+    }
+    
+    @objc private func presentGame(_ notification: Notification) {
+        var tmp = 1
+        tmp /= -1
+      // 1
+//      guard let match = notification.object as? GKTurnBasedMatch else {
+//        return
+//      }
+//
+//      loadAndDisplay(match: match)
     }
     
     override func updateTrackingAreas() {

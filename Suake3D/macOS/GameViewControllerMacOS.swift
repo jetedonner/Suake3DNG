@@ -134,7 +134,7 @@ class GameViewControllerMacOS: NSViewController, KeyboardAndMouseEventsDelegate,
 
             self.gameView!.antialiasingMode = .none
             var strongScnView:GameViewMacOS! = self.gameView!
-            self.gameController?.scnView = nil
+//            self.gameController?.scnView = nil
 //            wself.gameController = nil
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
                 strongScnView.scene = nil

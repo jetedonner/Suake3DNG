@@ -13,6 +13,7 @@ class LocationEntityManager: EntityManager {
     
     var portalPairs:[PortalEntityPair] = [PortalEntityPair]()
     var portals:[PortalEntity] = [PortalEntity]()
+    var containers:[ContainerGroupItem] = [ContainerGroupItem]()
     
     override init(game: GameController) {
         super.init(game: game)
@@ -25,6 +26,11 @@ class LocationEntityManager: EntityManager {
         let medKitEntityGroup:MedKitEntityGroup = MedKitEntityGroup(game: self.game, medKitPos: medKitPos)
         
         self.add(locationType: .MedKit, entityGroup: medKitEntityGroup)
+        
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadObstacles){
+            let container:ContainerGroupItem = ContainerGroupItem(game: self.game, id: 0)
+            self.containers.append(container)
+        }
     }
     
     func addLocationToScene(pos:SCNVector3){
@@ -46,6 +52,9 @@ class LocationEntityManager: EntityManager {
                     }
                 }
             }
+        }
+        if(self.containers != nil && self.containers.count > 0){
+            self.containers[0].containerComponent.addToScene()
         }
     }
     

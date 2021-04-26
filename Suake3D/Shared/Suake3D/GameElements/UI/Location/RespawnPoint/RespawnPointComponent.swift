@@ -29,7 +29,7 @@ class RespawnPointComponent: SuakeBaseLocationComponent {
 //    }
     
     func initSetupPos(pos:SCNVector3){
-        self.node.position = SCNVector3(150 * pos.x, 0, 150 * pos.z)
+        self.node.position = SCNVector3(SuakeVars.fieldSize * pos.x, 0, SuakeVars.fieldSize * pos.z)
         (self.entity as! SuakeBaseNodeEntity).pos = pos
     }
     

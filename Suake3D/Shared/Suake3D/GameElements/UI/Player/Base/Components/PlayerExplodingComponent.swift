@@ -38,7 +38,15 @@ class PlayerExplodingComponent: ExplodingComponent {
         explodeNode.addChildNode(shotParticleNode2)
         explodeNode.addChildNode(shotParticleNode3)
         
-        explodeNode.position = (node.entity as! SuakeBasePlayerEntity).position
+        let playerEntity = (node.entity as! SuakeBaseExplodingPlayerEntity)
+        var explodePos:SCNVector3!
+        if(playerEntity.playerType == .Droid){
+            explodePos = PositionHelper.suakePos2ScenePos(pos: playerEntity.pos)
+        }else{
+            explodePos = PositionHelper.suakePos2ScenePos(pos: (playerEntity as! SuakePlayerEntity).moveComponent.nextPos ?? (playerEntity as! SuakePlayerEntity).pos)
+        }
+        
+        explodeNode.position = explodePos
         self.game.physicsHelper.qeueNode2Add2Scene(node: explodeNode)
         self.game.soundManager.playSound(soundType: .explosion)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {

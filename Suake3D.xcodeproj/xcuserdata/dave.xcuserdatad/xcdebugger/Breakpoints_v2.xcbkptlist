@@ -994,8 +994,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "nextMove(deltaTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1004,6 +1004,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "98265FF6-CE2E-4920-9727-5B6DC49EF522"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "nextMove(deltaTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F05A13B-974A-466D-AC1A-BAF85E764512"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1019,22 +1035,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F05A13B-974A-466D-AC1A-BAF85E764512"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "nextMove(deltaTime:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "013730A3-613A-42F5-9C52-F9CC97467F81"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1042,8 +1042,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "nextMove(deltaTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1170,8 +1170,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "mouseMoved(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1186,8 +1186,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "mouseMoved(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1282,8 +1282,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "mouseDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1410,8 +1410,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/Settings/UserDefaultsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "init(game:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1522,8 +1522,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/Settings/UserDefaultsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "loadValuesFromUserDefaults()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1538,8 +1538,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeRespawnComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "respawnSuake(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1554,8 +1554,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeRespawnComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "respawnSuake(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1842,8 +1842,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "mouseDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1858,8 +1858,8 @@
             filePath = "Suake3D/macOS/GameViewMacOS.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "mouseDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2066,8 +2066,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeRespawnComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "respawnSuake(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2594,8 +2594,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakeMoveComponent.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "nextMove(newTurnDir:deltaTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3552,8 +3552,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Player/Suake/SuakePlayerEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "autoAimAndShootOwnAt(entity:aimDur:)"
             landmarkType = "7">
          </BreakpointContent>

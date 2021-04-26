@@ -123,6 +123,17 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
 //                (contact.nodeA.entity as! DroidEntity).hitByBullet(bullet: (contact.nodeB as! BulletBase))
 //            }
 //        }
+    else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.container)){
+        var tmp = 1
+        tmp /= -1
+        if((contact.nodeB as! BulletBase).hitTarget(targetCat: .container, targetNode: contact.nodeA)){
+            //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
+        }
+    }
+    /*else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.container)){
+        var tmp = 1
+        tmp /= -1
+    }*/
     else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.medKit)){
             if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMasks: self.allSuakeWeaponCategories)){
                 if((contact.nodeB as! BulletBase).hitTarget(targetCat: .medKit, targetNode: contact.nodeA)){
