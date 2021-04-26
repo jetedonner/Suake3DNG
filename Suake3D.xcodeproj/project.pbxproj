@@ -163,6 +163,7 @@
 		55B860452634A52F0030D678 /* ContainerGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860432634A52F0030D678 /* ContainerGroupItem.swift */; };
 		55B8605D2634A8BC0030D678 /* ContainerQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8605C2634A8BC0030D678 /* ContainerQuick.swift */; };
 		55B860612634AE640030D678 /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860602634AE640030D678 /* ContainerComponent.swift */; };
+		55B860682637482D0030D678 /* GameControllerMutliplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860672637482D0030D678 /* GameControllerMutliplayer.swift */; };
 		55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C036C725FA80C400F419B8 /* AppDelegate.swift */; };
 		55C036CC25FA80C400F419B8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CB25FA80C400F419B8 /* art.scnassets */; };
 		55C036CE25FA80C500F419B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CD25FA80C500F419B8 /* Assets.xcassets */; };
@@ -439,6 +440,7 @@
 		55B860432634A52F0030D678 /* ContainerGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroupItem.swift; sourceTree = "<group>"; };
 		55B8605C2634A8BC0030D678 /* ContainerQuick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerQuick.swift; sourceTree = "<group>"; };
 		55B860602634AE640030D678 /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerComponent.swift; path = Suake3D/Shared/Suake3D/GameElements/UI/Environment/Container/ContainerComponent.swift; sourceTree = SOURCE_ROOT; };
+		55B860672637482D0030D678 /* GameControllerMutliplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControllerMutliplayer.swift; sourceTree = "<group>"; };
 		55C036C425FA80C400F419B8 /* Suake3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suake3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C036C725FA80C400F419B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C036CB25FA80C400F419B8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -991,6 +993,7 @@
 			children = (
 				55C0370525FA866000F419B8 /* BaseGameController.swift */,
 				55D8945F25FACAED00728B83 /* GameControllerLog.swift */,
+				55B860672637482D0030D678 /* GameControllerMutliplayer.swift */,
 				55C0371325FA884200F419B8 /* GameController.swift */,
 				55C036C725FA80C400F419B8 /* AppDelegate.swift */,
 				55C036F825FA81C400F419B8 /* macOS */,
@@ -1717,6 +1720,7 @@
 				550183F32601DFAC00F28C54 /* LevelID.swift in Sources */,
 				55B860452634A52F0030D678 /* ContainerGroupItem.swift in Sources */,
 				55D894AC25FAD64C00728B83 /* KeyboardHandler.swift in Sources */,
+				55B860682637482D0030D678 /* GameControllerMutliplayer.swift in Sources */,
 				5501847D260566A800F28C54 /* SuakeStatsComponent.swift in Sources */,
 				55C0371425FA884200F419B8 /* GameController.swift in Sources */,
 				552417ED260A7E57002C90FC /* BaseWeaponPickupEntity.swift in Sources */,

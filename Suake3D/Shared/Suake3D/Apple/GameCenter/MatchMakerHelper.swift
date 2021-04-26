@@ -65,7 +65,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.msgSentCounter += 1
             self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
         } catch {
-            print("Send data failed")
+            self.game.showDbgMsg(dbgMsg: "Send data failed")
         }
     }
     
@@ -83,7 +83,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.msgSentCounter += 1
             self.game.showDbgMsg(dbgMsg: "Sent droidDir: \(nextDir.rawValue)")
         } catch {
-            print("Send data failed")
+            self.game.showDbgMsg(dbgMsg: "Send data failed")
         }
     }
     
@@ -101,7 +101,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.msgSentCounter += 1
             self.game.showDbgMsg(dbgMsg: "Sent droidDir: \(path)")
         } catch {
-            print("Send data failed")
+            self.game.showDbgMsg(dbgMsg: "Send data failed")
         }
     }
     
@@ -120,7 +120,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.msgSentCounter += 1
 //            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
         } catch {
-            print("Send data failed")
+            self.game.showDbgMsg(dbgMsg: "Send data failed")
         }
     }
     
@@ -137,7 +137,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.msgSentCounter += 1
 //            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
         } catch {
-            print("Send data failed")
+            self.game.showDbgMsg(dbgMsg: "Send data failed")
         }
     }
     
@@ -147,7 +147,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     
     func sendData(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {
         do {
-            print("SENDING Suake3D-MSG: Type: \(msgTyp)")
+            self.game.showDbgMsg(dbgMsg: "SENDING Suake3D-MSG: Type: \(msgTyp)")
             if(msgTyp == .setupClientServerMsg){
                 self.setupClientServerData = SetupClientServerNetworkData(id: self.msgSentCounter)
                 self.setupClientServerData.addHost(playerId: self.dbgServerPlayerId, playerName: "DaVe inc.", hostType: .server)
@@ -178,12 +178,11 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                     print(dataStartMatch.prettyPrintedJSONString!)
                 }
                 try match.sendData(toAllPlayers: dataStartMatch, with: .reliable)
-                self.game.loadNetworkMatch3(startMatch: sendData)
+                self.game.multiplayer(startMatch: sendData)
             }else if(msgTyp == .initLevelMsg){
                 let sendData:LoadLevelNetworkData = LoadLevelNetworkData(id: self.msgSentCounter)
                 
-                sendData.levelConfig.levelEnv = LevelEnvironment(levelSize: self.game.usrDefHlpr.levelSize, floorType: .Debug, skyBoxType: .RedGalaxy, matchDuration: self.game.usrDefHlpr.matchDuration, levelDifficulty: self.game.usrDefHlpr.difficulty, lightIntensity: self.game.usrDefHlpr.lightIntensity)  //.matchDuration = self.game.usrDefHlpr.matchDuration
-//                sendData.levelConfig.levelEnv.levelSize = self.game.usrDefHlpr.levelSize
+                sendData.levelConfig.levelEnv = LevelEnvironment(levelSize: self.game.usrDefHlpr.levelSize, floorType: .Debug, skyBoxType: .RedGalaxy, matchDuration: self.game.usrDefHlpr.matchDuration, levelDifficulty: self.game.usrDefHlpr.difficulty, lightIntensity: self.game.usrDefHlpr.lightIntensity)
                 
                 sendData.addHost(playerId: self.dbgServerPlayerId, playerName: "DaVe inc.", hostType: .server)
                 self.ownPlayerNetObj = sendData.levelClientServer.first
@@ -203,7 +202,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                     print(dataLoadLevel.prettyPrintedJSONString!)
                 }
                 try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
-                self.game.loadNetworkMatch(levelConfigNet: sendData)
+                self.game.multiplayerLoad(levelConfigNet: sendData)
             }else if(msgTyp == .shootWeaponMsg){
                 let shootData:ShootWeaponNetworkData = ShootWeaponNetworkData(id: self.msgSentCounter)
                 shootData.origin = self.game.playerEntityManager.oppPlayerEntity.cameraComponent.cameraNodeFP.position
@@ -225,45 +224,29 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         }
     }
     
-//    private func getShotStartVelocity4Target(projectile:SCNNode, target: SCNVector3) -> SCNVector3 {
-//        let origin = projectile.presentation.position
-//        var dir = target - origin
-//        dir.y = 0
-//        return dir.normalized()
-//    }
-//
-//    func getShotStartVelocity()->SCNVector3 {
-//        return self.game.playerEntityManager.ownPlayerEntity.cameraComponent.cameraNodeFP.worldFront //(self.weaponArsenalManager.playerEntity as! SuakePlayerEntity).cameraComponent.cameraNodeFP.worldFront // self.game.cameraHelper.cameraNodeFP.worldFront
-////        if(target != nil){
-////            shotStartPosition = self.getShotStartVelocity4Target(projectile: bulletNode, target: target!)
-////        }
-////        let result:SCNVector3 = SCNVector3(x: shotStartPosition.x * bulletNode.shootingVelocity, y: shotStartPosition.y * bulletNode.shootingVelocity, z: shotStartPosition.z * bulletNode.shootingVelocity)
-////        return result
-//    }
-    
     func match(_ match: GKMatch, didReceive data: Data, forRecipient recipient: GKPlayer, fromRemotePlayer player: GKPlayer) {
-        print("RECEIVING Suake3D-MSG (No: \(self.msgRecvCounter)) ...")
+        self.game.showDbgMsg(dbgMsg: "RECEIVING Suake3D-MSG (No: \(self.msgRecvCounter)) ...")
         self.msgRecvCounter += 1
         if(self.match != match){
-            print("self.match != match")
+            self.game.showDbgMsg(dbgMsg: "self.match != match")
             return
         }
-        print(data.prettyPrintedJSONString!)
+        self.game.showDbgMsg(dbgMsg: data.prettyPrintedJSONString! as String)
         let newObj:BaseNetworkData = NetworkHelper().receiveAndDecode(data: data)
-        print("Suake3D-MSG: Type: \(newObj.msgType  )")
+        self.game.showDbgMsg(dbgMsg: "Suake3D-MSG: Type: \(newObj.msgType  )")
         if(newObj.msgType == .initLevelMsg){
-            self.game.loadNetworkMatch(levelConfigNet: newObj as! LoadLevelNetworkData)
+            self.game.multiplayerLoad(levelConfigNet: newObj as! LoadLevelNetworkData)
         }else if(newObj.msgType == .setupClientServerMsg){
 //            self.game.overlayManager.gameCenterOverlay.setProgress(curPrecent: 25, msg: "Loading level for match ...")
             self.dbgServerGKPlayer = player
             self.setupClientServerData = newObj as? SetupClientServerNetworkData
             self.ownPlayerNetObj = self.setupClientServerData.clientServerData.last
-            self.game.loadNetworkMatch2(setupNet: self.setupClientServerData)
+            self.game.multiplayerSet(setupNet: self.setupClientServerData)
         }else if(newObj.msgType == .ready4MatchMsg){
-            print("CLIENT's ready 4 Match .... ")
+            self.game.showDbgMsg(dbgMsg: "CLIENT's ready 4 Match .... ")
             self.sendStartMatchMsg()
         }else if(newObj.msgType == .startMatchMsg){
-            self.game.loadNetworkMatch3(startMatch: newObj as! StartMatchNetworkData)
+            self.game.multiplayer(startMatch: newObj as! StartMatchNetworkData)
         }else if(newObj.msgType == .pickedUpMsg){
             self.game.showDbgMsg(dbgMsg: "Goody PICKED-UP .... ")
             self.game.pickedUpNetworkMatch(pickedUpData: newObj as! PickedUpNetworkData)
@@ -274,9 +257,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
             self.game.turnDirNetworkMatch(turnData: newObj as! TurnNetworkData)
         }else if(newObj.msgType == .droidPathMsg){
             self.game.droidPathNetworkMatch(droidDirData: newObj as! DroidPathNetworkData)
-        }/*else if(newObj.msgType == .droidDirMsg){
-            self.game.droidDirNetworkMatch(droidData: newObj as! DroidDirNetworkData)
-        }*/else if(newObj.msgType == .shootWeaponMsg){
+        }else if(newObj.msgType == .shootWeaponMsg){
             self.game.shootWeaponNetworkMatch(shootData: newObj as! ShootWeaponNetworkData)
         }
     }
@@ -285,19 +266,19 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         if(self.match != match){
             return
         }
-        print(data.prettyPrintedJSONString!)
+        self.game.showDbgMsg(dbgMsg: data.prettyPrintedJSONString! as String)
         let newObj:BaseNetworkData = NetTestFW.NetworkHelper().receiveAndDecode(data: data)
-        print(newObj.msgType)
+        self.game.showDbgMsg(dbgMsg: "\(newObj.msgType)")
     }
     
     func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
-        print(SuakeMsgs.gameCenterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
+        self.game.showDbgMsg(dbgMsg: SuakeMsgs.gameCenterMsg + "match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState)")
         if(state == .disconnected){
             for i in 0..<self.setupClientServerData.clientServerData.count{
                 if( self.setupClientServerData.clientServerData[i].playerId == player.playerIDNG){
                     self.game.overlayManager.hud.showMsg(msg: "Player \(i + 1) disconnected!")
                     self.game.playerEntityManager.oppPlayerEntity.playerDied(removeFromScene: true)
-                    print(SuakeMsgs.gameCenterMsg + "DISCONNETING: PlayerID: \(player.playerIDNG)")
+                    self.game.showDbgMsg(dbgMsg: SuakeMsgs.gameCenterMsg + "DISCONNETING: PlayerID: \(player.playerIDNG)")
                     self.setupClientServerData.clientServerData.remove(at: i)
                     break
                 }
