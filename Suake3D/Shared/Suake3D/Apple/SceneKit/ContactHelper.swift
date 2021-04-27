@@ -21,7 +21,12 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.wall)){
             if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMasks: self.allSuakeWeaponCategories)){
-                _ = (contact.nodeB as! BulletBase).hitTarget(targetCat: CollisionCategory.wall, targetNode: contact.nodeA, contactPoint: contact.contactPoint)
+                if(contact.nodeB is MachinegunBullet){
+                    if((contact.nodeB as! MachinegunBullet).hitTarget(targetCat: .wall, targetNode: contact.nodeA, contact: contact)){
+                    }
+                }else{
+                    _ = (contact.nodeB as! BulletBase).hitTarget(targetCat: CollisionCategory.wall, targetNode: contact.nodeA, contactPoint: contact.contactPoint)
+                }
             }
         }/*else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.goody)){
             if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMasks: self.allSuakeWeaponCategories)){
@@ -36,13 +41,25 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
 //                }else{
 //                    return
 //                }
-                if(bullet.hitTarget(targetCat: .goody, targetNode: contact.nodeA)){
-                    if(bullet.weapon.weaponArsenalManager.playerEntity.playerType == .OwnSuake){
-                        self.game.playerEntityManager.goodyEntity.goodyHit(bullet: bullet)
-    //                    _ = self.game.playerEntityManager.getOwnPlayerEntity().goodyHit(bullet: (contact.nodeB as! BulletBase))
-                    }else if(bullet.weapon.weaponArsenalManager.playerEntity.playerType == .OppSuake){
-                        self.game.playerEntityManager.goodyEntity.goodyHit(bullet: bullet)
-    //                    _ = self.game.playerEntityManager.getOppPlayerEntity()!.goodyHit(bullet: (contact.nodeB as! BulletBase))
+                if(contact.nodeB is MachinegunBullet){
+                    if((contact.nodeB as! MachinegunBullet).hitTarget(targetCat: .wall, targetNode: contact.nodeA, contact: contact)){
+                        if(bullet.weapon.weaponArsenalManager.playerEntity.playerType == .OwnSuake){
+                            self.game.playerEntityManager.goodyEntity.goodyHit(bullet: bullet)
+        //                    _ = self.game.playerEntityManager.getOwnPlayerEntity().goodyHit(bullet: (contact.nodeB as! BulletBase))
+                        }else if(bullet.weapon.weaponArsenalManager.playerEntity.playerType == .OppSuake){
+                            self.game.playerEntityManager.goodyEntity.goodyHit(bullet: bullet)
+        //                    _ = self.game.playerEntityManager.getOppPlayerEntity()!.goodyHit(bullet: (contact.nodeB as! BulletBase))
+                        }
+                    }
+                }else{
+                    if(bullet.hitTarget(targetCat: .goody, targetNode: contact.nodeA)){
+                        if(bullet.weapon.weaponArsenalManager.playerEntity.playerType == .OwnSuake){
+                            self.game.playerEntityManager.goodyEntity.goodyHit(bullet: bullet)
+        //                    _ = self.game.playerEntityManager.getOwnPlayerEntity().goodyHit(bullet: (contact.nodeB as! BulletBase))
+                        }else if(bullet.weapon.weaponArsenalManager.playerEntity.playerType == .OppSuake){
+                            self.game.playerEntityManager.goodyEntity.goodyHit(bullet: bullet)
+        //                    _ = self.game.playerEntityManager.getOppPlayerEntity()!.goodyHit(bullet: (contact.nodeB as! BulletBase))
+                        }
                     }
                 }
             }
@@ -55,8 +72,14 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
 //                }
             
             if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMasks: self.allSuakeWeaponCategories)){
-                if(bullet.hitTarget(targetCat: .droid, targetNode: contact.nodeB)){
-                    (contact.nodeA.entity as! DroidEntity).hitByBullet(bullet: (contact.nodeB as! BulletBase))
+                if(contact.nodeB is MachinegunBullet){
+                    if((contact.nodeB as! MachinegunBullet).hitTarget(targetCat: .droid, targetNode: contact.nodeA, contact: contact)){
+                        (contact.nodeA.entity as! DroidEntity).hitByBullet(bullet: (contact.nodeB as! BulletBase))
+                    }
+                }else{
+                    if(bullet.hitTarget(targetCat: .droid, targetNode: contact.nodeB, contactPoint: contact.contactPoint)){
+                        (contact.nodeA.entity as! DroidEntity).hitByBullet(bullet: (contact.nodeB as! BulletBase))
+                    }
                 }
             }
         }
@@ -124,10 +147,11 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
 //            }
 //        }
     else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.container)){
-        var tmp = 1
-        tmp /= -1
-        if((contact.nodeB as! BulletBase).hitTarget(targetCat: .container, targetNode: contact.nodeA)){
-            //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
+        if(contact.nodeB is MachinegunBullet){
+            if((contact.nodeB as! MachinegunBullet).hitTarget(targetCat: .container, targetNode: contact.nodeA, contact: contact)){
+                
+                //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
+            }
         }
     }
     /*else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.container)){
@@ -136,7 +160,7 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
     }*/
     else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.medKit)){
             if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMasks: self.allSuakeWeaponCategories)){
-                if((contact.nodeB as! BulletBase).hitTarget(targetCat: .medKit, targetNode: contact.nodeA)){
+                if((contact.nodeB as! BulletBase).hitTarget(targetCat: .medKit, targetNode: contact.nodeA, contactPoint: contact.contactPoint)){
                     (contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
                 }
             }

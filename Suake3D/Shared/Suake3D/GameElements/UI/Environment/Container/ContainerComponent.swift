@@ -39,7 +39,7 @@ class ContainerComponent: SuakeBaseLocationComponent {
     }
     
     func initPhysics(){
-        let containerShape1 = SCNPhysicsShape(geometry: self.node.cloneNode.flattenedClone().geometry!, options: [SCNPhysicsShape.Option.scale: self.rescale])
+        let containerShape1 = SCNPhysicsShape(geometry: self.node.cloneNode.flattenedClone().geometry!, options: [SCNPhysicsShape.Option.scale: self.rescale /* 1.15*/])
         let translate = SCNMatrix4MakeTranslation(75.0, 0.0, 75.0)
          let translateMatrix = NSValue.init(scnMatrix4: translate)
         let containerShape = SCNPhysicsShape(shapes: [containerShape1], transforms: [translateMatrix])

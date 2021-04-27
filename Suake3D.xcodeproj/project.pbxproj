@@ -158,6 +158,7 @@
 		55A2B8FD2601444300E25F7F /* GamePaused.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2B8FC2601444300E25F7F /* GamePaused.swift */; };
 		55AE7FD1262A1A9400A58F4B /* RPGCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */; };
 		55AE7FDA262B592B00A58F4B /* HUDDbgLogComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE7FD9262B592B00A58F4B /* HUDDbgLogComponent.swift */; };
+		55B0B1F7263899FD00260E75 /* BulletImpactExplodingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B0B1F6263899FD00260E75 /* BulletImpactExplodingComponent.swift */; };
 		55B8603726349C9A0030D678 /* PositionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8603626349C9A0030D678 /* PositionHelper.swift */; };
 		55B860442634A52F0030D678 /* ContainerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860422634A52F0030D678 /* ContainerGroup.swift */; };
 		55B860452634A52F0030D678 /* ContainerGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860432634A52F0030D678 /* ContainerGroupItem.swift */; };
@@ -435,6 +436,7 @@
 		55A2B8FC2601444300E25F7F /* GamePaused.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePaused.swift; sourceTree = "<group>"; };
 		55AE7FD0262A1A9400A58F4B /* RPGCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPGCrosshairComponent.swift; sourceTree = "<group>"; };
 		55AE7FD9262B592B00A58F4B /* HUDDbgLogComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDDbgLogComponent.swift; sourceTree = "<group>"; };
+		55B0B1F6263899FD00260E75 /* BulletImpactExplodingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletImpactExplodingComponent.swift; sourceTree = "<group>"; };
 		55B8603626349C9A0030D678 /* PositionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionHelper.swift; sourceTree = "<group>"; };
 		55B860422634A52F0030D678 /* ContainerGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroup.swift; sourceTree = "<group>"; };
 		55B860432634A52F0030D678 /* ContainerGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroupItem.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 		5501838726016FA200F28C54 /* MG */ = {
 			isa = PBXGroup;
 			children = (
+				55B0B1F6263899FD00260E75 /* BulletImpactExplodingComponent.swift */,
 				552417FC260A8391002C90FC /* MachinegunPickupComponent.swift */,
 				552417FB260A8391002C90FC /* MachinegunPickupEntity.swift */,
 				5501839026016FD700F28C54 /* MachinegunBullet.swift */,
@@ -1702,6 +1705,7 @@
 				5501839126016FD700F28C54 /* MachinegunBullet.swift in Sources */,
 				55001F6C260CB4F70015B293 /* PlayerExplodingComponent.swift in Sources */,
 				55EC891D25FA9D4D0040E676 /* CollisionCategory.swift in Sources */,
+				55B0B1F7263899FD00260E75 /* BulletImpactExplodingComponent.swift in Sources */,
 				55E9EA5E2634487B005E3256 /* PortalEntityPair.swift in Sources */,
 				55001F5A260C80FB0015B293 /* DroidEntity.swift in Sources */,
 				55D894C925FADC5F00728B83 /* SuakePlayerType.swift in Sources */,

@@ -60,7 +60,7 @@ class PanCameraHelper: SuakeGameClass {
                 viewNode!.runAction(SCNAction.rotateBy(x: 0/*rotX*/, y: rotY, z: 0, duration: 0.0), completionHandler: {
                     let degrees = viewNode!.eulerAngles.y * CGFloat(180 / Double.pi)
                     
-                    print("Rotate view by: \(rotY), to: \(viewNode!.eulerAngles.y) (Deg: \(degrees)")
+//                    print("Rotate view by: \(rotY), to: \(viewNode!.eulerAngles.y) (Deg: \(degrees)")
                     
 //                    degrees -= 180
                     var deg:Double = Double(degrees)

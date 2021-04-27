@@ -32,7 +32,9 @@ class BaseWeaponPickupEntity: SuakeBaseNodeEntity {
             let scnNodeComponents:[SuakeBaseSCNNodeComponent] = self.components(conformingTo: SuakeBaseSCNNodeComponent.self)
             for i in (0..<scnNodeComponents.count){
                 if(scnNodeComponents[i].isKind(of: BaseWeaponPickupComponent.self) && scnNodeComponents[i] != self.pickupParticleComponent){
-                    scnNodeComponents[i].node.position = SCNVector3(self._pos.x * SuakeVars.fieldSize, scnNodeComponents[i].node.position.y, self._pos.z * SuakeVars.fieldSize)
+                    let nextPos = SCNVector3(self._pos.x * SuakeVars.fieldSize, scnNodeComponents[i].node.position.y, self._pos.z * SuakeVars.fieldSize)
+                    scnNodeComponents[i].node.position = nextPos
+                    print("nextPos: \(nextPos)")
                 }
             }
         }
@@ -133,6 +135,7 @@ class BaseWeaponPickupEntity: SuakeBaseNodeEntity {
         var pos:SCNVector3 = self.game.levelManager.gameBoard.getRandomFreePos()
         pos.y = self.position.y
         self.pos = pos
+        print("New weapon pickup pos: \(self.pos)")
         
         //super.initSetupPos(addToScene: addToScene)
     }

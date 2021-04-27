@@ -39,6 +39,33 @@ class MachinegunBullet: BulletBase {
         self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.mgbullet, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.portal, CollisionCategory.wall, CollisionCategory.floor, CollisionCategory.container])
     }
     
+    override func hitTarget(targetCat: CollisionCategory, targetNode: SCNNode, contactPoint: SCNVector3? = nil, overrideIsTargetHit: Bool = false) -> Bool {
+        let bRet:Bool = super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint, overrideIsTargetHit: overrideIsTargetHit)
+        
+        if(bRet){
+            let explosionCompoenent:BulletImpactExplodingComponent = BulletImpactExplodingComponent(game: self.game)
+            explosionCompoenent.explode(position: contactPoint!)
+        }
+        
+        return bRet
+    }
+    
+    func hitTarget(targetCat: CollisionCategory, targetNode: SCNNode, contact: SCNPhysicsContact) -> Bool {
+        let bRet:Bool = super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contact.contactPoint)
+        
+        if(bRet){
+            print("PenetrationDistance: \(contact.penetrationDistance)")
+            let explosionCompoenent:BulletImpactExplodingComponent = BulletImpactExplodingComponent(game: self.game)
+            var impactPos:SCNVector3 = contact.contactPoint
+            print("ContactNormal: \(contact.contactNormal)")
+            impactPos.z -= (contact.penetrationDistance * contact.contactNormal.z)
+            impactPos.x -= (contact.penetrationDistance * contact.contactNormal.x)
+            explosionCompoenent.explode(position: impactPos)
+        }
+        
+        return bRet
+    }
+    
     override func getNewBullet()->MachinegunBullet{
         return MachinegunBullet(game: self.game, weapon: self.weapon as! MachinegunComponent)
     }
