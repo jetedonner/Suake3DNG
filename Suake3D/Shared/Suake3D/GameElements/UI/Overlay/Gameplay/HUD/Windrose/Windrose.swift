@@ -64,30 +64,27 @@ class Windrose:BaseExtHUDComponent{
     }
     
     func setupWindrose(hud:HUDOverlayScene){
-//        self.imgRotation = SKSpriteNode(  (hud.childNode(withName: "imgRotation") as! SKSpriteNode)
-        self.imgRotation = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/icons/ArrowRedTransBlur72x72.png")
         
-//        self.imgRotation.texture = SKTexture(imageNamed: "art.scnassets/overlays/gameplay/icons/ArrowRedTransBlur72x72.png")
-//        self.imgRotation.removeFromParent()
-        self.imgRotation.zPosition = 100003
-        self.imgRotation.zRotation = CGFloat.pi / -2
-        self.imgRotation.position.y += innerRadius
-        self.centerNode.addChild(self.imgRotation)
-        self.centerNode.position = CGPoint(x: self.game.gameWindowSize.width / 2, y: self.game.gameWindowSize.height / 2)
-        //imgRotation.alpha = 0
-        hud.addChild(self.centerNode)
+        self.imgRotation = self.initRotArrowAndAdd(hud: hud, imageNamed: "art.scnassets/overlays/gameplay/icons/ArrowRedTransBlur72x72.png", varCenterNode: self.centerNode)
         
-        self.imgGoodyPos = SKSpriteNode(imageNamed: "art.scnassets/overlays/gameplay/icons/ArrowOrangeTransPlanb64x64.png") //= (hud.childNode(withName: "imgGoodyPos") as! SKSpriteNode)
-//        self.imgGoodyPos.texture = SKTexture(imageNamed: "art.scnassets/overlays/gameplay/icons/ArrowOrangeTransPlanb64x64.png")
-//        self.imgGoodyPos.removeFromParent()
-        self.imgGoodyPos.zPosition = 100002
-        self.imgGoodyPos.zRotation = CGFloat.pi / -2
-        self.imgGoodyPos.position.y += innerRadius
-        self.centerNodeGoodyPos.addChild(self.imgGoodyPos)
-        self.centerNodeGoodyPos.position = CGPoint(x: self.game.gameWindowSize.width / 2, y: self.game.gameWindowSize.height / 2)
-        hud.addChild(self.centerNodeGoodyPos)
+        self.imgGoodyPos = self.initRotArrowAndAdd(hud: hud, imageNamed: "art.scnassets/overlays/gameplay/icons/ArrowOrangeTransPlanb64x64.png", varCenterNode: self.centerNodeGoodyPos)
         
         hud.addChild(self.imgWindRose)
+    }
+    
+    func initRotArrowAndAdd(hud:HUDOverlayScene, imageNamed:String, varCenterNode:SKNode)->SKSpriteNode{
+        var varRotArrow = SKSpriteNode(imageNamed: imageNamed)
+        varCenterNode.addChild(self.initArrowImg(imgArrow: varRotArrow))
+        varCenterNode.position = CGPoint(x: self.game.gameWindowSize.width / 2, y: self.game.gameWindowSize.height / 2)
+        hud.addChild(varCenterNode)
+        return varRotArrow
+    }
+    
+    func initArrowImg(imgArrow:SKSpriteNode)->SKSpriteNode{
+        imgArrow.zPosition = 100002
+        imgArrow.zRotation = CGFloat.pi / -2
+        imgArrow.position.y += innerRadius - imgArrow.frame.height
+        return imgArrow
     }
     
     func resetWindroseRotation(){
