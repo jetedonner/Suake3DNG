@@ -1410,8 +1410,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/Settings/UserDefaultsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "init(game:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1522,8 +1522,8 @@
             filePath = "Suake3D/Shared/Suake3D/System/Settings/UserDefaultsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "loadValuesFromUserDefaults()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1650,8 +1650,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1666,8 +1666,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2418,8 +2418,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "reposHealthBar(healthBar:entity:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2434,8 +2434,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "reposHealthBar(healthBar:entity:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2450,8 +2450,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "reposHealthBar(healthBar:entity:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2466,8 +2466,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PanCameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "checkNodeInsideFrustum(node:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2482,8 +2482,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PanCameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "getHitTestCatBitMask()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2498,8 +2498,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/PanCameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "checkAimedAtAll(overrideCheckIsAimed:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2722,8 +2722,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "showOverlayScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2738,8 +2738,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "showOverlayScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2754,8 +2754,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "showOverlayScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2960,8 +2960,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2976,8 +2976,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2992,8 +2992,8 @@
             filePath = "Suake3D/Shared/Suake3D/GameElements/UI/Overlay/Gameplay/HUD/Scenes/HUDOverlayScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>

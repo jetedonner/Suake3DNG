@@ -68,6 +68,7 @@ class SuakeVars{
     static var droidPos:SCNVector3 = SCNVector3(x: 3, y: 0, z: 3)
     
     static let showArrows:Bool = true
+    static let showWindrose:Bool = true
     
     static let reloadClipTimeout:TimeInterval = 3.0
     

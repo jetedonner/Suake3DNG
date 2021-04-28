@@ -22,6 +22,8 @@ class HUDOverlayScene: SuakeBaseOverlay {
     var map:MapOverlay!
     
     var arrows:ArrowManager!
+    var windrose:Windrose!
+    var windroseNode:SKSpriteNode!
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -65,7 +67,18 @@ class HUDOverlayScene: SuakeBaseOverlay {
         
         self.arrows = ArrowManager(game: game, hud: self)
         self.arrows.showArrows = (SuakeVars.showArrows ? .DIR : .NONE)
+        
+        self.windrose = Windrose(game: game)
+        self.windrose.setupWindrose(hud: self)
+//        self.addChild(self.windrose.imgWindRose)
+        
+        self.showWindroseOrArrows(showWindrose: true)// self.showWindrose)
 //        self.arrows.setupArrows(hud: self)
+    }
+    
+    func showWindroseOrArrows(showWindrose:Bool = true){
+        self.windrose.isHidden = !showWindrose
+        self.arrows.showArrows = (showWindrose ? .NONE : .DIR)
     }
     
     func loadInitialValues(){

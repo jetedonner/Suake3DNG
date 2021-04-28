@@ -251,6 +251,7 @@
 		55EC891025FA9B150040E676 /* SuakeGameClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC890F25FA9B150040E676 /* SuakeGameClass.swift */; };
 		55EC891725FA9D2D0040E676 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC891625FA9D2D0040E676 /* NSImage.swift */; };
 		55EC891D25FA9D4D0040E676 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC891C25FA9D4D0040E676 /* CollisionCategory.swift */; };
+		55F2AE532639EFDE0042BD38 /* Windrose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE522639EFDE0042BD38 /* Windrose.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -535,6 +536,7 @@
 		55EC890F25FA9B150040E676 /* SuakeGameClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeGameClass.swift; sourceTree = "<group>"; };
 		55EC891625FA9D2D0040E676 /* NSImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		55EC891C25FA9D4D0040E676 /* CollisionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
+		55F2AE522639EFDE0042BD38 /* Windrose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windrose.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -882,6 +884,7 @@
 			children = (
 				5501850E2609187F00F28C54 /* HUDWeapon */,
 				550184622604172200F28C54 /* Arrows */,
+				55F2AE512639EFD20042BD38 /* Windrose */,
 				550184382603E0C500F28C54 /* Map */,
 				550183FF2602A52200F28C54 /* Crosshair */,
 				55760E7325FD4A6E00C10784 /* Scenes */,
@@ -1501,6 +1504,14 @@
 			path = Consts;
 			sourceTree = "<group>";
 		};
+		55F2AE512639EFD20042BD38 /* Windrose */ = {
+			isa = PBXGroup;
+			children = (
+				55F2AE522639EFDE0042BD38 /* Windrose.swift */,
+			);
+			path = Windrose;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1685,6 +1696,7 @@
 				550183B92601893B00F28C54 /* SetupDeveloperViewController.swift in Sources */,
 				55DB997D25FC542F000023AF /* NextMoveResult.swift in Sources */,
 				554233E22632B7D500EB55F9 /* ShotgunCrosshairComponent.swift in Sources */,
+				55F2AE532639EFDE0042BD38 /* Windrose.swift in Sources */,
 				5501851B26091A0F00F28C54 /* SuakeFiles.swift in Sources */,
 				5501847326052D2D00F28C54 /* ArrowManager.swift in Sources */,
 				55D894E125FADDAA00728B83 /* SuakePlayerEntity.swift in Sources */,

@@ -32,6 +32,7 @@ class UserDefaultsHelper:SuakeGameClass{
     var difficulty:LevelDifficulty = .Medium
     var lightIntensity:LightIntensity = .normal
     var showArrows:Bool = true
+    var showWindrose:Bool = true
     var volume:CGFloat = 0.5
     
     var showCountdown:Bool = true
@@ -74,6 +75,7 @@ class UserDefaultsHelper:SuakeGameClass{
             "Difficulty": LevelDifficulty.Medium.rawValue,
             "LightIntensity": LightIntensity.normal.rawValue,
             "ShowArrows": SuakeVars.showArrows,
+            "ShowWindrose": SuakeVars.showWindrose,
             "Volume": SuakeVars.volume,
             "LoadWeaponPickups": SuakeVars.loadWeaponPickups,
             "LoadObstacles": SuakeVars.loadObstacles,
@@ -119,6 +121,7 @@ class UserDefaultsHelper:SuakeGameClass{
         self.difficulty = LevelDifficulty.levelDifficulty(fromString: self.defaults.string(forKey: "Difficulty")!)
         self.lightIntensity = LightIntensity.lightIntensity(from: self.defaults.string(forKey: "LightIntensity")!)
         self.showArrows = self.defaults.bool(forKey: "ShowArrows")
+        self.showWindrose = self.defaults.bool(forKey: "ShowWindrose")
         self.volume = CGFloat(self.defaults.float(forKey: "Volume"))
     }
 
@@ -142,6 +145,7 @@ class UserDefaultsHelper:SuakeGameClass{
         self.game.levelManager.lightManager.setAmbientLight(intensity: self.lightIntensity)
         self.game.soundManager.muteSound = !self.soundEffects
         self.game.overlayManager.hud.overlayScene!.arrows.showArrows = (self.showArrows ? .DIR : .NONE)
+        self.game.overlayManager.hud.overlayScene!.showWindroseOrArrows(showWindrose: self.showWindrose)
         self.game.overlayManager.hud.dbgLogComponent.showDbgLog = self.showDbgLog
 //        ShowDbgLog
         self.game.soundManager.volume = self.volume

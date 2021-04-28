@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -320,7 +320,7 @@
                                         </connections>
                                     </switch>
                                     <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="Xff-aj-Jss">
-                                        <rect key="frame" x="15" y="124" width="42" height="25"/>
+                                        <rect key="frame" x="15" y="68" width="42" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <connections>
                                             <binding destination="Obd-p7-6Vt" name="value" keyPath="values.LoadWeaponPickups" id="7D8-Kb-8Cg">
@@ -331,7 +331,7 @@
                                         </connections>
                                     </switch>
                                     <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="kwb-53-7qF">
-                                        <rect key="frame" x="15" y="94" width="42" height="25"/>
+                                        <rect key="frame" x="15" y="38" width="42" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <connections>
                                             <binding destination="Obd-p7-6Vt" name="value" keyPath="values.LoadObstacles" id="hYZ-Ah-Ijf">
@@ -342,7 +342,7 @@
                                         </connections>
                                     </switch>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q05-tO-add">
-                                        <rect key="frame" x="180" y="128" width="163" height="18"/>
+                                        <rect key="frame" x="180" y="72" width="163" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Load Weapon-Pickups" id="u3u-dE-CcS">
                                             <font key="font" size="16" name="DpQuake"/>
@@ -351,7 +351,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9cw-QI-7EL">
-                                        <rect key="frame" x="180" y="98" width="120" height="18"/>
+                                        <rect key="frame" x="180" y="42" width="120" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Load Obstacles" id="ofg-Mw-bOm">
                                             <font key="font" size="16" name="DpQuake"/>
@@ -359,6 +359,26 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bnc-OM-GHK">
+                                        <rect key="frame" x="180" y="128" width="115" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Show Windrose" id="d4a-a5-Xm2">
+                                            <font key="font" size="16" name="DpQuake"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="YkH-DV-bVm">
+                                        <rect key="frame" x="15" y="124" width="42" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <binding destination="Obd-p7-6Vt" name="value" keyPath="values.ShowWindrose" id="rjG-wZ-aJQ">
+                                                <dictionary key="options">
+                                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                             </view>
                         </tabViewItem>
