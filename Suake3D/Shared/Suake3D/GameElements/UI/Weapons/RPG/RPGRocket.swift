@@ -14,12 +14,29 @@ class RPGRocket: BulletBase {
     var rescale:CGFloat = 5.0
     let shotParticleNode = SCNNode()
     var isExploded:Bool = false
+    var autoExplode:Bool = true
+    var autoExplodeTime:TimeInterval = 3.0
     
     init(game: GameController, weapon:RPGComponent) {
         super.init(game: game, weapon: weapon, sceneName: "art.scnassets/nodes/weapons/rpg/rocketlauncher_shell.scn", scale: SCNVector3(5, 5, 5))
         self.name = "RPGRocket"
         self.shootingVelocity = 485.0
         self.loadRocket()
+    }
+    
+    func addRocket2Scene(){
+        self.game.physicsHelper.qeueNode2Add2Scene(node: self)
+        if(self.autoExplode){
+            self.startAutoExplodeTimer()
+        }
+    }
+    
+    func startAutoExplodeTimer(){
+        self.runAction(SCNAction.wait(duration: self.autoExplodeTime), completionHandler: {
+            if(!self.isExploded){
+                self.explodeRocket()
+            }
+        })
     }
     
     func loadRocket(){
@@ -45,6 +62,7 @@ class RPGRocket: BulletBase {
         
         self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.rocket, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.wall, CollisionCategory.floor])
         self.physicsBody?.damping = 0.0
+        
     }
     
     override func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil)->Bool{
@@ -57,7 +75,7 @@ class RPGRocket: BulletBase {
         return false
     }
 
-    func explodeRocket(targetNode:SCNNode, removeTargetNode:Bool, pos:SCNVector3? = nil){
+    func explodeRocket(targetNode:SCNNode? = nil, removeTargetNode:Bool = false, pos:SCNVector3? = nil){
         if(!self.isExploded){
             self.isExploded = true
             let exp = SCNParticleSystem()
@@ -81,10 +99,10 @@ class RPGRocket: BulletBase {
             shotParticleNode2.scale = SCNVector3(3, 3, 3)
             let shotParticleNode = SCNNode()
             shotParticleNode.addParticleSystem(exp)
-            if(removeTargetNode){
-                shotParticleNode.position = targetNode.presentation.position
-                shotParticleNode2.position = targetNode.presentation.position
-                targetNode.runAction(SCNAction.removeFromParentNode(), completionHandler: {
+            if(removeTargetNode && targetNode != nil){
+                shotParticleNode.position = targetNode!.presentation.position
+                shotParticleNode2.position = targetNode!.presentation.position
+                targetNode!.runAction(SCNAction.removeFromParentNode(), completionHandler: {
                     
                 })
             }else{
@@ -96,7 +114,7 @@ class RPGRocket: BulletBase {
 //                self.game.showDbgMsg(dbgMsg: "Rocket explosion finished", dbgLevel: .Verbose)
 //                self.game.physicsHelper.qeueNode2Remove(node: shotParticleNode)
 //                self.game.physicsHelper.qeueNode2Remove(node: shotParticleNode2)
-//                self.game.physicsHelper.qeueNode2Remove(node: self)
+                self.game.physicsHelper.qeueNode2Remove(node: self)
 //            })
             self.game.physicsHelper.qeueNode2Add2Scene(node: shotParticleNode)
             self.game.physicsHelper.qeueNode2Add2Scene(node: shotParticleNode2)

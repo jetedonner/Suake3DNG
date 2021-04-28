@@ -38,7 +38,8 @@ class BulletBase: SuakeBaseSCNNode {
             contactTestBitMask = contactTestBitMask | catBitMask.rawValue
         }
         self.physicsBody?.contactTestBitMask = contactTestBitMask
-        self.physicsBody?.collisionBitMask = 0
+        self.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue
+        self.physicsBody?.restitution = 0.01
         self.physicsBody?.isAffectedByGravity = false
     }
 

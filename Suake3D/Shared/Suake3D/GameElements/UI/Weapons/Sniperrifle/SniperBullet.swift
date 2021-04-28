@@ -68,7 +68,12 @@ class SniperBullet: BulletBase {
     
     
     override func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil)->Bool{
-        return super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint)
+        if(super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint)){
+            let explosionCompoenent:BulletImpactExplodingComponent = BulletImpactExplodingComponent(game: self.game)
+            explosionCompoenent.explode(position: contactPoint!)
+            return true
+        }
+        return false
 //        if(!self.isTargetHit){
 //            self.isTargetHit = true
 //            //self.explodeRocket(targetNode: targetNode, removeTargetNode: false, pos: contactPoint)

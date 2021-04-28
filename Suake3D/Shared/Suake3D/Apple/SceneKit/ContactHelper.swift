@@ -94,10 +94,15 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
         else if(self.checkPhysicsBody4CatBitMaskContains(node: contact.nodeA, catBitMask: CollisionCategory.suakeOpp)){
             if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMasks: self.allSuakeWeaponCategories)){
                 if((contact.nodeB as! BulletBase).weapon.weaponArsenalManager.playerEntity.playerType != .OppSuake){
-                    if((contact.nodeB as! BulletBase).hitTarget(targetCat: .suakeOpp, targetNode: contact.nodeA)){
-                        self.game.playerEntityManager.oppPlayerEntity.hitByBullet(bullet: (contact.nodeB as! BulletBase))
+                    if(contact.nodeB is MachinegunBullet){
+                        if((contact.nodeB as! MachinegunBullet).hitTarget(targetCat: .suakeOpp, targetNode: contact.nodeA, contact: contact)){
+                            self.game.playerEntityManager.oppPlayerEntity.hitByBullet(bullet: (contact.nodeB as! BulletBase))
+                        }
+                    }else{
+                        if((contact.nodeB as! BulletBase).hitTarget(targetCat: .suakeOpp, targetNode: contact.nodeA)){
+                            self.game.playerEntityManager.oppPlayerEntity.hitByBullet(bullet: (contact.nodeB as! BulletBase))
+                        }
                     }
-//                    self.game.playerEntityManager.oppPlayerEntity.hitByBullet(bullet: (contact.nodeB as! BulletBase))
                 }
             }
         }

@@ -26,7 +26,7 @@ class RPGComponent: BaseWeaponComponent {
         shot.rotation = self.getShotStartRotation()
         let velocity:SCNVector3 = self.getShotStartVelocity(bulletNode: shot, target: at)
         shot.physicsBody?.velocity = velocity
-        self.game.physicsHelper.qeueNode2Add2Scene(node: shot)
+        shot.addRocket2Scene()
     }
     
     required init?(coder: NSCoder) {

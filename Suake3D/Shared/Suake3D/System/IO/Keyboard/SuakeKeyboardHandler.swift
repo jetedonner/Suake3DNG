@@ -124,6 +124,7 @@ class SuakeKeyboardHandler: KeyboardHandler {
                         self.game.stateMachine.statePaused.showPauseOverlay = false
                         self.game.stateMachine.enter(SuakeStatePaused.self)
                     }
+                    MouseHelper.showMouseCursor()
                     let vc2:SetupDeveloperViewController = SetupDeveloperViewController()
                     vc2.game = self.game
                     

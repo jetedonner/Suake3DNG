@@ -612,6 +612,7 @@
 		5501837426016E2C00F28C54 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				55B0B1F6263899FD00260E75 /* BulletImpactExplodingComponent.swift */,
 				551F3D2A260A8CE1006D9F65 /* WeaponPickupRisingParticlesComponent.swift */,
 				552417F1260A82D8002C90FC /* WeaponPickupEntityManager.swift */,
 				552417EA260A7E57002C90FC /* BaseWeaponPickupComponent.swift */,
@@ -626,7 +627,6 @@
 		5501838726016FA200F28C54 /* MG */ = {
 			isa = PBXGroup;
 			children = (
-				55B0B1F6263899FD00260E75 /* BulletImpactExplodingComponent.swift */,
 				552417FC260A8391002C90FC /* MachinegunPickupComponent.swift */,
 				552417FB260A8391002C90FC /* MachinegunPickupEntity.swift */,
 				5501839026016FD700F28C54 /* MachinegunBullet.swift */,
@@ -1292,8 +1292,8 @@
 		55DB994C25FC4895000023AF /* Gamestates */ = {
 			isa = PBXGroup;
 			children = (
-				55018351260154A000F28C54 /* SuakeStateMainMenu.swift */,
 				55DB996C25FC4AB5000023AF /* SuakeStateMachine.swift */,
+				55018351260154A000F28C54 /* SuakeStateMainMenu.swift */,
 				55A2B8E926000D4100E25F7F /* SuakeStateMatchOver.swift */,
 				55DB996725FC4A18000023AF /* SuakeStatePaused.swift */,
 				55DB998625FC5AC1000023AF /* SuakeStateDied.swift */,

@@ -71,6 +71,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         
         self.scnView.delegate = self.physicsHelper
         self.scnView.autoenablesDefaultLighting = true
+//        self.scnView.debugOptions = [.showPhysicsShapes]
 
         scnView.scene?.physicsWorld.contactDelegate = self.contactHelper
 

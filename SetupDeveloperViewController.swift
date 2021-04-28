@@ -59,19 +59,29 @@ class SetupDeveloperViewController: NSViewController {
         self.game.overlayManager.hud.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.matchDuration.rawValue)
         self.game.overlayManager.hud.overlayScene!.map.updateMap(byPassCheck: true)
         self.game.stateMachine.enter(SuakeStateReadyToPlay.self)
-        self.dismiss(true)
+//        self.dismiss(true)
+        self.closeViewAndReturn2OldState()
     }
     
     @IBAction func closeAndSave(_ sender: Any) {
         self.game.usrDefHlpr.loadValuesFromUserDefaults()
         self.game.usrDefHlpr.resetUserDefaults2Game()
         self.game.overlayManager.hud.setGameTimer(time: self.game.levelManager.currentLevel.levelConfigEnv.matchDuration.rawValue)
-        self.dismiss(true)
+//        self.dismiss(true)
+        self.closeViewAndReturn2OldState()
         self.game.stateMachine.returnToOldState()
     }
     
     @IBAction func closeDevView(_ sender: Any) {
+//        self.dismiss(true)
+        self.closeViewAndReturn2OldState()
+    }
+    
+    func closeViewAndReturn2OldState(){
         self.dismiss(true)
+        if(self.game.cameraHelper.fpv || self.game.cameraHelper.fpvOpp){
+            MouseHelper.showMouseCursor(show: false)
+        }
     }
     
     override func viewDidLoad() {

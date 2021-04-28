@@ -22,4 +22,8 @@ class MouseHelper{
             CGDisplayHideCursor(CGMainDisplayID())
         }
     }
+    
+//    static func isMouseCursorVisible()->Bool{
+//        return (CGCursorIsVisible() != 0)
+//    }
 }

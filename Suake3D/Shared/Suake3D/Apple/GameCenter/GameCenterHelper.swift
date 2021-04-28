@@ -8,7 +8,7 @@
 import Foundation
 import GameKit
 
-protocol GameCenterHelperDelegate: class {
+protocol GameCenterHelperDelegate: AnyObject {
     
 //    func didChangeAuthStatus(isAuthenticated: Bool)
     func startMatch(match: GKMatch)
@@ -34,12 +34,6 @@ class GameCenterHelper: SuakeGameClass {
     var delegate:GameCenterHelperDelegate?
     
     let matchMakerHelper:MatchMakerHelper
-    
-//    var _isMultiplayerGameRunning:Bool = false
-//    var isMultiplayerGameRunning:Bool{
-//        get{ return self._isMultiplayerGameRunning }
-//        set{ self._isMultiplayerGameRunning = newValue }
-//    }
     
     var isMultiplayerGameRunning:Bool{
         get{ return self.matchMakerHelper.isMultiplayerGameRunning }

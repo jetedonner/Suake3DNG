@@ -17,24 +17,19 @@ class SuakeStateMainMenu: SuakeBaseState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return (stateClass == SuakeStatePlaying.self || stateClass == SuakeStateReadyToPlay.self /*|| stateClass == SuakeStateMainSetup.self || stateClass == SuakeStateDeveloperSetup.self*/)
+        return (stateClass == SuakeStatePlaying.self || stateClass == SuakeStateReadyToPlay.self)
     }
     
     override func willExit(to nextState: GKState) {
-        if(nextState is SuakeStatePlaying || nextState is SuakeStateReadyToPlay /*|| nextState is SuakeStateTutorial || nextState is SuakeStateMainSetup || nextState is SuakeStateDeveloperSetup*/){
+        if(nextState is SuakeStatePlaying || nextState is SuakeStateReadyToPlay){
             self.game.overlayManager.mainMenu.showMenu(show: false)
         }
     }
     
     override func didEnter(from previousState: GKState?) {
-        if(/*previousState is SuakeStateDeveloperSetup ||*/
-            previousState is SuakeStatePlaying ||
-            previousState is SuakeStateReadyToPlay /*||
-            previousState is SuakeStateMainSetup*/){
-//            self.game.pauseMatch()
+        if(previousState is SuakeStatePlaying ||
+            previousState is SuakeStateReadyToPlay){
             self.game.overlayManager.showOverlay4GameState(type: .menu)
-//            self.game.overlayManager.mainMenu.showMenu()
-//            self.game.scnView.overlaySKScene = self.game.overlayManager.mainMenu.sceneNode
         }
     }
 }

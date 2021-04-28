@@ -34,7 +34,13 @@ class BaseGameController:NSObject{
         
         self.scene = SCNScene(named: "art.scnassets/scenes/gamescene.scn")! //Landscape.scn")! //gamescene.scn")!
         self.floorNode = (self.scene.rootNode.childNode(withName: "floor", recursively: true))!
+        
+        self.floorNode.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: self.floorNode.geometry!, options: nil))
+        self.floorNode.physicsBody?.allowsResting = true
         self.floorNode.physicsBody?.categoryBitMask = CollisionCategory.floor.rawValue
+//        self.floorNode.physicsBody?.categoryBitMask = CollisionCategory.floor.rawValue
+        self.floorNode.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue
+//        self.floorNode.physicsBody?.con
         super.init()
         
         scnView.scene = scene
