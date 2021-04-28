@@ -43,11 +43,13 @@ class BulletBase: SuakeBaseSCNNode {
         self.physicsBody?.isAffectedByGravity = false
     }
 
-    func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil)->Bool{
-        return self.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint, overrideIsTargetHit: false)
+    
+    
+    func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contact: SCNPhysicsContact)->Bool{
+        return self.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact, overrideIsTargetHit: false)
     }
 
-    func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil, overrideIsTargetHit:Bool = false)->Bool{
+    func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contact: SCNPhysicsContact, overrideIsTargetHit:Bool = false)->Bool{
         if(!self.isTargetHit){
             if(!overrideIsTargetHit){
                 self.isTargetHit = true
@@ -64,6 +66,28 @@ class BulletBase: SuakeBaseSCNNode {
         }
         return false
     }
+    
+//    func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil)->Bool{
+//        return self.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint, overrideIsTargetHit: false)
+//    }
+//
+//    func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil, overrideIsTargetHit:Bool = false)->Bool{
+//        if(!self.isTargetHit){
+//            if(!overrideIsTargetHit){
+//                self.isTargetHit = true
+//            }
+//            self.game.physicsHelper.qeueNode2Remove(node: self)
+//
+////            self.game.soundManager.playSound(soundType: .riochet1)
+//            self.game.soundManager.playBulletHitSound(weaponType: .mg, node: targetNode)
+//            // TODO: Change target hit sound to weapon specific sounds
+////            self.game.audioManager.playBulletHitSound(weaponType: .mg, node: targetNode)
+//
+//            self.game.showDbgMsg(dbgMsg: "Bullet hit " + (targetCat == CollisionCategory.floor ? "floor" : "wall"), dbgLevel: .Verbose)
+//            return true
+//        }
+//        return false
+//    }
 
     func getNewBullet()->BulletBase{
         return BulletBase(game: self.game, weapon: self.weapon)

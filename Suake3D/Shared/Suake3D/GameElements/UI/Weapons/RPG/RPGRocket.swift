@@ -65,10 +65,10 @@ class RPGRocket: BulletBase {
         
     }
     
-    override func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil)->Bool{
+    override func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contact: SCNPhysicsContact)->Bool{
         if(!self.isTargetHit){
             self.isTargetHit = true
-            self.explodeRocket(targetNode: targetNode, removeTargetNode: false, pos: contactPoint)
+            self.explodeRocket(targetNode: targetNode, removeTargetNode: false, pos: contact.contactPoint)
             return true
             //return super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint)
         }

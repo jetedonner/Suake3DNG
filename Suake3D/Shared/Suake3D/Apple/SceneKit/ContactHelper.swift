@@ -25,7 +25,7 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
                     if((contact.nodeB as! MachinegunBullet).hitTarget(targetCat: .wall, targetNode: contact.nodeA, contact: contact)){
                     }
                 }else{
-                    _ = (contact.nodeB as! BulletBase).hitTarget(targetCat: CollisionCategory.wall, targetNode: contact.nodeA, contactPoint: contact.contactPoint)
+                    _ = (contact.nodeB as! BulletBase).hitTarget(targetCat: CollisionCategory.wall, targetNode: contact.nodeA, contact: contact)
                 }
             }
         }/*else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.goody)){
@@ -52,7 +52,7 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
                         }
                     }
                 }else{
-                    if(bullet.hitTarget(targetCat: .goody, targetNode: contact.nodeA)){
+                    if(bullet.hitTarget(targetCat: .goody, targetNode: contact.nodeA, contact: contact)){
                         if(bullet.weapon.weaponArsenalManager.playerEntity.playerType == .OwnSuake){
                             self.game.playerEntityManager.goodyEntity.goodyHit(bullet: bullet)
         //                    _ = self.game.playerEntityManager.getOwnPlayerEntity().goodyHit(bullet: (contact.nodeB as! BulletBase))
@@ -77,7 +77,7 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
                         (contact.nodeA.entity as! DroidEntity).hitByBullet(bullet: (contact.nodeB as! BulletBase))
                     }
                 }else{
-                    if(bullet.hitTarget(targetCat: .droid, targetNode: contact.nodeB, contactPoint: contact.contactPoint)){
+                    if(bullet.hitTarget(targetCat: .droid, targetNode: contact.nodeB, contact: contact)){
                         (contact.nodeA.entity as! DroidEntity).hitByBullet(bullet: (contact.nodeB as! BulletBase))
                     }
                 }
@@ -99,7 +99,7 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
                             self.game.playerEntityManager.oppPlayerEntity.hitByBullet(bullet: (contact.nodeB as! BulletBase))
                         }
                     }else{
-                        if((contact.nodeB as! BulletBase).hitTarget(targetCat: .suakeOpp, targetNode: contact.nodeA)){
+                        if((contact.nodeB as! BulletBase).hitTarget(targetCat: .suakeOpp, targetNode: contact.nodeA, contact: contact)){
                             self.game.playerEntityManager.oppPlayerEntity.hitByBullet(bullet: (contact.nodeB as! BulletBase))
                         }
                     }
@@ -111,13 +111,13 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
             self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.laserbeam)){
             if(self.checkPhysicsBody4CatBitMaskContains(node: contact.nodeB, catBitMask: CollisionCategory.floor) || self.checkPhysicsBody4CatBitMaskContains(node: contact.nodeB, catBitMask: CollisionCategory.wall)){
                 // (node: contact.nodeB, catBitMasks: [CollisionCategory.floor, CollisionCategory.wall])){
-                _ = (contact.nodeA as! BulletBase).hitTarget(targetCat: .floor, targetNode: contact.nodeB)
+                _ = (contact.nodeA as! BulletBase).hitTarget(targetCat: .floor, targetNode: contact.nodeB, contact: contact)
 //                if(!(contact.nodeA as! BulletBase).isTargetHit){
 //                    (contact.nodeA as! BulletBase).isTargetHit = true
 //                    self.game.physicsHelper.qeueNode2Remove(node: contact.nodeA)
 //                }
             }else if(self.checkPhysicsBody4CatBitMaskContains(node: contact.nodeA, catBitMask: CollisionCategory.suake)){
-                if((contact.nodeB as! BulletBase).hitTarget(targetCat: .suake, targetNode: contact.nodeA)){
+                if((contact.nodeB as! BulletBase).hitTarget(targetCat: .suake, targetNode: contact.nodeA, contact: contact)){
                     self.game.playerEntityManager.ownPlayerEntity.hitByBullet(bullet: (contact.nodeB as! BulletBase))
                 }
             }
@@ -165,7 +165,7 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
     }*/
     else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.medKit)){
             if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMasks: self.allSuakeWeaponCategories)){
-                if((contact.nodeB as! BulletBase).hitTarget(targetCat: .medKit, targetNode: contact.nodeA, contactPoint: contact.contactPoint)){
+                if((contact.nodeB as! BulletBase).hitTarget(targetCat: .medKit, targetNode: contact.nodeA, contact: contact)){
                     (contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
                 }
             }

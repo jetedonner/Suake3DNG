@@ -75,7 +75,7 @@ class SuakeVars{
     static let MACHINEGUN_DAMAGE:CGFloat = 15.0
     static let SHOTGUN_PELLET_DAMAGE:CGFloat = 7.5
     static let RPG_DAMAGE:CGFloat = 55.0
-    static let RAILGUN_DAMAGE:CGFloat = 69.0
+    static let RAILGUN_DAMAGE:CGFloat = 89.0
     static let SNIPERRIFLE_DAMAGE:CGFloat = 69.0
     static let NUKE_DAMAGE:CGFloat = 100.0
     

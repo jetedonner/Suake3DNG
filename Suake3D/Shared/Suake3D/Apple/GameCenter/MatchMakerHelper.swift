@@ -52,93 +52,99 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     }
     
     func sendTurnMsg(turnDir:TurnDir, position:SCNVector3, playerId:String? = nil) {
-        do{
+//        do{
             let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, position: position, playerId: playerId ?? self.dbgServerPlayerId)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: turnMsg) else {
                 return
             }
-            if(NetworkHelper.dbgMode){
-                print(dataObj.prettyPrintedJSONString!)
-            }
-            try match.sendData(toAllPlayers: dataObj, with: .reliable)
-            self.game.turnDirNetworkMatch(turnData: turnMsg)
-            self.msgSentCounter += 1
-            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
-        } catch {
-            self.game.showDbgMsg(dbgMsg: "Send data failed")
-        }
+        self.sendData(match: match, data: dataObj, with: .reliable)
+        self.game.turnDirNetworkMatch(turnData: turnMsg)
+//            if(NetworkHelper.dbgMode){
+//                print(dataObj.prettyPrintedJSONString!)
+//            }
+//            try match.sendData(toAllPlayers: dataObj, with: .reliable)
+//            self.game.turnDirNetworkMatch(turnData: turnMsg)
+//            self.msgSentCounter += 1
+//            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
+//        } catch {
+//            self.game.showDbgMsg(dbgMsg: "Send data failed")
+//        }
     }
     
     func sendDroidDirMsg(nextDir:SuakeDir, position:SCNVector3, playerId:String? = nil) {
-        do{
+//        do{
             let droidMsg:DroidDirNetworkData = DroidDirNetworkData(id: self.msgSentCounter, nextDir: nextDir, position: position, playerId: playerId ?? self.dbgServerPlayerId)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: droidMsg) else {
                 return
             }
-            if(NetworkHelper.dbgMode){
-                print(dataObj.prettyPrintedJSONString!)
-            }
-            try match.sendData(toAllPlayers: dataObj, with: .reliable)
-//            self.game.droidDirNetworkMatch(droidData: droidMsg)
-            self.msgSentCounter += 1
-            self.game.showDbgMsg(dbgMsg: "Sent droidDir: \(nextDir.rawValue)")
-        } catch {
-            self.game.showDbgMsg(dbgMsg: "Send data failed")
-        }
+            self.sendData(match: match, data: dataObj, with: .reliable)
+//            if(NetworkHelper.dbgMode){
+//                print(dataObj.prettyPrintedJSONString!)
+//            }
+//            try match.sendData(toAllPlayers: dataObj, with: .reliable)
+////            self.game.droidDirNetworkMatch(droidData: droidMsg)
+//            self.msgSentCounter += 1
+//            self.game.showDbgMsg(dbgMsg: "Sent droidDir: \(nextDir.rawValue)")
+//        } catch {
+//            self.game.showDbgMsg(dbgMsg: "Send data failed")
+//        }
     }
     
     func sendDroidPathMsg(path:[SuakeBaseGridGraphNode], position:SCNVector3, playerId:String? = nil) {
-        do{
+//        do{
             let droidMsg:DroidPathNetworkData = DroidPathNetworkData(id: self.msgSentCounter, path: path, position: position, playerId: playerId ?? self.dbgServerPlayerId)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: droidMsg) else {
                 return
             }
-            if(NetworkHelper.dbgMode){
-                print(dataObj.prettyPrintedJSONString!)
-            }
-            try match.sendData(toAllPlayers: dataObj, with: .reliable)
-//            self.game.droidDirNetworkMatch(droidData: droidMsg)
-            self.msgSentCounter += 1
-            self.game.showDbgMsg(dbgMsg: "Sent droidDir: \(path)")
-        } catch {
-            self.game.showDbgMsg(dbgMsg: "Send data failed")
-        }
+            self.sendData(match: match, data: dataObj, with: .reliable)
+//            if(NetworkHelper.dbgMode){
+//                print(dataObj.prettyPrintedJSONString!)
+//            }
+//            try match.sendData(toAllPlayers: dataObj, with: .reliable)
+////            self.game.droidDirNetworkMatch(droidData: droidMsg)
+//            self.msgSentCounter += 1
+//            self.game.showDbgMsg(dbgMsg: "Sent droidDir: \(path)")
+//        } catch {
+//            self.game.showDbgMsg(dbgMsg: "Send data failed")
+//        }
     }
     
     func sendPickedUpMsg(itemType:SuakeFieldType, value:CGFloat, newPos:SCNVector3, itemId:Int = 0) {
-        do{
+//        do{
             let pickedUpMsg:PickedUpNetworkData = PickedUpNetworkData(id: self.msgSentCounter, itemType: itemType, value: value, newPos: newPos, itemId: itemId)
 //            let turnMsg:TurnNetworkData = TurnNetworkData(id: self.msgSentCounter, turnDir: turnDir, position: position, playerId: self.dbgServerPlayerId)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: pickedUpMsg) else {
                 return
             }
-            if(NetworkHelper.dbgMode){
-                print(dataObj.prettyPrintedJSONString!)
-            }
-            try match.sendData(toAllPlayers: dataObj, with: .reliable)
-//            self.game.turnDirNetworkMatch(turnData: pickedUpMsg)
-            self.msgSentCounter += 1
-//            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
-        } catch {
-            self.game.showDbgMsg(dbgMsg: "Send data failed")
-        }
+            self.sendData(match: match, data: dataObj, with: .reliable)
+//            if(NetworkHelper.dbgMode){
+//                print(dataObj.prettyPrintedJSONString!)
+//            }
+//            try match.sendData(toAllPlayers: dataObj, with: .reliable)
+////            self.game.turnDirNetworkMatch(turnData: pickedUpMsg)
+//            self.msgSentCounter += 1
+////            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
+//        } catch {
+//            self.game.showDbgMsg(dbgMsg: "Send data failed")
+//        }
     }
     
     func sendHitByBulletMsg(itemType:SuakeFieldType, weaponType:WeaponType, value:CGFloat, pos:SCNVector3) {
-        do{
+//        do{
             let hitByBulletMsg:HitByBulletNetworkData = HitByBulletNetworkData(id: self.msgSentCounter, itemType: itemType, weaponType: weaponType, value: value, pos: pos)
             guard let dataObj = NetworkHelper.encodeAndSend(netData: hitByBulletMsg) else {
                 return
             }
-            if(NetworkHelper.dbgMode){
-                print(dataObj.prettyPrintedJSONString!)
-            }
-            try match.sendData(toAllPlayers: dataObj, with: .reliable)
-            self.msgSentCounter += 1
+            self.sendData(match: match, data: dataObj, with: .reliable)
+//            if(NetworkHelper.dbgMode){
+//                print(dataObj.prettyPrintedJSONString!)
+//            }
+//            try match.sendData(toAllPlayers: dataObj, with: .reliable)
+//            self.msgSentCounter += 1
 //            self.game.showDbgMsg(dbgMsg: "Sent turnDir: \(turnDir.rawValue)")
-        } catch {
-            self.game.showDbgMsg(dbgMsg: "Send data failed")
-        }
+//        } catch {
+//            self.game.showDbgMsg(dbgMsg: "Send data failed")
+//        }
     }
     
     func sendData(msgTyp:MsgType, data:Any? = nil) {
@@ -146,7 +152,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     }
     
     func sendData(match:GKMatch, msgTyp:MsgType, data:Any? = nil) {
-        do {
+//        do {
             self.game.showDbgMsg(dbgMsg: "SENDING Suake3D-MSG: Type: \(msgTyp)")
             if(msgTyp == .setupClientServerMsg){
                 self.setupClientServerData = SetupClientServerNetworkData(id: self.msgSentCounter)
@@ -156,28 +162,31 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: self.setupClientServerData) else {
                     return
                 }
-                if(NetworkHelper.dbgMode){
-                    print(dataLoadLevel.prettyPrintedJSONString!)
-                }
-                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+//                if(NetworkHelper.dbgMode){
+//                    print(dataLoadLevel.prettyPrintedJSONString!)
+//                }
+//                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+                self.sendData(match: match, data: dataLoadLevel, with: .reliable)
             }else if(msgTyp == .ready4MatchMsg){
                 let sendData = Ready4MatchNetworkData(id: self.msgSentCounter)
                 guard let dataReady4Match = NetworkHelper.encodeAndSend(netData: sendData) else {
                     return
                 }
-                if(NetworkHelper.dbgMode){
-                    print(dataReady4Match.prettyPrintedJSONString!)
-                }
-                try match.send(dataReady4Match, to: [self.dbgServerGKPlayer], dataMode: .reliable)
+//                if(NetworkHelper.dbgMode){
+//                    print(dataReady4Match.prettyPrintedJSONString!)
+//                }
+//                try match.send(dataReady4Match, to: [self.dbgServerGKPlayer], dataMode: .reliable)
+                self.sendData(match: match, data: dataReady4Match, with: .reliable)
             }else if(msgTyp == .startMatchMsg){
                 let sendData = StartMatchNetworkData(id: self.msgSentCounter)
                 guard let dataStartMatch = NetworkHelper.encodeAndSend(netData: sendData) else {
                     return
                 }
-                if(NetworkHelper.dbgMode){
-                    print(dataStartMatch.prettyPrintedJSONString!)
-                }
-                try match.sendData(toAllPlayers: dataStartMatch, with: .reliable)
+//                if(NetworkHelper.dbgMode){
+//                    print(dataStartMatch.prettyPrintedJSONString!)
+//                }
+//                try match.sendData(toAllPlayers: dataStartMatch, with: .reliable)
+                self.sendData(match: match, data: dataStartMatch, with: .reliable)
                 self.game.multiplayer(startMatch: sendData)
             }else if(msgTyp == .initLevelMsg){
                 let sendData:LoadLevelNetworkData = LoadLevelNetworkData(id: self.msgSentCounter)
@@ -198,10 +207,11 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 guard let dataLoadLevel = NetworkHelper.encodeAndSend(netData: sendData) else {
                     return
                 }
-                if(NetworkHelper.dbgMode){
-                    print(dataLoadLevel.prettyPrintedJSONString!)
-                }
-                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+//                if(NetworkHelper.dbgMode){
+//                    print(dataLoadLevel.prettyPrintedJSONString!)
+//                }
+//                try match.sendData(toAllPlayers: dataLoadLevel, with: .reliable)
+                self.sendData(match: match, data: dataLoadLevel, with: .reliable)
                 self.game.multiplayerLoad(levelConfigNet: sendData)
             }else if(msgTyp == .shootWeaponMsg){
                 let shootData:ShootWeaponNetworkData = ShootWeaponNetworkData(id: self.msgSentCounter)
@@ -210,14 +220,25 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
                 guard let dataShootWeapon = NetworkHelper.encodeAndSend(netData: shootData) else {
                     return
                 }
-                if(NetworkHelper.dbgMode){
-                    print(dataShootWeapon.prettyPrintedJSONString!)
-                }
-                try match.sendData(toAllPlayers: dataShootWeapon, with: .unreliable)
+//                if(NetworkHelper.dbgMode){
+//                    print(dataShootWeapon.prettyPrintedJSONString!)
+//                }
+//                try match.sendData(toAllPlayers: dataShootWeapon, with: .unreliable)
+                self.sendData(match: match, data: dataShootWeapon, with: .unreliable)
                 self.game.shootWeaponNetworkMatch(shootData: shootData)
-            }else if(msgTyp == .shootWeaponMsg){
-                
             }
+//            self.msgSentCounter += 1
+//        } catch {
+//            print("Send data failed")
+//        }
+    }
+    
+    func sendData(match:GKMatch, data:Data, with mode: GKMatch.SendDataMode = .reliable) {
+        do {
+            if(NetworkHelper.dbgMode){
+                print(data.prettyPrintedJSONString!)
+            }
+            try match.sendData(toAllPlayers: data, with: mode)
             self.msgSentCounter += 1
         } catch {
             print("Send data failed")

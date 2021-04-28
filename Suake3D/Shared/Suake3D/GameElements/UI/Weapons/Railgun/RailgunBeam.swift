@@ -31,7 +31,7 @@ class RailgunBeam: BulletBase {
         self.damage = SuakeVars.RAILGUN_DAMAGE
     }
     
-    override func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil)->Bool{
+    override func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contact: SCNPhysicsContact)->Bool{
         if(!self.isTargetHit){
             var bRet:Bool = false
             if(targetCat != CollisionCategory.wall){
@@ -39,7 +39,7 @@ class RailgunBeam: BulletBase {
                 bRet = true
             }
             let explosionCompoenent:RailgunExplodingComponent = RailgunExplodingComponent(game: self.game)
-            explosionCompoenent.explode(position: targetNode.position)
+            explosionCompoenent.explode(position: contact.contactPoint)
             return bRet
         }
         return false

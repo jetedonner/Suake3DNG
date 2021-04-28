@@ -40,19 +40,19 @@ class MachinegunBullet: BulletBase {
         
     }
     
-    override func hitTarget(targetCat: CollisionCategory, targetNode: SCNNode, contactPoint: SCNVector3? = nil, overrideIsTargetHit: Bool = false) -> Bool {
-        let bRet:Bool = super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint, overrideIsTargetHit: overrideIsTargetHit)
+    override func hitTarget(targetCat: CollisionCategory, targetNode: SCNNode, contact: SCNPhysicsContact, overrideIsTargetHit: Bool = false) -> Bool {
+        let bRet:Bool = super.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact, overrideIsTargetHit: overrideIsTargetHit)
         
         if(bRet){
             let explosionCompoenent:BulletImpactExplodingComponent = BulletImpactExplodingComponent(game: self.game)
-            explosionCompoenent.explode(position: contactPoint!)
+            explosionCompoenent.explode(position: contact.contactPoint)
         }
         
         return bRet
     }
     
-    func hitTarget(targetCat: CollisionCategory, targetNode: SCNNode, contact: SCNPhysicsContact) -> Bool {
-        let bRet:Bool = super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contact.contactPoint)
+    override func hitTarget(targetCat: CollisionCategory, targetNode: SCNNode, contact: SCNPhysicsContact) -> Bool {
+        let bRet:Bool = super.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact)
         
         if(bRet){
             print("PenetrationDistance: \(contact.penetrationDistance)")

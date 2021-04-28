@@ -58,18 +58,18 @@ class ShotgunPellet: BulletBase {
 //        self.filters = BloomHelper.addBloom(inputIntensity: 5.0, inputRadius: 3.0)
     }
     
-    override func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contactPoint:SCNVector3? = nil)->Bool{
+    override func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contact: SCNPhysicsContact)->Bool{
         if(!self.isTargetHit){
             if(!self.pelletGrp.isTargetHit){
                 self.pelletGrp.isTargetHit = true
             }
 
-            let isHit:Bool = super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint)
+            let isHit:Bool = super.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact)
             
             
             if(isHit){
                 let explosionCompoenent:BulletImpactExplodingComponent = BulletImpactExplodingComponent(game: self.game)
-                explosionCompoenent.explode(position: contactPoint!)
+                explosionCompoenent.explode(position: contact.contactPoint)
             }
 
             _ = self.pelletGrp.checkAllPelletsHit()
