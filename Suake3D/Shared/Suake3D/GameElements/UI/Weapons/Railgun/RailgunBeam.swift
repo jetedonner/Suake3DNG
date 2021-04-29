@@ -153,12 +153,14 @@ class RailgunBeam: BulletBase {
         let tmp:Double = Double((a * a * -1) + (c * c))
         var b = tmp.squareRoot()
 
-        if(degrees > 90.0){
+        if(degrees > 90.0 || degrees < -90){
             b *= -1
         }
         
         if(self.weapon.weaponArsenalManager.playerEntity.playerType == .OwnSuake){
-            self.railBeamNode = self.line2(from: beamPos, to: SCNVector3(beamPos.x + CGFloat(b), beamPos.y, beamPos.z  + CGFloat(a)), width: 5, beamLen: beamLen, color: .cyan)!
+            let toPos:SCNVector3 = SCNVector3(beamPos.x + CGFloat(b), beamPos.y, beamPos.z  + CGFloat(a))
+            self.game.showDbgMsg(dbgMsg: "RailGun-Beam: From: \(beamPos), To: \(toPos),\n degrees: \(degrees)")
+            self.railBeamNode = self.line2(from: beamPos, to: toPos, width: 5, beamLen: beamLen, color: .cyan)!
         }else{
             self.railBeamNode = self.line2(from: beamPos, to: SCNVector3(self.game.playerEntityManager.goodyEntity.position.x, beamPos.y, self.game.playerEntityManager.goodyEntity.position.z), width: 5, beamLen: beamLen, color: .cyan)!
         }

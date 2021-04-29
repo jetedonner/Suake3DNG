@@ -142,11 +142,12 @@ class WallFactory: SuakeGameClass {
     
     func addPhysicsBody(geometry:SCNGeometry, node:SCNNode){
         let shape = SCNPhysicsShape(geometry: geometry, options: nil)
-        node.physicsBody = SCNPhysicsBody(type: .static, shape: shape)
+        node.physicsBody = SCNPhysicsBody(type: .kinematic, shape: shape)
         node.physicsBody?.isAffectedByGravity = false
+        node.physicsBody?.allowsResting = true
         node.physicsBody?.categoryBitMask = CollisionCategory.wall.rawValue
         node.physicsBody?.contactTestBitMask = CollisionCategory.mgbullet.rawValue | CollisionCategory.pellet.rawValue | CollisionCategory.rocket.rawValue | CollisionCategory.railbeam.rawValue
-        node.physicsBody?.collisionBitMask = 0
+        node.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue
     }
     
     func addWallToScene(){

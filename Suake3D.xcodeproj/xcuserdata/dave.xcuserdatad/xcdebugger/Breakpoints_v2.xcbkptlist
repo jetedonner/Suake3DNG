@@ -1362,8 +1362,8 @@
             filePath = "Suake3D/Shared/Suake3D/Apple/SceneKit/CameraHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "CameraHelper"
             landmarkType = "3">
          </BreakpointContent>

@@ -50,7 +50,7 @@ class ContainerComponent: SuakeBaseLocationComponent {
         self.node.physicsBody?.mass = 160
         self.node.physicsBody?.categoryBitMask = CollisionCategory(category: .container).rawValue
         self.node.physicsBody?.contactTestBitMask = CollisionCategory.getAllBulletCats()
-        self.node.physicsBody?.collisionBitMask = CollisionCategory.floor.rawValue | CollisionCategory.getAllBulletCats()
+        self.node.physicsBody?.collisionBitMask = CollisionCategory.floor.rawValue | CollisionCategory.wall.rawValue | CollisionCategory.getAllBulletCats()
 //        self.node.physicsBody?.collisionBitMask = 0
     }
     

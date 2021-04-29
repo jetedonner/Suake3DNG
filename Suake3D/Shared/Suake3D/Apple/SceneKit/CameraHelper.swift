@@ -249,6 +249,7 @@ class CameraHelper: SuakeGameClass {
                 self.resetOldCameraViewPos()
 //                self.game.playerEntityManager.ownPlayerEntity.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
                 self.game.overlayManager.hud.overlayScene.crosshairEntity.isHidden = false
+                self.game.overlayManager.hud.overlayScene.windrose.updateArrowGoodyPos()
                 self.animatingFPV = false
             }
 //            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = true
@@ -261,6 +262,7 @@ class CameraHelper: SuakeGameClass {
                 self.game.scnView.pointOfView? = self.cameraNode
                 self.resetOldCameraViewPos()
 //                self.game.playerEntityManager.ownPlayerEntity.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, moveDifference: 0.0)
+                self.game.overlayManager.hud.overlayScene.windrose.updateArrowGoodyPos()
                 self.animatingFPV = false
             }
 //            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = false

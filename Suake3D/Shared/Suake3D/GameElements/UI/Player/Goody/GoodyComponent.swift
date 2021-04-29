@@ -20,7 +20,7 @@ class GoodyComponent: SuakeBaseSCNNodeComponent {
         super.init(game: game, node: SuakeBaseAnimatedSCNNode(game: game, sceneName: "art.scnassets/nodes/goody/goody.scn", scale: SuakeVars.goodyScale, name: "Goody"), id: id)
         self.node.addAnimation(RotationAnimHelper.getRotationAnim(), forKey: nil)
         
-        self.setupPhysics(geometry: (self.node as! SuakeBaseAnimatedSCNNode).cloneNode.flattenedClone().geometry!, type: .static, categoryBitMask: .goody, catBitMasks: CollisionCategory.allBulletCategories)
+        self.setupPhysics(geometry: (self.node as! SuakeBaseAnimatedSCNNode).cloneNode.flattenedClone().geometry!, type: .static, categoryBitMask: .goody, catBitMasks: CollisionCategory.allBulletCategories, options: [SCNPhysicsShape.Option.scale: SCNVector3(2.5, 2.5, 2.5)])
         // NEEDED for hitTest(with CollisionCategory bitmask option)
         self.node.childNode(withName: "_Sphere002", recursively: true)?.categoryBitMask = CollisionCategory.goody.rawValue
     }
@@ -65,6 +65,7 @@ class GoodyComponent: SuakeBaseSCNNodeComponent {
         self.game.levelManager.gameBoard.setGameBoardField(pos: pos, suakeField: .goody)
         self.game.levelManager.gameBoard.setGameBoardFieldItem(pos: pos, suakeFieldItem: self.goodyEntity)
         self.game.overlayManager.hud.overlayScene!.map.reposNode(playerNode: self.game.overlayManager.hud.overlayScene!.map.goodyNode, pos: pos)
+        self.game.overlayManager.hud.overlayScene.windrose.updateArrowGoodyPos()
         return pos
     }
     

@@ -101,6 +101,7 @@ class MedKitEntity: SuakeNodeGroupItemBase {
         self.showParticles(completion: {
             self.setParticlePos(newPos: newPos)
         })
+        self.game.soundManager.playSound(soundType: .pickupHealth)
         self.pos = newPos
         if(self.game.gameCenterHelper.isMultiplayerGameRunning){
             self.game.gameCenterHelper.matchMakerHelper.sendPickedUpMsg(itemType: .medKit, value: CGFloat(self.catchScore), newPos: newPos, itemId: self.id)

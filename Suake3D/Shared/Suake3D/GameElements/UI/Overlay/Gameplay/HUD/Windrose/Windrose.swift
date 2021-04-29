@@ -27,6 +27,8 @@ class Windrose:BaseExtHUDComponent{
     var imgRotation:SKSpriteNode!
     var imgGoodyPos:SKSpriteNode!
     
+    var alphaWindrose:CGFloat = 0.75
+    
     var fadeShowHide:Bool = true
     override var isHidden: Bool{
         get{ return super.isHidden }
@@ -35,8 +37,6 @@ class Windrose:BaseExtHUDComponent{
                 self.fadeWindrose(fadeIn: !newValue)
             }else{
                 super.isHidden = newValue
-//                self.imgArrow.isHidden = newValue
-//                self.lblArrow.isHidden = newValue
             }
         }
     }
@@ -60,7 +60,7 @@ class Windrose:BaseExtHUDComponent{
     
     override init(game: GameController) {
         super.init(game: game)
-        self.drawWindrose()
+        _ = self.drawWindrose()
     }
     
     func setupWindrose(hud:HUDOverlayScene){
@@ -128,6 +128,7 @@ class Windrose:BaseExtHUDComponent{
     }
     
     func updateArrowGoodyPos(){
+        self.windRose.zRotation = self.game.scnView.pointOfView!.eulerAngles.y
         self.centerNodeGoodyPos.zRotation = self.windRose.zRotation + self.getLookAtRotation(self.game.playerEntityManager.goodyEntity.position).y // self.lookAtNode.eulerAngles.y * -1
         for lbl in self.windroseLbls{
             lbl.run(SKAction.rotate(toAngle: -self.windRose.zRotation, duration: 0.0))
@@ -194,7 +195,7 @@ class Windrose:BaseExtHUDComponent{
         //       }
         let angle = CGFloat(-angleMult) * CGFloat(2*Double.pi) / CGFloat(numTicks)
         lbl.position = CGPoint(x: (innerRadius * cos(angle)) + offsetX, y: (innerRadius * sin(angle)) + offsetY)
-        lbl.alpha = 0.55
+        lbl.alpha = self.alphaWindrose
         lbl.zPosition = 1005
         windroseLbls.append(lbl)
         self.windRose.addChild(lbl)

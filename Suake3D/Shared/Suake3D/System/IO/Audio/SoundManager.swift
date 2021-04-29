@@ -44,6 +44,11 @@ class SoundManager: SuakeGameClass {
             var fileName = ""
             
             switch soundType {
+            
+            
+            case SoundType.pickupHealth:
+                fileName = "pickupHealth"
+                break
             case SoundType.weaponreload:
                 fileName = "weapons/gunreload-9"
                 break
