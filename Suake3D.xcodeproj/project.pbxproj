@@ -252,6 +252,14 @@
 		55EC891725FA9D2D0040E676 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC891625FA9D2D0040E676 /* NSImage.swift */; };
 		55EC891D25FA9D4D0040E676 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC891C25FA9D4D0040E676 /* CollisionCategory.swift */; };
 		55F2AE532639EFDE0042BD38 /* Windrose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE522639EFDE0042BD38 /* Windrose.swift */; };
+		55F2AE56263C64DF0042BD38 /* RedeemerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE55263C64DF0042BD38 /* RedeemerComponent.swift */; };
+		55F2AE59263C64F00042BD38 /* Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE57263C64F00042BD38 /* Nuke.swift */; };
+		55F2AE5A263C64F00042BD38 /* NukeBlast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE58263C64F00042BD38 /* NukeBlast.swift */; };
+		55F2AE5C263C66080042BD38 /* SIMD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE5B263C66080042BD38 /* SIMD.swift */; };
+		55F2AE5E263C6E120042BD38 /* RedeemerCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE5D263C6E120042BD38 /* RedeemerCrosshairComponent.swift */; };
+		55F2AE63263C6ED10042BD38 /* RedeemerCrosshairLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE62263C6ED10042BD38 /* RedeemerCrosshairLayer.swift */; };
+		55F2AE65263C6F350042BD38 /* NukeViewOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE64263C6F350042BD38 /* NukeViewOverlay.swift */; };
+		55F2AE67263C70030042BD38 /* NumberFormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2AE66263C70030042BD38 /* NumberFormatterHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -537,6 +545,14 @@
 		55EC891625FA9D2D0040E676 /* NSImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		55EC891C25FA9D4D0040E676 /* CollisionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 		55F2AE522639EFDE0042BD38 /* Windrose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windrose.swift; sourceTree = "<group>"; };
+		55F2AE55263C64DF0042BD38 /* RedeemerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemerComponent.swift; sourceTree = "<group>"; };
+		55F2AE57263C64F00042BD38 /* Nuke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nuke.swift; sourceTree = "<group>"; };
+		55F2AE58263C64F00042BD38 /* NukeBlast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NukeBlast.swift; sourceTree = "<group>"; };
+		55F2AE5B263C66080042BD38 /* SIMD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIMD.swift; sourceTree = "<group>"; };
+		55F2AE5D263C6E120042BD38 /* RedeemerCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemerCrosshairComponent.swift; sourceTree = "<group>"; };
+		55F2AE62263C6ED10042BD38 /* RedeemerCrosshairLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemerCrosshairLayer.swift; sourceTree = "<group>"; };
+		55F2AE64263C6F350042BD38 /* NukeViewOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NukeViewOverlay.swift; sourceTree = "<group>"; };
+		55F2AE66263C70030042BD38 /* NumberFormatterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatterHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -604,8 +620,9 @@
 				556CA64E260D29E800F78263 /* Laser */,
 				5501838726016FA200F28C54 /* MG */,
 				554233D4263214EC00EB55F9 /* Shotgun */,
-				55927047262A13C100A04C76 /* RPG */,
 				55AE7FD6262A3B0700A58F4B /* Railgun */,
+				55F2AE54263C648A0042BD38 /* Redeemer */,
+				55927047262A13C100A04C76 /* RPG */,
 				55E9EA472633EA7A005E3256 /* Sniperrifle */,
 			);
 			path = Weapons;
@@ -658,6 +675,8 @@
 		550183FF2602A52200F28C54 /* Crosshair */ = {
 			isa = PBXGroup;
 			children = (
+				55F2AE61263C6EC60042BD38 /* Layers */,
+				55F2AE5D263C6E120042BD38 /* RedeemerCrosshairComponent.swift */,
 				55E9EA522633ED9E005E3256 /* SniperVisionDirection.swift */,
 				55E9EA4E2633ED09005E3256 /* SniperrifleCrosshairComponent.swift */,
 				550184062602A5CB00F28C54 /* BaseCrosshairComponent.swift */,
@@ -758,6 +777,7 @@
 		55241809260A8612002C90FC /* SceneKit */ = {
 			isa = PBXGroup;
 			children = (
+				55F2AE5B263C66080042BD38 /* SIMD.swift */,
 				5513C88A260D1A2400633B40 /* SCNVector3.swift */,
 				5513C889260D1A2300633B40 /* SCNVector3Extensions.swift */,
 				556CB91925FFD2A5005B7747 /* TimeInterval.swift */,
@@ -771,8 +791,8 @@
 		554233D4263214EC00EB55F9 /* Shotgun */ = {
 			isa = PBXGroup;
 			children = (
-				554233DD2632168600EB55F9 /* ShotgunComponent.swift */,
 				554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */,
+				554233DD2632168600EB55F9 /* ShotgunComponent.swift */,
 				554233D5263215FE00EB55F9 /* ShotgunPellet.swift */,
 			);
 			path = Shotgun;
@@ -1115,6 +1135,7 @@
 		55D8946425FACB2500728B83 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				55F2AE66263C70030042BD38 /* NumberFormatterHelper.swift */,
 				554233F42632BFB100EB55F9 /* AnimationHelper.swift */,
 				55D8946525FACB3000728B83 /* DebugHelper.swift */,
 				551F3D3A260BEA7A006D9F65 /* SuakeGameStateHelper.swift */,
@@ -1328,6 +1349,7 @@
 				55DB997225FC5306000023AF /* Base */,
 				55760E4525FD371400C10784 /* Gameplay */,
 				55001F91260CE3E80015B293 /* GameLoadingSkScene.swift */,
+				55F2AE64263C6F350042BD38 /* NukeViewOverlay.swift */,
 				55760E6025FD3F4B00C10784 /* OverlayManager.swift */,
 			);
 			path = Overlay;
@@ -1512,6 +1534,24 @@
 			path = Windrose;
 			sourceTree = "<group>";
 		};
+		55F2AE54263C648A0042BD38 /* Redeemer */ = {
+			isa = PBXGroup;
+			children = (
+				55F2AE55263C64DF0042BD38 /* RedeemerComponent.swift */,
+				55F2AE57263C64F00042BD38 /* Nuke.swift */,
+				55F2AE58263C64F00042BD38 /* NukeBlast.swift */,
+			);
+			path = Redeemer;
+			sourceTree = "<group>";
+		};
+		55F2AE61263C6EC60042BD38 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				55F2AE62263C6ED10042BD38 /* RedeemerCrosshairLayer.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1666,6 +1706,7 @@
 				55001F5F260C813D0015B293 /* DroidComponent.swift in Sources */,
 				5508DC912631E39400A20444 /* SuakeMultiplayerPlayerEntity.swift in Sources */,
 				556CB91525FE8618005B7747 /* SuakeDirTurnDirHelper.swift in Sources */,
+				55F2AE65263C6F350042BD38 /* NukeViewOverlay.swift in Sources */,
 				5501844D2603EB8B00F28C54 /* SuakeSpriteNodeMultiTextures.swift in Sources */,
 				5513C89B260D244B00633B40 /* DroidState.swift in Sources */,
 				55DB997825FC5318000023AF /* SuakeBaseOverlay.swift in Sources */,
@@ -1676,6 +1717,7 @@
 				55018352260154A000F28C54 /* SuakeStateMainMenu.swift in Sources */,
 				554233F52632BFB100EB55F9 /* AnimationHelper.swift in Sources */,
 				5501837626016E7900F28C54 /* WeaponArsenalManager.swift in Sources */,
+				55F2AE5E263C6E120042BD38 /* RedeemerCrosshairComponent.swift in Sources */,
 				551F3D3B260BEA7A006D9F65 /* SuakeGameStateHelper.swift in Sources */,
 				55C0370E25FA87EE00F419B8 /* GameViewControllerMacOS.swift in Sources */,
 				552417E6260921B4002C90FC /* HUDMsgOnScreenComponent.swift in Sources */,
@@ -1722,6 +1764,7 @@
 				55001F5A260C80FB0015B293 /* DroidEntity.swift in Sources */,
 				55D894C925FADC5F00728B83 /* SuakePlayerType.swift in Sources */,
 				55D894E225FADDAA00728B83 /* SuakeOwnPlayerEntity.swift in Sources */,
+				55F2AE59263C64F00042BD38 /* Nuke.swift in Sources */,
 				55A2B8F72600188300E25F7F /* String.swift in Sources */,
 				55DB996325FC49B2000023AF /* SuakeStateReadyToPlay.swift in Sources */,
 				554233F12632BF8800EB55F9 /* HelixVertexArray.swift in Sources */,
@@ -1748,6 +1791,8 @@
 				55070492261129D300464F97 /* MatchResultsSkScene.swift in Sources */,
 				55B860612634AE640030D678 /* ContainerComponent.swift in Sources */,
 				554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */,
+				55F2AE63263C6ED10042BD38 /* RedeemerCrosshairLayer.swift in Sources */,
+				55F2AE5C263C66080042BD38 /* SIMD.swift in Sources */,
 				5501842C2602CBE600F28C54 /* PanCameraHelper.swift in Sources */,
 				5592703E262766C900A04C76 /* GKPlayerExt.swift in Sources */,
 				55D894A325FAD3FA00728B83 /* FloorHelper.swift in Sources */,
@@ -1788,13 +1833,16 @@
 				559B2BDC260E434A005E669C /* MedKitComponent.swift in Sources */,
 				5501847826052E2400F28C54 /* Double.swift in Sources */,
 				5513C88C260D1A2400633B40 /* SCNVector3.swift in Sources */,
+				55F2AE56263C64DF0042BD38 /* RedeemerComponent.swift in Sources */,
 				551F3D50260BF279006D9F65 /* GridGraphHelper.swift in Sources */,
 				554233D6263215FE00EB55F9 /* ShotgunPellet.swift in Sources */,
+				55F2AE67263C70030042BD38 /* NumberFormatterHelper.swift in Sources */,
 				55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */,
 				55B860442634A52F0030D678 /* ContainerGroup.swift in Sources */,
 				55C12254261CEA21001E8E3F /* GameCenterHelperExt.swift in Sources */,
 				551F3D4B260BF22A006D9F65 /* SuakeGridGraphNode.swift in Sources */,
 				550183C026018F0200F28C54 /* UserDefaultsHelper.swift in Sources */,
+				55F2AE5A263C64F00042BD38 /* NukeBlast.swift in Sources */,
 				55DB992625FC0B9E000023AF /* SuakePlayerComponent.swift in Sources */,
 				55C12258261CF1A9001E8E3F /* Date.swift in Sources */,
 				55D8946625FACB3000728B83 /* DebugHelper.swift in Sources */,

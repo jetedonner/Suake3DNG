@@ -76,6 +76,10 @@ class HUDOverlayScene: SuakeBaseOverlay {
 //        self.arrows.setupArrows(hud: self)
     }
     
+    func forceRedraw(){
+        self.view?.setNeedsDisplay(self.view!.frame)
+    }
+    
     func showWindroseOrArrows(showWindrose:Bool = true){
         self.windrose.isHidden = !showWindrose
         self.arrows.showArrows = (showWindrose ? .NONE : .DIR)

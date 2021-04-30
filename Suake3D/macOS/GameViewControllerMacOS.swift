@@ -94,7 +94,7 @@ class GameViewControllerMacOS: NSViewController, KeyboardAndMouseEventsDelegate,
     override func viewWillAppear() {
         super.viewWillAppear()
         self.view.wantsLayer = true
-//        self.gameController?.overlayManager.hud.hudEntity.crosshairEntity.redeemerCrosshairComponent.redeemerCrosshairView.generate(daView: self.view)
+        self.gameController?.overlayManager.hud.overlayScene.crosshairEntity.redeemerCrosshairComponent.redeemerCrosshairView.generate(daView: self.view)
     }
     
     override func viewWillDisappear() {

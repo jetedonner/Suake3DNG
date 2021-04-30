@@ -24,6 +24,8 @@ class OverlayManager: SuakeGameClass {
     var allOverlays:[SuakeBaseOverlay]!
     var currentOverlay:SuakeBaseOverlay!
     
+    let nukeView:NukeViewOverlay
+    
     override init(game: GameController) {
         self.gameLoading = GameLoadingSkScene(game: game)
         self.hud = HUDOverlayEntity(game: game)
@@ -33,6 +35,7 @@ class OverlayManager: SuakeGameClass {
         self.mainMenu = MenuSkScene(game: game)
         
         self.gameCenterOverlay = GameCenterSkScene(game: game)
+        self.nukeView = NukeViewOverlay(game: game)
         
         super.init(game: game)
         
@@ -78,6 +81,7 @@ class OverlayManager: SuakeGameClass {
         self.paused.loadScene()
         self.matchOver.loadScene()
         self.gameCenterOverlay.loadScene()
+        self.nukeView.loadScene()
 //        self.gameLoading.loadScene()
 //        self.matchResult.lo
         self.mainMenu.loadScene()

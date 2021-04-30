@@ -34,6 +34,7 @@ class CrosshairEntity: SuakeBaseEntity {
     let rpgCrosshairComponent:RPGCrosshairComponent
     let railgunCrosshairComponent:RailgunCrosshairComponent
     let sniperrifleCrosshairComponent:SniperrifleCrosshairComponent
+    let redeemerCrosshairComponent:RedeemerCrosshairComponent
     
     var allCrosshairComponents:[BaseCrosshairComponent]!
     
@@ -51,9 +52,9 @@ class CrosshairEntity: SuakeBaseEntity {
         set{
             self._isHidden = newValue
             self.nodeContainer.isHidden = newValue
-//            if((self.currentWeaponType == .redeemer && !newValue) || newValue){
-//                self.redeemerCrosshairComponent.isHidden = newValue
-//            }
+            if((self.currentWeaponType == .redeemer && !newValue) || newValue){
+                self.redeemerCrosshairComponent.isHidden = newValue
+            }
         }
     }
     
@@ -87,11 +88,12 @@ class CrosshairEntity: SuakeBaseEntity {
         self.rpgCrosshairComponent = RPGCrosshairComponent(game: game)
         self.railgunCrosshairComponent = RailgunCrosshairComponent(game: game)
         self.sniperrifleCrosshairComponent = SniperrifleCrosshairComponent(game: game)
+        self.redeemerCrosshairComponent = RedeemerCrosshairComponent(game: game)
         
         self.reloadIndicatorComponent = ReloadIndicatorComponent(game: game)
         super.init(game: game, id: id)
         
-        self.allCrosshairComponents = [self.mgCrosshairComponent, self.shotgunCrosshairComponent, self.rpgCrosshairComponent, self.railgunCrosshairComponent, self.sniperrifleCrosshairComponent]
+        self.allCrosshairComponents = [self.mgCrosshairComponent, self.shotgunCrosshairComponent, self.rpgCrosshairComponent, self.railgunCrosshairComponent, self.sniperrifleCrosshairComponent, self.redeemerCrosshairComponent]
         self.currentCrosshairComponent = self.allCrosshairComponents.first!
     }
     

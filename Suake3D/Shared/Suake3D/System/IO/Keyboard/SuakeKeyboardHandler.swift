@@ -94,6 +94,12 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }else{
                     self.game.playerEntityManager.ownPlayerEntity.weapons.setCurrentWeaponType(weaponType: .sniperrifle)
                 }
+            }else if(pressedKey == .KEY_6){
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                    self.game.playerEntityManager.ownPlayerEntity.weapons.getWeapon(weaponType: .redeemer)?.addAmmo(ammoCount2Add: SuakeVars.INITIAL_REDEEMER_AMMORELOADCOUNT)
+                }else{
+                    self.game.playerEntityManager.ownPlayerEntity.weapons.setCurrentWeaponType(weaponType: .redeemer)
+                }
             }else if(pressedKey == .KEY_C){
                 self.game.overlayManager.hud.overlayScene.crosshairEntity.mgCrosshairComponent.animateCrosshair()
             }else if(pressedKey == .KEY_E){

@@ -60,7 +60,7 @@ class DroidEntity: SuakeBaseExplodingPlayerEntity {
         self.targetEntity = self.game.playerEntityManager.ownPlayerEntity
         self.dist2Target = self.game.levelManager.distanceManager.getDistanceBetween(node1: self, node2: self.game.playerEntityManager.ownPlayerEntity)
         let dist2Opp = self.game.levelManager.distanceManager.getDistanceBetween(node1: self, node2: self.game.playerEntityManager.oppPlayerEntity)
-        if(!self.game.playerEntityManager.oppPlayerEntity.died && dist2Opp <= self.dist2Target){
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.droidsAttackOpp && !self.game.playerEntityManager.oppPlayerEntity.died && dist2Opp <= self.dist2Target){
             self.dist2Target = dist2Opp
             self.targetEntity = self.game.playerEntityManager.oppPlayerEntity
         }

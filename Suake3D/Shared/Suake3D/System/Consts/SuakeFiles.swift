@@ -12,5 +12,6 @@ class SuakeFiles {
     static let hudMGImageFile:String = "art.scnassets/overlays/gameplay/images/mg.png"
     static let hudShotgunImageFile:String = "art.scnassets/overlays/gameplay/images/shotgun.png"
     static let hudRPGImageFile:String = "art.scnassets/overlays/gameplay/images/rpg.png"
+    
 
 }

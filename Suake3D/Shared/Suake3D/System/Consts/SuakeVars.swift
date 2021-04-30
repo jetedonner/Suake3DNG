@@ -78,7 +78,7 @@ class SuakeVars{
     static let RPG_DAMAGE:CGFloat = 55.0
     static let RAILGUN_DAMAGE:CGFloat = 89.0
     static let SNIPERRIFLE_DAMAGE:CGFloat = 69.0
-    static let NUKE_DAMAGE:CGFloat = 100.0
+    
     
     static let INITIAL_GRENADE_AMMOCOUNT:Int = 3
     
@@ -87,7 +87,6 @@ class SuakeVars{
     
     
     
-    static let INITIAL_NUKE_AMMOCOUNT:Int = 3
     
     static let INITIAL_GRENADE_CLIPSIZE:Int = 1
     
@@ -119,7 +118,11 @@ class SuakeVars{
     static let INITIAL_SNIPERRIFLE_AMMORELOADCOUNT:Int = 20
     static let INITIAL_SNIPERRIFLE_CADENCE:TimeInterval = 3.05
     
-    static let INITIAL_NUKE_CLIPSIZE:Int = 1
+    static let REDEEMER_DAMAGE:CGFloat = 100.0
+    static let INITIAL_REDEEMER_AMMOCOUNT:Int = 1
+    static let INITIAL_REDEEMER_CLIPSIZE:Int = 1
+    static let INITIAL_REDEEMER_AMMORELOADCOUNT:Int = 3
+    static let INITIAL_REDEEMER_CADENCE:TimeInterval = 10.5
     
     static let HEALTHBAR_WIDTH:CGFloat = 200
     static let HEALTHBAR_WIDTH_OPP:CGFloat = 100
