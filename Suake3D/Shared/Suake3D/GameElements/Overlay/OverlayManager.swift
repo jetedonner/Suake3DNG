@@ -68,9 +68,9 @@ class OverlayManager: SuakeGameClass {
             return self.matchResults
         }else if(type == .paused){
             return self.paused
-        }/*else if(type == .nukeView){
+        }else if(type == .nukeView){
             return self.nukeView
-        }else if(type == .cheatsheet){
+        }/*else if(type == .cheatsheet){
             return self.cheatsheet
         }*/else{
             return self.hud.overlayScene

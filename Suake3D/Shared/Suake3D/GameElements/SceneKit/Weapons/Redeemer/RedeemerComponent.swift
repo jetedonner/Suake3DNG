@@ -45,7 +45,7 @@ class RedeemerComponent: BaseWeaponComponent {
         nukes.append(nuke)
         self.game.physicsHelper.qeueNode2Add2Scene(node: nuke)
         
-//        self.game.overlayManager.hud.overlayScene.crosshairEntity.redeemerCrosshairComponent.showRocketView(show: true, nuke: nuke)
+        self.game.overlayManager.hud.overlayScene.crosshairEntity.redeemerCrosshairComponent.showRocketView(show: true, nuke: nuke)
         nuke.moveInZaxis()
     }
     

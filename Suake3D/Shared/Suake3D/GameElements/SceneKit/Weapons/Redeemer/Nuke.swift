@@ -55,7 +55,7 @@ class Nuke: BulletBase {
         
 //        let box = SCNBox(width: (self.presentation.boundingBox.max.x), height: (self.presentation.boundingBox.max.y), length: (self.presentation.boundingBox.max.z), chamferRadius: 0)
         let box = SCNBox(width: 2.0, height: 2.0, length: 2.0, chamferRadius: 0)
-        self.geometry = box
+//        self.geometry = box
         
         self.cameraNode.camera = SCNCamera()
         //self.cameraNode.rotation.y = 0 //CGFloat.pi
@@ -63,7 +63,7 @@ class Nuke: BulletBase {
         self.cameraNode.transform = SCNMatrix4MakeRotation(CGFloat(Double.pi), 0.0, 1.0, 0.0)
         self.cameraNode.position.y = 0.5
         
-        self.setupPhysics(geometry: self.geometry!, type: .dynamic, categoryBitMask: CollisionCategory.nuke, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.wall, CollisionCategory.floor])
+        self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.nuke, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.wall, CollisionCategory.floor])
         
         self.physicsBody?.angularDamping = 0.0
         self.physicsBody?.damping = 0.0
@@ -163,7 +163,7 @@ class Nuke: BulletBase {
             })
             self.game.physicsHelper.qeueNode2Add2Scene(node: shotParticleNode)
             self.game.physicsHelper.qeueNode2Add2Scene(node: shotParticleNode2)
-//            self.game.overlayManager.hud.overlayScene.crosshairEntity.redeemerCrosshairComponent.showRocketView(show: false)
+            self.game.overlayManager.hud.overlayScene.crosshairEntity.redeemerCrosshairComponent.showRocketView(show: false)
         }
     }
     

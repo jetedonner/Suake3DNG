@@ -146,6 +146,7 @@
 		5592703E262766C900A04C76 /* GKPlayerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592703D262766C900A04C76 /* GKPlayerExt.swift */; };
 		55927049262A13F400A04C76 /* RPGComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55927048262A13F400A04C76 /* RPGComponent.swift */; };
 		5592704D262A159E00A04C76 /* RPGRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592704C262A159E00A04C76 /* RPGRocket.swift */; };
+		5597916F263C904300B89447 /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597916E263C904300B89447 /* ContainerComponent.swift */; };
 		559B2BD3260E4186005E669C /* SuakeNodeGroupBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B2BD1260E4186005E669C /* SuakeNodeGroupBase.swift */; };
 		559B2BD4260E4186005E669C /* SuakeNodeGroupItemBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B2BD2260E4186005E669C /* SuakeNodeGroupItemBase.swift */; };
 		559B2BDC260E434A005E669C /* MedKitComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B2BD8260E434A005E669C /* MedKitComponent.swift */; };
@@ -163,7 +164,6 @@
 		55B860442634A52F0030D678 /* ContainerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860422634A52F0030D678 /* ContainerGroup.swift */; };
 		55B860452634A52F0030D678 /* ContainerGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860432634A52F0030D678 /* ContainerGroupItem.swift */; };
 		55B8605D2634A8BC0030D678 /* ContainerQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8605C2634A8BC0030D678 /* ContainerQuick.swift */; };
-		55B860612634AE640030D678 /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860602634AE640030D678 /* ContainerComponent.swift */; };
 		55B860682637482D0030D678 /* GameControllerMutliplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860672637482D0030D678 /* GameControllerMutliplayer.swift */; };
 		55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C036C725FA80C400F419B8 /* AppDelegate.swift */; };
 		55C036CC25FA80C400F419B8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CB25FA80C400F419B8 /* art.scnassets */; };
@@ -433,6 +433,7 @@
 		5592703D262766C900A04C76 /* GKPlayerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GKPlayerExt.swift; sourceTree = "<group>"; };
 		55927048262A13F400A04C76 /* RPGComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPGComponent.swift; sourceTree = "<group>"; };
 		5592704C262A159E00A04C76 /* RPGRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPGRocket.swift; sourceTree = "<group>"; };
+		5597916E263C904300B89447 /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerComponent.swift; sourceTree = "<group>"; };
 		559B2BD1260E4186005E669C /* SuakeNodeGroupBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeNodeGroupBase.swift; sourceTree = "<group>"; };
 		559B2BD2260E4186005E669C /* SuakeNodeGroupItemBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuakeNodeGroupItemBase.swift; sourceTree = "<group>"; };
 		559B2BD8260E434A005E669C /* MedKitComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedKitComponent.swift; sourceTree = "<group>"; };
@@ -450,7 +451,6 @@
 		55B860422634A52F0030D678 /* ContainerGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroup.swift; sourceTree = "<group>"; };
 		55B860432634A52F0030D678 /* ContainerGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroupItem.swift; sourceTree = "<group>"; };
 		55B8605C2634A8BC0030D678 /* ContainerQuick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerQuick.swift; sourceTree = "<group>"; };
-		55B860602634AE640030D678 /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerComponent.swift; path = Suake3D/Shared/Suake3D/GameElements/UI/Environment/Container/ContainerComponent.swift; sourceTree = SOURCE_ROOT; };
 		55B860672637482D0030D678 /* GameControllerMutliplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControllerMutliplayer.swift; sourceTree = "<group>"; };
 		55C036C425FA80C400F419B8 /* Suake3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suake3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C036C725FA80C400F419B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -979,7 +979,7 @@
 		55B860412634A5270030D678 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				55B860602634AE640030D678 /* ContainerComponent.swift */,
+				5597916E263C904300B89447 /* ContainerComponent.swift */,
 				55B860422634A52F0030D678 /* ContainerGroup.swift */,
 				55B860432634A52F0030D678 /* ContainerGroupItem.swift */,
 				55B8605C2634A8BC0030D678 /* ContainerQuick.swift */,
@@ -1439,23 +1439,23 @@
 			isa = PBXGroup;
 			children = (
 				55D8941E25FAC3F600728B83 /* GameStructure */,
-				55EC88FD25FA979A0040E676 /* UI */,
+				55DB997125FC52CB000023AF /* Overlay */,
+				55EC88FD25FA979A0040E676 /* SceneKit */,
 			);
 			path = GameElements;
 			sourceTree = "<group>";
 		};
-		55EC88FD25FA979A0040E676 /* UI */ = {
+		55EC88FD25FA979A0040E676 /* SceneKit */ = {
 			isa = PBXGroup;
 			children = (
 				55B8603C2634A5070030D678 /* Environment */,
-				55DB997125FC52CB000023AF /* Overlay */,
 				55C96BEB2613AC5700BACA73 /* Level */,
 				556CB9682600034E005B7747 /* Helper */,
 				556CB91E25FFD5AE005B7747 /* Location */,
 				55D894BC25FAD99000728B83 /* Player */,
 				5501837326016E2400F28C54 /* Weapons */,
 			);
-			path = UI;
+			path = SceneKit;
 			sourceTree = "<group>";
 		};
 		55EC890625FA98570040E676 /* Wall */ = {
@@ -1789,7 +1789,6 @@
 				55E9EA5F2634487B005E3256 /* PortalPairComponent.swift in Sources */,
 				556CB92025FFD5B8005B7747 /* SuakeBaseLocationComponent.swift in Sources */,
 				55070492261129D300464F97 /* MatchResultsSkScene.swift in Sources */,
-				55B860612634AE640030D678 /* ContainerComponent.swift in Sources */,
 				554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */,
 				55F2AE63263C6ED10042BD38 /* RedeemerCrosshairLayer.swift in Sources */,
 				55F2AE5C263C66080042BD38 /* SIMD.swift in Sources */,
@@ -1865,6 +1864,7 @@
 				55E9EA602634487B005E3256 /* PortalEntity.swift in Sources */,
 				554233ED2632BDF500EB55F9 /* RailgunBeam.swift in Sources */,
 				55DB995925FC4989000023AF /* SuakeStatePlaying.swift in Sources */,
+				5597916F263C904300B89447 /* ContainerComponent.swift in Sources */,
 				556CB95F25FFFFA8005B7747 /* GoodyEntity.swift in Sources */,
 				5501838926016FB400F28C54 /* MachinegunComponent.swift in Sources */,
 				554233EC2632BDF500EB55F9 /* RailgunExplodingComponent.swift in Sources */,
