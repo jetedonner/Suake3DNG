@@ -24,6 +24,7 @@ class SuakeVars{
     static let showAmbientLight:Bool = true
     static let loadWeaponPickups:Bool = true
     static let loadObstacles:Bool = true
+    static let loadPortals:Bool = true
     
     static let loadOpp:Bool = false
     static let loadDroids:Bool = false
@@ -46,14 +47,11 @@ class SuakeVars{
     
     static let showCountdown:Bool = false
     
-//    static let droidScale:SCNVector3 = SCNVector3(0.34, 0.34, 0.34)
     static let droidModelAnimName:String = "unnamed_animation__1"
     static let droidModelAnimName2:String = "unnamed_animation__1_Head"
     static var dbgDroidFLTurnDuration:TimeInterval = 2.5
     static var initDroidDamage:CGFloat = 5.0
-    
-//    static let levelSize:CGFloat = 20
-    
+        
     static let initialCameraControl:AllowCameraControl = .Allow
     static let switchCameraDuration:TimeInterval = 0.45
     
@@ -70,27 +68,18 @@ class SuakeVars{
     static let showArrows:Bool = true
     static let showWindrose:Bool = true
     
-    static let reloadClipTimeout:TimeInterval = 3.0
+    static let reloadClipTimeout:TimeInterval = 2.15
     
     static let GRENADE_DAMAGE:CGFloat = 45.0
     static let MACHINEGUN_DAMAGE:CGFloat = 15.0
     static let SHOTGUN_PELLET_DAMAGE:CGFloat = 7.5
-    static let RPG_DAMAGE:CGFloat = 55.0
-    static let RAILGUN_DAMAGE:CGFloat = 89.0
-    static let SNIPERRIFLE_DAMAGE:CGFloat = 69.0
-    
+    static let RPG_DAMAGE:CGFloat = 75.0
+    static let RAILGUN_DAMAGE:CGFloat = 100.0
+    static let SNIPERRIFLE_DAMAGE:CGFloat =  100.0
+    static let REDEEMER_DAMAGE:CGFloat = 100.0
     
     static let INITIAL_GRENADE_AMMOCOUNT:Int = 3
-    
-    
-//    static let INITIAL_SHOTGUN_AMMOCOUNT:Int = 25
-    
-    
-    
-    
     static let INITIAL_GRENADE_CLIPSIZE:Int = 1
-    
-//    static let INITIAL_SHOTGUN_CLIPSIZE:Int = 5
     
     static let INITIAL_MACHINEGUN_AMMOCOUNT:Int = 30
     static let INITIAL_MACHINEGUN_CLIPSIZE:Int = 30
@@ -117,8 +106,7 @@ class SuakeVars{
     static let INITIAL_SNIPERRIFLE_CLIPSIZE:Int = 5
     static let INITIAL_SNIPERRIFLE_AMMORELOADCOUNT:Int = 20
     static let INITIAL_SNIPERRIFLE_CADENCE:TimeInterval = 3.05
-    
-    static let REDEEMER_DAMAGE:CGFloat = 100.0
+
     static let INITIAL_REDEEMER_AMMOCOUNT:Int = 1
     static let INITIAL_REDEEMER_CLIPSIZE:Int = 1
     static let INITIAL_REDEEMER_AMMORELOADCOUNT:Int = 3

@@ -33,6 +33,29 @@ class LocationEntityManager: EntityManager {
         }
     }
     
+    func addPortalEntities(numberOfPortals:Int) {
+        for i in (0..<numberOfPortals){
+            let newPortalEntityPair:PortalEntityPair = PortalEntityPair(game: self.game, id: i)
+            self.portalPairs.append(newPortalEntityPair)
+            
+            self.portals.append(newPortalEntityPair.portalEntityA)
+            newPortalEntityPair.portalEntityA.portalComponent.addToScene()
+            newPortalEntityPair.portalEntityA.portalComponent.initSetupPos()
+            self.portals.append(newPortalEntityPair.portalEntityB)
+            newPortalEntityPair.portalEntityB.portalComponent.addToScene()
+            newPortalEntityPair.portalEntityB.portalComponent.initSetupPos()
+//            self.setNewLocationEntityVar(locationType: .Portal, newEntity: newPortalEntityPair.portalEntityA)
+//            self.setNewLocationEntityVar(locationType: .Portal,s newEntity: newPortalEntityPair.portalEntityB)
+            
+//            self.addLocationEntity(locationEntity: newPortalEntityPair.portalEntityA)
+//            self.addLocationEntity(locationEntity: newPortalEntityPair.portalEntityB)
+//            let newEntity:SuakfeBaseNodeEntity = self.getNewLocationEntity(locationType: .Portal, id: i)
+//            self.setNewLocationEntityVar(locationType: .Portal, newEntity: newEntity)
+//            self.addLocationEntity(locationEntity: newEntity)
+            
+        }
+    }
+    
     func addLocationToScene(pos:SCNVector3){
         for (key, value) in self.entities{
             if(key == .RespawnPoint){

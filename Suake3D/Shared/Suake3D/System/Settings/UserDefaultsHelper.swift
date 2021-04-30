@@ -38,6 +38,7 @@ class UserDefaultsHelper:SuakeGameClass{
     var showCountdown:Bool = true
     var loadWeaponPickups:Bool = true
     var loadObstacles:Bool = true
+    var loadPortals:Bool = true
     
     var loadOpp:Bool = false
     var testOppAI:Bool = false
@@ -79,6 +80,7 @@ class UserDefaultsHelper:SuakeGameClass{
             "Volume": SuakeVars.volume,
             "LoadWeaponPickups": SuakeVars.loadWeaponPickups,
             "LoadObstacles": SuakeVars.loadObstacles,
+            "LoadPortals": SuakeVars.loadPortals,
             
             "LoadOpp": SuakeVars.loadOpp,
             "TestOppAI": SuakeVars.testOppAI,
@@ -104,6 +106,7 @@ class UserDefaultsHelper:SuakeGameClass{
         self.soundEffects = self.defaults.bool(forKey: "SoundEffects")
         self.loadWeaponPickups = self.defaults.bool(forKey: "LoadWeaponPickups")
         self.loadObstacles = self.defaults.bool(forKey: "LoadObstacles")
+        self.loadPortals = self.defaults.bool(forKey: "LoadPortals")
         
         self.loadOpp = true //self.defaults.bool(forKey: "LoadOpp")
         self.testOppAI = self.defaults.bool(forKey: "TestOppAI")
@@ -131,6 +134,7 @@ class UserDefaultsHelper:SuakeGameClass{
         self.game.levelManager.currentLevel.levelConfigEnv.levelDifficulty = self.difficulty
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadWeaponPickups = self.loadWeaponPickups
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadObstacles = self.loadObstacles
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.loadPortals = self.loadPortals
         
         
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadAISuake = self.loadOpp

@@ -98,6 +98,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             self.locationEntityManager.initLocations()
             self.locationEntityManager.addLocationGroupsToScene()
             
+            self.locationEntityManager.addPortalEntities(numberOfPortals: 3)
+            
             self.overlayManager.gameLoading.setProgress(curPrecent: 35, msg: "Setting up game board ...")
             self.gridGraphManager.loadGridGraph()
             
