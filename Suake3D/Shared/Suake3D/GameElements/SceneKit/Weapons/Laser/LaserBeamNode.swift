@@ -19,7 +19,7 @@ class LaserBeamNode: BulletBase {
         super.init(game: game, weapon: LasergunComponent(game: game, weaponArsenalManager: weaponArsenalManager), sceneName: "art.scnassets/nodes/droid/LaserBeam.scn", scale: SCNVector3(1, 1, 1))
         
         self.damage = 5.0
-        self.shootingVelocity = 180.0
+        self.shootingVelocity = SuakeVars.laserBeamVelocity // 180.0
         
         let from:SCNVector3 = droidEntity.position
         

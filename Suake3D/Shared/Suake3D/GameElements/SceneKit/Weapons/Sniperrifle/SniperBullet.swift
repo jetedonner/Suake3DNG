@@ -20,7 +20,7 @@ class SniperBullet: BulletBase {
 //        super.init(game: game, weapon: weapon, sceneName: "art.scnassets/nodes/weapons/sniperrifle/SniperBulllet.scn", scale: SCNVector3(2, 2, 2), animName: "")
         super.init(game: game, weapon: weapon, sceneName: "art.scnassets/nodes/weapons/mg/MachinegunBulllet.scn", scale: SCNVector3(2, 2, 2), nodeName: "BulletObject")
         self.name = "SniperBullet"
-        self.shootingVelocity = 2485.0
+        self.shootingVelocity = SuakeVars.sniperrifleBulletVelocity //2485.0
         self.setupPhysics()
     }
     

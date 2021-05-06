@@ -17,16 +17,14 @@ class ContainerGroup:SuakeNodeGroupBase{
         super.init(game: game, locationType: .Container)
         self.containerCount = containerCount
         self.groupName = "ContainerGroup"
-//        self.initGroupVars(groupName: "ContainerGroup", groupItemCount: DbgVars.initContainerCount)
         self.initGroup()
     }
     
-    /*override */func initGroup(){
+    func initGroup(){
         groupItems = [ContainerGroupItem]()
         for i in (0..<self.containerCount){
             let item:ContainerGroupItem = ContainerGroupItem(game: game)
             item.id = i
-//            self.groupNode.addChildNode(item)
             groupItems.append(item)
         }
     }

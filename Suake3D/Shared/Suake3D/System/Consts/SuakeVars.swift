@@ -27,6 +27,13 @@ class SuakeVars{
     static let obstacleCount:Int = 5
     static let loadPortals:Bool = true
     
+    static let mapPortalConnectionColor = NSColor(calibratedRed: 0.211, green: 0.839, blue: 0.831, alpha: 1.0)
+    static let mapPortalConnectionGlowWidth:CGFloat = 6.0
+    static let mapPortalConnectionLineWidth:CGFloat = 1.0
+    
+    static let mapPortalDashingPattern:[CGFloat] = [6.0, 4.0]
+    static let mapPortalDashingPhase:CGFloat = 1.0
+    
     static let loadOpp:Bool = false
     static let loadDroids:Bool = false
     static let droidsCount:Int = 1
@@ -70,6 +77,14 @@ class SuakeVars{
     static let showWindrose:Bool = true
     static let showTVMonitors:Bool = true
     
+    
+    static let laserBeamVelocity:CGFloat = 585.0
+    static let mgBulletVelocity:CGFloat = 585.0
+    static let shotgunPelletVelocity:CGFloat = 585.0
+    static let rpgRocketVelocity:CGFloat = 785.0
+//    static let RailgunBeamVelocity:CGFloat = 10000.0
+    static let sniperrifleBulletVelocity:CGFloat = 2485.0
+    static let redeemerRocketVelocity:CGFloat = 185.0
     
     
     static let reloadClipTimeout:TimeInterval = 2.15

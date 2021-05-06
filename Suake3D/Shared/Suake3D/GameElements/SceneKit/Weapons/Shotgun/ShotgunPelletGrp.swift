@@ -35,7 +35,7 @@ class ShotgunPelletGrp: BulletBase {
         super.init(game: game, weapon: weapon)
 //        super.init(game: game, weapon: weapon, nodeName: "Shotgun pellet group")
         self.name = "ShotgunPelletGroup"
-        self.shootingVelocity = 485.0
+        self.shootingVelocity = SuakeVars.shotgunPelletVelocity // 485.0
         
         self.createPellets()
         

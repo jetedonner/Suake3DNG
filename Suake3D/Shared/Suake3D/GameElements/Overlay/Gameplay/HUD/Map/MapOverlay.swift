@@ -37,6 +37,7 @@ class MapOverlay: SuakeGameClass {
     var goodyNode:SuakeSpriteNode!
     var droidNodes:[SuakeSpriteNodeMultiTextures] = [SuakeSpriteNodeMultiTextures]()
     var medKitNodes:[SuakeSpriteNode] = [SuakeSpriteNode]()
+    var portals:[SuakeSpriteNode] = [SuakeSpriteNode]()
     
     var zoomScaleFactor:CGFloat = 0.35
     var zoomOn:Bool = true

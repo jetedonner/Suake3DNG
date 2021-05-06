@@ -12,26 +12,13 @@ import GameplayKit
 
 class ContainerComponent: SuakeBaseLocationComponent {
     
-//    let itemType:ItemType = .MedKit
     let rescale:SCNVector3 = SCNVector3(0.5, 0.5, 0.5)
-    
-//    init(game: GameController, prelaod:SuakeBaseSCNNode, id:Int = 0) {
-//        super.init(game: game, node: prelaod.flattenedClone(), id: id)
-//        self.node.name = "MedKit: " + self.id.description
-//        self.initPhysics()
-//        self.node.categoryBitMask = CollisionCategory.medKit.rawValue
-//        self.node.childNode(withName: "Med_Kit", recursively: true)?.categoryBitMask = CollisionCategory.medKit.rawValue
-//    }
     
     init(game: GameController, id:Int = 0) {
         super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/container/Container.scn", scale: self.rescale), locationType: .Container, id: id)
         self.node.name = "Container: " + self.id.description
         self.initPhysics()
         self.node.categoryBitMask = CollisionCategory.container.rawValue
-        
-//        self.node.childNode(withName: "group1", recursively: <#T##Bool#>)
-//        self.initSetupPos()
-//        self.node.childNode(withName: "Med_Kit", recursively: true)?.categoryBitMask = CollisionCategory.medKit.rawValue
     }
     
     override func didAddToEntity() {
@@ -41,9 +28,6 @@ class ContainerComponent: SuakeBaseLocationComponent {
     
     func initPhysics(){
         let containerShape1 = SCNPhysicsShape(geometry: self.node.cloneNode.flattenedClone().geometry!, options: [SCNPhysicsShape.Option.scale: self.rescale /* 1.15*/])
-//        let translate = SCNMatrix4MakeTranslation(75.0, 0.0, 75.0)
-//         let translateMatrix = NSValue.init(scnMatrix4: translate)
-//        let containerShape = SCNPhysicsShape(shapes: [containerShape1], transforms: [translateMatrix])
         self.node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: containerShape1)
         self.node.physicsBody?.isAffectedByGravity = true
         self.node.physicsBody?.restitution = 1.0
@@ -51,7 +35,6 @@ class ContainerComponent: SuakeBaseLocationComponent {
         self.node.physicsBody?.categoryBitMask = CollisionCategory(category: .container).rawValue
         self.node.physicsBody?.contactTestBitMask = CollisionCategory.getAllBulletCats()
         self.node.physicsBody?.collisionBitMask = CollisionCategory.floor.rawValue | CollisionCategory.wall.rawValue | CollisionCategory.suake.rawValue | CollisionCategory.getAllBulletCats()
-//        self.node.physicsBody?.collisionBitMask = 0
     }
     
     func initSetupPos(){
@@ -65,8 +48,6 @@ class ContainerComponent: SuakeBaseLocationComponent {
         let daPos = (self.entity as! SuakeBaseNodeEntity).pos
         
         self.node.position = SCNVector3((daPos.x * SuakeVars.fieldSize) + 75.0, self.node.position.y, (daPos.z * SuakeVars.fieldSize) + 75.0)
-//        self.game.levelManager.gameBoard.setGameBoardFieldEntity(pos: (self.entity as! SuakeBaseNodeEntity).pos, entity: self.entity as? SuakeBaseEntity)
-//        (self.entity as! SuakeBaseNodeEntity).pos = SCNVector3(0, 0, 4)
     }
     
     required init?(coder: NSCoder) {

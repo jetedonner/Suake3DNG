@@ -65,7 +65,7 @@ class BaseGameController:NSObject{
         self.floorNode.physicsBody?.allowsResting = true
         self.floorNode.physicsBody?.categoryBitMask = CollisionCategory.floor.rawValue
 //        self.floorNode.physicsBody?.categoryBitMask = CollisionCategory.floor.rawValue
-        self.floorNode.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue
+        self.floorNode.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue | CollisionCategory.generator.rawValue
 //        self.floorNode.physicsBody?.con
         super.init()
         

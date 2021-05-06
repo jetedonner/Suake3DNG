@@ -98,6 +98,9 @@
 		552417FD260A8391002C90FC /* MachinegunPickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552417FB260A8391002C90FC /* MachinegunPickupEntity.swift */; };
 		552417FE260A8391002C90FC /* MachinegunPickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552417FC260A8391002C90FC /* MachinegunPickupComponent.swift */; };
 		55241803260A85E5002C90FC /* GKEntityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241802260A85E5002C90FC /* GKEntityExtension.swift */; };
+		552D597F2644825200BE9CFD /* GeneratorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D597E2644825200BE9CFD /* GeneratorComponent.swift */; };
+		552D5981264482AC00BE9CFD /* GeneratorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D5980264482AC00BE9CFD /* GeneratorGroup.swift */; };
+		552D5983264482EE00BE9CFD /* GeneratorGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D5982264482EE00BE9CFD /* GeneratorGroupItem.swift */; };
 		55333EBB263F2C9C007288C4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55333EBA263F2C9C007288C4 /* Info.plist */; };
 		55333EBF264070FA007288C4 /* Suake3D.help in Resources */ = {isa = PBXBuildFile; fileRef = 55333EBE264070FA007288C4 /* Suake3D.help */; };
 		55333EC2264071AF007288C4 /* English.lproj.helpindex in Resources */ = {isa = PBXBuildFile; fileRef = 55333EC0264071AF007288C4 /* English.lproj.helpindex */; };
@@ -182,7 +185,6 @@
 		55B8603726349C9A0030D678 /* PositionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8603626349C9A0030D678 /* PositionHelper.swift */; };
 		55B860442634A52F0030D678 /* ContainerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860422634A52F0030D678 /* ContainerGroup.swift */; };
 		55B860452634A52F0030D678 /* ContainerGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860432634A52F0030D678 /* ContainerGroupItem.swift */; };
-		55B8605D2634A8BC0030D678 /* ContainerQuick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8605C2634A8BC0030D678 /* ContainerQuick.swift */; };
 		55B860682637482D0030D678 /* GameControllerMutliplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B860672637482D0030D678 /* GameControllerMutliplayer.swift */; };
 		55C036C825FA80C400F419B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C036C725FA80C400F419B8 /* AppDelegate.swift */; };
 		55C036CC25FA80C400F419B8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C036CB25FA80C400F419B8 /* art.scnassets */; };
@@ -404,6 +406,9 @@
 		552417FB260A8391002C90FC /* MachinegunPickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachinegunPickupEntity.swift; sourceTree = "<group>"; };
 		552417FC260A8391002C90FC /* MachinegunPickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachinegunPickupComponent.swift; sourceTree = "<group>"; };
 		55241802260A85E5002C90FC /* GKEntityExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GKEntityExtension.swift; sourceTree = "<group>"; };
+		552D597E2644825200BE9CFD /* GeneratorComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorComponent.swift; sourceTree = "<group>"; };
+		552D5980264482AC00BE9CFD /* GeneratorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorGroup.swift; sourceTree = "<group>"; };
+		552D5982264482EE00BE9CFD /* GeneratorGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorGroupItem.swift; sourceTree = "<group>"; };
 		55333EBA263F2C9C007288C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55333EBD263F2DB1007288C4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = Suake3D.html; sourceTree = "<group>"; };
 		55333EBE264070FA007288C4 /* Suake3D.help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Suake3D.help; path = Suake3D/Suake3D.help; sourceTree = "<group>"; };
@@ -491,7 +496,6 @@
 		55B8603626349C9A0030D678 /* PositionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionHelper.swift; sourceTree = "<group>"; };
 		55B860422634A52F0030D678 /* ContainerGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroup.swift; sourceTree = "<group>"; };
 		55B860432634A52F0030D678 /* ContainerGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGroupItem.swift; sourceTree = "<group>"; };
-		55B8605C2634A8BC0030D678 /* ContainerQuick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerQuick.swift; sourceTree = "<group>"; };
 		55B860672637482D0030D678 /* GameControllerMutliplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControllerMutliplayer.swift; sourceTree = "<group>"; };
 		55C036C425FA80C400F419B8 /* Suake3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suake3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C036C725FA80C400F419B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -679,13 +683,10 @@
 		5501837426016E2C00F28C54 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				55B0B1F6263899FD00260E75 /* BulletImpactExplodingComponent.swift */,
-				551F3D2A260A8CE1006D9F65 /* WeaponPickupRisingParticlesComponent.swift */,
+				552D597C26447CC800BE9CFD /* Entities */,
+				552D597B26447CB100BE9CFD /* Components */,
 				552417F1260A82D8002C90FC /* WeaponPickupEntityManager.swift */,
-				552417EA260A7E57002C90FC /* BaseWeaponPickupComponent.swift */,
-				552417EB260A7E57002C90FC /* BaseWeaponPickupEntity.swift */,
 				5501839526016FF500F28C54 /* BulletBase.swift */,
-				5501838226016F1300F28C54 /* BaseWeaponComponent.swift */,
 				5501837526016E7900F28C54 /* WeaponArsenalManager.swift */,
 			);
 			path = Base;
@@ -834,6 +835,35 @@
 				55EC891625FA9D2D0040E676 /* NSImage.swift */,
 			);
 			path = SceneKit;
+			sourceTree = "<group>";
+		};
+		552D597B26447CB100BE9CFD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				55B0B1F6263899FD00260E75 /* BulletImpactExplodingComponent.swift */,
+				551F3D2A260A8CE1006D9F65 /* WeaponPickupRisingParticlesComponent.swift */,
+				552417EA260A7E57002C90FC /* BaseWeaponPickupComponent.swift */,
+				5501838226016F1300F28C54 /* BaseWeaponComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		552D597C26447CC800BE9CFD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				552417EB260A7E57002C90FC /* BaseWeaponPickupEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		552D597D264480DB00BE9CFD /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				552D5982264482EE00BE9CFD /* GeneratorGroupItem.swift */,
+				552D5980264482AC00BE9CFD /* GeneratorGroup.swift */,
+				552D597E2644825200BE9CFD /* GeneratorComponent.swift */,
+			);
+			path = Generator;
 			sourceTree = "<group>";
 		};
 		55333EB6263F2BF9007288C4 /* Suake3D.help */ = {
@@ -1108,6 +1138,7 @@
 		55B8603C2634A5070030D678 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				552D597D264480DB00BE9CFD /* Generator */,
 				55333EF226432B50007288C4 /* TVMonitor */,
 				55B860412634A5270030D678 /* Container */,
 			);
@@ -1120,7 +1151,6 @@
 				5597916E263C904300B89447 /* ContainerComponent.swift */,
 				55B860422634A52F0030D678 /* ContainerGroup.swift */,
 				55B860432634A52F0030D678 /* ContainerGroupItem.swift */,
-				55B8605C2634A8BC0030D678 /* ContainerQuick.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -1918,6 +1948,7 @@
 				550184472603EB5500F28C54 /* MapOverlayExt.swift in Sources */,
 				5501839626016FF500F28C54 /* BulletBase.swift in Sources */,
 				55DB992B25FC0BD2000023AF /* SuakeBaseComponent.swift in Sources */,
+				552D5981264482AC00BE9CFD /* GeneratorGroup.swift in Sources */,
 				55001F5F260C813D0015B293 /* DroidComponent.swift in Sources */,
 				5508DC912631E39400A20444 /* SuakeMultiplayerPlayerEntity.swift in Sources */,
 				556CB91525FE8618005B7747 /* SuakeDirTurnDirHelper.swift in Sources */,
@@ -1956,6 +1987,7 @@
 				55F2AE532639EFDE0042BD38 /* Windrose.swift in Sources */,
 				5501851B26091A0F00F28C54 /* SuakeFiles.swift in Sources */,
 				5501847326052D2D00F28C54 /* ArrowManager.swift in Sources */,
+				552D5983264482EE00BE9CFD /* GeneratorGroupItem.swift in Sources */,
 				55D894E125FADDAA00728B83 /* SuakePlayerEntity.swift in Sources */,
 				55001F85260CDEB60015B293 /* SuakeBaseMultiAnimatedSCNNode.swift in Sources */,
 				55DB995325FC4940000023AF /* SuakeStateGameLoading.swift in Sources */,
@@ -2014,6 +2046,7 @@
 				55C1221E2618F4CC001E8E3F /* GameCenterOverlay.swift in Sources */,
 				55D8949925FAD06100728B83 /* LevelManager.swift in Sources */,
 				55D894CE25FADC8E00728B83 /* SuakeBaseNodeEntityWithHealth.swift in Sources */,
+				552D597F2644825200BE9CFD /* GeneratorComponent.swift in Sources */,
 				5501845E2604159300F28C54 /* MouseHelper.swift in Sources */,
 				55E9EA532633ED9E005E3256 /* SniperVisionDirection.swift in Sources */,
 				5501834526014DB200F28C54 /* MatchOver.swift in Sources */,
@@ -2089,7 +2122,6 @@
 				554233FB2632BFE300EB55F9 /* VertexArray.swift in Sources */,
 				55C12261261CF7F0001E8E3F /* MultiplayerLevel.swift in Sources */,
 				55760E4F25FD391F00C10784 /* HUDOverlayEntity.swift in Sources */,
-				55B8605D2634A8BC0030D678 /* ContainerQuick.swift in Sources */,
 				550183FB26029EFD00F28C54 /* SuakeStateRespawn.swift in Sources */,
 				559B2BD4260E4186005E669C /* SuakeNodeGroupItemBase.swift in Sources */,
 				550183EE2601DF8300F28C54 /* LevelGoal.swift in Sources */,

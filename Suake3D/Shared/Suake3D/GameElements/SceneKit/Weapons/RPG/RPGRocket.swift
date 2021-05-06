@@ -20,7 +20,7 @@ class RPGRocket: BulletBase {
     init(game: GameController, weapon:RPGComponent) {
         super.init(game: game, weapon: weapon, sceneName: "art.scnassets/nodes/weapons/rpg/rocketlauncher_shell.scn", scale: SCNVector3(5, 5, 5))
         self.name = "RPGRocket"
-        self.shootingVelocity = 485.0
+        self.shootingVelocity = SuakeVars.rpgRocketVelocity// 485.0
         self.loadRocket()
     }
     

@@ -12,8 +12,6 @@ import SceneKit
 
 class BulletBase: SuakeBaseSCNNode {
     
-//    var rescale:CGFloat = 5.0
-    
     var damage:CGFloat = 10.0
     var shootingVelocity:CGFloat = 405.0
     var isTargetHit:Bool = false

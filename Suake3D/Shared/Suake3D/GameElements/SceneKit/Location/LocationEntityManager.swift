@@ -14,6 +14,7 @@ class LocationEntityManager: EntityManager {
     var portalPairs:[PortalEntityPair] = [PortalEntityPair]()
     var portals:[PortalEntity] = [PortalEntity]()
     var containers:[ContainerGroupItem] = [ContainerGroupItem]()
+    var generators:[GeneratorGroupItem] = [GeneratorGroupItem]()
     
     override init(game: GameController) {
         super.init(game: game)
@@ -31,6 +32,11 @@ class LocationEntityManager: EntityManager {
             for i in 0..<self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount{
                 let container:ContainerGroupItem = ContainerGroupItem(game: self.game, id: i)
                 self.containers.append(container)
+            }
+            
+            for i in 0..<self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount{
+                let generator:GeneratorGroupItem = GeneratorGroupItem(game: self.game, id: i)
+                self.generators.append(generator)
             }
         }
     }
@@ -74,6 +80,12 @@ class LocationEntityManager: EntityManager {
         if(self.containers != nil && self.containers.count > 0){
             for container in self.containers{
                 container.containerComponent.addToScene()
+            }
+        }
+        
+        if(self.generators != nil && self.generators.count > 0){
+            for generator in self.generators{
+                generator.generatorComponent .addToScene()
             }
         }
     }

@@ -32,7 +32,7 @@ class Nuke: BulletBase {
         super.init(game: game, weapon: weapon, sceneName: "art.scnassets/nodes/weapons/rpg/rocketlauncher_shell.scn", scale: SCNVector3(5, 5, 5))
 //        super.init(game: game, weapon: weapon, sceneName: "art.scnassets/nodes/weapons/rpg/rocketlauncher_shell.scn", scale: SCNVector3(5, 5, 5), animName: "")
         self.name = "Redeemer nuke"
-        self.shootingVelocity = 85.0
+        self.shootingVelocity = SuakeVars.redeemerRocketVelocity // 85.0
         self.loadRocket()
     }
     

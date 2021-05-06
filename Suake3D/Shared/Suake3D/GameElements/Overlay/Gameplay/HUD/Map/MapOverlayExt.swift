@@ -26,6 +26,10 @@ extension MapOverlay{
         for medKit in self.medKitNodes {
             self.map.addChild(medKit)
         }
+        
+        for portal in self.portals {
+            self.map.addChild(portal)
+        }
     }
     
     func drawNodes(){
@@ -59,7 +63,45 @@ extension MapOverlay{
         if(self.game.locationEntityManager.entityGroups[.MedKit]!.count > 0){
             self.medKitNodes = self.drawNodeGroupIcons(texture: iconMediKit, group: (self.game.locationEntityManager.entityGroups[.MedKit]?.first)!)
         }
+        
+        if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadPortals){
+            
+            let daPortalOrig:SuakeSpriteNode = self.getNodeIcon(iconFile: "Warp_48x48.png")// self.drawNodeIcon(iconFile: "Snake_blue_48x48.png", pos:  oppPlayerEntity.pos)
+//            let daPortalOrig:SuakeSpriteNode = drawNodeIconNG(iconFile: "Warp_48x48.png", pos: SCNVector3(x: 0, y: 0, z: 0))
+            
+            var i:Int = 0
+            for portalPair in self.game.locationEntityManager.portalPairs{
+                
+                let daPortal:SuakeSpriteNode = daPortalOrig.copy() as! SuakeSpriteNode
+                daPortal.id = portalPair.portalEntityA.id
+                daPortal.position = getNodePos(pos: portalPair.portalEntityA.pos)
+                portals.append(daPortal)
+                
+                let daPortal2:SuakeSpriteNode = daPortalOrig.copy() as! SuakeSpriteNode
+                daPortal2.id = portalPair.portalEntityB.id
+                daPortal2.position = getNodePos(pos: portalPair.portalEntityB.pos)
+                portals.append(daPortal2)
+                
+                let portalConnectionPath:CGMutablePath = CGMutablePath()
+                portalConnectionPath.move(to: getNodePos(pos: portalPair.portalEntityA.pos))
+                portalConnectionPath.addLine(to: getNodePos(pos: portalPair.portalEntityB.pos))
 
+                let dashed = portalConnectionPath.copy(dashingWithPhase: SuakeVars.mapPortalDashingPhase, lengths: SuakeVars.mapPortalDashingPattern)
+
+                let portalCon = SKShapeNode()
+                portalCon.path = dashed
+                portalCon.lineWidth = SuakeVars.mapPortalConnectionLineWidth
+                portalCon.alpha = alpha
+                portalCon.strokeColor = SuakeVars.mapPortalConnectionColor
+                portalCon.glowWidth = SuakeVars.mapPortalConnectionGlowWidth
+
+                portalCon.name = "Portal-Connection No.: " + (i + 1).description
+                let sprite:SuakeSpriteNode = SuakeSpriteNode()
+                sprite.addChild(portalCon)
+                portals.append(sprite)
+                i += 1
+            }
+        }
     }
     
     func drawNodeIconNGMulti(iconFiles:[String], pos:SCNVector3, alphaOverride:CGFloat = -1.0)->SuakeSpriteNodeMultiTextures{
@@ -90,6 +132,10 @@ extension MapOverlay{
             icons.append(icon)
         }
         return icons
+    }
+    
+    func getNodeIcon(iconFile:String)->SuakeSpriteNode{
+        return SuakeSpriteNode(texture: SKTexture(imageNamed: "art.scnassets/overlays/gameplay/map/" + iconFile))
     }
     
     func drawNodeIcon(iconFile:String, pos:SCNVector3, alphaOverride:CGFloat = -1.0)->SuakeSpriteNode{

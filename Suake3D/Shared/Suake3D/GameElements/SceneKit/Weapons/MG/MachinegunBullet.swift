@@ -22,7 +22,7 @@ class MachinegunBullet: BulletBase {
         super.init(game: game, weapon: weapon, sceneName: "art.scnassets/nodes/weapons/mg/MachinegunBulllet.scn", scale: SCNVector3(2, 2, 2), nodeName: "BulletObject")
         self.name = "MachinegunBullet"
         
-        self.shootingVelocity = 485.0
+        self.shootingVelocity = SuakeVars.mgBulletVelocity// 485.0
         self.setupPhysics()
     }
     
@@ -36,7 +36,7 @@ class MachinegunBullet: BulletBase {
         
         let box = SCNBox(width: self.rescale, height: self.rescale, length: self.rescale, chamferRadius: 0)
         
-        self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.mgbullet, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.portal, CollisionCategory.wall, CollisionCategory.floor, CollisionCategory.container])
+        self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.mgbullet, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.portal, CollisionCategory.wall, CollisionCategory.floor, CollisionCategory.container, CollisionCategory.generator])
         
     }
     
