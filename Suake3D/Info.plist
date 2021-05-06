@@ -34,5 +34,13 @@
 		<string>Quake___.ttf</string>
 		<string>quake2.ttf</string>
 	</array>
+	<key>NSSupportsSuddenTermination</key>
+	<true/>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Suake3D.help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER).help</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.action-games</string>
 </dict>
 </plist>

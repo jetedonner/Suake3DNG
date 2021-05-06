@@ -33,11 +33,17 @@ class UserDefaultsHelper:SuakeGameClass{
     var lightIntensity:LightIntensity = .normal
     var showArrows:Bool = true
     var showWindrose:Bool = true
+    var showTVMonitors:Bool = true
+    
+    
+    
     var volume:CGFloat = 0.5
     
     var showCountdown:Bool = true
     var loadWeaponPickups:Bool = true
     var loadObstacles:Bool = true
+    var obstacleCount:Int = 5
+    
     var loadPortals:Bool = true
     
     var loadOpp:Bool = false
@@ -46,6 +52,10 @@ class UserDefaultsHelper:SuakeGameClass{
     
     var loadDroids:Bool = false
     var droidCount:Int = 1
+    
+    
+    
+    
     var droidsAttackOwn:Bool = false
     var droidsAttackOpp:Bool = false
     var droidsChaseDist:CGFloat = 5.0
@@ -77,9 +87,15 @@ class UserDefaultsHelper:SuakeGameClass{
             "LightIntensity": LightIntensity.normal.rawValue,
             "ShowArrows": SuakeVars.showArrows,
             "ShowWindrose": SuakeVars.showWindrose,
+            "ShowTVMonitors": SuakeVars.showTVMonitors,
+            
+            
             "Volume": SuakeVars.volume,
             "LoadWeaponPickups": SuakeVars.loadWeaponPickups,
             "LoadObstacles": SuakeVars.loadObstacles,
+            "ObstacleCount": SuakeVars.obstacleCount,
+            
+            
             "LoadPortals": SuakeVars.loadPortals,
             
             "LoadOpp": SuakeVars.loadOpp,
@@ -106,6 +122,7 @@ class UserDefaultsHelper:SuakeGameClass{
         self.soundEffects = self.defaults.bool(forKey: "SoundEffects")
         self.loadWeaponPickups = self.defaults.bool(forKey: "LoadWeaponPickups")
         self.loadObstacles = self.defaults.bool(forKey: "LoadObstacles")
+        self.obstacleCount = self.defaults.integer(forKey: "ObstacleCount")
         self.loadPortals = self.defaults.bool(forKey: "LoadPortals")
         
         self.loadOpp = true //self.defaults.bool(forKey: "LoadOpp")
@@ -125,6 +142,9 @@ class UserDefaultsHelper:SuakeGameClass{
         self.lightIntensity = LightIntensity.lightIntensity(from: self.defaults.string(forKey: "LightIntensity")!)
         self.showArrows = self.defaults.bool(forKey: "ShowArrows")
         self.showWindrose = self.defaults.bool(forKey: "ShowWindrose")
+        self.showTVMonitors = self.defaults.bool(forKey: "ShowTVMonitors")
+        
+        
         self.volume = CGFloat(self.defaults.float(forKey: "Volume"))
     }
 
@@ -134,6 +154,7 @@ class UserDefaultsHelper:SuakeGameClass{
         self.game.levelManager.currentLevel.levelConfigEnv.levelDifficulty = self.difficulty
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadWeaponPickups = self.loadWeaponPickups
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadObstacles = self.loadObstacles
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount = self.obstacleCount
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadPortals = self.loadPortals
         
         
@@ -145,6 +166,9 @@ class UserDefaultsHelper:SuakeGameClass{
         
         self.game.levelManager.currentLevel.levelConfig.levelSetup.showCountdown = self.showCountdown
         
+        
+        
+        self.game.levelManager.currentLevel.levelConfigEnv.showTVMonitors = self.showTVMonitors
         self.game.levelManager.currentLevel.levelConfigEnv.lightIntensity = self.lightIntensity
         self.game.levelManager.lightManager.setAmbientLight(intensity: self.lightIntensity)
         self.game.soundManager.muteSound = !self.soundEffects

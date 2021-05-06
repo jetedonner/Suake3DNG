@@ -12,6 +12,7 @@ import SceneKit
 
 class RailgunBeam: BulletBase {
     
+    var isBeamed:Bool = false
     var railBeamNode:SCNNode!
     let shotY:CGFloat = 14.0
     var anim:CAAnimationGroup!
@@ -45,34 +46,34 @@ class RailgunBeam: BulletBase {
         return false
     }
     
-//    override func addSingleBullet(pos:SCNVector3, vect:SCNVector3, origBullet:BulletBase, addBullets:Bool = true)->BulletBase{
-////        let newBulletNG:BulletBase = origBullet.getNewBullet()
-////        newBulletNG.position = pos
-////        newBulletNG.position.x -= 0.5
-////        newBulletNG.position.z += 1.0
-////        newBulletNG.position.y = 14
-////        newBulletNG.isBeaming = true
-////        newBulletNG.rotation = origBullet.rotation
-//////        if(!(origBullet is RailgunBeam)){
-//////            newBulletNG.physicsBody!.velocity = vect
-//////        }
-////        if(addBullets){
-////            self.game.physicsHelper.qeueNode2Add2Scene(node: newBulletNG)
+    override func addSingleBullet(pos:SCNVector3, vect:SCNVector3, origBullet:BulletBase, addBullets:Bool = true)->BulletBase{
+//        let newBulletNG:BulletBase = origBullet.getNewBullet()
+//        newBulletNG.position = pos
+//        newBulletNG.position.x -= 0.5
+//        newBulletNG.position.z += 1.0
+//        newBulletNG.position.y = 14
+//        newBulletNG.isBeaming = true
+//        newBulletNG.rotation = origBullet.rotation
+////        if(!(origBullet is RailgunBeam)){
+////            newBulletNG.physicsBody!.velocity = vect
 ////        }
-////        return newBulletNG
-//
-//        let newBulletNG:RailgunBeam = (origBullet as! RailgunBeam).getNewBullet()
-//        let startZ:CGFloat = pos.z
-//        let startX:CGFloat = pos.x
-//        let startY:CGFloat = shotY
-//        newBulletNG.addRailgunShot(beamPos: SCNVector3(startX, startY, startZ), isBeamed: true)
-//        //newBulletNG.rotation = origBullet.rotation
-//        newBulletNG.eulerAngles = origBullet.eulerAngles
-//        newBulletNG.runAction(SCNAction.fadeOut(duration: 0.35), completionHandler: {
-//            newBulletNG.game.physicsHelper.qeueNode2Remove(node: newBulletNG)
-//        })
+//        if(addBullets){
+//            self.game.physicsHelper.qeueNode2Add2Scene(node: newBulletNG)
+//        }
 //        return newBulletNG
-//    }
+
+        let newBulletNG:RailgunBeam = (origBullet as! RailgunBeam).getNewBullet()
+        let startZ:CGFloat = pos.z
+        let startX:CGFloat = pos.x
+        let startY:CGFloat = shotY
+        newBulletNG.addRailgunShot(beamPos: SCNVector3(startX, startY, startZ), isBeamed: true)
+        //newBulletNG.rotation = origBullet.rotation
+        newBulletNG.eulerAngles = origBullet.eulerAngles
+        newBulletNG.runAction(SCNAction.fadeOut(duration: 0.35), completionHandler: {
+            newBulletNG.game.physicsHelper.qeueNode2Remove(node: newBulletNG)
+        })
+        return newBulletNG
+    }
     
     override func getNewBullet()->RailgunBeam{
         return RailgunBeam(game: self.game, weapon: self.weapon as! RailgunComponent)
@@ -89,7 +90,7 @@ class RailgunBeam: BulletBase {
     }
     
     public func addRailgunShot(beamPos:SCNVector3, isBeamed:Bool = false){
-//        self.isBeamed = isBeamed
+        self.isBeamed = isBeamed
         beamLen = SuakeVars.fieldSize * self.game.levelManager.currentLevel.levelConfigEnv.levelSize.getNSSize().width
         let c = beamLen
         var degrees:Double = self.game.panCameraHelper.cameraNodeFPDegrees
@@ -234,6 +235,8 @@ class RailgunBeam: BulletBase {
         helix.runAction(SCNAction.group([SCNAction.rotateBy(x: 0, y: CGFloat(Double.pi) * 2, z: 0, duration: duration), act0]))
         self.addChildNode(helix)
     }
+    
+    
     
 //    func addBloom() -> [CIFilter]? {
 //        let bloomFilter = CIFilter(name:"CIBloom")!

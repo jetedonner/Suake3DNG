@@ -69,24 +69,24 @@ class ShotgunPelletGrp: BulletBase {
         return self.allPelletsHit
     }
     
-//    @discardableResult
-//    func checkAllPelletsBeamed()->Bool{
-//        self.allPelletsHBeamed = true
-//        for pellet in self.pellets{
-//            if(!pellet.isBeaming){
-//                self.allPelletsHBeamed = false
-//                break
-//            }
-//        }
-//        
-//        if(self.allPelletsHBeamed){
-//            self.game.physicsHelper.qeueNode2Remove(node: self)
-//            self.game.showDbgMsg(dbgMsg: "All pellets were beamed", dbgLevel: .Verbose)
-//        }else{
-//            self.game.showDbgMsg(dbgMsg: "NOT all pellets were beamed", dbgLevel: .Verbose)
-//        }
-//        return self.allPelletsHBeamed
-//    }
+    @discardableResult
+    func checkAllPelletsBeamed()->Bool{
+        self.allPelletsHBeamed = true
+        for pellet in self.pellets{
+            if(!pellet.isBeaming){
+                self.allPelletsHBeamed = false
+                break
+            }
+        }
+        
+        if(self.allPelletsHBeamed){
+            self.game.physicsHelper.qeueNode2Remove(node: self)
+            self.game.showDbgMsg(dbgMsg: "All pellets were beamed", dbgLevel: .Verbose)
+        }else{
+            self.game.showDbgMsg(dbgMsg: "NOT all pellets were beamed", dbgLevel: .Verbose)
+        }
+        return self.allPelletsHBeamed
+    }
 //    
     func createPellets(){
         self.pellets.removeAll()

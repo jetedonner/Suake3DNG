@@ -94,24 +94,25 @@ class Windrose:BaseExtHUDComponent{
         }
     }
     
-    func rotateWindrose(duration:TimeInterval, turnDir:TurnDir = .Left){
-        if(turnDir == .Left){
-            self.windRose.run(SKAction.rotate(byAngle: CGFloat.pi / 2, duration: duration))
-            for lbl in self.windroseLbls{
-                lbl.run(SKAction.rotate(byAngle: CGFloat.pi / -2, duration: duration))
-            }
-        }else{
-            self.windRose.run(SKAction.rotate(byAngle: CGFloat.pi / -2, duration: duration))
-            for lbl in self.windroseLbls{
-                lbl.run(SKAction.rotate(byAngle: CGFloat.pi / 2, duration: duration))
-            }
-        }
-        self.updateArrowGoodyPos()
-    }
+//    func rotateWindrose(duration:TimeInterval, turnDir:TurnDir = .Left){
+//        if(turnDir == .Left){
+//            self.windRose.run(SKAction.rotate(byAngle: CGFloat.pi / 2, duration: duration))
+//            for lbl in self.windroseLbls{
+//                lbl.run(SKAction.rotate(byAngle: CGFloat.pi / -2, duration: duration))
+//            }
+//        }else{
+//            self.windRose.run(SKAction.rotate(byAngle: CGFloat.pi / -2, duration: duration))
+//            for lbl in self.windroseLbls{
+//                lbl.run(SKAction.rotate(byAngle: CGFloat.pi / 2, duration: duration))
+//            }
+//        }
+//        self.updateArrowGoodyPos()
+//    }
 
     func getLookAtRotation(_ point: SCNVector3)->SCNVector3{
         // Find change in positions
-        let mePos:SCNVector3 = self.game.cameraHelper.cameraNodeFP.position
+        let mePos:SCNVector3 = self.game.cameraHelper.cameraNodeFP.presentation.position
+//        print("mePos: \(mePos)")
         let changeX = mePos.x - point.x // Change in X position
         let changeY = mePos.y - point.y // Change in Y position
         let changeZ = mePos.z - point.z // Change in Z position
@@ -129,7 +130,9 @@ class Windrose:BaseExtHUDComponent{
     
     func updateArrowGoodyPos(){
         self.windRose.zRotation = self.game.scnView.pointOfView!.eulerAngles.y
+        
         self.centerNodeGoodyPos.zRotation = self.windRose.zRotation + self.getLookAtRotation(self.game.playerEntityManager.goodyEntity.position).y // self.lookAtNode.eulerAngles.y * -1
+//        print("self.centerNodeGoodyPos.zRotation: \(self.centerNodeGoodyPos.zRotation)")
         for lbl in self.windroseLbls{
             lbl.run(SKAction.rotate(toAngle: -self.windRose.zRotation, duration: 0.0))
         }

@@ -135,6 +135,7 @@ class SuakePlayerNodeComponent: SuakeBaseSCNNodeComponent {
         self.playerEntity.cameraComponent.moveFollowCamera(turnDir: newTurnDir, duration: animDuration)
         
         self.playerEntity.cameraComponent.moveRotateFPCamera(duration: animDuration, turnDir: newTurnDir)
+//        self.game.overlayManager.hud.overlayScene.windrose.rotateWindrose(duration: animDuration, turnDir: (newTurnDir == .Left ? .Right : .Left))
     }
     
     required init?(coder: NSCoder) {

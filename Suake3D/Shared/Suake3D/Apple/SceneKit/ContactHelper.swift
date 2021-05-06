@@ -169,6 +169,20 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
                     (contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
                 }
             }
+    }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.portal)){
+        if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.mgbullet)){
+            (contact.nodeA.entity as! PortalEntity).beamShot(origShot: (contact.nodeB as! BulletBase), contactNode: contact.nodeA)
+        }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.pellet)){
+            (contact.nodeA.entity as! PortalEntity).beamShot(origShot: (contact.nodeB as! BulletBase), contactNode: contact.nodeA)
+        }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.rocket)){
+            (contact.nodeA.entity as! PortalEntity).beamShot(origShot: (contact.nodeB as! BulletBase), contactNode: contact.nodeA)
+        }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.railbeam)){
+            if(!(contact.nodeB as! RailgunBeam).isBeamed){
+                (contact.nodeA.entity as! PortalEntity).beamShot(origShot: (contact.nodeB as! BulletBase), contactNode: contact.nodeA)
+            }
+        }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.sniperRifleBullet)){
+            (contact.nodeA.entity as! PortalEntity).beamShot(origShot: (contact.nodeB as! BulletBase), contactNode: contact.nodeA)
+        }
     }
 //        }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.portal)){
 //            if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.mgbullet)){

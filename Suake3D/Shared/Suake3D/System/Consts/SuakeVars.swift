@@ -24,6 +24,7 @@ class SuakeVars{
     static let showAmbientLight:Bool = true
     static let loadWeaponPickups:Bool = true
     static let loadObstacles:Bool = true
+    static let obstacleCount:Int = 5
     static let loadPortals:Bool = true
     
     static let loadOpp:Bool = false
@@ -67,6 +68,9 @@ class SuakeVars{
     
     static let showArrows:Bool = true
     static let showWindrose:Bool = true
+    static let showTVMonitors:Bool = true
+    
+    
     
     static let reloadClipTimeout:TimeInterval = 2.15
     

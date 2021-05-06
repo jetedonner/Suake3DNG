@@ -79,9 +79,9 @@ class ShotgunPellet: BulletBase {
         return false
     }
     
-//    override func getNewBullet()->ShotgunPellet{
-//        return ShotgunPellet(pelletGrp: self.pelletGrp, weapon: self.weapon as! ShotgunComponent)
-//    }
+    override func getNewBullet()->ShotgunPellet{
+        return ShotgunPellet(pelletGrp: self.pelletGrp, weapon: self.weapon as! ShotgunComponent)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

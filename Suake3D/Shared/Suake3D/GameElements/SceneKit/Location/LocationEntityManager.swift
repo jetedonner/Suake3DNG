@@ -28,8 +28,10 @@ class LocationEntityManager: EntityManager {
         self.add(locationType: .MedKit, entityGroup: medKitEntityGroup)
         
         if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadObstacles){
-            let container:ContainerGroupItem = ContainerGroupItem(game: self.game, id: 0)
-            self.containers.append(container)
+            for i in 0..<self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount{
+                let container:ContainerGroupItem = ContainerGroupItem(game: self.game, id: i)
+                self.containers.append(container)
+            }
         }
     }
     
@@ -38,22 +40,15 @@ class LocationEntityManager: EntityManager {
             let newPortalEntityPair:PortalEntityPair = PortalEntityPair(game: self.game, id: i)
             self.portalPairs.append(newPortalEntityPair)
             
-            self.portals.append(newPortalEntityPair.portalEntityA)
-            newPortalEntityPair.portalEntityA.portalComponent.addToScene()
-            newPortalEntityPair.portalEntityA.portalComponent.initSetupPos()
-            self.portals.append(newPortalEntityPair.portalEntityB)
-            newPortalEntityPair.portalEntityB.portalComponent.addToScene()
-            newPortalEntityPair.portalEntityB.portalComponent.initSetupPos()
-//            self.setNewLocationEntityVar(locationType: .Portal, newEntity: newPortalEntityPair.portalEntityA)
-//            self.setNewLocationEntityVar(locationType: .Portal,s newEntity: newPortalEntityPair.portalEntityB)
-            
-//            self.addLocationEntity(locationEntity: newPortalEntityPair.portalEntityA)
-//            self.addLocationEntity(locationEntity: newPortalEntityPair.portalEntityB)
-//            let newEntity:SuakfeBaseNodeEntity = self.getNewLocationEntity(locationType: .Portal, id: i)
-//            self.setNewLocationEntityVar(locationType: .Portal, newEntity: newEntity)
-//            self.addLocationEntity(locationEntity: newEntity)
-            
+            self.addPortalEntity(portalEntity: newPortalEntityPair.portalEntityA)
+            self.addPortalEntity(portalEntity: newPortalEntityPair.portalEntityB)
         }
+    }
+    
+    func addPortalEntity(portalEntity:PortalEntity){
+        self.portals.append(portalEntity)
+        portalEntity.portalComponent.addToScene()
+        portalEntity.portalComponent.initSetupPos()
     }
     
     func addLocationToScene(pos:SCNVector3){
@@ -77,7 +72,9 @@ class LocationEntityManager: EntityManager {
             }
         }
         if(self.containers != nil && self.containers.count > 0){
-            self.containers[0].containerComponent.addToScene()
+            for container in self.containers{
+                container.containerComponent.addToScene()
+            }
         }
     }
     

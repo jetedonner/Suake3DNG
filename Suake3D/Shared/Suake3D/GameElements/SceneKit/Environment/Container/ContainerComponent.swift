@@ -28,7 +28,7 @@ class ContainerComponent: SuakeBaseLocationComponent {
         self.node.name = "Container: " + self.id.description
         self.initPhysics()
         self.node.categoryBitMask = CollisionCategory.container.rawValue
-        self.node.position = SCNVector3(self.node.position.x + 75.0, self.node.position.y, self.node.position.z + 75.0)
+        
 //        self.node.childNode(withName: "group1", recursively: <#T##Bool#>)
 //        self.initSetupPos()
 //        self.node.childNode(withName: "Med_Kit", recursively: true)?.categoryBitMask = CollisionCategory.medKit.rawValue
@@ -61,6 +61,10 @@ class ContainerComponent: SuakeBaseLocationComponent {
         }else{
             (self.entity as! SuakeBaseNodeEntity).pos = pos
         }
+        
+        let daPos = (self.entity as! SuakeBaseNodeEntity).pos
+        
+        self.node.position = SCNVector3((daPos.x * SuakeVars.fieldSize) + 75.0, self.node.position.y, (daPos.z * SuakeVars.fieldSize) + 75.0)
 //        self.game.levelManager.gameBoard.setGameBoardFieldEntity(pos: (self.entity as! SuakeBaseNodeEntity).pos, entity: self.entity as? SuakeBaseEntity)
 //        (self.entity as! SuakeBaseNodeEntity).pos = SCNVector3(0, 0, 4)
     }

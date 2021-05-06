@@ -100,6 +100,12 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }else{
                     self.game.playerEntityManager.ownPlayerEntity.weapons.setCurrentWeaponType(weaponType: .redeemer)
                 }
+            }else if(pressedKey == .KEY_B){
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                    self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: .RandomSkyBox)
+                }else{
+//                    self.game.physicsHelper.takeSS = true
+                }
             }else if(pressedKey == .KEY_C){
                 self.game.overlayManager.hud.overlayScene.crosshairEntity.mgCrosshairComponent.animateCrosshair()
             }else if(pressedKey == .KEY_E){
@@ -177,7 +183,11 @@ class SuakeKeyboardHandler: KeyboardHandler {
             }else if(pressedKey == .KEY_R){
                 self.game.overlayManager.showOverlay4GameState(type: .matchResult)
             }else if(pressedKey == .KEY_T){
-                self.game.overlayManager.hud.showMsg(msg: "TESET MESSAGE FROM UI INPUT")
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                    self.game.tvMonitorManager.showNoise = !self.game.tvMonitorManager.showNoise
+                }else{
+                    self.game.overlayManager.hud.showMsg(msg: "TESET MESSAGE FROM UI INPUT")
+                }
             }else if(pressedKey == .KEY_U){
                 GKNotificationBanner.show(withTitle: "Catch 20 godies", message: "Complete catch 20 goddies achivement", duration: 3.0, completionHandler: {
                     

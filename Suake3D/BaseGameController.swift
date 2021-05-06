@@ -9,6 +9,7 @@
 import SceneKit
 //import QuartzCore
 import GameplayKit
+import AVFoundation
 
 class BaseGameController:NSObject{
     
@@ -17,6 +18,8 @@ class BaseGameController:NSObject{
     let floorNode:SCNNode
     
     var gameWindowSize:CGSize = CGSize(width: 1280, height: 800)
+    
+    let overlayView   = SCNView()
     
     init(scnView: SCNView) {
         self.scnView = scnView
@@ -33,6 +36,29 @@ class BaseGameController:NSObject{
         self.gameWindowSize = CGSize(width: frame!.size.width, height: frame!.size.height)
         
         self.scene = SCNScene(named: "art.scnassets/scenes/gamescene.scn")! //Landscape.scn")! //gamescene.scn")!
+        
+//        var playerLayer: AVPlayer?
+
+        
+        
+        overlayView.scene = self.scene
+        overlayView.frame = CGRect(x: 320, y: 240, width: 640, height: 480)
+        overlayView.alphaValue = 0.0
+//        self.scnView.addSubview(overlayView)
+        
+//        let videoURL: NSURL = Bundle.main.url(forResource: "art.scnassets/videos/MediaExample", withExtension: "mp4")! as NSURL
+//        let player = AVPlayer(url: videoURL as URL)
+////        player.isMuted = true
+//          
+//        
+////        let tvPlane:SCNPlane = SCNPlane(width: 640, height: 480)
+//        self.tvNode = SCNNode(geometry: tvPlane)
+//        tvNode.geometry?.firstMaterial?.isDoubleSided = true
+////        tvNode.geometry?.firstMaterial?.diffuse.contents = player// NSColor.red
+//        tvNode.eulerAngles.x = CGFloat.pi
+//        tvNode.position = SCNVector3(320, 100 + 240, 100)
+//        self.scene.rootNode.addChildNode(tvNode)
+//        player.play()
         self.floorNode = (self.scene.rootNode.childNode(withName: "floor", recursively: true))!
         
         self.floorNode.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: self.floorNode.geometry!, options: nil))

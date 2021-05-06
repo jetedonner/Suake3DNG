@@ -38,6 +38,11 @@ class SuakeBaseLevel: SuakeGameClass {
         if(self.levelConfig.levelSetup.loadWeaponPickups){
             self.weaponPickUps.addWeaponPickupEntities(weaponType: .mg, numberOfWeaponPickups: 1)
         }
+        
+        if(self.levelConfigEnv.showTVMonitors){
+            self.game.tvMonitorManager.initTVMonitors()
+            self.game.tvMonitorManager.setTVMonitorImage(tvNoise: true)
+        }
 //        if(self.levelConfig.levelSetup.loadWeaponPickups){
 //            self.weaponPickUps.addWeaponPickupEntities(weaponType: .mg, numberOfWeaponPickups: 1)
 //        }

@@ -43,6 +43,9 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.stateMachine.enter(stateClass: SuakeStateGameLoadingMulti.self)
     }
     
+//    var tvMonEnt:[TVMonitorEntity] = [TVMonitorEntity]()
+    var tvMonitorManager:TVMonitorManager!
+    
     override init(scnView: SCNView) {
         super.init(scnView: scnView)
 
@@ -57,6 +60,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.soundManager = SoundManagerPositional(game: self)
         
         self.locationEntityManager = LocationEntityManager(game: self)
+        self.tvMonitorManager = TVMonitorManager(game: self)
         
         self.playerEntityManager = SuakePlayerManager(game: self)
         self.levelManager = LevelManager(game: self)
@@ -86,6 +90,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             
             self.overlayManager.gameLoading.setProgress(curPrecent: 5, msg: "Setting up cameras ...")
             self.cameraHelper.initCameras()
+//            self.tvNode.geometry?.firstMaterial?.diffuse.contents = self.cameraHelper.cameraNodeFP.camera
             
             self.overlayManager.gameLoading.setProgress(curPrecent: 10, msg: "Setting up levels ...")
             self.levelManager.loadLevel(initialLoad: initialLoad)
@@ -99,6 +104,17 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             self.locationEntityManager.addLocationGroupsToScene()
             
             self.locationEntityManager.addPortalEntities(numberOfPortals: 3)
+            
+//            self.tvMonEnt.append(TVMonitorEntity(game: self, id: 0))
+//            self.tvMonEnt.append(TVMonitorEntity(game: self, id: 1))
+//            self.tvMonEnt.append(TVMonitorEntity(game: self, id: 2))
+//            self.tvMonEnt.append(TVMonitorEntity(game: self, id: 3))
+//            self.tvMonEnt[0].showTVMonitor(pos: SCNVector3(0, 1, 10))
+//            self.tvMonEnt[1].showTVMonitor(pos: SCNVector3(0, 1, -10))
+//            self.tvMonEnt[2].showTVMonitor(pos: SCNVector3(10, 1, 0))
+//            self.tvMonEnt[3].showTVMonitor(pos: SCNVector3(-10, 1, 0))
+            
+            
             
             self.overlayManager.gameLoading.setProgress(curPrecent: 35, msg: "Setting up game board ...")
             self.gridGraphManager.loadGridGraph()
@@ -116,11 +132,32 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             self.scnView.isPlaying = true
             
             self.stateMachine.enter(SuakeStateReadyToPlay.self)
+            
+//            self.tvMonitorManager.startTVMonitorUpdate()
             if(self.usrDefHlpr.dbgMultiplayer){
                 self.dbgMultiplayer()
             }
         }
     }
+    
+//    func startTVMonitorUpdate(){
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + (1.0 * 0.024), execute: {
+//            let newScnView = self.overlayView
+//            newScnView.pointOfView = self.cameraHelper.cameraNodeFP
+//            let screenshot:NSImage = newScnView.snapshot().imageRotatedByDegreess(degrees: CGFloat(-90))
+////                print("TV-UpdateTime: \(time)")
+//            self.tvMonitorManager.tvMonEnt[0].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial?.diffuse.contents = screenshot
+//            self.tvMonitorManager.tvMonEnt[1].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial?.diffuse.contents = screenshot
+//            self.tvMonitorManager.tvMonEnt[2].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial?.diffuse.contents = screenshot
+//            self.tvMonitorManager.tvMonEnt[3].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial?.diffuse.contents = screenshot
+//            self.startTVMonitorUpdate()
+//        })
+////        if(self.deltaTime.truncatingRemainder(dividingBy: 0.25) == 0){
+////            DispatchQueue.main.async {
+////
+////            }
+////        }
+//    }
     
     func dbgMultiplayer(){
         let player2Control:String = self.usrDefHlpr.multiHumanPlayer2Control

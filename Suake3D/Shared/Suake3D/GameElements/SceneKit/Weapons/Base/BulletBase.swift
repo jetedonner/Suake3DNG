@@ -17,6 +17,7 @@ class BulletBase: SuakeBaseSCNNode {
     var damage:CGFloat = 10.0
     var shootingVelocity:CGFloat = 405.0
     var isTargetHit:Bool = false
+    var isBeaming:Bool = false
     var weapon:BaseWeaponComponent!
 
     init(game: GameController) {
@@ -43,7 +44,22 @@ class BulletBase: SuakeBaseSCNNode {
         self.physicsBody?.isAffectedByGravity = false
     }
 
-    
+    func addSingleBullet(pos:SCNVector3, vect:SCNVector3, origBullet:BulletBase, addBullets:Bool = true)->BulletBase{
+        let newBulletNG:BulletBase = origBullet.getNewBullet()
+        newBulletNG.position = pos
+        newBulletNG.position.x -= 0.5
+        newBulletNG.position.z += 1.0
+        newBulletNG.position.y = 14
+        newBulletNG.isBeaming = true
+        newBulletNG.rotation = origBullet.rotation
+        if(!(origBullet is RailgunBeam)){
+            newBulletNG.physicsBody!.velocity = vect
+        }
+        if(addBullets){
+            self.game.physicsHelper.qeueNode2Add2Scene(node: newBulletNG)
+        }
+        return newBulletNG
+    }
     
     func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contact: SCNPhysicsContact)->Bool{
         return self.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact, overrideIsTargetHit: false)

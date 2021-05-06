@@ -119,6 +119,7 @@ class HUDOverlayScene: SuakeBaseOverlay {
             if(self.game.physicsHelper.deltaTime >= 1.0){
                 self.arrows.showHideHelperArrows()
             }
+            self.windrose.updateArrowGoodyPos()
         }
         
         //TODO: Move TO SUAKESTATEPLAYING

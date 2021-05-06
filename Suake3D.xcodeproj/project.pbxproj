@@ -98,6 +98,25 @@
 		552417FD260A8391002C90FC /* MachinegunPickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552417FB260A8391002C90FC /* MachinegunPickupEntity.swift */; };
 		552417FE260A8391002C90FC /* MachinegunPickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552417FC260A8391002C90FC /* MachinegunPickupComponent.swift */; };
 		55241803260A85E5002C90FC /* GKEntityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55241802260A85E5002C90FC /* GKEntityExtension.swift */; };
+		55333EBB263F2C9C007288C4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55333EBA263F2C9C007288C4 /* Info.plist */; };
+		55333EBF264070FA007288C4 /* Suake3D.help in Resources */ = {isa = PBXBuildFile; fileRef = 55333EBE264070FA007288C4 /* Suake3D.help */; };
+		55333EC2264071AF007288C4 /* English.lproj.helpindex in Resources */ = {isa = PBXBuildFile; fileRef = 55333EC0264071AF007288C4 /* English.lproj.helpindex */; };
+		55333ECA26407291007288C4 /* Suake3DIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55333EC926407291007288C4 /* Suake3DIcon.png */; };
+		55333ECF264074D9007288C4 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 55333ECE264074D9007288C4 /* style.css */; };
+		55333EE52641B297007288C4 /* nav.js in Resources */ = {isa = PBXBuildFile; fileRef = 55333EDA2641B297007288C4 /* nav.js */; };
+		55333EE62641B297007288C4 /* _layouts in Resources */ = {isa = PBXBuildFile; fileRef = 55333EDB2641B297007288C4 /* _layouts */; };
+		55333EE72641B297007288C4 /* jekyll-server.command in Resources */ = {isa = PBXBuildFile; fileRef = 55333EDC2641B297007288C4 /* jekyll-server.command */; };
+		55333EE82641B297007288C4 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 55333EDD2641B297007288C4 /* Makefile */; };
+		55333EE92641B297007288C4 /* _sass in Resources */ = {isa = PBXBuildFile; fileRef = 55333EDE2641B297007288C4 /* _sass */; };
+		55333EEA2641B297007288C4 /* _config.yml in Resources */ = {isa = PBXBuildFile; fileRef = 55333EDF2641B297007288C4 /* _config.yml */; };
+		55333EEB2641B297007288C4 /* book-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55333EE02641B297007288C4 /* book-icon.png */; };
+		55333EEC2641B297007288C4 /* _plugins in Resources */ = {isa = PBXBuildFile; fileRef = 55333EE12641B297007288C4 /* _plugins */; };
+		55333EED2641B297007288C4 /* _English.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 55333EE22641B297007288C4 /* _English.lproj */; };
+		55333EEE2641B297007288C4 /* _includes in Resources */ = {isa = PBXBuildFile; fileRef = 55333EE32641B297007288C4 /* _includes */; };
+		55333EEF2641B297007288C4 /* css in Resources */ = {isa = PBXBuildFile; fileRef = 55333EE42641B297007288C4 /* css */; };
+		55333EF426432B93007288C4 /* TVMonitorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55333EF326432B93007288C4 /* TVMonitorEntity.swift */; };
+		55333EF626432BB9007288C4 /* TVMonitorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55333EF526432BB9007288C4 /* TVMonitorComponent.swift */; };
+		55333EF8264458FD007288C4 /* TVMonitorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55333EF7264458FD007288C4 /* TVMonitorManager.swift */; };
 		554233D6263215FE00EB55F9 /* ShotgunPellet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233D5263215FE00EB55F9 /* ShotgunPellet.swift */; };
 		554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */; };
 		554233DE2632168600EB55F9 /* ShotgunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554233DD2632168600EB55F9 /* ShotgunComponent.swift */; };
@@ -385,6 +404,28 @@
 		552417FB260A8391002C90FC /* MachinegunPickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachinegunPickupEntity.swift; sourceTree = "<group>"; };
 		552417FC260A8391002C90FC /* MachinegunPickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachinegunPickupComponent.swift; sourceTree = "<group>"; };
 		55241802260A85E5002C90FC /* GKEntityExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GKEntityExtension.swift; sourceTree = "<group>"; };
+		55333EBA263F2C9C007288C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55333EBD263F2DB1007288C4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = Suake3D.html; sourceTree = "<group>"; };
+		55333EBE264070FA007288C4 /* Suake3D.help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Suake3D.help; path = Suake3D/Suake3D.help; sourceTree = "<group>"; };
+		55333EC1264071AF007288C4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file; name = English; path = English.lproj.helpindex; sourceTree = "<group>"; };
+		55333EC926407291007288C4 /* Suake3DIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Suake3DIcon.png; sourceTree = "<group>"; };
+		55333ECE264074D9007288C4 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		55333ED42641B249007288C4 /* MyAppHelp.help */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppHelp.help; sourceTree = BUILT_PRODUCTS_DIR; };
+		55333ED62641B249007288C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55333EDA2641B297007288C4 /* nav.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nav.js; sourceTree = "<group>"; };
+		55333EDB2641B297007288C4 /* _layouts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _layouts; sourceTree = "<group>"; };
+		55333EDC2641B297007288C4 /* jekyll-server.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "jekyll-server.command"; sourceTree = "<group>"; };
+		55333EDD2641B297007288C4 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		55333EDE2641B297007288C4 /* _sass */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _sass; sourceTree = "<group>"; };
+		55333EDF2641B297007288C4 /* _config.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = _config.yml; sourceTree = "<group>"; };
+		55333EE02641B297007288C4 /* book-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book-icon.png"; sourceTree = "<group>"; };
+		55333EE12641B297007288C4 /* _plugins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _plugins; sourceTree = "<group>"; };
+		55333EE22641B297007288C4 /* _English.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _English.lproj; sourceTree = "<group>"; };
+		55333EE32641B297007288C4 /* _includes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _includes; sourceTree = "<group>"; };
+		55333EE42641B297007288C4 /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; path = css; sourceTree = "<group>"; };
+		55333EF326432B93007288C4 /* TVMonitorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMonitorEntity.swift; sourceTree = "<group>"; };
+		55333EF526432BB9007288C4 /* TVMonitorComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMonitorComponent.swift; sourceTree = "<group>"; };
+		55333EF7264458FD007288C4 /* TVMonitorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMonitorManager.swift; sourceTree = "<group>"; };
 		554233D5263215FE00EB55F9 /* ShotgunPellet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunPellet.swift; sourceTree = "<group>"; };
 		554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunPelletGrp.swift; sourceTree = "<group>"; };
 		554233DD2632168600EB55F9 /* ShotgunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunComponent.swift; sourceTree = "<group>"; };
@@ -556,6 +597,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		55333ED12641B249007288C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55C036C125FA80C400F419B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -788,6 +836,95 @@
 			path = SceneKit;
 			sourceTree = "<group>";
 		};
+		55333EB6263F2BF9007288C4 /* Suake3D.help */ = {
+			isa = PBXGroup;
+			children = (
+				55333EB7263F2C12007288C4 /* Contents */,
+			);
+			path = Suake3D.help;
+			sourceTree = "<group>";
+		};
+		55333EB7263F2C12007288C4 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				55333EBA263F2C9C007288C4 /* Info.plist */,
+				55333EB8263F2C1C007288C4 /* Resources */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		55333EB8263F2C1C007288C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				55333EC326407221007288C4 /* res */,
+				55333EB9263F2C28007288C4 /* English.lproj */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		55333EB9263F2C28007288C4 /* English.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				55333EC0264071AF007288C4 /* English.lproj.helpindex */,
+				55333EBC263F2DB1007288C4 /* Suake3D.html */,
+			);
+			path = English.lproj;
+			sourceTree = "<group>";
+		};
+		55333EC326407221007288C4 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				55333ECD26407453007288C4 /* css */,
+				55333EC42640722B007288C4 /* img */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		55333EC42640722B007288C4 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				55333EC926407291007288C4 /* Suake3DIcon.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		55333ECD26407453007288C4 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				55333ECE264074D9007288C4 /* style.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		55333ED52641B249007288C4 /* MyAppHelp */ = {
+			isa = PBXGroup;
+			children = (
+				55333EDF2641B297007288C4 /* _config.yml */,
+				55333EE22641B297007288C4 /* _English.lproj */,
+				55333EE32641B297007288C4 /* _includes */,
+				55333EDB2641B297007288C4 /* _layouts */,
+				55333EE12641B297007288C4 /* _plugins */,
+				55333EDE2641B297007288C4 /* _sass */,
+				55333EE02641B297007288C4 /* book-icon.png */,
+				55333EE42641B297007288C4 /* css */,
+				55333EDC2641B297007288C4 /* jekyll-server.command */,
+				55333EDD2641B297007288C4 /* Makefile */,
+				55333EDA2641B297007288C4 /* nav.js */,
+				55333ED62641B249007288C4 /* Info.plist */,
+			);
+			path = MyAppHelp;
+			sourceTree = "<group>";
+		};
+		55333EF226432B50007288C4 /* TVMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				55333EF526432BB9007288C4 /* TVMonitorComponent.swift */,
+				55333EF326432B93007288C4 /* TVMonitorEntity.swift */,
+				55333EF7264458FD007288C4 /* TVMonitorManager.swift */,
+			);
+			path = TVMonitor;
+			sourceTree = "<group>";
+		};
 		554233D4263214EC00EB55F9 /* Shotgun */ = {
 			isa = PBXGroup;
 			children = (
@@ -971,6 +1108,7 @@
 		55B8603C2634A5070030D678 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				55333EF226432B50007288C4 /* TVMonitor */,
 				55B860412634A5270030D678 /* Container */,
 			);
 			path = Environment;
@@ -990,6 +1128,7 @@
 		55C036BB25FA80C400F419B8 = {
 			isa = PBXGroup;
 			children = (
+				55333EBE264070FA007288C4 /* Suake3D.help */,
 				550704A8261229B600464F97 /* IconResources-Credits.txt */,
 				550183B72601893B00F28C54 /* SetupDeveloperViewController.swift */,
 				550183B82601893B00F28C54 /* SetupDeveloperViewController.xib */,
@@ -999,6 +1138,7 @@
 				55C036C625FA80C400F419B8 /* Suake3D */,
 				55C036DB25FA80C500F419B8 /* Suake3DTests */,
 				55C036E625FA80C500F419B8 /* Suake3DUITests */,
+				55333ED52641B249007288C4 /* MyAppHelp */,
 				55C036C525FA80C400F419B8 /* Products */,
 				55E8DCFD25FD604A0056A0A9 /* Frameworks */,
 			);
@@ -1010,6 +1150,7 @@
 				55C036C425FA80C400F419B8 /* Suake3D.app */,
 				55C036D825FA80C500F419B8 /* Suake3DTests.xctest */,
 				55C036E325FA80C500F419B8 /* Suake3DUITests.xctest */,
+				55333ED42641B249007288C4 /* MyAppHelp.help */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1024,6 +1165,7 @@
 				55C036C725FA80C400F419B8 /* AppDelegate.swift */,
 				55C036F825FA81C400F419B8 /* macOS */,
 				55EC88FA25FA97230040E676 /* Shared */,
+				55333EB6263F2BF9007288C4 /* Suake3D.help */,
 				55760E6825FD469F00C10784 /* textures.atlas */,
 				55C036CB25FA80C400F419B8 /* art.scnassets */,
 				55C036CD25FA80C500F419B8 /* Assets.xcassets */,
@@ -1555,6 +1697,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		55333ED32641B249007288C4 /* MyAppHelp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55333ED72641B249007288C4 /* Build configuration list for PBXNativeTarget "MyAppHelp" */;
+			buildPhases = (
+				55333ED02641B249007288C4 /* Sources */,
+				55333ED12641B249007288C4 /* Frameworks */,
+				55333ED22641B249007288C4 /* Resources */,
+				55333EF12641B424007288C4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyAppHelp;
+			productName = MyAppHelp;
+			productReference = 55333ED42641B249007288C4 /* MyAppHelp.help */;
+			productType = "com.apple.product-type.bundle";
+		};
 		55C036C325FA80C400F419B8 /* Suake3D */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55C036EC25FA80C500F419B8 /* Build configuration list for PBXNativeTarget "Suake3D" */;
@@ -1618,6 +1778,9 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					55333ED32641B249007288C4 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					55C036C325FA80C400F419B8 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -1638,6 +1801,7 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = 55C036BB25FA80C400F419B8;
 			productRefGroup = 55C036C525FA80C400F419B8 /* Products */;
@@ -1647,24 +1811,47 @@
 				55C036C325FA80C400F419B8 /* Suake3D */,
 				55C036D725FA80C500F419B8 /* Suake3DTests */,
 				55C036E225FA80C500F419B8 /* Suake3DUITests */,
+				55333ED32641B249007288C4 /* MyAppHelp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		55333ED22641B249007288C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55333EEF2641B297007288C4 /* css in Resources */,
+				55333EE72641B297007288C4 /* jekyll-server.command in Resources */,
+				55333EEB2641B297007288C4 /* book-icon.png in Resources */,
+				55333EE62641B297007288C4 /* _layouts in Resources */,
+				55333EE92641B297007288C4 /* _sass in Resources */,
+				55333EED2641B297007288C4 /* _English.lproj in Resources */,
+				55333EEA2641B297007288C4 /* _config.yml in Resources */,
+				55333EEE2641B297007288C4 /* _includes in Resources */,
+				55333EE52641B297007288C4 /* nav.js in Resources */,
+				55333EEC2641B297007288C4 /* _plugins in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55C036C225FA80C400F419B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55333EBF264070FA007288C4 /* Suake3D.help in Resources */,
 				550183392601490C00F28C54 /* dpquake_.ttf in Resources */,
 				5501833A2601490C00F28C54 /* Quake___.ttf in Resources */,
+				55333ECA26407291007288C4 /* Suake3DIcon.png in Resources */,
 				5501833B2601490C00F28C54 /* quake2.ttf in Resources */,
 				550183BA2601893B00F28C54 /* SetupDeveloperViewController.xib in Resources */,
 				55C036D125FA80C500F419B8 /* Main.storyboard in Resources */,
+				55333ECF264074D9007288C4 /* style.css in Resources */,
 				55760E6925FD469F00C10784 /* textures.atlas in Resources */,
 				5507048A261129B100464F97 /* MatchResultsView.xib in Resources */,
 				55C036CE25FA80C500F419B8 /* Assets.xcassets in Resources */,
+				55333EBB263F2C9C007288C4 /* Info.plist in Resources */,
 				550704A9261229B600464F97 /* IconResources-Credits.txt in Resources */,
+				55333EC2264071AF007288C4 /* English.lproj.helpindex in Resources */,
 				55C036CC25FA80C400F419B8 /* art.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1685,7 +1872,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		55333EF12641B424007288C4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/make -C \"$(dirname \"$PRODUCT_SETTINGS_PATH\")\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		55333ED02641B249007288C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55333EE82641B297007288C4 /* Makefile in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55C036C025FA80C400F419B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1747,6 +1962,7 @@
 				55EA0D1B262231F900F412F9 /* MatchMakerHelperExt.swift in Sources */,
 				5513C8A5260D279F00633B40 /* DroidAttackComponent.swift in Sources */,
 				55D894B325FAD65C00728B83 /* SuakeKeyboardHandler.swift in Sources */,
+				55333EF426432B93007288C4 /* TVMonitorEntity.swift in Sources */,
 				55D8949425FACF3800728B83 /* SkyBoxHelper.swift in Sources */,
 				551F3D58260C7515006D9F65 /* SuakeOppPlayerEntity.swift in Sources */,
 				55A2B8FD2601444300E25F7F /* GamePaused.swift in Sources */,
@@ -1831,6 +2047,7 @@
 				55C0370625FA866000F419B8 /* BaseGameController.swift in Sources */,
 				559B2BDC260E434A005E669C /* MedKitComponent.swift in Sources */,
 				5501847826052E2400F28C54 /* Double.swift in Sources */,
+				55333EF8264458FD007288C4 /* TVMonitorManager.swift in Sources */,
 				5513C88C260D1A2400633B40 /* SCNVector3.swift in Sources */,
 				55F2AE56263C64DF0042BD38 /* RedeemerComponent.swift in Sources */,
 				551F3D50260BF279006D9F65 /* GridGraphHelper.swift in Sources */,
@@ -1896,6 +2113,7 @@
 				55C12250261CE9A1001E8E3F /* GameCenterHelper.swift in Sources */,
 				5501836026015B7C00F28C54 /* MouseProtocol.swift in Sources */,
 				556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */,
+				55333EF626432BB9007288C4 /* TVMonitorComponent.swift in Sources */,
 				55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */,
 				550184422603E1E100F28C54 /* SuakeColors.swift in Sources */,
 				556CB90D25FE8427005B7747 /* SuakeHealthComponent.swift in Sources */,
@@ -1962,6 +2180,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		55333EBC263F2DB1007288C4 /* Suake3D.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55333EBD263F2DB1007288C4 /* English */,
+			);
+			name = Suake3D.html;
+			sourceTree = "<group>";
+		};
+		55333EC0264071AF007288C4 /* English.lproj.helpindex */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55333EC1264071AF007288C4 /* English */,
+			);
+			name = English.lproj.helpindex;
+			sourceTree = "<group>";
+		};
 		55C036CF25FA80C500F419B8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1973,6 +2207,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		55333ED82641B249007288C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PB7SHXTJHG;
+				INFOPLIST_FILE = MyAppHelp/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.kimhauser.swift.MyAppHelp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = help;
+			};
+			name = Debug;
+		};
+		55333ED92641B249007288C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PB7SHXTJHG;
+				INFOPLIST_FILE = MyAppHelp/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.kimhauser.swift.MyAppHelp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = help;
+			};
+			name = Release;
+		};
 		55C036EA25FA80C500F419B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2220,6 +2486,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		55333ED72641B249007288C4 /* Build configuration list for PBXNativeTarget "MyAppHelp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55333ED82641B249007288C4 /* Debug */,
+				55333ED92641B249007288C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		55C036BF25FA80C400F419B8 /* Build configuration list for PBXProject "Suake3D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

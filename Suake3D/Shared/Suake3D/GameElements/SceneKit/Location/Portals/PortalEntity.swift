@@ -18,6 +18,8 @@ class PortalEntity: SuakeBaseNodeEntity {
     var pairEntity:PortalEntityPair!
     var portalComponent:BasePortalComponent!
     
+    
+    
     init(game: GameController, pairEntity:PortalEntityPair, id:Int = 0, portalType:PortalType = .Portal_A) {
         super.init(game: game, id: id)
 //        self.pairComponent = PortalPairComponent(game: game, id: id)
@@ -33,48 +35,48 @@ class PortalEntity: SuakeBaseNodeEntity {
 //    var toPortal:BasePortalComponent!
     var newBullet:BulletBase!
     
-//    func beamShot(origShot:BulletBase, contactNode:SCNNode){
-//        let rn:BulletBase = origShot
-//        if(!rn.isBeaming){
-//            rn.isBeaming = true
-//            let daNode:SuakeBaseSCNNode = (contactNode as! SuakeBaseSCNNode)
-//            var newPos:SCNVector3!
-//            var fromPortal:BasePortalComponent!
-//            var toPortal:BasePortalComponent!
-//            
-//            if(self.position.x == daNode.position.x &&
-//                self.position.z == daNode.position.z){
-//                fromPortal = self.portalComponent
-//                toPortal = self.otherPortal.portalComponent
+    func beamShot(origShot:BulletBase, contactNode:SCNNode){
+        let rn:BulletBase = origShot
+        if(!rn.isBeaming){
+            rn.isBeaming = true
+            let daNode:SuakeBaseSCNNode = (contactNode as! SuakeBaseSCNNode)
+            var newPos:SCNVector3!
+            var fromPortal:BasePortalComponent!
+            var toPortal:BasePortalComponent!
+            
+            if(self.position.x == daNode.position.x &&
+                self.position.z == daNode.position.z){
+                fromPortal = self.portalComponent
+                toPortal = self.otherPortal.portalComponent
+            }else{
+                fromPortal = self.otherPortal.portalComponent
+                toPortal = self.portalComponent
+            }
+//            if(pairComponent.portals[0].node.position.x == daNode.position.x && pairComponent.portals[0].node.position.z == daNode.position.z){
+//                fromPortal = pairComponent.aPortal //.portals[0]
+//                toPortal = pairComponent.bPortal // portals[1]
 //            }else{
-//                fromPortal = self.otherPortal.portalComponent
-//                toPortal = self.portalComponent
+//                fromPortal = pairComponent.bPortal // pairComponent.portals[1]
+//                toPortal = pairComponent.aPortal // pairComponent.portals[0]
 //            }
-////            if(pairComponent.portals[0].node.position.x == daNode.position.x && pairComponent.portals[0].node.position.z == daNode.position.z){
-////                fromPortal = pairComponent.aPortal //.portals[0]
-////                toPortal = pairComponent.bPortal // portals[1]
-////            }else{
-////                fromPortal = pairComponent.bPortal // pairComponent.portals[1]
-////                toPortal = pairComponent.aPortal // pairComponent.portals[0]
-////            }
-//
-//            if(fromPortal.isBeaming || toPortal.isBeaming){
-//                return
-//            }
-//
-//            newPos = toPortal.pos
-//            newPos = SCNVector3(newPos.x * SuakeVars.fieldSize, 0, newPos.z * SuakeVars.fieldSize)
-//            self.newBullet = origShot.addSingleBullet(pos: newPos, vect: rn.physicsBody!.velocity, origBullet: origShot, addBullets: false)
-//            self.newBullet.name = origShot.name
-//            if(!(origShot is RailgunBeam)){
-//                self.game.physicsHelper.qeueNode2Remove(node: origShot)
-//            }
-//            if(origShot is ShotgunPellet){
-//                (origShot as! ShotgunPellet).pelletGrp.checkAllPelletsBeamed()
-//            }
-//            toPortal.activatePortation(node2Port: self.newBullet)
-//        }
-//    }
+
+            if(fromPortal.isBeaming || toPortal.isBeaming && !(origShot is ShotgunPellet)){
+                return
+            }
+
+            newPos = toPortal.pos
+            newPos = SCNVector3(newPos.x * SuakeVars.fieldSize, 0, newPos.z * SuakeVars.fieldSize)
+            self.newBullet = origShot.addSingleBullet(pos: newPos, vect: rn.physicsBody!.velocity, origBullet: origShot, addBullets: false)
+            self.newBullet.name = origShot.name
+            if(!(origShot is RailgunBeam)){
+                self.game.physicsHelper.qeueNode2Remove(node: origShot)
+            }
+            if(origShot is ShotgunPellet){
+                (origShot as! ShotgunPellet).pelletGrp.checkAllPelletsBeamed()
+            }
+            toPortal.activatePortation(node2Port: self.newBullet)
+        }
+    }
 //    
 //    func beamSuakeNode(suakeEntity:SuakePlayerEntity, portal:Int){
 //        

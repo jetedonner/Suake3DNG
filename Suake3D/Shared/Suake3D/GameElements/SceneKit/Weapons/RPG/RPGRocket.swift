@@ -121,6 +121,10 @@ class RPGRocket: BulletBase {
         }
     }
     
+    override func getNewBullet()->RPGRocket{
+        return RPGRocket(game: self.game, weapon: self.weapon as! RPGComponent)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
