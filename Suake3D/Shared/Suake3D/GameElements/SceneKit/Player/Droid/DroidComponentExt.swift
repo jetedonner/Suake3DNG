@@ -24,12 +24,14 @@ extension DroidComponent{
             if(state == .Chasing){
                 self.game.overlayManager.hud.overlayScene.map.droidNodes[self.id].setTexture(id: 1)
                 self.flashLightInner.constraints?.removeAll()
+                self.flashLightInner.eulerAngles = SCNVector3(-25, 0, 0)
                 self.flashLightRotationAnimation.duration = 1.5
                 self.flashLightInner.addAnimation(self.flashLightRotationAnimation, forKey: nil)
             }else{
                 self.game.overlayManager.hud.overlayScene.map.droidNodes[self.id].setTexture(id: 2)
                 let constraint = SCNLookAtConstraint(target: self.playerEntity.targetEntity.playerComponent.mainNode)
                 constraint.isGimbalLockEnabled = false
+                constraint.influenceFactor = 0.1
                 SCNTransaction.begin()
                 SCNTransaction.animationDuration = 0.45
                 self.flashLightInner.constraints = [constraint]
@@ -42,6 +44,7 @@ extension DroidComponent{
             }
             self.flashLightInner.removeAllAnimations()
             self.flashLightInner.constraints?.removeAll()
+            self.flashLightInner.eulerAngles = SCNVector3(-25, 0, 0)
             self.flashLightRotationAnimation.duration = 2.5
             self.flashLightInner.isHidden = false
             self.flashLightInner.addAnimation(self.flashLightRotationAnimation, forKey: nil)

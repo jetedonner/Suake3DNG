@@ -19,7 +19,7 @@ class BaseGameController:NSObject{
     
     var gameWindowSize:CGSize = CGSize(width: 1280, height: 800)
     
-    let overlayView   = SCNView()
+    let overlayView = SCNView()
     
     init(scnView: SCNView) {
         self.scnView = scnView
@@ -69,7 +69,7 @@ class BaseGameController:NSObject{
 //        self.floorNode.physicsBody?.con
         super.init()
         
-        scnView.scene = scene
+        scnView.scene = self.scene
 
         scnView.audioEnvironmentNode.distanceAttenuationParameters.maximumDistance = 2
         scnView.audioEnvironmentNode.distanceAttenuationParameters.referenceDistance = 0.1

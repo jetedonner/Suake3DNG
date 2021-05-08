@@ -41,12 +41,12 @@ struct CollisionCategory: OptionSet {
     static let droid =              CollisionCategory(rawValue: 1 << 25) //     33554432
     static let medKit =             CollisionCategory(rawValue: 1 << 26) //     67108864
     static let container =          CollisionCategory(rawValue: 1 << 27) //    134217728
-    static let cottage =            CollisionCategory(rawValue: 1 << 28) //    268435456
+//    static let cottage =            CollisionCategory(rawValue: 1 << 28) //    268435456
     static let well =               CollisionCategory(rawValue: 1 << 29) //    536870912
     static let grenadePickup =      CollisionCategory(rawValue: 1 << 30) //   1073741824
-    static let grenadeBlast =       CollisionCategory(rawValue: 1 << 31) //   2147483648
-    static let tree =               CollisionCategory(rawValue: 1 << 32) //   4294967296
-    static let generator =          CollisionCategory(rawValue: 1 << 33) //   ???!!!???
+//    static let grenadeBlast =       CollisionCategory(rawValue: 1 << 31) //   2147483648
+//    static let tree =               CollisionCategory(rawValue: 1 << 32) //   4294967296
+    static let generator =          CollisionCategory(rawValue: 1 << 28) //   ???!!!???
     
     static let allBulletCategories:[CollisionCategory] = [.laserbeam, .mgbullet, .pellet, .rocket, .railbeam, .sniperRifleBullet, .nuke, .nukeBlast]
     

@@ -14,7 +14,7 @@ class GeneratorGroup:SuakeNodeGroupBase{
     var generatorCount:Int = 1
     
     init(game: GameController, generatorCount:Int) {
-        super.init(game: game, locationType: .Container)
+        super.init(game: game, locationType: .Generator)
         self.generatorCount = generatorCount
         self.groupName = "GeneratorCount"
         self.initGroup()

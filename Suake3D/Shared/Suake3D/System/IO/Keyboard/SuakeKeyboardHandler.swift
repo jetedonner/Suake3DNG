@@ -124,6 +124,17 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }
             }else if(pressedKey == .KEY_G){
 //                self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: "+ 200 Points")
+            }else if(pressedKey == .KEY_I){
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now(), execute: {
+                    let image = self.game.rndrr.snapshot(atTime: self.game.physicsHelper.currentTime, with: self.game.gameWindowSize, antialiasingMode: SCNAntialiasingMode.multisampling4X)
+                    
+                    let desktopURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
+                    let destinationURL = desktopURL.appendingPathComponent("my-image-\(DispatchTime.now()).png")
+        //            let nsImage = NSImage(cgImage: cgImage, size: ciImage.extent.size)
+                    if image.pngWrite(to: destinationURL, options: .withoutOverwriting) {
+                        print("File saved")
+                    }
+                })
             }else if(pressedKey == .KEY_L){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
                     self.game.overlayManager.hud.dbgLogComponent.showDbgLog = !self.game.overlayManager.hud.dbgLogComponent.showDbgLog

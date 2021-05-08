@@ -15,7 +15,7 @@ class GeneratorComponent: SuakeBaseLocationComponent {
     let rescale:SCNVector3 = SCNVector3(6.5, 6.5, 6.5)
     
     init(game: GameController, id:Int = 0) {
-        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/generator/Generator.scn", scale: self.rescale), locationType: .Container, id: id)
+        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/generator/Generator.scn", scale: self.rescale), locationType: .Generator, id: id)
         self.node.name = "Generator: " + self.id.description
         self.initPhysics()
         self.node.categoryBitMask = CollisionCategory.generator.rawValue
@@ -31,10 +31,10 @@ class GeneratorComponent: SuakeBaseLocationComponent {
         self.node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: generatorhape1)
         self.node.physicsBody?.isAffectedByGravity = true
         self.node.physicsBody?.restitution = 1.0
-        self.node.physicsBody?.mass = 160
+        self.node.physicsBody?.mass = 60
         self.node.physicsBody?.categoryBitMask = CollisionCategory(category: .generator).rawValue
         self.node.physicsBody?.contactTestBitMask = CollisionCategory.getAllBulletCats()
-        self.node.physicsBody?.collisionBitMask = CollisionCategory.floor.rawValue | CollisionCategory.wall.rawValue | CollisionCategory.suake.rawValue | CollisionCategory.getAllBulletCats()
+        self.node.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue | CollisionCategory.generator.rawValue | CollisionCategory.floor.rawValue | CollisionCategory.wall.rawValue | CollisionCategory.suake.rawValue | CollisionCategory.getAllBulletCats()
     }
     
     func initSetupPos(){

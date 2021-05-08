@@ -10,6 +10,12 @@ import SceneKit
 import GameplayKit
 import NetTestFW
 import GameKit
+import MetalKit
+//import GPUImage
+//import CoreImage
+//import OpenGL
+//import QuartzCore
+//import GLKit
 
 class GameController:BaseGameController, GameCenterHelperDelegate{
     
@@ -38,6 +44,8 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var gridGraphManager:GridGraphManager!
     var gameCenterHelper:GameCenterHelper!
     
+    var rndrr:SCNRenderer!// = SCNRenderer()
+    
     func startMatch(match: GKMatch) {
         self.gameCenterHelper.matchMakerHelper.setMatch(match: match)
         self.stateMachine.enter(stateClass: SuakeStateGameLoadingMulti.self)
@@ -45,6 +53,9 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     
 //    var tvMonEnt:[TVMonitorEntity] = [TVMonitorEntity]()
     var tvMonitorManager:TVMonitorManager!
+    
+    // EAGLContext in the sharegroup with GPUImage
+//    var eaglContext: EAGLContext!
     
     override init(scnView: SCNView) {
         super.init(scnView: scnView)
@@ -72,7 +83,20 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.gridGraphManager = GridGraphManager(game: self)
         
         self.usrDefHlpr.resetUserDefaults2Game()
+//        SCNRenderer
+//        guard let mtlDevice = MTLCreateSystemDefaultDevice() else {
+//            print("Error creating mtl device")
+//            return
+//        }
         
+//        scnRenderer = SCNRenderer(device: mtlDevice, options: nil)
+//        scnRenderer?.scene = sceneView.scene
+//        let renderer = SCNRenderer( context: EAGLContext.currentContext(), options: nil )
+//        self.rndrr = SCNRenderer(context: <#T##CGLContextObj?#>, options: <#T##[AnyHashable : Any]?#>) (device: mtlDevice, options: nil)
+        self.rndrr = SCNRenderer(device: MTLCreateSystemDefaultDevice(), options: nil)
+//        renderer!.scene = hiddenScene
+        self.rndrr.scene = self.scnView.scene
+        self.rndrr.pointOfView = self.cameraHelper.cameraNodeFP
         self.scnView.delegate = self.physicsHelper
         self.scnView.autoenablesDefaultLighting = true
 //        self.scnView.debugOptions = [.showPhysicsShapes]

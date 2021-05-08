@@ -85,7 +85,7 @@ class SuakePlayerNodeComponent: SuakeBaseSCNNodeComponent {
         
         node.physicsBody?.categoryBitMask = catBitMask
         node.physicsBody?.contactTestBitMask = catBitMask | CollisionCategory.laserbeam.rawValue | CollisionCategory.mgbullet.rawValue | CollisionCategory.pellet.rawValue
-        node.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue
+        node.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue | CollisionCategory.generator.rawValue
     }
     
     func createBB() {

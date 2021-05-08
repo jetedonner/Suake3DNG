@@ -101,6 +101,7 @@
 		552D597F2644825200BE9CFD /* GeneratorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D597E2644825200BE9CFD /* GeneratorComponent.swift */; };
 		552D5981264482AC00BE9CFD /* GeneratorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D5980264482AC00BE9CFD /* GeneratorGroup.swift */; };
 		552D5983264482EE00BE9CFD /* GeneratorGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D5982264482EE00BE9CFD /* GeneratorGroupItem.swift */; };
+		552D59862645A70400BE9CFD /* AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D59852645A70400BE9CFD /* AVPlayer.swift */; };
 		55333EBB263F2C9C007288C4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55333EBA263F2C9C007288C4 /* Info.plist */; };
 		55333EBF264070FA007288C4 /* Suake3D.help in Resources */ = {isa = PBXBuildFile; fileRef = 55333EBE264070FA007288C4 /* Suake3D.help */; };
 		55333EC2264071AF007288C4 /* English.lproj.helpindex in Resources */ = {isa = PBXBuildFile; fileRef = 55333EC0264071AF007288C4 /* English.lproj.helpindex */; };
@@ -409,6 +410,7 @@
 		552D597E2644825200BE9CFD /* GeneratorComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorComponent.swift; sourceTree = "<group>"; };
 		552D5980264482AC00BE9CFD /* GeneratorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorGroup.swift; sourceTree = "<group>"; };
 		552D5982264482EE00BE9CFD /* GeneratorGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorGroupItem.swift; sourceTree = "<group>"; };
+		552D59852645A70400BE9CFD /* AVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayer.swift; sourceTree = "<group>"; };
 		55333EBA263F2C9C007288C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55333EBD263F2DB1007288C4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = Suake3D.html; sourceTree = "<group>"; };
 		55333EBE264070FA007288C4 /* Suake3D.help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Suake3D.help; path = Suake3D/Suake3D.help; sourceTree = "<group>"; };
@@ -864,6 +866,14 @@
 				552D597E2644825200BE9CFD /* GeneratorComponent.swift */,
 			);
 			path = Generator;
+			sourceTree = "<group>";
+		};
+		552D59842645A6F700BE9CFD /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				552D59852645A70400BE9CFD /* AVPlayer.swift */,
+			);
+			path = AVFoundation;
 			sourceTree = "<group>";
 		};
 		55333EB6263F2BF9007288C4 /* Suake3D.help */ = {
@@ -1667,6 +1677,7 @@
 		55EC891525FA9D200040E676 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				552D59842645A6F700BE9CFD /* AVFoundation */,
 				55241809260A8612002C90FC /* SceneKit */,
 				55241808260A85F4002C90FC /* Primitive */,
 				55241807260A85E9002C90FC /* GameplayKit */,
@@ -2090,6 +2101,7 @@
 				55B860442634A52F0030D678 /* ContainerGroup.swift in Sources */,
 				55C12254261CEA21001E8E3F /* GameCenterHelperExt.swift in Sources */,
 				551F3D4B260BF22A006D9F65 /* SuakeGridGraphNode.swift in Sources */,
+				552D59862645A70400BE9CFD /* AVPlayer.swift in Sources */,
 				550183C026018F0200F28C54 /* UserDefaultsHelper.swift in Sources */,
 				55F2AE5A263C64F00042BD38 /* NukeBlast.swift in Sources */,
 				55DB992625FC0B9E000023AF /* SuakePlayerComponent.swift in Sources */,

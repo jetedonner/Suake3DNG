@@ -18,28 +18,12 @@ class PhysicsHelper: SuakeGameClass, SCNSceneRendererDelegate {
     var pauseStartTime:TimeInterval!
   
     var deltaTime:TimeInterval = 0.0
-    var takeSS:Bool = true
+    var takeSS:Bool = false
     var firstMove:Bool = true
     
     override init(game: GameController) {
         super.init(game: game)
     }
-    
-//    func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
-////        if(!takeSS){
-////            return
-////        }
-////        takeSS = false
-////        if(self.deltaTime.truncatingRemainder(dividingBy: 0.25) == 0){
-////            DispatchQueue.main.async {
-////                let newScnView = self.game.overlayView
-////                newScnView.pointOfView = self.game.cameraHelper.cameraNodeFP
-////                let screenshot:NSImage = newScnView.snapshot()
-////                print("TV-UpdateTime: \(time)")
-////                self.game.tvMonEnt.tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial?.diffuse.contents = screenshot.imageRotatedByDegreess(degrees: CGFloat(-90))
-////            }
-////        }
-//    }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         

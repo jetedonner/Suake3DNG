@@ -147,7 +147,7 @@ class WallFactory: SuakeGameClass {
         node.physicsBody?.allowsResting = true
         node.physicsBody?.categoryBitMask = CollisionCategory.wall.rawValue
         node.physicsBody?.contactTestBitMask = CollisionCategory.mgbullet.rawValue | CollisionCategory.pellet.rawValue | CollisionCategory.rocket.rawValue | CollisionCategory.railbeam.rawValue
-        node.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue
+        node.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue | CollisionCategory.generator.rawValue
     }
     
     func addWallToScene(){
