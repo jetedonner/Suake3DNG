@@ -77,6 +77,8 @@ class SuakeVars{
     static let showWindrose:Bool = true
     static let showTVMonitors:Bool = true
     
+    static let wormHolePortationDuration:TimeInterval = 1.0
+    
     
     static let laserBeamVelocity:CGFloat = 585.0
     static let mgBulletVelocity:CGFloat = 585.0

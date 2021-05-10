@@ -12,11 +12,14 @@ import AVFoundation
 class TVMonitorManager: EntityManager {
     
     var tvMonEnt:[TVMonitorEntity] = [TVMonitorEntity]()
+    var tvMontSphereEnt:TVMonitorSphereEntity!
+    
     let videoURL: NSURL = Bundle.main.url(forResource: "art.scnassets/videos/tvnoise", withExtension: "mp4")! as NSURL
     let player:AVPlayer
     
     let newScnView:SCNView
     let tvScreenMat:SCNMaterial = SCNMaterial()
+    let tvScreenSphereMat:SCNMaterial = SCNMaterial()
     
     private var _showNoise:Bool = true
     var showNoise:Bool{
@@ -31,10 +34,17 @@ class TVMonitorManager: EntityManager {
         self.player = AVPlayer(url: videoURL as URL)
         self.newScnView = game.overlayView
         self.newScnView.pointOfView = game.cameraHelper.cameraNodeFP
+        self.tvMontSphereEnt = TVMonitorSphereEntity(game: game, id: 0)
         super.init(game: game)
         
+        self.tvScreenMat.lightingModel = .constant
+        self.tvScreenSphereMat.lightingModel = .constant
         self.renderer = SCNRenderer(device: MTLCreateSystemDefaultDevice(), options: nil)
         self.renderer?.scene = self.game.scene
+//        self.renderer?.autoenablesDefaultLighting = false
+        
+        self.renderer?.pointOfView = self.game.cameraHelper.cameraNodeFP
+//        self.renderer?.pointOfView?.camera?.wantsHDR = false
         self.setupTVNoiseLoop()
     }
     
@@ -54,12 +64,15 @@ class TVMonitorManager: EntityManager {
         self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 3))
         self.tvMonEnt[0].showTVMonitor(pos: SCNVector3(0, 1, 10))
         self.tvMonEnt[0].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
-        self.tvMonEnt[1].showTVMonitor(pos: SCNVector3(0, 1, -10))
+        self.tvMonEnt[1].showTVMonitor(pos: SCNVector3(0, 1, -11))
         self.tvMonEnt[1].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
         self.tvMonEnt[2].showTVMonitor(pos: SCNVector3(10, 1, 0))
         self.tvMonEnt[2].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
-        self.tvMonEnt[3].showTVMonitor(pos: SCNVector3(-10, 1, 0))
+        self.tvMonEnt[3].showTVMonitor(pos: SCNVector3(-11, 1, 0))
         self.tvMonEnt[3].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
+        
+        self.tvMontSphereEnt.showTVMonitor(pos: SCNVector3(0, 2, 0))
+        self.tvMontSphereEnt.tvMonitorSphereComponent.tvMonitorSphereScreen.geometry?.firstMaterial? = self.tvScreenSphereMat
     }
     
     func setTVMonitorImage(tvNoise:Bool = false){
@@ -76,45 +89,31 @@ class TVMonitorManager: EntityManager {
     
     func setTVMonitorImage(texture:Any?){
         self.tvScreenMat.diffuse.contents = texture
+        self.tvScreenSphereMat.diffuse.contents = texture
     }
     
-    var renderTime = TimeInterval(0)
+//    var renderTime = TimeInterval(0)
     var renderer : SCNRenderer?
     
     func startTVMonitorUpdate(){
-        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: DispatchTime.now() + 0.01, execute: {
+//        Timer.scheduledTimer(withTimeInterval: 0.016667, repeats: false, block: {_ in
             
 //        })
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.02, execute: {
+        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: DispatchTime.now() + 0.016667, execute: {
             
-            let image = self.game.rndrr.snapshot(atTime: self.game.physicsHelper.currentTime, with: self.game.gameWindowSize, antialiasingMode: SCNAntialiasingMode.multisampling4X)
+//        })
+//            DispatchQueue.main.async(execute: {
+            
+            let image = self.renderer!.snapshot(atTime: self.game.physicsHelper.currentTime, with: self.game.gameWindowSize, antialiasingMode: SCNAntialiasingMode.multisampling4X)
             
             self.tvScreenMat.diffuse.contents = image.imageRotatedByDegreess(degrees: CGFloat(-90))
+            self.tvScreenSphereMat.diffuse.contents = image
+//            self.tvScreenMat.lightingModel = .constant
+//            self.tvScreenMat.shininess = 0.1
             self.setTVMonitorImage(tvNoise: self.showNoise)
+//            })
         })
     }
-    
-//    func saveImg(img:NSImage) {
-//        let context = CIContext()
-//        let desktopURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
-//        guard
-//            let filter = CIFilter(name: "CISepiaTone"),
-//            let imageURL = Bundle.main.url(forResource: "my-image-\(DispatchTime.now())", withExtension: "png"),
-//            let ciImage = CIImage(contentsOf: imageURL)
-//        else { return }
-//
-//        filter.setValue(ciImage, forKey: kCIInputImageKey)
-//        filter.setValue(0.5, forKey: kCIInputIntensityKey)
-//
-//        guard let result = filter.outputImage, let cgImage = context.createCGImage(result, from: result.extent)
-//        else { return }
-//
-//        let destinationURL = desktopURL.appendingPathComponent("my-image-\(DispatchTime.now()).png")
-//        let nsImage = NSImage(cgImage: cgImage, size: ciImage.extent.size)
-//        if nsImage.pngWrite(to: destinationURL, options: .withoutOverwriting) {
-//            print("File saved")
-//        }
-//    }
     
     @objc func playerItemDidReachEnd(notification: Notification) {
         if let playerItem = notification.object as? AVPlayerItem {

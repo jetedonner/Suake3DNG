@@ -81,6 +81,7 @@
 		5513C89B260D244B00633B40 /* DroidState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C89A260D244B00633B40 /* DroidState.swift */; };
 		5513C8A0260D246F00633B40 /* DroidComponentExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C89F260D246F00633B40 /* DroidComponentExt.swift */; };
 		5513C8A5260D279F00633B40 /* DroidAttackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513C8A4260D279F00633B40 /* DroidAttackComponent.swift */; };
+		55161D2D2649B54200D87065 /* WormHoleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55161D2C2649B54200D87065 /* WormHoleHelper.swift */; };
 		551F3D2B260A8CE1006D9F65 /* WeaponPickupRisingParticlesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F3D2A260A8CE1006D9F65 /* WeaponPickupRisingParticlesComponent.swift */; };
 		551F3D36260BDC91006D9F65 /* SuakeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F3D35260BDC91006D9F65 /* SuakeStats.swift */; };
 		551F3D3B260BEA7A006D9F65 /* SuakeGameStateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F3D3A260BEA7A006D9F65 /* SuakeGameStateHelper.swift */; };
@@ -102,6 +103,8 @@
 		552D5981264482AC00BE9CFD /* GeneratorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D5980264482AC00BE9CFD /* GeneratorGroup.swift */; };
 		552D5983264482EE00BE9CFD /* GeneratorGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D5982264482EE00BE9CFD /* GeneratorGroupItem.swift */; };
 		552D59862645A70400BE9CFD /* AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D59852645A70400BE9CFD /* AVPlayer.swift */; };
+		552D59C72649AAE500BE9CFD /* TVMonitorSphereComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D59C62649AAE500BE9CFD /* TVMonitorSphereComponent.swift */; };
+		552D59C92649AB8500BE9CFD /* TVMonitorSphereEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D59C82649AB8500BE9CFD /* TVMonitorSphereEntity.swift */; };
 		55333EBB263F2C9C007288C4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55333EBA263F2C9C007288C4 /* Info.plist */; };
 		55333EBF264070FA007288C4 /* Suake3D.help in Resources */ = {isa = PBXBuildFile; fileRef = 55333EBE264070FA007288C4 /* Suake3D.help */; };
 		55333EC2264071AF007288C4 /* English.lproj.helpindex in Resources */ = {isa = PBXBuildFile; fileRef = 55333EC0264071AF007288C4 /* English.lproj.helpindex */; };
@@ -390,6 +393,7 @@
 		5513C89A260D244B00633B40 /* DroidState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroidState.swift; sourceTree = "<group>"; };
 		5513C89F260D246F00633B40 /* DroidComponentExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroidComponentExt.swift; sourceTree = "<group>"; };
 		5513C8A4260D279F00633B40 /* DroidAttackComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroidAttackComponent.swift; sourceTree = "<group>"; };
+		55161D2C2649B54200D87065 /* WormHoleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WormHoleHelper.swift; sourceTree = "<group>"; };
 		551F3D2A260A8CE1006D9F65 /* WeaponPickupRisingParticlesComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponPickupRisingParticlesComponent.swift; sourceTree = "<group>"; };
 		551F3D35260BDC91006D9F65 /* SuakeStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeStats.swift; sourceTree = "<group>"; };
 		551F3D3A260BEA7A006D9F65 /* SuakeGameStateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeGameStateHelper.swift; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 		552D5980264482AC00BE9CFD /* GeneratorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorGroup.swift; sourceTree = "<group>"; };
 		552D5982264482EE00BE9CFD /* GeneratorGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorGroupItem.swift; sourceTree = "<group>"; };
 		552D59852645A70400BE9CFD /* AVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayer.swift; sourceTree = "<group>"; };
+		552D59C62649AAE500BE9CFD /* TVMonitorSphereComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMonitorSphereComponent.swift; sourceTree = "<group>"; };
+		552D59C82649AB8500BE9CFD /* TVMonitorSphereEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMonitorSphereEntity.swift; sourceTree = "<group>"; };
 		55333EBA263F2C9C007288C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55333EBD263F2DB1007288C4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = English; path = Suake3D.html; sourceTree = "<group>"; };
 		55333EBE264070FA007288C4 /* Suake3D.help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Suake3D.help; path = Suake3D/Suake3D.help; sourceTree = "<group>"; };
@@ -959,7 +965,9 @@
 			isa = PBXGroup;
 			children = (
 				55333EF526432BB9007288C4 /* TVMonitorComponent.swift */,
+				552D59C62649AAE500BE9CFD /* TVMonitorSphereComponent.swift */,
 				55333EF326432B93007288C4 /* TVMonitorEntity.swift */,
+				552D59C82649AB8500BE9CFD /* TVMonitorSphereEntity.swift */,
 				55333EF7264458FD007288C4 /* TVMonitorManager.swift */,
 			);
 			path = TVMonitor;
@@ -1581,6 +1589,7 @@
 		55E9EA58263446EE005E3256 /* Portals */ = {
 			isa = PBXGroup;
 			children = (
+				55161D2C2649B54200D87065 /* WormHoleHelper.swift */,
 				55E9EA5C2634487B005E3256 /* BasePortalComponent.swift */,
 				55E9EA5B2634487B005E3256 /* PortalEntity.swift */,
 				55E9EA592634487B005E3256 /* PortalEntityPair.swift */,
@@ -2013,6 +2022,7 @@
 				55C1225C261CF2CE001E8E3F /* MatchMakerHelper.swift in Sources */,
 				556CB94E25FFF001005B7747 /* GameBoardExt.swift in Sources */,
 				5501847226052D2D00F28C54 /* ArrowCtrl.swift in Sources */,
+				552D59C92649AB8500BE9CFD /* TVMonitorSphereEntity.swift in Sources */,
 				556CB92A25FFD603005B7747 /* RespawnPointComponent.swift in Sources */,
 				556CA65C260D3CF900F78263 /* SuakeBaseExplodingPlayerEntity.swift in Sources */,
 				5501839126016FD700F28C54 /* MachinegunBullet.swift in Sources */,
@@ -2145,6 +2155,7 @@
 				554233FC2632BFE300EB55F9 /* Float3.swift in Sources */,
 				55760E5425FD398300C10784 /* BaseHUDComponent.swift in Sources */,
 				55DB994225FC2A12000023AF /* SuakeMoveComponent.swift in Sources */,
+				55161D2D2649B54200D87065 /* WormHoleHelper.swift in Sources */,
 				55E9EA4F2633ED09005E3256 /* SniperrifleCrosshairComponent.swift in Sources */,
 				55001F71260CB53D0015B293 /* ExplodingComponent.swift in Sources */,
 				55760E4825FD386A00C10784 /* HUDOverlayScene.swift in Sources */,
@@ -2155,6 +2166,7 @@
 				5501834D2601531300F28C54 /* MenuCursor.swift in Sources */,
 				551F3D46260BF15D006D9F65 /* SuakeOpponentAIComponent.swift in Sources */,
 				55C12250261CE9A1001E8E3F /* GameCenterHelper.swift in Sources */,
+				552D59C72649AAE500BE9CFD /* TVMonitorSphereComponent.swift in Sources */,
 				5501836026015B7C00F28C54 /* MouseProtocol.swift in Sources */,
 				556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */,
 				55333EF626432BB9007288C4 /* TVMonitorComponent.swift in Sources */,

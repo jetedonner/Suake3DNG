@@ -124,9 +124,11 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }
             }else if(pressedKey == .KEY_G){
 //                self.game.overlayManager.hud.msgOnHudComponent.setAndShowLbl(msg: "+ 200 Points")
+            }else if(pressedKey == .KEY_H){
+                self.game.wormHoleHelper.enterWormHole(playerType: .OwnSuake)
             }else if(pressedKey == .KEY_I){
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now(), execute: {
-                    let image = self.game.rndrr.snapshot(atTime: self.game.physicsHelper.currentTime, with: self.game.gameWindowSize, antialiasingMode: SCNAntialiasingMode.multisampling4X)
+                    let image = self.game.tvMonitorManager.renderer!.snapshot(atTime: self.game.physicsHelper.currentTime, with: self.game.gameWindowSize, antialiasingMode: SCNAntialiasingMode.multisampling4X)
                     
                     let desktopURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
                     let destinationURL = desktopURL.appendingPathComponent("my-image-\(DispatchTime.now()).png")
@@ -137,7 +139,9 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 })
             }else if(pressedKey == .KEY_L){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-                    self.game.overlayManager.hud.dbgLogComponent.showDbgLog = !self.game.overlayManager.hud.dbgLogComponent.showDbgLog
+                    let newShowDbgLog:Bool = !self.game.overlayManager.hud.dbgLogComponent.showDbgLog
+                    self.game.overlayManager.hud.dbgLogComponent.showDbgLog = newShowDbgLog
+                    self.game.usrDefHlpr.defaults.setValue(newShowDbgLog, forKey: "ShowDbgLog")
                 }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.option)){
                     self.game.overlayManager.hud.dbgLogComponent.logDbgMsg(msg: "Test log message")
                 }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.control)){

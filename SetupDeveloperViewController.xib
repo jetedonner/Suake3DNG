@@ -449,6 +449,30 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpZ-OD-IH8">
+                                        <rect key="frame" x="376" y="123" width="103" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" title="Arrows" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="dt1-IP-yXX" id="RaG-Cu-K6p">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="eM0-t7-lRi">
+                                                <items>
+                                                    <menuItem title="Arrows" state="on" id="dt1-IP-yXX"/>
+                                                    <menuItem title="Windrose" id="bbC-oU-Abc"/>
+                                                    <menuItem title="None" id="99U-G4-ODe"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <binding destination="-2" name="content" keyPath="optionsForHUDOrientationHelper" id="mc8-rT-aZw"/>
+                                            <binding destination="-2" name="contentValues" keyPath="optionsForHUDOrientationHelper.name" previousBinding="mc8-rT-aZw" id="DAR-eB-69n"/>
+                                            <binding destination="Obd-p7-6Vt" name="selectedValue" keyPath="values.HUDOrientationHelper" previousBinding="DAR-eB-69n" id="RWt-aZ-m4d">
+                                                <dictionary key="options">
+                                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </popUpButton>
                                 </subviews>
                             </view>
                         </tabViewItem>

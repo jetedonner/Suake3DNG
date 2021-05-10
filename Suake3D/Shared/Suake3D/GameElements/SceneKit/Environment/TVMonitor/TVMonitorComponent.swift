@@ -18,9 +18,9 @@ class TVMonitorComponent: SuakeBaseLocationComponent {
     var tvMonitorScreen:SCNNode!
     
     init(game: GameController, id: Int = 0) {
-        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/tvmonitor/TVMonitor.scn"), locationType: .RespawnPoint, id: id)
+        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/tvmonitor/TVMonitor.scn"), locationType: .TVMonitor, id: id)
         self.node.name = "TVMonitor: " + self.id.description
-        self.node.scale = SCNVector3(50, 50, 50)
+        self.node.scale = SCNVector3(75, 75, 75)
         if(id == 0){
             self.node.eulerAngles.y = CGFloat.pi / -2
         }else if(id == 1){

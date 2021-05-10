@@ -30,6 +30,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var keyboardHandler:SuakeKeyboardHandler!
     var cameraHelper:CameraHelper!
     var panCameraHelper:PanCameraHelper!
+    var wormHoleHelper:WormHoleHelper!
     var dbgHelper:DebugHelper!
     var soundManager:SoundManagerPositional!
 
@@ -44,7 +45,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var gridGraphManager:GridGraphManager!
     var gameCenterHelper:GameCenterHelper!
     
-    var rndrr:SCNRenderer!// = SCNRenderer()
+//    var rndrr:SCNRenderer!// = SCNRenderer()
     
     func startMatch(match: GKMatch) {
         self.gameCenterHelper.matchMakerHelper.setMatch(match: match)
@@ -67,6 +68,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.keyboardHandler = SuakeKeyboardHandler(game: self)
         self.cameraHelper = CameraHelper(game: self)
         self.panCameraHelper = PanCameraHelper(game: self)
+        self.wormHoleHelper = WormHoleHelper(game: self)
         self.dbgHelper = DebugHelper(game: self)
         self.soundManager = SoundManagerPositional(game: self)
         
@@ -93,10 +95,11 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
 //        scnRenderer?.scene = sceneView.scene
 //        let renderer = SCNRenderer( context: EAGLContext.currentContext(), options: nil )
 //        self.rndrr = SCNRenderer(context: <#T##CGLContextObj?#>, options: <#T##[AnyHashable : Any]?#>) (device: mtlDevice, options: nil)
-        self.rndrr = SCNRenderer(device: MTLCreateSystemDefaultDevice(), options: nil)
-//        renderer!.scene = hiddenScene
-        self.rndrr.scene = self.scnView.scene
-        self.rndrr.pointOfView = self.cameraHelper.cameraNodeFP
+//        self.rndrr = SCNRenderer(device: MTLCreateSystemDefaultDevice(), options: nil)
+////        renderer!.scene = hiddenScene
+//        self.rndrr.scene = self.scnView.scene
+//        self.rndrr.pointOfView = self.cameraHelper.cameraNodeFP
+        
         self.scnView.delegate = self.physicsHelper
         self.scnView.autoenablesDefaultLighting = true
 //        self.scnView.debugOptions = [.showPhysicsShapes]

@@ -200,6 +200,9 @@ class SuakeMoveComponent: SuakeBaseComponent {
                 self.game.showDbgMsg(dbgMsg: "MGPICKUP HIT by OWN")
             }else if(nextMoveResult.contains(.medkit)){
                 self.game.showDbgMsg(dbgMsg: "MEDKIT HIT by OWN")
+            }else if(nextMoveResult.contains(.portal)){
+                self.game.showDbgMsg(dbgMsg: "PORTAL HIT by OWN")
+                (nextMoveResult.fieldEntity as! PortalEntity).beamSuakeNode(suakeEntity: self.playerEntity, portal: 0)
             }
             self.setAndShowSuakePlayerNodeComponent(newSuakePlayerNodeComponent: nextSuakePlayerNodeComponent)
             self.moveNode(newPos: newPos, seconds: seconds)
@@ -254,10 +257,11 @@ class SuakeMoveComponent: SuakeBaseComponent {
 //                nextMoveResult = NextMoveResult(moveResults: [.moveNotOk, .droid], pos: pos)
 //            case .medKit:
 //                nextMoveResult.addMoveResult(moveResult: .medkit)
-//            case .portal,
-//                 .portalIn,
-//                 .portalOut:
-//                nextMoveResult.addMoveResult(moveResult: .portal)
+            case .portal,
+                 .portalIn,
+                 .portalOut:
+                nextMoveResult.fieldEntity = nextSuakeFielditem
+                nextMoveResult.addMoveResult(moveResult: .portal)
             default:
                 break
             }

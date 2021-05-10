@@ -92,24 +92,27 @@ class BasePortalComponent: SuakeBaseLocationComponent {
         })]))
     }
     
-//    func activatePortation(entity2Port:SuakePlayerEntity, add2Scene:Bool = true){
-//        self.isBeaming = true
-//        self.game.soundManager.playSound(soundType: .teleporter)
-//        self.changeColor(alt: false)
-//        self.node.runAction(SCNAction.sequence([SCNAction.wait(duration: 1.0), SCNAction.run({_ in
-//            self.changeColor(alt: true)
-//            entity2Port.currentSuakeComponent.node.isHidden = false
-////            if(add2Scene){
-//                //self.game.physicsHelper.qeueNode2Add2Scene(node: node2Port)
-////            }else{
-////                node2Port.isHidden = false
-////            }
-//            self.isBeaming = false
-//            //self.game.showDbgMsg(dbgMsg: String(format: "SuakePlayer: Bullet (%@) beamed", node2Port.name!))
-//            //self.game.showDbgMsg(dbgMsg: String(format: DbgMsgs.bulletBeamedNG, arguments:[node2Port.name]))
-//            //self.game.showDbgMsg(dbgMsg: DbgMsgs.bulletBeamed)
-//        })]))
-//    }
+    func activatePortation(entity2Port:SuakePlayerEntity, add2Scene:Bool = true){
+        self.isBeaming = true
+        self.game.soundManager.playSound(soundType: .teleporter)
+        self.changeColor(alt: false)
+        self.node.runAction(SCNAction.sequence([SCNAction.wait(duration: 1.0), SCNAction.run({_ in
+            self.changeColor(alt: true)
+            entity2Port.playerComponent.currentSuakeComponent.node.isHidden = false
+//            if(add2Scene){
+                //self.game.physicsHelper.qeueNode2Add2Scene(node: node2Port)
+//            }else{
+//                node2Port.isHidden = false
+//            }
+            entity2Port.pos = self.pos
+            entity2Port .cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: -1)
+            self.isBeaming = false
+            //self.game.showDbgMsg(dbgMsg: String(format: "SuakePlayer: Bullet (%@) beamed", node2Port.name!))
+            //self.game.showDbgMsg(dbgMsg: String(format: DbgMsgs.bulletBeamedNG, arguments:[node2Port.name]))
+            //self.game.showDbgMsg(dbgMsg: DbgMsgs.bulletBeamed)
+        })]))
+        self.game.wormHoleHelper.showWormHole(playerType: entity2Port.playerType)
+    }
     
     func changeColor(alt:Bool = false){
         if(!alt){

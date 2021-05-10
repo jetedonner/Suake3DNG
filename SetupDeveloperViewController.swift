@@ -52,6 +52,11 @@ class SetupDeveloperViewController: NSViewController {
                                            Option(name: "10 Minutes", identifier: "id-8"),
                                            Option(name: "15 Minutes", identifier: "id-9")]
     
+    @objc dynamic var optionsForHUDOrientationHelper = [Option(name: "Arrows", identifier: "id-1"),
+                                           Option(name: "Windrose", identifier: "id-2"),
+                                           Option(name: "None", identifier: "id-3")]
+    
+    
     @IBAction func closeSaveAndReload(_ sender: Any) {
         self.game.usrDefHlpr.loadValuesFromUserDefaults()
         self.game.usrDefHlpr.resetUserDefaults2Game()

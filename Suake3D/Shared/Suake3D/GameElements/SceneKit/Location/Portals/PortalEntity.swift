@@ -77,33 +77,33 @@ class PortalEntity: SuakeBaseNodeEntity {
             toPortal.activatePortation(node2Port: self.newBullet)
         }
     }
-//    
-//    func beamSuakeNode(suakeEntity:SuakePlayerEntity, portal:Int){
-//        
-//        var fromPortal:BasePortalComponent!
-//        var toPortal:BasePortalComponent!
-//        var newPos:SCNVector3!
-//        if(portal == 0){
-//            fromPortal = self.portalComponent
-//            toPortal = self.otherPortal.portalComponent
-////            fromPortal = pairComponent.aPortal
-////            toPortal = pairComponent.bPortal
-//        }else{
-//            fromPortal = self.portalComponent
-//            toPortal = self.otherPortal.portalComponent
-////            fromPortal = pairComponent.bPortal
-////            toPortal = pairComponent.aPortal
-//        }
-//        
-//        if(fromPortal.isBeaming || toPortal.isBeaming){
-//            return
-//        }
-//        newPos = toPortal.pos
-//        print("Beaming suakeNode to: x: " + newPos.x.description + ", z: " + newPos.z.description)
-//        suakeEntity.pos = newPos
-//        suakeEntity.currentSuakeComponent.node.isHidden = true
-//        toPortal.activatePortation(entity2Port: suakeEntity)
-//    }
+    
+    func beamSuakeNode(suakeEntity:SuakePlayerEntity, portal:Int){
+        
+        var fromPortal:BasePortalComponent!
+        var toPortal:BasePortalComponent!
+        var newPos:SCNVector3!
+        if(portal == 0){
+            fromPortal = self.portalComponent
+            toPortal = self.otherPortal.portalComponent
+//            fromPortal = pairComponent.aPortal
+//            toPortal = pairComponent.bPortal
+        }else{
+            fromPortal = self.portalComponent
+            toPortal = self.otherPortal.portalComponent
+//            fromPortal = pairComponent.bPortal
+//            toPortal = pairComponent.aPortal
+        }
+        
+        if(fromPortal.isBeaming || toPortal.isBeaming){
+            return
+        }
+        newPos = toPortal.pos
+        print("Beaming suakeNode to: x: " + newPos.x.description + ", z: " + newPos.z.description)
+        suakeEntity.pos = newPos
+        suakeEntity.playerComponent.currentSuakeComponent.node.isHidden = true
+        toPortal.activatePortation(entity2Port: suakeEntity)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
