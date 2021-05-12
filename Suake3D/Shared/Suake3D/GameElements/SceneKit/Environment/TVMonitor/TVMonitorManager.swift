@@ -17,7 +17,7 @@ class TVMonitorManager: EntityManager {
     let videoURL: NSURL = Bundle.main.url(forResource: "art.scnassets/videos/tvnoise", withExtension: "mp4")! as NSURL
     let player:AVPlayer
     
-    let newScnView:SCNView
+//    let newScnView:SCNView
     let tvScreenMat:SCNMaterial = SCNMaterial()
     let tvScreenSphereMat:SCNMaterial = SCNMaterial()
     
@@ -32,8 +32,8 @@ class TVMonitorManager: EntityManager {
 
     override init(game: GameController) {
         self.player = AVPlayer(url: videoURL as URL)
-        self.newScnView = game.overlayView
-        self.newScnView.pointOfView = game.cameraHelper.cameraNodeFP
+//        self.newScnView = game.overlayView
+//        self.newScnView.pointOfView = game.cameraHelper.cameraNodeFP
         self.tvMontSphereEnt = TVMonitorSphereEntity(game: game, id: 0)
         super.init(game: game)
         
@@ -41,7 +41,7 @@ class TVMonitorManager: EntityManager {
         self.tvScreenSphereMat.lightingModel = .constant
         self.renderer = SCNRenderer(device: MTLCreateSystemDefaultDevice(), options: nil)
         self.renderer?.scene = self.game.scene
-//        self.renderer?.autoenablesDefaultLighting = false
+        self.renderer?.autoenablesDefaultLighting = true
         
         self.renderer?.pointOfView = self.game.cameraHelper.cameraNodeFP
 //        self.renderer?.pointOfView?.camera?.wantsHDR = false
@@ -99,7 +99,7 @@ class TVMonitorManager: EntityManager {
 //        Timer.scheduledTimer(withTimeInterval: 0.016667, repeats: false, block: {_ in
             
 //        })
-        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: DispatchTime.now() + 0.016667, execute: {
+        DispatchQueue.global(qos: .userInteractive).async {
             
 //        })
 //            DispatchQueue.main.async(execute: {
@@ -110,9 +110,11 @@ class TVMonitorManager: EntityManager {
             self.tvScreenSphereMat.diffuse.contents = image
 //            self.tvScreenMat.lightingModel = .constant
 //            self.tvScreenMat.shininess = 0.1
-            self.setTVMonitorImage(tvNoise: self.showNoise)
-//            })
-        })
+            DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.01, execute: {
+                self.setTVMonitorImage(tvNoise: self.showNoise)
+    //            })
+            })
+        }
     }
     
     @objc func playerItemDidReachEnd(notification: Notification) {

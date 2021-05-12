@@ -61,8 +61,9 @@ class WormHoleHelper:SuakeGameClass{
     
     func showWormHole(playerType:SuakePlayerType, show:Bool = true){
         self.playerType = playerType
-        if(show){
+        
             DispatchQueue.main.async {
+                if(show){
                 self.beamProcessStarted = CACurrentMediaTime()
 //                if(playerType == .OwnSuake || DbgVars.startLoad_Opponent_Dbg_AI){
                     if(self.game.scene.background.contents is [String]){
@@ -92,18 +93,23 @@ class WormHoleHelper:SuakeGameClass{
 //                    })
 //                }
 //                self.newView.pointOfView = self.cameraNodeWormHole
-            }
-            self.game.scnView.scene = self.newScene
-            self.game.scnView.pointOfView = self.cameraNodeWormHole
-        }else{
-            self.game.scnView.scene = self.game.scene
-            self.game.scnView.pointOfView = self.game.cameraHelper.cameraNode
-        }
-        if(self.playerType == .OwnSuake/* || DbgVars.startLoad_Opponent_Dbg_AI*/){
             
-            self.newView.isHidden = !show
-            self.newView.isPlaying = show
-            self.newScene.isPaused = !show
+                self.game.scnView.scene = self.newScene
+                self.game.scnView.pointOfView = self.cameraNodeWormHole
+            }else{
+                self.starsParticeSystemNode2.removeAllAnimations()
+                self.game.scnView.scene = self.game.scene
+                self.game.scnView.pointOfView = self.game.cameraHelper.cameraNode
+                self.newView.removeFromSuperview()
+            }
+                    
+            if(self.playerType == .OwnSuake/* || DbgVars.startLoad_Opponent_Dbg_AI*/){
+                
+                self.newView.isHidden = !show
+                self.newView.isPlaying = show
+                self.newScene.isPaused = !show
+                self.game.overlayManager.hud.overlayScene.isHidden = show
+            }
         }
     }
     
