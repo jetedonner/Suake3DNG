@@ -10,6 +10,6 @@ Thank you for your interest in this project.
 
 ## WebSite
 
-* http://suake3d.kimhauser.ch/ - Main preview website
-* http://suake3d.kimhauser.ch/?task=preview - Preview Videos
-* http://suake3d.kimhauser.ch/?task=download - Suake3D Beta Download
+* http://suake3d.kimhauser.ch/ - Main Suake3D Beta website
+* http://suake3d.kimhauser.ch/?task=preview - Suake3D Beta Preview Videos
+* http://suake3d.kimhauser.ch/?task=download - Suake3D Beta Download (macOS)
