@@ -102,9 +102,9 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }
             }else if(pressedKey == .KEY_B){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-                    self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: .RandomSkyBox)
+                    self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: .Water)
                 }else{
-//                    self.game.physicsHelper.takeSS = true
+                    self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: .RandomSkyBox)
                 }
             }else if(pressedKey == .KEY_C){
                 self.game.overlayManager.hud.overlayScene.crosshairEntity.mgCrosshairComponent.animateCrosshair()

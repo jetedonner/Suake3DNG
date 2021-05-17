@@ -62,13 +62,14 @@ class TVMonitorManager: EntityManager {
         self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 1))
         self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 2))
         self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 3))
-        self.tvMonEnt[0].showTVMonitor(pos: SCNVector3(0, 1, 10))
+        let levelSize:CGSize = self.game.levelManager.currentLevel.levelConfigEnv.levelSize.getNSSize()
+        self.tvMonEnt[0].showTVMonitor(pos: SCNVector3(0, 1, levelSize.height / 2))
         self.tvMonEnt[0].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
-        self.tvMonEnt[1].showTVMonitor(pos: SCNVector3(0, 1, -11))
+        self.tvMonEnt[1].showTVMonitor(pos: SCNVector3(0, 1, (levelSize.height / -2) - 1))
         self.tvMonEnt[1].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
-        self.tvMonEnt[2].showTVMonitor(pos: SCNVector3(10, 1, 0))
+        self.tvMonEnt[2].showTVMonitor(pos: SCNVector3(levelSize.width / 2, 1, 0))
         self.tvMonEnt[2].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
-        self.tvMonEnt[3].showTVMonitor(pos: SCNVector3(-11, 1, 0))
+        self.tvMonEnt[3].showTVMonitor(pos: SCNVector3((levelSize.width / -2) - 1, 1, 0))
         self.tvMonEnt[3].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
         
         self.tvMontSphereEnt.showTVMonitor(pos: SCNVector3(0, 2, 0))

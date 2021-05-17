@@ -1277,21 +1277,6 @@
 			path = Level;
 			sourceTree = "<group>";
 		};
-		55C96BEC2613AC8900BACA73 /* Multiplayer */ = {
-			isa = PBXGroup;
-			children = (
-				55C96BED2613AC9700BACA73 /* Base */,
-			);
-			path = Multiplayer;
-			sourceTree = "<group>";
-		};
-		55C96BED2613AC9700BACA73 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		55D8941725FAC2CD00728B83 /* Apple */ = {
 			isa = PBXGroup;
 			children = (
@@ -1299,7 +1284,8 @@
 				55E8DD0325FD60AC0056A0A9 /* GameCenter */,
 				55D8941825FAC2D800728B83 /* SceneKit */,
 			);
-			path = Apple;
+			name = Apple;
+			path = Suake3D/Apple;
 			sourceTree = "<group>";
 		};
 		55D8941825FAC2D800728B83 /* SceneKit */ = {
@@ -1610,20 +1596,11 @@
 		55EC88FA25FA97230040E676 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				55EC88FB25FA97880040E676 /* Suake3D */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		55EC88FB25FA97880040E676 /* Suake3D */ = {
-			isa = PBXGroup;
-			children = (
-				55C96BEC2613AC8900BACA73 /* Multiplayer */,
 				55EC88FC25FA97920040E676 /* GameElements */,
 				55EC891425FA9D120040E676 /* System */,
 				55D8941725FAC2CD00728B83 /* Apple */,
 			);
-			path = Suake3D;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		55EC88FC25FA97920040E676 /* GameElements */ = {
@@ -1633,7 +1610,8 @@
 				55DB997125FC52CB000023AF /* Overlay */,
 				55EC88FD25FA979A0040E676 /* SceneKit */,
 			);
-			path = GameElements;
+			name = GameElements;
+			path = Suake3D/GameElements;
 			sourceTree = "<group>";
 		};
 		55EC88FD25FA979A0040E676 /* SceneKit */ = {
@@ -1680,7 +1658,8 @@
 				55EC891525FA9D200040E676 /* Extensions */,
 				55EC890E25FA9B080040E676 /* BaseClasses */,
 			);
-			path = System;
+			name = System;
+			path = Suake3D/System;
 			sourceTree = "<group>";
 		};
 		55EC891525FA9D200040E676 /* Extensions */ = {
