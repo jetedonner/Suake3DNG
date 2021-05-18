@@ -16,9 +16,12 @@ class RPGRocket: BulletBase {
     var isExploded:Bool = false
     var autoExplode:Bool = true
     var autoExplodeTime:TimeInterval = 3.0
+    let rpgRocketBlast:RPGRocketBlast
     
     init(game: GameController, weapon:RPGComponent) {
+        self.rpgRocketBlast = RPGRocketBlast(game: game, weapon: weapon)
         super.init(game: game, weapon: weapon, sceneName: "art.scnassets/nodes/weapons/rpg/rocketlauncher_shell.scn", scale: SCNVector3(5, 5, 5))
+        
         self.name = "RPGRocket"
         self.shootingVelocity = SuakeVars.rpgRocketVelocity// 485.0
         self.loadRocket()
@@ -60,7 +63,7 @@ class RPGRocket: BulletBase {
 //        let box = SCNBox(width: (self.boundingBox.max.x), height: (self.boundingBox.max.y), length: (self.boundingBox.max.z), chamferRadius: 0)
 //        self.geometry = box
         
-        self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.rocket, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.wall, CollisionCategory.floor])
+        self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.rocket, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.wall, CollisionCategory.floor, CollisionCategory.container, CollisionCategory.generator])
         self.physicsBody?.damping = 0.0
         
     }
@@ -118,6 +121,7 @@ class RPGRocket: BulletBase {
 //            })
             self.game.physicsHelper.qeueNode2Add2Scene(node: shotParticleNode)
             self.game.physicsHelper.qeueNode2Add2Scene(node: shotParticleNode2)
+            self.rpgRocketBlast.detonateRocket(pos: self.presentation.position)
         }
     }
     

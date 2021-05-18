@@ -26,7 +26,12 @@ class FloorHelper: SuakeGameClass {
         if(type == .RandomFloor){
             self.setFloor(type: FloorType.random())
         }else{
-            self.game.floorNode.geometry?.firstMaterial?.diffuse.contents = type.toString()
+            self.setFloor(imageName: type.toString())
+//            self.game.floorNode.geometry?.firstMaterial?.diffuse.contents = type.toString()
         }
+    }
+    
+    func setFloor(imageName:String){
+        self.game.floorNode.geometry?.firstMaterial?.diffuse.contents = imageName
     }
 }

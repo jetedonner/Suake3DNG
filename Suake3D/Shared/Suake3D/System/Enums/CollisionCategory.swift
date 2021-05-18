@@ -16,6 +16,7 @@ struct CollisionCategory: OptionSet {
     static let suake =              CollisionCategory(rawValue: 1 << 0)  //            1
     static let suakeOpp =           CollisionCategory(rawValue: 1 << 1)  //            2
     static let rocket =             CollisionCategory(rawValue: 1 << 2)  //            4
+    static let rocketBlast =        CollisionCategory(rawValue: 1 << 31)  //            4
     static let mgbullet =           CollisionCategory(rawValue: 1 << 3)  //            8
     static let pellet =             CollisionCategory(rawValue: 1 << 4)  //           16
     static let railbeam =           CollisionCategory(rawValue: 1 << 5)  //           32

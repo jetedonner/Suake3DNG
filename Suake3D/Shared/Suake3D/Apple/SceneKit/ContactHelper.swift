@@ -152,15 +152,15 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
 //            }
 //        }
     else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.container)){
-        if(contact.nodeB is MachinegunBullet){
-            if((contact.nodeB as! MachinegunBullet).hitTarget(targetCat: .container, targetNode: contact.nodeA, contact: contact)){
+        if(contact.nodeB is BulletBase){
+            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .container, targetNode: contact.nodeA, contact: contact)){
                 
                 //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
             }
         }
     }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.generator)){
-        if(contact.nodeB is MachinegunBullet){
-            if((contact.nodeB as! MachinegunBullet).hitTarget(targetCat: .generator, targetNode: contact.nodeA, contact: contact)){
+        if(contact.nodeB is BulletBase){
+            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .generator, targetNode: contact.nodeA, contact: contact)){
                 
                 //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
             }

@@ -102,7 +102,10 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }
             }else if(pressedKey == .KEY_B){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-                    self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: .Water)
+                    self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: SkyboxType.getDbgSkyBox())
+                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.option)){
+                    self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: SkyboxType.randomQuake())
+                    self.game.levelManager.currentLevel.floorHelper.setFloor(imageName: self.game.levelManager.currentLevel.skyBoxHelper.getFloor4QuakeSkybox())
                 }else{
                     self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: .RandomSkyBox)
                 }

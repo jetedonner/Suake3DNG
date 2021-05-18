@@ -71,6 +71,7 @@ class BaseGameController:NSObject{
         
         scnView.scene = self.scene
 
+        scnView.scene?.physicsWorld.gravity = SCNVector3(0, -9.8, 0)
         scnView.audioEnvironmentNode.distanceAttenuationParameters.maximumDistance = 2
         scnView.audioEnvironmentNode.distanceAttenuationParameters.referenceDistance = 0.1
         scnView.audioEnvironmentNode.renderingAlgorithm = .sphericalHead

@@ -139,6 +139,7 @@
 		554234042632C08E00EB55F9 /* RailgunCrosshairComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */; };
 		5542340A2632C3E200EB55F9 /* SoundManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234092632C3E200EB55F9 /* SoundManagerExt.swift */; };
 		5542341E2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */; };
+		5557C066265440FF00ED7848 /* RPGRocketBlast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C065265440FF00ED7848 /* RPGRocketBlast.swift */; };
 		556CA651260D29F600F78263 /* LasergunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA64F260D29F600F78263 /* LasergunComponent.swift */; };
 		556CA652260D29F600F78263 /* LaserBeamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA650260D29F600F78263 /* LaserBeamNode.swift */; };
 		556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA656260D38BE00F78263 /* EnemyNames.swift */; };
@@ -454,6 +455,7 @@
 		554234032632C08E00EB55F9 /* RailgunCrosshairComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunCrosshairComponent.swift; sourceTree = "<group>"; };
 		554234092632C3E200EB55F9 /* SoundManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManagerExt.swift; sourceTree = "<group>"; };
 		5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerKeyHandler.swift; sourceTree = "<group>"; };
+		5557C065265440FF00ED7848 /* RPGRocketBlast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPGRocketBlast.swift; sourceTree = "<group>"; };
 		556CA64F260D29F600F78263 /* LasergunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LasergunComponent.swift; sourceTree = "<group>"; };
 		556CA650260D29F600F78263 /* LaserBeamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeamNode.swift; sourceTree = "<group>"; };
 		556CA656260D38BE00F78263 /* EnemyNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyNames.swift; sourceTree = "<group>"; };
@@ -992,6 +994,15 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		5557C0672654460400ED7848 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				552D597D264480DB00BE9CFD /* Generator */,
+				55B860412634A5270030D678 /* Container */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		556CA64E260D29E800F78263 /* Laser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,6 +1147,7 @@
 		55927047262A13C100A04C76 /* RPG */ = {
 			isa = PBXGroup;
 			children = (
+				5557C065265440FF00ED7848 /* RPGRocketBlast.swift */,
 				55927048262A13F400A04C76 /* RPGComponent.swift */,
 				5592704C262A159E00A04C76 /* RPGRocket.swift */,
 			);
@@ -1156,9 +1168,8 @@
 		55B8603C2634A5070030D678 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				552D597D264480DB00BE9CFD /* Generator */,
+				5557C0672654460400ED7848 /* Items */,
 				55333EF226432B50007288C4 /* TVMonitor */,
-				55B860412634A5270030D678 /* Container */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -2030,6 +2041,7 @@
 				55B860682637482D0030D678 /* GameControllerMutliplayer.swift in Sources */,
 				5501847D260566A800F28C54 /* SuakeStatsComponent.swift in Sources */,
 				55C0371425FA884200F419B8 /* GameController.swift in Sources */,
+				5557C066265440FF00ED7848 /* RPGRocketBlast.swift in Sources */,
 				552417ED260A7E57002C90FC /* BaseWeaponPickupEntity.swift in Sources */,
 				5501850A260917E500F28C54 /* HUDWeaponEntity.swift in Sources */,
 				550184592604140100F28C54 /* MapOverlayZoom.swift in Sources */,

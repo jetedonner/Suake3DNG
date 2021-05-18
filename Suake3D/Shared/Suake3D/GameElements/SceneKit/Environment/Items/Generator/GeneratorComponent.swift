@@ -30,7 +30,7 @@ class GeneratorComponent: SuakeBaseLocationComponent {
         let generatorhape1 = SCNPhysicsShape(geometry: self.node.cloneNode.flattenedClone().geometry!, options: [SCNPhysicsShape.Option.scale: self.rescale /* 1.15*/])
         self.node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: generatorhape1)
         self.node.physicsBody?.isAffectedByGravity = true
-        self.node.physicsBody?.restitution = 1.0
+        self.node.physicsBody?.restitution = 0.5
         self.node.physicsBody?.mass = 60
         self.node.physicsBody?.categoryBitMask = CollisionCategory(category: .generator).rawValue
         self.node.physicsBody?.contactTestBitMask = CollisionCategory.getAllBulletCats()

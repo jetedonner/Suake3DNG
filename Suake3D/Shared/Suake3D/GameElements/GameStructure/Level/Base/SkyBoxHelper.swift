@@ -26,7 +26,13 @@ class SkyBoxHelper: SuakeGameClass {
         if(type == .RandomSkyBox){
             self.setSkybox(type: SkyboxType.random())
         }else{
+            self.skyboxType = type
             self.game.scene.background.contents = SkyboxType.getSkybox(type: type)
+//            self.game.scene.background.contentsTransform = SCNMatrix4Make Translation(0, 3800, 0)
         }
+    }
+    
+    func getFloor4QuakeSkybox()->String{
+        return SkyboxType.getFloor4QuakeSkybox(type: self.skyboxType)
     }
 }

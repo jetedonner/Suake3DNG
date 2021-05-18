@@ -50,7 +50,7 @@ class BulletBase: SuakeBaseSCNNode {
         newBulletNG.position.y = 14
         newBulletNG.isBeaming = true
         newBulletNG.rotation = origBullet.rotation
-        if(!(origBullet is RailgunBeam)){
+        if(!((origBullet is RailgunBeam) || (origBullet is RPGRocketBlast))){
             newBulletNG.physicsBody!.velocity = vect
         }
         if(addBullets){
