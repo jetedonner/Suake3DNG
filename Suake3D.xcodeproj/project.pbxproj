@@ -150,6 +150,9 @@
 		5557C0772656F40D00ED7848 /* SniperriflePickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0762656F40D00ED7848 /* SniperriflePickupComponent.swift */; };
 		5557C0792656F5CB00ED7848 /* RedeemerPickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0782656F5CB00ED7848 /* RedeemerPickupEntity.swift */; };
 		5557C07B2656F5E400ED7848 /* RedeemerPickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C07A2656F5E400ED7848 /* RedeemerPickupComponent.swift */; };
+		5557C07F265700A200ED7848 /* MossRockGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C07E265700A200ED7848 /* MossRockGroup.swift */; };
+		5557C081265700E900ED7848 /* MossRockGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C080265700E900ED7848 /* MossRockGroupItem.swift */; };
+		5557C0832657011A00ED7848 /* MossRockComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0822657011A00ED7848 /* MossRockComponent.swift */; };
 		556CA651260D29F600F78263 /* LasergunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA64F260D29F600F78263 /* LasergunComponent.swift */; };
 		556CA652260D29F600F78263 /* LaserBeamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA650260D29F600F78263 /* LaserBeamNode.swift */; };
 		556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA656260D38BE00F78263 /* EnemyNames.swift */; };
@@ -476,6 +479,9 @@
 		5557C0762656F40D00ED7848 /* SniperriflePickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniperriflePickupComponent.swift; sourceTree = "<group>"; };
 		5557C0782656F5CB00ED7848 /* RedeemerPickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemerPickupEntity.swift; sourceTree = "<group>"; };
 		5557C07A2656F5E400ED7848 /* RedeemerPickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemerPickupComponent.swift; sourceTree = "<group>"; };
+		5557C07E265700A200ED7848 /* MossRockGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MossRockGroup.swift; sourceTree = "<group>"; };
+		5557C080265700E900ED7848 /* MossRockGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MossRockGroupItem.swift; sourceTree = "<group>"; };
+		5557C0822657011A00ED7848 /* MossRockComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MossRockComponent.swift; sourceTree = "<group>"; };
 		556CA64F260D29F600F78263 /* LasergunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LasergunComponent.swift; sourceTree = "<group>"; };
 		556CA650260D29F600F78263 /* LaserBeamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeamNode.swift; sourceTree = "<group>"; };
 		556CA656260D38BE00F78263 /* EnemyNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyNames.swift; sourceTree = "<group>"; };
@@ -1019,10 +1025,29 @@
 		5557C0672654460400ED7848 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				5557C07C2657007A00ED7848 /* Rocks */,
 				552D597D264480DB00BE9CFD /* Generator */,
 				55B860412634A5270030D678 /* Container */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		5557C07C2657007A00ED7848 /* Rocks */ = {
+			isa = PBXGroup;
+			children = (
+				5557C07D2657008300ED7848 /* MossRock */,
+			);
+			path = Rocks;
+			sourceTree = "<group>";
+		};
+		5557C07D2657008300ED7848 /* MossRock */ = {
+			isa = PBXGroup;
+			children = (
+				5557C0822657011A00ED7848 /* MossRockComponent.swift */,
+				5557C080265700E900ED7848 /* MossRockGroupItem.swift */,
+				5557C07E265700A200ED7848 /* MossRockGroup.swift */,
+			);
+			path = MossRock;
 			sourceTree = "<group>";
 		};
 		556CA64E260D29E800F78263 /* Laser */ = {
@@ -1420,8 +1445,8 @@
 				55D894B025FAD65B00728B83 /* PressAnyKeyHandler.swift */,
 				5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */,
 				55D894B125FAD65C00728B83 /* SuakeKeyboardHandler.swift */,
-				55D894A925FAD64C00728B83 /* KeyboardDirection.swift */,
 				55D894AA25FAD64C00728B83 /* KeyboardHandler.swift */,
+				55D894A925FAD64C00728B83 /* KeyboardDirection.swift */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -2013,6 +2038,7 @@
 				552417E126091EB9002C90FC /* HUDWeaponLblComponent.swift in Sources */,
 				556CB95325FFF0EB005B7747 /* Int.swift in Sources */,
 				55D8945625FACA3000728B83 /* CameraView.swift in Sources */,
+				5557C0832657011A00ED7848 /* MossRockComponent.swift in Sources */,
 				55E9EA4A2633EAB6005E3256 /* SniperBullet.swift in Sources */,
 				55927049262A13F400A04C76 /* RPGComponent.swift in Sources */,
 				5513C87B260D17CF00633B40 /* DroidStateChasing.swift in Sources */,
@@ -2127,6 +2153,7 @@
 				55A2B8EA26000D4100E25F7F /* SuakeStateMatchOver.swift in Sources */,
 				55C0370625FA866000F419B8 /* BaseGameController.swift in Sources */,
 				5557C06F2656EF2300ED7848 /* RPGPickupComponent.swift in Sources */,
+				5557C07F265700A200ED7848 /* MossRockGroup.swift in Sources */,
 				559B2BDC260E434A005E669C /* MedKitComponent.swift in Sources */,
 				5501847826052E2400F28C54 /* Double.swift in Sources */,
 				55333EF8264458FD007288C4 /* TVMonitorManager.swift in Sources */,
@@ -2204,6 +2231,7 @@
 				556CB90D25FE8427005B7747 /* SuakeHealthComponent.swift in Sources */,
 				55760E5925FD399700C10784 /* HUDMsgComponent.swift in Sources */,
 				5501834C2601531300F28C54 /* MenuSkScene.swift in Sources */,
+				5557C081265700E900ED7848 /* MossRockGroupItem.swift in Sources */,
 				556CB93425FFD791005B7747 /* LocationEntityManager.swift in Sources */,
 				556CB94625FFEA40005B7747 /* GameBoard.swift in Sources */,
 				55DB994725FC3F38000023AF /* SuakeCameraComponent.swift in Sources */,

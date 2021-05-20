@@ -15,6 +15,7 @@ class LocationEntityManager: EntityManager {
     var portals:[PortalEntity] = [PortalEntity]()
     var containers:[ContainerGroupItem] = [ContainerGroupItem]()
     var generators:[GeneratorGroupItem] = [GeneratorGroupItem]()
+    var mossRocks:[MossRockGroupItem] = [MossRockGroupItem]()
     
     override init(game: GameController) {
         super.init(game: game)
@@ -37,6 +38,11 @@ class LocationEntityManager: EntityManager {
             for i in 0..<self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount{
                 let generator:GeneratorGroupItem = GeneratorGroupItem(game: self.game, id: i)
                 self.generators.append(generator)
+            }
+            
+            for i in 0..<self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount{
+                let mossRock:MossRockGroupItem = MossRockGroupItem(game: self.game, id: i)
+                self.mossRocks.append(mossRock)
             }
         }
     }
@@ -85,7 +91,13 @@ class LocationEntityManager: EntityManager {
         
         if(self.generators != nil && self.generators.count > 0){
             for generator in self.generators{
-                generator.generatorComponent .addToScene()
+                generator.generatorComponent.addToScene()
+            }
+        }
+        
+        if(self.mossRocks != nil && self.mossRocks.count > 0){
+            for mossRock in self.mossRocks{
+                mossRock.mossRockComponent.addToScene()
             }
         }
     }

@@ -15,7 +15,7 @@ class GeneratorComponent: SuakeBaseLocationComponent {
     let rescale:SCNVector3 = SCNVector3(6.5, 6.5, 6.5)
     
     init(game: GameController, id:Int = 0) {
-        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/generator/Generator.scn", scale: self.rescale), locationType: .Generator, id: id)
+        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/movable/generator/Generator.scn", scale: self.rescale), locationType: .Generator, id: id)
         self.node.name = "Generator: " + self.id.description
         self.initPhysics()
         self.node.categoryBitMask = CollisionCategory.generator.rawValue

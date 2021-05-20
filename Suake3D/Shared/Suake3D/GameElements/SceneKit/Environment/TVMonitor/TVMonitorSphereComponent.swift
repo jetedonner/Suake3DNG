@@ -18,7 +18,7 @@ class TVMonitorSphereComponent: SuakeBaseLocationComponent {
     var tvMonitorSphereScreen:SCNNode!
     
     init(game: GameController, id: Int = 0) {
-        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/tvmonitor/TVMonitorSphere.scn"), locationType: .TVMonitorSphere, id: id)
+        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/static/tvmonitor/TVMonitorSphere.scn"), locationType: .TVMonitorSphere, id: id)
         self.node.name = "TVMonitorSphere: " + self.id.description
         self.node.scale = SCNVector3(75, 75, 75)
         if(id == 0){

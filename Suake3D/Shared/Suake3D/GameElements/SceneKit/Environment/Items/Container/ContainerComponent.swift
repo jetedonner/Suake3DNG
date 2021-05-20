@@ -15,7 +15,7 @@ class ContainerComponent: SuakeBaseLocationComponent {
     let rescale:SCNVector3 = SCNVector3(0.5, 0.5, 0.5)
     
     init(game: GameController, id:Int = 0) {
-        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/container/Container.scn", scale: self.rescale), locationType: .Container, id: id)
+        super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/movable/container/Container.scn", scale: self.rescale), locationType: .Container, id: id)
         self.node.name = "Container: " + self.id.description
         self.initPhysics()
         self.node.categoryBitMask = CollisionCategory.container.rawValue

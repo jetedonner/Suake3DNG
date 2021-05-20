@@ -48,6 +48,7 @@ struct CollisionCategory: OptionSet {
 //    static let grenadeBlast =       CollisionCategory(rawValue: 1 << 31) //   2147483648
 //    static let tree =               CollisionCategory(rawValue: 1 << 32) //   4294967296
     static let generator =          CollisionCategory(rawValue: 1 << 28) //   ???!!!???
+//    static let rock =               CollisionCategory(rawValue: 1 << 29) //   ???!!!???
     
     static let allBulletCategories:[CollisionCategory] = [.laserbeam, .mgbullet, .pellet, .rocket, .railbeam, .sniperRifleBullet, .nuke, .nukeBlast]
     
