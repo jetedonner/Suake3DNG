@@ -140,6 +140,16 @@
 		5542340A2632C3E200EB55F9 /* SoundManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554234092632C3E200EB55F9 /* SoundManagerExt.swift */; };
 		5542341E2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */; };
 		5557C066265440FF00ED7848 /* RPGRocketBlast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C065265440FF00ED7848 /* RPGRocketBlast.swift */; };
+		5557C0692656EBB200ED7848 /* ShotgunPickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0682656EBB200ED7848 /* ShotgunPickupEntity.swift */; };
+		5557C06B2656EBD500ED7848 /* ShotgunPickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C06A2656EBD500ED7848 /* ShotgunPickupComponent.swift */; };
+		5557C06D2656EF0300ED7848 /* RPGPickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C06C2656EF0300ED7848 /* RPGPickupEntity.swift */; };
+		5557C06F2656EF2300ED7848 /* RPGPickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C06E2656EF2300ED7848 /* RPGPickupComponent.swift */; };
+		5557C0712656F0FA00ED7848 /* RailgunPickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0702656F0FA00ED7848 /* RailgunPickupEntity.swift */; };
+		5557C0732656F11400ED7848 /* RailgunPickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0722656F11400ED7848 /* RailgunPickupComponent.swift */; };
+		5557C0752656F3EA00ED7848 /* SniperriflePickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0742656F3EA00ED7848 /* SniperriflePickupEntity.swift */; };
+		5557C0772656F40D00ED7848 /* SniperriflePickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0762656F40D00ED7848 /* SniperriflePickupComponent.swift */; };
+		5557C0792656F5CB00ED7848 /* RedeemerPickupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C0782656F5CB00ED7848 /* RedeemerPickupEntity.swift */; };
+		5557C07B2656F5E400ED7848 /* RedeemerPickupComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5557C07A2656F5E400ED7848 /* RedeemerPickupComponent.swift */; };
 		556CA651260D29F600F78263 /* LasergunComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA64F260D29F600F78263 /* LasergunComponent.swift */; };
 		556CA652260D29F600F78263 /* LaserBeamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA650260D29F600F78263 /* LaserBeamNode.swift */; };
 		556CA657260D38BE00F78263 /* EnemyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CA656260D38BE00F78263 /* EnemyNames.swift */; };
@@ -456,6 +466,16 @@
 		554234092632C3E200EB55F9 /* SoundManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManagerExt.swift; sourceTree = "<group>"; };
 		5542341D2632E8AA00EB55F9 /* MultiplayerKeyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerKeyHandler.swift; sourceTree = "<group>"; };
 		5557C065265440FF00ED7848 /* RPGRocketBlast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPGRocketBlast.swift; sourceTree = "<group>"; };
+		5557C0682656EBB200ED7848 /* ShotgunPickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunPickupEntity.swift; sourceTree = "<group>"; };
+		5557C06A2656EBD500ED7848 /* ShotgunPickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotgunPickupComponent.swift; sourceTree = "<group>"; };
+		5557C06C2656EF0300ED7848 /* RPGPickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPGPickupEntity.swift; sourceTree = "<group>"; };
+		5557C06E2656EF2300ED7848 /* RPGPickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPGPickupComponent.swift; sourceTree = "<group>"; };
+		5557C0702656F0FA00ED7848 /* RailgunPickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunPickupEntity.swift; sourceTree = "<group>"; };
+		5557C0722656F11400ED7848 /* RailgunPickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailgunPickupComponent.swift; sourceTree = "<group>"; };
+		5557C0742656F3EA00ED7848 /* SniperriflePickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniperriflePickupEntity.swift; sourceTree = "<group>"; };
+		5557C0762656F40D00ED7848 /* SniperriflePickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniperriflePickupComponent.swift; sourceTree = "<group>"; };
+		5557C0782656F5CB00ED7848 /* RedeemerPickupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemerPickupEntity.swift; sourceTree = "<group>"; };
+		5557C07A2656F5E400ED7848 /* RedeemerPickupComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemerPickupComponent.swift; sourceTree = "<group>"; };
 		556CA64F260D29F600F78263 /* LasergunComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LasergunComponent.swift; sourceTree = "<group>"; };
 		556CA650260D29F600F78263 /* LaserBeamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserBeamNode.swift; sourceTree = "<group>"; };
 		556CA656260D38BE00F78263 /* EnemyNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyNames.swift; sourceTree = "<group>"; };
@@ -978,6 +998,8 @@
 		554233D4263214EC00EB55F9 /* Shotgun */ = {
 			isa = PBXGroup;
 			children = (
+				5557C06A2656EBD500ED7848 /* ShotgunPickupComponent.swift */,
+				5557C0682656EBB200ED7848 /* ShotgunPickupEntity.swift */,
 				554233D92632162C00EB55F9 /* ShotgunPelletGrp.swift */,
 				554233DD2632168600EB55F9 /* ShotgunComponent.swift */,
 				554233D5263215FE00EB55F9 /* ShotgunPellet.swift */,
@@ -1147,6 +1169,8 @@
 		55927047262A13C100A04C76 /* RPG */ = {
 			isa = PBXGroup;
 			children = (
+				5557C06E2656EF2300ED7848 /* RPGPickupComponent.swift */,
+				5557C06C2656EF0300ED7848 /* RPGPickupEntity.swift */,
 				5557C065265440FF00ED7848 /* RPGRocketBlast.swift */,
 				55927048262A13F400A04C76 /* RPGComponent.swift */,
 				5592704C262A159E00A04C76 /* RPGRocket.swift */,
@@ -1157,6 +1181,8 @@
 		55AE7FD6262A3B0700A58F4B /* Railgun */ = {
 			isa = PBXGroup;
 			children = (
+				5557C0722656F11400ED7848 /* RailgunPickupComponent.swift */,
+				5557C0702656F0FA00ED7848 /* RailgunPickupEntity.swift */,
 				554233F02632BF8800EB55F9 /* HelixVertexArray.swift */,
 				554233EA2632BDF500EB55F9 /* RailgunBeam.swift */,
 				554233E82632BDF500EB55F9 /* RailgunComponent.swift */,
@@ -1577,6 +1603,8 @@
 		55E9EA472633EA7A005E3256 /* Sniperrifle */ = {
 			isa = PBXGroup;
 			children = (
+				5557C0762656F40D00ED7848 /* SniperriflePickupComponent.swift */,
+				5557C0742656F3EA00ED7848 /* SniperriflePickupEntity.swift */,
 				55E9EA482633EAB5005E3256 /* SniperBullet.swift */,
 				55E9EA492633EAB6005E3256 /* SniperrifleComponent.swift */,
 			);
@@ -1719,6 +1747,8 @@
 		55F2AE54263C648A0042BD38 /* Redeemer */ = {
 			isa = PBXGroup;
 			children = (
+				5557C07A2656F5E400ED7848 /* RedeemerPickupComponent.swift */,
+				5557C0782656F5CB00ED7848 /* RedeemerPickupEntity.swift */,
 				55F2AE55263C64DF0042BD38 /* RedeemerComponent.swift */,
 				55F2AE57263C64F00042BD38 /* Nuke.swift */,
 				55F2AE58263C64F00042BD38 /* NukeBlast.swift */,
@@ -1951,6 +1981,7 @@
 				556CB92525FFD5BE005B7747 /* LocationType.swift in Sources */,
 				55EC890925FA9A990040E676 /* WallFactory.swift in Sources */,
 				55DB997725FC5318000023AF /* OverlayType.swift in Sources */,
+				5557C0752656F3EA00ED7848 /* SniperriflePickupEntity.swift in Sources */,
 				5507047C2611160A00464F97 /* SuakeMapUpdateDelegate.swift in Sources */,
 				556CB90825FE8385005B7747 /* SuakeMoveComponentExt.swift in Sources */,
 				5592704D262A159E00A04C76 /* RPGRocket.swift in Sources */,
@@ -1966,6 +1997,7 @@
 				5501844D2603EB8B00F28C54 /* SuakeSpriteNodeMultiTextures.swift in Sources */,
 				5513C89B260D244B00633B40 /* DroidState.swift in Sources */,
 				55DB997825FC5318000023AF /* SuakeBaseOverlay.swift in Sources */,
+				5557C06B2656EBD500ED7848 /* ShotgunPickupComponent.swift in Sources */,
 				55D8948A25FACD7100728B83 /* DebugLevel.swift in Sources */,
 				55E9EA612634487B005E3256 /* BasePortalComponent.swift in Sources */,
 				55A2B8F226000FB600E25F7F /* RisingParticlesComponent.swift in Sources */,
@@ -1975,6 +2007,7 @@
 				5501837626016E7900F28C54 /* WeaponArsenalManager.swift in Sources */,
 				55F2AE5E263C6E120042BD38 /* RedeemerCrosshairComponent.swift in Sources */,
 				551F3D3B260BEA7A006D9F65 /* SuakeGameStateHelper.swift in Sources */,
+				5557C0732656F11400ED7848 /* RailgunPickupComponent.swift in Sources */,
 				55C0370E25FA87EE00F419B8 /* GameViewControllerMacOS.swift in Sources */,
 				552417E6260921B4002C90FC /* HUDMsgOnScreenComponent.swift in Sources */,
 				552417E126091EB9002C90FC /* HUDWeaponLblComponent.swift in Sources */,
@@ -1984,6 +2017,7 @@
 				55927049262A13F400A04C76 /* RPGComponent.swift in Sources */,
 				5513C87B260D17CF00633B40 /* DroidStateChasing.swift in Sources */,
 				5542340A2632C3E200EB55F9 /* SoundManagerExt.swift in Sources */,
+				5557C06D2656EF0300ED7848 /* RPGPickupEntity.swift in Sources */,
 				55DB995E25FC4998000023AF /* GameStates.swift in Sources */,
 				5501843A2603E0CF00F28C54 /* MapOverlay.swift in Sources */,
 				55E9EA622634487B005E3256 /* PortalTypes.swift in Sources */,
@@ -2062,6 +2096,7 @@
 				5501845E2604159300F28C54 /* MouseHelper.swift in Sources */,
 				55E9EA532633ED9E005E3256 /* SniperVisionDirection.swift in Sources */,
 				5501834526014DB200F28C54 /* MatchOver.swift in Sources */,
+				5557C0712656F0FA00ED7848 /* RailgunPickupEntity.swift in Sources */,
 				550185052607E0C700F28C54 /* HUDWeaponComponentOLD.swift in Sources */,
 				552417F7260A832C002C90FC /* DbgVars.swift in Sources */,
 				556CB91A25FFD2A5005B7747 /* TimeInterval.swift in Sources */,
@@ -2075,6 +2110,7 @@
 				550184022602A54600F28C54 /* CrosshairEntity.swift in Sources */,
 				5513C871260D169600633B40 /* DroidStateMachine.swift in Sources */,
 				5501841D2602A65D00F28C54 /* NSBezierPath.swift in Sources */,
+				5557C0792656F5CB00ED7848 /* RedeemerPickupEntity.swift in Sources */,
 				55C12267261CFCB6001E8E3F /* LightManager.swift in Sources */,
 				55070491261129D300464F97 /* MatchResultView.swift in Sources */,
 				55DB993825FC0EAF000023AF /* SuakePlayerManager.swift in Sources */,
@@ -2090,6 +2126,7 @@
 				55EC891725FA9D2D0040E676 /* NSImage.swift in Sources */,
 				55A2B8EA26000D4100E25F7F /* SuakeStateMatchOver.swift in Sources */,
 				55C0370625FA866000F419B8 /* BaseGameController.swift in Sources */,
+				5557C06F2656EF2300ED7848 /* RPGPickupComponent.swift in Sources */,
 				559B2BDC260E434A005E669C /* MedKitComponent.swift in Sources */,
 				5501847826052E2400F28C54 /* Double.swift in Sources */,
 				55333EF8264458FD007288C4 /* TVMonitorManager.swift in Sources */,
@@ -2125,6 +2162,7 @@
 				559B2BDE260E434A005E669C /* MedKitEntity.swift in Sources */,
 				55EC890A25FA9A990040E676 /* WallManager.swift in Sources */,
 				55E9EA602634487B005E3256 /* PortalEntity.swift in Sources */,
+				5557C0772656F40D00ED7848 /* SniperriflePickupComponent.swift in Sources */,
 				554233ED2632BDF500EB55F9 /* RailgunBeam.swift in Sources */,
 				55DB995925FC4989000023AF /* SuakeStatePlaying.swift in Sources */,
 				5597916F263C904300B89447 /* ContainerComponent.swift in Sources */,
@@ -2182,10 +2220,12 @@
 				5501844E2603EB8B00F28C54 /* SuakeSpriteNode.swift in Sources */,
 				55D894D525FADCA200728B83 /* SuakeBaseNodeEntity.swift in Sources */,
 				55C1226B261E162C001E8E3F /* SuakeStateGameLoadingMulti.swift in Sources */,
+				5557C0692656EBB200ED7848 /* ShotgunPickupEntity.swift in Sources */,
 				55D894B825FAD7B800728B83 /* SuakeTypes.swift in Sources */,
 				550184312603D87B00F28C54 /* HUDHealthBarOnScreenComponent.swift in Sources */,
 				5513C8A0260D246F00633B40 /* DroidComponentExt.swift in Sources */,
 				556CB92F25FFD771005B7747 /* EntityManager.swift in Sources */,
+				5557C07B2656F5E400ED7848 /* RedeemerPickupComponent.swift in Sources */,
 				55760E3C25FD2C7C00C10784 /* GSAudio.swift in Sources */,
 				554233DE2632168600EB55F9 /* ShotgunComponent.swift in Sources */,
 				55760E3725FD2C3800C10784 /* SoundType.swift in Sources */,
