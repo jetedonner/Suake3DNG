@@ -105,7 +105,7 @@ class SuakeKeyboardHandler: KeyboardHandler {
                     self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: SkyboxType.getDbgSkyBox())
                 }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.option)){
                     self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: SkyboxType.randomQuake())
-                    self.game.levelManager.currentLevel.floorHelper.setFloor(imageName: self.game.levelManager.currentLevel.skyBoxHelper.getFloor4QuakeSkybox())
+                    self.game.levelManager.currentLevel.floorHelper.setFloor(imageName: self.game.levelManager.currentLevel.skyBoxHelper.getFloor4QuakeSkybox(dbgFloor: true))
                 }else{
                     self.game.levelManager.currentLevel.skyBoxHelper.setSkybox(type: .RandomSkyBox)
                 }

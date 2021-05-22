@@ -28,11 +28,12 @@ class SkyBoxHelper: SuakeGameClass {
         }else{
             self.skyboxType = type
             self.game.scene.background.contents = SkyboxType.getSkybox(type: type)
+            self.game.showDbgMsg(dbgMsg: "Setting skybox: \(type.toString())")
 //            self.game.scene.background.contentsTransform = SCNMatrix4Make Translation(0, 3800, 0)
         }
     }
     
-    func getFloor4QuakeSkybox()->String{
-        return SkyboxType.getFloor4QuakeSkybox(type: self.skyboxType)
+    func getFloor4QuakeSkybox(dbgFloor:Bool = false)->String{
+        return SkyboxType.getFloor4QuakeSkybox(type: self.skyboxType, dbgFloor: dbgFloor)
     }
 }

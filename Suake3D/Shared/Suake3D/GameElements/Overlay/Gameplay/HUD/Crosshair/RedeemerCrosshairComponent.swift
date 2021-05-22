@@ -24,6 +24,17 @@ class RedeemerCrosshairComponent: BaseCrosshairComponent {
     let lastPieAnimateDelay:TimeInterval = 0.15
     let pieAnimateDistance:CGFloat = 5.0
     
+//    override var unavailable:Bool{
+//        get{ return super.unavailable }
+//        set{
+//            super.unavailable = newValue
+//            self.arcNode.strokeColor = self.currentColor
+//            for strokeNode in self.strokeNodes{
+//                strokeNode.strokeColor = self.currentColor
+//            }
+//        }
+//    }
+    
     override var isHidden:Bool{
         get{ return self.node.isHidden }
         set{

@@ -19,13 +19,10 @@ class UserDefaultsHelper:SuakeGameClass{
     
     var dbgLogColor:NSColor = .white
     
-    /// MULTIPLAYER
+    // MULTIPLAYER
     var dbgMultiplayer:Bool = true
     var multiHumanPlayer2Control:String = "NONE"
     
-    
-    
-//    var dbgMultiplayerMode:Bool = true
     var soundEffects:Bool = true
     var matchDuration:MatchDuration = .Minute_1
     var levelSize:LevelSize = .Small
@@ -35,8 +32,6 @@ class UserDefaultsHelper:SuakeGameClass{
     var showWindrose:Bool = true
     var showTVMonitors:Bool = true
     
-    
-    
     var volume:CGFloat = 0.5
     
     var showCountdown:Bool = true
@@ -45,25 +40,19 @@ class UserDefaultsHelper:SuakeGameClass{
     var obstacleCount:Int = 5
     
     var loadPortals:Bool = true
+    var quakeSkyboxes:Bool = true
+    var randomQuakeSkyboxAndFloor:Bool = true
     
     var loadOpp:Bool = false
     var testOppAI:Bool = false
     
-    
     var loadDroids:Bool = false
     var droidCount:Int = 1
-    
-    
-    
     
     var droidsAttackOwn:Bool = false
     var droidsAttackOpp:Bool = false
     var droidsChaseDist:CGFloat = 5.0
     var droidsAttackDist:CGFloat = 2.0
-    
-    
-    
-    
     
     override init(game: GameController) {
         super.init(game: game)
@@ -79,7 +68,6 @@ class UserDefaultsHelper:SuakeGameClass{
             "ShowDbgLog": false,
             "DbgMultiplayer": false,
             "MultiHumanPlayer2Control": "Player 1",
-//            "DbgLogColor": NSKeyedArchiver.archivedData(withRootObject: NSColor.suake3DRed),
             
             "MatchDuration": MatchDuration.Minute_1.rawValue,
             "GameboardSize": LevelSize.Small.rawValue,
@@ -89,14 +77,14 @@ class UserDefaultsHelper:SuakeGameClass{
             "ShowWindrose": SuakeVars.showWindrose,
             "ShowTVMonitors": SuakeVars.showTVMonitors,
             
-            
             "Volume": SuakeVars.volume,
             "LoadWeaponPickups": SuakeVars.loadWeaponPickups,
             "LoadObstacles": SuakeVars.loadObstacles,
             "ObstacleCount": SuakeVars.obstacleCount,
             
-            
             "LoadPortals": SuakeVars.loadPortals,
+            "QuakeSkyboxes": SuakeVars.quakeSkyboxes,
+            "RandomQuakeSkyboxAndFloor": SuakeVars.randomQuakeSkyboxAndFloor,
             
             "LoadOpp": SuakeVars.loadOpp,
             "TestOppAI": SuakeVars.testOppAI,
@@ -118,12 +106,13 @@ class UserDefaultsHelper:SuakeGameClass{
         self.dbgMultiplayer = self.defaults.bool(forKey: "DbgMultiplayer")
         self.multiHumanPlayer2Control = self.defaults.string(forKey: "MultiHumanPlayer2Control")!
         
-        
         self.soundEffects = self.defaults.bool(forKey: "SoundEffects")
         self.loadWeaponPickups = self.defaults.bool(forKey: "LoadWeaponPickups")
         self.loadObstacles = self.defaults.bool(forKey: "LoadObstacles")
         self.obstacleCount = self.defaults.integer(forKey: "ObstacleCount")
         self.loadPortals = self.defaults.bool(forKey: "LoadPortals")
+        self.quakeSkyboxes = self.defaults.bool(forKey: "QuakeSkyboxes")
+        self.randomQuakeSkyboxAndFloor = self.defaults.bool(forKey: "RandomQuakeSkyboxAndFloor")
         
         self.loadOpp = true //self.defaults.bool(forKey: "LoadOpp")
         self.testOppAI = self.defaults.bool(forKey: "TestOppAI")
@@ -144,7 +133,6 @@ class UserDefaultsHelper:SuakeGameClass{
         self.showWindrose = self.defaults.bool(forKey: "ShowWindrose")
         self.showTVMonitors = self.defaults.bool(forKey: "ShowTVMonitors")
         
-        
         self.volume = CGFloat(self.defaults.float(forKey: "Volume"))
     }
 
@@ -156,17 +144,15 @@ class UserDefaultsHelper:SuakeGameClass{
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadObstacles = self.loadObstacles
         self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount = self.obstacleCount
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadPortals = self.loadPortals
-        
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.quakeSkyboxes = self.quakeSkyboxes
+        self.game.levelManager.currentLevel.levelConfig.levelSetup.randomQuakeSkyboxAndFloor = self.randomQuakeSkyboxAndFloor
         
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadAISuake = self.loadOpp
-//        self.game.levelManager.currentLevel.levelConfig.testOppSuakeAI = self.testOppAI
         self.game.levelManager.currentLevel.levelConfig.levelSetup.loadDroids = self.loadDroids
         self.game.levelManager.currentLevel.levelConfig.levelSetup.droidsAttackOwn = self.droidsAttackOwn
         self.game.levelManager.currentLevel.levelConfig.levelSetup.droidsAttackOpp = self.droidsAttackOpp
         
         self.game.levelManager.currentLevel.levelConfig.levelSetup.showCountdown = self.showCountdown
-        
-        
         
         self.game.levelManager.currentLevel.levelConfigEnv.showTVMonitors = self.showTVMonitors
         self.game.levelManager.currentLevel.levelConfigEnv.lightIntensity = self.lightIntensity
@@ -175,7 +161,7 @@ class UserDefaultsHelper:SuakeGameClass{
         self.game.overlayManager.hud.overlayScene!.arrows.showArrows = (self.showArrows ? .DIR : .NONE)
         self.game.overlayManager.hud.overlayScene!.showWindroseOrArrows(showWindrose: self.showWindrose)
         self.game.overlayManager.hud.dbgLogComponent.showDbgLog = self.showDbgLog
-//        ShowDbgLog
+
         self.game.soundManager.volume = self.volume
         GSAudio.sharedInstance.volume = self.volume
     }

@@ -12,7 +12,8 @@ import GameplayKit
 import NetTestFW
 
 class SuakeBaseLevel: SuakeGameClass {
-    
+     
+    var levelLoaded:Bool = false
     let levelConfig:LevelConfiguration
     var levelConfigEnv:LevelEnvironment
     let weaponPickUps:WeaponPickupEntityManager
@@ -33,8 +34,18 @@ class SuakeBaseLevel: SuakeGameClass {
     }
     
     func loadLevel(){
+//        if(self.levelLoaded){
+            self.weaponPickUps.removeAllWeaponPickupEntities()
+//        }
+//            self.weaponPickUps.removeWeaponPickupEntities(weaponType: .mg)
+//            self.weaponPickUps.removeWeaponPickupEntities(weaponType: .shotgun)
+//            self.weaponPickUps.removeWeaponPickupEntities(weaponType: .rpg)
+//            self.weaponPickUps.removeWeaponPickupEntities(weaponType: .railgun)
+//            self.weaponPickUps.removeWeaponPickupEntities(weaponType: .sniperrifle)
+//            self.weaponPickUps.removeWeaponPickupEntities(weaponType: .redeemer)
+//        }
+        
         self.loadLevelEnvironment()
-        self.weaponPickUps.removeWeaponPickupEntities(weaponType: .mg)
         if(self.levelConfig.levelSetup.loadWeaponPickups){
             self.weaponPickUps.addWeaponPickupEntities(weaponType: .mg, numberOfWeaponPickups: 1)
             self.weaponPickUps.addWeaponPickupEntities(weaponType: .shotgun, numberOfWeaponPickups: 1)
@@ -48,6 +59,7 @@ class SuakeBaseLevel: SuakeGameClass {
             self.game.tvMonitorManager.initTVMonitors()
             self.game.tvMonitorManager.setTVMonitorImage(tvNoise: true)
         }
+        self.levelLoaded = true
     }
     
     func loadLevelEnvironment(){

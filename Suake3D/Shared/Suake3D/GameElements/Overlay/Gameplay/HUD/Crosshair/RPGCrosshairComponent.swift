@@ -16,9 +16,26 @@ class RPGCrosshairComponent: BaseCrosshairComponent {
     
     var strokeNodes:[SKShapeNode] = [SKShapeNode]()
     var arcNodes:[SKShapeNode] = [SKShapeNode]()
-    var arcNode:SKShapeNode!
+//    var arcNode:SKShapeNode!
 
     var nodeCrosshairCircle:SKShapeNode = SKShapeNode()
+    
+    override var unavailable:Bool{
+        get{ return super.unavailable }
+        set{
+            super.unavailable = newValue
+            self.nodeCrosshairStrokes.strokeColor = self.currentColor
+            self.nodeCrosshairCircle.strokeColor = self.currentColor
+//            self.arcNode.strokeColor = self.currentColor
+            for strokeNode in self.strokeNodes{
+                strokeNode.strokeColor = self.currentColor
+            }
+            for arcNode in self.arcNodes{
+                arcNode.strokeColor = self.currentColor
+            }
+        }
+    }
+    
     
     init(game:GameController) {
         super.init(game: game, weaponType: .rpg)

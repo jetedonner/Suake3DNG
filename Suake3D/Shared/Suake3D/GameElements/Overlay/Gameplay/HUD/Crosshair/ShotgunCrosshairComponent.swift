@@ -16,6 +16,18 @@ class ShotgunCrosshairComponent: BaseCrosshairComponent {
     var nodeCrosshairCircle:SKShapeNode = SKShapeNode()
     var strokeNodes:[SKShapeNode] = [SKShapeNode]()
     
+    override var unavailable:Bool{
+        get{ return super.unavailable }
+        set{
+            super.unavailable = newValue
+            self.nodeCrosshairCenterCircle.strokeColor = self.currentColor
+            self.nodeCrosshairCircle.strokeColor = self.currentColor
+            for strokeNode in self.strokeNodes{
+                strokeNode.strokeColor = self.currentColor
+            }
+        }
+    }
+    
     init(game:GameController) {
         super.init(game: game, weaponType: .shotgun)
         self.animTime = 0.12

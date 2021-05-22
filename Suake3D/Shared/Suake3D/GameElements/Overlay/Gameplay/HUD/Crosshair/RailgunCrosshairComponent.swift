@@ -22,6 +22,23 @@ class RailgunCrosshairComponent: BaseCrosshairComponent {
     let lastPieAnimateDelay:TimeInterval = 0.15
     let pieAnimateDistance:CGFloat = 5.0
     
+    override var unavailable:Bool{
+        get{ return super.unavailable }
+        set{
+            super.unavailable = newValue
+            self.nodeCrosshairStrokes.strokeColor = self.currentColor
+            self.nodeCrosshairPies.strokeColor = self.currentColor
+            self.nodeCrosshairCircle.strokeColor = self.currentColor
+            for strokeNode in self.strokeNodes{
+                strokeNode.strokeColor = self.currentColor
+            }
+            for pieNode in self.pieNodes{
+                pieNode.strokeColor = self.currentColor
+            }
+        }
+    }
+    
+    
     init(game:GameController) {
         super.init(game: game, weaponType: .railgun)
         self.animTime = 0.07

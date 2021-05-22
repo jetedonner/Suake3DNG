@@ -173,12 +173,80 @@ class WeaponPickupEntityManager:EntityManager{
         }
     }
     
-    func removeWeaponPickupEntities(weaponType:WeaponType){
+    func removeAllWeaponPickupEntities(){
+        
+        
+        // Machinegun
         for mgPickupEntity in self.mgPickupEntities{
             mgPickupEntity.weaponPickupComponent.node.removeFromParentNode()
+            mgPickupEntity.pickupParticleComponent.node.removeFromParentNode()
         }
         self.mgPickupEntities.removeAll()
+        
+        
+        // Shotgun
+        for shotgunPickupEntity in self.shotgunPickupEntities{
+            shotgunPickupEntity.weaponPickupComponent.node.removeFromParentNode()
+            shotgunPickupEntity.pickupParticleComponent.node.removeFromParentNode()
+        }
+        self.shotgunPickupEntities.removeAll()
+        
+        
+        // Rocketlauncher
+        for rpgPickupEntity in self.rpgPickupEntities{
+            rpgPickupEntity.weaponPickupComponent.node.removeFromParentNode()
+            rpgPickupEntity.pickupParticleComponent.node.removeFromParentNode()
+        }
+        self.rpgPickupEntities.removeAll()
+        
+        
+        // Railgun
+        for railgunPickupEntity in self.railgunPickupEntities{
+            railgunPickupEntity.weaponPickupComponent.node.removeFromParentNode()
+            railgunPickupEntity.pickupParticleComponent.node.removeFromParentNode()
+        }
+        self.railgunPickupEntities.removeAll()
+        
+        
+        // Sinperrifle
+        for sniperriflePickupEntity in self.sniperriflePickupEntities{
+            sniperriflePickupEntity.weaponPickupComponent.node.removeFromParentNode()
+            sniperriflePickupEntity.pickupParticleComponent.node.removeFromParentNode()
+        }
+        self.sniperriflePickupEntities.removeAll()
+        
+        
+        // Redeemer
+        for redeemerPickupEntity in self.redeemerPickupEntities{
+            redeemerPickupEntity.weaponPickupComponent.node.removeFromParentNode()
+            redeemerPickupEntity.pickupParticleComponent.node.removeFromParentNode()
+        }
+        self.redeemerPickupEntities.removeAll()
+        
+        for pickupEntities in self.allPickupEntities{
+            for pickupEntity in pickupEntities{
+                pickupEntity.weaponPickupComponent.node.removeFromParentNode()
+                pickupEntity.pickupParticleComponent.node.removeFromParentNode()
+            }
+        }
+        self.allPickupEntities.removeAll()
     }
+    
+//    func removeWeaponPickupEntities(weaponType:WeaponType){
+//        for mgPickupEntity in self.mgPickupEntities{
+//            mgPickupEntity.weaponPickupComponent.node.removeFromParentNode()
+//        }
+//        self.mgPickupEntities.removeAll()
+//
+////        for pickupEntities in self.allPickupEntities{
+////            for pickupEntity in pickupEntities{
+////                if(pickupEntity.weaponType == weaponType){
+////                    pickupEntity.weaponPickupComponent.node.removeFromParentNode()
+////                }
+////                pickupEntities.removeAll()
+////            }
+////        }
+//    }
     
     func getNewWeaponPickupEntity(weaponType:WeaponType, id:Int = 0)->BaseWeaponPickupEntity{
         var entityRet:BaseWeaponPickupEntity!

@@ -26,6 +26,10 @@ class SuakeVars{
     static let loadObstacles:Bool = true
     static let obstacleCount:Int = 5
     static let loadPortals:Bool = true
+    static let quakeSkyboxes:Bool = true
+    static let randomQuakeSkyboxAndFloor:Bool = true
+    
+    
     
     static let mapPortalConnectionColor = NSColor(calibratedRed: 0.211, green: 0.839, blue: 0.831, alpha: 1.0)
     static let mapPortalConnectionGlowWidth:CGFloat = 6.0
