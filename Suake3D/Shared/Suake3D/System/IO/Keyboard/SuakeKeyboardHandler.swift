@@ -55,7 +55,11 @@ class SuakeKeyboardHandler: KeyboardHandler {
                     }
             }else if(pressedKey == .KEY_SPACE){
                 if(self.game.stateMachine.currentState is SuakeStatePlaying || self.game.stateMachine.currentState is SuakeStateReadyToPlay){
-                    self.game.playerEntityManager.ownPlayerEntity.shoot()
+                    if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+                        self.game.playerEntityManager.ownPlayerEntity.autoAimAndShootOwnAt(entity: self.game.playerEntityManager.goodyEntity)
+                    }else{
+                        self.game.playerEntityManager.ownPlayerEntity.shoot()
+                    }
                 }
             }else if(pressedKey == .KEY_ESC){
                 if(self.game.stateMachine.currentState is SuakeStateReadyToPlay ||

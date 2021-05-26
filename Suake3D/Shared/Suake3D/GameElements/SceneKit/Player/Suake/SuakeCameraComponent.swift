@@ -313,9 +313,9 @@ class SuakeCameraComponent: SuakeBaseComponent {
                 yReset = 0.0
             }
             
-            self.cameraNodeFP.runAction(SCNAction.rotateTo(x: 0, y: yReset, z: 0, duration: duration, usesShortestUnitArc: true), completionHandler: {
-                
-            })
+//            self.cameraNodeFP.runAction(SCNAction.rotateTo(x: 0, y: self.game.panCameraHelper._cameraNodeFPEuler /*yReset*/, z: 0, duration: duration, usesShortestUnitArc: true), completionHandler: {
+//                
+//            })
             SCNTransaction.begin()
             SCNTransaction.animationDuration = duration
             SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)

@@ -459,9 +459,9 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
             
             self.strokeNodesLeft.append(self.strokeNodes.last!)
             
-            self.strokeNodesCenter.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - 10, y: self.centerPoint.y), to: CGPoint(x: self.centerPoint.x + 10, y: self.centerPoint.y))))
+            self.strokeNodesCenter.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - 10, y: self.centerPoint.y), to: CGPoint(x: self.centerPoint.x + 10, y: self.centerPoint.y)), lineWidth: 3.0))
             
-            self.strokeNodesCenter.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y + 10), to: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y - 10))))
+            self.strokeNodesCenter.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y + 10), to: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y - 10)), lineWidth: 3.0))
             
             self.strokeNodesCenter[0].strokeColor = .green
             self.strokeNodesCenter[0].zPosition = 10000
@@ -473,7 +473,7 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
         
         var idx:Int = 0
         for stroke in self.strokeNodes{
-            stroke.lineWidth = 2.0
+            stroke.lineWidth = 1.0
 //            if(idx > 1){
 //                //stroke.strokeColor = .darkGray
 //            }

@@ -111,7 +111,7 @@ class TVMonitorManager: EntityManager {
             self.tvScreenSphereMat.diffuse.contents = image
 //            self.tvScreenMat.lightingModel = .constant
 //            self.tvScreenMat.shininess = 0.1
-            DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.01, execute: {
+            DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.024, execute: {
                 self.setTVMonitorImage(tvNoise: self.showNoise)
     //            })
             })

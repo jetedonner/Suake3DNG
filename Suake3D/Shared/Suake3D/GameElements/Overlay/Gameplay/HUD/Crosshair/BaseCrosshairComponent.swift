@@ -84,10 +84,10 @@ class BaseCrosshairComponent: BaseExtHUDComponent {
         return path
     }
     
-    func createShapeFromPath(path:CGMutablePath)->SKShapeNode{
+    func createShapeFromPath(path:CGMutablePath, lineWidth:CGFloat = 1.0)->SKShapeNode{
         let shapeNode = SKShapeNode()
         shapeNode.isAntialiased = false
-        shapeNode.lineWidth = 1.0
+        shapeNode.lineWidth = lineWidth
         shapeNode.path = path
         shapeNode.strokeColor = self.currentColor
         self.nodeCrosshairShapes.addChild(shapeNode)

@@ -27,7 +27,7 @@ class SuakeBaseLevel: SuakeGameClass {
         self.levelConfigEnv = levelConfigEnv
         self.weaponPickUps = WeaponPickupEntityManager(game: game)
         
-        self.skyBoxHelper = SkyBoxHelper(game: game, skyboxType: .PinkSunrise)
+        self.skyBoxHelper = SkyBoxHelper(game: game, skyboxType: SkyboxType.randomQuake())
         self.floorHelper = FloorHelper(game: game, floorType: .Debug)
         
         super.init(game: game)

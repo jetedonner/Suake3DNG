@@ -16,7 +16,8 @@ class DebugLevel: SuakeBaseLevel {
     init(game: GameController) {
         
         let levelConfig:LevelConfiguration = LevelConfiguration()
-        let levelConfigEnv:LevelEnvironment = LevelEnvironment(levelSize: .Small, floorType: .Debug, skyBoxType: .RedGalaxy, matchDuration: .Minute_1, levelDifficulty: .Easy, lightIntensity: .normal)
+        let skyBox:SkyboxType = SkyboxType.randomQuake()
+        let levelConfigEnv:LevelEnvironment = LevelEnvironment(levelSize: .Small, floorType: .Debug, skyBoxType: skyBox/* .RedGalaxy*/, matchDuration: .Minute_1, levelDifficulty: .Easy, lightIntensity: .normal)
         
         super.init(game: game, levelConfig: levelConfig, levelConfigEnv: levelConfigEnv)
     }

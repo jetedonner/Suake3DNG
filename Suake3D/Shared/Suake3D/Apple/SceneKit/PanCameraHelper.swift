@@ -16,6 +16,8 @@ class PanCameraHelper: SuakeGameClass {
     var diffX:Float = 0.0
     var diffY:Float = 0.0
     
+    var _cameraNodeFPEuler:CGFloat = 0.0
+    
     var _cameraNodeFPDegrees:Double = 180.0
     var cameraNodeFPDegrees:Double{
         get {
@@ -60,6 +62,7 @@ class PanCameraHelper: SuakeGameClass {
                 viewNode!.runAction(SCNAction.rotateBy(x: 0/*rotX*/, y: rotY, z: 0, duration: 0.0), completionHandler: {
 //                    self.game.overlayManager.hud.overlayScene.windrose.windRose.zRotation = viewNode!.eulerAngles.y
                     self.game.overlayManager.hud.overlayScene.windrose.updateArrowGoodyPos()
+                    self._cameraNodeFPEuler = viewNode!.eulerAngles.y
                     let degrees = viewNode!.eulerAngles.y * CGFloat(180 / Double.pi)
                     
 //                    print("Rotate view by: \(rotY), to: \(viewNode!.eulerAngles.y) (Deg: \(degrees)")

@@ -106,6 +106,7 @@ class BasePortalComponent: SuakeBaseLocationComponent {
 //            }
             entity2Port.pos = self.pos
             entity2Port.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: -1)
+            entity2Port.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, beamed: true)
             self.game.overlayManager.hud.overlayScene.map.reposNode(playerNode: self.game.overlayManager.hud.overlayScene.map.suakeOwnNode, pos: self.pos, duration: 0.0)
             self.isBeaming = false
             //self.game.showDbgMsg(dbgMsg: String(format: "SuakePlayer: Bullet (%@) beamed", node2Port.name!))

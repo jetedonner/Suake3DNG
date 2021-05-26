@@ -136,6 +136,18 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
             self.playerComponent.mainNode.runAction(SCNAction.wait(duration: waitTime), completionHandler: {
                 self.shoot(at: tmpPos) // (entity as! GoodyEntity).goodyComponent.node.position)
             })
+        }else if(entity.playerType == .Goody){
+            tmpPos = (entity as! GoodyEntity).goodyComponent.node.position
+            tmpPos.y = self.game.cameraHelper.cameraNodeFP.position.y
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = aimDur
+            SCNTransaction.completionBlock = {
+                self.playerComponent.mainNode.runAction(SCNAction.wait(duration: waitTime), completionHandler: {
+                    self.shoot(at: tmpPos) // (entity as! GoodyEntity).goodyComponent.node.position)
+                })
+            }
+            self.game.cameraHelper.cameraNodeFP.look(at: tmpPos)
+            SCNTransaction.commit()
         }
     }
     
