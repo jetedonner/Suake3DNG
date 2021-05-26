@@ -117,7 +117,7 @@ class SuakePlayerNodeComponent: SuakeBaseSCNNodeComponent {
             self.playerEntity.dirOld = self.playerEntity.dir
             self.playerEntity.dir = newDir!
         }
-        if(self.suakePart == .leftToStraight || self.suakePart == .rightToStraight){
+        if(self.suakePart == .leftToStraight || self.suakePart == .rightToStraight/* || self.suakePart == .leftToLeft*/){
             
             SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.playerComponent.mainNode, dir: self.playerEntity.dir)
         }

@@ -45,6 +45,9 @@ class SuakePlayerManager: SuakeGameClass {
     }
     
     func initPlayers(){
+        self.goodyEntity = GoodyEntity(game: self.game)
+        self.goodyEntity.goodyComponent.initSetupPos()
+        
         self.ownPlayerEntity = SuakeOwnPlayerEntity(game: self.game)
         if(self.game.levelManager.currentLevel.levelConfig.levelSetup.loadAISuake){
             self.oppPlayerEntity = SuakeOppPlayerEntity(game: self.game)
@@ -52,8 +55,7 @@ class SuakePlayerManager: SuakeGameClass {
         
         self.userPlayerSuake = self.ownPlayerEntity
         
-        self.goodyEntity = GoodyEntity(game: self.game)
-        self.goodyEntity.goodyComponent.initSetupPos()
+        
         
         if(self.game.usrDefHlpr.loadDroids){
             let droid:DroidEntity = DroidEntity(game: self.game, id: 0)

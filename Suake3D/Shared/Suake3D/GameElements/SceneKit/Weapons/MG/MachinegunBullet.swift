@@ -36,7 +36,7 @@ class MachinegunBullet: BulletBase {
         
         let box = SCNBox(width: self.rescale, height: self.rescale, length: self.rescale, chamferRadius: 0)
         
-        self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.mgbullet, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.portal, CollisionCategory.wall, CollisionCategory.floor, CollisionCategory.container, CollisionCategory.generator])
+        self.setupPhysics(geometry: box, type: .dynamic, categoryBitMask: CollisionCategory.mgbullet, catBitMasks: [CollisionCategory.suake, CollisionCategory.suakeOpp, CollisionCategory.goody, CollisionCategory.droid, CollisionCategory.medKit, CollisionCategory.portal, CollisionCategory.wall, CollisionCategory.floor, CollisionCategory.container, CollisionCategory.generator, CollisionCategory.well])
         
     }
     

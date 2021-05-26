@@ -75,9 +75,9 @@ class PanCameraHelper: SuakeGameClass {
                     }
                     self.cameraNodeFPDegrees = deg
                     
-//                    if(self.game.overlayManager.hud.hudEntity.crosshairEntity.currentWeaponType == .sniperrifle){
-//                        self.game.overlayManager.hud.hudEntity.crosshairEntity.sniperrifleCrosshairComponent.setAngelLbl(angel: CGFloat(deg))
-//                    }
+                    if(self.game.overlayManager.hud.overlayScene.crosshairEntity.currentWeaponType == .sniperrifle){
+                        self.game.overlayManager.hud.overlayScene.crosshairEntity.sniperrifleCrosshairComponent.setAngelLbl(angel: CGFloat(deg))
+                    }
                 })
 //            }
         }
@@ -86,16 +86,25 @@ class PanCameraHelper: SuakeGameClass {
     @discardableResult
     public func checkAimedAtAll(overrideCheckIsAimed:Bool = false)->Bool{
         var bRet:Bool = false
-        var centerPnt:CGPoint = CGPoint(x: (self.game.gameWindowSize.width / 2), y: (self.game.gameWindowSize.height / 2))
-        centerPnt.y -= 10.0
-        
-        let hitTestCategoryBitMask:CollisionCategory = self.getHitTestCatBitMask()
-        
-        let options = [SCNHitTestOption.backFaceCulling: false, SCNHitTestOption.firstFoundOnly: false, SCNHitTestOption.ignoreHiddenNodes: false, SCNHitTestOption.clipToZRange: false, SCNHitTestOption.categoryBitMask: hitTestCategoryBitMask.rawValue as Any]
+        if(self.game.overlayManager.hud.overlayScene.crosshairEntity.currentCrosshairComponent.weaponType == .sniperrifle){
+//            for res in results{
+            bRet = self.game.overlayManager.hud.overlayScene.crosshairEntity.sniperrifleCrosshairComponent.checkAimedAtPoint(point: self.game.playerEntityManager.goodyEntity.position)
+            var tmpO = -1
+            tmpO /= -1
+//            }
+        }else{
+            var centerPnt:CGPoint = CGPoint(x: (self.game.gameWindowSize.width / 2), y: (self.game.gameWindowSize.height / 2))
+            centerPnt.y -= 10.0
+            
+            let hitTestCategoryBitMask:CollisionCategory = self.getHitTestCatBitMask()
+            
+            let options = [SCNHitTestOption.backFaceCulling: false, SCNHitTestOption.firstFoundOnly: false, SCNHitTestOption.ignoreHiddenNodes: false, SCNHitTestOption.clipToZRange: false, SCNHitTestOption.categoryBitMask: hitTestCategoryBitMask.rawValue as Any]
 
-        let results = self.game.scnView.hitTest(centerPnt, options: options)
-        bRet = (results.count > 0)
-        self.animation4AimedAtPoint(isAimedAtSomething: bRet)
+            let results = self.game.scnView.hitTest(centerPnt, options: options)
+            bRet = (results.count > 0)
+        
+            self.animation4AimedAtPoint(isAimedAtSomething: bRet)
+        }
         return bRet
     }
     

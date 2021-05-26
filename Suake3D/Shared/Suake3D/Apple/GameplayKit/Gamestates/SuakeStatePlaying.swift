@@ -29,7 +29,8 @@ class SuakeStatePlaying: SuakeBaseState {
 //            self.game.playerEntityManager.ownPlayerEntity.suakePlayerComponent.startAnimationTMP()
 //            self.game.playerEntityManager.ownPlayerEntity.moveComponent.update(deltaTime: 1.0)
             if(self.game.usrDefHlpr.testOppAI){
-                self.game.playerEntityManager.oppPlayerEntity.moveComponent.nextMove(deltaTime: 0.0)
+//                self.game.playerEntityManager.oppPlayerEntity.moveComponent.nextMove(deltaTime: 0.0)
+                self.game.playerEntityManager.oppPlayerEntity.moveComponent.nextMoveOpp(deltaTime: 0.0)
             }else{
                 self.game.soundManager.playSoundQuake(soundType: .play)
                 self.game.overlayManager.hud.msgComponent.showMsgFadeAndScale2Big(msg: "PLAY!")

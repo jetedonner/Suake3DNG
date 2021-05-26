@@ -42,7 +42,7 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
         self.outerDist = 345.0
         self.innerDist = self.outerDist / 2
         self.imgBG = SKSpriteNode(texture: SKTexture(imageNamed: self.bgImgFile))
-        
+//        self.setZoomLbl(zoomFactor: 1.0)
         self.aimedAtPointDistX = 90
     }
     
@@ -69,6 +69,10 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
     func getDistOfChCenterToPointX(point:SCNVector3)->CGFloat{
         var dist2Point:CGFloat = 0.0
         let tmpPoint = self.game.scnView.projectPoint(point)
+        if(tmpPoint.z < 0.5){
+            self.colorStrokeNodes(greenIdx: -1, dist: 161)
+            return 0.0
+        }
         dist2Point = tmpPoint.x - (self.game.gameWindowSize.width / 2)
 //        print("dist2Point: " + dist2Point.description)
         
@@ -330,7 +334,7 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
     let lblDist:CGFloat = 7.0
     let minZoom:CGFloat = 1.0
     let maxZoom:CGFloat = 9.9999999
-    var zoomFactor:CGFloat = 0.0
+    var zoomFactor:CGFloat = 1.0
     
     func addArcPart(startAngle:CGFloat, endAngle:CGFloat)->SKEffectNode{
         
@@ -388,7 +392,7 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
     }
     
     func drawLabels(){
-        self.setZoomLbl(zoomFactor: 0.0)
+        self.setZoomLbl(zoomFactor: self.minZoom)
         self.lblZoom.position.x += self.outerDist - (self.lblZoom.frame.width / 2) - self.lblDist
         self.lblZoom.position.y += self.lblDist
         self.nodeContainer.addChild(self.lblZoom)
@@ -475,15 +479,15 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
 //            }
             idx += 1
         }
-        self.addOUterShape(angle: 45)
-        self.addOUterShape(angle: 135)
-        self.addOUterShape(angle: 225)
-        self.addOUterShape(angle: 315)
+        self.addOuterShape(angle: 45)
+        self.addOuterShape(angle: 135)
+        self.addOuterShape(angle: 225)
+        self.addOuterShape(angle: 315)
         
         self.nodeContainer.addChild(self.nodeCrosshairShapes)
     }
     
-    func addOUterShape(angle:CGFloat){
+    func addOuterShape(angle:CGFloat){
         let start:CGPoint = CGPoint(x: sin(angle/180*CGFloat.pi) * (outerDist / 2), y: cos(angle/180*CGFloat.pi) * (outerDist / 2))
         let end:CGPoint = CGPoint(x: sin(angle/180*CGFloat.pi) * (outerDist), y: cos(angle/180*CGFloat.pi) * (outerDist))
         let new:NSBezierPath = NSBezierPath()

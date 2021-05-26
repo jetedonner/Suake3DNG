@@ -61,5 +61,17 @@ class LevelManager: SuakeGameClass {
         self.loadLevel(initialLoad: true)
         
     }
+    
+    func checkSuakePos(pos:SCNVector3)->Bool{
+        if(pos.x >= (self.currentLevel.levelConfigEnv.levelSize.getNSSize().width / 2) ||
+            pos.x < (self.currentLevel.levelConfigEnv.levelSize.getNSSize().width / -2) ||
+            pos.z >= (self.currentLevel.levelConfigEnv.levelSize.getNSSize().height / 2) ||
+            pos.z < (self.currentLevel.levelConfigEnv.levelSize.getNSSize().height / -2)){
+        
+            self.game.showDbgMsg(dbgMsg: SuakeMsgs.suakeWallHit, dbgLevel: .InfoOnlyConsole)
+            return false
+        }
+        return true
+    }
 }
 

@@ -45,18 +45,12 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var gridGraphManager:GridGraphManager!
     var gameCenterHelper:GameCenterHelper!
     
-//    var rndrr:SCNRenderer!// = SCNRenderer()
-    
     func startMatch(match: GKMatch) {
         self.gameCenterHelper.matchMakerHelper.setMatch(match: match)
         self.stateMachine.enter(stateClass: SuakeStateGameLoadingMulti.self)
     }
     
-//    var tvMonEnt:[TVMonitorEntity] = [TVMonitorEntity]()
     var tvMonitorManager:TVMonitorManager!
-    
-    // EAGLContext in the sharegroup with GPUImage
-//    var eaglContext: EAGLContext!
     
     override init(scnView: SCNView) {
         super.init(scnView: scnView)
@@ -85,6 +79,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         self.gridGraphManager = GridGraphManager(game: self)
         
         self.usrDefHlpr.resetUserDefaults2Game()
+        
 //        SCNRenderer
 //        guard let mtlDevice = MTLCreateSystemDefaultDevice() else {
 //            print("Error creating mtl device")
@@ -130,7 +125,9 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             self.locationEntityManager.initLocations()
             self.locationEntityManager.addLocationGroupsToScene()
             
-            self.locationEntityManager.addPortalEntities(numberOfPortals: 3)
+            if(self.levelManager.currentLevel.levelConfig.levelSetup.loadPortals){
+                self.locationEntityManager.addPortalEntities(numberOfPortals: 3)
+            }
             
 //            self.tvMonEnt.append(TVMonitorEntity(game: self, id: 0))
 //            self.tvMonEnt.append(TVMonitorEntity(game: self, id: 1))

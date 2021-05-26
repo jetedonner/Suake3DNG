@@ -58,6 +58,31 @@ class BulletBase: SuakeBaseSCNNode {
         }
         return newBulletNG
     }
+
+    
+    func hitTarget(targetCat:Int, targetNode:SCNNode, contact: SCNPhysicsContact)->Bool{
+        return self.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact, overrideIsTargetHit: false)
+    }
+
+    func hitTarget(targetCat:Int, targetNode:SCNNode, contact: SCNPhysicsContact, overrideIsTargetHit:Bool = false)->Bool{
+        if(!self.isTargetHit){
+            if(!overrideIsTargetHit){
+                self.isTargetHit = true
+            }
+            self.game.physicsHelper.qeueNode2Remove(node: self)
+
+//            self.game.soundManager.playSound(soundType: .riochet1)
+            self.game.soundManager.playBulletHitSound(weaponType: .mg, node: targetNode)
+            // TODO: Change target hit sound to weapon specific sounds
+//            self.game.audioManager.playBulletHitSound(weaponType: .mg, node: targetNode)
+
+            // Suck your Mothers dick you little fuck
+            self.game.showDbgMsg(dbgMsg: "Bullet hit " + (targetCat == CollisionCategory.floor.rawValue ? "floor" : "wall"), dbgLevel: .Verbose)
+            return true
+        }
+        return false
+    }
+    
     
     func hitTarget(targetCat:CollisionCategory, targetNode:SCNNode, contact: SCNPhysicsContact)->Bool{
         return self.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact, overrideIsTargetHit: false)
@@ -75,6 +100,7 @@ class BulletBase: SuakeBaseSCNNode {
             // TODO: Change target hit sound to weapon specific sounds
 //            self.game.audioManager.playBulletHitSound(weaponType: .mg, node: targetNode)
 
+            // Suck your Mothers dick you little fuck
             self.game.showDbgMsg(dbgMsg: "Bullet hit " + (targetCat == CollisionCategory.floor ? "floor" : "wall"), dbgLevel: .Verbose)
             return true
         }

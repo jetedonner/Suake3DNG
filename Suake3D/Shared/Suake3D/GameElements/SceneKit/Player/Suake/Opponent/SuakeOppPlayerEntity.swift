@@ -41,9 +41,9 @@ class SuakeOppPlayerEntity: SuakePlayerEntity {
         self.moveComponent.update(deltaTime: seconds)
     }
     
-    func loadGridGraph(){
+    func loadGridGraph(afterGoodyHit:Bool = false){
         self.opponentAIComponent.loadGridGraph()
-        self.opponentAIComponent.findPath2Entity(entity: self.game.playerEntityManager.goodyEntity)
+        self.opponentAIComponent.findPath2Entity(entity: self.game.playerEntityManager.goodyEntity, afterGoodyHit: afterGoodyHit)
         self.opponentAIComponent.followPathNG()
     }
     
@@ -54,9 +54,11 @@ class SuakeOppPlayerEntity: SuakePlayerEntity {
     }
     
     func resetPlayerEntity(){
-        self.dir = .UP
-        self.dirOld = .UP
+        self.dir = .DOWN
+        self.dirOld = .DOWN
         self.pos = SuakeVars.oppPos
+        self.cameraComponent.moveRotateFPCamera()
+        self.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: 0.0)
         self.moveComponent.resetMoveComponent()
     }
     

@@ -16,7 +16,9 @@ enum LocationType:String{
     case MedKit = "MedKit"
     case Container = "Container"
     case Generator = "Generator"
+    case Well = "Well"
     case MossRock = "MossRock"
+    case Stone2 = "Stone2"
     case TVMonitor = "TVMonitor"
     case TVMonitorSphere = "TVMonitorSphere"
 }

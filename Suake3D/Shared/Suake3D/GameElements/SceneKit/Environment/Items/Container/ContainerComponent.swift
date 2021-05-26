@@ -27,12 +27,13 @@ class ContainerComponent: SuakeBaseLocationComponent {
     }
     
     func initPhysics(){
-        let containerShape1 = SCNPhysicsShape(geometry: self.node.cloneNode.flattenedClone().geometry!, options: [SCNPhysicsShape.Option.scale: self.rescale /* 1.15*/])
+        let containerShape1 = SCNPhysicsShape(geometry: self.node.cloneNode.flattenedClone().geometry!, options: [SCNPhysicsShape.Option.scale: self.rescale /* 1.15*/, SCNPhysicsShape.Option.type: SCNPhysicsShape.ShapeType.boundingBox])
         self.node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: containerShape1)
+//        self.node.physicsBody?.physicsShape =
         self.node.physicsBody?.isAffectedByGravity = true
         self.node.physicsBody?.restitution = 0.0
         self.node.physicsBody?.mass = 60
-        self.node.physicsBody?.centerOfMassOffset = SCNVector3(0.5, -0.5, 0.5)
+          self.node.physicsBody?.centerOfMassOffset = SCNVector3(0.0, 0.5, 0.0)
         self.node.physicsBody?.categoryBitMask = CollisionCategory(category: .container).rawValue
         self.node.physicsBody?.contactTestBitMask = CollisionCategory.getAllBulletCats()
         self.node.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue | CollisionCategory.generator.rawValue | CollisionCategory.floor.rawValue | CollisionCategory.wall.rawValue | CollisionCategory.suake.rawValue | CollisionCategory.getAllBulletCats() | CollisionCategory.rocketBlast.rawValue

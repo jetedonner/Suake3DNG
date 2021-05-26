@@ -17,6 +17,7 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
     let moveComponent:SuakeMoveComponent
     let cameraComponent:SuakeCameraComponent
     let respawnComponent:SuakeRespawnComponent
+//    var pathfinderParticles:PathfinderComponent!
     
     override var pos:SCNVector3{
         get{ return super.pos }
@@ -55,6 +56,9 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
         self.addComponent(self.moveComponent)
         self.addComponent(self.cameraComponent)
         self.addComponent(self.respawnComponent)
+        
+//        self.pathfinderParticles = PathfinderComponent(game: game)
+//        self.addComponent(self.pathfinderParticles)
         
         self.weapons = WeaponArsenalManager(game: game, playerEntity: self)
         self.weapons.initWeaponArsenal(with: WeaponType.init(weaponTypes: [.mg, .shotgun, .rpg, .railgun, .sniperrifle, .redeemer]))

@@ -17,4 +17,6 @@ class SuakeMsgs{
     
     static let gameCenterMsg:String = "GameCenter: "
     
+    static let suakeWallHit:String = "Suake: Wall hit"
+    
 }

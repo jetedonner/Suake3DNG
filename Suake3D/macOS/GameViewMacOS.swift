@@ -166,14 +166,19 @@ class GameViewMacOS: SCNView {
         }
     }
 
-//    override func magnify(with event: NSEvent) {
-//        if let game:GameController = self.viewController?.gameController{
-//            if(game.overlayManager.hud.hudEntity.crosshairEntity.currentWeaponType == .sniperrifle){
-//                if(!game.overlayManager.hud.hudEntity.crosshairEntity.sniperrifleCrosshairComponent.magnify(magnification: event.magnification)){
-//                    return
-//                }
-//            }
-//        }
-//        super.magnify(with: event)
-//    }
+    override func rotate(with event: NSEvent) {
+//        super.rotate(with: event)
+        return
+    }
+    
+    override func magnify(with event: NSEvent) {
+        if let game:GameController = self.viewController?.gameController{
+            if(game.overlayManager.hud.overlayScene.crosshairEntity.currentWeaponType == .sniperrifle){
+                if(!game.overlayManager.hud.overlayScene.crosshairEntity.sniperrifleCrosshairComponent.magnify(magnification: event.magnification)){
+                    return
+                }
+            }
+        }
+        super.magnify(with: event)
+    }
 }

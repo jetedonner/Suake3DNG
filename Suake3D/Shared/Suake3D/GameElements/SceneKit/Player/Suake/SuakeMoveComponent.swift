@@ -12,6 +12,10 @@ import NetTestFW
 
 class SuakeMoveComponent: SuakeBaseComponent {
     
+    //EXT TMP
+    var tmpCnt:Int = 0
+    var oppGoodyHit:Bool = false
+    
     var playerEntity:SuakePlayerEntity{
         get{ return super.entity as! SuakePlayerEntity }
     }
@@ -101,7 +105,7 @@ class SuakeMoveComponent: SuakeBaseComponent {
     
     override func update(deltaTime seconds: TimeInterval) {
         if(self.playerEntity.playerType == .OppSuake){
-            
+            self.playerEntity.moveComponent.nextMoveOpp(deltaTime: seconds)
         }else{
             self.nextMove(deltaTime: seconds)
         }
@@ -161,15 +165,23 @@ class SuakeMoveComponent: SuakeBaseComponent {
     
     func nextMove(newTurnDir:TurnDir = .Straight, deltaTime seconds: TimeInterval = 1.0){
         var newPos:SCNVector3 = self.playerEntity.pos
-        let nextSuakePlayerNodeComponent:SuakePlayerNodeComponent = self.playerEntity.playerComponent.getNextSuakePlayerNodeComponent(turnDir: newTurnDir)
-        let nextDir:SuakeDir = SuakeDirTurnDirHelper.getSuakeDirFromTurnDir(oldSuakeDir: self.playerEntity.dir, turnDir: newTurnDir)
         
-        if(seconds >= 1.0){
+        
+        var daNextTurnDir:TurnDir = newTurnDir
+        if(self.playerEntity.playerType == .OppSuake){
+            daNextTurnDir = (self.playerEntity as! SuakeOppPlayerEntity).turnQueue[0]
+        }
+        
+        let nextSuakePlayerNodeComponent:SuakePlayerNodeComponent = self.playerEntity.playerComponent.getNextSuakePlayerNodeComponent(turnDir: daNextTurnDir) //newTurnDir)
+        let nextDir:SuakeDir = SuakeDirTurnDirHelper.getSuakeDirFromTurnDir(oldSuakeDir: self.playerEntity.dir, turnDir: daNextTurnDir)
+        
+        if(seconds >= 1.0 || self.playerEntity.playerType == .OppSuake){
             newPos = self.nextPos(dir: nextDir, suakePart: nextSuakePlayerNodeComponent.suakePart)
-            
         }
         self.nextPos = newPos
-        self.overNextPos = self.getOverNextPos(daDir: self.playerEntity.dir, suakePart: .straightToStraight, daPos: newPos)
+        self.overNextPos = self.getOverNextPos(daDir: self.playerEntity.dir, suakePart: nextSuakePlayerNodeComponent.suakePart, daPos: newPos)
+        
+        
         
 //        print("Turn - Dir: \(self.playerEntity.dir), Old-Pos: \(self.playerEntity.pos), New-Pos: \(newPos), suakePart: \(nextSuakePlayerNodeComponent.suakePart.rawValue)")
         let nextMoveResult:NextMoveResult = self.checkNextMoveNG(pos: newPos)
@@ -205,11 +217,13 @@ class SuakeMoveComponent: SuakeBaseComponent {
                 (nextMoveResult.fieldEntity as! PortalEntity).beamSuakeNode(suakeEntity: self.playerEntity, portal: 0)
             }
             self.setAndShowSuakePlayerNodeComponent(newSuakePlayerNodeComponent: nextSuakePlayerNodeComponent)
-            self.moveNode(newPos: newPos, seconds: seconds)
+            if(!(seconds == 0 && self.playerEntity.playerType == .OppSuake)){
+                self.moveNode(newPos: newPos, seconds: seconds)
+            }
             if(self.playerEntity.dir != nextDir){
                 self.game.overlayManager.hud.overlayScene.arrows.rotateArrows(duration: 1.0, turnDir: (newTurnDir == .Left ? .Right : .Left))
             }
-            self.playerEntity.playerComponent.currentSuakeComponent.movePlayerNodeComponent(newTurnDir: newTurnDir, newDir: nextDir, deltaTime: seconds)
+            self.playerEntity.playerComponent.currentSuakeComponent.movePlayerNodeComponent(newTurnDir: daNextTurnDir, newDir: nextDir, deltaTime: seconds)
             
             self.playerEntity.dir = nextDir
             

@@ -151,28 +151,46 @@ class ContactHelper: SuakeGameClass, SCNPhysicsContactDelegate {
 //                (contact.nodeA.entity as! DroidEntity).hitByBullet(bullet: (contact.nodeB as! BulletBase))
 //            }
 //        }
-    else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.rock)){
+    
+    
+    // TODO Remove all opponents and droids on death => also unify the hit static environtment Objects and obstacels
+    else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMasks: CollisionCategory.allStaticObstacles)){
         if(contact.nodeB is BulletBase){
-            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .rock, targetNode: contact.nodeA, contact: contact)){
-                
-                //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
-            }
-        }
-    }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.container)){
-        if(contact.nodeB is BulletBase){
-            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .container, targetNode: contact.nodeA, contact: contact)){
-                
-                //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
-            }
-        }
-    }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.generator)){
-        if(contact.nodeB is BulletBase){
-            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .generator, targetNode: contact.nodeA, contact: contact)){
-                
-                //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
+            if((contact.nodeB as! BulletBase).hitTarget(targetCat: (contact.nodeA.physicsBody!.categoryBitMask as Int), targetNode: contact.nodeA, contact: contact)){
+ 
             }
         }
     }
+    
+//    else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.well)){
+//        if(contact.nodeB is BulletBase){
+//            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .well, targetNode: contact.nodeA, contact: contact)){
+//
+//                //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
+//            }
+//        }
+//    }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.rock)){
+//        if(contact.nodeB is BulletBase){
+//            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .rock, targetNode: contact.nodeA, contact: contact)){
+//
+//                //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
+//            }
+//        }
+//    }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.container)){
+//        if(contact.nodeB is BulletBase){
+//            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .container, targetNode: contact.nodeA, contact: contact)){
+//
+//                //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
+//            }
+//        }
+//    }else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeA, catBitMask: CollisionCategory.generator)){
+//        if(contact.nodeB is BulletBase){
+//            if((contact.nodeB as! BulletBase).hitTarget(targetCat: .generator, targetNode: contact.nodeA, contact: contact)){
+//
+//                //(contact.nodeA.entity as! MedKitEntity).medKitCollected(bullet: (contact.nodeB as! BulletBase))
+//            }
+//        }
+//    }
     /*else if(self.checkPhysicsBody4CatBitMask(node: contact.nodeB, catBitMask: CollisionCategory.container)){
         var tmp = 1
         tmp /= -1

@@ -90,7 +90,8 @@ class NukeBlast:BulletBase{
             self.scale = self.blastRescale
             SCNTransaction.commit()
             
-            self.game.soundManager.playSoundPositional(soundType: .nukeExplosion, node: self)
+            self.game.soundManager.playSound(soundType: .nukeExplosion)
+//            self.game.soundManager.playSoundPositional(soundType: .nukeExplosion, node: self)
 //            self.game.mediaManagerPositional.playSoundPositional(soundType: .nuc_explosion, node: blastNode, completionHandler: {
 //                self.game.showDbgMsg(dbgMsg: "Nuke explosion sound finished")
 //            })

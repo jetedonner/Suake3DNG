@@ -76,10 +76,11 @@ class SuakeStateReadyToPlay: SuakeBaseState {
             //self.game.overlayManager.hud.hudEntity.crosshairEntity.redeemerCrosshairComponent.addSublayer(hud: self.game.overlayManager.hud)
         }else{*/
         if(self.game.usrDefHlpr.testOppAI){
-                self.game.cameraHelper.toggleFPVOpp(newFPV: false)
-            }else{
-                self.game.cameraHelper.toggleFPV(newFPV: false)
-            }
+            self.game.cameraHelper.toggleFPVOpp(newFPV: false)
+            self.game.playerEntityManager.oppPlayerEntity.loadGridGraph()
+        }else{
+            self.game.cameraHelper.toggleFPV(newFPV: false)
+        }
         /*}
         
         if(previousState is SuakeStateGameLoading && DbgVars.showTutorialsAtStartup){

@@ -20,6 +20,14 @@ class GridGraphHelper:SuakeGameClass{
         super.init(game: game)
     }
     
+    func removeConnection(from:SCNVector3, to:SCNVector3){
+//        let daNode:GKGridGraphNode? = self.game.gridGraphManager.gridGraphHelper.gridGraph.node(atGridPosition: vector_int2(Int32(from.x), Int32(from.z)))
+        let daNode:GKGridGraphNode? = self.gridGraph.node(atGridPosition: vector_int2(Int32(from.x), Int32(from.z)))
+        if(daNode != nil){
+            self.gridGraph.node(atGridPosition: vector_int2(Int32(to.x), Int32(to.z)))?.removeConnections(to: [daNode!], bidirectional: true)
+        }
+    }
+    
     func loadGridGraph(removeOwn:Bool = true){
         var nodes = [SuakeGridGraphNode]()
         
@@ -52,8 +60,9 @@ class GridGraphHelper:SuakeGameClass{
     let maxLoop:Int = 2000
     var route = [SuakeGridGraphNode]()
     
-    func findPathTo(entity:SuakeBasePlayerEntity)->[SuakeGridGraphNode]{
-        self.findPathFromTo(posFrom: self.playerEntity.pos, posTo: entity.pos)
+    func findPathTo(entity:SuakeBasePlayerEntity, afterGoodyHit:Bool = false)->[SuakeGridGraphNode]{
+        self.findPathFromTo(posFrom: (afterGoodyHit ? (self.playerEntity as! SuakeOppPlayerEntity).moveComponent.overNextPos : self.playerEntity.pos), posTo: entity.pos)
+        
     }
     
     func findPathFromTo(posFrom:SCNVector3, posTo:SCNVector3, doNotRemoveFirst:Bool = false)->[SuakeGridGraphNode]{
@@ -75,8 +84,9 @@ class GridGraphHelper:SuakeGameClass{
                 currLoop += 1
             } while route.count == 0 && currLoop <= maxLoop
             
-            for nod in route{
-                print("PATH-NODE: \(nod.gridPosition)")
+            for node in route{
+//                print("PATH-NODE: \(node.gridPosition)")
+                self.game.showDbgMsg(dbgMsg: "PATH-NODE: \(node.gridPosition)")
             }
             return route
         }else{

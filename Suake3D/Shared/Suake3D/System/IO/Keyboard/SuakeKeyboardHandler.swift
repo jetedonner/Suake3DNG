@@ -176,25 +176,22 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }else{
                     self.game.levelLoaded = false
                     self.game.serverLoaded = false
-                    
                     self.game.gameCenterHelper.presentMatchmaker()
-//                    GameCenterHelper.helper.delegate = self.game.overlayManager.mainMenu
-//                    GameCenterHelper.helper.presentMatchmaker()
-//                    self.game.gameCenterHelper.pre
                 }
             }else if(pressedKey == .KEY_P){
-//                if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-//                    self.game.weaponPickups.isHidden = !self.game.weaponPickups.isHidden
-//                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.control)){
-//                    self.game.locationEntityManager.rndPortalPos()
-//                }else{
+                if(event.modifierFlags.contains(NSEvent.ModifierFlags.control)){
+//                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.resetPos()
+//                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+////                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.moveTowardGoody()
+//                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.moveOneField()
+                }else{
                     if(self.game.stateMachine.currentState!.isKind(of: SuakeStatePlaying.self)){
                         self.game.stateMachine.statePaused.showPauseOverlay = true
                         self.game.stateMachine.enter(SuakeStatePaused.self)
                     }else if(self.game.stateMachine.currentState!.isKind(of: SuakeStatePaused.self)){
                         self.game.stateMachine.returnToOldState()
                     }
-//                }
+                }
             }else if(pressedKey == .KEY_Q){
                 self.game.playerEntityManager.ownPlayerEntity.healthComponent.died = true
                 self.game.stateMachine.enter(SuakeStateDied.self)
@@ -212,7 +209,7 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 })
             }else if(pressedKey == .KEY_V){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-                    
+                    self.game.stateMachine.enter(SuakeStatePlaying.self)
                 }else{
                     self.game.playerEntityManager.oppPlayerEntity.loadGridGraph()
                 }

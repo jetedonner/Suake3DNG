@@ -16,6 +16,8 @@ class LocationEntityManager: EntityManager {
     var containers:[ContainerGroupItem] = [ContainerGroupItem]()
     var generators:[GeneratorGroupItem] = [GeneratorGroupItem]()
     var mossRocks:[MossRockGroupItem] = [MossRockGroupItem]()
+//    var stone2s:[Stone2GroupItem] = [Stone2GroupItem]()
+    var wells:[WellGroupItem] = [WellGroupItem]()
     
     override init(game: GameController) {
         super.init(game: game)
@@ -43,6 +45,16 @@ class LocationEntityManager: EntityManager {
             for i in 0..<self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount{
                 let mossRock:MossRockGroupItem = MossRockGroupItem(game: self.game, id: i)
                 self.mossRocks.append(mossRock)
+            }
+            
+//            for i in 0..<self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount{
+//                let stone2:Stone2GroupItem = Stone2GroupItem(game: self.game, id: i)
+//                self.stone2s.append(stone2)
+//            }
+            
+            for i in 0..<self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount{
+                let well:WellGroupItem = WellGroupItem(game: self.game, id: i)
+                self.wells.append(well)
             }
         }
     }
@@ -83,21 +95,33 @@ class LocationEntityManager: EntityManager {
                 }
             }
         }
-        if(self.containers != nil && self.containers.count > 0){
+        if(/*self.containers != nil && */self.containers.count > 0){
             for container in self.containers{
                 container.containerComponent.addToScene()
             }
         }
         
-        if(self.generators != nil && self.generators.count > 0){
+        if(/*self.generators != nil && */self.generators.count > 0){
             for generator in self.generators{
                 generator.generatorComponent.addToScene()
             }
         }
         
-        if(self.mossRocks != nil && self.mossRocks.count > 0){
-            for mossRock in self.mossRocks{
-                mossRock.mossRockComponent.addToScene()
+//        if(/*self.mossRocks != nil && */self.mossRocks.count > 0){
+//            for mossRock in self.mossRocks{
+//                mossRock.mossRockComponent.addToScene()
+//            }
+//        }
+//
+//        if(/*self.mossRocks != nil && */self.stone2s.count > 0){
+//            for stone2 in self.stone2s{
+//                stone2.stone2Component.addToScene()
+//            }
+//        }
+        
+        if(/*self.mossRocks != nil && */self.wells.count > 0){
+            for well in self.wells{
+                well.wellComponent.addToScene()
             }
         }
     }

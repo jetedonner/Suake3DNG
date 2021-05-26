@@ -16,6 +16,7 @@ class GoodyEntity: SuakeBasePlayerEntity {
     let particlesComponent:RisingParticlesComponent
 //    let goodyValue:Int = 100
     var tmpScore:Int = 0
+    var goodiesCatched:Int = 0
     
     init(game: GameController, id:Int = 0) {
         self.goodyComponent = GoodyComponent(game: game, id: id)
@@ -57,6 +58,7 @@ class GoodyEntity: SuakeBasePlayerEntity {
             if(self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj != nil && self.game.gameCenterHelper.matchMakerHelper.ownPlayerNetObj.playerId == self.game.gameCenterHelper.matchMakerHelper.dbgClientPlayerId){
                 return
             }
+            self.goodiesCatched += 1
             self.game.soundManager.playSound(soundType: .pick_goody)
             
             playerEntity.statsComponent.addNewStats(statsType: .goodyCatched, score: self.killScore)
@@ -64,7 +66,24 @@ class GoodyEntity: SuakeBasePlayerEntity {
             
             self.particlesComponent.node.position = self.goodyComponent.node.position
             
-            let newPos:SCNVector3 = self.goodyComponent.initPosRandom()
+            var dbgNewPos:SCNVector3? = nil
+            if(self.game.usrDefHlpr.testOppAI){
+                if(self.goodiesCatched == 1){
+                    dbgNewPos = SCNVector3(-4, 0, 7)
+                }else if(self.goodiesCatched == 2){
+//                    dbgNewPos = SCNVector3(-6, 0, 7)
+                    dbgNewPos = SCNVector3(-6, 0, 4)
+                }else if(self.goodiesCatched == 3){
+                    dbgNewPos = SCNVector3(-7, 0, 1)
+                }
+            }
+            
+            let newPos:SCNVector3 = self.goodyComponent.initPosRandom(newPos: dbgNewPos)
+            
+            if(self.game.overlayManager.hud.overlayScene.crosshairEntity.currentWeaponType == .sniperrifle){
+                self.game.overlayManager.hud.overlayScene.crosshairEntity.sniperrifleCrosshairComponent.updateGoodyArc()
+            }
+            
             if(self.game.gameCenterHelper.isMultiplayerGameRunning){
                 self.game.gameCenterHelper.matchMakerHelper.sendPickedUpMsg(itemType: .goody, value: CGFloat(self.killScore), newPos: newPos)
             }

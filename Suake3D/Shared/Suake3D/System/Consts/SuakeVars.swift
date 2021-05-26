@@ -73,7 +73,7 @@ class SuakeVars{
     
     static var useGameCenter:Bool = true
     static var goodyPos:SCNVector3 = SCNVector3(x: -3, y: 0, z: 3)
-    static let oppPos:SCNVector3 = SCNVector3(x: -2, y: 0, z: 0)
+    static let oppPos:SCNVector3 = SCNVector3(x: -2, y: 0, z: 1)
     static let ownPos:SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
     static var droidPos:SCNVector3 = SCNVector3(x: 3, y: 0, z: 3)
     
@@ -156,5 +156,6 @@ class SuakeVars{
     
     static let PARTICLES_EXPLOSION_BASIC:String = "ExplosionBasic"
     static let PARTICLES_EXPLOSION_RAILGUN:String = "ExplosionRailgun"
-    
+    static let PARTICLES_PATHFINDER:String = "PathfinderParticlesNG"
+    static let PARTICLES_NG:String = "Particllle"
 }

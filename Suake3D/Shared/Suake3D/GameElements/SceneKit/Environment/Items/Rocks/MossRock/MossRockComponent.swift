@@ -16,7 +16,7 @@ class MossRockComponent: SuakeBaseLocationComponent {
     
     init(game: GameController, id:Int = 0) {
         super.init(game: game, node: SuakeBaseSCNNode(game: game, sceneName: "art.scnassets/nodes/environment/static/rocks/mossrock/mossrock.scn", scale: self.rescale), locationType: .MossRock, id: id)
-        self.node.name = "Generator: " + self.id.description
+        self.node.name = "MossRock: " + self.id.description
         self.initPhysics()
         self.node.categoryBitMask = CollisionCategory.rock.rawValue
     }
@@ -30,7 +30,7 @@ class MossRockComponent: SuakeBaseLocationComponent {
         let generatorhape1 = SCNPhysicsShape(geometry: self.node.cloneNode.flattenedClone().geometry!, options: [SCNPhysicsShape.Option.scale: self.rescale /* 1.15*/])
         self.node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: generatorhape1)
         self.node.physicsBody?.isAffectedByGravity = false
-        self.node.physicsBody?.restitution = 0.5
+        self.node.physicsBody?.restitution = 1.0
         self.node.physicsBody?.mass = 60
         self.node.physicsBody?.categoryBitMask = CollisionCategory(category: .rock).rawValue
         self.node.physicsBody?.contactTestBitMask = CollisionCategory.getAllBulletCats()
