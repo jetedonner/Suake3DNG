@@ -94,9 +94,13 @@ class BasePortalComponent: SuakeBaseLocationComponent {
     
     func activatePortation(entity2Port:SuakePlayerEntity, add2Scene:Bool = true){
         self.isBeaming = true
+        if(entity2Port.playerType == .OwnSuake){
+            (entity2Port as! SuakeOwnPlayerEntity).isBeaming = true
+        }
         self.game.soundManager.playSound(soundType: .teleporter)
         self.changeColor(alt: false)
         self.node.runAction(SCNAction.sequence([SCNAction.wait(duration: 1.0), SCNAction.run({_ in
+            
             self.changeColor(alt: true)
             entity2Port.playerComponent.currentSuakeComponent.node.isHidden = false
 //            if(add2Scene){
@@ -105,10 +109,13 @@ class BasePortalComponent: SuakeBaseLocationComponent {
 //                node2Port.isHidden = false
 //            }
             entity2Port.pos = self.pos
-            entity2Port.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0, moveDifference: -1)
-            entity2Port.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, beamed: true)
+            entity2Port.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0)//, moveDifference: -1)
+            entity2Port.cameraComponent.moveRotateFPCamera(duration: 0.0, turnDir: .Straight, beamed: true, moveDifference: SuakeVars.fieldSize)
             self.game.overlayManager.hud.overlayScene.map.reposNode(playerNode: self.game.overlayManager.hud.overlayScene.map.suakeOwnNode, pos: self.pos, duration: 0.0)
             self.isBeaming = false
+            if(entity2Port.playerType == .OwnSuake){
+                (entity2Port as! SuakeOwnPlayerEntity).isBeaming = false
+            }
             //self.game.showDbgMsg(dbgMsg: String(format: "SuakePlayer: Bullet (%@) beamed", node2Port.name!))
             //self.game.showDbgMsg(dbgMsg: String(format: DbgMsgs.bulletBeamedNG, arguments:[node2Port.name]))
             //self.game.showDbgMsg(dbgMsg: DbgMsgs.bulletBeamed)

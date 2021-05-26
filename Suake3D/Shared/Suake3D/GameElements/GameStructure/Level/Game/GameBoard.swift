@@ -52,7 +52,19 @@ class GameBoard: SuakeGameClass {
         let arrPosX:Int = Int(x + self.halfFieldCount)
         let arrPosZ:Int = Int(z + self.halfFieldCount)
         
-        self.gameBoardFields[arrPosX][arrPosZ].fieldType = suakeField
+        if(self.gameBoardFields[arrPosX][arrPosZ].fieldType == .portal || suakeField == .own_suake){
+            self.gameBoardFields[arrPosX][arrPosZ].fieldTypeOrig = self.gameBoardFields[arrPosX][arrPosZ].fieldType
+        }
+//        if(self.gameBoardFields[arrPosX][arrPosZ].fieldType == .portal || suakeField == .own_suake){
+//            self.gameBoardFields[arrPosX][arrPosZ].fieldType = self.gameBoardFields[arrPosX][arrPosZ].fieldTypeOrig
+//        }
+//
+//        self.gameBoardFields[arrPosX][arrPosZ].fieldTypeOrig = self.gameBoardFields[arrPosX][arrPosZ].fieldType
+        if(suakeField == .empty || suakeField == .own_suake){
+            self.gameBoardFields[arrPosX][arrPosZ].fieldType = self.gameBoardFields[arrPosX][arrPosZ].fieldTypeOrig
+        }else{
+            self.gameBoardFields[arrPosX][arrPosZ].fieldType = suakeField
+        }
     }
     
     func clearGameBoardFieldItem(pos:SCNVector3){

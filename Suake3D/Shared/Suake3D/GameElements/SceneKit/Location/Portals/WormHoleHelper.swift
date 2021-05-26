@@ -99,7 +99,11 @@ class WormHoleHelper:SuakeGameClass{
             }else{
                 self.starsParticeSystemNode2.removeAllAnimations()
                 self.game.scnView.scene = self.game.scene
-                self.game.scnView.pointOfView = self.game.cameraHelper.cameraNode
+                if(self.game.cameraHelper.fpv){
+                    self.game.scnView.pointOfView = self.game.cameraHelper.cameraNodeFP
+                }else{
+                    self.game.scnView.pointOfView = self.game.cameraHelper.cameraNode
+                }
                 self.newView.removeFromSuperview()
             }
                     

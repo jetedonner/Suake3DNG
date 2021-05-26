@@ -239,6 +239,9 @@
 		55CFC86C265E6403006B2DCB /* OpponentSeekGoodyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC86B265E6403006B2DCB /* OpponentSeekGoodyState.swift */; };
 		55CFC86E265E6439006B2DCB /* OpponentMoveTowardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC86D265E6439006B2DCB /* OpponentMoveTowardState.swift */; };
 		55CFC870265E646F006B2DCB /* OpponentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC86F265E646F006B2DCB /* OpponentState.swift */; };
+		55CFC873265E8D92006B2DCB /* HouseGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC872265E8D92006B2DCB /* HouseGroupItem.swift */; };
+		55CFC875265E8DA6006B2DCB /* HouseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC874265E8DA6006B2DCB /* HouseComponent.swift */; };
+		55CFC877265E8DB7006B2DCB /* HouseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC876265E8DB7006B2DCB /* HouseGroup.swift */; };
 		55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941225FAC20100728B83 /* SuakeVars.swift */; };
 		55D8941A25FAC2E600728B83 /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941925FAC2E600728B83 /* PhysicsHelper.swift */; };
 		55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8945025FAC8CD00728B83 /* CameraHelper.swift */; };
@@ -588,6 +591,9 @@
 		55CFC86B265E6403006B2DCB /* OpponentSeekGoodyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpponentSeekGoodyState.swift; path = ../../../../../../../../../../../Suake3D_FROMOLD/Suake3D/Shared/Suake3D/GameElements/UI/Players/Suake/Entities/Opponent/Intelligence/OpponentSeekGoodyState.swift; sourceTree = "<group>"; };
 		55CFC86D265E6439006B2DCB /* OpponentMoveTowardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentMoveTowardState.swift; sourceTree = "<group>"; };
 		55CFC86F265E646F006B2DCB /* OpponentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentState.swift; sourceTree = "<group>"; };
+		55CFC872265E8D92006B2DCB /* HouseGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseGroupItem.swift; sourceTree = "<group>"; };
+		55CFC874265E8DA6006B2DCB /* HouseComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseComponent.swift; sourceTree = "<group>"; };
+		55CFC876265E8DB7006B2DCB /* HouseGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseGroup.swift; sourceTree = "<group>"; };
 		55D8941225FAC20100728B83 /* SuakeVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeVars.swift; sourceTree = "<group>"; };
 		55D8941925FAC2E600728B83 /* PhysicsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 		55D8945025FAC8CD00728B83 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
@@ -1056,6 +1062,7 @@
 		5557C0672654460400ED7848 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				55CFC871265E8D7C006B2DCB /* House */,
 				5593D39226599E5500D78C59 /* Well */,
 				5557C07C2657007A00ED7848 /* Rocks */,
 				552D597D264480DB00BE9CFD /* Generator */,
@@ -1409,6 +1416,16 @@
 				55CFC86F265E646F006B2DCB /* OpponentState.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		55CFC871265E8D7C006B2DCB /* House */ = {
+			isa = PBXGroup;
+			children = (
+				55CFC876265E8DB7006B2DCB /* HouseGroup.swift */,
+				55CFC874265E8DA6006B2DCB /* HouseComponent.swift */,
+				55CFC872265E8D92006B2DCB /* HouseGroupItem.swift */,
+			);
+			path = House;
 			sourceTree = "<group>";
 		};
 		55D8941725FAC2CD00728B83 /* Apple */ = {
@@ -2206,12 +2223,14 @@
 				552417F2260A82D8002C90FC /* WeaponPickupEntityManager.swift in Sources */,
 				55D894B225FAD65C00728B83 /* PressAnyKeyHandler.swift in Sources */,
 				55760E6125FD3F4B00C10784 /* OverlayManager.swift in Sources */,
+				55CFC877265E8DB7006B2DCB /* HouseGroup.swift in Sources */,
 				55018516260918F400F28C54 /* HUDWeaponImgComponent.swift in Sources */,
 				556CA652260D29F600F78263 /* LaserBeamNode.swift in Sources */,
 				550184022602A54600F28C54 /* CrosshairEntity.swift in Sources */,
 				5513C871260D169600633B40 /* DroidStateMachine.swift in Sources */,
 				55CFC81F265D0856006B2DCB /* SuakeOppMoveComponent.swift in Sources */,
 				5501841D2602A65D00F28C54 /* NSBezierPath.swift in Sources */,
+				55CFC873265E8D92006B2DCB /* HouseGroupItem.swift in Sources */,
 				5557C0792656F5CB00ED7848 /* RedeemerPickupEntity.swift in Sources */,
 				55C12267261CFCB6001E8E3F /* LightManager.swift in Sources */,
 				55070491261129D300464F97 /* MatchResultView.swift in Sources */,
@@ -2287,6 +2306,7 @@
 				55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */,
 				55AE7FD1262A1A9400A58F4B /* RPGCrosshairComponent.swift in Sources */,
 				55760E3225FD2C0400C10784 /* SoundManager.swift in Sources */,
+				55CFC875265E8DA6006B2DCB /* HouseComponent.swift in Sources */,
 				554233FC2632BFE300EB55F9 /* Float3.swift in Sources */,
 				55760E5425FD398300C10784 /* BaseHUDComponent.swift in Sources */,
 				55DB994225FC2A12000023AF /* SuakeMoveComponent.swift in Sources */,

@@ -223,10 +223,11 @@ class SuakeMoveComponent: SuakeBaseComponent {
             if(self.playerEntity.dir != nextDir){
                 self.game.overlayManager.hud.overlayScene.arrows.rotateArrows(duration: 1.0, turnDir: (newTurnDir == .Left ? .Right : .Left))
             }
+            
             self.playerEntity.playerComponent.currentSuakeComponent.movePlayerNodeComponent(newTurnDir: daNextTurnDir, newDir: nextDir, deltaTime: seconds)
             
             self.playerEntity.dir = nextDir
-            
+            print("Own next pos: \(newPos)")
         }
     }
 

@@ -42,5 +42,7 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER).help</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.action-games</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>YES</string>
 </dict>
 </plist>

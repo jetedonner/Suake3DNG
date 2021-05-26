@@ -31,9 +31,16 @@ class ContainerComponent: SuakeBaseLocationComponent {
         self.node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: containerShape1)
 //        self.node.physicsBody?.physicsShape =
         self.node.physicsBody?.isAffectedByGravity = true
-        self.node.physicsBody?.restitution = 0.0
+        self.node.physicsBody?.restitution = 0.5
         self.node.physicsBody?.mass = 60
-          self.node.physicsBody?.centerOfMassOffset = SCNVector3(0.0, 0.5, 0.0)
+        self.node.physicsBody?.angularRestingThreshold = 0.0
+        self.node.physicsBody?.linearRestingThreshold = 0.0
+//        self.node.physicsBody?.angularVelocityFactor = SCNVector3(1.0, 1.0, 1.0)
+//        self.node.physicsBody?.momentOfInertia = SCNVector3(0.0, 0.0, 0.0)
+        
+//        self.node.physicsBody?.allowsResting = true
+//        self.node.physicsBody?.usesDefaultMomentOfInertia = false
+//        self.node.physicsBody?.centerOfMassOffset = SCNVector3(0.0, 0.0, 0.0)
         self.node.physicsBody?.categoryBitMask = CollisionCategory(category: .container).rawValue
         self.node.physicsBody?.contactTestBitMask = CollisionCategory.getAllBulletCats()
         self.node.physicsBody?.collisionBitMask = CollisionCategory.container.rawValue | CollisionCategory.generator.rawValue | CollisionCategory.floor.rawValue | CollisionCategory.wall.rawValue | CollisionCategory.suake.rawValue | CollisionCategory.getAllBulletCats() | CollisionCategory.rocketBlast.rawValue
@@ -43,6 +50,8 @@ class ContainerComponent: SuakeBaseLocationComponent {
         let pos:SCNVector3 = self.game.levelManager.gameBoard.getRandomFreePos()
         if(self.id == 0){
             (self.entity as! SuakeBaseNodeEntity).pos = SCNVector3(2, 0, 3)//SCNVector3(-2, 0, 1)
+        }else if(self.id == 1){
+            (self.entity as! SuakeBaseNodeEntity).pos = SCNVector3(-2, 0, 2)//SCNVector3(-2, 0, 1)
         }else{
             (self.entity as! SuakeBaseNodeEntity).pos = pos
         }

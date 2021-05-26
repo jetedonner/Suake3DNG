@@ -26,7 +26,7 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
     var players:[GKPlayer] = [GKPlayer]()
     
     var match:GKMatch!
-//    var voiceChat:GKVoiceChat!
+    var voiceChat:GKVoiceChat!
     
     var setupClientServerData:SetupClientServerNetworkData!
     
@@ -47,8 +47,9 @@ class MatchMakerHelper: SuakeGameClass, GKMatchDelegate {
         self.match = match
         self.match.delegate = self
         self.isMultiplayerGameRunning = true
-//        self.voiceChat = self.match.voiceChat(withName: "Suake3DChat")
-//        self.voiceChat.start()
+        self.voiceChat = self.match.voiceChat(withName: "Suake3DChat")
+        self.voiceChat.start()
+//        self.voiceChat.
     }
     
     func sendTurnMsg(turnDir:TurnDir, position:SCNVector3, playerId:String? = nil) {

@@ -19,10 +19,21 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
     let respawnComponent:SuakeRespawnComponent
 //    var pathfinderParticles:PathfinderComponent!
     
+    var isBeaming:Bool = false
+    
     override var pos:SCNVector3{
         get{ return super.pos }
         set{
-            self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: .empty)
+            if(self.game.levelManager.gameBoard.getGameBoardField(pos: newValue) == .portal){
+                var tmp0 = -1
+                tmp0 /= -1
+                self.game.levelManager.gameBoard.setGameBoardField(pos: newValue, suakeField: .own_suake)
+                super.pos = newValue
+                self.playerComponent.mainNode.position = SCNVector3(super.pos.x * SuakeVars.fieldSize, 0, super.pos.z * SuakeVars.fieldSize)
+                return
+            }else{
+                self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: .empty, overrideOrig: true)
+            }
             super.pos = newValue
             self.game.levelManager.gameBoard.setGameBoardField(pos: newValue, suakeField: (self.playerType == .OwnSuake ? .own_suake : .opp_suake))
             self.playerComponent.mainNode.position = SCNVector3(super.pos.x * SuakeVars.fieldSize, 0, super.pos.z * SuakeVars.fieldSize)

@@ -151,7 +151,11 @@ class SuakeCameraComponent: SuakeBaseComponent {
                 }else if(turnDir == .Right){
                     setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x + moveDifference, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist))
                 }else{
-                    setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist + moveDifference))
+                    if((self.entity as! SuakePlayerEntity).playerType == .OwnSuake && (self.entity as! SuakeOwnPlayerEntity).isBeaming){
+                        setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist))
+                    }else{
+                        setFollowCameraPos(newPos: SCNVector3(suakePlayerEntity.position.x, 45, suakePlayerEntity.position.z - SuakeVars.cameraDist + moveDifference))
+                    }
                 }
             }else if(suakeDir == .DOWN){
                 cameraNode.transform = SCNMatrix4MakeRotation(0.0, 0.0, -1.0, 0.0)
@@ -298,24 +302,26 @@ class SuakeCameraComponent: SuakeBaseComponent {
         
         if let playerEntity = self.entity{
             let suakePlayerEntity = (playerEntity as! SuakePlayerEntity)
-            
-            var yReset:CGFloat = 0.0
-            switch suakePlayerEntity.dir {
-            case .UP:
-                yReset = CGFloat.pi
-            case .LEFT:
-                yReset = CGFloat.pi / -2
-            case .RIGHT:
-                yReset = CGFloat.pi / 2
-            case .DOWN:
-                yReset = 0
-            default:
-                yReset = 0.0
+
+            if(!self.game.cameraHelper.fpv){
+                var yReset:CGFloat = 0.0
+                switch suakePlayerEntity.dir {
+                case .UP:
+                    yReset = CGFloat.pi
+                case .LEFT:
+                    yReset = CGFloat.pi / -2
+                case .RIGHT:
+                    yReset = CGFloat.pi / 2
+                case .DOWN:
+                    yReset = 0
+                default:
+                    yReset = 0.0
+                }
+                
+                self.cameraNodeFP.runAction(SCNAction.rotateTo(x: 0, y: /*self.game.panCameraHelper._cameraNodeFPEuler */yReset, z: 0, duration: duration, usesShortestUnitArc: true), completionHandler: {
+                    
+                })
             }
-            
-//            self.cameraNodeFP.runAction(SCNAction.rotateTo(x: 0, y: self.game.panCameraHelper._cameraNodeFPEuler /*yReset*/, z: 0, duration: duration, usesShortestUnitArc: true), completionHandler: {
-//                
-//            })
             SCNTransaction.begin()
             SCNTransaction.animationDuration = duration
             SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
@@ -328,7 +334,7 @@ class SuakeCameraComponent: SuakeBaseComponent {
                     self.cameraNodeFP.position.z = suakePlayerEntity.position.z + moveDifference
                     self.cameraNodeFP.position.x = suakePlayerEntity.position.x - SuakeVars.cameraFPAhead
                 }else{
-                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + (beamed ? 0 : moveDifference) + SuakeVars.cameraFPAhead
+                    self.cameraNodeFP.position.z = suakePlayerEntity.position.z + (beamed ? moveDifference : moveDifference) + SuakeVars.cameraFPAhead
                     self.cameraNodeFP.position.x = suakePlayerEntity.position.x
                 }
             }else if(suakePlayerEntity.dirOld == .DOWN){

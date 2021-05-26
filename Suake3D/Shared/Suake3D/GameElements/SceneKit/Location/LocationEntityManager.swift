@@ -18,6 +18,7 @@ class LocationEntityManager: EntityManager {
     var mossRocks:[MossRockGroupItem] = [MossRockGroupItem]()
 //    var stone2s:[Stone2GroupItem] = [Stone2GroupItem]()
     var wells:[WellGroupItem] = [WellGroupItem]()
+    var houses:[HouseGroupItem] = [HouseGroupItem]()
     
     override init(game: GameController) {
         super.init(game: game)
@@ -56,6 +57,11 @@ class LocationEntityManager: EntityManager {
                 let well:WellGroupItem = WellGroupItem(game: self.game, id: i)
                 self.wells.append(well)
             }
+            
+//            for i in 0..<2 /*self.game.levelManager.currentLevel.levelConfig.levelSetup.obstacleCount*/{
+//                let house:HouseGroupItem = HouseGroupItem(game: self.game, id: i)
+//                self.houses.append(house)
+//            }
         }
     }
     
@@ -122,6 +128,12 @@ class LocationEntityManager: EntityManager {
         if(/*self.mossRocks != nil && */self.wells.count > 0){
             for well in self.wells{
                 well.wellComponent.addToScene()
+            }
+        }
+        
+        if(/*self.mossRocks != nil && */self.houses.count > 0){
+            for house in self.houses{
+                house.houseComponent.addToScene()
             }
         }
     }

@@ -23,6 +23,8 @@ class SuakeOppPlayerEntity: SuakePlayerEntity {
         set{ self._turnQueue = newValue }
     }
     
+    
+    
     //TMP
     var opponentAIComponent:SuakeOpponentAIComponent!
     let enemyName:EnemyNames
