@@ -48,142 +48,104 @@ class SoundManager: SuakeGameClass {
             
             case SoundType.pickupHealth:
                 fileName = "pickupHealth"
-                break
             case SoundType.weaponreload:
                 fileName = "weapons/gunreload-9"
-                break
             case SoundType.riochet1:
                 fileName = "weapons/ricochet_1_2"
-                break
             case SoundType.riochet2:
                 fileName = "weapons/ricochet_2_2"
-                break
             case SoundType.riochet3:
                 fileName = "weapons/ricochet_3_2"
-                break
             case SoundType.beep:
                 fileName = "beep-07"
-                break
             case SoundType.beep2:
                 fileName = "beep-08b"
-                break
             case SoundType.rifle:
                 fileName = "weapons/rifle"
-                break
             case SoundType.grenade:
                 fileName = "weapons/grenade-throw"
-                break
             case SoundType.sinperrifle:
                 fileName = "weapons/sniperFireReload"
-                break
             case SoundType.shotgun:
                 fileName = "weapons/sshotf1b"
-                break
             case SoundType.railgun:
                 fileName = "weapons/railgf1a"
-                break
             case SoundType.shotgunAimed:
                 fileName = "weapons/shotgunReloadSpas"
-                break
             case SoundType.railgunAimed:
                 fileName = "weapons/railgunAimedx2"
-                break
             case SoundType.railgunUnaimed:
                 fileName = "weapons/railgunUnaimedx2"
-                break
             case SoundType.redeemerAimed:
                 fileName = "weapons/redeemerAimed"
-                break
             case SoundType.redeemerUnaimed:
                 fileName = "weapons/redeemerUnaimed"
-                break
             case SoundType.wp_change:
                 fileName = "weapons/change"
-                break
             case SoundType.pick_goody:
                 fileName = "land1"
-                break
             case SoundType.pick_weapon:
                 fileName = "weapons/w_pkup"
-                break
             case SoundType.teleporter:
                 fileName = "telein"
-                break
             case SoundType.bottleRocket:
                 fileName = "weapons/bottleRocket"
-                break
             case SoundType.rpg:
                 fileName = "weapons/bottleRocket"
-                break
             case SoundType.pain_25:
                 fileName = "pain25_1"
-                break
             case SoundType.pain_50:
                 fileName = "pain50_1"
-                break
             case SoundType.pain_75:
                 fileName = "pain75_1"
-                break
             case SoundType.pain_100:
                 fileName = "pain100_1"
-                break
             case SoundType.machineGun3:
                 fileName = "weapons/machineGun3"
-                break
             case SoundType.machineGun4:
                 fileName = "weapons/machineGun4"
-                break
             case SoundType.explosion1:
                 fileName = "weapons/Explosion1"
-                break
             case SoundType.explosion:
                 fileName = "weapons/Explosion2"
-                break
             case SoundType.hitEnemy:
                 fileName = "hitEnemy"
-                break
             case SoundType.noammo:
                 fileName = "weapons/noammo"
-                break
             case SoundType.gunSilencer:
                 fileName = "weapons/gunSilencer"
-                break
             case SoundType.bltImpactMetal1:
                 fileName = "weapons/bulletimpact-metal1"
-                break
             case SoundType.bltImpactMetal2:
                 fileName = "weapons/bulletimpact-metal2"
-                break
             case SoundType.bltImpactMetal3:
                 fileName = "weapons/bulletimpact-metal3"
-                break
             case SoundType.die:
                 fileName = "die"
-                break
             case SoundType.fire:
                 fileName = "fire"
-                break
             case SoundType.menu1:
                 fileName = "Menu1"
-                break
             case SoundType.menuItemChoosen:
                 fileName = "Menu2"
-                break
             case SoundType.menuItemChanged:
                 fileName = "Menu3"
-                break
             case SoundType.nukeExplosion:
                 fileName = "weapons/nuc_explosion"
-                break
             case SoundType.first_blood:
                 fileName = "first-blood-echo"
-                break
             case SoundType.health:
                 fileName = "health1"
-                break
             case SoundType.laser:
                 fileName = "weapons/laser"
-                break
+            case SoundType.zoomIn:
+                fileName = "zoomIn"
+            case SoundType.zoomOut:
+                fileName = "zoomOut"
+            case SoundType.fpvIn:
+                fileName = "fpvIn"
+            case SoundType.fpvOut:
+                fileName = "fpvOut"
             default:
                 fileName = "land1"
                 break

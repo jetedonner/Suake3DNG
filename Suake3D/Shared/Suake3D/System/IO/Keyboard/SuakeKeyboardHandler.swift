@@ -184,10 +184,10 @@ class SuakeKeyboardHandler: KeyboardHandler {
                 }
             }else if(pressedKey == .KEY_P){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.control)){
-//                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.resetPos()
-//                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
-////                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.moveTowardGoody()
-//                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.moveOneField()
+                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.resetPos()
+                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
+//                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.moveTowardGoody()
+                    self.game.playerEntityManager.ownPlayerEntity.pathfinderParticles.moveOneField()
                 }else{
                     if(self.game.stateMachine.currentState!.isKind(of: SuakeStatePlaying.self)){
                         self.game.stateMachine.statePaused.showPauseOverlay = true

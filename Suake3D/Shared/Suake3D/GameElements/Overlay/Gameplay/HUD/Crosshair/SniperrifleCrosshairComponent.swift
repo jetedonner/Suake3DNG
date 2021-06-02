@@ -141,16 +141,16 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
         self.nodeContainer.addChild(self.nodeCrosshairMiddleCircle)
     }
     
-    func createCenterCircle(){
-        self.nodeCrosshairCenterCircle = SKShapeNode(circleOfRadius: 17.0)
-        self.nodeCrosshairCenterCircle.position = CGPoint(x: 0, y: 0)
-        self.nodeCrosshairCenterCircle.strokeColor = .green
-        self.nodeCrosshairCenterCircle.lineWidth = 1.0
-        self.nodeCrosshairCenterCircle.isAntialiased = false
-        self.nodeCrosshairCenterCircle.zPosition = 10000
-        self.nodeCrosshairCenterCircle.isHidden = true
-        self.nodeContainer.addChild(self.nodeCrosshairCenterCircle)
-    }
+    //    func createCenterCircle(){
+    //        self.nodeCrosshairCenterCircle = SKShapeNode(circleOfRadius: 17.0)
+    //        self.nodeCrosshairCenterCircle.position = CGPoint(x: 0, y: 0)
+    //        self.nodeCrosshairCenterCircle.strokeColor = .green
+    //        self.nodeCrosshairCenterCircle.lineWidth = 1.0
+    //        self.nodeCrosshairCenterCircle.isAntialiased = false
+    //        self.nodeCrosshairCenterCircle.zPosition = 10000
+    //        self.nodeCrosshairCenterCircle.isHidden = true
+    //        self.nodeContainer.addChild(self.nodeCrosshairCenterCircle)
+    //    }
     
 //    var inited:Bool = false
     
@@ -163,7 +163,7 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
         self.drawStrokePaths()
         self.createOuterCircle()
         self.createMiddleCircle()
-        self.createCenterCircle()
+//        self.createCenterCircle()
         self.drawLabels()
         self.addArcs()
         //self.updateGoodyArc()

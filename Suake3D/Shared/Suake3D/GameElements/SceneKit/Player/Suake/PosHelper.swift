@@ -102,4 +102,67 @@ class PosHelper {
             return .UP
         }
     }
+    
+    public static func getNewSuakeParts(suakeEntity:SuakeOppPlayerEntity, newTurnDir:TurnDir, currentSuakePart:SuakePart)->NewSuakePartComponentStruct{
+        
+        var componentRet:NewSuakePartComponentStruct = NewSuakePartComponentStruct()
+        
+        if(currentSuakePart == .straightToRight && newTurnDir == .Right ||
+            currentSuakePart == .rightToRight && newTurnDir == .Right ||
+            currentSuakePart == .leftToRight && newTurnDir == .Right){
+            componentRet.nextSuakePart = .rightToRight
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeRight2RightComponent// .component(ofType: SuakePlayerComponentRightToRight.self)!
+        }else if(currentSuakePart == .straightToLeft && newTurnDir == .Left ||
+                    currentSuakePart == .rightToLeft && newTurnDir == .Left ||
+                    currentSuakePart == .leftToLeft && newTurnDir == .Left){
+            componentRet.nextSuakePart = .leftToLeft
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeLeft2LeftComponent//.component(ofType: SuakePlayerComponentLeftToLeft.self)!
+        }else if(currentSuakePart == .straightToStraight && newTurnDir == .Left ||
+                    currentSuakePart == .rightToStraight && newTurnDir == .Left ||
+                    currentSuakePart == .leftToStraight && newTurnDir == .Left){
+            componentRet.nextSuakePart = .straightToLeft
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeStraight2LeftComponent//.component(ofType: SuakePlayerComponentStraightToLeft.self)!
+        }else if(currentSuakePart == .straightToStraight && newTurnDir == .Right ||
+                    currentSuakePart == .leftToStraight && newTurnDir == .Right ||
+                    currentSuakePart == .rightToStraight && newTurnDir == .Right ){
+            componentRet.nextSuakePart = .straightToRight
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeStraight2RightComponent//.component(ofType: SuakePlayerComponentStraightToRight.self)!
+        }else if(currentSuakePart == .straightToRight && newTurnDir == .Left ||
+                    currentSuakePart == .leftToRight && newTurnDir == .Left ||
+                    currentSuakePart == .rightToRight && newTurnDir == .Left){
+            componentRet.nextSuakePart = .rightToLeft
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeRight2LeftComponent//.component(ofType: SuakePlayerComponentRightToLeft.self)!
+        }else if(currentSuakePart == .straightToLeft && newTurnDir == .Right ||
+                    currentSuakePart == .rightToLeft && newTurnDir == .Right ||
+                    currentSuakePart == .leftToLeft && newTurnDir == .Right){
+            componentRet.nextSuakePart = .leftToRight
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeLeft2RightComponent//.component(ofType: SuakePlayerComponentLeftToRight.self)!
+        }else if(currentSuakePart == .rightToLeft && newTurnDir == .Straight ||
+                    currentSuakePart == .leftToLeft && newTurnDir == .Straight ||
+                    currentSuakePart == .rightToLeft && newTurnDir == .Straight){
+            componentRet.nextSuakePart = .leftToStraight
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeLeft2StraightComponent//.component(ofType: SuakePlayerComponentLeftToStraight.self)!
+        }else if(currentSuakePart == .leftToRight && newTurnDir == .Straight ||
+                    currentSuakePart == .rightToRight && newTurnDir == .Straight ||
+                    currentSuakePart == .straightToRight && newTurnDir == .Straight){
+            componentRet.nextSuakePart = .rightToStraight
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeRight2StraightComponent//.component(ofType: SuakePlayerComponentRightToStraight.self)!
+        }else if(currentSuakePart == .straightToStraight && newTurnDir == .Straight ||
+                    currentSuakePart == .rightToStraight && newTurnDir == .Straight ||
+                    currentSuakePart == .leftToStraight && newTurnDir == .Straight){
+            componentRet.nextSuakePart = .straightToStraight
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeStraight2StraightComponent//.component(ofType: SuakePlayerComponentStraight.self)!
+        }else if(currentSuakePart == .rightToRight && newTurnDir == .Straight ||
+                    currentSuakePart == .straightToRight && newTurnDir == .Straight ||
+                    currentSuakePart == .leftToRight && newTurnDir == .Straight){
+            componentRet.nextSuakePart = .rightToStraight
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeRight2StraightComponent//.component(ofType: SuakePlayerComponentRightToStraight.self)!
+        }else if(currentSuakePart == .straightToLeft && newTurnDir == .Straight ||
+                    currentSuakePart == .rightToLeft && newTurnDir == .Straight ||
+                    currentSuakePart == .leftToLeft && newTurnDir == .Straight){
+            componentRet.nextSuakePart = .leftToStraight
+            componentRet.newSuakeComponent = suakeEntity.playerComponent.suakeLeft2StraightComponent//.component(ofType: SuakePlayerComponentLeftToStraight.self)!
+        }
+        return componentRet
+    }
 }

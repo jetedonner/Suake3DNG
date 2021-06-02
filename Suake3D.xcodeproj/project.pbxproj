@@ -1722,12 +1722,12 @@
 		55E9EA58263446EE005E3256 /* Portals */ = {
 			isa = PBXGroup;
 			children = (
+				55E9EA5D2634487B005E3256 /* PortalTypes.swift */,
 				55161D2C2649B54200D87065 /* WormHoleHelper.swift */,
 				55E9EA5C2634487B005E3256 /* BasePortalComponent.swift */,
 				55E9EA5B2634487B005E3256 /* PortalEntity.swift */,
 				55E9EA592634487B005E3256 /* PortalEntityPair.swift */,
 				55E9EA5A2634487B005E3256 /* PortalPairComponent.swift */,
-				55E9EA5D2634487B005E3256 /* PortalTypes.swift */,
 			);
 			path = Portals;
 			sourceTree = "<group>";

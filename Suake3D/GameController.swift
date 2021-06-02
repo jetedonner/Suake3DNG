@@ -42,7 +42,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
     var contactHelper:ContactHelper!
     var overlayManager:OverlayManager!
 
-    var gridGraphManager:GridGraphManager!
+//    var gridGraphManager:GridGraphManager!
     var gameCenterHelper:GameCenterHelper!
     
     func startMatch(match: GKMatch) {
@@ -76,7 +76,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         
         self.overlayManager = OverlayManager(game: self)
         
-        self.gridGraphManager = GridGraphManager(game: self)
+//        self.gridGraphManager = GridGraphManager(game: self)
         
         self.usrDefHlpr.resetUserDefaults2Game()
         
@@ -110,6 +110,10 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
         DispatchQueue.main.async {
             self.isLoading = true
             
+            if(SuakeVars.useGameCenter){
+                self.gameCenterHelper.loadGameCenter()
+            }
+            
             self.overlayManager.gameLoading.setProgress(curPrecent: 5, msg: "Setting up cameras ...")
             self.cameraHelper.initCameras()
 //            self.tvNode.geometry?.firstMaterial?.diffuse.contents = self.cameraHelper.cameraNodeFP.camera
@@ -141,7 +145,7 @@ class GameController:BaseGameController, GameCenterHelperDelegate{
             
             
             self.overlayManager.gameLoading.setProgress(curPrecent: 35, msg: "Setting up game board ...")
-            self.gridGraphManager.loadGridGraph()
+//            self.gridGraphManager.loadGridGraph()
             
             self.overlayManager.gameLoading.setProgress(curPrecent: 45, msg: "Setting up HUD ...")
             self.overlayManager.loadScenes()

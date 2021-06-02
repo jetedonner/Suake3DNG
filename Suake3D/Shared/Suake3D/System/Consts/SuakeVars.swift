@@ -72,7 +72,8 @@ class SuakeVars{
     static let goodyScale:SCNVector3 = SCNVector3(2.0, 2.0, 2.0)
     
     static var useGameCenter:Bool = true
-    static var goodyPos:SCNVector3 = SCNVector3(x: -3, y: 0, z: 3)
+//    static var goodyPos:SCNVector3 = SCNVector3(x: -3, y: 0, z: 3)
+    static var goodyPos:SCNVector3 = SCNVector3(x: -2, y: 0, z: -2)
     static let oppPos:SCNVector3 = SCNVector3(x: -2, y: 0, z: 1)
     static let ownPos:SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
     static var droidPos:SCNVector3 = SCNVector3(x: 3, y: 0, z: 3)
@@ -80,6 +81,9 @@ class SuakeVars{
     static let showArrows:Bool = true
     static let showWindrose:Bool = true
     static let showTVMonitors:Bool = true
+    static let showFollowParticles:Bool = true
+    
+    
     
     static let wormHolePortationDuration:TimeInterval = 1.0
     
@@ -157,5 +161,5 @@ class SuakeVars{
     static let PARTICLES_EXPLOSION_BASIC:String = "ExplosionBasic"
     static let PARTICLES_EXPLOSION_RAILGUN:String = "ExplosionRailgun"
     static let PARTICLES_PATHFINDER:String = "PathfinderParticlesNG"
-    static let PARTICLES_NG:String = "Particllle"
+    static let PARTICLES_NG:String = "FollowTheGoodyParticles" // "Particllle"
 }

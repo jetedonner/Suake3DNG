@@ -237,6 +237,8 @@ class CameraHelper: SuakeGameClass {
             self.animatingFPV = true
         }
         fpv = newFPV
+        self.game.soundManager.playSound(soundType: (fpv ? .fpvIn : .fpvOut))
+        
         SCNTransaction.begin()
         SCNTransaction.animationDuration = SuakeVars.switchCameraDuration
         
@@ -252,6 +254,7 @@ class CameraHelper: SuakeGameClass {
                 self.game.overlayManager.hud.overlayScene.windrose.updateArrowGoodyPos()
                 self.animatingFPV = false
             }
+            
 //            self.game.overlayManager.hud.healthBars[self.game.playerEntityManager.ownPlayerEntity]?.isHidden = true
         }else{
             self.currentCameraView = .Own3rdPerson

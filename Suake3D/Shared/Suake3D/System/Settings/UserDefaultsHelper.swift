@@ -20,6 +20,9 @@ class UserDefaultsHelper:SuakeGameClass{
     var dbgLogColor:NSColor = .white
     
     // MULTIPLAYER
+    
+    
+    var enableGameCenter:Bool = true
     var dbgMultiplayer:Bool = true
     var multiHumanPlayer2Control:String = "NONE"
     
@@ -42,6 +45,7 @@ class UserDefaultsHelper:SuakeGameClass{
     var loadPortals:Bool = true
     var quakeSkyboxes:Bool = true
     var randomQuakeSkyboxAndFloor:Bool = true
+    var showFollowParticles:Bool = false
     
     var loadOpp:Bool = false
     var testOppAI:Bool = false
@@ -67,6 +71,8 @@ class UserDefaultsHelper:SuakeGameClass{
             "SoundEffects": true,
             "ShowDbgLog": false,
             "DbgMultiplayer": false,
+            "EnableGameCenter": false,
+            
             "MultiHumanPlayer2Control": "Player 1",
             
             "MatchDuration": MatchDuration.Minute_1.rawValue,
@@ -76,6 +82,7 @@ class UserDefaultsHelper:SuakeGameClass{
             "ShowArrows": SuakeVars.showArrows,
             "ShowWindrose": SuakeVars.showWindrose,
             "ShowTVMonitors": SuakeVars.showTVMonitors,
+            "ShowFollowParticles": SuakeVars.showFollowParticles,
             
             "Volume": SuakeVars.volume,
             "LoadWeaponPickups": SuakeVars.loadWeaponPickups,
@@ -104,6 +111,8 @@ class UserDefaultsHelper:SuakeGameClass{
         self.devMode = self.defaults.bool(forKey: "DevMode")
         self.showDbgLog = self.defaults.bool(forKey: "ShowDbgLog")
         self.dbgMultiplayer = self.defaults.bool(forKey: "DbgMultiplayer")
+        self.enableGameCenter = self.defaults.bool(forKey: "EnableGameCenter")
+        
         self.multiHumanPlayer2Control = self.defaults.string(forKey: "MultiHumanPlayer2Control")!
         
         self.soundEffects = self.defaults.bool(forKey: "SoundEffects")
@@ -132,6 +141,10 @@ class UserDefaultsHelper:SuakeGameClass{
         self.showArrows = self.defaults.bool(forKey: "ShowArrows")
         self.showWindrose = self.defaults.bool(forKey: "ShowWindrose")
         self.showTVMonitors = self.defaults.bool(forKey: "ShowTVMonitors")
+        self.showFollowParticles = self.defaults.bool(forKey: "ShowFollowParticles")
+        
+        
+        
         
         self.volume = CGFloat(self.defaults.float(forKey: "Volume"))
     }
@@ -155,6 +168,8 @@ class UserDefaultsHelper:SuakeGameClass{
         self.game.levelManager.currentLevel.levelConfig.levelSetup.showCountdown = self.showCountdown
         
         self.game.levelManager.currentLevel.levelConfigEnv.showTVMonitors = self.showTVMonitors
+        self.game.levelManager.currentLevel.levelConfigEnv.showFollowParticles = self.showFollowParticles
+        
         self.game.levelManager.currentLevel.levelConfigEnv.lightIntensity = self.lightIntensity
         self.game.levelManager.lightManager.setAmbientLight(intensity: self.lightIntensity)
         self.game.soundManager.muteSound = !self.soundEffects
@@ -164,5 +179,7 @@ class UserDefaultsHelper:SuakeGameClass{
 
         self.game.soundManager.volume = self.volume
         GSAudio.sharedInstance.volume = self.volume
+        
+        SuakeVars.useGameCenter = self.enableGameCenter
     }
 }

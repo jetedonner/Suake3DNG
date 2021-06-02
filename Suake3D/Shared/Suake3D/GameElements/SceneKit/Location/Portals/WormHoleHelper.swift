@@ -59,8 +59,13 @@ class WormHoleHelper:SuakeGameClass{
         self.showWormHole(playerType: playerType)
     }
     
-    func showWormHole(playerType:SuakePlayerType, show:Bool = true){
+    var endPos:SCNVector3!
+    
+    func showWormHole(playerType:SuakePlayerType, endPos:SCNVector3! = nil, show:Bool = true){
         self.playerType = playerType
+        if(endPos != nil){
+            self.endPos = endPos
+        }
         
             DispatchQueue.main.async {
                 if(show){
@@ -104,6 +109,7 @@ class WormHoleHelper:SuakeGameClass{
                 }else{
                     self.game.scnView.pointOfView = self.game.cameraHelper.cameraNode
                 }
+                self.game.playerEntityManager.ownPlayerEntity._pos = self.endPos
                 self.newView.removeFromSuperview()
             }
                     
@@ -146,6 +152,14 @@ extension WormHoleHelper: CAAnimationDelegate {
             self.moveWormHoleRingsRnd()
         }else{
             self.showWormHole(playerType: self.playerType, show: false)
+            if(self.playerType == .OwnSuake){
+                
+                self.game.playerEntityManager.ownPlayerEntity.cameraComponent.moveFollowCamera(turnDir: .Straight, duration: 0.0)
+                
+//                self.game.playerEntityManager.ownPlayerEntity.cameraComponent.moveRotateFPCamera(duration: animDuration, turnDir: newTurnDir)
+            }
         }
+        
     }
 }
+

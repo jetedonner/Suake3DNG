@@ -14,12 +14,15 @@ import NetTestFW
 class SuakeOwnPlayerEntity: SuakePlayerEntity {
         
     var fadeHelper:FadeViewAfterDeath!
-//    var pathfinderParticles:PathfinderComponent!
+    var pathfinderParticles:PathfinderComponent!
     
     init(game: GameController) {
         super.init(game: game, playerType: .OwnSuake, id: 0)
-//        self.pathfinderParticles = PathfinderComponent(game: game)
-//        self.addComponent(self.pathfinderParticles)
+        
+        if(self.game.usrDefHlpr.showFollowParticles){
+            self.pathfinderParticles = PathfinderComponent(game: game)
+            self.addComponent(self.pathfinderParticles)
+        }
     }
     
     override func setupPlayerEntity() {

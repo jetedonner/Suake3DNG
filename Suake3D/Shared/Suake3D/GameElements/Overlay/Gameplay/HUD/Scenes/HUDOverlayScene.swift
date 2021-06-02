@@ -92,13 +92,13 @@ class HUDOverlayScene: SuakeBaseOverlay {
         self.setScore(score: 0)
         
         self.map.updateMap(byPassCheck: true)
-        self.map.zoomMap(zoomOn: false)
+        self.map.zoomMap(zoomOn: false, playSound: false)
     }
     
     override func showOverlayScene() {
         self.arrows.showHideHelperArrows()
         if(self.game.stateMachine.currentState is SuakeStateReadyToPlay){
-            self.map.zoomMap(zoomOn: false)
+//            self.map.zoomMap(zoomOn: false)
         }
     }
     

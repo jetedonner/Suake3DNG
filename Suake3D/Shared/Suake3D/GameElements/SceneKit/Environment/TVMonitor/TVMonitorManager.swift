@@ -7,6 +7,7 @@
 
 import Foundation
 import SceneKit
+import SpriteKit
 import AVFoundation
 
 class TVMonitorManager: EntityManager {
@@ -30,10 +31,30 @@ class TVMonitorManager: EntityManager {
         }
     }
 
+    let spriteKitScene:SKScene
+    let videoSpriteKitNode:SKVideoNode
+    
     override init(game: GameController) {
         self.player = AVPlayer(url: videoURL as URL)
 //        self.newScnView = game.overlayView
 //        self.newScnView.pointOfView = game.cameraHelper.cameraNodeFP
+        
+        
+        self.spriteKitScene = SKScene(size: CGSize(width: 1920, height: 1080))
+        spriteKitScene.backgroundColor = .clear
+        spriteKitScene.scaleMode = .aspectFit
+        
+        self.videoSpriteKitNode = SKVideoNode(avPlayer: self.player)
+        videoSpriteKitNode.anchorPoint = CGPoint(x: 0, y: 0)
+        videoSpriteKitNode.size.width = spriteKitScene.size.width
+        videoSpriteKitNode.size.height = spriteKitScene.size.height
+
+        spriteKitScene.addChild(videoSpriteKitNode)
+
+//        planeGeo!.firstMaterial.diffuse.contents = spriteKitScene
+//        videoSpriteKitNode.play()
+        
+        
         self.tvMontSphereEnt = TVMonitorSphereEntity(game: game, id: 0)
         super.init(game: game)
         
@@ -58,11 +79,16 @@ class TVMonitorManager: EntityManager {
     }
     
     func initTVMonitors(count:Int = 4) {
-        self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 0))
-        self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 1))
-        self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 2))
-        self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 3))
+        
         let levelSize:CGSize = self.game.levelManager.currentLevel.levelConfigEnv.levelSize.getNSSize()
+        for i in 0..<count{
+            self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: i))
+        }
+//        self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 0))
+//        self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 1))
+//        self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 2))
+//        self.tvMonEnt.append(TVMonitorEntity(game: self.game, id: 3))
+        
         self.tvMonEnt[0].showTVMonitor(pos: SCNVector3(0, 1, levelSize.height / 2))
         self.tvMonEnt[0].tvMonitorComponent.tvMonitorScreen.geometry?.firstMaterial? = self.tvScreenMat
         self.tvMonEnt[1].showTVMonitor(pos: SCNVector3(0, 1, (levelSize.height / -2) - 1))
@@ -81,7 +107,10 @@ class TVMonitorManager: EntityManager {
             if(!self.player.isPlaying){
                 self.player.play()
             }
-            self.setTVMonitorImage(texture: self.player)
+//            if(!self.videoSpriteKitNode){
+//                self.videoSpriteKitNode.play()
+//            }
+            self.setTVMonitorImage(texture: self.spriteKitScene) // self.player)
         }else{
             self.player.pause()
             self.startTVMonitorUpdate()

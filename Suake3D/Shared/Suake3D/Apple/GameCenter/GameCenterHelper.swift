@@ -45,6 +45,10 @@ class GameCenterHelper: SuakeGameClass {
         
         super.init(game: game)
         
+        
+    }
+    
+    func loadGameCenter(){
         self.viewController = (self.game.scnView as! GameViewMacOS).viewController
         self.delegate = game
         

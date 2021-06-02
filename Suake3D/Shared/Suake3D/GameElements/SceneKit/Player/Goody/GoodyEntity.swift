@@ -69,13 +69,22 @@ class GoodyEntity: SuakeBasePlayerEntity {
             var dbgNewPos:SCNVector3? = nil
             if(self.game.usrDefHlpr.testOppAI){
                 if(self.goodiesCatched == 1){
-                    dbgNewPos = SCNVector3(-4, 0, 7)
+                    dbgNewPos = SCNVector3(-2, 0, -4)
                 }else if(self.goodiesCatched == 2){
 //                    dbgNewPos = SCNVector3(-6, 0, 7)
-                    dbgNewPos = SCNVector3(-6, 0, 4)
+                    dbgNewPos = SCNVector3(-2, 0, -6)
                 }else if(self.goodiesCatched == 3){
-                    dbgNewPos = SCNVector3(-7, 0, 1)
+                    dbgNewPos = SCNVector3(-5, 0, -8)
                 }
+
+//                if(self.goodiesCatched == 1){
+//                    dbgNewPos = SCNVector3(-4, 0, 7)
+//                }else if(self.goodiesCatched == 2){
+////                    dbgNewPos = SCNVector3(-6, 0, 7)
+//                    dbgNewPos = SCNVector3(-6, 0, 4)
+//                }else if(self.goodiesCatched == 3){
+//                    dbgNewPos = SCNVector3(-7, 0, 1)
+//                }
             }
             
             let newPos:SCNVector3 = self.goodyComponent.initPosRandom(newPos: dbgNewPos)

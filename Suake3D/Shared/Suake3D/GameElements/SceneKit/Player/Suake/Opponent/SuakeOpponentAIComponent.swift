@@ -47,10 +47,11 @@ class SuakeOpponentAIComponent: SuakeBaseComponent {
     
     func findPath2Entity(entity:SuakeBasePlayerEntity, afterGoodyHit:Bool = false){
         let suakeEntity:SuakePlayerEntity = self.entity as! SuakePlayerEntity
-        let vectPos2remove:[SCNVector3] = PositionHelper.getPos4DirNPosition(dir: suakeEntity.dir, relPos: [.One80, .Left, .Right], curPos: suakeEntity.pos)
+        let daPos:SCNVector3 =  (afterGoodyHit ? suakeEntity.moveComponent.overNextPos : suakeEntity.pos)
+        let vectPos2remove:[SCNVector3] = PositionHelper.getPos4DirNPosition(dir: suakeEntity.dir, relPos: [.One80, .Left, .Right], curPos: daPos)
         for vectPos in vectPos2remove {
-//            print("Removing Nodes around suake: \(daPos), node: \(vectPos)")
-            self.gridGraphHelper.removeConnection(from: suakeEntity.pos, to: vectPos)
+            self.game.showDbgMsg(dbgMsg: "Removing Nodes around suake: \(daPos), node: \(vectPos)")
+            self.gridGraphHelper.removeConnection(from: daPos, to: vectPos)
         }
         self.newPath = self.gridGraphHelper.findPathTo(entity: entity, afterGoodyHit: afterGoodyHit)
     }

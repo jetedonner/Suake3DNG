@@ -59,10 +59,14 @@ class GridGraphHelper:SuakeGameClass{
     
     let maxLoop:Int = 2000
     var route = [SuakeGridGraphNode]()
+    var tmpIdx:Int = 0
     
     func findPathTo(entity:SuakeBasePlayerEntity, afterGoodyHit:Bool = false)->[SuakeGridGraphNode]{
-        self.findPathFromTo(posFrom: (afterGoodyHit ? (self.playerEntity as! SuakeOppPlayerEntity).moveComponent.overNextPos : self.playerEntity.pos), posTo: entity.pos)
-        
+        self.tmpIdx += 1
+        let fromPos:SCNVector3 = (afterGoodyHit ? /*(tmpIdx == 3 ? self.playerEntity.pos :*/ (self.playerEntity as! SuakeOppPlayerEntity).moveComponent.overNextPos/*)*/ : self.playerEntity.pos)
+        let toPos:SCNVector3 = entity.pos
+        self.game.showDbgMsg(dbgMsg: "FindPath => fromPos: \(fromPos) -> toPos: \(toPos)")
+        return self.findPathFromTo(posFrom: fromPos, posTo: toPos)
     }
     
     func findPathFromTo(posFrom:SCNVector3, posTo:SCNVector3, doNotRemoveFirst:Bool = false)->[SuakeGridGraphNode]{

@@ -120,7 +120,7 @@ class BasePortalComponent: SuakeBaseLocationComponent {
             //self.game.showDbgMsg(dbgMsg: String(format: DbgMsgs.bulletBeamedNG, arguments:[node2Port.name]))
             //self.game.showDbgMsg(dbgMsg: DbgMsgs.bulletBeamed)
         })]))
-        self.game.wormHoleHelper.showWormHole(playerType: entity2Port.playerType)
+        self.game.wormHoleHelper.showWormHole(playerType: entity2Port.playerType, endPos: self.pos)
     }
     
     func changeColor(alt:Bool = false){
