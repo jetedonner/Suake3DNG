@@ -112,15 +112,40 @@ class SuakePlayerNodeComponent: SuakeBaseSCNNodeComponent {
 //        self.node.cloneNode.addChildNode(boxNode)
     }
     
+    var overOld:SuakeDir = .DOWN
+    
     func movePlayerNodeComponent(newTurnDir:TurnDir, newDir:SuakeDir? = nil, deltaTime seconds: TimeInterval){
+        
+        var daOldfa = self.playerEntity.dirOld
         if(newDir != nil){
+            
+            print("BEFORE TUNRNING SUAKEOPP 2: \(self.playerEntity.dirOld)")
             self.playerEntity.dirOld = self.playerEntity.dir
             self.playerEntity.dir = newDir!
         }
-        if(self.suakePart == .leftToStraight || self.suakePart == .rightToStraight/* || self.suakePart == .leftToRight || self.suakePart == .rightToLeft*/){
-            
-            SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.playerComponent.mainNode, dir: self.playerEntity.dir)
+        
+        if(self.playerEntity.playerType == .OwnSuake){
+            if(self.suakePart == .leftToStraight || self.suakePart == .rightToStraight){
+                print("TUNRNING SUAKEOWN 2: \(self.playerEntity.dir)")
+                SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.playerComponent.mainNode, dir: self.playerEntity.dir)
+            }
+        }else if(self.playerEntity.playerType == .OppSuake){
+            if(self.suakePart == .leftToStraight || self.suakePart == .rightToStraight || self.suakePart == .leftToRight || self.suakePart == .rightToLeft){
+                if(self.suakePart == .leftToRight || self.suakePart == .rightToLeft){
+                    daOldfa = self.playerEntity.dirOld
+                }
+                print("TUNRNING SUAKEOPP 2: \(daOldfa)")
+                SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.playerComponent.mainNode, dir: daOldfa)
+            }
         }
+        
+//        if(self.suakePart == .leftToStraight || self.suakePart == .rightToStraight /*|| self.suakePart == .leftToRight || self.suakePart == .rightToLeft*/){
+////            if(self.suakePart == .leftToRight || self.suakePart == .rightToLeft){
+////                daOldfa = self.playerEntity.dirOld
+////            }
+//            print("TUNRNING SUAKEOPP 2: \(daOldfa)")
+//            SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.playerComponent.mainNode, dir: self.playerEntity.dir)
+//        }
         
         self.node.animation?.stop()
         

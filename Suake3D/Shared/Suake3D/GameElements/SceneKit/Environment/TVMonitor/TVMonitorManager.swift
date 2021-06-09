@@ -22,6 +22,19 @@ class TVMonitorManager: EntityManager {
     let tvScreenMat:SCNMaterial = SCNMaterial()
     let tvScreenSphereMat:SCNMaterial = SCNMaterial()
     
+    var _tvViewPlayerType:SuakePlayerType = .OwnSuake
+    var tvViewPlayerType:SuakePlayerType{
+        get{ return self._tvViewPlayerType }
+        set{
+            self._tvViewPlayerType = newValue
+            if(newValue == .OwnSuake){
+                self.renderer?.pointOfView = self.game.cameraHelper.cameraNodeFP
+            }else{
+                self.renderer?.pointOfView = self.game.cameraHelper.cameraNodeFPOpp
+            }
+        }
+    }
+    
     private var _showNoise:Bool = true
     var showNoise:Bool{
         get{ return self._showNoise }

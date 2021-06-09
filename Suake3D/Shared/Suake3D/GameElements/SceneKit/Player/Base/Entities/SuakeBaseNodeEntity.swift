@@ -55,7 +55,7 @@ class SuakeBaseNodeEntity: SuakeBaseEntity {
 //            self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: .empty, overrideOrig: (self.game.stateMachine.currentState is SuakeStateReadyToPlay ? true : false))
             self.oldPos = self.pos
             self._pos = newValue
-            self.reposMapNodeInit()
+//            self.reposMapNodeInit()
 //            self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: self.suakeField)
 //            let scnNodeComponents:[SuakeBaseSCNNodeComponent] = self.components(conformingTo: SuakeBaseSCNNodeComponent.self)
 //            for i in (0..<scnNodeComponents.count){

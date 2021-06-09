@@ -32,22 +32,32 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
     var imgBG:SKSpriteNode!
     let bgImgFile:String = "art.scnassets/overlays/gameplay/images/crosshairSniperEmpty.png"
     
+    var isAimedAtPoint:Bool = false
+    var innerCrossAimDist:CGFloat = 5.0
+    
+    override var unavailable:Bool{
+        get{ return super.unavailable }
+        set{
+            super._unavailable = newValue
+//            self.nodeCrosshairCenterCircle.strokeColor = self.currentColor
+//            self.nodeCrosshairCircle.strokeColor = self.currentColor
+//            for strokeNode in self.strokeNodes{
+//                strokeNode.strokeColor = self.currentColor
+//            }
+        }
+    }
+    
     init(game:GameController) {
         super.init(game: game, weaponType: .sniperrifle)
         
         self.animTime = 0.12
-        
         self.notAimedAtColor = .black
         //self.innerDist = 7.0
         self.outerDist = 345.0
         self.innerDist = self.outerDist / 2
         self.imgBG = SKSpriteNode(texture: SKTexture(imageNamed: self.bgImgFile))
-//        self.setZoomLbl(zoomFactor: 1.0)
         self.aimedAtPointDistX = 90
     }
-    
-    var isAimedAtPoint:Bool = false
-    var innerCrossAimDist:CGFloat = 5.0
     
     func colorStrokeNodes(greenIdx:Int, dist:CGFloat = 0){
         for i in 0..<5{
@@ -63,7 +73,6 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
         }
         self.strokeNodesCenter[0].isHidden = !showInnerCross
         self.strokeNodesCenter[1].isHidden = !showInnerCross
-//        self.nodeCrosshairCenterCircle.isHidden = !showInnerCross
     }
     
     func getDistOfChCenterToPointX(point:SCNVector3)->CGFloat{
@@ -74,8 +83,6 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
             return 0.0
         }
         dist2Point = tmpPoint.x - (self.game.gameWindowSize.width / 2)
-//        print("dist2Point: " + dist2Point.description)
-        
         if((dist2Point >= -160 && dist2Point <= -130) || (dist2Point <= 160 && dist2Point >= 130)){
             self.colorStrokeNodes(greenIdx: 4, dist: dist2Point)
         }else if((dist2Point >= -130 && dist2Point <= -100) || (dist2Point <= 130 && dist2Point >= 100)){
@@ -95,28 +102,11 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
     override func checkAimedAtPoint(point:SCNVector3)->Bool{
         
         _ = self.getDistOfChCenterToPointX(point: point)
-        
-//        let tmpPoint = self.game.scnView.projectPoint(point)
-//        if(tmpPoint.x >= (self.game.gameWindowSize.width / 2) - 17 && tmpPoint.x <= (self.game.gameWindowSize.width / 2) + 17 && tmpPoint.y >= (self.game.gameWindowSize.height / 2) - 40 && tmpPoint.y <= (self.game.gameWindowSize.height / 2) + 40 && tmpPoint.z < 1.0){
-//            if(!self.isAimedAtPoint){
-//                self.isAimedAtPoint = true
-//                print("Sniperrifle aimed at point ...")
-//            }
-//            //return true
-//        }else{
-//            if(self.isAimedAtPoint){
-//                self.isAimedAtPoint = false
-//                //print("Sniperrifle NOT aimed at point ...")
-//            }
-//            //return false
-//        }
         return false
     }
     
     override func animateCrosshair(animated:Bool){
         self.animationOut = animated
-//        self.animateStrokes(animated: animated)
-//        self.animateArc(animated: animated)
     }
     
     func createOuterCircle(){
@@ -141,23 +131,8 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
         self.nodeContainer.addChild(self.nodeCrosshairMiddleCircle)
     }
     
-    //    func createCenterCircle(){
-    //        self.nodeCrosshairCenterCircle = SKShapeNode(circleOfRadius: 17.0)
-    //        self.nodeCrosshairCenterCircle.position = CGPoint(x: 0, y: 0)
-    //        self.nodeCrosshairCenterCircle.strokeColor = .green
-    //        self.nodeCrosshairCenterCircle.lineWidth = 1.0
-    //        self.nodeCrosshairCenterCircle.isAntialiased = false
-    //        self.nodeCrosshairCenterCircle.zPosition = 10000
-    //        self.nodeCrosshairCenterCircle.isHidden = true
-    //        self.nodeContainer.addChild(self.nodeCrosshairCenterCircle)
-    //    }
-    
-//    var inited:Bool = false
-    
-//    func drawAndGetCrosshairNG()->SKSpriteNode{
     @discardableResult
     override func drawAndGetCrosshair()->SKSpriteNode{
-//        inited = true
         self.imgBG.zPosition = 999
         self.node.addChild(self.imgBG)
         self.drawStrokePaths()
@@ -166,8 +141,8 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
 //        self.createCenterCircle()
         self.drawLabels()
         self.addArcs()
-        //self.updateGoodyArc()
-        //self.nodeContainer.addChild(self.difuseSpriteNOde)
+        self.updateGoodyArc()
+        
         return super.drawAndGetCrosshair()
     }
     
@@ -182,30 +157,9 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
         let goodyPos:SCNVector3 = self.game.playerEntityManager.goodyEntity.pos
         let X:CGFloat = goodyPos.x - ownPos.x
         let Z:CGFloat = goodyPos.z - ownPos.z
-//        NORTH / WEST => (-360° + X)
-//        1.  X: 10, Z: 10 => 10/10 => arctan(1) = 45° => -360° + 45° => -315° => North-West (exact)
-//        2.  X: 10, Z: 5 => 10/5 => arctan(2) = 63.43° => -360° + 63.43° => -296.56° => West
-//        3.  X: 5, Z: 10 => 5/10 => arctan(0.5) = 26.56° => -360° + 26.56° => -333.43° => North
-//        4.  X: 0, Z: 10 => 0/10 => arctan(0) = 0° => -360° + 0° => -360° => North (exact)
-//
-//        SOUTH / WEST (-180° + X)
-//        5.  X: 10, Z: -10 => 10/-10 => arctan(-1) = -45° => -180° + -45° => -225° => South-West (exact)
-//        6.  X: 10, Z: -5 => 10/-5 => arctan(-2) = -63.43° => -180° + -63.43° => -243.43° => West
-//        7.  X: 5, Z: -10 => 5/-10 => arctan(-0.5) = -26.56° => -180° + -26.56° => -206.56° => South
-//        8.  X: 0, Z: -10 => 0/-10 => arctan(0) = 0° => -180° + 0° => -180° => South (exact)
-//
-//        SOUTH / EAST
-//        9.  X: -10, Z: -10 => -10/-10 => arctan(1) = 45° => -180° + 45° => -135° => South-East (exact)
-//        10. X: -10, Z: -5 => -10/-5 => arctan(2) = 63.43° => -180° + 63.43° => -116.57° => East
-//        11. X: -5, Z: -10 => -5/-10 => arctan(0.5) = 26.56° => -180° + 26.56° => -153.44° => South
-//        !!!!!! 12. X: -10, Z: 0 => -10/0 => arctan(1) = 90° => -180° + 90° => -90° => East (exact) !!!!! => Z == 0 && X < 0 => -90°
-//        !!!!!! 13. X: 10, Z: 0 => 10/0 => arctan(1) = 270° => -180° + -90° => -270° => West (exact) !!!!! => Z == 0 && X > 0 => -270°
-//
-//        NORTH / EAST
-//        14. X: -10, Z: 10 => -10/10 => arctan(-1) = -45° => 0° + -45° => -45° => North-East (exact)
-//        15. X: -10, Z: 5 => -10/5 => arctan(-2) = -63.43° => 0° + -63.43° => -63.43° => East
-//        16. X: -5, Z: 10 => -5/10 => arctan(-0.5) = -26.56° => 0° + -26.56° => -26.56° => North
         var baseAng:CGFloat = -360.0
+        var ang:CGFloat = 0.0
+        
         if(Z < 0){
             baseAng = -180.0
         }else{
@@ -213,7 +167,7 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
                 baseAng = 0.0
             }
         }
-        var ang:CGFloat = 0.0
+        
         if(Z == 0){
             if(X < 0){
                 ang = -90.0
@@ -225,11 +179,8 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
             arctangent = arctangent / CGFloat.pi
             let angDif = baseAng + arctangent
             ang = angDif
-    //        if(goodyPos.z < 0){
-    //            angDif = 180 - arctangent
-    //        }
-//            angDif = angDif.truncatingRemainder(dividingBy: 360.0) //360.0
         }
+        
         if(ang >= -315.0 && ang <= -225.0){
             self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .W)
         }else if(ang >= -225.0 && ang <= -135.0){
@@ -240,41 +191,10 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
             self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .N)
         }
         return
-//        // OLD VERSION
-//        var arctangent = atan(goodyPos.x / goodyPos.z) * 180.0
-//        arctangent = arctangent / CGFloat.pi
-//        var angDif = 360 - arctangent
-////        if(goodyPos.z < 0){
-////            angDif = 180 - arctangent
-////        }
-//        angDif = angDif.truncatingRemainder(dividingBy: 360.0) //360.0
-//        if(angDif <= 315.0 && angDif >= 225.0){
-//            self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .W)
-//        }else if(angDif <= 225.0 && angDif >= 135.0){
-//            self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .N)
-//        }else if(angDif <= 135.0 && angDif >= 45.0){
-//            self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .E)
-//        }else{
-//            self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .S)
-//        }
-//        return
-////        let ntmp =
-//        if((goodyPos.z >= 0) && (goodyPos.x >= 0 && goodyPos.x <= goodyPos.z) || (goodyPos.x < 0 && goodyPos.x >= -goodyPos.z)) {
-//            self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .N)
-//        }else if((goodyPos.z < 0) && (goodyPos.x >= 0 && goodyPos.x <= -goodyPos.z) || (goodyPos.x < 0 && goodyPos.x >= goodyPos.z)) {
-//            self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .S)
-//        }else if((goodyPos.x >= 0) && (goodyPos.z >= 0 && goodyPos.z <= goodyPos.x) || (goodyPos.z < 0 && goodyPos.z >= -goodyPos.x)) {
-//            self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .W)
-//        }else if((goodyPos.x < 0) && (goodyPos.z >= 0 && goodyPos.z <= -goodyPos.x) || (goodyPos.z < 0 && goodyPos.z >= goodyPos.x)) {
-//            self.rotateArcTo(shapeNode: self.arcPartGoody, direction: .E)
-//        }
     }
     
     func showArcNode4Degree(degree:CGFloat = 0){
         let newDegree = degree
-//        if(newDegree < 0.0){
-//            newDegree += 360.0
-//        }
         var sniperDirection:SniperVisionDirectionFull = .N
         if(newDegree >= 45 && newDegree <= 135){
             sniperDirection = .E
@@ -318,15 +238,6 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
 //            self.arcNodes[SniperVisionDirectionFull.W.rawValue].isHidden = (sniperDirection != SniperVisionDirectionFull.W)
         }
     }
-    
-//    func showArcNode(sniperDirection:SniperVisionDirection){
-//        if(self.arcNodes.count >= 4){
-//            self.arcNodes[SniperVisionDirection.NE.rawValue].isHidden = (sniperDirection != SniperVisionDirection.NE)
-//            self.arcNodes[SniperVisionDirection.NW.rawValue].isHidden = (sniperDirection != SniperVisionDirection.NW)
-//            self.arcNodes[SniperVisionDirection.SW.rawValue].isHidden = (sniperDirection != SniperVisionDirection.SW)
-//            self.arcNodes[SniperVisionDirection.SE.rawValue].isHidden = (sniperDirection != SniperVisionDirection.SE)
-//        }
-//    }
     
     var lblAngel:SKLabelNode = SKLabelNode(fontNamed: SuakeVars.defaultFontName)
     var lblZoom:SKLabelNode = SKLabelNode(fontNamed: SuakeVars.defaultFontName)
@@ -437,31 +348,31 @@ class SniperrifleCrosshairComponent: BaseCrosshairComponent {
         let distInner:CGFloat = self.innerDist / 6
         
         // RIGHT 0
-        self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - (outerDist / 2), y: self.centerPoint.y), to: CGPoint(x: self.centerPoint.x + (outerDist / 2), y: self.centerPoint.y))))
+        self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - (outerDist / 2), y: self.centerPoint.y), to: CGPoint(x: self.centerPoint.x + (outerDist / 2), y: self.centerPoint.y)), color: .black))
         
-        self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y + (outerDist / 2)), to: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y - (outerDist / 2)))))
+        self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y + (outerDist / 2)), to: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y - (outerDist / 2))), color: .black))
         
         for i in (1..<6){
             let len:CGFloat = (i % 3 == 0 ? self.smallStrokesLength: self.halfSmallStrokesLength)
-            self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - len, y: self.centerPoint.y + (distInner * CGFloat(i))), to: CGPoint(x: self.centerPoint.x + len, y: self.centerPoint.y + (distInner * CGFloat(i))))))
+            self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - len, y: self.centerPoint.y + (distInner * CGFloat(i))), to: CGPoint(x: self.centerPoint.x + len, y: self.centerPoint.y + (distInner * CGFloat(i)))), color: .black))
             
             self.strokeNodesUp.append(self.strokeNodes.last!)
             
-            self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - len, y: self.centerPoint.y - (distInner * CGFloat(i))), to: CGPoint(x: self.centerPoint.x + len, y: self.centerPoint.y - (distInner * CGFloat(i))))))
+            self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - len, y: self.centerPoint.y - (distInner * CGFloat(i))), to: CGPoint(x: self.centerPoint.x + len, y: self.centerPoint.y - (distInner * CGFloat(i)))), color: .black))
             
             self.strokeNodesDown.append(self.strokeNodes.last!)
             
-            self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x + (distInner * CGFloat(i)), y: self.centerPoint.y + len), to: CGPoint(x: self.centerPoint.x + (distInner * CGFloat(i)), y: self.centerPoint.y - len))))
+            self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x + (distInner * CGFloat(i)), y: self.centerPoint.y + len), to: CGPoint(x: self.centerPoint.x + (distInner * CGFloat(i)), y: self.centerPoint.y - len)), color: .black))
 
             self.strokeNodesRight.append(self.strokeNodes.last!)
             
-            self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - (distInner * CGFloat(i)), y: self.centerPoint.y + len), to: CGPoint(x: self.centerPoint.x - (distInner * CGFloat(i)), y: self.centerPoint.y - len))))
+            self.strokeNodes.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - (distInner * CGFloat(i)), y: self.centerPoint.y + len), to: CGPoint(x: self.centerPoint.x - (distInner * CGFloat(i)), y: self.centerPoint.y - len)), color: .black))
             
             self.strokeNodesLeft.append(self.strokeNodes.last!)
             
-            self.strokeNodesCenter.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - 10, y: self.centerPoint.y), to: CGPoint(x: self.centerPoint.x + 10, y: self.centerPoint.y)), lineWidth: 3.0))
+            self.strokeNodesCenter.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x - 10, y: self.centerPoint.y), to: CGPoint(x: self.centerPoint.x + 10, y: self.centerPoint.y)), lineWidth: 2.0, color: .black))
             
-            self.strokeNodesCenter.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y + 10), to: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y - 10)), lineWidth: 3.0))
+            self.strokeNodesCenter.append(self.createShapeFromPath(path: self.drawStrokePath(from: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y + 10), to: CGPoint(x: self.centerPoint.x, y: self.centerPoint.y - 10)), lineWidth: 2.0, color: .black))
             
             self.strokeNodesCenter[0].strokeColor = .green
             self.strokeNodesCenter[0].zPosition = 10000

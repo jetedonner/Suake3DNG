@@ -35,15 +35,16 @@ class RPGRocketBlast:BulletBase{
 //            self.game.scnView.pointOfView = self.game.cameraHelper.cameraNode
 //            self.explodeRocket(targetNode: targetNode, removeTargetNode: false, pos: contactPoint)
             //return true
-        return super.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact)
+//        return super.hitTarget(targetCat: targetCat, targetNode: targetNode, contact: contact)
 //            return super.hitTarget(targetCat: targetCat, targetNode: targetNode, contactPoint: contactPoint, overrideIsTargetHit: true)
 //        }
-//        return false
+        return false
     }
     
     func blastSphere() -> SCNSphere {
         let blastSphere = SCNSphere(radius: 2.52)
         blastSphere.firstMaterial!.diffuse.contents = NSColor.red
+        blastSphere.firstMaterial!.transparency = 0.25
         return blastSphere
     }
     
@@ -61,9 +62,9 @@ class RPGRocketBlast:BulletBase{
             
             self.physicsBody = SCNPhysicsBody(type: .static, shape: shape)
             self.physicsBody?.isAffectedByGravity = false
-            self.physicsBody?.categoryBitMask = CollisionCategory(category: .rocket).rawValue
-            self.physicsBody?.contactTestBitMask = CollisionCategory(categories: [.suakeOpp, .goody, .medKit, .droid, .container, .generator]).rawValue
-            self.physicsBody?.collisionBitMask = CollisionCategory(categories: [.container, .generator]).rawValue
+            self.physicsBody?.categoryBitMask = CollisionCategory(category: .rocketBlast).rawValue
+            self.physicsBody?.contactTestBitMask = CollisionCategory(categories: [.suakeOpp, .goody, .medKit, .droid/*, .container, .generator*/]).rawValue
+//            self.physicsBody?.collisionBitMask = CollisionCategory(categories: [.container, .generator]).rawValue
             
 //            blastNode.physicsBody = SCNPhysicsBody(type: .static, shape: shape)
 //            blastNode.physicsBody?.isAffectedByGravity = false
@@ -72,22 +73,25 @@ class RPGRocketBlast:BulletBase{
 //            blastNode.physicsBody?.collisionBitMask = 0
 //            self.addChildNode(blastNode)
 //            self.game.scnView.scene!.rootNode.addChildNode(blastNode)
+//            geom.firstMaterial?.transparency = 0.0
             self.game.physicsHelper.qeueNode2Add2Scene(node: self)
             SCNTransaction.begin()
-            SCNTransaction.animationDuration = 3.0
+            SCNTransaction.animationDuration = 0.75
             SCNTransaction.completionBlock = {
 //                SCNTransaction.begin()
 //                SCNTransaction.animationDuration = 0.5
 //                //self.game.scnView.pointOfView?.rotation = self.origCameraRotation
 //                SCNTransaction.commit()
-                DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 2.0, execute: {
+                DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 0.1, execute: {
                     self.game.physicsHelper.qeueNode2Remove(node: self)
                     //(self.weapon as? Redeemer)?.nukeBlasts.remove(at: 0)
                 })
             }
+            
             geom.firstMaterial!.diffuse.contents = NSColor.white
             geom.firstMaterial?.transparency = 0.0
             self.scale = self.blastRescale
+//            shape.
             SCNTransaction.commit()
             
 //            self.game.soundManager.playSoundPositional(soundType: .nukeExplosion, node: self)

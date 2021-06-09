@@ -35,7 +35,7 @@ extension SuakeMoveComponent{
         
 //        let nextSuakePlayerNodeComponent:SuakePlayerNodeComponent = self.playerEntity.playerComponent.getNextSuakePlayerNodeComponent(turnDir: daNextTurnDir)
         
-        let nextDir:SuakeDir = SuakeDirTurnDirHelper.getSuakeDirFromTurnDir(oldSuakeDir: self.playerEntity.dir, turnDir: daNextTurnDir)
+        var nextDir:SuakeDir = SuakeDirTurnDirHelper.getSuakeDirFromTurnDir(oldSuakeDir: self.playerEntity.dir, turnDir: daNextTurnDir)
 
 //        if(self.playerEntity.playerType == .OppSuake){
         newPos = self.getNextPos4DirNG(daDir: self.playerEntity.dirOld, suakePart: /*nextSuakePlayerNodeComponent.suakePart,*/ nextSuakeComponent.nextSuakePart, daPos: newPos)
@@ -70,16 +70,33 @@ extension SuakeMoveComponent{
                 (nextMoveResult.fieldEntity as! PortalEntity).beamSuakeNode(suakeEntity: self.playerEntity, portal: 0)
             }*/
             self.setAndShowSuakePlayerNodeComponent(newSuakePlayerNodeComponent: nextSuakeComponent.newSuakeComponent)
+            if(self.playerEntity.dirOld != nextDir){
+                PosHelper.rotateSuake(nextSuakePart: nextSuakeComponent.nextSuakePart, newDir: nextDir, node: self.playerEntity.component(ofType: SuakePlayerComponent.self)!.node)
+                self.playerEntity.dirOld = nextDir
+            }
             if(seconds > 0){
-                self.moveNode(newPos: newPos, seconds: seconds)
+                self.moveNode(newPos: newPos, seconds: seconds, opponent: true)
             }/*else{
 //                self.playerEntity._pos = self.nextPos(dir: self.playerEntity.dir, suakePart: nextSuakePlayerNodeComponent.suakePart)
             }*/
 //            if(self.playerEntity.dir != nextDir){
 //                self.game.overlayManager.hud.overlayScene.arrows.rotateArrows(duration: 1.0, turnDir: (daNextTurnDir == .Left ? .Right : .Left))
 //            }
+//            self.changeSuakeComponent(nextSuakeComponent: nextSuakeComponent)
+            
+            // TEST OPPONENT TURNDIR
+//            if(daNextTurnDir == .Left && nextDir == .RIGHT){
+//                if(self.idxTmp == 1){
+//                    var tmp = -1
+//                    tmp /= -1
+////                     nextDir = .DOWN
+//                }
+//                self.idxTmp += 1
+//            }
+            
             self.playerEntity.playerComponent.currentSuakeComponent.movePlayerNodeComponent(newTurnDir: daNextTurnDir, newDir: nextDir, deltaTime: seconds)
-
+            
+            self.game.showDbgMsg(dbgMsg: "newTurnDir: \(daNextTurnDir), nextDir: \(nextDir)")
 //            if(!(seconds == 0 && self.playerEntity.playerType == .OppSuake)){
 //                if(self.playerEntity.playerComponent.currentSuakeComponent.suakePart == .leftToLeft || self.playerEntity.playerComponent.currentSuakeComponent.suakePart == .rightToRight){
 //                    SuakeDirTurnDirHelper.initNodeRotation(node: self.playerEntity.playerComponent.mainNode, dir: self.playerEntity.dirOld)
@@ -94,6 +111,8 @@ extension SuakeMoveComponent{
             self.tmpCnt += 1
         }
     }
+    
+    
 //    func nextMoveOpp(deltaTime seconds: TimeInterval = 1.0, afterGoodyHit:Bool = false){
 //
 ////        if(self.tmpCnt == 1){

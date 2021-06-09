@@ -204,6 +204,9 @@ class SuakeKeyboardHandler: KeyboardHandler {
             }else if(pressedKey == .KEY_T){
                 if(event.modifierFlags.contains(NSEvent.ModifierFlags.shift)){
                     self.game.tvMonitorManager.showNoise = !self.game.tvMonitorManager.showNoise
+                }else if(event.modifierFlags.contains(NSEvent.ModifierFlags.option)){
+                    self.game.tvMonitorManager.tvViewPlayerType = (self.game.tvMonitorManager.tvViewPlayerType == .OwnSuake ? .OppSuake : .OwnSuake)
+                    self.game.tvMonitorManager.showNoise = false
                 }else{
                     self.game.overlayManager.hud.showMsg(msg: "TESET MESSAGE FROM UI INPUT")
                 }

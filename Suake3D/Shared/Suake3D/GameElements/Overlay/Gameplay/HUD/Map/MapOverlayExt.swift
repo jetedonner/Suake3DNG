@@ -269,10 +269,10 @@ extension MapOverlay{
             let overNextPos:SCNVector3 = (playerEntity as! SuakeOwnPlayerEntity).moveComponent.overNextPos
             let moveAction:SKAction = SKAction.move(to: self.getNodePos(pos: overNextPos), duration: SuakeVars.gameStepInterval)
             playerNode.run(SKAction.group([moveAction]))
-        }else if((playerEntity as! SuakeBaseExplodingPlayerEntity).playerType == .OwnSuake){
-            let overNextPos:SCNVector3 = (playerEntity as! SuakeOppPlayerEntity).moveComponent.overNextPos
-            let moveAction:SKAction = SKAction.move(to: self.getNodePos(pos: overNextPos), duration: SuakeVars.gameStepInterval)
-            playerNode.run(SKAction.group([moveAction]))
+        }else if((playerEntity as! SuakeBaseExplodingPlayerEntity).playerType == .OppSuake){
+//            let overNextPos:SCNVector3 = (playerEntity as! SuakeOppPlayerEntity).moveComponent.overNextPos
+//            let moveAction:SKAction = SKAction.move(to: self.getNodePos(pos: overNextPos), duration: SuakeVars.gameStepInterval)
+//            playerNode.run(SKAction.group([moveAction]))
         }
     }
     

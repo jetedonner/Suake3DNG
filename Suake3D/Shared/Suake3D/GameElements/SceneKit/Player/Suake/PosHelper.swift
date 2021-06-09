@@ -12,6 +12,72 @@ import NetTestFW
 
 class PosHelper {
     
+    static func initNodeRotation(node:SCNNode, dir:SuakeDir = .UP)->SCNVector3{
+        var rotation:SCNVector3 = SCNVector3(0, 0, 0)
+        if(dir == .UP){
+            rotation = SCNVector3(x: 0, y: 0, z: 0)
+        }else if(dir == .DOWN){
+            rotation = SCNVector3(x: 0, y: -1 * CGFloat(Double.pi), z: 0)
+        }else if(dir == .LEFT){
+            rotation = SCNVector3(x: 0, y: 0.5 * CGFloat(Double.pi), z: 0)
+        }else if(dir == .RIGHT){
+            rotation = SCNVector3(x: 0, y: -0.5 * CGFloat(Double.pi), z: 0)
+        }
+        node.eulerAngles = rotation
+        return rotation
+    }
+    
+    static func rotateSuake(nextSuakePart:SuakePart, newDir:SuakeDir, node:SCNNode){
+        if(nextSuakePart == .rightToLeft){
+            if(newDir == .RIGHT){
+                _ = self.initNodeRotation(node: node, dir: .DOWN)
+            }else if(newDir == .DOWN){
+                _ = self.initNodeRotation(node: node, dir: .LEFT)
+            }else if(newDir == .LEFT){
+                _ = self.initNodeRotation(node: node, dir: .UP)
+            }else if(newDir == .UP){
+                _ = self.initNodeRotation(node: node, dir: .RIGHT)
+            }else{
+                _ = self.initNodeRotation(node: node, dir: .UP)
+            }
+//            self.game.showDbgMsg(dbgMsg: "RONTATING (nextSuakePart == .rightToLeft): " + newDir.rawValue, dbgLevel: .Info)
+        }else if(nextSuakePart == .leftToRight){
+//                    self.currentSuakePart = nextSuakePart
+            if(newDir == .UP){
+                _ = self.initNodeRotation(node: node, dir: .LEFT)
+            }else if(newDir == .DOWN){
+                _ = self.initNodeRotation(node: node, dir: .RIGHT)
+            }else if(newDir == .LEFT){
+                _ = self.initNodeRotation(node: node, dir: .DOWN)
+            }else if(newDir == .RIGHT){
+                _ = self.initNodeRotation(node: node, dir: .UP)
+            }
+//            self.game.showDbgMsg(dbgMsg: "RONTATING (nextSuakePart == .leftToRight): " + newDir.rawValue, dbgLevel: .Info)
+        }else if(nextSuakePart == .rightToRight){
+            if(newDir == .DOWN){
+                _ = self.initNodeRotation(node: node, dir: .RIGHT)
+            }else if(newDir == .LEFT){
+                _ = self.initNodeRotation(node: node, dir: .DOWN)
+            }else if(newDir == .RIGHT){
+                _ = self.initNodeRotation(node: node, dir: .UP)
+            }else if(newDir == .UP){
+                _ = self.initNodeRotation(node: node, dir: .LEFT)
+            }
+//            self.game.showDbgMsg(dbgMsg: "RONTATING (nextSuakePart == .rightToRight): " + newDir.rawValue, dbgLevel: .Info)
+        }else if(nextSuakePart == .leftToLeft){
+            if(newDir == .DOWN){
+                _ = self.initNodeRotation(node: node, dir: .LEFT)
+            }else if(newDir == .LEFT){
+                _ = self.initNodeRotation(node: node, dir: .UP)
+            }else if(newDir == .RIGHT){
+                _ = self.initNodeRotation(node: node, dir: .DOWN)
+            }else if(newDir == .UP){
+                _ = self.initNodeRotation(node: node, dir: .RIGHT)
+            }
+//            self.game.showDbgMsg(dbgMsg: "RONTATING (nextSuakePart == .leftToLeft): " + newDir.rawValue, dbgLevel: .Info)
+        }
+    }
+    
     static func getNextPos4DirNG(daDir:SuakeDir, suakePart:SuakePart, daPos:SCNVector3)->SCNVector3{
         var posRet:SCNVector3 = daPos
         switch daDir {

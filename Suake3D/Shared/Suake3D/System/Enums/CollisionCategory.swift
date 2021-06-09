@@ -49,12 +49,13 @@ struct CollisionCategory: OptionSet {
 //    static let tree =               CollisionCategory(rawValue: 1 << 32) //   4294967296
     static let generator =          CollisionCategory(rawValue: 1 << 30) //   ???!!!???
     static let house =               CollisionCategory(rawValue: 1 << 31) //   ???!!!???
+    static let tree =               CollisionCategory(rawValue: 1 << 32) //   ???!!!???
 //    static let rock =               CollisionCategory(rawValue: 1 << 29) //   ???!!!???
     
     static let allBulletCategories:[CollisionCategory] = [.laserbeam, .mgbullet, .pellet, .rocket, .railbeam, .sniperRifleBullet, .nuke, .nukeBlast]
     
     
-    static let allStaticObstacles:[CollisionCategory] = [.well, .rock, .container, .generator, .house]
+    static let allStaticObstacles:[CollisionCategory] = [.well, .rock, .container, .generator, .house, .tree]
     
     static func getAllBulletCats()->Int{
         return CollisionCategory(categories: self.allBulletCategories).rawValue

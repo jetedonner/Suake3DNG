@@ -146,12 +146,14 @@ extension SuakeMoveComponent{
     }
     
     @discardableResult
-    func moveNode(newPos:SCNVector3, seconds:TimeInterval)->Bool{
+    func moveNode(newPos:SCNVector3, seconds:TimeInterval, opponent:Bool = false)->Bool{
         self.playerEntity.pos = newPos
         self.playerEntity.playerComponent.currentSuakeComponent.node.animationNode?.animationPlayer(forKey: self.playerEntity.playerComponent.currentSuakeComponent.node.animationKey!)?.stop()
         self.playerEntity.playerComponent.currentSuakeComponent.node.animationNode?.animationPlayer(forKey: self.playerEntity.playerComponent.currentSuakeComponent.node.animationKey!)?.play()
         self.playerEntity.cameraComponent.moveFollowCamera()
-        self.game.overlayManager.hud.setPositionTxt(pos: newPos)
+        if(!opponent){
+            self.game.overlayManager.hud.setPositionTxt(pos: newPos)
+        }
         return true
     }
 }

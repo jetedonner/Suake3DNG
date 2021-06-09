@@ -13,6 +13,7 @@ import NetTestFW
 class SuakeMoveComponent: SuakeBaseComponent {
     
     //EXT TMP
+    var idxTmp:Int = 0
     var tmpCnt:Int = 0
     var oppGoodyHit:Bool = false
     

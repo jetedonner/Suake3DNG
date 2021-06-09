@@ -54,7 +54,12 @@ class MatchOver: SuakeBaseOverlay {
     
     override func showOverlayScene() {
         super.showOverlayScene()
-        self.showMatchOver(lost: false)
+        
+        if(self.game.playerEntityManager.ownPlayerEntity.statsComponent.suakeStats.getStatsValue(suakeStatsType: .score) > self.game.playerEntityManager.oppPlayerEntity.statsComponent.suakeStats.getStatsValue(suakeStatsType: .score)){
+            self.showMatchOver(lost: false)
+        }else{
+            self.showMatchOver(lost: true)
+        }
     }
     
     func showMatchOver(lost:Bool = true){

@@ -35,6 +35,11 @@ class SuakePlayerEntity: SuakeBaseExplodingPlayerEntity {
                 self.game.levelManager.gameBoard.setGameBoardField(pos: self.pos, suakeField: .empty, overrideOrig: true)
             }
             super.pos = newValue
+            if(self.playerType == .OwnSuake){
+                self.reposMapNodeInit()
+            }else{
+                
+            }
             self.game.levelManager.gameBoard.setGameBoardField(pos: newValue, suakeField: (self.playerType == .OwnSuake ? .own_suake : .opp_suake))
             self.playerComponent.mainNode.position = SCNVector3(super.pos.x * SuakeVars.fieldSize, 0, super.pos.z * SuakeVars.fieldSize)
         }

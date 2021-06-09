@@ -242,6 +242,9 @@
 		55CFC873265E8D92006B2DCB /* HouseGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC872265E8D92006B2DCB /* HouseGroupItem.swift */; };
 		55CFC875265E8DA6006B2DCB /* HouseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC874265E8DA6006B2DCB /* HouseComponent.swift */; };
 		55CFC877265E8DB7006B2DCB /* HouseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFC876265E8DB7006B2DCB /* HouseGroup.swift */; };
+		55D270C4266D486E0095E8E8 /* TreeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D270C3266D486E0095E8E8 /* TreeGroup.swift */; };
+		55D270C6266D48B60095E8E8 /* TreeGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D270C5266D48B60095E8E8 /* TreeGroupItem.swift */; };
+		55D270C8266D48D70095E8E8 /* TreeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D270C7266D48D70095E8E8 /* TreeComponent.swift */; };
 		55D8941325FAC20100728B83 /* SuakeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941225FAC20100728B83 /* SuakeVars.swift */; };
 		55D8941A25FAC2E600728B83 /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8941925FAC2E600728B83 /* PhysicsHelper.swift */; };
 		55D8945125FAC8CD00728B83 /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8945025FAC8CD00728B83 /* CameraHelper.swift */; };
@@ -594,6 +597,9 @@
 		55CFC872265E8D92006B2DCB /* HouseGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseGroupItem.swift; sourceTree = "<group>"; };
 		55CFC874265E8DA6006B2DCB /* HouseComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseComponent.swift; sourceTree = "<group>"; };
 		55CFC876265E8DB7006B2DCB /* HouseGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseGroup.swift; sourceTree = "<group>"; };
+		55D270C3266D486E0095E8E8 /* TreeGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeGroup.swift; sourceTree = "<group>"; };
+		55D270C5266D48B60095E8E8 /* TreeGroupItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeGroupItem.swift; sourceTree = "<group>"; };
+		55D270C7266D48D70095E8E8 /* TreeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeComponent.swift; sourceTree = "<group>"; };
 		55D8941225FAC20100728B83 /* SuakeVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuakeVars.swift; sourceTree = "<group>"; };
 		55D8941925FAC2E600728B83 /* PhysicsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
 		55D8945025FAC8CD00728B83 /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
@@ -1062,10 +1068,11 @@
 		5557C0672654460400ED7848 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				552D597D264480DB00BE9CFD /* Generator */,
+				55D270C2266D484F0095E8E8 /* Tree */,
 				55CFC871265E8D7C006B2DCB /* House */,
 				5593D39226599E5500D78C59 /* Well */,
 				5557C07C2657007A00ED7848 /* Rocks */,
-				552D597D264480DB00BE9CFD /* Generator */,
 				55B860412634A5270030D678 /* Container */,
 			);
 			path = Items;
@@ -1426,6 +1433,16 @@
 				55CFC872265E8D92006B2DCB /* HouseGroupItem.swift */,
 			);
 			path = House;
+			sourceTree = "<group>";
+		};
+		55D270C2266D484F0095E8E8 /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				55D270C7266D48D70095E8E8 /* TreeComponent.swift */,
+				55D270C5266D48B60095E8E8 /* TreeGroupItem.swift */,
+				55D270C3266D486E0095E8E8 /* TreeGroup.swift */,
+			);
+			path = Tree;
 			sourceTree = "<group>";
 		};
 		55D8941725FAC2CD00728B83 /* Apple */ = {
@@ -2204,6 +2221,7 @@
 				554233DA2632162C00EB55F9 /* ShotgunPelletGrp.swift in Sources */,
 				55F2AE63263C6ED10042BD38 /* RedeemerCrosshairLayer.swift in Sources */,
 				55F2AE5C263C66080042BD38 /* SIMD.swift in Sources */,
+				55D270C8266D48D70095E8E8 /* TreeComponent.swift in Sources */,
 				5501842C2602CBE600F28C54 /* PanCameraHelper.swift in Sources */,
 				5592703E262766C900A04C76 /* GKPlayerExt.swift in Sources */,
 				55D894A325FAD3FA00728B83 /* FloorHelper.swift in Sources */,
@@ -2279,6 +2297,7 @@
 				55DB998225FC57DC000023AF /* FadeViewAfterDeath.swift in Sources */,
 				55CFC870265E646F006B2DCB /* OpponentState.swift in Sources */,
 				55DB998725FC5AC1000023AF /* SuakeStateDied.swift in Sources */,
+				55D270C6266D48B60095E8E8 /* TreeGroupItem.swift in Sources */,
 				556CB96425FFFFFA005B7747 /* GoodyComponent.swift in Sources */,
 				5513C885260D1A0500633B40 /* CGFloat.swift in Sources */,
 				55AE7FDA262B592B00A58F4B /* HUDDbgLogComponent.swift in Sources */,
@@ -2312,6 +2331,7 @@
 				55DB994225FC2A12000023AF /* SuakeMoveComponent.swift in Sources */,
 				55161D2D2649B54200D87065 /* WormHoleHelper.swift in Sources */,
 				55E9EA4F2633ED09005E3256 /* SniperrifleCrosshairComponent.swift in Sources */,
+				55D270C4266D486E0095E8E8 /* TreeGroup.swift in Sources */,
 				55001F71260CB53D0015B293 /* ExplodingComponent.swift in Sources */,
 				55760E4825FD386A00C10784 /* HUDOverlayScene.swift in Sources */,
 				55001F97260CE7190015B293 /* DroidAIComponent.swift in Sources */,
